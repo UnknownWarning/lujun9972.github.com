@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>排查SSH X11 Forwarding无效的步骤 - 暗无天日</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="author" content="lujun9972" />
+  <meta name="keywords" content="linux和它的小伙伴" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
+   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+</head>
+
+  <body><div class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
+        <ul>
+          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+          <li><a href="https://lujun9972.github.io/about/">About</a></li>
+          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1 class="title">排查SSH X11 Forwarding无效的步骤</h1>
+<p>
+从 <a href="https://lonesysadmin.net/2018/07/06/fixing-x11-forwarding-ssh-sudo/">https://lonesysadmin.net/2018/07/06/fixing-x11-forwarding-ssh-sudo/</a> 中看到的，觉得不错，记录一下。
+</p>
+
+<ul class="org-ul">
+<li>检查 SSH client 本身是否支持 X11 Forwarding</li>
+
+<li><p>
+检查远程服务器上是否安装了 xauth. 
+</p>
+
+<p>
+xauth 是允许 X11 Forwarding 必须的,因为远程的Xclient需要用它来跟本地的Xserver进行认证。
+</p></li>
+
+<li>本地的SSH Client配置参数是否正确。比如,检查一下 <code>~/.ssh/config</code> 文件中是否有 <code>ForwardAgent yes</code> 和 <code>ForwardX11 yes</code></li>
+
+<li>本机上是否安装并启动了Xserver</li>
+
+<li>检查 <code>$DISPLAY</code> 有没有正确设置，检查本地Xserver的权限配置是否允许远程主机连接</li>
+
+<li>远程主机上的 <code>sshd_config</code> 中是否配置了 <code>X11Forwarding yes</code> 和 <code>AllowAgentForwarding yes</code></li>
+
+<li>你的$HOME目录是否可写. 因为XClient连接Xserver时需要创建 <code>~/.Xauthority</code> 文件</li>
+
+<li><code>~/.ssh</code> 目录的权限是否正确，目录本身的权限应该是 <code>700</code>, 而目录中文件的属性应该是 <code>600</code></li>
+
+<li><p>
+是否禁用了 IPv6
+</p>
+
+<p>
+在 <code>sshd_config</code> 中添加 <code>AddressFamily inet</code> 可以强制 OpenSSH 只使用 IPv4
+</p></li>
+
+<li><p>
+若运行 <code>sudo</code> 或 <code>su</code> 命令提示 <code>X11 connection rejected because of wrong authentication</code>, 那么可能是 <code>root</code> 没有配置好 xauth 的权限。
+</p>
+
+<p>
+解决方法是直接拷贝当前用户的 <code>~${USER}/.Xauthority</code> 到 <code>~root/</code> 下就行了
+</p></li>
+
+<li>若还不行，则查看ssh连接过程中的详细信息 <code>ssh -v -X user@host</code>, <code>ssh -vv -X user@host</code>, <code>ssh -vvv -X user@host</code></li>
+</ul>
+
+</div>
+</div>
+<div>
+        <div class="post-meta">
+            <span title="post date" class="post-info">2018-07-13</span>
+            <span title="last modification date" class="post-info">2018-07-13</span>
+            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+        </div>
+    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+        <section>
+            <h1>Comments</h1>
+            <div id="comment-wrap">
+                    <a class="disqus_label">使用 Disqus 评论</a>
+    </ul>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+         //var disqus_developer = 1;
+         var preempt_signal=false;
+         var disqus_identifier = "/blog/2018/07/13/排查ssh-x11-forwarding无效的步骤/";
+         var disqus_url = "https://lujun9972.github.io/blog/2018/07/13/排查ssh-x11-forwarding无效的步骤/";
+         var disqus_shortname = 'lujun9972';
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             $('#disqus_thread').css('display','none');
+         })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script>
+     /* comments */
+     var ego_disqus_thread=$('#disqus_thread');
+     var ego_ds_label=$('.ds-thread');
+     $('.disqus_label').click(function(){
+         ego_disqus_thread.show();
+         ego_ds_label.hide();
+     });
+     $('.ds-label').click(function(){
+         ego_disqus_thread.hide();
+         ego_ds_label.show();
+     });
+    </script>
+        </section>
+    <script src="https://lujun9972.github.io/media/js/main.js"></script>
+    <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+    </div>
+            </div>
+            <script type="text/javascript"
+                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+            </script>
+            <script type="text/x-mathjax-config">
+             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+            </script>
+</div>
+
+  </div></body>
+</html>

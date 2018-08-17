@@ -4,79 +4,79 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>日, 01 7月 2018 08:41:17 CST</pubDate>
-    <lastBuildDate>日, 01 7月 2018 08:41:17 CST</lastBuildDate>
+    <pubDate>六, 18 8月 2018 07:53:38 CST</pubDate>
+    <lastBuildDate>六, 18 8月 2018 07:53:38 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
 <item>
-<title>Bash中的keymap与bind命令</title>
-<link>https://lujun9972.github.io/blog/2018/05/23/bash中的keymap与bind命令/</link>
+<title>在DosBox上安装windows3.2</title>
+<link>https://lujun9972.github.io/blog/2018/08/17/在dosbox上安装windows3.2/</link>
 <description>No Description</description>
-<pubDate>2018-06-29</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/05/23/bash中的keymap与bind命令/</guid>
+<pubDate>2018-08-18</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/17/在dosbox上安装windows3.2/</guid>
 </item>
 <item>
-<title>如何在archlinux上安装RPM包</title>
-<link>https://lujun9972.github.io/blog/2018/06/29/如何在archlinux上安装rpm包/</link>
+<title>误删除dev下特殊文件怎么办</title>
+<link>https://lujun9972.github.io/blog/2018/08/18/误删除dev下特殊文件怎么办/</link>
 <description>No Description</description>
-<pubDate>2018-06-29</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/06/29/如何在archlinux上安装rpm包/</guid>
+<pubDate>2018-08-18</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/18/误删除dev下特殊文件怎么办/</guid>
 </item>
 <item>
-<title>nvidia</title>
-<link>https://lujun9972.github.io/blog/2018/06/24/nvidia/</link>
+<title>Vagrant使用指南</title>
+<link>https://lujun9972.github.io/blog/2018/07/29/vagrant使用指南/</link>
 <description>No Description</description>
-<pubDate>2018-06-27</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/06/24/nvidia/</guid>
+<pubDate>2018-08-16</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/07/29/vagrant使用指南/</guid>
 </item>
 <item>
-<title>Emacs帮你进行英文写作</title>
-<link>https://lujun9972.github.io/blog/2018/06/03/emacs帮你进行英文写作/</link>
+<title>运行tail|grep后按下Ctrl-C的过程中发生了什么</title>
+<link>https://lujun9972.github.io/blog/2018/08/16/运行tail|grep后按下ctrl-c的过程中发生了什么/</link>
 <description>No Description</description>
-<pubDate>2018-06-22</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/06/03/emacs帮你进行英文写作/</guid>
+<pubDate>2018-08-16</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/16/运行tail|grep后按下ctrl-c的过程中发生了什么/</guid>
 </item>
 <item>
-<title>linux定时休眠</title>
-<link>https://lujun9972.github.io/blog/2018/06/21/linux定时休眠/</link>
+<title>命令行查看GPU内存容量</title>
+<link>https://lujun9972.github.io/blog/2018/08/14/命令行查看gpu内存容量/</link>
 <description>No Description</description>
-<pubDate>2018-06-22</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/06/21/linux定时休眠/</guid>
+<pubDate>2018-08-14</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/14/命令行查看gpu内存容量/</guid>
 </item>
 <item>
-<title>read读取到空值之迷</title>
-<link>https://lujun9972.github.io/blog/2018/06/20/read读取到空值之迷/</link>
+<title>不使用第三方工具查看笔记本的电量还剩多少</title>
+<link>https://lujun9972.github.io/blog/2018/08/14/不使用第三方工具查看笔记本的电量还剩多少/</link>
 <description>No Description</description>
-<pubDate>2018-06-20</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/06/20/read读取到空值之迷/</guid>
+<pubDate>2018-08-14</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/14/不使用第三方工具查看笔记本的电量还剩多少/</guid>
 </item>
 <item>
-<title>lua中神奇的table</title>
-<link>https://lujun9972.github.io/blog/2018/06/17/lua中神奇的table/</link>
+<title>docker-machine初体验</title>
+<link>https://lujun9972.github.io/blog/2018/08/13/docker-machine初体验/</link>
 <description>No Description</description>
-<pubDate>2018-06-18</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/06/17/lua中神奇的table/</guid>
+<pubDate>2018-08-13</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/13/docker-machine初体验/</guid>
 </item>
 <item>
-<title>手工生成Emacs Manual PDF</title>
-<link>https://lujun9972.github.io/blog/2018/06/09/手工生成emacs-manual-pdf/</link>
+<title>bitlbee</title>
+<link>https://lujun9972.github.io/blog/2018/08/10/bitlbee/</link>
 <description>No Description</description>
-<pubDate>2018-06-10</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/06/09/手工生成emacs-manual-pdf/</guid>
+<pubDate>2018-08-10</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/10/bitlbee/</guid>
 </item>
 <item>
-<title>AwesomeWM中的client</title>
-<link>https://lujun9972.github.io/blog/2018/06/10/awesomewm中的client/</link>
+<title>使用journalctl查看systemd日志</title>
+<link>https://lujun9972.github.io/blog/2018/08/08/使用journalctl查看systemd日志/</link>
 <description>No Description</description>
-<pubDate>2018-06-10</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/06/10/awesomewm中的client/</guid>
+<pubDate>2018-08-09</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/08/使用journalctl查看systemd日志/</guid>
 </item>
 <item>
-<title>Bash中的那些快捷键</title>
-<link>https://lujun9972.github.io/blog/2018/05/23/bash中的那些快捷键/</link>
+<title>linux如何设置时区</title>
+<link>https://lujun9972.github.io/blog/2018/08/07/linux如何设置时区/</link>
 <description>No Description</description>
-<pubDate>2018-06-08</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/05/23/bash中的那些快捷键/</guid>
+<pubDate>2018-08-07</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/07/linux如何设置时区/</guid>
 </item>
 </channel>
 </rss>

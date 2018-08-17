@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>如何禁止普通用户查看dmesg信息 - 暗无天日</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="author" content="lujun9972" />
+  <meta name="keywords" content="linux和它的小伙伴" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
+   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+</head>
+
+  <body><div class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
+        <ul>
+          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+          <li><a href="https://lujun9972.github.io/about/">About</a></li>
+          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1 class="title">如何禁止普通用户查看dmesg信息</h1>
+<p>
+dmesg能够输出kernel ring buffer中的内容，这些内容中可能会包含一些敏感信息。
+</p>
+
+<p>
+根据 <a href="https://www.kernel.org/doc/Documentation/sysctl/kernel.txt">kernel docs</a> 中的说明:
+</p>
+<pre class="example">
+This toggle indicates whether unprivileged users are prevented from using dmesg(8) to view messages from the kernel’s log buffer. When dmesg_restrict is set to (0) there are no restrictions. When dmesg_restrict is set set to (1), users must have CAP_SYSLOG to use dmesg(8). The kernel config option CONFIG_SECURITY_DMESG_RESTRICT sets the default value of dmesg_restrict.
+</pre>
+
+<p>
+我们可以通过设置内核参数 <code>dmesg_restrict</code> 为 <code>1</code> 的方式来禁止普通用户查看demsg信息
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo sysctl -w kernel.dmesg_restrict=<span style="color: #a45bad;">1</span>
+</pre>
+</div>
+
+<p>
+我们来看一下现在 <code>dmesg_restrict</code> 的值是什么
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sysctl kernel.dmesg_restrict 
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">kernel.dmesg_restrict = 1
+</pre>
+</div>
+
+<p>
+现在再来用普通用户执行demsg:
+</p>
+<pre class="example">
+[lujun9972@T520 wikit.docker]$ dmesg
+dmesg: 读取内核缓冲区失败: 不允许的操作
+</pre>
+
+<p>
+会发现提示无法读取内核缓冲区
+</p>
+
+<p>
+要让该设置永久生效，则需要修改 <code>/etc/sysctl.conf</code> 文件
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo echo <span style="color: #2d9574;">'kernel.dmesg_restrict=1'</span> &gt;&gt; /etc/sysctl.conf
+</pre>
+</div>
+
+</div>
+</div>
+<div>
+        <div class="post-meta">
+            <span title="post date" class="post-info">2018-08-03</span>
+            <span title="last modification date" class="post-info">2018-08-03</span>
+            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+        </div>
+    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+        <section>
+            <h1>Comments</h1>
+            <div id="comment-wrap">
+                    <a class="disqus_label">使用 Disqus 评论</a>
+    </ul>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+         //var disqus_developer = 1;
+         var preempt_signal=false;
+         var disqus_identifier = "/blog/2018/08/03/如何禁止普通用户查看dmesg信息/";
+         var disqus_url = "https://lujun9972.github.io/blog/2018/08/03/如何禁止普通用户查看dmesg信息/";
+         var disqus_shortname = 'lujun9972';
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             $('#disqus_thread').css('display','none');
+         })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script>
+     /* comments */
+     var ego_disqus_thread=$('#disqus_thread');
+     var ego_ds_label=$('.ds-thread');
+     $('.disqus_label').click(function(){
+         ego_disqus_thread.show();
+         ego_ds_label.hide();
+     });
+     $('.ds-label').click(function(){
+         ego_disqus_thread.hide();
+         ego_ds_label.show();
+     });
+    </script>
+        </section>
+    <script src="https://lujun9972.github.io/media/js/main.js"></script>
+    <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+    </div>
+            </div>
+            <script type="text/javascript"
+                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+            </script>
+            <script type="text/x-mathjax-config">
+             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+            </script>
+</div>
+
+  </div></body>
+</html>

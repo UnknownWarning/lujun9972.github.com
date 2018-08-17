@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>误删除dev下特殊文件怎么办 - 暗无天日</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="author" content="lujun9972" />
+  <meta name="keywords" content="linux和它的小伙伴" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
+   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+</head>
+
+  <body><div class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
+        <ul>
+          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+          <li><a href="https://lujun9972.github.io/about/">About</a></li>
+          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1 class="title">误删除dev下特殊文件怎么办</h1>
+<p>
+若不小心误删除了 <code>/dev/null</code> 这样的特殊文件,或者chroot到其他目录需要手工创建 <code>/dev/null</code> 怎么办呢？
+</p>
+
+<p>
+我们可以用 <code>mknod</code> 来重新创建
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo /bin/mknod -m <span style="color: #a45bad;">0666</span> /dev/null c <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">3</span>
+</pre>
+</div>
+
+<p>
+其中 <code>mknod</code> 命令用来创建块或者字符特殊文件，其语法为
+</p>
+<pre class="example">
+mknod [选项]... 名称 类型 [主设备号 从设备号]
+</pre>
+
+<p>
+其中:
+</p>
+
+<dl class="org-dl">
+<dt>-m 0666</dt><dd>设定设备文件的权限</dd>
+<dt>c</dt><dd>创建的是字符无缓冲特殊文件</dd>
+<dt>1和3</dt><dd>分别表示主设备号和从设备号。</dd>
+</dl>
+
+<p>
+调用 <code>mknod</code> 的所有这些参数都能通过 <code>stat</code> 命令预先查出来
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">stat /dev/null
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">  &#25991;&#20214;&#65306;/dev/null
+  &#22823;&#23567;&#65306;0          &#22359;&#65306;0          IO &#22359;&#65306;4096   &#23383;&#31526;&#29305;&#27530;&#25991;&#20214;
+&#35774;&#22791;&#65306;6h/6d  Inode&#65306;32          &#30828;&#38142;&#25509;&#65306;1     &#35774;&#22791;&#31867;&#22411;&#65306;1,3
+&#26435;&#38480;&#65306;(0666/crw-rw-rw-)  Uid&#65306;(    0/    root)   Gid&#65306;(    0/    root)
+&#26368;&#36817;&#35775;&#38382;&#65306;2018-08-18 06:19:31.450439053 +0800
+&#26368;&#36817;&#26356;&#25913;&#65306;2018-08-18 06:19:31.450439053 +0800
+&#26368;&#36817;&#25913;&#21160;&#65306;2018-08-18 06:19:31.450439053 +0800
+&#21019;&#24314;&#26102;&#38388;&#65306;-
+</pre>
+</div>
+
+<p>
+从上面结果可以看出 <code>/dev/null</code> 是一个权限为 <code>0666</code>,设备类型为 <code>1,3</code> 的字符特殊文件
+</p>
+
+<p>
+<code>/dev/random</code> 和 <code>/dev/urandom</code> 也可以采取类似的方法创建
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">- name: Mknod /dev/random to Chroot</span>
+sudo /bin/mknod -m <span style="color: #a45bad;">0666</span> /dev/random     c <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">8</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">- name: Mknod /dev/urandom to Chroot</span>
+sudo /bin/mknod -m <span style="color: #a45bad;">0666</span> /dev/urandom    c <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">9</span>
+</pre>
+</div>
+
+</div>
+</div>
+<div>
+        <div class="post-meta">
+            <span title="post date" class="post-info">2018-08-18</span>
+            <span title="last modification date" class="post-info">2018-08-18</span>
+            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+        </div>
+    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+        <section>
+            <h1>Comments</h1>
+            <div id="comment-wrap">
+                    <a class="disqus_label">使用 Disqus 评论</a>
+    </ul>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+         //var disqus_developer = 1;
+         var preempt_signal=false;
+         var disqus_identifier = "/blog/2018/08/18/误删除dev下特殊文件怎么办/";
+         var disqus_url = "https://lujun9972.github.io/blog/2018/08/18/误删除dev下特殊文件怎么办/";
+         var disqus_shortname = 'lujun9972';
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             $('#disqus_thread').css('display','none');
+         })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script>
+     /* comments */
+     var ego_disqus_thread=$('#disqus_thread');
+     var ego_ds_label=$('.ds-thread');
+     $('.disqus_label').click(function(){
+         ego_disqus_thread.show();
+         ego_ds_label.hide();
+     });
+     $('.ds-label').click(function(){
+         ego_disqus_thread.hide();
+         ego_ds_label.show();
+     });
+    </script>
+        </section>
+    <script src="https://lujun9972.github.io/media/js/main.js"></script>
+    <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+    </div>
+            </div>
+            <script type="text/javascript"
+                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+            </script>
+            <script type="text/x-mathjax-config">
+             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+            </script>
+</div>
+
+  </div></body>
+</html>
