@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>命令行查看GPU内存容量 - 暗无天日</title>
+  <title>使用unrar解压分片rar压缩文件 - 暗无天日</title>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport"
@@ -39,107 +39,20 @@
 
 <div>
 <div class="post">
-<h1 class="title">命令行查看GPU内存容量</h1>
-<div id="table-of-contents">
-<h2>&#30446;&#24405;</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org8170e47">lspci</a></li>
-<li><a href="#orgfac7147">lshw</a></li>
-</ul>
-</div>
-</div>
+<h1 class="title">使用unrar解压分片rar压缩文件</h1>
 <p>
-有两个命令可以帮助我们查看GPU的内存容量，一个时lspci,一个是lshw
-</p>
-
-<div id="outline-container-org8170e47" class="outline-2">
-<h2 id="org8170e47">lspci</h2>
-<div class="outline-text-2" id="text-org8170e47">
-<ol class="org-ol">
-<li><p>
-查找显卡的设备地址
+使用unrar解压multi-part rar 文件时，只需要指定part1.rar文件就行了
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">lspci |grep VGA
+<pre class="src src-shell">unrar x file.part1.rar
 </pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-org">00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller (rev 09)
-</pre>
-</div>
-
-<p>
-其中 <code>00:02.0</code> 指明了显卡是在哪个总线、哪个插槽上的设备、上的那个功能模块。
-</p></li>
-
-<li><p>
-查看详细信息
-</p>
-<div class="org-src-container">
-<pre class="src src-shell">lspci -v -s <span style="color: #a45bad;">00:02.0</span>
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-org">00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller (rev 09) (prog-if 00 [VGA controller])
-  Subsystem: Lenovo ThinkPad T520
-  Flags: bus master, fast devsel, latency 0, IRQ 30
-  Memory at f0000000 (64-bit, non-prefetchable) [size=4M]
-  Memory at e0000000 (64-bit, prefetchable) [size=256M]
-  I/O ports at 5000 [size=64]
-  [virtual] Expansion ROM at 000c0000 [disabled] [size=128K]
-  Capabilities: &lt;access denied&gt;
-  Kernel driver in use: i915
-  Kernel modules: i915
-
-</pre>
-</div>
-
-<p>
-你可以看到，GPU可预取只有4M，不可预取内存为256M，果然是个垃圾显卡啊...
-</p></li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-orgfac7147" class="outline-2">
-<h2 id="orgfac7147">lshw</h2>
-<div class="outline-text-2" id="text-orgfac7147">
-<div class="org-src-container">
-<pre class="src src-shell">lshw -C display
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-org">*-display
-     description: VGA compatible controller
-     product: 2nd Generation Core Processor Family Integrated Graphics Controller
-     vendor: Intel Corporation
-     physical id: 2
-     bus info: pci@0000:00:02.0
-     version: 09
-     width: 64 bits
-     clock: 33MHz
-     capabilities: vga_controller bus_master cap_list rom
-     configuration: driver=i915 latency=0
-     resources: irq:30 memory:f0000000-f03fffff memory:e0000000-efffffff ioport:5000(size=64) memory:c0000-dffff
-</pre>
-</div>
-
-<p>
-可以看到resources中 <code>irq:30 memory:f0000000-f03fffff  memory:e0000000-efffffff</code>
-前一个容量就是 <code>4M</code>,后一个容量就是 <code>256M</code>
-</p>
-</div>
 </div>
 
 </div>
 </div>
 <div>
         <div class="post-meta">
-            <span title="post date" class="post-info">2018-08-14</span>
+            <span title="post date" class="post-info">2018-08-18</span>
             <span title="last modification date" class="post-info">2018-08-18</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
             <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
@@ -154,8 +67,8 @@
         <script type="text/javascript">
          //var disqus_developer = 1;
          var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/08/14/命令行查看gpu内存容量/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/08/14/命令行查看gpu内存容量/";
+         var disqus_identifier = "/blog/2018/08/18/使用unrar解压分片rar压缩文件/";
+         var disqus_url = "https://lujun9972.github.io/blog/2018/08/18/使用unrar解压分片rar压缩文件/";
          var disqus_shortname = 'lujun9972';
          /* * * DON'T EDIT BELOW THIS LINE * * */
          (function() {
