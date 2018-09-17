@@ -44,18 +44,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org82d8661">安装TLP</a></li>
-<li><a href="#org5ecf2e7">启动TLP服务</a></li>
-<li><a href="#orgc1f67ec">使用TLP</a>
+<li><a href="#org3eaaabc">安装TLP</a></li>
+<li><a href="#orgbc94e96">启动TLP服务</a></li>
+<li><a href="#org37655d7">使用TLP</a>
 <ul>
-<li><a href="#org1642dde">tlp: 应用笔记本的节能设置。</a></li>
-<li><a href="#orgd30d961">tlp-stat: 显示当前的节能设置</a></li>
-<li><a href="#org179b0af">wifi: 手动启动/关闭wifi</a></li>
-<li><a href="#org1940f3a">bluetooth: 手动启动/关闭蓝牙</a></li>
-<li><a href="#orga4df2d5">wwan: 手动启动/关闭wwan(3G/4G)设备</a></li>
+<li><a href="#org3e2bcc5">tlp: 应用笔记本的节能设置。</a></li>
+<li><a href="#org61e84f6">tlp-stat: 显示当前的节能设置</a></li>
+<li><a href="#org3146871">wifi: 手动启动/关闭wifi</a></li>
+<li><a href="#orgf4d83b8">bluetooth: 手动启动/关闭蓝牙</a></li>
+<li><a href="#org087bed8">wwan: 手动启动/关闭wwan(3G/4G)设备</a></li>
 </ul>
 </li>
-<li><a href="#orgc1891b8">配置TLP</a></li>
+<li><a href="#orga5a353f">配置TLP</a></li>
+<li><a href="#org6760b35">TLPUI</a></li>
 </ul>
 </div>
 </div>
@@ -64,9 +65,9 @@ TLP是一款linux上的基于文本界面的高级电源管理工具。TLP默认
 此外TLP也具有很高的可配置性，能够让你充分的配置以满足特殊需求。
 </p>
 
-<div id="outline-container-org82d8661" class="outline-2">
-<h2 id="org82d8661">安装TLP</h2>
-<div class="outline-text-2" id="text-org82d8661">
+<div id="outline-container-org3eaaabc" class="outline-2">
+<h2 id="org3eaaabc">安装TLP</h2>
+<div class="outline-text-2" id="text-org3eaaabc">
 <p>
 在archlinux上通过下面命令来安装：
 </p>
@@ -85,9 +86,9 @@ TLP是一款linux上的基于文本界面的高级电源管理工具。TLP默认
 </div>
 </div>
 
-<div id="outline-container-org5ecf2e7" class="outline-2">
-<h2 id="org5ecf2e7">启动TLP服务</h2>
-<div class="outline-text-2" id="text-org5ecf2e7">
+<div id="outline-container-orgbc94e96" class="outline-2">
+<h2 id="orgbc94e96">启动TLP服务</h2>
+<div class="outline-text-2" id="text-orgbc94e96">
 <p>
 TLP默认会启动 <code>NetworkManager.service</code>,然而我使用的是 <code>netctl</code> 来管理网络，因此还需要修改一下 <code>tlp.service</code>
 </p>
@@ -160,17 +161,17 @@ Power source   = AC
 </div>
 </div>
 
-<div id="outline-container-orgc1f67ec" class="outline-2">
-<h2 id="orgc1f67ec">使用TLP</h2>
-<div class="outline-text-2" id="text-orgc1f67ec">
+<div id="outline-container-org37655d7" class="outline-2">
+<h2 id="org37655d7">使用TLP</h2>
+<div class="outline-text-2" id="text-org37655d7">
 <p>
 TLP中最常用的命令有这么几个：
 </p>
 </div>
 
-<div id="outline-container-org1642dde" class="outline-3">
-<h3 id="org1642dde">tlp: 应用笔记本的节能设置。</h3>
-<div class="outline-text-3" id="text-org1642dde">
+<div id="outline-container-org3e2bcc5" class="outline-3">
+<h3 id="org3e2bcc5">tlp: 应用笔记本的节能设置。</h3>
+<div class="outline-text-3" id="text-org3e2bcc5">
 <dl class="org-dl">
 <dt>sudo tlp start</dt><dd>根据实际情况是使用交流电还是电池，来应用对应的节能设置</dd>
 <dt>sudo tlp ac</dt><dd>强制切换到交流电对应的节能设置</dd>
@@ -178,9 +179,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-orgd30d961" class="outline-3">
-<h3 id="orgd30d961">tlp-stat: 显示当前的节能设置</h3>
-<div class="outline-text-3" id="text-orgd30d961">
+<div id="outline-container-org61e84f6" class="outline-3">
+<h3 id="org61e84f6">tlp-stat: 显示当前的节能设置</h3>
+<div class="outline-text-3" id="text-org61e84f6">
 <dl class="org-dl">
 <dt>sudo tlp-stat -b</dt><dd>显示电池的相关信息</dd>
 <dt>tlp-stat -c</dt><dd>显示tlp当前的配置信息</dd>
@@ -194,9 +195,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-org179b0af" class="outline-3">
-<h3 id="org179b0af">wifi: 手动启动/关闭wifi</h3>
-<div class="outline-text-3" id="text-org179b0af">
+<div id="outline-container-org3146871" class="outline-3">
+<h3 id="org3146871">wifi: 手动启动/关闭wifi</h3>
+<div class="outline-text-3" id="text-org3146871">
 <dl class="org-dl">
 <dt>sudo wifi on</dt><dd>手动启动wifi</dd>
 <dt>sudo wifi off</dt><dd>手动关闭wifi</dd>
@@ -204,9 +205,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-org1940f3a" class="outline-3">
-<h3 id="org1940f3a">bluetooth: 手动启动/关闭蓝牙</h3>
-<div class="outline-text-3" id="text-org1940f3a">
+<div id="outline-container-orgf4d83b8" class="outline-3">
+<h3 id="orgf4d83b8">bluetooth: 手动启动/关闭蓝牙</h3>
+<div class="outline-text-3" id="text-orgf4d83b8">
 <dl class="org-dl">
 <dt>sudo bluetooth on</dt><dd>手动启动蓝牙</dd>
 <dt>sudo bluetooth off</dt><dd>手动关闭蓝牙</dd>
@@ -214,9 +215,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-orga4df2d5" class="outline-3">
-<h3 id="orga4df2d5">wwan: 手动启动/关闭wwan(3G/4G)设备</h3>
-<div class="outline-text-3" id="text-orga4df2d5">
+<div id="outline-container-org087bed8" class="outline-3">
+<h3 id="org087bed8">wwan: 手动启动/关闭wwan(3G/4G)设备</h3>
+<div class="outline-text-3" id="text-org087bed8">
 <dl class="org-dl">
 <dt>sudo wwan on</dt><dd>手动启动wwlan设备</dd>
 <dt>sudo wwan off</dt><dd>手动关闭wwlan设备</dd>
@@ -225,11 +226,32 @@ TLP中最常用的命令有这么几个：
 </div>
 </div>
 </div>
-<div id="outline-container-orgc1891b8" class="outline-2">
-<h2 id="orgc1891b8">配置TLP</h2>
-<div class="outline-text-2" id="text-orgc1891b8">
+<div id="outline-container-orga5a353f" class="outline-2">
+<h2 id="orga5a353f">配置TLP</h2>
+<div class="outline-text-2" id="text-orga5a353f">
 <p>
 TLP的配置文件放在 <code>/etc/default/tlp</code> 中，详细的配置方法请参见<a href="http://linrunner.de/en/tlp/docs/tlp-configuration.html">官网上的说明</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org6760b35" class="outline-2">
+<h2 id="org6760b35">TLPUI</h2>
+<div class="outline-text-2" id="text-org6760b35">
+<p>
+TLP本身并不自带图形化用户界面，但是有一个第三方的GTK GUI界面可以使用，名叫 TLPUI
+</p>
+
+<p>
+archlinux的aur仓库中就有这个应用,可以通过下面这个命令来安装
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">aurman -S tlpui-git
+</pre>
+</div>
+
+<p>
+安装后直接运行 <code>tlpui</code> 就能打开应用
+<img src="./images/TPLUI-01.png" alt="TPLUI-01.png" />
 </p>
 </div>
 </div>
@@ -239,7 +261,7 @@ TLP的配置文件放在 <code>/etc/default/tlp</code> 中，详细的配置方�
 <div>
         <div class="post-meta">
             <span title="post date" class="post-info">2018-04-24</span>
-            <span title="last modification date" class="post-info">2018-04-27</span>
+            <span title="last modification date" class="post-info">2018-09-12</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
             <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
         </div>

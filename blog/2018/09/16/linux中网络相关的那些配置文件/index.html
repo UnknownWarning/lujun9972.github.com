@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>linux中网络相关的那些配置文件 - 暗无天日</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="author" content="lujun9972" />
+  <meta name="keywords" content="linux和它的小伙伴" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
+   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+</head>
+
+  <body><div class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
+        <ul>
+          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+          <li><a href="https://lujun9972.github.io/about/">About</a></li>
+          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1 class="title">linux中网络相关的那些配置文件</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1b6ff4d">/etc/networks</a></li>
+<li><a href="#org4038dcc">/etc/protocols</a></li>
+<li><a href="#org9dd1ee1">/etc/resolv.conf</a></li>
+<li><a href="#orgad6cf90">/etc/services</a></li>
+<li><a href="#org4fcf2da">/etc/xinetd.conf</a></li>
+<li><a href="#org76b5ef7">/etc/hostname</a></li>
+<li><a href="#org05cb4ba">/etc/host.conf</a></li>
+<li><a href="#org73100b9">/etc/sysconfig/network</a></li>
+<li><a href="#orgef6705b">/etc/sysconfig/network-scripts/if*</a></li>
+<li><a href="#org3011f46">/etc/hosts</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1b6ff4d" class="outline-2">
+<h2 id="org1b6ff4d">/etc/networks</h2>
+<div class="outline-text-2" id="text-org1b6ff4d">
+<p>
+机器所连接的网络中那些可以访问的网络名和网络地址
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4038dcc" class="outline-2">
+<h2 id="org4038dcc">/etc/protocols</h2>
+<div class="outline-text-2" id="text-org4038dcc">
+<p>
+列举了当前可用的协议名称
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9dd1ee1" class="outline-2">
+<h2 id="org9dd1ee1">/etc/resolv.conf</h2>
+<div class="outline-text-2" id="text-org9dd1ee1">
+<p>
+DNS服务器信息
+</p>
+
+<div class="org-src-container">
+<pre class="src src-conf">search domainname.com
+nameserver 192.168.1.2
+nameserver 8.8.8.8
+</pre>
+</div>
+
+<p>
+其中 <code>search domainname.com</code> 表示当提供一个不包含完全域名的主机时，在该主机名后添加 <code>domainname.com</code> 的后缀
+</p>
+
+<p>
+<code>nameserver xx.xx.xx.xx</code> 表示解析域名时使用 <code>xx.xx.xx.xx</code> 作为DNS服务器.
+域名按照 <code>nameserver</code> 中指定的顺序来进行查询的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgad6cf90" class="outline-2">
+<h2 id="orgad6cf90">/etc/services</h2>
+<div class="outline-text-2" id="text-orgad6cf90">
+<p>
+列举服务器名称对应的端口号和协议
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4fcf2da" class="outline-2">
+<h2 id="org4fcf2da">/etc/xinetd.conf</h2>
+<div class="outline-text-2" id="text-org4fcf2da">
+<p>
+xinetd的配置文件，其中包含网络服务的相关信息。 目前似乎用的比较少了
+</p>
+
+<p>
+需要注意的是，若在 <code>/etc/services</code> 中将服务注释掉，则即使相应的网络服务启动，也是不可用的
+</p>
+</div>
+</div>
+
+<div id="outline-container-org76b5ef7" class="outline-2">
+<h2 id="org76b5ef7">/etc/hostname</h2>
+<div class="outline-text-2" id="text-org76b5ef7">
+<p>
+包含了系统的主机名，包括完整的域名
+</p>
+</div>
+</div>
+
+<div id="outline-container-org05cb4ba" class="outline-2">
+<h2 id="org05cb4ba">/etc/host.conf</h2>
+<div class="outline-text-2" id="text-org05cb4ba">
+<p>
+指定如何解析主机名
+</p>
+
+<div class="org-src-container">
+<pre class="src src-conf">order bind,hosts
+multi on
+nospoof on
+</pre>
+</div>
+
+<p>
+其中:
+</p>
+
+<ul class="org-ul">
+<li><code>order bind,hosts</code> 指定文件名查询顺序为先使用DNS解析域名，然后再查询 <code>/etc/hosts</code> 文件</li>
+<li><code>multi on</code> 指定 <code>/etc/hosts</code> 文件中指定的主机是否可以有多个IP地址</li>
+<li><code>nospoof on</code> 指不允许对该服务器进行IP地址欺骗。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org73100b9" class="outline-2">
+<h2 id="org73100b9">/etc/sysconfig/network</h2>
+<div class="outline-text-2" id="text-org73100b9">
+<p>
+用来指定服务器上网络配置信息
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #7590db;">NETWORK</span>=yes
+<span style="color: #7590db;">FORWARD_IPV4</span>=yes
+<span style="color: #7590db;">hostname</span>=hostname.domain.name
+<span style="color: #7590db;">GATEWAY</span>=0.0.0.0
+<span style="color: #7590db;">GATEWAYDEV</span>=enp0s3
+</pre>
+</div>
+
+<p>
+其中:
+</p>
+
+<dl class="org-dl">
+<dt>NETWORK</dt><dd>网络是否被配置</dd>
+<dt>FORWARD_IPV4</dt><dd>是否开启IPV4的转发功能</dd>
+<dt>hostname</dt><dd>服务器主机名</dd>
+<dt>GATEWAY</dt><dd>网络网关的IP地址</dd>
+<dt>GATEWAYDEV</dt><dd>网络的设备名</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgef6705b" class="outline-2">
+<h2 id="orgef6705b">/etc/sysconfig/network-scripts/if*</h2>
+<div class="outline-text-2" id="text-orgef6705b">
+<p>
+REDHAT的网络配置脚本
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">cat /etc/sysconfig/network-scripts/ifcfg-enp0s3
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=dhcp
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=yes
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=enp0s3
+UUID=eadb9827-37e2-468a-9129-8a0b9810c08a
+DEVICE=enp0s3
+ONBOOT=yes
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3011f46" class="outline-2">
+<h2 id="org3011f46">/etc/hosts</h2>
+<div class="outline-text-2" id="text-org3011f46">
+<p>
+主机与IP的对应关系
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<div>
+        <div class="post-meta">
+            <span title="post date" class="post-info">2018-09-16</span>
+            <span title="last modification date" class="post-info">2018-09-17</span>
+            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+        </div>
+    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+        <section>
+            <h1>Comments</h1>
+            <div id="comment-wrap">
+                    <a class="disqus_label">使用 Disqus 评论</a>
+    </ul>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+         //var disqus_developer = 1;
+         var preempt_signal=false;
+         var disqus_identifier = "/blog/2018/09/16/linux中网络相关的那些配置文件/";
+         var disqus_url = "https://lujun9972.github.io/blog/2018/09/16/linux中网络相关的那些配置文件/";
+         var disqus_shortname = 'lujun9972';
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             $('#disqus_thread').css('display','none');
+         })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script>
+     /* comments */
+     var ego_disqus_thread=$('#disqus_thread');
+     var ego_ds_label=$('.ds-thread');
+     $('.disqus_label').click(function(){
+         ego_disqus_thread.show();
+         ego_ds_label.hide();
+     });
+     $('.ds-label').click(function(){
+         ego_disqus_thread.hide();
+         ego_ds_label.show();
+     });
+    </script>
+        </section>
+    <script src="https://lujun9972.github.io/media/js/main.js"></script>
+    <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+    </div>
+            </div>
+            <script type="text/javascript"
+                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+            </script>
+            <script type="text/x-mathjax-config">
+             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+            </script>
+</div>
+
+  </div></body>
+</html>

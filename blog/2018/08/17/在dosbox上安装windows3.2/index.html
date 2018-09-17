@@ -44,46 +44,45 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge78f301">安装DOS6.22</a>
+<li><a href="#orge5944e2">安装DOS6.22</a>
 <ul>
-<li><a href="#org492aa99">下载DOS启动镜像</a></li>
-<li><a href="#org205f917">创建一个磁盘镜像作为C盘</a>
+<li><a href="#org88caca8">下载DOS启动镜像</a></li>
+<li><a href="#org462003e">创建一个磁盘镜像作为C盘</a>
 <ul>
-<li><a href="#orgf4dc935">创建镜像文件</a></li>
-<li><a href="#org9647268">打开 <code>~/.dosbox/dosbox-0.74.conf</code> 在 <code>[autoexec]</code> 节下添加如下内容</a></li>
+<li><a href="#org58ab949">创建镜像文件</a></li>
+<li><a href="#org9d1a028">打开 <code>~/.dosbox/dosbox-0.74.conf</code> 在 <code>[autoexec]</code> 节下添加如下内容</a></li>
 </ul>
 </li>
-<li><a href="#org2ffe2be">安装dos6.22</a>
+<li><a href="#org906f23d">安装dos6.22</a>
 <ul>
-<li><a href="#org9065ddb">启动dosbox，开始安装dos6.22</a></li>
-<li><a href="#orge433fdd">更改配置，从硬盘镜像引导系统</a></li>
+<li><a href="#org0b7400b">启动dosbox，开始安装dos6.22</a></li>
+<li><a href="#org0e9ec5a">更改配置，从硬盘镜像引导系统</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc1a574d">安装Windows3.2</a>
+<li><a href="#org6d05a9b">安装Windows3.2</a>
 <ul>
-<li><a href="#org084b162">下载Windows3.2安装文件</a></li>
-<li><a href="#orgd2869ef">挂载 DOSBOX 的硬盘镜像文件，将 windows 安装文件拷贝进去</a></li>
-<li><a href="#org25c6d29">安装Windows3.2</a></li>
-<li><a href="#orgd31259a">设置启动DOSBOX自动启动windows</a></li>
-<li><a href="#org54776af">安装显卡驱动</a></li>
-<li><a href="#org6a2f3e1">设置声音</a></li>
+<li><a href="#orgc09dcd0">下载Windows3.2安装文件</a></li>
+<li><a href="#orge53880d">挂载 DOSBOX 的硬盘镜像文件，将 windows 安装文件拷贝进去</a></li>
+<li><a href="#org51927b7">安装Windows3.2</a></li>
+<li><a href="#orgcbe7478">设置启动DOSBOX自动启动windows</a></li>
+<li><a href="#orgef885f1">安装显卡驱动</a></li>
+<li><a href="#org1faba5f">设置声音</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge78f301" class="outline-2">
-<h2 id="orge78f301">安装DOS6.22</h2>
-<div class="outline-text-2" id="text-orge78f301">
+<div id="outline-container-orge5944e2" class="outline-2">
+<h2 id="orge5944e2">安装DOS6.22</h2>
+<div class="outline-text-2" id="text-orge5944e2">
 </div>
-<div id="outline-container-org492aa99" class="outline-3">
-<h3 id="org492aa99">下载DOS启动镜像</h3>
-<div class="outline-text-3" id="text-org492aa99">
-<ol class="org-ol">
-<li><p>
+<div id="outline-container-org88caca8" class="outline-3">
+<h3 id="org88caca8">下载DOS启动镜像</h3>
+<div class="outline-text-3" id="text-org88caca8">
+<p>
 下载并解压DOS安装的软盘镜像
 </p>
 
@@ -119,21 +118,20 @@ dos1.img
 dos2.img
 dos3.img
 </pre>
-</div></li>
-</ol>
 </div>
 </div>
-<div id="outline-container-org205f917" class="outline-3">
-<h3 id="org205f917">创建一个磁盘镜像作为C盘</h3>
-<div class="outline-text-3" id="text-org205f917">
+</div>
+<div id="outline-container-org462003e" class="outline-3">
+<h3 id="org462003e">创建一个磁盘镜像作为C盘</h3>
+<div class="outline-text-3" id="text-org462003e">
 <p>
 我们将会将这个磁盘镜像挂载为C盘，并在上面安装操作系统
 </p>
 </div>
 
-<div id="outline-container-orgf4dc935" class="outline-4">
-<h4 id="orgf4dc935">创建镜像文件</h4>
-<div class="outline-text-4" id="text-orgf4dc935">
+<div id="outline-container-org58ab949" class="outline-4">
+<h4 id="org58ab949">创建镜像文件</h4>
+<div class="outline-text-4" id="text-org58ab949">
 <p>
 这个磁盘文件不需要太大，256M已经算是很大了:
 </p>
@@ -144,9 +142,9 @@ dos3.img
 </div>
 </div>
 
-<div id="outline-container-org9647268" class="outline-4">
-<h4 id="org9647268">打开 <code>~/.dosbox/dosbox-0.74.conf</code> 在 <code>[autoexec]</code> 节下添加如下内容</h4>
-<div class="outline-text-4" id="text-org9647268">
+<div id="outline-container-org9d1a028" class="outline-4">
+<h4 id="org9d1a028">打开 <code>~/.dosbox/dosbox-0.74.conf</code> 在 <code>[autoexec]</code> 节下添加如下内容</h4>
+<div class="outline-text-4" id="text-org9d1a028">
 <div class="org-src-container">
 <pre class="src src-conf">mount Y: ~/Downloads/dos622 <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">&#23558;dos&#23433;&#35013;&#30446;&#24405;&#25346;&#36733;&#25104;Y&#30424;</span>
 Y:                                        <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">&#23558;&#24403;&#21069;&#30446;&#24405;&#20999;&#25442;&#21040;Y&#30424;</span>
@@ -245,13 +243,13 @@ BOOT [diskimg1.img diskimg2.img .. diskimgN.img] [-l driveletter]
 </div>
 </div>
 
-<div id="outline-container-org2ffe2be" class="outline-3">
-<h3 id="org2ffe2be">安装dos6.22</h3>
-<div class="outline-text-3" id="text-org2ffe2be">
+<div id="outline-container-org906f23d" class="outline-3">
+<h3 id="org906f23d">安装dos6.22</h3>
+<div class="outline-text-3" id="text-org906f23d">
 </div>
-<div id="outline-container-org9065ddb" class="outline-4">
-<h4 id="org9065ddb">启动dosbox，开始安装dos6.22</h4>
-<div class="outline-text-4" id="text-org9065ddb">
+<div id="outline-container-org0b7400b" class="outline-4">
+<h4 id="org0b7400b">启动dosbox，开始安装dos6.22</h4>
+<div class="outline-text-4" id="text-org0b7400b">
 <div class="org-src-container">
 <pre class="src src-shell">dosbox
 </pre>
@@ -279,9 +277,9 @@ BOOT [diskimg1.img diskimg2.img .. diskimgN.img] [-l driveletter]
 </div>
 </div>
 
-<div id="outline-container-orge433fdd" class="outline-4">
-<h4 id="orge433fdd">更改配置，从硬盘镜像引导系统</h4>
-<div class="outline-text-4" id="text-orge433fdd">
+<div id="outline-container-org0e9ec5a" class="outline-4">
+<h4 id="org0e9ec5a">更改配置，从硬盘镜像引导系统</h4>
+<div class="outline-text-4" id="text-org0e9ec5a">
 <p>
 更改DOSBOX的配置文件，将 <code>[autoexec]</code> 中的配置修改为
 </p>
@@ -293,13 +291,13 @@ boot -l c
 </div>
 </div>
 </div>
-<div id="outline-container-orgc1a574d" class="outline-2">
-<h2 id="orgc1a574d">安装Windows3.2</h2>
-<div class="outline-text-2" id="text-orgc1a574d">
+<div id="outline-container-org6d05a9b" class="outline-2">
+<h2 id="org6d05a9b">安装Windows3.2</h2>
+<div class="outline-text-2" id="text-org6d05a9b">
 </div>
-<div id="outline-container-org084b162" class="outline-3">
-<h3 id="org084b162">下载Windows3.2安装文件</h3>
-<div class="outline-text-3" id="text-org084b162">
+<div id="outline-container-orgc09dcd0" class="outline-3">
+<h3 id="orgc09dcd0">下载Windows3.2安装文件</h3>
+<div class="outline-text-3" id="text-orgc09dcd0">
 <ol class="org-ol">
 <li><p>
 我们可以从 <a href="https://www.jb51.net/softs/127428.html">这里</a> 下载Windows3.2的安装文件:
@@ -352,9 +350,9 @@ windows3.2.rar
 </div>
 </div>
 
-<div id="outline-container-orgd2869ef" class="outline-3">
-<h3 id="orgd2869ef">挂载 DOSBOX 的硬盘镜像文件，将 windows 安装文件拷贝进去</h3>
-<div class="outline-text-3" id="text-orgd2869ef">
+<div id="outline-container-orge53880d" class="outline-3">
+<h3 id="orge53880d">挂载 DOSBOX 的硬盘镜像文件，将 windows 安装文件拷贝进去</h3>
+<div class="outline-text-3" id="text-orge53880d">
 <ol class="org-ol">
 <li><p>
 创建一个loop设备用来表示DOSBOX的硬盘镜像文件
@@ -410,9 +408,9 @@ sudo losetup -d /dev/loop1
 </div>
 </div>
 
-<div id="outline-container-org25c6d29" class="outline-3">
-<h3 id="org25c6d29">安装Windows3.2</h3>
-<div class="outline-text-3" id="text-org25c6d29">
+<div id="outline-container-org51927b7" class="outline-3">
+<h3 id="org51927b7">安装Windows3.2</h3>
+<div class="outline-text-3" id="text-org51927b7">
 <ol class="org-ol">
 <li><p>
 启动dosbox
@@ -462,9 +460,9 @@ setup
 </div>
 
 
-<div id="outline-container-orgd31259a" class="outline-3">
-<h3 id="orgd31259a">设置启动DOSBOX自动启动windows</h3>
-<div class="outline-text-3" id="text-orgd31259a">
+<div id="outline-container-orgcbe7478" class="outline-3">
+<h3 id="orgcbe7478">设置启动DOSBOX自动启动windows</h3>
+<div class="outline-text-3" id="text-orgcbe7478">
 <p>
 只需要在 <code>c:\autoexec.bat</code> 最后添加 <code>win</code> 就行了
 </p>
@@ -477,9 +475,9 @@ setup
 </div>
 </div>
 
-<div id="outline-container-org54776af" class="outline-3">
-<h3 id="org54776af">安装显卡驱动</h3>
-<div class="outline-text-3" id="text-org54776af">
+<div id="outline-container-orgef885f1" class="outline-3">
+<h3 id="orgef885f1">安装显卡驱动</h3>
+<div class="outline-text-3" id="text-orgef885f1">
 <ol class="org-ol">
 <li><p>
 挂载DOSBOX硬盘镜像文件
@@ -609,9 +607,9 @@ setup
 </div>
 </div>
 
-<div id="outline-container-org6a2f3e1" class="outline-3">
-<h3 id="org6a2f3e1">设置声音</h3>
-<div class="outline-text-3" id="text-org6a2f3e1">
+<div id="outline-container-org1faba5f" class="outline-3">
+<h3 id="org1faba5f">设置声音</h3>
+<div class="outline-text-3" id="text-org1faba5f">
 <p>
 DOSBOX模拟了一个 Sound Blaster 接口，但是在Windows上需要经过设置才能通过它来发出声音。
 </p>
@@ -650,7 +648,7 @@ DOSBOX模拟了一个 Sound Blaster 接口，但是在Windows上需要经过设�
 <div>
         <div class="post-meta">
             <span title="post date" class="post-info">2018-08-17</span>
-            <span title="last modification date" class="post-info">2018-08-18</span>
+            <span title="last modification date" class="post-info">2018-09-12</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
             <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
         </div>

@@ -4,79 +4,79 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>六, 18 8月 2018 11:35:57 CST</pubDate>
-    <lastBuildDate>六, 18 8月 2018 11:35:57 CST</lastBuildDate>
+    <pubDate>一, 17 9月 2018 21:48:59 CST</pubDate>
+    <lastBuildDate>一, 17 9月 2018 21:48:59 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
 <item>
-<title>使用unrar解压分片rar压缩文件</title>
-<link>https://lujun9972.github.io/blog/2018/08/18/使用unrar解压分片rar压缩文件/</link>
+<title>linux中网络相关的那些配置文件</title>
+<link>https://lujun9972.github.io/blog/2018/09/16/linux中网络相关的那些配置文件/</link>
 <description>No Description</description>
-<pubDate>2018-08-18</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/08/18/使用unrar解压分片rar压缩文件/</guid>
+<pubDate>2018-09-17</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/16/linux中网络相关的那些配置文件/</guid>
 </item>
 <item>
-<title>命令行查看GPU内存容量</title>
-<link>https://lujun9972.github.io/blog/2018/08/14/命令行查看gpu内存容量/</link>
+<title>使用iw连接无线网络</title>
+<link>https://lujun9972.github.io/blog/2018/09/16/使用iw连接无线网络/</link>
 <description>No Description</description>
-<pubDate>2018-08-18</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/08/14/命令行查看gpu内存容量/</guid>
+<pubDate>2018-09-16</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/16/使用iw连接无线网络/</guid>
+</item>
+<item>
+<title>常用的8个第三方YUM源</title>
+<link>https://lujun9972.github.io/blog/2018/09/16/常用的8个第三方yum源/</link>
+<description>No Description</description>
+<pubDate>2018-09-16</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/16/常用的8个第三方yum源/</guid>
+</item>
+<item>
+<title>更改slack-desktop的显示图标</title>
+<link>https://lujun9972.github.io/blog/2018/09/14/更改slack-desktop的显示图标/</link>
+<description>No Description</description>
+<pubDate>2018-09-14</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/14/更改slack-desktop的显示图标/</guid>
+</item>
+<item>
+<title>使用nmap进行网络发现</title>
+<link>https://lujun9972.github.io/blog/2018/09/12/使用nmap进行网络发现/</link>
+<description>No Description</description>
+<pubDate>2018-09-13</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/12/使用nmap进行网络发现/</guid>
+</item>
+<item>
+<title>体验libvirt虚拟机</title>
+<link>https://lujun9972.github.io/blog/2018/07/31/体验libvirt虚拟机/</link>
+<description>No Description</description>
+<pubDate>2018-09-12</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/07/31/体验libvirt虚拟机/</guid>
+</item>
+<item>
+<title>使用tlp优化电池消耗</title>
+<link>https://lujun9972.github.io/blog/2018/04/24/使用tlp优化电池消耗/</link>
+<description>No Description</description>
+<pubDate>2018-09-12</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/04/24/使用tlp优化电池消耗/</guid>
 </item>
 <item>
 <title>在DosBox上安装windows3.2</title>
 <link>https://lujun9972.github.io/blog/2018/08/17/在dosbox上安装windows3.2/</link>
 <description>No Description</description>
-<pubDate>2018-08-18</pubDate>
+<pubDate>2018-09-12</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/08/17/在dosbox上安装windows3.2/</guid>
 </item>
 <item>
-<title>误删除dev下特殊文件怎么办</title>
-<link>https://lujun9972.github.io/blog/2018/08/18/误删除dev下特殊文件怎么办/</link>
+<title>使用mdadm设置RAID</title>
+<link>https://lujun9972.github.io/blog/2018/09/10/使用mdadm设置raid/</link>
 <description>No Description</description>
-<pubDate>2018-08-18</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/08/18/误删除dev下特殊文件怎么办/</guid>
+<pubDate>2018-09-11</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/10/使用mdadm设置raid/</guid>
 </item>
 <item>
-<title>Vagrant使用指南</title>
-<link>https://lujun9972.github.io/blog/2018/07/29/vagrant使用指南/</link>
+<title>设置sudo的超时时间</title>
+<link>https://lujun9972.github.io/blog/2018/09/10/设置sudo的超时时间/</link>
 <description>No Description</description>
-<pubDate>2018-08-16</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/07/29/vagrant使用指南/</guid>
-</item>
-<item>
-<title>运行tail|grep后按下Ctrl-C的过程中发生了什么</title>
-<link>https://lujun9972.github.io/blog/2018/08/16/运行tail|grep后按下ctrl-c的过程中发生了什么/</link>
-<description>No Description</description>
-<pubDate>2018-08-16</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/08/16/运行tail|grep后按下ctrl-c的过程中发生了什么/</guid>
-</item>
-<item>
-<title>不使用第三方工具查看笔记本的电量还剩多少</title>
-<link>https://lujun9972.github.io/blog/2018/08/14/不使用第三方工具查看笔记本的电量还剩多少/</link>
-<description>No Description</description>
-<pubDate>2018-08-14</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/08/14/不使用第三方工具查看笔记本的电量还剩多少/</guid>
-</item>
-<item>
-<title>docker-machine初体验</title>
-<link>https://lujun9972.github.io/blog/2018/08/13/docker-machine初体验/</link>
-<description>No Description</description>
-<pubDate>2018-08-13</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/08/13/docker-machine初体验/</guid>
-</item>
-<item>
-<title>bitlbee</title>
-<link>https://lujun9972.github.io/blog/2018/08/10/bitlbee/</link>
-<description>No Description</description>
-<pubDate>2018-08-10</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/08/10/bitlbee/</guid>
-</item>
-<item>
-<title>使用journalctl查看systemd日志</title>
-<link>https://lujun9972.github.io/blog/2018/08/08/使用journalctl查看systemd日志/</link>
-<description>No Description</description>
-<pubDate>2018-08-09</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/08/08/使用journalctl查看systemd日志/</guid>
+<pubDate>2018-09-10</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/10/设置sudo的超时时间/</guid>
 </item>
 </channel>
 </rss>

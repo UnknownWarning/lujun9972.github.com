@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>使用chrt修改进程调度策略及优先级 - 暗无天日</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="author" content="lujun9972" />
+  <meta name="keywords" content="linux和它的小伙伴" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
+   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+</head>
+
+  <body><div class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
+        <ul>
+          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+          <li><a href="https://lujun9972.github.io/about/">About</a></li>
+          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1 class="title">使用chrt修改进程调度策略及优先级</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org94ebeee">Linux内核调度策略</a></li>
+<li><a href="#org1f72b8b">使用chrt查看/修改进程调度策略</a>
+<ul>
+<li><a href="#orge62a9ce">查看进程的调度策略及优先级</a></li>
+<li><a href="#orgb4f3949">查看每种策略的有效优先级范围</a></li>
+<li><a href="#org18ef2eb">设置进程的调度策略</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org94ebeee" class="outline-2">
+<h2 id="org94ebeee">Linux内核调度策略</h2>
+<div class="outline-text-2" id="text-org94ebeee">
+<p>
+linux内核有五种调度方法：
+</p>
+
+<dl class="org-dl">
+<dt>SCHED_FIFO</dt><dd>first in first out 实时调度策略</dd>
+
+<dt>SCHED_RR</dt><dd>robin round 实时调度策略</dd>
+
+<dt>SCHED_DEADLINE</dt><dd>基于Earliest Deadline First (EDF) 调度算法</dd>
+
+<dt>SCHED_OTHER</dt><dd>分时调度策略</dd>
+
+<dt>SCHED_BATCH</dt><dd>批处理</dd>
+
+<dt>SCHED_IDLE</dt><dd>优先级最低的策略</dd>
+</dl>
+
+<p>
+其中，前三个是实时进程的调度方法,后两个时一般进程的调度算法。 
+实时实时进程一般由操作系统创建，普通用户只能创建普通进程，且不管怎样，实时进程的优先级总是要高于普通进程。
+实时进程根据实时优先级决定调度权值，优先级的设定范围默认为 <code>1-99</code>
+</p>
+
+<p>
+FIFO实时调度策略中的进程一旦处于可执行状态就会一直执行，直到它自己阻塞或者被优先级更高的进程抢占。一般用于延时要求较短的进程，被赋予较高的优先级。
+</p>
+
+<p>
+RR实时调度策略中的进程会有一个时间片，进程执行直到时间片用完或者自己阻塞后系统将重新分配时间片，并该进程置于就绪队列尾.从而保证了所有具有相同优先级的RR任务的调度公平。
+RR实时调度策略同时也能被优先级更高的进程抢占。一般用于延时要求稍长的进程，被赋予较低的优先级。
+</p>
+
+<p>
+SCHED_DEADLINE是新支持的实时进程调度策略，针对突发型计算，且适用于延迟和完成时间高度敏感的任务
+</p>
+
+<p>
+后三个进程是普通进程的调度策略。
+</p>
+
+<p>
+SCHED_OTHER策略是普通进程的默认调度策略。
+SCHED_OTHER调度策略首先根据进程的nice值确定分配CPU的执行时间。若进程没有等待资源则进程变为就绪状态。
+然后调度程序遍历就绪队列中的进程，计算每个进程的动态优先级(counter+20-nice)，并挑选动态优先级最高的进程去运行，直到时间片用完或主动放弃CPU。
+</p>
+
+<p>
+SCHED_BATCH策略与SCHED_OTHER很类似，区别在于该策略认为进程是非交互式的CPU密集型进程，该策略的进程不会去抢占其他SCHED_OTHER调度策略的进程。
+</p>
+
+<p>
+SCHED_IDLE策略则是只有在没有其他进程可运行的状态下才才会被调度
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1f72b8b" class="outline-2">
+<h2 id="org1f72b8b">使用chrt查看/修改进程调度策略</h2>
+<div class="outline-text-2" id="text-org1f72b8b">
+</div>
+<div id="outline-container-orge62a9ce" class="outline-3">
+<h3 id="orge62a9ce">查看进程的调度策略及优先级</h3>
+<div class="outline-text-3" id="text-orge62a9ce">
+<div class="org-src-container">
+<pre class="src src-shell">chrt -p $<span style="color: #7590db;">pid</span>
+</pre>
+</div>
+
+<p>
+比如，我想查看Emacs进程的调度策略及优先级那么可以
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">chrt -p $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">pidof</span> emacs<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">pid 1032 &#24403;&#21069;&#30340;&#35843;&#24230;&#31574;&#30053;&#65072; SCHED_OTHER
+pid 1032 &#30340;&#24403;&#21069;&#35843;&#24230;&#20248;&#20808;&#32423;&#65306;0
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb4f3949" class="outline-3">
+<h3 id="orgb4f3949">查看每种策略的有效优先级范围</h3>
+<div class="outline-text-3" id="text-orgb4f3949">
+<div class="org-src-container">
+<pre class="src src-shell">chrt -m
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">SCHED_OTHER &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423;  : 0/0
+SCHED_FIFO &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423; : 1/99
+SCHED_RR &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423; : 1/99
+SCHED_BATCH &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423;  : 0/0
+SCHED_IDLE &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423; : 0/0
+SCHED_DEADLINE &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423; : 0/0
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org18ef2eb" class="outline-3">
+<h3 id="org18ef2eb">设置进程的调度策略</h3>
+<div class="outline-text-3" id="text-org18ef2eb">
+<div class="org-src-container">
+<pre class="src src-shell">chrt <span style="color: #4f97d7;">[</span>-b/-f/-o/-r/-i/-d<span style="color: #4f97d7;">]</span> -p <span style="color: #4f97d7;">[</span>$<span style="color: #7590db;">priority</span><span style="color: #4f97d7;">]</span> $<span style="color: #7590db;">pid</span>
+</pre>
+</div>
+
+<p>
+其中:
+</p>
+
+<dl class="org-dl">
+<dt>-b</dt><dd>设置为 SCHED_BATCH 调度策略</dd>
+<dt>-f</dt><dd>设置为 SCHED_FIFO 调度策略</dd>
+<dt>-o</dt><dd>设置为 SCHED_OTHER 调度策略</dd>
+<dt>-r</dt><dd>设置为 SCHED_RR 调度策略</dd>
+<dt>-i</dt><dd>设置为 SCHED_IDLE 调度策略</dd>
+<dt>-d</dt><dd>设置为 SCHED_DEADLINE 调度策略</dd>
+<dt>priority</dt><dd>为要设置的优先级</dd>
+</dl>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div>
+        <div class="post-meta">
+            <span title="post date" class="post-info">2018-08-28</span>
+            <span title="last modification date" class="post-info">2018-08-28</span>
+            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+        </div>
+    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+        <section>
+            <h1>Comments</h1>
+            <div id="comment-wrap">
+                    <a class="disqus_label">使用 Disqus 评论</a>
+    </ul>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+         //var disqus_developer = 1;
+         var preempt_signal=false;
+         var disqus_identifier = "/blog/2018/08/28/使用chrt修改进程调度策略及优先级/";
+         var disqus_url = "https://lujun9972.github.io/blog/2018/08/28/使用chrt修改进程调度策略及优先级/";
+         var disqus_shortname = 'lujun9972';
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             $('#disqus_thread').css('display','none');
+         })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script>
+     /* comments */
+     var ego_disqus_thread=$('#disqus_thread');
+     var ego_ds_label=$('.ds-thread');
+     $('.disqus_label').click(function(){
+         ego_disqus_thread.show();
+         ego_ds_label.hide();
+     });
+     $('.ds-label').click(function(){
+         ego_disqus_thread.hide();
+         ego_ds_label.show();
+     });
+    </script>
+        </section>
+    <script src="https://lujun9972.github.io/media/js/main.js"></script>
+    <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+    </div>
+            </div>
+            <script type="text/javascript"
+                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+            </script>
+            <script type="text/x-mathjax-config">
+             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+            </script>
+</div>
+
+  </div></body>
+</html>

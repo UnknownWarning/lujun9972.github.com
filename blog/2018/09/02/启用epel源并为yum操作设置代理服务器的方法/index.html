@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>启用EPEL源并为yum操作设置代理服务器的方法 - 暗无天日</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="author" content="lujun9972" />
+  <meta name="keywords" content="linux和它的小伙伴" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
+   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+</head>
+
+  <body><div class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
+        <ul>
+          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+          <li><a href="https://lujun9972.github.io/about/">About</a></li>
+          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1 class="title">启用EPEL源并为yum操作设置代理服务器的方法</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org91d3c4b">配置EPEL源</a></li>
+<li><a href="#org1e7e45f">为yum操作设定代理服务器</a>
+<ul>
+<li><a href="#org7613ca3">使用全局代理</a></li>
+<li><a href="#org9b62952">为某个用户配置代理</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org91d3c4b" class="outline-2">
+<h2 id="org91d3c4b">配置EPEL源</h2>
+<div class="outline-text-2" id="text-org91d3c4b">
+<p>
+EPEL是Fedora社区打造的为RHEL及衍生发行版提供高质量软件包的项目。
+</p>
+
+<p>
+在RHEL7上安装EPEL非常简单，只需要执行
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+</pre>
+</div>
+
+<p>
+但是EPEL上的软件包是未经RedHat验证的，一般不推荐从这上面安装，因此我们一般默认禁用该仓库
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo sed -i -e <span style="color: #2d9574;">"s/enabled = 1/enabled = 0/g"</span> /etc/yum.repos.d/epel.repo
+</pre>
+</div>
+
+<p>
+之后要从EPEL中安装软件包可以使用yum的 <code>enablerepo</code> 参数来临时启用
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo yum --enablerepo=epel install nmap
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1e7e45f" class="outline-2">
+<h2 id="org1e7e45f">为yum操作设定代理服务器</h2>
+<div class="outline-text-2" id="text-org1e7e45f">
+</div>
+<div id="outline-container-org7613ca3" class="outline-3">
+<h3 id="org7613ca3">使用全局代理</h3>
+<div class="outline-text-3" id="text-org7613ca3">
+<p>
+要为所有yum操作设置代理服务期，可以在 <code>/etc/yum.conf</code> 中设置代理服务器信息
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #7590db;">proxy</span>=http://proxy.domain.com:3128
+<span style="color: #7590db;">proxy_username</span>=proxy_user
+<span style="color: #7590db;">proxy_password</span>=proxy_password
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9b62952" class="outline-3">
+<h3 id="org9b62952">为某个用户配置代理</h3>
+<div class="outline-text-3" id="text-org9b62952">
+<p>
+为单个用户设置yumd代理，只需要设置过 <code>http_proxy</code> 或 <code>https_proxy</code> 这两个环境变量即可
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #7590db;">http_proxy</span>=<span style="color: #2d9574;">"http://user:password@proxy.domain.com:3128"</span>
+<span style="color: #4f97d7;">export</span> http_proxy
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div>
+        <div class="post-meta">
+            <span title="post date" class="post-info">2018-09-02</span>
+            <span title="last modification date" class="post-info">2018-09-02</span>
+            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+        </div>
+    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+        <section>
+            <h1>Comments</h1>
+            <div id="comment-wrap">
+                    <a class="disqus_label">使用 Disqus 评论</a>
+    </ul>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+         //var disqus_developer = 1;
+         var preempt_signal=false;
+         var disqus_identifier = "/blog/2018/09/02/启用epel源并为yum操作设置代理服务器的方法/";
+         var disqus_url = "https://lujun9972.github.io/blog/2018/09/02/启用epel源并为yum操作设置代理服务器的方法/";
+         var disqus_shortname = 'lujun9972';
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             $('#disqus_thread').css('display','none');
+         })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script>
+     /* comments */
+     var ego_disqus_thread=$('#disqus_thread');
+     var ego_ds_label=$('.ds-thread');
+     $('.disqus_label').click(function(){
+         ego_disqus_thread.show();
+         ego_ds_label.hide();
+     });
+     $('.ds-label').click(function(){
+         ego_disqus_thread.hide();
+         ego_ds_label.show();
+     });
+    </script>
+        </section>
+    <script src="https://lujun9972.github.io/media/js/main.js"></script>
+    <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+    </div>
+            </div>
+            <script type="text/javascript"
+                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+            </script>
+            <script type="text/x-mathjax-config">
+             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+            </script>
+</div>
+
+  </div></body>
+</html>
