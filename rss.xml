@@ -4,10 +4,66 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>一, 17 9月 2018 21:48:59 CST</pubDate>
-    <lastBuildDate>一, 17 9月 2018 21:48:59 CST</lastBuildDate>
+    <pubDate>一, 24 9月 2018 11:17:15 CST</pubDate>
+    <lastBuildDate>一, 24 9月 2018 11:17:15 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>使用dpkg-reconfigure重新配置已安装好的应用</title>
+<link>https://lujun9972.github.io/blog/2018/09/24/使用dpkg-reconfigure重新配置已安装好的应用/</link>
+<description>No Description</description>
+<pubDate>2018-09-24</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/24/使用dpkg-reconfigure重新配置已安装好的应用/</guid>
+</item>
+<item>
+<title>如何设置容器中的时区</title>
+<link>https://lujun9972.github.io/blog/2018/09/23/如何设置容器中的时区/</link>
+<description>No Description</description>
+<pubDate>2018-09-23</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/23/如何设置容器中的时区/</guid>
+</item>
+<item>
+<title>Elisp中如何获取文件的绝对路径</title>
+<link>https://lujun9972.github.io/blog/2018/09/22/elisp中如何获取文件的绝对路径/</link>
+<description>No Description</description>
+<pubDate>2018-09-22</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/22/elisp中如何获取文件的绝对路径/</guid>
+</item>
+<item>
+<title>使用chattr实现对文件属性的精细化管理</title>
+<link>https://lujun9972.github.io/blog/2018/09/22/使用chattr实现对文件属性的精细化管理/</link>
+<description>No Description</description>
+<pubDate>2018-09-22</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/22/使用chattr实现对文件属性的精细化管理/</guid>
+</item>
+<item>
+<title>使用timedatectl进行时间设置</title>
+<link>https://lujun9972.github.io/blog/2018/09/21/使用timedatectl进行时间设置/</link>
+<description>No Description</description>
+<pubDate>2018-09-21</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/21/使用timedatectl进行时间设置/</guid>
+</item>
+<item>
+<title>在archlinux安装配置VNC Server</title>
+<link>https://lujun9972.github.io/blog/2018/09/20/在archlinux安装配置vnc-server/</link>
+<description>No Description</description>
+<pubDate>2018-09-20</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/20/在archlinux安装配置vnc-server/</guid>
+</item>
+<item>
+<title>Emacs中如何在指定目录下运行shell命令</title>
+<link>https://lujun9972.github.io/blog/2018/09/19/emacs中如何在指定目录下运行shell命令/</link>
+<description>No Description</description>
+<pubDate>2018-09-19</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/19/emacs中如何在指定目录下运行shell命令/</guid>
+</item>
+<item>
+<title>如何查看进程的内存占用量</title>
+<link>https://lujun9972.github.io/blog/2018/09/18/如何查看进程的内存占用量/</link>
+<description>No Description</description>
+<pubDate>2018-09-18</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/09/18/如何查看进程的内存占用量/</guid>
+</item>
 <item>
 <title>linux中网络相关的那些配置文件</title>
 <link>https://lujun9972.github.io/blog/2018/09/16/linux中网络相关的那些配置文件/</link>
@@ -21,62 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-09-16</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/09/16/使用iw连接无线网络/</guid>
-</item>
-<item>
-<title>常用的8个第三方YUM源</title>
-<link>https://lujun9972.github.io/blog/2018/09/16/常用的8个第三方yum源/</link>
-<description>No Description</description>
-<pubDate>2018-09-16</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/16/常用的8个第三方yum源/</guid>
-</item>
-<item>
-<title>更改slack-desktop的显示图标</title>
-<link>https://lujun9972.github.io/blog/2018/09/14/更改slack-desktop的显示图标/</link>
-<description>No Description</description>
-<pubDate>2018-09-14</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/14/更改slack-desktop的显示图标/</guid>
-</item>
-<item>
-<title>使用nmap进行网络发现</title>
-<link>https://lujun9972.github.io/blog/2018/09/12/使用nmap进行网络发现/</link>
-<description>No Description</description>
-<pubDate>2018-09-13</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/12/使用nmap进行网络发现/</guid>
-</item>
-<item>
-<title>体验libvirt虚拟机</title>
-<link>https://lujun9972.github.io/blog/2018/07/31/体验libvirt虚拟机/</link>
-<description>No Description</description>
-<pubDate>2018-09-12</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/07/31/体验libvirt虚拟机/</guid>
-</item>
-<item>
-<title>使用tlp优化电池消耗</title>
-<link>https://lujun9972.github.io/blog/2018/04/24/使用tlp优化电池消耗/</link>
-<description>No Description</description>
-<pubDate>2018-09-12</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/04/24/使用tlp优化电池消耗/</guid>
-</item>
-<item>
-<title>在DosBox上安装windows3.2</title>
-<link>https://lujun9972.github.io/blog/2018/08/17/在dosbox上安装windows3.2/</link>
-<description>No Description</description>
-<pubDate>2018-09-12</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/08/17/在dosbox上安装windows3.2/</guid>
-</item>
-<item>
-<title>使用mdadm设置RAID</title>
-<link>https://lujun9972.github.io/blog/2018/09/10/使用mdadm设置raid/</link>
-<description>No Description</description>
-<pubDate>2018-09-11</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/10/使用mdadm设置raid/</guid>
-</item>
-<item>
-<title>设置sudo的超时时间</title>
-<link>https://lujun9972.github.io/blog/2018/09/10/设置sudo的超时时间/</link>
-<description>No Description</description>
-<pubDate>2018-09-10</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/10/设置sudo的超时时间/</guid>
 </item>
 </channel>
 </rss>
