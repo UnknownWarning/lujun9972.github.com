@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,17 +54,17 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org79d7df1">/var/log/boot.log</a></li>
-<li><a href="#org5c94242">/var/log/secure (RHEL/CentOS) &amp; /var/log/auth.log (Debian/ubuntu)</a></li>
-<li><a href="#orgfa83be4">/var/log/faillog</a></li>
-<li><a href="#org4c49d08">/var/log/dmesg</a></li>
-<li><a href="#org26a4f89">/var/log/messages (RHRL/CentOS) &amp; /var/log/syslog (Ubuntu/Debian)</a></li>
-<li><a href="#orgf7786f5">/var/log/daemon.log</a></li>
-<li><a href="#orgbe1919c">/var/log/kern.log</a></li>
-<li><a href="#org2c0e02a">/var/log/setroubleshoot</a></li>
-<li><a href="#org5abb28f">/var/log/yum.log</a></li>
-<li><a href="#orgc417ec9">/var/log/mail.log /var/log/maillog</a></li>
-<li><a href="#org6b122bf">/var/log/cron.log</a></li>
+<li><a href="#orga694c2f">/var/log/boot.log</a></li>
+<li><a href="#orga2fab98">/var/log/secure (RHEL/CentOS) &amp; /var/log/auth.log (Debian/ubuntu)</a></li>
+<li><a href="#org2a9ae49">/var/log/faillog</a></li>
+<li><a href="#org0bc7116">/var/log/dmesg</a></li>
+<li><a href="#org80c0d88">/var/log/messages (RHRL/CentOS) &amp; /var/log/syslog (Ubuntu/Debian)</a></li>
+<li><a href="#orgc2ded35">/var/log/daemon.log</a></li>
+<li><a href="#org35bb9b8">/var/log/kern.log</a></li>
+<li><a href="#org686503c">/var/log/setroubleshoot</a></li>
+<li><a href="#org0f7594f">/var/log/yum.log</a></li>
+<li><a href="#org7247bfb">/var/log/mail.log /var/log/maillog</a></li>
+<li><a href="#orga0169cf">/var/log/cron.log</a></li>
 </ul>
 </div>
 </div>
@@ -62,9 +72,9 @@
 从 <a href="https://linuxtechlab.com/important-logs-monitor-identify-issues/">https://linuxtechlab.com/important-logs-monitor-identify-issues/</a> 看到的
 </p>
 
-<div id="outline-container-org79d7df1" class="outline-2">
-<h2 id="org79d7df1">/var/log/boot.log</h2>
-<div class="outline-text-2" id="text-org79d7df1">
+<div id="outline-container-orga694c2f" class="outline-2">
+<h2 id="orga694c2f">/var/log/boot.log</h2>
+<div class="outline-text-2" id="text-orga694c2f">
 <p>
 存储了与系统启动相关的信息。
 </p>
@@ -75,9 +85,9 @@
 </div>
 </div>
 
-<div id="outline-container-org5c94242" class="outline-2">
-<h2 id="org5c94242">/var/log/secure (RHEL/CentOS) &amp; /var/log/auth.log (Debian/ubuntu)</h2>
-<div class="outline-text-2" id="text-org5c94242">
+<div id="outline-container-orga2fab98" class="outline-2">
+<h2 id="orga2fab98">/var/log/secure (RHEL/CentOS) &amp; /var/log/auth.log (Debian/ubuntu)</h2>
+<div class="outline-text-2" id="text-orga2fab98">
 <p>
 存储了与用户认证有关的信息.
 </p>
@@ -88,27 +98,27 @@
 </div>
 </div>
 
-<div id="outline-container-orgfa83be4" class="outline-2">
-<h2 id="orgfa83be4">/var/log/faillog</h2>
-<div class="outline-text-2" id="text-orgfa83be4">
+<div id="outline-container-org2a9ae49" class="outline-2">
+<h2 id="org2a9ae49">/var/log/faillog</h2>
+<div class="outline-text-2" id="text-org2a9ae49">
 <p>
 记录了所有登录系统的失败尝试。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4c49d08" class="outline-2">
-<h2 id="org4c49d08">/var/log/dmesg</h2>
-<div class="outline-text-2" id="text-org4c49d08">
+<div id="outline-container-org0bc7116" class="outline-2">
+<h2 id="org0bc7116">/var/log/dmesg</h2>
+<div class="outline-text-2" id="text-org0bc7116">
 <p>
 记录的是硬件/驱动相关的信息
 </p>
 </div>
 </div>
 
-<div id="outline-container-org26a4f89" class="outline-2">
-<h2 id="org26a4f89">/var/log/messages (RHRL/CentOS) &amp; /var/log/syslog (Ubuntu/Debian)</h2>
-<div class="outline-text-2" id="text-org26a4f89">
+<div id="outline-container-org80c0d88" class="outline-2">
+<h2 id="org80c0d88">/var/log/messages (RHRL/CentOS) &amp; /var/log/syslog (Ubuntu/Debian)</h2>
+<div class="outline-text-2" id="text-org80c0d88">
 <p>
 存储了那些非要紧的信息
 </p>
@@ -119,18 +129,18 @@
 </div>
 </div>
 
-<div id="outline-container-orgf7786f5" class="outline-2">
-<h2 id="orgf7786f5">/var/log/daemon.log</h2>
-<div class="outline-text-2" id="text-orgf7786f5">
+<div id="outline-container-orgc2ded35" class="outline-2">
+<h2 id="orgc2ded35">/var/log/daemon.log</h2>
+<div class="outline-text-2" id="text-orgc2ded35">
 <p>
 存储了与后台服务相关的信息。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbe1919c" class="outline-2">
-<h2 id="orgbe1919c">/var/log/kern.log</h2>
-<div class="outline-text-2" id="text-orgbe1919c">
+<div id="outline-container-org35bb9b8" class="outline-2">
+<h2 id="org35bb9b8">/var/log/kern.log</h2>
+<div class="outline-text-2" id="text-org35bb9b8">
 <p>
 存储了与核心有关的消息。
 </p>
@@ -141,18 +151,18 @@
 </div>
 </div>
 
-<div id="outline-container-org2c0e02a" class="outline-2">
-<h2 id="org2c0e02a">/var/log/setroubleshoot</h2>
-<div class="outline-text-2" id="text-org2c0e02a">
+<div id="outline-container-org686503c" class="outline-2">
+<h2 id="org686503c">/var/log/setroubleshoot</h2>
+<div class="outline-text-2" id="text-org686503c">
 <p>
 开启了SElinux后，该日志存储了所有与文件security context相关的问题信息。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5abb28f" class="outline-2">
-<h2 id="org5abb28f">/var/log/yum.log</h2>
-<div class="outline-text-2" id="text-org5abb28f">
+<div id="outline-container-org0f7594f" class="outline-2">
+<h2 id="org0f7594f">/var/log/yum.log</h2>
+<div class="outline-text-2" id="text-org0f7594f">
 <p>
 记录了软件安装相关的信息。
 </p>
@@ -162,17 +172,17 @@
 </p>
 </div>
 </div>
-<div id="outline-container-orgc417ec9" class="outline-2">
-<h2 id="orgc417ec9">/var/log/mail.log /var/log/maillog</h2>
-<div class="outline-text-2" id="text-orgc417ec9">
+<div id="outline-container-org7247bfb" class="outline-2">
+<h2 id="org7247bfb">/var/log/mail.log /var/log/maillog</h2>
+<div class="outline-text-2" id="text-org7247bfb">
 <p>
 存储了邮件相关的信息。比如接受/发送邮件的信息，邮件的投递报告，过滤垃圾邮件的过程等。
 </p>
 </div>
 </div>
-<div id="outline-container-org6b122bf" class="outline-2">
-<h2 id="org6b122bf">/var/log/cron.log</h2>
-<div class="outline-text-2" id="text-org6b122bf">
+<div id="outline-container-orga0169cf" class="outline-2">
+<h2 id="orga0169cf">/var/log/cron.log</h2>
+<div class="outline-text-2" id="text-orga0169cf">
 <p>
 记录了cron定时任务的执行情况,不管是成功还是失败。
 </p>
@@ -186,7 +196,7 @@
             <span title="post date" class="post-info">2018-04-25</span>
             <span title="last modification date" class="post-info">2018-04-25</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/sysadmin">sysadmin</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -226,10 +236,19 @@
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

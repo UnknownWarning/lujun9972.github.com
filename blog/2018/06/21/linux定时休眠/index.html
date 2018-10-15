@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,13 +54,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf1cdc3e">休眠的类型</a></li>
-<li><a href="#orgc2cd951">suspend 休眠</a></li>
-<li><a href="#org6ac4dbe">Hibernation 休眠</a></li>
-<li><a href="#org7fae3f4">hybrid 休眠</a></li>
-<li><a href="#orgf00ee2e">Sleep Hooks</a></li>
-<li><a href="#org9d3a2a1">定时执行休眠</a></li>
-<li><a href="#orgb4d87ac">定时唤醒休眠的linux</a></li>
+<li><a href="#org849db45">休眠的类型</a></li>
+<li><a href="#orga5399e4">suspend 休眠</a></li>
+<li><a href="#org62961b1">Hibernation 休眠</a></li>
+<li><a href="#orgcd854eb">hybrid 休眠</a></li>
+<li><a href="#org70cf920">Sleep Hooks</a></li>
+<li><a href="#orgc349ab6">定时执行休眠</a></li>
+<li><a href="#orge6dc811">定时唤醒休眠的linux</a></li>
 </ul>
 </div>
 </div>
@@ -58,9 +68,9 @@
 最近公司规定晚上走人后必须关闭电脑，但是像我们这样的人，经常会忘记了关闭电脑，而且关闭电脑之后再恢复工作环境也是件挺麻烦的事情，无奈之下只能折腾一下，让linux定时休眠了。
 </p>
 
-<div id="outline-container-orgf1cdc3e" class="outline-2">
-<h2 id="orgf1cdc3e">休眠的类型</h2>
-<div class="outline-text-2" id="text-orgf1cdc3e">
+<div id="outline-container-org849db45" class="outline-2">
+<h2 id="org849db45">休眠的类型</h2>
+<div class="outline-text-2" id="text-org849db45">
 <p>
 目前大概由三种类型的休眠:
 </p>
@@ -77,9 +87,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgc2cd951" class="outline-2">
-<h2 id="orgc2cd951">suspend 休眠</h2>
-<div class="outline-text-2" id="text-orgc2cd951">
+<div id="outline-container-orga5399e4" class="outline-2">
+<h2 id="orga5399e4">suspend 休眠</h2>
+<div class="outline-text-2" id="text-orga5399e4">
 <p>
 进入 suspend 特别简单，无需额外的配置,在 systemd 系统上直接执行 <code>systemctl suspend</code> 就行了。
 </p>
@@ -117,9 +127,9 @@
 </div>
 
 
-<div id="outline-container-org6ac4dbe" class="outline-2">
-<h2 id="org6ac4dbe">Hibernation 休眠</h2>
-<div class="outline-text-2" id="text-org6ac4dbe">
+<div id="outline-container-org62961b1" class="outline-2">
+<h2 id="org62961b1">Hibernation 休眠</h2>
+<div class="outline-text-2" id="text-org62961b1">
 <p>
 由于 hibernation 休眠要求将内存中的内容写入到交换空间中，因此你至少要有一个空间大于内存的交换分区或者交换文件。
 (其实若交换空间不够内存大也不是一定就无法进行hibernation休眠，可以尝试运行 <code>echo 0 |sudo tee /sys/power/image_size</code>, 这会让系统在写入交换空间时尽可能的进行压缩，但这种方法也无法保证一定能够休眠成功)
@@ -332,9 +342,9 @@ File size of /swapfile is 5368709120 (1310720 blocks of 4096 bytes)
 </div>
 </div>
 
-<div id="outline-container-org7fae3f4" class="outline-2">
-<h2 id="org7fae3f4">hybrid 休眠</h2>
-<div class="outline-text-2" id="text-org7fae3f4">
+<div id="outline-container-orgcd854eb" class="outline-2">
+<h2 id="orgcd854eb">hybrid 休眠</h2>
+<div class="outline-text-2" id="text-orgcd854eb">
 <p>
 在配置好 hibernate 休眠后，也就能正常进行 hybrid 休眠了，方法是执行
 </p>
@@ -371,9 +381,9 @@ File size of /swapfile is 5368709120 (1310720 blocks of 4096 bytes)
 </div>
 </div>
 
-<div id="outline-container-orgf00ee2e" class="outline-2">
-<h2 id="orgf00ee2e">Sleep Hooks</h2>
-<div class="outline-text-2" id="text-orgf00ee2e">
+<div id="outline-container-org70cf920" class="outline-2">
+<h2 id="org70cf920">Sleep Hooks</h2>
+<div class="outline-text-2" id="text-org70cf920">
 <p>
 从上面的service文件中可以看出，不管是哪种类型的系统休眠，其内部实际调用的都是 <a href="https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8">systemd-sleep</a>.
 </p>
@@ -470,9 +480,9 @@ systemd 238                                         SYSTEMD-SUSPEND.SERVICE(8)
 </div>
 </div>
 
-<div id="outline-container-org9d3a2a1" class="outline-2">
-<h2 id="org9d3a2a1">定时执行休眠</h2>
-<div class="outline-text-2" id="text-org9d3a2a1">
+<div id="outline-container-orgc349ab6" class="outline-2">
+<h2 id="orgc349ab6">定时执行休眠</h2>
+<div class="outline-text-2" id="text-orgc349ab6">
 <p>
 systemd 系统中的定时任务是由timer来实现的，而每个timer都与一个service相对应。 
 </p>
@@ -500,9 +510,9 @@ systemd 系统中的定时任务是由timer来实现的，而每个timer都与�
 </div>
 </div>
 
-<div id="outline-container-orgb4d87ac" class="outline-2">
-<h2 id="orgb4d87ac">定时唤醒休眠的linux</h2>
-<div class="outline-text-2" id="text-orgb4d87ac">
+<div id="outline-container-orge6dc811" class="outline-2">
+<h2 id="orge6dc811">定时唤醒休眠的linux</h2>
+<div class="outline-text-2" id="text-orge6dc811">
 <p>
 使用 rtcwake 可以在给定的时间唤醒处于休眠状态的电脑
 </p>
@@ -552,7 +562,7 @@ sudo rtcwake -m $<span style="color: #4f97d7;">{</span><span style="color: #7590
             <span title="post date" class="post-info">2018-06-21</span>
             <span title="last modification date" class="post-info">2018-06-22</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -592,10 +602,19 @@ sudo rtcwake -m $<span style="color: #4f97d7;">{</span><span style="color: #7590
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

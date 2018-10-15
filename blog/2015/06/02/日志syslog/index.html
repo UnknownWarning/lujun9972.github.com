@@ -18,23 +18,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -43,22 +53,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge4e0501">1. 产生日志消息的方法</a></li>
-<li><a href="#org8650fe6">2. 日志消息存放地址</a></li>
-<li><a href="#org0874ed5">3. syslog相关函数</a>
+<li><a href="#org5ee24d1">1. 产生日志消息的方法</a></li>
+<li><a href="#org01dc434">2. 日志消息存放地址</a></li>
+<li><a href="#org521b1e7">3. syslog相关函数</a>
 <ul>
-<li><a href="#org1e7d2ee">3.1. openlog说明</a></li>
-<li><a href="#orgee13848">3.2. syslog函数豁免</a></li>
-<li><a href="#org5a16869">3.3. closelog说明</a></li>
-<li><a href="#org742367b">3.4. setlogmask</a></li>
+<li><a href="#orgdd5eb35">3.1. openlog说明</a></li>
+<li><a href="#orgdea2bd8">3.2. syslog函数豁免</a></li>
+<li><a href="#orgde32abc">3.3. closelog说明</a></li>
+<li><a href="#org91c7b65">3.4. setlogmask</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge4e0501" class="outline-2">
-<h2 id="orge4e0501"><span class="section-number-2">1</span> 产生日志消息的方法</h2>
+<div id="outline-container-org5ee24d1" class="outline-2">
+<h2 id="org5ee24d1"><span class="section-number-2">1</span> 产生日志消息的方法</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>内核程序可以调用log函数记日志. 任何用户进程可以打开并读取/dev/klog设备读取这些消息</li>
@@ -68,8 +78,8 @@
 </div>
 </div>
 
-<div id="outline-container-org8650fe6" class="outline-2">
-<h2 id="org8650fe6"><span class="section-number-2">2</span> 日志消息存放地址</h2>
+<div id="outline-container-org01dc434" class="outline-2">
+<h2 id="org01dc434"><span class="section-number-2">2</span> 日志消息存放地址</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 通常syslogd守护进程会读取一个配置文件(/etc/syslog.conf)来决定不同类型的消息应该送到何处.
@@ -77,8 +87,8 @@
 </div>
 </div>
 
-<div id="outline-container-org0874ed5" class="outline-2">
-<h2 id="org0874ed5"><span class="section-number-2">3</span> syslog相关函数</h2>
+<div id="outline-container-org521b1e7" class="outline-2">
+<h2 id="org521b1e7"><span class="section-number-2">3</span> syslog相关函数</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">syslog.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -97,8 +107,8 @@
 </div>
 </div>
 
-<div id="outline-container-org1e7d2ee" class="outline-3">
-<h3 id="org1e7d2ee"><span class="section-number-3">3.1</span> openlog说明</h3>
+<div id="outline-container-orgdd5eb35" class="outline-3">
+<h3 id="orgdd5eb35"><span class="section-number-3">3.1</span> openlog说明</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>调用openlog是可选择的,若不调用openlog则第一次调用syslog时自动调用syslog</li>
@@ -239,8 +249,8 @@ option参数是指定许多选项的位屏蔽
 </div>
 </div>
 
-<div id="outline-container-orgee13848" class="outline-3">
-<h3 id="orgee13848"><span class="section-number-3">3.2</span> syslog函数豁免</h3>
+<div id="outline-container-orgdea2bd8" class="outline-3">
+<h3 id="orgdea2bd8"><span class="section-number-3">3.2</span> syslog函数豁免</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 参数priority可以用来指明消息的 <b>种类</b> 和 <b>等级</b>
@@ -373,8 +383,8 @@ option参数是指定许多选项的位屏蔽
 </div>
 </div>
 
-<div id="outline-container-org5a16869" class="outline-3">
-<h3 id="org5a16869"><span class="section-number-3">3.3</span> closelog说明</h3>
+<div id="outline-container-orgde32abc" class="outline-3">
+<h3 id="orgde32abc"><span class="section-number-3">3.3</span> closelog说明</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 closelog也是可选的,只有在调用openlog后才需要调用. 它用于关闭曾被用于与syslogd守护进程通信的描述符
@@ -382,8 +392,8 @@ closelog也是可选的,只有在调用openlog后才需要调用. 它用于关�
 </div>
 </div>
 
-<div id="outline-container-org742367b" class="outline-3">
-<h3 id="org742367b"><span class="section-number-3">3.4</span> setlogmask</h3>
+<div id="outline-container-org91c7b65" class="outline-3">
+<h3 id="org91c7b65"><span class="section-number-3">3.4</span> setlogmask</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 setlogmask函数用于设置进程的日志优先级屏蔽字.
@@ -407,7 +417,7 @@ setlogmask函数用于设置进程的日志优先级屏蔽字.
             <span title="post date" class="post-info">2015-06-02</span>
             <span title="last modification date" class="post-info">2016-10-24</span>
             <span title="tags" class="post-info">:N/A:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">DarkSun</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -447,10 +457,19 @@ setlogmask函数用于设置进程的日志优先级屏蔽字.
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">DarkSun</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

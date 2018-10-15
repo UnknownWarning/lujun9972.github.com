@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,8 +54,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org995eef3">多个用户使用同一个操作系统帐号</a></li>
-<li><a href="#orgb730ac3">多个用户使用不同的操作系统帐号</a></li>
+<li><a href="#org86b2709">多个用户使用同一个操作系统帐号</a></li>
+<li><a href="#org632c88e">多个用户使用不同的操作系统帐号</a></li>
 </ul>
 </div>
 </div>
@@ -72,9 +82,9 @@ tmux server管理着多个session，而一个session可以被多个tmux client�
 这两者的区别主要在Socket文件的权限问题
 </p>
 
-<div id="outline-container-org995eef3" class="outline-2">
-<h2 id="org995eef3">多个用户使用同一个操作系统帐号</h2>
-<div class="outline-text-2" id="text-org995eef3">
+<div id="outline-container-org86b2709" class="outline-2">
+<h2 id="org86b2709">多个用户使用同一个操作系统帐号</h2>
+<div class="outline-text-2" id="text-org86b2709">
 <p>
 在多个用户使用同一个操作系统帐号时，不存在用户访问Socket文件的权限问题，因此操作起来特别简单,只需要多个用户指定同一个tmux session名字就行了
 </p>
@@ -98,9 +108,9 @@ tmux server管理着多个session，而一个session可以被多个tmux client�
 </div>
 </div>
 
-<div id="outline-container-orgb730ac3" class="outline-2">
-<h2 id="orgb730ac3">多个用户使用不同的操作系统帐号</h2>
-<div class="outline-text-2" id="text-orgb730ac3">
+<div id="outline-container-org632c88e" class="outline-2">
+<h2 id="org632c88e">多个用户使用不同的操作系统帐号</h2>
+<div class="outline-text-2" id="text-org632c88e">
 <p>
 当多个用户使用不同帐号登录操作系统时，就存在访问Socket文件的权限问题了。
 </p>
@@ -202,7 +212,7 @@ chown :joint /tmp/shared
             <span title="post date" class="post-info">2018-08-19</span>
             <span title="last modification date" class="post-info">2018-08-19</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -242,10 +252,19 @@ chown :joint /tmp/shared
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

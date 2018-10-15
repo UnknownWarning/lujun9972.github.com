@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,21 +54,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org37170c7">image-mode</a></li>
-<li><a href="#org7a96934">image-dired</a>
+<li><a href="#org63c5c10">image-mode</a></li>
+<li><a href="#org502446c">image-dired</a>
 <ul>
-<li><a href="#org0418f1d">进入image-dired</a></li>
-<li><a href="#orgdd61917">image-dired相关操作</a></li>
+<li><a href="#orgd8d07c0">进入image-dired</a></li>
+<li><a href="#org74e8a94">image-dired相关操作</a></li>
 </ul>
 </li>
-<li><a href="#org88a078c">使用Emacs作为图片浏览器</a></li>
+<li><a href="#orgd51145a">使用Emacs作为图片浏览器</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org37170c7" class="outline-2">
-<h2 id="org37170c7">image-mode</h2>
-<div class="outline-text-2" id="text-org37170c7">
+<div id="outline-container-org63c5c10" class="outline-2">
+<h2 id="org63c5c10">image-mode</h2>
+<div class="outline-text-2" id="text-org63c5c10">
 <p>
 当用Emacs打开一张图片时,Emacs会自动进入image-mode,并显示出图片来. (如果你的操作系统是windows,默认是不支持显示图片的,那么请参考 <a href="http://www.cnblogs.com/atskyline/archive/2012/05/15/2546969.html">windows版本的Emacs 无法显示图片的解决方法</a>)
 </p>
@@ -95,9 +105,9 @@
 </div>
 </div>
 
-<div id="outline-container-org7a96934" class="outline-2">
-<h2 id="org7a96934">image-dired</h2>
-<div class="outline-text-2" id="text-org7a96934">
+<div id="outline-container-org502446c" class="outline-2">
+<h2 id="org502446c">image-dired</h2>
+<div class="outline-text-2" id="text-org502446c">
 <p>
 Emacs自带了一款名为 <code>image-dired</code> 的插件,它可以以缩略图的方式显示出目录中的图片,也可以浏览想看的图片,甚至能为图片加上标签说明!
 </p>
@@ -108,9 +118,9 @@ Emacs自带了一款名为 <code>image-dired</code> 的插件,它可以以缩略
 </p>
 </div>
 
-<div id="outline-container-org0418f1d" class="outline-3">
-<h3 id="org0418f1d">进入image-dired</h3>
-<div class="outline-text-3" id="text-org0418f1d">
+<div id="outline-container-orgd8d07c0" class="outline-3">
+<h3 id="orgd8d07c0">进入image-dired</h3>
+<div class="outline-text-3" id="text-orgd8d07c0">
 <p>
 进入image-dired有两种方式:
 </p>
@@ -125,9 +135,9 @@ Emacs自带了一款名为 <code>image-dired</code> 的插件,它可以以缩略
 </div>
 </div>
 
-<div id="outline-container-orgdd61917" class="outline-3">
-<h3 id="orgdd61917">image-dired相关操作</h3>
-<div class="outline-text-3" id="text-orgdd61917">
+<div id="outline-container-org74e8a94" class="outline-3">
+<h3 id="org74e8a94">image-dired相关操作</h3>
+<div class="outline-text-3" id="text-org74e8a94">
 <p>
 image-dired的相关操作基本都是在 <code>*image-dired*</code> buffer中进行的.
 </p>
@@ -161,9 +171,9 @@ image-dired的相关操作基本都是在 <code>*image-dired*</code> buffer中�
 </div>
 </div>
 
-<div id="outline-container-org88a078c" class="outline-2">
-<h2 id="org88a078c">使用Emacs作为图片浏览器</h2>
-<div class="outline-text-2" id="text-org88a078c">
+<div id="outline-container-orgd51145a" class="outline-2">
+<h2 id="orgd51145a">使用Emacs作为图片浏览器</h2>
+<div class="outline-text-2" id="text-orgd51145a">
 <p>
 通过上面的介绍可以看出,Emacs基本上可以满足一般的图片浏览需求了. 我们可以通过一小段脚本将Emacs包装成为一个简单的图片浏览器:
 </p>
@@ -216,7 +226,7 @@ image-dired的相关操作基本都是在 <code>*image-dired*</code> buffer中�
             <span title="post date" class="post-info">2016-11-08</span>
             <span title="last modification date" class="post-info">2016-11-08</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/emacs">emacs</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -256,10 +266,19 @@ image-dired的相关操作基本都是在 <code>*image-dired*</code> buffer中�
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

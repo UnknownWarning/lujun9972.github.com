@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,30 +54,30 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf6f4e84">RAID简介</a></li>
-<li><a href="#org824ebd5">mdadm: RAID设置工具</a></li>
-<li><a href="#org6ab6414">mdadm操作说明</a>
+<li><a href="#org5a657eb">RAID简介</a></li>
+<li><a href="#orgc1310aa">mdadm: RAID设置工具</a></li>
+<li><a href="#org2a9250b">mdadm操作说明</a>
 <ul>
-<li><a href="#org1fcac8a">创建RAID阵列</a>
+<li><a href="#org481feec">创建RAID阵列</a>
 <ul>
-<li><a href="#org2457295">自动启用RAID</a></li>
+<li><a href="#orgbd30024">自动启用RAID</a></li>
 </ul>
 </li>
-<li><a href="#orgc1561ca">查看RAID阵列信息</a></li>
-<li><a href="#orgc88317e">使用RAID阵列</a></li>
-<li><a href="#org7aec241">关闭RAID</a></li>
-<li><a href="#orgb4164fb">模拟RAID故障</a></li>
-<li><a href="#org6cce036">移除RAID阵列中的磁盘</a></li>
-<li><a href="#org5be1af3">更换新磁盘</a></li>
+<li><a href="#orgfa6387e">查看RAID阵列信息</a></li>
+<li><a href="#orgbfadef5">使用RAID阵列</a></li>
+<li><a href="#org1c12d44">关闭RAID</a></li>
+<li><a href="#org47334d7">模拟RAID故障</a></li>
+<li><a href="#org265f682">移除RAID阵列中的磁盘</a></li>
+<li><a href="#orgfb3e0df">更换新磁盘</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf6f4e84" class="outline-2">
-<h2 id="orgf6f4e84">RAID简介</h2>
-<div class="outline-text-2" id="text-orgf6f4e84">
+<div id="outline-container-org5a657eb" class="outline-2">
+<h2 id="org5a657eb">RAID简介</h2>
+<div class="outline-text-2" id="text-org5a657eb">
 <p>
 RAID是一种使用磁盘驱动器的方法，它将一组磁盘驱动器用某种逻辑方式联系起来，作为一个逻辑磁盘驱动器来使用的.
 </p>
@@ -120,9 +130,9 @@ RAID是一种使用磁盘驱动器的方法，它将一组磁盘驱动器用某�
 </div>
 </div>
 
-<div id="outline-container-org824ebd5" class="outline-2">
-<h2 id="org824ebd5">mdadm: RAID设置工具</h2>
-<div class="outline-text-2" id="text-org824ebd5">
+<div id="outline-container-orgc1310aa" class="outline-2">
+<h2 id="orgc1310aa">mdadm: RAID设置工具</h2>
+<div class="outline-text-2" id="text-orgc1310aa">
 <p>
 madam命令是Linux下用于构建、管理和监控RAID阵列(也被称为md设备)的工具.
 它的语法为
@@ -149,13 +159,13 @@ madam命令是Linux下用于构建、管理和监控RAID阵列(也被称为md设
 </div>
 </div>
 
-<div id="outline-container-org6ab6414" class="outline-2">
-<h2 id="org6ab6414">mdadm操作说明</h2>
-<div class="outline-text-2" id="text-org6ab6414">
+<div id="outline-container-org2a9250b" class="outline-2">
+<h2 id="org2a9250b">mdadm操作说明</h2>
+<div class="outline-text-2" id="text-org2a9250b">
 </div>
-<div id="outline-container-org1fcac8a" class="outline-3">
-<h3 id="org1fcac8a">创建RAID阵列</h3>
-<div class="outline-text-3" id="text-org1fcac8a">
+<div id="outline-container-org481feec" class="outline-3">
+<h3 id="org481feec">创建RAID阵列</h3>
+<div class="outline-text-3" id="text-org481feec">
 <p>
 我们可以通过 <code>mdadm</code> 命令来创建软件RAID，比如下面命令可以创建一个RAID5
 </p>
@@ -187,9 +197,9 @@ madam命令是Linux下用于构建、管理和监控RAID阵列(也被称为md设
 </pre>
 </div>
 </div>
-<div id="outline-container-org2457295" class="outline-4">
-<h4 id="org2457295">自动启用RAID</h4>
-<div class="outline-text-4" id="text-org2457295">
+<div id="outline-container-orgbd30024" class="outline-4">
+<h4 id="orgbd30024">自动启用RAID</h4>
+<div class="outline-text-4" id="text-orgbd30024">
 <p>
 在创建好RAID以后，可以将RAID信息保存到 <code>/etc/mdadm.conf</code> 文件中，这样在下次操作系统重新启动时，系统会自动加载这个文件来启用RAID
 </p>
@@ -207,9 +217,9 @@ cat /etc/mdadm.conf
 </div>
 </div>
 
-<div id="outline-container-orgc1561ca" class="outline-3">
-<h3 id="orgc1561ca">查看RAID阵列信息</h3>
-<div class="outline-text-3" id="text-orgc1561ca">
+<div id="outline-container-orgfa6387e" class="outline-3">
+<h3 id="orgfa6387e">查看RAID阵列信息</h3>
+<div class="outline-text-3" id="text-orgfa6387e">
 <p>
 创建好RAID阵列后，我们可以通过 <code>mdadm --misc</code> 模式来查看刚创建好的RAID的详细信息
 </p>
@@ -271,9 +281,9 @@ unused devices: &lt;none&gt;
 </div>
 </div>
 
-<div id="outline-container-orgc88317e" class="outline-3">
-<h3 id="orgc88317e">使用RAID阵列</h3>
-<div class="outline-text-3" id="text-orgc88317e">
+<div id="outline-container-orgbfadef5" class="outline-3">
+<h3 id="orgbfadef5">使用RAID阵列</h3>
+<div class="outline-text-3" id="text-orgbfadef5">
 <p>
 在创建好RAID阵列后，我们就不能直接操作组成阵列的磁盘了，否则会损坏刚创建好的RAID阵列。
 我们通过 <code>/dev/md0</code> 这个设备来进行文件格式化和挂载
@@ -308,9 +318,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-org7aec241" class="outline-3">
-<h3 id="org7aec241">关闭RAID</h3>
-<div class="outline-text-3" id="text-org7aec241">
+<div id="outline-container-org1c12d44" class="outline-3">
+<h3 id="org1c12d44">关闭RAID</h3>
+<div class="outline-text-3" id="text-org1c12d44">
 <p>
 我们可以通过 <code>mdadm --misc</code> 模式来关闭RAID。这会释放所有资源
 </p>
@@ -344,9 +354,9 @@ mdadm --misc --zero-superblock /dev/sdd
 </div>
 </div>
 
-<div id="outline-container-orgb4164fb" class="outline-3">
-<h3 id="orgb4164fb">模拟RAID故障</h3>
-<div class="outline-text-3" id="text-orgb4164fb">
+<div id="outline-container-org47334d7" class="outline-3">
+<h3 id="org47334d7">模拟RAID故障</h3>
+<div class="outline-text-3" id="text-org47334d7">
 <p>
 我们可以通过 <code>mdadm --manage /dev/md0 --fail</code> 来将某块磁盘设置成故障状态
 </p>
@@ -411,9 +421,9 @@ Consistency Policy : resync
 </div>
 </div>
 
-<div id="outline-container-org6cce036" class="outline-3">
-<h3 id="org6cce036">移除RAID阵列中的磁盘</h3>
-<div class="outline-text-3" id="text-org6cce036">
+<div id="outline-container-org265f682" class="outline-3">
+<h3 id="org265f682">移除RAID阵列中的磁盘</h3>
+<div class="outline-text-3" id="text-org265f682">
 <div class="org-src-container">
 <pre class="src src-shell">sudo mdadm --manage /dev/md0 --remove /dev/sdd
 </pre>
@@ -421,9 +431,9 @@ Consistency Policy : resync
 </div>
 </div>
 
-<div id="outline-container-org5be1af3" class="outline-3">
-<h3 id="org5be1af3">更换新磁盘</h3>
-<div class="outline-text-3" id="text-org5be1af3">
+<div id="outline-container-orgfb3e0df" class="outline-3">
+<h3 id="orgfb3e0df">更换新磁盘</h3>
+<div class="outline-text-3" id="text-orgfb3e0df">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #4f97d7;">set</span> -x
 <span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span>
@@ -481,7 +491,7 @@ Consistency Policy : resync
             <span title="post date" class="post-info">2018-09-10</span>
             <span title="last modification date" class="post-info">2018-09-11</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -521,10 +531,19 @@ Consistency Policy : resync
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

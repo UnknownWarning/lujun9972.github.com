@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,68 +54,68 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org903831c">Vagrant的依赖</a></li>
-<li><a href="#orga25e483">创建第一台虚拟机</a>
+<li><a href="#org80faab8">Vagrant的依赖</a></li>
+<li><a href="#org313cf30">创建第一台虚拟机</a>
 <ul>
-<li><a href="#org780be85">创建VagrantFile</a></li>
-<li><a href="#org936c392">配置VagrangFile</a></li>
-<li><a href="#org2606aa4">Vagrant常用命令</a>
+<li><a href="#org7a7838d">创建VagrantFile</a></li>
+<li><a href="#org8c4c36d">配置VagrangFile</a></li>
+<li><a href="#orge70acd9">Vagrant常用命令</a>
 <ul>
-<li><a href="#orga389505">启动虚拟机</a>
+<li><a href="#org22b237b">启动虚拟机</a>
 <ul>
-<li><a href="#org1f456db">指定provider</a></li>
+<li><a href="#org49192a9">指定provider</a></li>
 </ul>
 </li>
-<li><a href="#org8cd5560">查看虚拟机状态</a></li>
-<li><a href="#org59d9af1">挂起虚拟机</a></li>
-<li><a href="#org5145434">重启虚拟机</a></li>
-<li><a href="#orga3e0c5f">关闭虚拟机</a></li>
-<li><a href="#org1e9a402">删除虚拟机</a></li>
-<li><a href="#orgfb1ea51">ssh登陆虚拟机</a></li>
+<li><a href="#org5db264b">查看虚拟机状态</a></li>
+<li><a href="#orgdb65b13">挂起虚拟机</a></li>
+<li><a href="#org9fcbdcd">重启虚拟机</a></li>
+<li><a href="#orgb665cb7">关闭虚拟机</a></li>
+<li><a href="#orgb840824">删除虚拟机</a></li>
+<li><a href="#org9d5acd6">ssh登陆虚拟机</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org24a2aeb">Vagrant provision</a></li>
-<li><a href="#orgb25483b">管理box</a>
+<li><a href="#orgcf1269f">Vagrant provision</a></li>
+<li><a href="#org656cb39">管理box</a>
 <ul>
-<li><a href="#orgdba46c9">添加box</a></li>
-<li><a href="#org2a939d4">配置box</a></li>
-<li><a href="#org34a3da1">升级box</a></li>
-<li><a href="#org811479f">删除box</a></li>
+<li><a href="#org5a5550c">添加box</a></li>
+<li><a href="#org00b42c3">配置box</a></li>
+<li><a href="#org81479c2">升级box</a></li>
+<li><a href="#org4003200">删除box</a></li>
 </ul>
 </li>
-<li><a href="#orgea36cab">关于同步目录(Synced Folders)</a></li>
-<li><a href="#org032c5eb">网络配置</a>
+<li><a href="#org66ef36d">关于同步目录(Synced Folders)</a></li>
+<li><a href="#org833947b">网络配置</a>
 <ul>
-<li><a href="#orgd237164">端口转发</a></li>
-<li><a href="#org3978c34">私有网络</a>
+<li><a href="#org3c6f9f8">端口转发</a></li>
+<li><a href="#org6ccde6f">私有网络</a>
 <ul>
-<li><a href="#orgddc0291">配置IP</a></li>
+<li><a href="#orgba4619f">配置IP</a></li>
 </ul>
 </li>
-<li><a href="#org2067a68">公有网络</a>
+<li><a href="#org6e64833">公有网络</a>
 <ul>
-<li><a href="#org99962b8">DHCP</a></li>
-<li><a href="#orgf842df6">设置静态IP</a></li>
-<li><a href="#org7147510">指定桥接的网卡</a></li>
+<li><a href="#orgae86c3b">DHCP</a></li>
+<li><a href="#org17ff24b">设置静态IP</a></li>
+<li><a href="#org87c077e">指定桥接的网卡</a></li>
 </ul>
 </li>
-<li><a href="#org9241d5a">其他网络设置</a></li>
+<li><a href="#org7ff01ab">其他网络设置</a></li>
 </ul>
 </li>
-<li><a href="#org4dcc0f1">插件</a>
+<li><a href="#orga704060">插件</a>
 <ul>
-<li><a href="#org00e9d84">安装插件</a></li>
-<li><a href="#orgb09159c">更新插件</a></li>
-<li><a href="#orgb0fcf6d">列出已安装的插件</a></li>
-<li><a href="#orge7a1042">卸载插件</a></li>
+<li><a href="#org02ee7e3">安装插件</a></li>
+<li><a href="#org859d0b5">更新插件</a></li>
+<li><a href="#orgb368b31">列出已安装的插件</a></li>
+<li><a href="#org074ffb1">卸载插件</a></li>
 </ul>
 </li>
-<li><a href="#org03c854a">设置代理服务器</a>
+<li><a href="#org3d058d0">设置代理服务器</a>
 <ul>
-<li><a href="#org0484925">为 vagrant 命令设置代理</a></li>
-<li><a href="#org5cba600">为虚拟机设置代理</a></li>
+<li><a href="#org61dad1e">为 vagrant 命令设置代理</a></li>
+<li><a href="#org3ce5085">为虚拟机设置代理</a></li>
 </ul>
 </li>
 </ul>
@@ -119,9 +129,9 @@ Vagrant是一款虚拟机管理工具，通过它可以以代码的方式快速�
 本文以virtualbox作为虚拟机引擎来演示一下Vagrant的使用方法。
 </p>
 
-<div id="outline-container-org903831c" class="outline-2">
-<h2 id="org903831c">Vagrant的依赖</h2>
-<div class="outline-text-2" id="text-org903831c">
+<div id="outline-container-org80faab8" class="outline-2">
+<h2 id="org80faab8">Vagrant的依赖</h2>
+<div class="outline-text-2" id="text-org80faab8">
 <p>
 Vagrant本身并不具有虚拟化的能力，因此它额外依赖于一套虚拟机程序,我们这里以VirtualBox作为例子，当然除了VirtualBox之外，Vagrant也支持Hyper-V和VMWare，甚至支持Docker作为虚拟机(虚拟环境)引擎。
 我们一般把这些虚拟机引擎称之为provider.
@@ -141,9 +151,9 @@ Vagrant有两类box，一类是“Pre-Build”，表示所有东西都已经安�
 </div>
 
 
-<div id="outline-container-orga25e483" class="outline-2">
-<h2 id="orga25e483">创建第一台虚拟机</h2>
-<div class="outline-text-2" id="text-orga25e483">
+<div id="outline-container-org313cf30" class="outline-2">
+<h2 id="org313cf30">创建第一台虚拟机</h2>
+<div class="outline-text-2" id="text-org313cf30">
 <p>
 Vagrant通过一个名为 VagrangtFile 的配置文件来创建虚拟机,该文件中包含了如下信息：
 </p>
@@ -155,9 +165,9 @@ Vagrant通过一个名为 VagrangtFile 的配置文件来创建虚拟机,该文�
 </ul>
 </div>
 
-<div id="outline-container-org780be85" class="outline-3">
-<h3 id="org780be85">创建VagrantFile</h3>
-<div class="outline-text-3" id="text-org780be85">
+<div id="outline-container-org7a7838d" class="outline-3">
+<h3 id="org7a7838d">创建VagrantFile</h3>
+<div class="outline-text-3" id="text-org7a7838d">
 <ol class="org-ol">
 <li><p>
 我们需要创建一个目录，用于存放VagrantFile
@@ -196,9 +206,9 @@ Vagrant本身有一个云端预存了大量的box，你可以去 <a href="https:
 </div>
 </div>
 
-<div id="outline-container-org936c392" class="outline-3">
-<h3 id="org936c392">配置VagrangFile</h3>
-<div class="outline-text-3" id="text-org936c392">
+<div id="outline-container-org8c4c36d" class="outline-3">
+<h3 id="org8c4c36d">配置VagrangFile</h3>
+<div class="outline-text-3" id="text-org8c4c36d">
 <p>
 打开VagrantFile你会发现其中包含了关于虚拟机的大量设置，每个配置项还很贴心的包含了注释说明
 </p>
@@ -283,13 +293,13 @@ Vagrant本身有一个云端预存了大量的box，你可以去 <a href="https:
 </div>
 
 
-<div id="outline-container-org2606aa4" class="outline-3">
-<h3 id="org2606aa4">Vagrant常用命令</h3>
-<div class="outline-text-3" id="text-org2606aa4">
+<div id="outline-container-orge70acd9" class="outline-3">
+<h3 id="orge70acd9">Vagrant常用命令</h3>
+<div class="outline-text-3" id="text-orge70acd9">
 </div>
-<div id="outline-container-orga389505" class="outline-4">
-<h4 id="orga389505">启动虚拟机</h4>
-<div class="outline-text-4" id="text-orga389505">
+<div id="outline-container-org22b237b" class="outline-4">
+<h4 id="org22b237b">启动虚拟机</h4>
+<div class="outline-text-4" id="text-org22b237b">
 <p>
 配置好 <code>VagrantFile</code> 后，我们只需要在当前目录下运行 <code>vagrant up</code> 就能启动虚拟机了。
 </p>
@@ -306,9 +316,9 @@ Vagrant本身有一个云端预存了大量的box，你可以去 <a href="https:
 值得一提的时，由于在当前目录中存储了相关虚拟机的信息，因此在执行Vagrant命令时都无需指明作用于哪个虚拟机之上。
 </p>
 </div>
-<div id="outline-container-org1f456db" class="outline-5">
-<h5 id="org1f456db">指定provider</h5>
-<div class="outline-text-5" id="text-org1f456db">
+<div id="outline-container-org49192a9" class="outline-5">
+<h5 id="org49192a9">指定provider</h5>
+<div class="outline-text-5" id="text-org49192a9">
 <p>
 前面提到过Vagrant支持多种虚拟引擎来进行虚拟化，我们可以通过 <code>--provider</code> 参数来指定虚拟引擎，默认为 <code>virtualbox</code>
 </p>
@@ -332,9 +342,9 @@ vagrant up --provider libvirt
 </div>
 </div>
 
-<div id="outline-container-org8cd5560" class="outline-4">
-<h4 id="org8cd5560">查看虚拟机状态</h4>
-<div class="outline-text-4" id="text-org8cd5560">
+<div id="outline-container-org5db264b" class="outline-4">
+<h4 id="org5db264b">查看虚拟机状态</h4>
+<div class="outline-text-4" id="text-org5db264b">
 <div class="org-src-container">
 <pre class="src src-shell">vagrant status
 </pre>
@@ -342,9 +352,9 @@ vagrant up --provider libvirt
 </div>
 </div>
 
-<div id="outline-container-org59d9af1" class="outline-4">
-<h4 id="org59d9af1">挂起虚拟机</h4>
-<div class="outline-text-4" id="text-org59d9af1">
+<div id="outline-container-orgdb65b13" class="outline-4">
+<h4 id="orgdb65b13">挂起虚拟机</h4>
+<div class="outline-text-4" id="text-orgdb65b13">
 <div class="org-src-container">
 <pre class="src src-shell">vagrant suspend
 </pre>
@@ -352,9 +362,9 @@ vagrant up --provider libvirt
 </div>
 </div>
 
-<div id="outline-container-org5145434" class="outline-4">
-<h4 id="org5145434">重启虚拟机</h4>
-<div class="outline-text-4" id="text-org5145434">
+<div id="outline-container-org9fcbdcd" class="outline-4">
+<h4 id="org9fcbdcd">重启虚拟机</h4>
+<div class="outline-text-4" id="text-org9fcbdcd">
 <div class="org-src-container">
 <pre class="src src-shell">vagrant reload
 </pre>
@@ -362,9 +372,9 @@ vagrant up --provider libvirt
 </div>
 </div>
 
-<div id="outline-container-orga3e0c5f" class="outline-4">
-<h4 id="orga3e0c5f">关闭虚拟机</h4>
-<div class="outline-text-4" id="text-orga3e0c5f">
+<div id="outline-container-orgb665cb7" class="outline-4">
+<h4 id="orgb665cb7">关闭虚拟机</h4>
+<div class="outline-text-4" id="text-orgb665cb7">
 <div class="org-src-container">
 <pre class="src src-shell">vagrant shutdown
 </pre>
@@ -372,9 +382,9 @@ vagrant up --provider libvirt
 </div>
 </div>
 
-<div id="outline-container-org1e9a402" class="outline-4">
-<h4 id="org1e9a402">删除虚拟机</h4>
-<div class="outline-text-4" id="text-org1e9a402">
+<div id="outline-container-orgb840824" class="outline-4">
+<h4 id="orgb840824">删除虚拟机</h4>
+<div class="outline-text-4" id="text-orgb840824">
 <div class="org-src-container">
 <pre class="src src-shell">vagrant destory
 </pre>
@@ -382,9 +392,9 @@ vagrant up --provider libvirt
 </div>
 </div>
 
-<div id="outline-container-orgfb1ea51" class="outline-4">
-<h4 id="orgfb1ea51">ssh登陆虚拟机</h4>
-<div class="outline-text-4" id="text-orgfb1ea51">
+<div id="outline-container-org9d5acd6" class="outline-4">
+<h4 id="org9d5acd6">ssh登陆虚拟机</h4>
+<div class="outline-text-4" id="text-org9d5acd6">
 <div class="org-src-container">
 <pre class="src src-shell">vagrant ssh
 </pre>
@@ -394,9 +404,9 @@ vagrant up --provider libvirt
 </div>
 </div>
 
-<div id="outline-container-org24a2aeb" class="outline-2">
-<h2 id="org24a2aeb">Vagrant provision</h2>
-<div class="outline-text-2" id="text-org24a2aeb">
+<div id="outline-container-orgcf1269f" class="outline-2">
+<h2 id="orgcf1269f">Vagrant provision</h2>
+<div class="outline-text-2" id="text-orgcf1269f">
 <p>
 Vagrant provision能够让你为虚拟机自动安装软件并修改配置。
 </p>
@@ -465,13 +475,13 @@ Vagrant支持两种provision provider:
 </p>
 </div>
 </div>
-<div id="outline-container-orgb25483b" class="outline-2">
-<h2 id="orgb25483b">管理box</h2>
-<div class="outline-text-2" id="text-orgb25483b">
+<div id="outline-container-org656cb39" class="outline-2">
+<h2 id="org656cb39">管理box</h2>
+<div class="outline-text-2" id="text-org656cb39">
 </div>
-<div id="outline-container-orgdba46c9" class="outline-3">
-<h3 id="orgdba46c9">添加box</h3>
-<div class="outline-text-3" id="text-orgdba46c9">
+<div id="outline-container-org5a5550c" class="outline-3">
+<h3 id="org5a5550c">添加box</h3>
+<div class="outline-text-3" id="text-org5a5550c">
 <p>
 box是用来创建虚拟机的基础镜像。当使用 <code>vagrant up</code> 启动虚拟机时，Vagrant会自动下载box，但你也可以使用下面命令手工添加一个box
 </p>
@@ -492,9 +502,9 @@ box是用来创建虚拟机的基础镜像。当使用 <code>vagrant up</code> �
 </p>
 </div>
 </div>
-<div id="outline-container-org2a939d4" class="outline-3">
-<h3 id="org2a939d4">配置box</h3>
-<div class="outline-text-3" id="text-org2a939d4">
+<div id="outline-container-org00b42c3" class="outline-3">
+<h3 id="org00b42c3">配置box</h3>
+<div class="outline-text-3" id="text-org00b42c3">
 <p>
 添加box之后，我们可以在配置文件中使用它，关于box的配置是以 <code>config.vm.box</code> 开头的
 </p>
@@ -526,9 +536,9 @@ box是用来创建虚拟机的基础镜像。当使用 <code>vagrant up</code> �
 </p>
 </div>
 </div>
-<div id="outline-container-org34a3da1" class="outline-3">
-<h3 id="org34a3da1">升级box</h3>
-<div class="outline-text-3" id="text-org34a3da1">
+<div id="outline-container-org81479c2" class="outline-3">
+<h3 id="org81479c2">升级box</h3>
+<div class="outline-text-3" id="text-org81479c2">
 <p>
 随着时间的推移，box可能也会发生改变，这是可以使用 <code>vagrant box update</code> 命令来对box进行升级。
 </p>
@@ -542,9 +552,9 @@ box是用来创建虚拟机的基础镜像。当使用 <code>vagrant up</code> �
 </p>
 </div>
 </div>
-<div id="outline-container-org811479f" class="outline-3">
-<h3 id="org811479f">删除box</h3>
-<div class="outline-text-3" id="text-org811479f">
+<div id="outline-container-org4003200" class="outline-3">
+<h3 id="org4003200">删除box</h3>
+<div class="outline-text-3" id="text-org4003200">
 <p>
 当不再使用某个box来创建虚拟机了，则可以将该box删除掉，以释放空间。
 </p>
@@ -555,9 +565,9 @@ box是用来创建虚拟机的基础镜像。当使用 <code>vagrant up</code> �
 </div>
 </div>
 </div>
-<div id="outline-container-orgea36cab" class="outline-2">
-<h2 id="orgea36cab">关于同步目录(Synced Folders)</h2>
-<div class="outline-text-2" id="text-orgea36cab">
+<div id="outline-container-org66ef36d" class="outline-2">
+<h2 id="org66ef36d">关于同步目录(Synced Folders)</h2>
+<div class="outline-text-2" id="text-org66ef36d">
 <p>
 Synced Folder可以用来实现宿主机和虚拟机之间共享文件，
 </p>
@@ -578,9 +588,9 @@ Synced Folder可以用来实现宿主机和虚拟机之间共享文件，
 </p>
 </div>
 </div>
-<div id="outline-container-org032c5eb" class="outline-2">
-<h2 id="org032c5eb">网络配置</h2>
-<div class="outline-text-2" id="text-org032c5eb">
+<div id="outline-container-org833947b" class="outline-2">
+<h2 id="org833947b">网络配置</h2>
+<div class="outline-text-2" id="text-org833947b">
 <p>
 Vagrnat中的所有关于网络的配置都是通过 <code>config.vm.network</code> 配置方法来进行的。
 这个方法的第一个参数是一个字符串标识符，用来指明配置网络哪个方面的参数，比如 <code>"forwarded_port"</code> 就表示用来指明配置的是网络转发。
@@ -592,9 +602,9 @@ Vagrnat中的所有关于网络的配置都是通过 <code>config.vm.network</co
 </p>
 </div>
 
-<div id="outline-container-orgd237164" class="outline-3">
-<h3 id="orgd237164">端口转发</h3>
-<div class="outline-text-3" id="text-orgd237164">
+<div id="outline-container-org3c6f9f8" class="outline-3">
+<h3 id="org3c6f9f8">端口转发</h3>
+<div class="outline-text-3" id="text-org3c6f9f8">
 <p>
 Vagrant的端口转发功能能够让你把发送到主机端口的数据包转发到虚拟机中去，从而实现暴露虚拟机服务的功能。
 </p>
@@ -631,9 +641,9 @@ Vagrant的端口转发功能能够让你把发送到主机端口的数据包转�
 </div>
 </div>
 
-<div id="outline-container-org3978c34" class="outline-3">
-<h3 id="org3978c34">私有网络</h3>
-<div class="outline-text-3" id="text-org3978c34">
+<div id="outline-container-org6ccde6f" class="outline-3">
+<h3 id="org6ccde6f">私有网络</h3>
+<div class="outline-text-3" id="text-org6ccde6f">
 <p>
 虚拟机与虚拟机之间、虚拟机与主机之间可以组成一个私有网络，这个网络只允许网络内的虚拟机或本地主机访问，而不允许主机外的机器进行访问。
 </p>
@@ -643,9 +653,9 @@ Vagrant的端口转发功能能够让你把发送到主机端口的数据包转�
 </p>
 </div>
 
-<div id="outline-container-orgddc0291" class="outline-4">
-<h4 id="orgddc0291">配置IP</h4>
-<div class="outline-text-4" id="text-orgddc0291">
+<div id="outline-container-orgba4619f" class="outline-4">
+<h4 id="orgba4619f">配置IP</h4>
+<div class="outline-text-4" id="text-orgba4619f">
 <p>
 配置IP有两种方式，一种是DHCP，一种是配置静态IP。最方便的方法莫过于直接通过DHCP动态分配IP了:
 </p>
@@ -680,9 +690,9 @@ Vagrant的端口转发功能能够让你把发送到主机端口的数据包转�
 </div>
 
 
-<div id="outline-container-org2067a68" class="outline-3">
-<h3 id="org2067a68">公有网络</h3>
-<div class="outline-text-3" id="text-org2067a68">
+<div id="outline-container-org6e64833" class="outline-3">
+<h3 id="org6e64833">公有网络</h3>
+<div class="outline-text-3" id="text-org6e64833">
 <p>
 Vagrant也支持创建共有网络，主机外的机器允许访问共有网络。
 公有网络的意义根据虚拟机引擎的不同有所不同，一般来说它意味着 "桥接网卡".
@@ -693,9 +703,9 @@ Vagrant也支持创建共有网络，主机外的机器允许访问共有网络�
 </p>
 </div>
 
-<div id="outline-container-org99962b8" class="outline-4">
-<h4 id="org99962b8">DHCP</h4>
-<div class="outline-text-4" id="text-org99962b8">
+<div id="outline-container-orgae86c3b" class="outline-4">
+<h4 id="orgae86c3b">DHCP</h4>
+<div class="outline-text-4" id="text-orgae86c3b">
 <p>
 若公网上启用了DHCP，则共有网络无需任何配置
 </p>
@@ -708,9 +718,9 @@ Vagrant也支持创建共有网络，主机外的机器允许访问共有网络�
 </div>
 </div>
 
-<div id="outline-container-orgf842df6" class="outline-4">
-<h4 id="orgf842df6">设置静态IP</h4>
-<div class="outline-text-4" id="text-orgf842df6">
+<div id="outline-container-org17ff24b" class="outline-4">
+<h4 id="org17ff24b">设置静态IP</h4>
+<div class="outline-text-4" id="text-org17ff24b">
 <p>
 与私有网络类似，你可以通过 <code>ip</code> 参数来设置静态IP
 </p>
@@ -722,9 +732,9 @@ Vagrant也支持创建共有网络，主机外的机器允许访问共有网络�
 </div>
 </div>
 
-<div id="outline-container-org7147510" class="outline-4">
-<h4 id="org7147510">指定桥接的网卡</h4>
-<div class="outline-text-4" id="text-org7147510">
+<div id="outline-container-org87c077e" class="outline-4">
+<h4 id="org87c077e">指定桥接的网卡</h4>
+<div class="outline-text-4" id="text-org87c077e">
 <p>
 可以通过 <code>bridge</code> 参数来指定桥接的网卡
 </p>
@@ -747,9 +757,9 @@ Vagrant也支持创建共有网络，主机外的机器允许访问共有网络�
 </div>
 </div>
 
-<div id="outline-container-org9241d5a" class="outline-3">
-<h3 id="org9241d5a">其他网络设置</h3>
-<div class="outline-text-3" id="text-org9241d5a">
+<div id="outline-container-org7ff01ab" class="outline-3">
+<h3 id="org7ff01ab">其他网络设置</h3>
+<div class="outline-text-3" id="text-org7ff01ab">
 <p>
 我们实际上可以通过 provision 的能力来让虚拟机每次启动自动设置网络
 </p>
@@ -768,17 +778,17 @@ config.vm.provision <span style="color: #2d9574;">"shell"</span>,
 </div>
 </div>
 
-<div id="outline-container-org4dcc0f1" class="outline-2">
-<h2 id="org4dcc0f1">插件</h2>
-<div class="outline-text-2" id="text-org4dcc0f1">
+<div id="outline-container-orga704060" class="outline-2">
+<h2 id="orga704060">插件</h2>
+<div class="outline-text-2" id="text-orga704060">
 <p>
 通过Vagrant插件可以扩展vagrant的功能或者更改vagrant的某些行为，事实上，某些Vagrant的核心功能都是以插件的方式来实现的。
 </p>
 </div>
 
-<div id="outline-container-org00e9d84" class="outline-3">
-<h3 id="org00e9d84">安装插件</h3>
-<div class="outline-text-3" id="text-org00e9d84">
+<div id="outline-container-org02ee7e3" class="outline-3">
+<h3 id="org02ee7e3">安装插件</h3>
+<div class="outline-text-3" id="text-org02ee7e3">
 <p>
 通过 <code>vagrant plugin install</code> 命令可以安装插件。一个插件其实就是ruby的gem包。
 </p>
@@ -808,9 +818,9 @@ config.vm.provision <span style="color: #2d9574;">"shell"</span>,
 </div>
 </div>
 
-<div id="outline-container-orgb09159c" class="outline-3">
-<h3 id="orgb09159c">更新插件</h3>
-<div class="outline-text-3" id="text-orgb09159c">
+<div id="outline-container-org859d0b5" class="outline-3">
+<h3 id="org859d0b5">更新插件</h3>
+<div class="outline-text-3" id="text-org859d0b5">
 <p>
 运行 <code>vagrant plugin update</code> 会更新所有已安装的插件到最新版。
 </p>
@@ -821,9 +831,9 @@ config.vm.provision <span style="color: #2d9574;">"shell"</span>,
 </div>
 </div>
 
-<div id="outline-container-orgb0fcf6d" class="outline-3">
-<h3 id="orgb0fcf6d">列出已安装的插件</h3>
-<div class="outline-text-3" id="text-orgb0fcf6d">
+<div id="outline-container-orgb368b31" class="outline-3">
+<h3 id="orgb368b31">列出已安装的插件</h3>
+<div class="outline-text-3" id="text-orgb368b31">
 <p>
 <code>vagrant plugin list</code> 命令会列出已经安装的插件及其对应的版本号
 </p>
@@ -842,9 +852,9 @@ vagrant-vbguest (0.15.2)
 </div>
 </div>
 
-<div id="outline-container-orge7a1042" class="outline-3">
-<h3 id="orge7a1042">卸载插件</h3>
-<div class="outline-text-3" id="text-orge7a1042">
+<div id="outline-container-org074ffb1" class="outline-3">
+<h3 id="org074ffb1">卸载插件</h3>
+<div class="outline-text-3" id="text-org074ffb1">
 <div class="org-src-container">
 <pre class="src src-shell">vagrant plugin uninstall $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">plugin_name</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -859,13 +869,13 @@ Successfully uninstalled vagrant-proxyconf-1.5.2
 </div>
 </div>
 
-<div id="outline-container-org03c854a" class="outline-2">
-<h2 id="org03c854a">设置代理服务器</h2>
-<div class="outline-text-2" id="text-org03c854a">
+<div id="outline-container-org3d058d0" class="outline-2">
+<h2 id="org3d058d0">设置代理服务器</h2>
+<div class="outline-text-2" id="text-org3d058d0">
 </div>
-<div id="outline-container-org0484925" class="outline-3">
-<h3 id="org0484925">为 vagrant 命令设置代理</h3>
-<div class="outline-text-3" id="text-org0484925">
+<div id="outline-container-org61dad1e" class="outline-3">
+<h3 id="org61dad1e">为 vagrant 命令设置代理</h3>
+<div class="outline-text-3" id="text-org61dad1e">
 <p>
 通过配置 <code>http_proxy</code> 和 <code>https_proxy</code> 这两个环境变量可以让 <code>vagrant</code> 命令通过代理访问互联网。
 </p>
@@ -878,9 +888,9 @@ Successfully uninstalled vagrant-proxyconf-1.5.2
 </div>
 </div>
 
-<div id="outline-container-org5cba600" class="outline-3">
-<h3 id="org5cba600">为虚拟机设置代理</h3>
-<div class="outline-text-3" id="text-org5cba600">
+<div id="outline-container-org3ce5085" class="outline-3">
+<h3 id="org3ce5085">为虚拟机设置代理</h3>
+<div class="outline-text-3" id="text-org3ce5085">
 <p>
 为虚拟机设置代理需要借助 <code>vagrant-proxyconf</code> 插件
 </p>
@@ -926,7 +936,7 @@ Successfully uninstalled vagrant-proxyconf-1.5.2
             <span title="post date" class="post-info">2018-07-29</span>
             <span title="last modification date" class="post-info">2018-08-16</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -966,10 +976,19 @@ Successfully uninstalled vagrant-proxyconf-1.5.2
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

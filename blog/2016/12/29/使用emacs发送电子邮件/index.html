@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,13 +54,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga4f2589">配置</a></li>
-<li><a href="#org99064bf">编写新邮件</a></li>
-<li><a href="#org50140b1">添加附件</a></li>
-<li><a href="#org0909253">设置mail address的别名</a></li>
-<li><a href="#orgce6af03">添加签名</a></li>
-<li><a href="#org9ce97d4">Queued delivery</a></li>
-<li><a href="#orgbff1b98">调试</a></li>
+<li><a href="#org8345d01">配置</a></li>
+<li><a href="#orgdbd9b67">编写新邮件</a></li>
+<li><a href="#org7354c80">添加附件</a></li>
+<li><a href="#org4742d07">设置mail address的别名</a></li>
+<li><a href="#orgebfaf77">添加签名</a></li>
+<li><a href="#org9b435f8">Queued delivery</a></li>
+<li><a href="#org6140265">调试</a></li>
 </ul>
 </div>
 </div>
@@ -58,9 +68,9 @@
 Emacs自带了SMTP库,这使的Emacs无需任何第三方软件的帮助就能通过第三方邮件服务商发送电子邮件.
 </p>
 
-<div id="outline-container-orga4f2589" class="outline-2">
-<h2 id="orga4f2589">配置</h2>
-<div class="outline-text-2" id="text-orga4f2589">
+<div id="outline-container-org8345d01" class="outline-2">
+<h2 id="org8345d01">配置</h2>
+<div class="outline-text-2" id="text-org8345d01">
 <p>
 在写邮件之前,推荐先配置一下 <code>user-full-name</code> 与 <code>user-mail-address</code> 这两个变量. 
 在编写新邮件时,Emacs会使用这两个变量来形成邮件中的 <code>From</code> header域的值.
@@ -104,9 +114,9 @@ Emacs自带了SMTP库,这使的Emacs无需任何第三方软件的帮助就能�
 </div>
 </div>
 
-<div id="outline-container-org99064bf" class="outline-2">
-<h2 id="org99064bf">编写新邮件</h2>
-<div class="outline-text-2" id="text-org99064bf">
+<div id="outline-container-orgdbd9b67" class="outline-2">
+<h2 id="orgdbd9b67">编写新邮件</h2>
+<div class="outline-text-2" id="text-orgdbd9b67">
 <p>
 按下 <code>C-x m</code> 或者直接执行 <code>M-x compose-mail</code> 就会弹出一个 <code>*unsent mail*</code> 的buffer,看起来大概是这样的:
 </p>
@@ -158,9 +168,9 @@ machine smtp服务器地址 login 用户名 port 端口号 password 密码
 </div>
 </div>
 
-<div id="outline-container-org50140b1" class="outline-2">
-<h2 id="org50140b1">添加附件</h2>
-<div class="outline-text-2" id="text-org50140b1">
+<div id="outline-container-org7354c80" class="outline-2">
+<h2 id="org7354c80">添加附件</h2>
+<div class="outline-text-2" id="text-org7354c80">
 <p>
 按下 <code>C-c C-a (mml-attach-file)</code>  就能为邮件添加附件. Emacs会依次提示输入附件路径,类型,描述以及整合方式.
 </p>
@@ -182,9 +192,9 @@ machine smtp服务器地址 login 用户名 port 端口号 password 密码
 </div>
 </div>
 
-<div id="outline-container-org0909253" class="outline-2">
-<h2 id="org0909253">设置mail address的别名</h2>
-<div class="outline-text-2" id="text-org0909253">
+<div id="outline-container-org4742d07" class="outline-2">
+<h2 id="org4742d07">设置mail address的别名</h2>
+<div class="outline-text-2" id="text-org4742d07">
 <p>
 一个别名可以代表一个或多个邮件地址.
 </p>
@@ -223,9 +233,9 @@ source FILENAME
 </div>
 </div>
 
-<div id="outline-container-orgce6af03" class="outline-2">
-<h2 id="orgce6af03">添加签名</h2>
-<div class="outline-text-2" id="text-orgce6af03">
+<div id="outline-container-orgebfaf77" class="outline-2">
+<h2 id="orgebfaf77">添加签名</h2>
+<div class="outline-text-2" id="text-orgebfaf77">
 <p>
 变量 <code>message-signature</code> 的值决定了Emacs如何处理你的邮件签名, 它支持以下几种值:
 </p>
@@ -250,9 +260,9 @@ source FILENAME
 </div>
 </div>
 
-<div id="outline-container-org9ce97d4" class="outline-2">
-<h2 id="org9ce97d4">Queued delivery</h2>
-<div class="outline-text-2" id="text-org9ce97d4">
+<div id="outline-container-org9b435f8" class="outline-2">
+<h2 id="org9b435f8">Queued delivery</h2>
+<div class="outline-text-2" id="text-org9b435f8">
 <p>
 若你的电脑不是一直连接到互联网上的,则你可以先写好邮件,将这些邮件暂存到一个队列中,然后等到连接到互联网上之后再一次性发送出去.
 </p>
@@ -263,9 +273,9 @@ source FILENAME
 </div>
 </div>
 
-<div id="outline-container-orgbff1b98" class="outline-2">
-<h2 id="orgbff1b98">调试</h2>
-<div class="outline-text-2" id="text-orgbff1b98">
+<div id="outline-container-org6140265" class="outline-2">
+<h2 id="org6140265">调试</h2>
+<div class="outline-text-2" id="text-org6140265">
 <p>
 在发送邮件的过程中如果出现问题想调试,可以开启smtpmail的调试功能:
 </p>
@@ -287,7 +297,7 @@ source FILENAME
             <span title="post date" class="post-info">2016-12-29</span>
             <span title="last modification date" class="post-info">2016-12-30</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/emacs之怒">Emacs之怒</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -327,10 +337,19 @@ source FILENAME
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

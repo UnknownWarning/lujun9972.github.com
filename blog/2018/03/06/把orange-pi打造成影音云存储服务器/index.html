@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,11 +54,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org483ca58">安装MiniDLNA</a></li>
-<li><a href="#org6360e0a">配置 /etc/minidlna.conf</a></li>
-<li><a href="#orgca51382">重启MiniDLNA</a></li>
-<li><a href="#org9a25412">使用MiniDLNA</a></li>
-<li><a href="#org2190ac8">使用Docker简化安装</a></li>
+<li><a href="#org2b3bc23">安装MiniDLNA</a></li>
+<li><a href="#org9d260d6">配置 /etc/minidlna.conf</a></li>
+<li><a href="#org4fa5edb">重启MiniDLNA</a></li>
+<li><a href="#org4a77285">使用MiniDLNA</a></li>
+<li><a href="#org6beebfe">使用Docker简化安装</a></li>
 </ul>
 </div>
 </div>
@@ -56,9 +66,9 @@
 运用MiniDLNA这款软件，可以把Orange Pi变成一个家庭影音云存储设备，从而将电影、音乐分享给局域网中其他用户。
 </p>
 
-<div id="outline-container-org483ca58" class="outline-2">
-<h2 id="org483ca58">安装MiniDLNA</h2>
-<div class="outline-text-2" id="text-org483ca58">
+<div id="outline-container-org2b3bc23" class="outline-2">
+<h2 id="org2b3bc23">安装MiniDLNA</h2>
+<div class="outline-text-2" id="text-org2b3bc23">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install -y minidlna
 </pre>
@@ -66,9 +76,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6360e0a" class="outline-2">
-<h2 id="org6360e0a">配置 /etc/minidlna.conf</h2>
-<div class="outline-text-2" id="text-org6360e0a">
+<div id="outline-container-org9d260d6" class="outline-2">
+<h2 id="org9d260d6">配置 /etc/minidlna.conf</h2>
+<div class="outline-text-2" id="text-org9d260d6">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#23186;&#20307;&#25991;&#20214;&#30446;&#24405;</span>
 <span style="color: #7590db;">media_dir</span>=/media/usb0
@@ -85,9 +95,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgca51382" class="outline-2">
-<h2 id="orgca51382">重启MiniDLNA</h2>
-<div class="outline-text-2" id="text-orgca51382">
+<div id="outline-container-org4fa5edb" class="outline-2">
+<h2 id="org4fa5edb">重启MiniDLNA</h2>
+<div class="outline-text-2" id="text-org4fa5edb">
 <div class="org-src-container">
 <pre class="src src-shell">sudo systemctl restart minidlna
 </pre>
@@ -95,9 +105,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9a25412" class="outline-2">
-<h2 id="org9a25412">使用MiniDLNA</h2>
-<div class="outline-text-2" id="text-org9a25412">
+<div id="outline-container-org4a77285" class="outline-2">
+<h2 id="org4a77285">使用MiniDLNA</h2>
+<div class="outline-text-2" id="text-org4a77285">
 <p>
 在Pad上查看UPNP/DLNA Media Servers就能看到一个名为 <code>orangepipc2:minidlna</code> 的服务器了。
 </p>
@@ -111,9 +121,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org2190ac8" class="outline-2">
-<h2 id="org2190ac8">使用Docker简化安装</h2>
-<div class="outline-text-2" id="text-org2190ac8">
+<div id="outline-container-org6beebfe" class="outline-2">
+<h2 id="org6beebfe">使用Docker简化安装</h2>
+<div class="outline-text-2" id="text-org6beebfe">
 <p>
 如果你觉得上面操作太麻烦，那么可以直接使用Docker帮你搞定。
 </p>
@@ -178,6 +188,15 @@
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>

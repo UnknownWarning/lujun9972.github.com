@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,21 +54,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org71b0f8d">静态补全</a></li>
-<li><a href="#orgaadfc0b">动态补全</a>
+<li><a href="#orgdc7e050">静态补全</a></li>
+<li><a href="#orgc8fdb53">动态补全</a>
 <ul>
-<li><a href="#org8971d20">compgen命令</a></li>
-<li><a href="#orge1daa03">注册动态补全函数</a></li>
-<li><a href="#org905da2e">举个例子</a></li>
+<li><a href="#orgb576e80">compgen命令</a></li>
+<li><a href="#org8554d82">注册动态补全函数</a></li>
+<li><a href="#orgd61f38e">举个例子</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org71b0f8d" class="outline-2">
-<h2 id="org71b0f8d">静态补全</h2>
-<div class="outline-text-2" id="text-org71b0f8d">
+<div id="outline-container-orgdc7e050" class="outline-2">
+<h2 id="orgdc7e050">静态补全</h2>
+<div class="outline-text-2" id="text-orgdc7e050">
 <p>
 创建静态补全很简单，只需要使用 <code>complete</code> 的 <code>-W</code> (wordlist) 选项为脚本注册补全的单词列表就行了。
 </p>
@@ -109,9 +119,9 @@ her  him
 </div>
 </div>
 
-<div id="outline-container-orgaadfc0b" class="outline-2">
-<h2 id="orgaadfc0b">动态补全</h2>
-<div class="outline-text-2" id="text-orgaadfc0b">
+<div id="outline-container-orgc8fdb53" class="outline-2">
+<h2 id="orgc8fdb53">动态补全</h2>
+<div class="outline-text-2" id="text-orgc8fdb53">
 <p>
 动态补全能够根据用户的环境动态的生成补全的内容。 当出发动态补全时，bash会在当前shell中执行一个补全函数，然后从变量 <code>COMPREPLY</code> 中读取补全的内容。
 </p>
@@ -126,9 +136,9 @@ her  him
 <dt>COMP_LINE</dt><dd>当前命令行的内容</dd>
 </dl>
 </div>
-<div id="outline-container-org8971d20" class="outline-3">
-<h3 id="org8971d20">compgen命令</h3>
-<div class="outline-text-3" id="text-org8971d20">
+<div id="outline-container-orgb576e80" class="outline-3">
+<h3 id="orgb576e80">compgen命令</h3>
+<div class="outline-text-3" id="text-orgb576e80">
 <p>
 compgen是一款内置命令,它与 <code>complete</code> 命令类似，但可以根据已经输入的内容对补全内容进行过滤，比如
 </p>
@@ -151,9 +161,9 @@ her
 </p>
 </div>
 </div>
-<div id="outline-container-orge1daa03" class="outline-3">
-<h3 id="orge1daa03">注册动态补全函数</h3>
-<div class="outline-text-3" id="text-orge1daa03">
+<div id="outline-container-org8554d82" class="outline-3">
+<h3 id="org8554d82">注册动态补全函数</h3>
+<div class="outline-text-3" id="text-org8554d82">
 <p>
 要为命令注册动态补全函数，则需要使用 <code>completion</code> 的 <code>-F 函数</code> 参数:
 </p>
@@ -163,9 +173,9 @@ her
 </div>
 </div>
 </div>
-<div id="outline-container-org905da2e" class="outline-3">
-<h3 id="org905da2e">举个例子</h3>
-<div class="outline-text-3" id="text-org905da2e">
+<div id="outline-container-orgd61f38e" class="outline-3">
+<h3 id="orgd61f38e">举个例子</h3>
+<div class="outline-text-3" id="text-orgd61f38e">
 <p>
 比如，我想为 <code>myscript</code> 增加一个补全，这个补全的逻辑是:
 </p>
@@ -208,7 +218,7 @@ her
             <span title="post date" class="post-info">2018-03-13</span>
             <span title="last modification date" class="post-info">2018-03-13</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/bash">bash</a> : <a href="https://lujun9972.github.io/tags/completion">completion</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -248,10 +258,19 @@ her
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

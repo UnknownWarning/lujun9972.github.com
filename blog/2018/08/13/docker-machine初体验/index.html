@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org47f38d4">在本地创建带Docker的虚拟机</a></li>
-<li><a href="#orgec71fc1">在远程主机上安装Docker</a></li>
-<li><a href="#org484bfc1">管理Docker Machine</a>
+<li><a href="#orgf937ab2">在本地创建带Docker的虚拟机</a></li>
+<li><a href="#orgd07e568">在远程主机上安装Docker</a></li>
+<li><a href="#org0ab2592">管理Docker Machine</a>
 <ul>
-<li><a href="#orgb24afd7">查看被管主机信息</a></li>
-<li><a href="#org95627e4">升级被管主机</a></li>
-<li><a href="#orgcdee57d">停止被管主机</a></li>
-<li><a href="#org9c4556e">启动被管主机</a></li>
-<li><a href="#orgc9cfbab">删除被管主机</a></li>
-<li><a href="#org5cedbe2">管理远程Docker</a></li>
+<li><a href="#orgcdbd63b">查看被管主机信息</a></li>
+<li><a href="#org51462d8">升级被管主机</a></li>
+<li><a href="#orge9a6255">停止被管主机</a></li>
+<li><a href="#org0994822">启动被管主机</a></li>
+<li><a href="#orgf451007">删除被管主机</a></li>
+<li><a href="#org403dde5">管理远程Docker</a></li>
 </ul>
 </li>
 </ul>
@@ -73,9 +83,9 @@ amazonec2        digitalocean     generic          hyperv           rackspace   
 azure            exoscale         google           openstack        softlayer        vmwarefusion     vmwarevsphere
 </pre>
 
-<div id="outline-container-org47f38d4" class="outline-2">
-<h2 id="org47f38d4">在本地创建带Docker的虚拟机</h2>
-<div class="outline-text-2" id="text-org47f38d4">
+<div id="outline-container-orgf937ab2" class="outline-2">
+<h2 id="orgf937ab2">在本地创建带Docker的虚拟机</h2>
+<div class="outline-text-2" id="text-orgf937ab2">
 <p>
 通过 <code>docker-machine create</code> 命令可以创建主机并安装虚拟机，比如下面命令会创建三个使用VirtualBox驱动的主机并且在每台主机上安装好Docker
 </p>
@@ -174,9 +184,9 @@ To see how to connect your Docker Client to the Docker Engine running on this vi
 </div>
 </div>
 
-<div id="outline-container-orgec71fc1" class="outline-2">
-<h2 id="orgec71fc1">在远程主机上安装Docker</h2>
-<div class="outline-text-2" id="text-orgec71fc1">
+<div id="outline-container-orgd07e568" class="outline-2">
+<h2 id="orgd07e568">在远程主机上安装Docker</h2>
+<div class="outline-text-2" id="text-orgd07e568">
 <p>
 若远程主机是在Docker Machine支持的云服务商的，那么可以直接通过对应的驱动来帮助安装Docker，方法跟上面很类似。
 </p>
@@ -228,13 +238,13 @@ sudo usermod -a -G sudo wheel $<span style="color: #4f97d7;">{</span><span style
 </div>
 </div>
 
-<div id="outline-container-org484bfc1" class="outline-2">
-<h2 id="org484bfc1">管理Docker Machine</h2>
-<div class="outline-text-2" id="text-org484bfc1">
+<div id="outline-container-org0ab2592" class="outline-2">
+<h2 id="org0ab2592">管理Docker Machine</h2>
+<div class="outline-text-2" id="text-org0ab2592">
 </div>
-<div id="outline-container-orgb24afd7" class="outline-3">
-<h3 id="orgb24afd7">查看被管主机信息</h3>
-<div class="outline-text-3" id="text-orgb24afd7">
+<div id="outline-container-orgcdbd63b" class="outline-3">
+<h3 id="orgcdbd63b">查看被管主机信息</h3>
+<div class="outline-text-3" id="text-orgcdbd63b">
 <p>
 Docker Machine可以用来列出、检查和升级被管主机，我们可以通过 <code>ls</code> 子命令来获得被管理的机器列表
 </p>
@@ -286,9 +296,9 @@ ACTIVE这一列若带星号，则表示这台机器是活跃的，也就是任�
 </div>
 
 
-<div id="outline-container-org95627e4" class="outline-3">
-<h3 id="org95627e4">升级被管主机</h3>
-<div class="outline-text-3" id="text-org95627e4">
+<div id="outline-container-org51462d8" class="outline-3">
+<h3 id="org51462d8">升级被管主机</h3>
+<div class="outline-text-3" id="text-org51462d8">
 <div class="org-src-container">
 <pre class="src src-shell">docker-machine upgrade host1
 </pre>
@@ -310,9 +320,9 @@ Restarting docker...
 </div>
 </div>
 
-<div id="outline-container-orgcdee57d" class="outline-3">
-<h3 id="orgcdee57d">停止被管主机</h3>
-<div class="outline-text-3" id="text-orgcdee57d">
+<div id="outline-container-orge9a6255" class="outline-3">
+<h3 id="orge9a6255">停止被管主机</h3>
+<div class="outline-text-3" id="text-orge9a6255">
 <p>
 使用 <code>stop</code> 子命令来停止被管主机
 </p>
@@ -333,9 +343,9 @@ Machine "host2" was stopped.
 </div>
 </div>
 
-<div id="outline-container-org9c4556e" class="outline-3">
-<h3 id="org9c4556e">启动被管主机</h3>
-<div class="outline-text-3" id="text-org9c4556e">
+<div id="outline-container-org0994822" class="outline-3">
+<h3 id="org0994822">启动被管主机</h3>
+<div class="outline-text-3" id="text-org0994822">
 <p>
 使用 <code>start</code> 子命令来启动被停止的主机
 </p>
@@ -357,9 +367,9 @@ Started machines may have new IP addresses. You may need to re-run the `docker-m
 </div>
 </div>
 
-<div id="outline-container-orgc9cfbab" class="outline-3">
-<h3 id="orgc9cfbab">删除被管主机</h3>
-<div class="outline-text-3" id="text-orgc9cfbab">
+<div id="outline-container-orgf451007" class="outline-3">
+<h3 id="orgf451007">删除被管主机</h3>
+<div class="outline-text-3" id="text-orgf451007">
 <p>
 使用 <code>rm</code> 子命令来删除被管主机
 </p>
@@ -405,9 +415,9 @@ host3虚拟机被干掉了。
 </div>
 </div>
 
-<div id="outline-container-org5cedbe2" class="outline-3">
-<h3 id="org5cedbe2">管理远程Docker</h3>
-<div class="outline-text-3" id="text-org5cedbe2">
+<div id="outline-container-org403dde5" class="outline-3">
+<h3 id="org403dde5">管理远程Docker</h3>
+<div class="outline-text-3" id="text-org403dde5">
 <p>
 我们只需要更改更改环境变量就能让Docker客户端连接上远程主机上的Docker Daemon来进行操作。
 </p>
@@ -494,7 +504,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
             <span title="post date" class="post-info">2018-08-13</span>
             <span title="last modification date" class="post-info">2018-08-18</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/docker">docker</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -534,10 +544,19 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

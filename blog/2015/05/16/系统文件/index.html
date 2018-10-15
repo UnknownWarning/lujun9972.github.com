@@ -18,23 +18,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -43,30 +53,30 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga4ba780">1. passwd文件</a></li>
-<li><a href="#org913e7f9">2. shadow文件</a></li>
-<li><a href="#orgb46356d">3. group文件</a></li>
-<li><a href="#org49d8c8b">4. 其他数据文件</a>
+<li><a href="#org75eb93e">1. passwd文件</a></li>
+<li><a href="#org57deb72">2. shadow文件</a></li>
+<li><a href="#orgbcf661c">3. group文件</a></li>
+<li><a href="#org46168d1">4. 其他数据文件</a>
 <ul>
-<li><a href="#orgd62dfb4">4.1. hosts文件</a></li>
-<li><a href="#orgd9d1e20">4.2. networks文件</a></li>
-<li><a href="#org6877380">4.3. protocols文件</a></li>
-<li><a href="#org92034ce">4.4. services文件</a></li>
+<li><a href="#orgae8463e">4.1. hosts文件</a></li>
+<li><a href="#org444c854">4.2. networks文件</a></li>
+<li><a href="#org769909e">4.3. protocols文件</a></li>
+<li><a href="#orgbbe16c7">4.4. services文件</a></li>
 </ul>
 </li>
-<li><a href="#org13582ef">5. 登录账户记录</a></li>
-<li><a href="#org53a8193">6. 系统标识</a>
+<li><a href="#orgc582124">5. 登录账户记录</a></li>
+<li><a href="#org1862e36">6. 系统标识</a>
 <ul>
-<li><a href="#orgb3cc85e">6.1. uname函数:获取当前主机与操作系统相关信息</a></li>
-<li><a href="#orgb317208">6.2. gethostname函数:只返回主机名</a></li>
+<li><a href="#orgae1ca13">6.1. uname函数:获取当前主机与操作系统相关信息</a></li>
+<li><a href="#org9d8dd0d">6.2. gethostname函数:只返回主机名</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga4ba780" class="outline-2">
-<h2 id="orga4ba780"><span class="section-number-2">1</span> passwd文件</h2>
+<div id="outline-container-org75eb93e" class="outline-2">
+<h2 id="org75eb93e"><span class="section-number-2">1</span> passwd文件</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 &lt;pwd.h&gt;中定义了passwd结构体,并提供了获取指定passwd项的函数
@@ -120,8 +130,8 @@
 </div>
 </div>
 
-<div id="outline-container-org913e7f9" class="outline-2">
-<h2 id="org913e7f9"><span class="section-number-2">2</span> shadow文件</h2>
+<div id="outline-container-org57deb72" class="outline-2">
+<h2 id="org57deb72"><span class="section-number-2">2</span> shadow文件</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 类似passwd相关函数
@@ -155,8 +165,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgb46356d" class="outline-2">
-<h2 id="orgb46356d"><span class="section-number-2">3</span> group文件</h2>
+<div id="outline-container-orgbcf661c" class="outline-2">
+<h2 id="orgbcf661c"><span class="section-number-2">3</span> group文件</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">grp.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -208,8 +218,8 @@
 </div>
 
 
-<div id="outline-container-org49d8c8b" class="outline-2">
-<h2 id="org49d8c8b"><span class="section-number-2">4</span> 其他数据文件</h2>
+<div id="outline-container-org46168d1" class="outline-2">
+<h2 id="org46168d1"><span class="section-number-2">4</span> 其他数据文件</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 对于hosts,networks,protocols,services等系统文件,UNIX也提供了与passwd类似的函数.
@@ -310,8 +320,8 @@ end函数
 </ul>
 </div>
 
-<div id="outline-container-orgd62dfb4" class="outline-3">
-<h3 id="orgd62dfb4"><span class="section-number-3">4.1</span> hosts文件</h3>
+<div id="outline-container-orgae8463e" class="outline-3">
+<h3 id="orgae8463e"><span class="section-number-3">4.1</span> hosts文件</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 本机信息存放在/etc/hosts中,可以通过调用gethostent查找本机主机信息
@@ -388,8 +398,8 @@ gethostent返回/etc/hosts文件中的下一个条目, <b>若文件没打开,get
 </div>
 </div>
 
-<div id="outline-container-orgd9d1e20" class="outline-3">
-<h3 id="orgd9d1e20"><span class="section-number-3">4.2</span> networks文件</h3>
+<div id="outline-container-org444c854" class="outline-3">
+<h3 id="org444c854"><span class="section-number-3">4.2</span> networks文件</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 我们使用以下函数获得网络名字和网络编号
@@ -420,8 +430,8 @@ gethostent返回/etc/hosts文件中的下一个条目, <b>若文件没打开,get
 </div>
 </div>
 
-<div id="outline-container-org6877380" class="outline-3">
-<h3 id="org6877380"><span class="section-number-3">4.3</span> protocols文件</h3>
+<div id="outline-container-org769909e" class="outline-3">
+<h3 id="org769909e"><span class="section-number-3">4.3</span> protocols文件</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 我们可以使用以下函数在协议名字和协议编号之间进行映射
@@ -451,8 +461,8 @@ gethostent返回/etc/hosts文件中的下一个条目, <b>若文件没打开,get
 </div>
 </div>
 
-<div id="outline-container-org92034ce" class="outline-3">
-<h3 id="org92034ce"><span class="section-number-3">4.4</span> services文件</h3>
+<div id="outline-container-orgbbe16c7" class="outline-3">
+<h3 id="orgbbe16c7"><span class="section-number-3">4.4</span> services文件</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 服务由地址的端口号部分表示,每个服务由一个唯一的总所周知的端口号来表示
@@ -482,8 +492,8 @@ gethostent返回/etc/hosts文件中的下一个条目, <b>若文件没打开,get
 </div>
 </div>
 </div>
-<div id="outline-container-org13582ef" class="outline-2">
-<h2 id="org13582ef"><span class="section-number-2">5</span> 登录账户记录</h2>
+<div id="outline-container-orgc582124" class="outline-2">
+<h2 id="orgc582124"><span class="section-number-2">5</span> 登录账户记录</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 大多数UNIX系统都提供下面两个数据文件:
@@ -507,12 +517,12 @@ gethostent返回/etc/hosts文件中的下一个条目, <b>若文件没打开,get
 </div>
 </div>
 
-<div id="outline-container-org53a8193" class="outline-2">
-<h2 id="org53a8193"><span class="section-number-2">6</span> 系统标识</h2>
+<div id="outline-container-org1862e36" class="outline-2">
+<h2 id="org1862e36"><span class="section-number-2">6</span> 系统标识</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgb3cc85e" class="outline-3">
-<h3 id="orgb3cc85e"><span class="section-number-3">6.1</span> uname函数:获取当前主机与操作系统相关信息</h3>
+<div id="outline-container-orgae1ca13" class="outline-3">
+<h3 id="orgae1ca13"><span class="section-number-3">6.1</span> uname函数:获取当前主机与操作系统相关信息</h3>
 <div class="outline-text-3" id="text-6-1">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/utsname.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -531,8 +541,8 @@ gethostent返回/etc/hosts文件中的下一个条目, <b>若文件没打开,get
 </div>
 </div>
 
-<div id="outline-container-orgb317208" class="outline-3">
-<h3 id="orgb317208"><span class="section-number-3">6.2</span> gethostname函数:只返回主机名</h3>
+<div id="outline-container-org9d8dd0d" class="outline-3">
+<h3 id="org9d8dd0d"><span class="section-number-3">6.2</span> gethostname函数:只返回主机名</h3>
 <div class="outline-text-3" id="text-6-2">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -554,7 +564,7 @@ gethostent返回/etc/hosts文件中的下一个条目, <b>若文件没打开,get
             <span title="post date" class="post-info">2015-05-16</span>
             <span title="last modification date" class="post-info">2016-10-24</span>
             <span title="tags" class="post-info">:N/A:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">DarkSun</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -594,10 +604,19 @@ gethostent返回/etc/hosts文件中的下一个条目, <b>若文件没打开,get
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">DarkSun</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

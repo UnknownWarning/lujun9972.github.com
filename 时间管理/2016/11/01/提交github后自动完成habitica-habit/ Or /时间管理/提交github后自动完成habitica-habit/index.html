@@ -20,23 +20,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -45,16 +55,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org30f8a49">什么是Habitica</a></li>
-<li><a href="#org7a8feb2">Habash介绍</a></li>
-<li><a href="#orgb539778">结合Habash与Travis-ci自动完成habit</a></li>
+<li><a href="#org119c84b">什么是Habitica</a></li>
+<li><a href="#org9b0c812">Habash介绍</a></li>
+<li><a href="#org39f0d19">结合Habash与Travis-ci自动完成habit</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org30f8a49" class="outline-2">
-<h2 id="org30f8a49">什么是Habitica</h2>
-<div class="outline-text-2" id="text-org30f8a49">
+<div id="outline-container-org119c84b" class="outline-2">
+<h2 id="org119c84b">什么是Habitica</h2>
+<div class="outline-text-2" id="text-org119c84b">
 <p>
 <a href="https://habitica.com">Habitica</a> 是一个款超赞的游戏化软件，它致力于帮助用户培养习惯和提高效率。
 与传统的效率类软件不同的是，Habitica使生活看起来就像一场复古的像素风角色扮演游戏。
@@ -78,9 +88,9 @@
 </div>
 </div>
 
-<div id="outline-container-org7a8feb2" class="outline-2">
-<h2 id="org7a8feb2">Habash介绍</h2>
-<div class="outline-text-2" id="text-org7a8feb2">
+<div id="outline-container-org9b0c812" class="outline-2">
+<h2 id="org9b0c812">Habash介绍</h2>
+<div class="outline-text-2" id="text-org9b0c812">
 <p>
 habash是一款由shell实现的habitica api，它的用法也很简单，只需要：
 </p>
@@ -93,9 +103,9 @@ habash是一款由shell实现的habitica api，它的用法也很简单，只需
 </div>
 </div>
 
-<div id="outline-container-orgb539778" class="outline-2">
-<h2 id="orgb539778">结合Habash与Travis-ci自动完成habit</h2>
-<div class="outline-text-2" id="text-orgb539778">
+<div id="outline-container-org39f0d19" class="outline-2">
+<h2 id="org39f0d19">结合Habash与Travis-ci自动完成habit</h2>
+<div class="outline-text-2" id="text-org39f0d19">
 <p>
 travis-ci能让我们在每次提交github后自动触发执行一段脚本。 所以我们只需要让travis-ci帮我们自动调用habash来完成任务就行了。 
 </p>
@@ -109,20 +119,20 @@ travis-ci能让我们在每次提交github后自动触发执行一段脚本。 �
 在要监控的github repo上添加一个 <code>.travis.yml</code> 文件，录入下面内容
 </p>
 <div class="org-src-container">
-<pre class="src src-yaml"><span style="color: #7590db;">language</span>: generic
-<span style="color: #7590db;">sudo</span>: <span style="color: #a45bad;">false</span>
+<pre class="src src-yaml">language: generic
+sudo: false
 
-<span style="color: #7590db;">branches</span>:
-  <span style="color: #7590db;">only</span>:
+branches:
+  only:
     - master
     - source
-    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#36825;&#37324;&#21487;&#20197;&#28155;&#21152;&#20320;&#35201;&#30417;&#25511;&#21738;&#20123;branch</span>
+    # 这里可以添加你要监控哪些branch
 
-<span style="color: #7590db;">before_install</span>:
+before_install:
  - git clone https://github.com/nasfarley88/habash
 
-<span style="color: #7590db;">script</span>:
-- ./habash/habash up <span style="color: #2d9574;">"&lt;&#20320;&#33258;&#24049;&#30340;Habit&#20219;&#21153;&#25551;&#36848;&gt;"</span>
+script:
+- ./habash/habash up "&lt;你自己的Habit任务描述&gt;"
 </pre>
 </div></li>
 
@@ -182,6 +192,15 @@ travis-ci能让我们在每次提交github后自动触发执行一段脚本。 �
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>

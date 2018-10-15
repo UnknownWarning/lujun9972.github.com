@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,32 +54,32 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org942c5fd">前置准备工具</a></li>
-<li><a href="#org8298fb6">配置构建环境</a></li>
-<li><a href="#org7a05621">构建交叉编译器</a>
+<li><a href="#org6f35a3a">前置准备工具</a></li>
+<li><a href="#orgac4da01">配置构建环境</a></li>
+<li><a href="#orgcd5c188">构建交叉编译器</a>
 <ul>
-<li><a href="#org3e01d64">设置好编译相关的变量</a></li>
-<li><a href="#org92f82ba">安装kernel headers</a></li>
-<li><a href="#org479a8e0">安装Binutils</a></li>
-<li><a href="#org0faa033">静态编译的gcc</a></li>
-<li><a href="#orgf8ae05d">编译Glibc</a></li>
-<li><a href="#org6dfdeb1">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</a></li>
+<li><a href="#org20d9094">设置好编译相关的变量</a></li>
+<li><a href="#org12e5e52">安装kernel headers</a></li>
+<li><a href="#org6a348fe">安装Binutils</a></li>
+<li><a href="#org836fee7">静态编译的gcc</a></li>
+<li><a href="#orgdbfadff">编译Glibc</a></li>
+<li><a href="#org303b509">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</a></li>
 </ul>
 </li>
-<li><a href="#org7e44983">构建Target Image</a>
+<li><a href="#orgf386d01">构建Target Image</a>
 <ul>
-<li><a href="#orgfeec409">构建BusyBox</a></li>
-<li><a href="#orgc95afb4">构建linux kernel</a></li>
-<li><a href="#org33008c9">Bootscripts</a></li>
+<li><a href="#org7872b5c">构建BusyBox</a></li>
+<li><a href="#orgb2f6419">构建linux kernel</a></li>
+<li><a href="#org84b4497">Bootscripts</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org942c5fd" class="outline-2">
-<h2 id="org942c5fd">前置准备工具</h2>
-<div class="outline-text-2" id="text-org942c5fd">
+<div id="outline-container-org6f35a3a" class="outline-2">
+<h2 id="org6f35a3a">前置准备工具</h2>
+<div class="outline-text-2" id="text-org6f35a3a">
 <p>
 在host主机上需要安装有 GCC,make,ncurses,perl以及grub-install
 </p>
@@ -94,9 +104,9 @@
 </div>
 
 
-<div id="outline-container-org8298fb6" class="outline-2">
-<h2 id="org8298fb6">配置构建环境</h2>
-<div class="outline-text-2" id="text-org8298fb6">
+<div id="outline-container-orgac4da01" class="outline-2">
+<h2 id="orgac4da01">配置构建环境</h2>
+<div class="outline-text-2" id="text-orgac4da01">
 <ol class="org-ol">
 <li><p>
 启用bash hash功能
@@ -379,13 +389,13 @@ chmod -v <span style="color: #a45bad;">664</span> $<span style="color: #4f97d7;"
 </div>
 
 
-<div id="outline-container-org7a05621" class="outline-2">
-<h2 id="org7a05621">构建交叉编译器</h2>
-<div class="outline-text-2" id="text-org7a05621">
+<div id="outline-container-orgcd5c188" class="outline-2">
+<h2 id="orgcd5c188">构建交叉编译器</h2>
+<div class="outline-text-2" id="text-orgcd5c188">
 </div>
-<div id="outline-container-org3e01d64" class="outline-3">
-<h3 id="org3e01d64">设置好编译相关的变量</h3>
-<div class="outline-text-3" id="text-org3e01d64">
+<div id="outline-container-org20d9094" class="outline-3">
+<h3 id="org20d9094">设置好编译相关的变量</h3>
+<div class="outline-text-3" id="text-org20d9094">
 <p>
 清空host上预设的 C/C++ 编译标志
 </p>
@@ -409,9 +419,9 @@ chmod -v <span style="color: #a45bad;">664</span> $<span style="color: #4f97d7;"
 </div>
 </div>
 
-<div id="outline-container-org92f82ba" class="outline-3">
-<h3 id="org92f82ba">安装kernel headers</h3>
-<div class="outline-text-3" id="text-org92f82ba">
+<div id="outline-container-org12e5e52" class="outline-3">
+<h3 id="org12e5e52">安装kernel headers</h3>
+<div class="outline-text-3" id="text-org12e5e52">
 <p>
 从<a href="https://www.kernel.org/">kernel.org</a>下载内核源码
 </p>
@@ -442,9 +452,9 @@ cp -rv dest/include/* $<span style="color: #4f97d7;">{</span><span style="color:
 </div>
 </div>
 
-<div id="outline-container-org479a8e0" class="outline-3">
-<h3 id="org479a8e0">安装Binutils</h3>
-<div class="outline-text-3" id="text-org479a8e0">
+<div id="outline-container-org6a348fe" class="outline-3">
+<h3 id="org6a348fe">安装Binutils</h3>
+<div class="outline-text-3" id="text-org6a348fe">
 <p>
 下载bintuils源代码
 </p>
@@ -477,9 +487,9 @@ cp -v include/libiberty.h $<span style="color: #4f97d7;">{</span><span style="co
 </div>
 </div>
 
-<div id="outline-container-org0faa033" class="outline-3">
-<h3 id="org0faa033">静态编译的gcc</h3>
-<div class="outline-text-3" id="text-org0faa033">
+<div id="outline-container-org836fee7" class="outline-3">
+<h3 id="org836fee7">静态编译的gcc</h3>
+<div class="outline-text-3" id="text-org836fee7">
 <p>
 下载 gcc，gmp，mpfr，mpc
 </p>
@@ -538,9 +548,9 @@ ln -vs libgcc.a $<span style="color: #4f97d7;">(</span>$<span style="color: #bc6
 </div>
 </div>
 
-<div id="outline-container-orgf8ae05d" class="outline-3">
-<h3 id="orgf8ae05d">编译Glibc</h3>
-<div class="outline-text-3" id="text-orgf8ae05d">
+<div id="outline-container-orgdbfadff" class="outline-3">
+<h3 id="orgdbfadff">编译Glibc</h3>
+<div class="outline-text-3" id="text-orgdbfadff">
 <p>
 下载glibc
 </p>
@@ -584,9 +594,9 @@ make &amp;&amp; make <span style="color: #7590db;">install_root</span>=$<span st
 </div>
 </div>
 
-<div id="outline-container-org6dfdeb1" class="outline-3">
-<h3 id="org6dfdeb1">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</h3>
-<div class="outline-text-3" id="text-org6dfdeb1">
+<div id="outline-container-org303b509" class="outline-3">
+<h3 id="org303b509">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</h3>
+<div class="outline-text-3" id="text-org303b509">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #4f97d7;">cd</span> ..
 mkdir gcc-build
@@ -609,13 +619,13 @@ cp -v $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">LJOS<
 </div>
 </div>
 
-<div id="outline-container-org7e44983" class="outline-2">
-<h2 id="org7e44983">构建Target Image</h2>
-<div class="outline-text-2" id="text-org7e44983">
+<div id="outline-container-orgf386d01" class="outline-2">
+<h2 id="orgf386d01">构建Target Image</h2>
+<div class="outline-text-2" id="text-orgf386d01">
 </div>
-<div id="outline-container-orgfeec409" class="outline-3">
-<h3 id="orgfeec409">构建BusyBox</h3>
-<div class="outline-text-3" id="text-orgfeec409">
+<div id="outline-container-org7872b5c" class="outline-3">
+<h3 id="org7872b5c">构建BusyBox</h3>
+<div class="outline-text-3" id="text-org7872b5c">
 <p>
 下载 BusyBox
 </p>
@@ -661,9 +671,9 @@ chmod <span style="color: #a45bad;">755</span> $<span style="color: #4f97d7;">{<
 </div>
 </div>
 
-<div id="outline-container-orgc95afb4" class="outline-3">
-<h3 id="orgc95afb4">构建linux kernel</h3>
-<div class="outline-text-3" id="text-orgc95afb4">
+<div id="outline-container-orgb2f6419" class="outline-3">
+<h3 id="orgb2f6419">构建linux kernel</h3>
+<div class="outline-text-3" id="text-orgb2f6419">
 <p>
 生成默认的x86-64的配置文件
 </p>
@@ -721,8 +731,8 @@ cp -v .config $<span style="color: #4f97d7;">{</span><span style="color: #7590db
 </div>
 </div>
 
-<div id="outline-container-org33008c9" class="outline-3">
-<h3 id="org33008c9">Bootscripts</h3>
+<div id="outline-container-org84b4497" class="outline-3">
+<h3 id="org84b4497">Bootscripts</h3>
 </div>
 </div>
 
@@ -773,6 +783,15 @@ cp -v .config $<span style="color: #4f97d7;">{</span><span style="color: #7590db
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>

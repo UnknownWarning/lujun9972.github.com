@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,19 +54,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcdf6364">systemd-journald.service</a>
+<li><a href="#org2df39e9">systemd-journald.service</a>
 <ul>
-<li><a href="#org8bb5f39">配置systemd-journald.service</a></li>
+<li><a href="#org7748aa2">配置systemd-journald.service</a></li>
 </ul>
 </li>
-<li><a href="#org28dbd96">journalctl常用方法</a>
+<li><a href="#org72614e9">journalctl常用方法</a>
 <ul>
-<li><a href="#orged5190b">查询指定时间内的日志</a></li>
-<li><a href="#org46b536e">约束日志输出的行数</a></li>
-<li><a href="#org71b697a">指定日志级别</a></li>
-<li><a href="#org31eb9ca">根据日志元数据进行过滤</a></li>
-<li><a href="#org907e597">根据正则表达式搜索的日志</a></li>
-<li><a href="#orga57f0db">其他参数</a></li>
+<li><a href="#org89a5ca7">查询指定时间内的日志</a></li>
+<li><a href="#orgf299771">约束日志输出的行数</a></li>
+<li><a href="#orgde2cd17">指定日志级别</a></li>
+<li><a href="#orgd6137aa">根据日志元数据进行过滤</a></li>
+<li><a href="#org6c71ccd">根据正则表达式搜索的日志</a></li>
+<li><a href="#orgdbc51ad">其他参数</a></li>
 </ul>
 </li>
 </ul>
@@ -66,9 +76,9 @@
 当启动service失败或者出现异常时，我们同行需要查看systemd的日志。 journalctl就是最常用的查看systemd日志的工具了。
 </p>
 
-<div id="outline-container-orgcdf6364" class="outline-2">
-<h2 id="orgcdf6364">systemd-journald.service</h2>
-<div class="outline-text-2" id="text-orgcdf6364">
+<div id="outline-container-org2df39e9" class="outline-2">
+<h2 id="org2df39e9">systemd-journald.service</h2>
+<div class="outline-text-2" id="text-org2df39e9">
 <p>
 systemd本身使用 <code>systemd-journald.service</code> 来提供日志服务.
 它默认以二进制的格式将日志文件存在 <code>/var/log/journal/</code> 目录中.
@@ -183,9 +193,9 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </p>
 </div>
 
-<div id="outline-container-org8bb5f39" class="outline-3">
-<h3 id="org8bb5f39">配置systemd-journald.service</h3>
-<div class="outline-text-3" id="text-org8bb5f39">
+<div id="outline-container-org7748aa2" class="outline-3">
+<h3 id="org7748aa2">配置systemd-journald.service</h3>
+<div class="outline-text-3" id="text-org7748aa2">
 <p>
 <code>systemd-journald</code> 的配置文件为 <code>/etc/systemd/journald.conf</code> 中， 通过修改其中的配置信息可以影响其行为：
 </p>
@@ -243,13 +253,13 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 </div>
 
-<div id="outline-container-org28dbd96" class="outline-2">
-<h2 id="org28dbd96">journalctl常用方法</h2>
-<div class="outline-text-2" id="text-org28dbd96">
+<div id="outline-container-org72614e9" class="outline-2">
+<h2 id="org72614e9">journalctl常用方法</h2>
+<div class="outline-text-2" id="text-org72614e9">
 </div>
-<div id="outline-container-orged5190b" class="outline-3">
-<h3 id="orged5190b">查询指定时间内的日志</h3>
-<div class="outline-text-3" id="text-orged5190b">
+<div id="outline-container-org89a5ca7" class="outline-3">
+<h3 id="org89a5ca7">查询指定时间内的日志</h3>
+<div class="outline-text-3" id="text-org89a5ca7">
 <p>
 当你直接运行 <code>journalctl</code> 时，会显示从第一次启动系统开始到现在的所有日志。
 </p>
@@ -344,9 +354,9 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 </div>
 
-<div id="outline-container-org46b536e" class="outline-3">
-<h3 id="org46b536e">约束日志输出的行数</h3>
-<div class="outline-text-3" id="text-org46b536e">
+<div id="outline-container-orgf299771" class="outline-3">
+<h3 id="orgf299771">约束日志输出的行数</h3>
+<div class="outline-text-3" id="text-orgf299771">
 <p>
 若我们只是想查看日志中的最后几行，没有必要使用tail命令，通过 <code>--lines</code> 命令即可,比如上面那个命令可以写成
 </p>
@@ -373,9 +383,9 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 
 
-<div id="outline-container-org71b697a" class="outline-3">
-<h3 id="org71b697a">指定日志级别</h3>
-<div class="outline-text-3" id="text-org71b697a">
+<div id="outline-container-orgde2cd17" class="outline-3">
+<h3 id="orgde2cd17">指定日志级别</h3>
+<div class="outline-text-3" id="text-orgde2cd17">
 <p>
 Linux的日志级别通常分成8个级别，从高到底分别为:
 </p>
@@ -458,9 +468,9 @@ Linux的日志级别通常分成8个级别，从高到底分别为:
 </div>
 </div>
 
-<div id="outline-container-org31eb9ca" class="outline-3">
-<h3 id="org31eb9ca">根据日志元数据进行过滤</h3>
-<div class="outline-text-3" id="text-org31eb9ca">
+<div id="outline-container-orgd6137aa" class="outline-3">
+<h3 id="orgd6137aa">根据日志元数据进行过滤</h3>
+<div class="outline-text-3" id="text-orgd6137aa">
 <p>
 前面提到了，systemd-journald写入的日志中包含了大量的元数据，我们可以通过这些元数据对日志信息进行过滤。
 </p>
@@ -512,9 +522,9 @@ Linux的日志级别通常分成8个级别，从高到底分别为:
 </div>
 
 
-<div id="outline-container-org907e597" class="outline-3">
-<h3 id="org907e597">根据正则表达式搜索的日志</h3>
-<div class="outline-text-3" id="text-org907e597">
+<div id="outline-container-org6c71ccd" class="outline-3">
+<h3 id="org6c71ccd">根据正则表达式搜索的日志</h3>
+<div class="outline-text-3" id="text-org6c71ccd">
 <p>
 通过 <code>--grep="REGEXP"</code> 可以过滤匹配正则表达式的日志内容,比如我想查看日志中所有与wifi相关的内容，那么可以
 </p>
@@ -573,9 +583,9 @@ Linux的日志级别通常分成8个级别，从高到底分别为:
 </div>
 </div>
 
-<div id="outline-container-orga57f0db" class="outline-3">
-<h3 id="orga57f0db">其他参数</h3>
-<div class="outline-text-3" id="text-orga57f0db">
+<div id="outline-container-orgdbc51ad" class="outline-3">
+<h3 id="orgdbc51ad">其他参数</h3>
+<div class="outline-text-3" id="text-orgdbc51ad">
 <p>
 除了上面提到的这些选项外，还有一些比较常用的选项，列举在此:
 </p>
@@ -636,6 +646,15 @@ Linux的日志级别通常分成8个级别，从高到底分别为:
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>

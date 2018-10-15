@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,24 +54,24 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1446b2f">安装必要的软件</a>
+<li><a href="#orgf7b1db5">安装必要的软件</a>
 <ul>
-<li><a href="#orgefad43b">安装mysql(mariadb)</a></li>
-<li><a href="#org1b4f7be">安装java</a></li>
-<li><a href="#org70ae202">安装killall（stop脚本中会用到）</a></li>
-<li><a href="#orgf99a3b8">安装32位支持</a></li>
+<li><a href="#org5abca37">安装mysql(mariadb)</a></li>
+<li><a href="#org1d1c9a9">安装java</a></li>
+<li><a href="#org2452b1c">安装killall（stop脚本中会用到）</a></li>
+<li><a href="#orgcc59634">安装32位支持</a></li>
 </ul>
 </li>
-<li><a href="#org28afe41">下载搭建服务器所需的文件</a></li>
-<li><a href="#org1c9ea0c">还原数据库内容</a>
+<li><a href="#org954e8cb">下载搭建服务器所需的文件</a></li>
+<li><a href="#orgb86d7be">还原数据库内容</a>
 <ul>
-<li><a href="#orge421bdd">启动mariadb服务</a></li>
-<li><a href="#org942078e">设置root用户密码为root</a></li>
-<li><a href="#org51dd499">还原zmwm数据库内容以及存储过程</a></li>
+<li><a href="#org64a45f1">启动mariadb服务</a></li>
+<li><a href="#org690ab85">设置root用户密码为root</a></li>
+<li><a href="#org3db28a3">还原zmwm数据库内容以及存储过程</a></li>
 </ul>
 </li>
-<li><a href="#org8c89464">拷贝其他文件</a></li>
-<li><a href="#orgc061fe3">配置客户端中的IP</a></li>
+<li><a href="#orga5c4984">拷贝其他文件</a></li>
+<li><a href="#orgbda7ad6">配置客户端中的IP</a></li>
 </ul>
 </div>
 </div>
@@ -77,40 +87,40 @@
 于是折腾了一下，把它移植到了centos中（挂在华为云中）
 </p>
 
-<div id="outline-container-org1446b2f" class="outline-2">
-<h2 id="org1446b2f">安装必要的软件</h2>
-<div class="outline-text-2" id="text-org1446b2f">
+<div id="outline-container-orgf7b1db5" class="outline-2">
+<h2 id="orgf7b1db5">安装必要的软件</h2>
+<div class="outline-text-2" id="text-orgf7b1db5">
 </div>
-<div id="outline-container-orgefad43b" class="outline-3">
-<h3 id="orgefad43b">安装mysql(mariadb)</h3>
-<div class="outline-text-3" id="text-orgefad43b">
+<div id="outline-container-org5abca37" class="outline-3">
+<h3 id="org5abca37">安装mysql(mariadb)</h3>
+<div class="outline-text-3" id="text-org5abca37">
 <div class="org-src-container">
 <pre class="src src-shell">yum install mariadb mariadb-server
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org1b4f7be" class="outline-3">
-<h3 id="org1b4f7be">安装java</h3>
-<div class="outline-text-3" id="text-org1b4f7be">
+<div id="outline-container-org1d1c9a9" class="outline-3">
+<h3 id="org1d1c9a9">安装java</h3>
+<div class="outline-text-3" id="text-org1d1c9a9">
 <div class="org-src-container">
 <pre class="src src-shell">yum install  java-1.8.0-openjdk
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org70ae202" class="outline-3">
-<h3 id="org70ae202">安装killall（stop脚本中会用到）</h3>
-<div class="outline-text-3" id="text-org70ae202">
+<div id="outline-container-org2452b1c" class="outline-3">
+<h3 id="org2452b1c">安装killall（stop脚本中会用到）</h3>
+<div class="outline-text-3" id="text-org2452b1c">
 <div class="org-src-container">
 <pre class="src src-shell">yum install psmisc
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf99a3b8" class="outline-3">
-<h3 id="orgf99a3b8">安装32位支持</h3>
-<div class="outline-text-3" id="text-orgf99a3b8">
+<div id="outline-container-orgcc59634" class="outline-3">
+<h3 id="orgcc59634">安装32位支持</h3>
+<div class="outline-text-3" id="text-orgcc59634">
 <div class="org-src-container">
 <pre class="src src-shell">yum install glibc.i686
 yum install libxml2.so.2
@@ -121,22 +131,22 @@ yum install libstdc++.so.5
 </div>
 </div>
 
-<div id="outline-container-org28afe41" class="outline-2">
-<h2 id="org28afe41">下载搭建服务器所需的文件</h2>
-<div class="outline-text-2" id="text-org28afe41">
+<div id="outline-container-org954e8cb" class="outline-2">
+<h2 id="org954e8cb">下载搭建服务器所需的文件</h2>
+<div class="outline-text-2" id="text-org954e8cb">
 <p>
 链接: <a href="https://pan.baidu.com/s/1i5eMLu9">https://pan.baidu.com/s/1i5eMLu9</a> 密码: f8ha
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1c9ea0c" class="outline-2">
-<h2 id="org1c9ea0c">还原数据库内容</h2>
-<div class="outline-text-2" id="text-org1c9ea0c">
+<div id="outline-container-orgb86d7be" class="outline-2">
+<h2 id="orgb86d7be">还原数据库内容</h2>
+<div class="outline-text-2" id="text-orgb86d7be">
 </div>
-<div id="outline-container-orge421bdd" class="outline-3">
-<h3 id="orge421bdd">启动mariadb服务</h3>
-<div class="outline-text-3" id="text-orge421bdd">
+<div id="outline-container-org64a45f1" class="outline-3">
+<h3 id="org64a45f1">启动mariadb服务</h3>
+<div class="outline-text-3" id="text-org64a45f1">
 <div class="org-src-container">
 <pre class="src src-shell">systemctl start mariadb
 systemctl enable mariadb
@@ -145,9 +155,9 @@ systemctl enable mariadb
 </div>
 </div>
 
-<div id="outline-container-org942078e" class="outline-3">
-<h3 id="org942078e">设置root用户密码为root</h3>
-<div class="outline-text-3" id="text-org942078e">
+<div id="outline-container-org690ab85" class="outline-3">
+<h3 id="org690ab85">设置root用户密码为root</h3>
+<div class="outline-text-3" id="text-org690ab85">
 <p>
 刚安装好mariadb并无需密码就能登陆root
 </p>
@@ -168,9 +178,9 @@ flush <span style="color: #4f97d7; font-weight: bold;">privileges</span>;
 </div>
 </div>
 
-<div id="outline-container-org51dd499" class="outline-3">
-<h3 id="org51dd499">还原zmwm数据库内容以及存储过程</h3>
-<div class="outline-text-3" id="text-org51dd499">
+<div id="outline-container-org3db28a3" class="outline-3">
+<h3 id="org3db28a3">还原zmwm数据库内容以及存储过程</h3>
+<div class="outline-text-3" id="text-org3db28a3">
 <p>
 先在mysql中创建空的zmwm库
 </p>
@@ -195,9 +205,9 @@ mysql -uroot -proot zmwm &lt;zmwm_table.sql
 </div>
 </div>
 
-<div id="outline-container-org8c89464" class="outline-2">
-<h2 id="org8c89464">拷贝其他文件</h2>
-<div class="outline-text-2" id="text-org8c89464">
+<div id="outline-container-orga5c4984" class="outline-2">
+<h2 id="orga5c4984">拷贝其他文件</h2>
+<div class="outline-text-2" id="text-orga5c4984">
 <p>
 将下类内容添加到 <code>/etc/hosts</code> 中
 </p>
@@ -253,9 +263,9 @@ tar -zxvf wulin_pwserver.tar.gz
 </div>
 </div>
 
-<div id="outline-container-orgc061fe3" class="outline-2">
-<h2 id="orgc061fe3">配置客户端中的IP</h2>
-<div class="outline-text-2" id="text-orgc061fe3">
+<div id="outline-container-orgbda7ad6" class="outline-2">
+<h2 id="orgbda7ad6">配置客户端中的IP</h2>
+<div class="outline-text-2" id="text-orgbda7ad6">
 <p>
 从这里下载客户端
 链接: <a href="https://pan.baidu.com/s/1c8NhiY">https://pan.baidu.com/s/1c8NhiY</a> 密码: z5i2
@@ -288,7 +298,7 @@ tar -zxvf wulin_pwserver.tar.gz
             <span title="post date" class="post-info">2017-07-29</span>
             <span title="last modification date" class="post-info">2017-07-29</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/无主之地">无主之地</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -328,10 +338,19 @@ tar -zxvf wulin_pwserver.tar.gz
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

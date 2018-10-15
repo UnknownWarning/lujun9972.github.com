@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,29 +54,29 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5826f14">client的常用操作</a>
+<li><a href="#org4a16e23">client的常用操作</a>
 <ul>
-<li><a href="#orgb172ccd">获取当前的client</a></li>
-<li><a href="#org8ec0291">获取client列表</a>
+<li><a href="#org46a4f30">获取当前的client</a></li>
+<li><a href="#orga23eac5">获取client列表</a>
 <ul>
-<li><a href="#org075b18a">获取所有的client列表</a></li>
-<li><a href="#orgea18060">获取符合某个条件的client列表</a></li>
-<li><a href="#org67771b9">获取某个screen上的client列表</a></li>
+<li><a href="#org155cfb0">获取所有的client列表</a></li>
+<li><a href="#org6ef1081">获取符合某个条件的client列表</a></li>
+<li><a href="#orgcaade2a">获取某个screen上的client列表</a></li>
 </ul>
 </li>
-<li><a href="#orgbecf39e">获取窗口的位置与大小</a></li>
-<li><a href="#org9e7b3c9">设置某个窗口的位置和大小</a></li>
-<li><a href="#orgac4d5c2">raise</a></li>
-<li><a href="#org1b70704">lower</a></li>
-<li><a href="#orgfadc0a7">run or raise</a></li>
-<li><a href="#orgdb3c9ef">给某个client设置鼠标操作</a></li>
-<li><a href="#orgdcf7dc2">给某个client设置快捷键</a></li>
-<li><a href="#org125631d">关闭某个client</a></li>
-<li><a href="#orga53db6b">为某个client设置所属tag</a></li>
-<li><a href="#org3b8586b">移动client到某个tag</a></li>
+<li><a href="#orgaab5e9b">获取窗口的位置与大小</a></li>
+<li><a href="#orgb2f0751">设置某个窗口的位置和大小</a></li>
+<li><a href="#orgf2f3c7f">raise</a></li>
+<li><a href="#orge70bfa7">lower</a></li>
+<li><a href="#org5b97311">run or raise</a></li>
+<li><a href="#orgd975301">给某个client设置鼠标操作</a></li>
+<li><a href="#org893a41b">给某个client设置快捷键</a></li>
+<li><a href="#orgd381139">关闭某个client</a></li>
+<li><a href="#orgf8ffb22">为某个client设置所属tag</a></li>
+<li><a href="#orgbd4d0e6">移动client到某个tag</a></li>
 </ul>
 </li>
-<li><a href="#orgdd33c8a">client中的signal处理</a></li>
+<li><a href="#org7bdc722">client中的signal处理</a></li>
 </ul>
 </div>
 </div>
@@ -147,13 +157,13 @@ Awesome WM 使用 client 类来指代 XClient 应用程序的一个窗口。
 会让该client最大化
 </p>
 
-<div id="outline-container-org5826f14" class="outline-2">
-<h2 id="org5826f14">client的常用操作</h2>
-<div class="outline-text-2" id="text-org5826f14">
+<div id="outline-container-org4a16e23" class="outline-2">
+<h2 id="org4a16e23">client的常用操作</h2>
+<div class="outline-text-2" id="text-org4a16e23">
 </div>
-<div id="outline-container-orgb172ccd" class="outline-3">
-<h3 id="orgb172ccd">获取当前的client</h3>
-<div class="outline-text-3" id="text-orgb172ccd">
+<div id="outline-container-org46a4f30" class="outline-3">
+<h3 id="org46a4f30">获取当前的client</h3>
+<div class="outline-text-3" id="text-org46a4f30">
 <p>
 client.focus对象总是代表当前获取焦点的窗口
 </p>
@@ -167,13 +177,13 @@ client.focus对象总是代表当前获取焦点的窗口
 </div>
 </div>
 
-<div id="outline-container-org8ec0291" class="outline-3">
-<h3 id="org8ec0291">获取client列表</h3>
-<div class="outline-text-3" id="text-org8ec0291">
+<div id="outline-container-orga23eac5" class="outline-3">
+<h3 id="orga23eac5">获取client列表</h3>
+<div class="outline-text-3" id="text-orga23eac5">
 </div>
-<div id="outline-container-org075b18a" class="outline-4">
-<h4 id="org075b18a">获取所有的client列表</h4>
-<div class="outline-text-4" id="text-org075b18a">
+<div id="outline-container-org155cfb0" class="outline-4">
+<h4 id="org155cfb0">获取所有的client列表</h4>
+<div class="outline-text-4" id="text-org155cfb0">
 <p>
 client.get函数可以返回一个包含所有client对象的数组
 </p>
@@ -185,9 +195,9 @@ client.get函数可以返回一个包含所有client对象的数组
 </div>
 </div>
 </div>
-<div id="outline-container-orgea18060" class="outline-4">
-<h4 id="orgea18060">获取符合某个条件的client列表</h4>
-<div class="outline-text-4" id="text-orgea18060">
+<div id="outline-container-org6ef1081" class="outline-4">
+<h4 id="org6ef1081">获取符合某个条件的client列表</h4>
+<div class="outline-text-4" id="text-org6ef1081">
 <p>
 awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client列表，其中
 </p>
@@ -214,9 +224,9 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 </div>
-<div id="outline-container-org67771b9" class="outline-4">
-<h4 id="org67771b9">获取某个screen上的client列表</h4>
-<div class="outline-text-4" id="text-org67771b9">
+<div id="outline-container-orgcaade2a" class="outline-4">
+<h4 id="orgcaade2a">获取某个screen上的client列表</h4>
+<div class="outline-text-4" id="text-orgcaade2a">
 <ul class="org-ul">
 <li>screen对象中的 <code>clients</code> 属性就是该screen上所有可见client的数组</li>
 <li>screen对象中的 <code>hidden_clients</code> 属性就是该screen上所有不可见client的数组</li>
@@ -227,9 +237,9 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-orgbecf39e" class="outline-3">
-<h3 id="orgbecf39e">获取窗口的位置与大小</h3>
-<div class="outline-text-3" id="text-orgbecf39e">
+<div id="outline-container-orgaab5e9b" class="outline-3">
+<h3 id="orgaab5e9b">获取窗口的位置与大小</h3>
+<div class="outline-text-3" id="text-orgaab5e9b">
 <p>
 <code>client:geometry()</code> 方法返回一个包含 <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> key 的table, 指示了窗口(不包括边框宽度)在屏幕上的偏移量和长度与宽度。
 </p>
@@ -248,9 +258,9 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-org9e7b3c9" class="outline-3">
-<h3 id="org9e7b3c9">设置某个窗口的位置和大小</h3>
-<div class="outline-text-3" id="text-org9e7b3c9">
+<div id="outline-container-orgb2f0751" class="outline-3">
+<h3 id="orgb2f0751">设置某个窗口的位置和大小</h3>
+<div class="outline-text-3" id="text-orgb2f0751">
 <p>
 <code>client:geometry(geo)</code> 方法也能用来设置窗口的位置和大小。
 方法是先设置好一个包含 <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> key 的table,然后使用它作为参数传递给 <code>geometry</code> 方法
@@ -258,27 +268,27 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-orgac4d5c2" class="outline-3">
-<h3 id="orgac4d5c2">raise</h3>
-<div class="outline-text-3" id="text-orgac4d5c2">
+<div id="outline-container-orgf2f3c7f" class="outline-3">
+<h3 id="orgf2f3c7f">raise</h3>
+<div class="outline-text-3" id="text-orgf2f3c7f">
 <p>
 client::raise() 方法可以唤起指定client，让它处于其他client的最上方。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1b70704" class="outline-3">
-<h3 id="org1b70704">lower</h3>
-<div class="outline-text-3" id="text-org1b70704">
+<div id="outline-container-orge70bfa7" class="outline-3">
+<h3 id="orge70bfa7">lower</h3>
+<div class="outline-text-3" id="text-orge70bfa7">
 <p>
 client::lower() 方法让该client向下降一级
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgfadc0a7" class="outline-3">
-<h3 id="orgfadc0a7">run or raise</h3>
-<div class="outline-text-3" id="text-orgfadc0a7">
+<div id="outline-container-org5b97311" class="outline-3">
+<h3 id="org5b97311">run or raise</h3>
+<div class="outline-text-3" id="text-org5b97311">
 <p>
 awful.client.run_or_raise(cmd,matcher,merge) 函数可以在当某个符合条件的client存在时切换到该client，否则通过执行命令的方式运行新应用。 其中:
 </p>
@@ -301,45 +311,45 @@ awful.client.run_or_raise<span style="color: #4f97d7;">(</span><span style="colo
 </div>
 </div>
 
-<div id="outline-container-orgdb3c9ef" class="outline-3">
-<h3 id="orgdb3c9ef">给某个client设置鼠标操作</h3>
-<div class="outline-text-3" id="text-orgdb3c9ef">
+<div id="outline-container-orgd975301" class="outline-3">
+<h3 id="orgd975301">给某个client设置鼠标操作</h3>
+<div class="outline-text-3" id="text-orgd975301">
 <p>
 client:buttons (buttons_array) 方法可以获取/设置某个client快捷键
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgdcf7dc2" class="outline-3">
-<h3 id="orgdcf7dc2">给某个client设置快捷键</h3>
-<div class="outline-text-3" id="text-orgdcf7dc2">
+<div id="outline-container-org893a41b" class="outline-3">
+<h3 id="org893a41b">给某个client设置快捷键</h3>
+<div class="outline-text-3" id="text-org893a41b">
 <p>
 client::keys(keys_array) 方法可以获取/设置某个client的快捷键
 </p>
 </div>
 </div>
 
-<div id="outline-container-org125631d" class="outline-3">
-<h3 id="org125631d">关闭某个client</h3>
-<div class="outline-text-3" id="text-org125631d">
+<div id="outline-container-orgd381139" class="outline-3">
+<h3 id="orgd381139">关闭某个client</h3>
+<div class="outline-text-3" id="text-orgd381139">
 <p>
 client:kill() 关闭该client
 </p>
 </div>
 </div>
 
-<div id="outline-container-orga53db6b" class="outline-3">
-<h3 id="orga53db6b">为某个client设置所属tag</h3>
-<div class="outline-text-3" id="text-orga53db6b">
+<div id="outline-container-orgf8ffb22" class="outline-3">
+<h3 id="orgf8ffb22">为某个client设置所属tag</h3>
+<div class="outline-text-3" id="text-orgf8ffb22">
 <p>
 client:tags(tags_array) 方法获取/设置该client所属的tag
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3b8586b" class="outline-3">
-<h3 id="org3b8586b">移动client到某个tag</h3>
-<div class="outline-text-3" id="text-org3b8586b">
+<div id="outline-container-orgbd4d0e6" class="outline-3">
+<h3 id="orgbd4d0e6">移动client到某个tag</h3>
+<div class="outline-text-3" id="text-orgbd4d0e6">
 <p>
 client:move_to_tag(targe) 将client移动到某个tag
 </p>
@@ -347,9 +357,9 @@ client:move_to_tag(targe) 将client移动到某个tag
 </div>
 </div>
 
-<div id="outline-container-orgdd33c8a" class="outline-2">
-<h2 id="orgdd33c8a">client中的signal处理</h2>
-<div class="outline-text-2" id="text-orgdd33c8a">
+<div id="outline-container-org7bdc722" class="outline-2">
+<h2 id="org7bdc722">client中的signal处理</h2>
+<div class="outline-text-2" id="text-org7bdc722">
 <ul class="org-ul">
 <li>当client对象中的某个属性发生改变时，会引发名为 <code>property::属性名</code> 的signal</li>
 
@@ -371,7 +381,7 @@ client:move_to_tag(targe) 将client移动到某个tag
             <span title="post date" class="post-info">2018-06-10</span>
             <span title="last modification date" class="post-info">2018-06-10</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -411,10 +421,19 @@ client:move_to_tag(targe) 将client移动到某个tag
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

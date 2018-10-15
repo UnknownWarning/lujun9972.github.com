@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,20 +54,20 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9e73360">安装bitlbee</a></li>
-<li><a href="#org59ea937">创建 Bitlbee 账户</a>
+<li><a href="#org1d463be">安装bitlbee</a></li>
+<li><a href="#org509b7bd">创建 Bitlbee 账户</a>
 <ul>
-<li><a href="#org08d3b73">1. 为当前用户设置密码</a></li>
-<li><a href="#org8e3e61d">2. 管理绑定的IM账户</a>
+<li><a href="#orgd1168d6">1. 为当前用户设置密码</a></li>
+<li><a href="#org745c3bf">2. 管理绑定的IM账户</a>
 <ul>
-<li><a href="#org561b4d8">查看已经添加了的IM账号</a></li>
-<li><a href="#orgb3eb99a">删除IM账号</a></li>
-<li><a href="#orgf4b9ab3">安装slack支持</a></li>
+<li><a href="#orgd44a745">查看已经添加了的IM账号</a></li>
+<li><a href="#orgf36cd2b">删除IM账号</a></li>
+<li><a href="#orgd5f21e2">安装slack支持</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8463765">使用Bitlbee进行聊天</a></li>
+<li><a href="#org5a3fb17">使用Bitlbee进行聊天</a></li>
 </ul>
 </div>
 </div>
@@ -65,9 +75,9 @@
 The program that makes IM possible within IRC is an IM-to-IRC gateway called Bitlbee (www.bitlbee.org). Basically, Bitlbee sets up an IRC server on your local machine that you can connect to like any other IRC server you might already use. Once you connect to the server, you can join the #bitlbee channel and authenticate with the bot inside. Then, you can configure Bitlbee with your Jabber, MSN, Yahoo or Oscar (AIM/ICQ) accounts. Once you are set up, when your friends are on-line, they join the channel, and when you talk to them or private-message them inside the IRC channel, it translates it to an instant message. 
 </p>
 
-<div id="outline-container-org9e73360" class="outline-2">
-<h2 id="org9e73360">安装bitlbee</h2>
-<div class="outline-text-2" id="text-org9e73360">
+<div id="outline-container-org1d463be" class="outline-2">
+<h2 id="org1d463be">安装bitlbee</h2>
+<div class="outline-text-2" id="text-org1d463be">
 <p>
 bitlbee在常见linux发行版中都有被纳入包仓库中，因此安装起来很简单。在archlinux上可以直接使用pacman来安装
 </p>
@@ -92,9 +102,9 @@ bitlbee在常见linux发行版中都有被纳入包仓库中，因此安装起�
 </div>
 </div>
 
-<div id="outline-container-org59ea937" class="outline-2">
-<h2 id="org59ea937">创建 Bitlbee 账户</h2>
-<div class="outline-text-2" id="text-org59ea937">
+<div id="outline-container-org509b7bd" class="outline-2">
+<h2 id="org509b7bd">创建 Bitlbee 账户</h2>
+<div class="outline-text-2" id="text-org509b7bd">
 <p>
 启动bitlbee后，它会在本地启动一个IRC server。使用IRC客户端登陆 <code>localhost:6667</code>, 后会自动 <code>/join &amp;bitlbee</code> 频道。
 </p>
@@ -120,9 +130,9 @@ bitlbee在常见linux发行版中都有被纳入包仓库中，因此安装起�
 </p>
 </div>
 
-<div id="outline-container-org08d3b73" class="outline-3">
-<h3 id="org08d3b73">1. 为当前用户设置密码</h3>
-<div class="outline-text-3" id="text-org08d3b73">
+<div id="outline-container-orgd1168d6" class="outline-3">
+<h3 id="orgd1168d6">1. 为当前用户设置密码</h3>
+<div class="outline-text-3" id="text-orgd1168d6">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/08/10/bitlbee/bitlbee-03.png" alt="bitlbee-03.png" />
@@ -144,9 +154,9 @@ bitlbee在常见linux发行版中都有被纳入包仓库中，因此安装起�
 </div>
 </div>
 
-<div id="outline-container-org8e3e61d" class="outline-3">
-<h3 id="org8e3e61d">2. 管理绑定的IM账户</h3>
-<div class="outline-text-3" id="text-org8e3e61d">
+<div id="outline-container-org745c3bf" class="outline-3">
+<h3 id="org745c3bf">2. 管理绑定的IM账户</h3>
+<div class="outline-text-3" id="text-org745c3bf">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/08/10/bitlbee/bitlbee-04.png" alt="bitlbee-04.png" />
@@ -196,9 +206,9 @@ Bitlbee登陆IM账号后会自动下载联系人信息，将在线的联系人�
 </p>
 </div>
 
-<div id="outline-container-org561b4d8" class="outline-4">
-<h4 id="org561b4d8">查看已经添加了的IM账号</h4>
-<div class="outline-text-4" id="text-org561b4d8">
+<div id="outline-container-orgd44a745" class="outline-4">
+<h4 id="orgd44a745">查看已经添加了的IM账号</h4>
+<div class="outline-text-4" id="text-orgd44a745">
 <p>
 可以输入 <code>account list</code> 来查看已经添加了哪些IM账号
 </p>
@@ -211,9 +221,9 @@ Bitlbee登陆IM账号后会自动下载联系人信息，将在线的联系人�
 </div>
 </div>
 
-<div id="outline-container-orgb3eb99a" class="outline-4">
-<h4 id="orgb3eb99a">删除IM账号</h4>
-<div class="outline-text-4" id="text-orgb3eb99a">
+<div id="outline-container-orgf36cd2b" class="outline-4">
+<h4 id="orgf36cd2b">删除IM账号</h4>
+<div class="outline-text-4" id="text-orgf36cd2b">
 <p>
 若不想再通过 Bitlbee 登陆某个IM账号，可以使用 <code>account IM账号 del</code> 来删除之
 </p>
@@ -226,9 +236,9 @@ Bitlbee登陆IM账号后会自动下载联系人信息，将在线的联系人�
 </div>
 </div>
 
-<div id="outline-container-orgf4b9ab3" class="outline-4">
-<h4 id="orgf4b9ab3">安装slack支持</h4>
-<div class="outline-text-4" id="text-orgf4b9ab3">
+<div id="outline-container-orgd5f21e2" class="outline-4">
+<h4 id="orgd5f21e2">安装slack支持</h4>
+<div class="outline-text-4" id="text-orgd5f21e2">
 <p>
 注意：要安装slack支持，必须使用启用了 <code>libpurple</code> 的Bitlbee。
 </p>
@@ -320,9 +330,9 @@ chat add slack emacs-general
 </div>
 </div>
 
-<div id="outline-container-org8463765" class="outline-2">
-<h2 id="org8463765">使用Bitlbee进行聊天</h2>
-<div class="outline-text-2" id="text-org8463765">
+<div id="outline-container-org5a3fb17" class="outline-2">
+<h2 id="org5a3fb17">使用Bitlbee进行聊天</h2>
+<div class="outline-text-2" id="text-org5a3fb17">
 <p>
 使用Bitlbee进行聊天的方法跟使用IRC一样，只需要按照 <code>昵称:消息</code> 的格式来会话即可，Bitlbee会弹出一个独立的聊天窗口
 </p>
@@ -345,7 +355,7 @@ chat add slack emacs-general
             <span title="post date" class="post-info">2018-08-10</span>
             <span title="last modification date" class="post-info">2018-08-10</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/..-">../</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -385,10 +395,19 @@ chat add slack emacs-general
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

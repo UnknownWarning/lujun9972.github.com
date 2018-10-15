@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,44 +54,44 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb4a09e9">常用命令说明</a></li>
-<li><a href="#orgced5ccd">创建XFS文件系统</a>
+<li><a href="#org794c475">常用命令说明</a></li>
+<li><a href="#orgb2c40ad">创建XFS文件系统</a>
 <ul>
-<li><a href="#org65d40e1">设置block大小</a></li>
-<li><a href="#orgb5dfa07">日志大小</a></li>
-<li><a href="#org39c9e57">设置文件系统标签</a></li>
+<li><a href="#org1969df0">设置block大小</a></li>
+<li><a href="#org0ab55ef">日志大小</a></li>
+<li><a href="#org246b25f">设置文件系统标签</a></li>
 </ul>
 </li>
-<li><a href="#orgf9d0fe5">挂载XFS文件系统</a></li>
-<li><a href="#org27e8783">调整XFS文件系统参数</a>
+<li><a href="#orgac992b9">挂载XFS文件系统</a></li>
+<li><a href="#orge8546dd">调整XFS文件系统参数</a>
 <ul>
-<li><a href="#org3daf426">卷标管理</a>
+<li><a href="#org10fa25f">卷标管理</a>
 <ul>
-<li><a href="#orgb971b6e">设置卷标</a></li>
-<li><a href="#orga3cad84">查看卷标</a></li>
+<li><a href="#org0137811">设置卷标</a></li>
+<li><a href="#orga5ea0c4">查看卷标</a></li>
 </ul>
 </li>
-<li><a href="#org92e1183">UUID管理</a>
+<li><a href="#orge59b86e">UUID管理</a>
 <ul>
-<li><a href="#org48732ef">查看指定设备的UUID</a></li>
-<li><a href="#orgc129e57">设置设备的UUID</a></li>
-<li><a href="#orgcffba64">清除文件系统的UUID</a></li>
+<li><a href="#orga47f8d8">查看指定设备的UUID</a></li>
+<li><a href="#org6263e6e">设置设备的UUID</a></li>
+<li><a href="#org44f993a">清除文件系统的UUID</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8f1bc49">扩展XFS文件系统的大小</a></li>
-<li><a href="#orgbe3343c">暂停/恢复XFS文件系统</a>
+<li><a href="#org34561c0">扩展XFS文件系统的大小</a></li>
+<li><a href="#org6e2c670">暂停/恢复XFS文件系统</a>
 <ul>
-<li><a href="#org176c20f">暂停XFS文件系统</a></li>
-<li><a href="#org7c5bfaa">恢复XFS文件系统</a></li>
+<li><a href="#orgd035b6b">暂停XFS文件系统</a></li>
+<li><a href="#orgf16c5d8">恢复XFS文件系统</a></li>
 </ul>
 </li>
-<li><a href="#org68a395a">修复XFS文件系统</a></li>
-<li><a href="#orgb8ce29d">碎片管理</a>
+<li><a href="#org7098512">修复XFS文件系统</a></li>
+<li><a href="#org96ab6a6">碎片管理</a>
 <ul>
-<li><a href="#org790462c">查看碎片情况</a></li>
-<li><a href="#org0308eb8">整理碎片</a></li>
+<li><a href="#org42b064c">查看碎片情况</a></li>
+<li><a href="#org91d1800">整理碎片</a></li>
 </ul>
 </li>
 </ul>
@@ -91,9 +101,9 @@
 XFS文件系统管理常用命令记录
 </p>
 
-<div id="outline-container-orgb4a09e9" class="outline-2">
-<h2 id="orgb4a09e9">常用命令说明</h2>
-<div class="outline-text-2" id="text-orgb4a09e9">
+<div id="outline-container-org794c475" class="outline-2">
+<h2 id="org794c475">常用命令说明</h2>
+<div class="outline-text-2" id="text-org794c475">
 <dl class="org-dl">
 <dt>mkfs.xfs</dt><dd>创建xfs文件系统</dd>
 <dt>xfs_admin</dt><dd>调整XFS文件系统各种参数</dd>
@@ -111,9 +121,9 @@ XFS文件系统管理常用命令记录
 </div>
 </div>
 
-<div id="outline-container-orgced5ccd" class="outline-2">
-<h2 id="orgced5ccd">创建XFS文件系统</h2>
-<div class="outline-text-2" id="text-orgced5ccd">
+<div id="outline-container-orgb2c40ad" class="outline-2">
+<h2 id="orgb2c40ad">创建XFS文件系统</h2>
+<div class="outline-text-2" id="text-orgb2c40ad">
 <p>
 使用 <code>mkfs.xfs</code> 可以将存储设备格式化为XFS格式
 </p>
@@ -174,9 +184,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-org65d40e1" class="outline-3">
-<h3 id="org65d40e1">设置block大小</h3>
-<div class="outline-text-3" id="text-org65d40e1">
+<div id="outline-container-org1969df0" class="outline-3">
+<h3 id="org1969df0">设置block大小</h3>
+<div class="outline-text-3" id="text-org1969df0">
 <p>
 block是文件系统存储的最小单位，较大的block可以增加文件系统和单个文件的大小上限并加快大文件的读写速度，但是会浪费较多空间。而太小的block则相反。
 </p>
@@ -236,9 +246,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-orgb5dfa07" class="outline-3">
-<h3 id="orgb5dfa07">日志大小</h3>
-<div class="outline-text-3" id="text-orgb5dfa07">
+<div id="outline-container-org0ab55ef" class="outline-3">
+<h3 id="org0ab55ef">日志大小</h3>
+<div class="outline-text-3" id="text-org0ab55ef">
 <p>
 格式化XFS时，mkfs.xfs会根据文件系统的大小自动分配日志的大小。
 日志大小介于512KB到128MB之间，但可以通过 <code>-l size=日志大小</code> 来设置，其中日志的单位可以是:
@@ -276,9 +286,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-org39c9e57" class="outline-3">
-<h3 id="org39c9e57">设置文件系统标签</h3>
-<div class="outline-text-3" id="text-org39c9e57">
+<div id="outline-container-org246b25f" class="outline-3">
+<h3 id="org246b25f">设置文件系统标签</h3>
+<div class="outline-text-3" id="text-org246b25f">
 <p>
 Label或者说Volume Name可以用来说明文件系统的用途，可以通过 <code>-L 标签</code> 来设置
 </p>
@@ -317,9 +327,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-orgf9d0fe5" class="outline-2">
-<h2 id="orgf9d0fe5">挂载XFS文件系统</h2>
-<div class="outline-text-2" id="text-orgf9d0fe5">
+<div id="outline-container-orgac992b9" class="outline-2">
+<h2 id="orgac992b9">挂载XFS文件系统</h2>
+<div class="outline-text-2" id="text-orgac992b9">
 <p>
 在挂载时，可以使用一些性能增强的选项来发掘XFS文件系统的性能
 </p>
@@ -345,20 +355,20 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </dl>
 </div>
 </div>
-<div id="outline-container-org27e8783" class="outline-2">
-<h2 id="org27e8783">调整XFS文件系统参数</h2>
-<div class="outline-text-2" id="text-org27e8783">
+<div id="outline-container-orge8546dd" class="outline-2">
+<h2 id="orge8546dd">调整XFS文件系统参数</h2>
+<div class="outline-text-2" id="text-orge8546dd">
 <p>
 使用 <code>xfs_admin</code> 来调整XFS文件系统参数
 </p>
 </div>
-<div id="outline-container-org3daf426" class="outline-3">
-<h3 id="org3daf426">卷标管理</h3>
-<div class="outline-text-3" id="text-org3daf426">
+<div id="outline-container-org10fa25f" class="outline-3">
+<h3 id="org10fa25f">卷标管理</h3>
+<div class="outline-text-3" id="text-org10fa25f">
 </div>
-<div id="outline-container-orgb971b6e" class="outline-4">
-<h4 id="orgb971b6e">设置卷标</h4>
-<div class="outline-text-4" id="text-orgb971b6e">
+<div id="outline-container-org0137811" class="outline-4">
+<h4 id="org0137811">设置卷标</h4>
+<div class="outline-text-4" id="text-org0137811">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -L <span style="color: #2d9574;">"another_volume"</span> ~/xfs.img
 </pre>
@@ -373,9 +383,9 @@ new label = "another_volu"
 </div>
 </div>
 
-<div id="outline-container-orga3cad84" class="outline-4">
-<h4 id="orga3cad84">查看卷标</h4>
-<div class="outline-text-4" id="text-orga3cad84">
+<div id="outline-container-orga5ea0c4" class="outline-4">
+<h4 id="orga5ea0c4">查看卷标</h4>
+<div class="outline-text-4" id="text-orga5ea0c4">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -l ~/xfs.img
 </pre>
@@ -389,18 +399,18 @@ new label = "another_volu"
 </div>
 </div>
 
-<div id="outline-container-org92e1183" class="outline-3">
-<h3 id="org92e1183">UUID管理</h3>
-<div class="outline-text-3" id="text-org92e1183">
+<div id="outline-container-orge59b86e" class="outline-3">
+<h3 id="orge59b86e">UUID管理</h3>
+<div class="outline-text-3" id="text-orge59b86e">
 <p>
 传统上Linux在/etc/fstab中直接使用设备名称指定要挂载的存储设备。
 然而设备名称会因为BIOS或硬件的改变而改变，引起混乱，因此现在Linux改用UUID来指定要挂载的存储设备。
 </p>
 </div>
 
-<div id="outline-container-org48732ef" class="outline-4">
-<h4 id="org48732ef">查看指定设备的UUID</h4>
-<div class="outline-text-4" id="text-org48732ef">
+<div id="outline-container-orga47f8d8" class="outline-4">
+<h4 id="orga47f8d8">查看指定设备的UUID</h4>
+<div class="outline-text-4" id="text-orga47f8d8">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -u ~/xfs.img
 </pre>
@@ -413,9 +423,9 @@ new label = "another_volu"
 </div>
 </div>
 
-<div id="outline-container-orgc129e57" class="outline-4">
-<h4 id="orgc129e57">设置设备的UUID</h4>
-<div class="outline-text-4" id="text-orgc129e57">
+<div id="outline-container-org6263e6e" class="outline-4">
+<h4 id="org6263e6e">设置设备的UUID</h4>
+<div class="outline-text-4" id="text-org6263e6e">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -U <span style="color: #a45bad;">12345678-9012-3456-7890-123456789012</span> ~/xfs.img
 </pre>
@@ -445,9 +455,9 @@ new UUID = 9618fe39-638d-41b0-9863-5b3b8daa9801
 </div>
 </div>
 
-<div id="outline-container-orgcffba64" class="outline-4">
-<h4 id="orgcffba64">清除文件系统的UUID</h4>
-<div class="outline-text-4" id="text-orgcffba64">
+<div id="outline-container-org44f993a" class="outline-4">
+<h4 id="org44f993a">清除文件系统的UUID</h4>
+<div class="outline-text-4" id="text-org44f993a">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -U nil ~/xfs.img
 </pre>
@@ -464,9 +474,9 @@ new UUID = 00000000-0000-0000-0000-000000000000
 </div>
 </div>
 
-<div id="outline-container-org8f1bc49" class="outline-2">
-<h2 id="org8f1bc49">扩展XFS文件系统的大小</h2>
-<div class="outline-text-2" id="text-org8f1bc49">
+<div id="outline-container-org34561c0" class="outline-2">
+<h2 id="org34561c0">扩展XFS文件系统的大小</h2>
+<div class="outline-text-2" id="text-org34561c0">
 <p>
 XFS文件系统只能扩大，不能减少大小
 </p>
@@ -489,17 +499,17 @@ XFS文件系统只能扩大，不能减少大小
 </div>
 </div>
 
-<div id="outline-container-orgbe3343c" class="outline-2">
-<h2 id="orgbe3343c">暂停/恢复XFS文件系统</h2>
-<div class="outline-text-2" id="text-orgbe3343c">
+<div id="outline-container-org6e2c670" class="outline-2">
+<h2 id="org6e2c670">暂停/恢复XFS文件系统</h2>
+<div class="outline-text-2" id="text-org6e2c670">
 <p>
 xfs_freeze 命令可以停止对文件系统的访问并创建一个静态的磁盘镜像。
 </p>
 </div>
 
-<div id="outline-container-org176c20f" class="outline-3">
-<h3 id="org176c20f">暂停XFS文件系统</h3>
-<div class="outline-text-3" id="text-org176c20f">
+<div id="outline-container-orgd035b6b" class="outline-3">
+<h3 id="orgd035b6b">暂停XFS文件系统</h3>
+<div class="outline-text-3" id="text-orgd035b6b">
 <div class="org-src-container">
 <pre class="src src-shell">sudo xfs_freeze -f /mnt
 </pre>
@@ -511,9 +521,9 @@ xfs_freeze 命令可以停止对文件系统的访问并创建一个静态的磁
 </div>
 </div>
 
-<div id="outline-container-org7c5bfaa" class="outline-3">
-<h3 id="org7c5bfaa">恢复XFS文件系统</h3>
-<div class="outline-text-3" id="text-org7c5bfaa">
+<div id="outline-container-orgf16c5d8" class="outline-3">
+<h3 id="orgf16c5d8">恢复XFS文件系统</h3>
+<div class="outline-text-3" id="text-orgf16c5d8">
 <div class="org-src-container">
 <pre class="src src-shell">sudo xfs_freeze -u /mnt
 </pre>
@@ -522,9 +532,9 @@ xfs_freeze 命令可以停止对文件系统的访问并创建一个静态的磁
 </div>
 </div>
 
-<div id="outline-container-org68a395a" class="outline-2">
-<h2 id="org68a395a">修复XFS文件系统</h2>
-<div class="outline-text-2" id="text-org68a395a">
+<div id="outline-container-org7098512" class="outline-2">
+<h2 id="org7098512">修复XFS文件系统</h2>
+<div class="outline-text-2" id="text-org7098512">
 <div class="org-src-container">
 <pre class="src src-shell">sudo umount /mnt
 xfs_repair ~lujun9972/xfs.img
@@ -533,13 +543,13 @@ xfs_repair ~lujun9972/xfs.img
 </div>
 </div>
 
-<div id="outline-container-orgb8ce29d" class="outline-2">
-<h2 id="orgb8ce29d">碎片管理</h2>
-<div class="outline-text-2" id="text-orgb8ce29d">
+<div id="outline-container-org96ab6a6" class="outline-2">
+<h2 id="org96ab6a6">碎片管理</h2>
+<div class="outline-text-2" id="text-org96ab6a6">
 </div>
-<div id="outline-container-org790462c" class="outline-3">
-<h3 id="org790462c">查看碎片情况</h3>
-<div class="outline-text-3" id="text-org790462c">
+<div id="outline-container-org42b064c" class="outline-3">
+<h3 id="org42b064c">查看碎片情况</h3>
+<div class="outline-text-3" id="text-org42b064c">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_db -c frag -r ~/xfs.img
 </pre>
@@ -554,9 +564,9 @@ Files on this filesystem average -nan extents per file
 </div>
 </div>
 
-<div id="outline-container-org0308eb8" class="outline-3">
-<h3 id="org0308eb8">整理碎片</h3>
-<div class="outline-text-3" id="text-org0308eb8">
+<div id="outline-container-org91d1800" class="outline-3">
+<h3 id="org91d1800">整理碎片</h3>
+<div class="outline-text-3" id="text-org91d1800">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_fsr ~/xfs.img
 </pre>
@@ -572,7 +582,7 @@ Files on this filesystem average -nan extents per file
             <span title="post date" class="post-info">2018-09-08</span>
             <span title="last modification date" class="post-info">2018-09-09</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -612,10 +622,19 @@ Files on this filesystem average -nan extents per file
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

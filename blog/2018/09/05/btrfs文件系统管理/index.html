@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,22 +54,22 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgeb1b4d8">格式化btrfs格式的文件系统</a></li>
-<li><a href="#orge92a0f3">挂载btrfs文件系统</a></li>
-<li><a href="#org3d20f32">修改Btrfs文件系统的大小</a></li>
-<li><a href="#orgca1906f">创建快照</a></li>
-<li><a href="#orgd7a340e">子卷</a>
+<li><a href="#org6621f96">格式化btrfs格式的文件系统</a></li>
+<li><a href="#orgb0b4ce7">挂载btrfs文件系统</a></li>
+<li><a href="#org6906c4a">修改Btrfs文件系统的大小</a></li>
+<li><a href="#org534568b">创建快照</a></li>
+<li><a href="#org5971414">子卷</a>
 <ul>
-<li><a href="#orge1a97a3">创建子卷</a></li>
-<li><a href="#orgb28843b">列出子卷</a></li>
-<li><a href="#org2957274">挂载子卷</a></li>
-<li><a href="#org50385d4">删除子卷</a></li>
+<li><a href="#orge8d3da2">创建子卷</a></li>
+<li><a href="#org7f40537">列出子卷</a></li>
+<li><a href="#org47e9508">挂载子卷</a></li>
+<li><a href="#orgadff061">删除子卷</a></li>
 </ul>
 </li>
-<li><a href="#org6970389">RAID</a></li>
-<li><a href="#org940dbf2">添加/删除新设备</a></li>
-<li><a href="#org5cbc50e">文件系统转换</a></li>
-<li><a href="#orgffcbb7b">检查btrfs文件系统</a></li>
+<li><a href="#org4c14884">RAID</a></li>
+<li><a href="#org06094b2">添加/删除新设备</a></li>
+<li><a href="#orgb8d3dd2">文件系统转换</a></li>
+<li><a href="#orga9d1aae">检查btrfs文件系统</a></li>
 </ul>
 </div>
 </div>
@@ -67,9 +77,9 @@
 记录btrfs文件系统的常用操作
 </p>
 
-<div id="outline-container-orgeb1b4d8" class="outline-2">
-<h2 id="orgeb1b4d8">格式化btrfs格式的文件系统</h2>
-<div class="outline-text-2" id="text-orgeb1b4d8">
+<div id="outline-container-org6621f96" class="outline-2">
+<h2 id="org6621f96">格式化btrfs格式的文件系统</h2>
+<div class="outline-text-2" id="text-org6621f96">
 <div class="org-src-container">
 <pre class="src src-shell">sudo mkfs.btrfs /dev/sdc1
 </pre>
@@ -95,9 +105,9 @@ no-holes            - no explicit hole extents for files (0x200, compat=3.14, sa
 </div>
 </div>
 
-<div id="outline-container-orge92a0f3" class="outline-2">
-<h2 id="orge92a0f3">挂载btrfs文件系统</h2>
-<div class="outline-text-2" id="text-orge92a0f3">
+<div id="outline-container-orgb0b4ce7" class="outline-2">
+<h2 id="orgb0b4ce7">挂载btrfs文件系统</h2>
+<div class="outline-text-2" id="text-orgb0b4ce7">
 <div class="org-src-container">
 <pre class="src src-shell">sudo mount -t btrds -o rw /dev/sdc1 /mnt
 </pre>
@@ -119,9 +129,9 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-org3d20f32" class="outline-2">
-<h2 id="org3d20f32">修改Btrfs文件系统的大小</h2>
-<div class="outline-text-2" id="text-org3d20f32">
+<div id="outline-container-org6906c4a" class="outline-2">
+<h2 id="org6906c4a">修改Btrfs文件系统的大小</h2>
+<div class="outline-text-2" id="text-org6906c4a">
 <p>
 我们还可以修改创建好的btrfs文件系统的大小.
 </p>
@@ -154,9 +164,9 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-orgca1906f" class="outline-2">
-<h2 id="orgca1906f">创建快照</h2>
-<div class="outline-text-2" id="text-orgca1906f">
+<div id="outline-container-org534568b" class="outline-2">
+<h2 id="org534568b">创建快照</h2>
+<div class="outline-text-2" id="text-org534568b">
 <p>
 快照是对文件系统某一时刻的完全备份。建立快照后，对文件系统的修改不会影响快照中的内容
 </p>
@@ -186,18 +196,18 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-orgd7a340e" class="outline-2">
-<h2 id="orgd7a340e">子卷</h2>
-<div class="outline-text-2" id="text-orgd7a340e">
+<div id="outline-container-org5971414" class="outline-2">
+<h2 id="org5971414">子卷</h2>
+<div class="outline-text-2" id="text-org5971414">
 <p>
 我们可以把btrfs文件系统的一部分配置为一个完整的子文件系统，这些子文件系统被称为subvolume(子卷).
 这些子卷共享底层的设备空间，在需要磁盘空间时便从底层设备中分配。
 </p>
 </div>
 
-<div id="outline-container-orge1a97a3" class="outline-3">
-<h3 id="orge1a97a3">创建子卷</h3>
-<div class="outline-text-3" id="text-orge1a97a3">
+<div id="outline-container-orge8d3da2" class="outline-3">
+<h3 id="orge8d3da2">创建子卷</h3>
+<div class="outline-text-3" id="text-orge8d3da2">
 <div class="org-src-container">
 <pre class="src src-shell">sudo btrfs subvolume create /mnt/sub1
 </pre>
@@ -210,9 +220,9 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-orgb28843b" class="outline-3">
-<h3 id="orgb28843b">列出子卷</h3>
-<div class="outline-text-3" id="text-orgb28843b">
+<div id="outline-container-org7f40537" class="outline-3">
+<h3 id="org7f40537">列出子卷</h3>
+<div class="outline-text-3" id="text-org7f40537">
 <div class="org-src-container">
 <pre class="src src-shell">sudo btrfs subvolume list  /mnt
 </pre>
@@ -225,9 +235,9 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-org2957274" class="outline-3">
-<h3 id="org2957274">挂载子卷</h3>
-<div class="outline-text-3" id="text-org2957274">
+<div id="outline-container-org47e9508" class="outline-3">
+<h3 id="org47e9508">挂载子卷</h3>
+<div class="outline-text-3" id="text-org47e9508">
 <p>
 通过 <code>subvol=/path/to/subvolumne</code> 或 <code>subvolid=objectid</code> 选项可以指定挂载那个子卷
 </p>
@@ -239,9 +249,9 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-org50385d4" class="outline-3">
-<h3 id="org50385d4">删除子卷</h3>
-<div class="outline-text-3" id="text-org50385d4">
+<div id="outline-container-orgadff061" class="outline-3">
+<h3 id="orgadff061">删除子卷</h3>
+<div class="outline-text-3" id="text-orgadff061">
 <div class="org-src-container">
 <pre class="src src-shell">sudo btrfs subvolume delete /mnt/sub1
 </pre>
@@ -255,9 +265,9 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-org6970389" class="outline-2">
-<h2 id="org6970389">RAID</h2>
-<div class="outline-text-2" id="text-org6970389">
+<div id="outline-container-org4c14884" class="outline-2">
+<h2 id="org4c14884">RAID</h2>
+<div class="outline-text-2" id="text-org4c14884">
 <p>
 执行mkfs时可以指定多个设备，并设定RAID级别，比如
 </p>
@@ -269,9 +279,9 @@ mount -t btrfs /dev/sde1 /mnt/raid
 </div>
 </div>
 
-<div id="outline-container-org940dbf2" class="outline-2">
-<h2 id="org940dbf2">添加/删除新设备</h2>
-<div class="outline-text-2" id="text-org940dbf2">
+<div id="outline-container-org06094b2" class="outline-2">
+<h2 id="org06094b2">添加/删除新设备</h2>
+<div class="outline-text-2" id="text-org06094b2">
 <p>
 当设备空间快要被用完时，可以通过 <code>btrfs device add</code> 命令为文件系统添加新磁盘设备，从而增加存储空间
 </p>
@@ -311,9 +321,9 @@ Filesystem      Size  Used Avail Use% Mounted on
 </div>
 </div>
 
-<div id="outline-container-org5cbc50e" class="outline-2">
-<h2 id="org5cbc50e">文件系统转换</h2>
-<div class="outline-text-2" id="text-org5cbc50e">
+<div id="outline-container-orgb8d3dd2" class="outline-2">
+<h2 id="orgb8d3dd2">文件系统转换</h2>
+<div class="outline-text-2" id="text-orgb8d3dd2">
 <p>
 可以通过命令将非Btrfs文件系统转换为Btrfs文件系统
 </p>
@@ -349,9 +359,9 @@ conversion complete
 </div>
 </div>
 
-<div id="outline-container-orgffcbb7b" class="outline-2">
-<h2 id="orgffcbb7b">检查btrfs文件系统</h2>
-<div class="outline-text-2" id="text-orgffcbb7b">
+<div id="outline-container-orga9d1aae" class="outline-2">
+<h2 id="orga9d1aae">检查btrfs文件系统</h2>
+<div class="outline-text-2" id="text-orga9d1aae">
 <p>
 可以通过以下命令检查Btrfs文件系统
 </p>
@@ -384,7 +394,7 @@ file data blocks allocated: 65536
             <span title="post date" class="post-info">2018-09-05</span>
             <span title="last modification date" class="post-info">2018-09-05</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -424,10 +434,19 @@ file data blocks allocated: 65536
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

@@ -19,23 +19,33 @@
 </head>
 
   <body><div class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
-        <ul>
-          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
-          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-          <li><a href="https://lujun9972.github.io/about/">About</a></li>
-          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
-          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
-        </form>
-      </header>
-    </div>
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+        <li><a href="https://lujun9972.github.io/about/">About</a></li>
+        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
@@ -44,24 +54,24 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org13bdd2f">dm-crypt的特点</a></li>
-<li><a href="#orgc7924e4">使用cryptsetup创建加密磁盘</a>
+<li><a href="#org59a3f19">dm-crypt的特点</a></li>
+<li><a href="#org9d45973">使用cryptsetup创建加密磁盘</a>
 <ul>
-<li><a href="#orgdd3e7f6">创建虚拟磁盘分区</a></li>
-<li><a href="#org044eb48">创建加密磁盘分区</a></li>
-<li><a href="#org4c3a91e">打开密码盘</a></li>
-<li><a href="#org8019890">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></a></li>
-<li><a href="#org76594d1">查看加密盘状态</a></li>
-<li><a href="#org68e581f">关闭加密盘</a></li>
+<li><a href="#orgbdfbfe9">创建虚拟磁盘分区</a></li>
+<li><a href="#org0075f86">创建加密磁盘分区</a></li>
+<li><a href="#org72e11e3">打开密码盘</a></li>
+<li><a href="#orgf6c7fe3">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></a></li>
+<li><a href="#org7650728">查看加密盘状态</a></li>
+<li><a href="#org0bf4bd1">关闭加密盘</a></li>
 </ul>
 </li>
-<li><a href="#orga8e538e">让加密盘使用keyfile认证</a>
+<li><a href="#orgc95e111">让加密盘使用keyfile认证</a>
 <ul>
-<li><a href="#org7981e40">创建随机文件作为keyfile</a></li>
-<li><a href="#orgccac6b1">查看key slot</a></li>
-<li><a href="#org2995773">添加keyfile认证</a></li>
-<li><a href="#orgbf31e79">使用keyfile打开加密盘</a></li>
-<li><a href="#orgddb0d4d">删除keyslot</a></li>
+<li><a href="#org303e43c">创建随机文件作为keyfile</a></li>
+<li><a href="#org060028a">查看key slot</a></li>
+<li><a href="#org196cfd1">添加keyfile认证</a></li>
+<li><a href="#org54262a4">使用keyfile打开加密盘</a></li>
+<li><a href="#org8fb0657">删除keyslot</a></li>
 </ul>
 </li>
 </ul>
@@ -71,9 +81,9 @@
 cryptsetup是linux下的一个分区加密工具，它通过调用内核中的"dm-crypt"来实现磁盘加密的功能。
 </p>
 
-<div id="outline-container-org13bdd2f" class="outline-2">
-<h2 id="org13bdd2f">dm-crypt的特点</h2>
-<div class="outline-text-2" id="text-org13bdd2f">
+<div id="outline-container-org59a3f19" class="outline-2">
+<h2 id="org59a3f19">dm-crypt的特点</h2>
+<div class="outline-text-2" id="text-org59a3f19">
 <p>
 dm-crypt具有如下几个特点:
 </p>
@@ -110,13 +120,13 @@ dm-crypt是整合到linux内核中的，而它的命令行前端cryptsetup,在�
 </div>
 </div>
 
-<div id="outline-container-orgc7924e4" class="outline-2">
-<h2 id="orgc7924e4">使用cryptsetup创建加密磁盘</h2>
-<div class="outline-text-2" id="text-orgc7924e4">
+<div id="outline-container-org9d45973" class="outline-2">
+<h2 id="org9d45973">使用cryptsetup创建加密磁盘</h2>
+<div class="outline-text-2" id="text-org9d45973">
 </div>
-<div id="outline-container-orgdd3e7f6" class="outline-3">
-<h3 id="orgdd3e7f6">创建虚拟磁盘分区</h3>
-<div class="outline-text-3" id="text-orgdd3e7f6">
+<div id="outline-container-orgbdfbfe9" class="outline-3">
+<h3 id="orgbdfbfe9">创建虚拟磁盘分区</h3>
+<div class="outline-text-3" id="text-orgbdfbfe9">
 <p>
 为了方便，我这里用 <code>dd</code> 命令创建一个文件来代替真实的磁盘分区(因为操作过程会清空整个磁盘分区的内容:()。
 </p>
@@ -138,9 +148,9 @@ ls -l /tmp/USB.img
 </div>
 </div>
 
-<div id="outline-container-org044eb48" class="outline-3">
-<h3 id="org044eb48">创建加密磁盘分区</h3>
-<div class="outline-text-3" id="text-org044eb48">
+<div id="outline-container-org0075f86" class="outline-3">
+<h3 id="org0075f86">创建加密磁盘分区</h3>
+<div class="outline-text-3" id="text-org0075f86">
 <p>
 虽然说dm-crypt支持多种加密格式，但最常用的还是LUKS。
 </p>
@@ -187,9 +197,9 @@ Are you sure? (Type uppercase yes): YES
 </div>
 
 
-<div id="outline-container-org4c3a91e" class="outline-3">
-<h3 id="org4c3a91e">打开密码盘</h3>
-<div class="outline-text-3" id="text-org4c3a91e">
+<div id="outline-container-org72e11e3" class="outline-3">
+<h3 id="org72e11e3">打开密码盘</h3>
+<div class="outline-text-3" id="text-org72e11e3">
 <p>
 cryptsetup可以打开前面提到的各种加密盘。
 </p>
@@ -231,9 +241,9 @@ cryptsetup可以打开前面提到的各种加密盘。
 </div>
 </div>
 
-<div id="outline-container-org8019890" class="outline-3">
-<h3 id="org8019890">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></h3>
-<div class="outline-text-3" id="text-org8019890">
+<div id="outline-container-orgf6c7fe3" class="outline-3">
+<h3 id="orgf6c7fe3">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></h3>
+<div class="outline-text-3" id="text-orgf6c7fe3">
 <p>
 你可以像普通磁盘一样来操作 <code>/dev/mapper/USB</code>.
 </p>
@@ -266,9 +276,9 @@ Writing superblocks and filesystem accounting information:  0/13&#8;&#8;&#8;&#8;
 </div>
 </div>
 
-<div id="outline-container-org76594d1" class="outline-3">
-<h3 id="org76594d1">查看加密盘状态</h3>
-<div class="outline-text-3" id="text-org76594d1">
+<div id="outline-container-org7650728" class="outline-3">
+<h3 id="org7650728">查看加密盘状态</h3>
+<div class="outline-text-3" id="text-org7650728">
 <p>
 在打开加密盘后，可以查看该加密盘的状态，语法为
 </p>
@@ -305,9 +315,9 @@ Writing superblocks and filesystem accounting information:  0/13&#8;&#8;&#8;&#8;
 </div>
 </div>
 
-<div id="outline-container-org68e581f" class="outline-3">
-<h3 id="org68e581f">关闭加密盘</h3>
-<div class="outline-text-3" id="text-org68e581f">
+<div id="outline-container-org0bf4bd1" class="outline-3">
+<h3 id="org0bf4bd1">关闭加密盘</h3>
+<div class="outline-text-3" id="text-org0bf4bd1">
 <p>
 操作完磁盘后，使用下面命令关闭加密盘
 </p>
@@ -327,22 +337,22 @@ sudo cryptsetup close USB
 </div>
 </div>
 </div>
-<div id="outline-container-orga8e538e" class="outline-2">
-<h2 id="orga8e538e">让加密盘使用keyfile认证</h2>
-<div class="outline-text-2" id="text-orga8e538e">
+<div id="outline-container-orgc95e111" class="outline-2">
+<h2 id="orgc95e111">让加密盘使用keyfile认证</h2>
+<div class="outline-text-2" id="text-orgc95e111">
 </div>
-<div id="outline-container-org7981e40" class="outline-3">
-<h3 id="org7981e40">创建随机文件作为keyfile</h3>
-<div class="outline-text-3" id="text-org7981e40">
+<div id="outline-container-org303e43c" class="outline-3">
+<h3 id="org303e43c">创建随机文件作为keyfile</h3>
+<div class="outline-text-3" id="text-org303e43c">
 <div class="org-src-container">
 <pre class="src src-shell">dd <span style="color: #7590db;">if</span>=/dev/urandom <span style="color: #7590db;">of</span>=/tmp/keyfile <span style="color: #7590db;">bs</span>=<span style="color: #a45bad;">1K</span> <span style="color: #7590db;">count</span>=<span style="color: #a45bad;">64</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgccac6b1" class="outline-3">
-<h3 id="orgccac6b1">查看key slot</h3>
-<div class="outline-text-3" id="text-orgccac6b1">
+<div id="outline-container-org060028a" class="outline-3">
+<h3 id="org060028a">查看key slot</h3>
+<div class="outline-text-3" id="text-org060028a">
 <p>
 LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一个解密的钥匙，使用任何一把钥匙都能打开这个LUKS加密盘。
 </p>
@@ -372,9 +382,9 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </p>
 </div>
 </div>
-<div id="outline-container-org2995773" class="outline-3">
-<h3 id="org2995773">添加keyfile认证</h3>
-<div class="outline-text-3" id="text-org2995773">
+<div id="outline-container-org196cfd1" class="outline-3">
+<h3 id="org196cfd1">添加keyfile认证</h3>
+<div class="outline-text-3" id="text-org196cfd1">
 <p>
 使用下面命令为LUKS加密盘添加keyfile认证
 </p>
@@ -405,9 +415,9 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </p>
 </div>
 </div>
-<div id="outline-container-orgbf31e79" class="outline-3">
-<h3 id="orgbf31e79">使用keyfile打开加密盘</h3>
-<div class="outline-text-3" id="text-orgbf31e79">
+<div id="outline-container-org54262a4" class="outline-3">
+<h3 id="org54262a4">使用keyfile打开加密盘</h3>
+<div class="outline-text-3" id="text-org54262a4">
 <p>
 使用keyfile打开加密盘的方式跟普通打开加密盘的方式类似，只是要多用一个 <code>--keyfile</code> 来指定keyfile的路径
 </p>
@@ -417,9 +427,9 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </div>
 </div>
 </div>
-<div id="outline-container-orgddb0d4d" class="outline-3">
-<h3 id="orgddb0d4d">删除keyslot</h3>
-<div class="outline-text-3" id="text-orgddb0d4d">
+<div id="outline-container-org8fb0657" class="outline-3">
+<h3 id="org8fb0657">删除keyslot</h3>
+<div class="outline-text-3" id="text-org8fb0657">
 <p>
 使用下面命令可以删除加密盘的其中一个key slot
 </p>
@@ -450,7 +460,7 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
             <span title="post date" class="post-info">2018-04-12</span>
             <span title="last modification date" class="post-info">2018-04-12</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -490,10 +500,19 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
     </script>
         </section>
     <script src="https://lujun9972.github.io/media/js/main.js"></script>
+        <script>
+         var _hmt = _hmt || [];
+         (function() {
+             var hm = document.createElement("script");
+             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+         })();
+        </script>
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
