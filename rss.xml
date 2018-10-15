@@ -4,79 +4,79 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>一, 24 9月 2018 11:17:15 CST</pubDate>
-    <lastBuildDate>一, 24 9月 2018 11:17:15 CST</lastBuildDate>
+    <pubDate>一, 15 10月 2018 13:10:16 HKT</pubDate>
+    <lastBuildDate>一, 15 10月 2018 13:10:16 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
 <item>
-<title>使用dpkg-reconfigure重新配置已安装好的应用</title>
-<link>https://lujun9972.github.io/blog/2018/09/24/使用dpkg-reconfigure重新配置已安装好的应用/</link>
+<title>Emacs帮你进行英文阅读</title>
+<link>https://lujun9972.github.io/blog/2018/07/06/emacs帮你进行英文阅读/</link>
 <description>No Description</description>
-<pubDate>2018-09-24</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/24/使用dpkg-reconfigure重新配置已安装好的应用/</guid>
+<pubDate>2018-10-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/07/06/emacs帮你进行英文阅读/</guid>
 </item>
 <item>
-<title>如何设置容器中的时区</title>
-<link>https://lujun9972.github.io/blog/2018/09/23/如何设置容器中的时区/</link>
+<title>LFS</title>
+<link>https://lujun9972.github.io/blog/2018/08/24/lfs/</link>
 <description>No Description</description>
-<pubDate>2018-09-23</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/23/如何设置容器中的时区/</guid>
+<pubDate>2018-10-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/24/lfs/</guid>
 </item>
 <item>
-<title>Elisp中如何获取文件的绝对路径</title>
-<link>https://lujun9972.github.io/blog/2018/09/22/elisp中如何获取文件的绝对路径/</link>
+<title>Linux下的那些教育类软件集合</title>
+<link>https://lujun9972.github.io/blog/2018/10/12/linux下的那些教育类软件集合/</link>
 <description>No Description</description>
-<pubDate>2018-09-22</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/22/elisp中如何获取文件的绝对路径/</guid>
+<pubDate>2018-10-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/12/linux下的那些教育类软件集合/</guid>
 </item>
 <item>
-<title>使用chattr实现对文件属性的精细化管理</title>
-<link>https://lujun9972.github.io/blog/2018/09/22/使用chattr实现对文件属性的精细化管理/</link>
+<title>archlinux如何降级安装软件包</title>
+<link>https://lujun9972.github.io/blog/2018/10/15/archlinux如何降级安装软件包/</link>
 <description>No Description</description>
-<pubDate>2018-09-22</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/22/使用chattr实现对文件属性的精细化管理/</guid>
+<pubDate>2018-10-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/15/archlinux如何降级安装软件包/</guid>
 </item>
 <item>
-<title>使用timedatectl进行时间设置</title>
-<link>https://lujun9972.github.io/blog/2018/09/21/使用timedatectl进行时间设置/</link>
+<title>git tips</title>
+<link>https://lujun9972.github.io/blog/2018/07/04/git-tips/</link>
 <description>No Description</description>
-<pubDate>2018-09-21</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/21/使用timedatectl进行时间设置/</guid>
+<pubDate>2018-10-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/07/04/git-tips/</guid>
 </item>
 <item>
-<title>在archlinux安装配置VNC Server</title>
-<link>https://lujun9972.github.io/blog/2018/09/20/在archlinux安装配置vnc-server/</link>
+<title>使用gpg加密文件</title>
+<link>https://lujun9972.github.io/blog/2018/08/20/使用gpg加密文件/</link>
 <description>No Description</description>
-<pubDate>2018-09-20</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/20/在archlinux安装配置vnc-server/</guid>
+<pubDate>2018-10-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/08/20/使用gpg加密文件/</guid>
 </item>
 <item>
-<title>Emacs中如何在指定目录下运行shell命令</title>
-<link>https://lujun9972.github.io/blog/2018/09/19/emacs中如何在指定目录下运行shell命令/</link>
+<title>Connection Local Variable</title>
+<link>https://lujun9972.github.io/blog/2018/10/12/connection-local-variable/</link>
 <description>No Description</description>
-<pubDate>2018-09-19</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/19/emacs中如何在指定目录下运行shell命令/</guid>
+<pubDate>2018-10-12</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/12/connection-local-variable/</guid>
 </item>
 <item>
-<title>如何查看进程的内存占用量</title>
-<link>https://lujun9972.github.io/blog/2018/09/18/如何查看进程的内存占用量/</link>
+<title>安全的SSH设置</title>
+<link>https://lujun9972.github.io/blog/2018/10/11/安全的ssh设置/</link>
 <description>No Description</description>
-<pubDate>2018-09-18</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/18/如何查看进程的内存占用量/</guid>
+<pubDate>2018-10-11</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/11/安全的ssh设置/</guid>
 </item>
 <item>
-<title>linux中网络相关的那些配置文件</title>
-<link>https://lujun9972.github.io/blog/2018/09/16/linux中网络相关的那些配置文件/</link>
+<title>为什么cat命令查看文件不会修改atime</title>
+<link>https://lujun9972.github.io/blog/2018/10/10/为什么cat命令查看文件不会修改atime/</link>
 <description>No Description</description>
-<pubDate>2018-09-17</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/16/linux中网络相关的那些配置文件/</guid>
+<pubDate>2018-10-10</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/10/为什么cat命令查看文件不会修改atime/</guid>
 </item>
 <item>
-<title>使用iw连接无线网络</title>
-<link>https://lujun9972.github.io/blog/2018/09/16/使用iw连接无线网络/</link>
+<title>把Orange Pi打造成影音云存储服务器</title>
+<link>https://lujun9972.github.io/blog/2018/03/06/把orange-pi打造成影音云存储服务器/</link>
 <description>No Description</description>
-<pubDate>2018-09-16</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/09/16/使用iw连接无线网络/</guid>
+<pubDate>2018-10-10</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/03/06/把orange-pi打造成影音云存储服务器/</guid>
 </item>
 </channel>
 </rss>

@@ -44,18 +44,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org96516ae">systemd-journald.service</a>
+<li><a href="#orgcdf6364">systemd-journald.service</a>
 <ul>
-<li><a href="#org91f7419">配置systemd-journald.service</a></li>
+<li><a href="#org8bb5f39">配置systemd-journald.service</a></li>
 </ul>
 </li>
-<li><a href="#org035e794">journalctl常用方法</a>
+<li><a href="#org28dbd96">journalctl常用方法</a>
 <ul>
-<li><a href="#orge07a11b">查询指定时间内的日志</a></li>
-<li><a href="#orgd5207f6">约束日志输出的行数</a></li>
-<li><a href="#org66ec8c7">根据日志元数据进行过滤</a></li>
-<li><a href="#org59d279e">根据正则表达式搜索的日志</a></li>
-<li><a href="#orgc8e5a92">其他参数</a></li>
+<li><a href="#orged5190b">查询指定时间内的日志</a></li>
+<li><a href="#org46b536e">约束日志输出的行数</a></li>
+<li><a href="#org71b697a">指定日志级别</a></li>
+<li><a href="#org31eb9ca">根据日志元数据进行过滤</a></li>
+<li><a href="#org907e597">根据正则表达式搜索的日志</a></li>
+<li><a href="#orga57f0db">其他参数</a></li>
 </ul>
 </li>
 </ul>
@@ -65,9 +66,9 @@
 当启动service失败或者出现异常时，我们同行需要查看systemd的日志。 journalctl就是最常用的查看systemd日志的工具了。
 </p>
 
-<div id="outline-container-org96516ae" class="outline-2">
-<h2 id="org96516ae">systemd-journald.service</h2>
-<div class="outline-text-2" id="text-org96516ae">
+<div id="outline-container-orgcdf6364" class="outline-2">
+<h2 id="orgcdf6364">systemd-journald.service</h2>
+<div class="outline-text-2" id="text-orgcdf6364">
 <p>
 systemd本身使用 <code>systemd-journald.service</code> 来提供日志服务.
 它默认以二进制的格式将日志文件存在 <code>/var/log/journal/</code> 目录中.
@@ -182,9 +183,9 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </p>
 </div>
 
-<div id="outline-container-org91f7419" class="outline-3">
-<h3 id="org91f7419">配置systemd-journald.service</h3>
-<div class="outline-text-3" id="text-org91f7419">
+<div id="outline-container-org8bb5f39" class="outline-3">
+<h3 id="org8bb5f39">配置systemd-journald.service</h3>
+<div class="outline-text-3" id="text-org8bb5f39">
 <p>
 <code>systemd-journald</code> 的配置文件为 <code>/etc/systemd/journald.conf</code> 中， 通过修改其中的配置信息可以影响其行为：
 </p>
@@ -242,13 +243,13 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 </div>
 
-<div id="outline-container-org035e794" class="outline-2">
-<h2 id="org035e794">journalctl常用方法</h2>
-<div class="outline-text-2" id="text-org035e794">
+<div id="outline-container-org28dbd96" class="outline-2">
+<h2 id="org28dbd96">journalctl常用方法</h2>
+<div class="outline-text-2" id="text-org28dbd96">
 </div>
-<div id="outline-container-orge07a11b" class="outline-3">
-<h3 id="orge07a11b">查询指定时间内的日志</h3>
-<div class="outline-text-3" id="text-orge07a11b">
+<div id="outline-container-orged5190b" class="outline-3">
+<h3 id="orged5190b">查询指定时间内的日志</h3>
+<div class="outline-text-3" id="text-orged5190b">
 <p>
 当你直接运行 <code>journalctl</code> 时，会显示从第一次启动系统开始到现在的所有日志。
 </p>
@@ -343,9 +344,9 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 </div>
 
-<div id="outline-container-orgd5207f6" class="outline-3">
-<h3 id="orgd5207f6">约束日志输出的行数</h3>
-<div class="outline-text-3" id="text-orgd5207f6">
+<div id="outline-container-org46b536e" class="outline-3">
+<h3 id="org46b536e">约束日志输出的行数</h3>
+<div class="outline-text-3" id="text-org46b536e">
 <p>
 若我们只是想查看日志中的最后几行，没有必要使用tail命令，通过 <code>--lines</code> 命令即可,比如上面那个命令可以写成
 </p>
@@ -371,9 +372,95 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 </div>
 
-<div id="outline-container-org66ec8c7" class="outline-3">
-<h3 id="org66ec8c7">根据日志元数据进行过滤</h3>
-<div class="outline-text-3" id="text-org66ec8c7">
+
+<div id="outline-container-org71b697a" class="outline-3">
+<h3 id="org71b697a">指定日志级别</h3>
+<div class="outline-text-3" id="text-org71b697a">
+<p>
+Linux的日志级别通常分成8个级别，从高到底分别为:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Code</th>
+<th scope="col" class="org-left">Priority</th>
+<th scope="col" class="org-left">Serverity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">Emerge</td>
+<td class="org-left">系统不可用</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Alert</td>
+<td class="org-left">必须立即采取行动</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Crit</td>
+<td class="org-left">紧急情况</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Err</td>
+<td class="org-left">非紧急的错误</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">Warnning</td>
+<td class="org-left">警告</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">Notice</td>
+<td class="org-left">普通但值得注意的事件</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-left">Info</td>
+<td class="org-left">信息</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-left">Debug</td>
+<td class="org-left">调试</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+我们可以通过 <code>-p</code> 选项来指定想要查看的日志级别，比如
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">journalctl -p err --lines=<span style="color: #a45bad;">10</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org31eb9ca" class="outline-3">
+<h3 id="org31eb9ca">根据日志元数据进行过滤</h3>
+<div class="outline-text-3" id="text-org31eb9ca">
 <p>
 前面提到了，systemd-journald写入的日志中包含了大量的元数据，我们可以通过这些元数据对日志信息进行过滤。
 </p>
@@ -425,9 +512,9 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 
 
-<div id="outline-container-org59d279e" class="outline-3">
-<h3 id="org59d279e">根据正则表达式搜索的日志</h3>
-<div class="outline-text-3" id="text-org59d279e">
+<div id="outline-container-org907e597" class="outline-3">
+<h3 id="org907e597">根据正则表达式搜索的日志</h3>
+<div class="outline-text-3" id="text-org907e597">
 <p>
 通过 <code>--grep="REGEXP"</code> 可以过滤匹配正则表达式的日志内容,比如我想查看日志中所有与wifi相关的内容，那么可以
 </p>
@@ -486,9 +573,9 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 </div>
 
-<div id="outline-container-orgc8e5a92" class="outline-3">
-<h3 id="orgc8e5a92">其他参数</h3>
-<div class="outline-text-3" id="text-orgc8e5a92">
+<div id="outline-container-orga57f0db" class="outline-3">
+<h3 id="orga57f0db">其他参数</h3>
+<div class="outline-text-3" id="text-orga57f0db">
 <p>
 除了上面提到的这些选项外，还有一些比较常用的选项，列举在此:
 </p>
@@ -507,9 +594,9 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 <div>
         <div class="post-meta">
             <span title="post date" class="post-info">2018-08-08</span>
-            <span title="last modification date" class="post-info">2018-08-09</span>
+            <span title="last modification date" class="post-info">2018-10-09</span>
             <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a></span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
         </div>
     <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
         <section>
@@ -552,7 +639,7 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
     <div class="footer">
         <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
         <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
             &nbsp;&nbsp;-&nbsp;&nbsp;
             Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>

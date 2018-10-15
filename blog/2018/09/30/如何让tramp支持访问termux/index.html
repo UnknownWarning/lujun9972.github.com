@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>如何让Tramp支持访问Termux - 暗无天日</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="author" content="lujun9972" />
+  <meta name="keywords" content="Emacs之怒,tramp" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
+   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+</head>
+
+  <body><div class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a> <span class="subtitle">=============&gt;随便,谢谢</span></h1>
+        <ul>
+          <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+          <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+          <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+          <li><a href="https://lujun9972.github.io/about/">About</a></li>
+          <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+          <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1 class="title">如何让Tramp支持访问Termux</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org812f5f7">Tramp ssh协议访问Termux</a></li>
+<li><a href="#org336a817">Tramp 与 org-babel 联用</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org812f5f7" class="outline-2">
+<h2 id="org812f5f7">Tramp ssh协议访问Termux</h2>
+<div class="outline-text-2" id="text-org812f5f7">
+<p>
+当使用Tramp通过ssh访问Termux上的文件时，你可能会发现出现下面这样的错误:
+</p>
+<pre class="example">
+tramp-file-name-handler: Method ‘ssh’ should specify both encoding and decoding command or an scp program
+</pre>
+
+<p>
+这是因为Termux是一个prefixed Linux环境，它的目录结构是构建在 <code>/data/data/com.termux/files/usr</code> 下的.
+若你在Termux上查看它的 <code>PATH</code> 环境变量会发现它的 <code>PATH</code> 环境变量并不是我们常见的 <code>/bin:/usr/bin</code> 这种位于根目录下的路径
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">PATH</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">/sbin:/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets
+</pre>
+</div>
+
+<p>
+因此，当Tramp尝试在这些常见的 <code>bin</code> 目录中搜索Decode和Encode程序时就会找不到。
+</p>
+
+<p>
+解决方法其实很简单，往 <code>tramp-remote-path</code> 变量中加入 <code>tramp-own-remote-path</code> 就行了.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> tramp-remote-path `<span style="color: #bc6ec5;">(</span>,@tramp-remote-path tramp-own-remote-path<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<p>
+Tramp 根据 <code>tramp-remote-path</code> 中配置的路径来搜索远程主机上的程序，当它看到 <code>tramp-own-remote-path</code> 时会将其替换成远程主机上的 <code>PATH</code> 变量中定义的路径。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org336a817" class="outline-2">
+<h2 id="org336a817">Tramp 与 org-babel 联用</h2>
+<div class="outline-text-2" id="text-org336a817">
+<p>
+即使经过上面的配置，当将Tramp与org-babel联用时，依然会有类似下面的错误出现:
+</p>
+
+<pre class="example">
+tramp-file-name-handler: Couldn’t write region to ‘/ssh:phone#8022:/tmp/ob-input-87lP37’, decode using ‘base64 -d &gt;%s’ failed
+</pre>
+
+<p>
+根据错误信息很容易知道这是因为Tramp尝试往Termux的 <code>/tmp</code> 目录中写内容导致的。
+</p>
+
+<p>
+你可能会觉得这很好解决，只需要改一下 <code>tramp-connection-properties</code> 向Tramp指明 <code>tmpdir</code> 的路径就行了，像这样:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>add-to-list 'tramp-connection-properties
+             <span style="color: #bc6ec5;">(</span>list <span style="color: #2d9574;">(</span>regexp-quote <span style="color: #2d9574;">"/ssh:phone#8022:"</span><span style="color: #2d9574;">)</span>
+                   <span style="color: #2d9574;">"tmpdir"</span> <span style="color: #2d9574;">"/data/data/com.termux/files/usr/tmp"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<p>
+然而很可惜，你会发现这样是没用的。这其实是 <code>org-babel</code> 中的一个 BUG(可以<a href="http://emacs.1067599.n8.nabble.com/Cannot-execute-org-babel-shell-script-over-tramp-to-remote-termux-Android-due-to-tmpdir-issues-td459741.html#a459779">参见这里的讨论</a>)
+</p>
+
+<p>
+你需要修改 <code>org-babel-remote-temporary-directory</code> 的值指向新的路径.
+</p>
+
+<p>
+我们首先看一下 Termux 中定义的 tmpdir 是哪个路径
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">TMPDIR</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">/data/data/com.termux/files/usr/tmp
+</pre>
+</div>
+
+<p>
+然后将其设置为 <code>org-babel-remote-temporary-directory</code> 的值
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>set-default 'org-babel-remote-temporary-directory <span style="color: #2d9574;">"/data/data/com.termux/files/usr/tmp"</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<p>
+这里有一点需要注意，那就是由于ob-shell在执行时不是在当前buffer中执行的，因此你通过 file-variable 机制将其临时修改为其他值是不顶用的.
+这也是这里使用 <code>set-default</code> 进行赋值的原因
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<div>
+        <div class="post-meta">
+            <span title="post date" class="post-info">2018-09-30</span>
+            <span title="last modification date" class="post-info">2018-09-30</span>
+            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/emacs之怒">Emacs之怒</a> : <a href="https://lujun9972.github.io/tags/tramp">tramp</a>:</span>
+            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
+        </div>
+    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+        <section>
+            <h1>Comments</h1>
+            <div id="comment-wrap">
+                    <a class="disqus_label">使用 Disqus 评论</a>
+    </ul>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+         //var disqus_developer = 1;
+         var preempt_signal=false;
+         var disqus_identifier = "/blog/2018/09/30/如何让tramp支持访问termux/";
+         var disqus_url = "https://lujun9972.github.io/blog/2018/09/30/如何让tramp支持访问termux/";
+         var disqus_shortname = 'lujun9972';
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             $('#disqus_thread').css('display','none');
+         })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script>
+     /* comments */
+     var ego_disqus_thread=$('#disqus_thread');
+     var ego_ds_label=$('.ds-thread');
+     $('.disqus_label').click(function(){
+         ego_disqus_thread.show();
+         ego_ds_label.hide();
+     });
+     $('.ds-label').click(function(){
+         ego_disqus_thread.hide();
+         ego_ds_label.show();
+     });
+    </script>
+        </section>
+    <script src="https://lujun9972.github.io/media/js/main.js"></script>
+    <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+    </div>
+            </div>
+            <script type="text/javascript"
+                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+            </script>
+            <script type="text/x-mathjax-config">
+             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+            </script>
+</div>
+
+  </div></body>
+</html>
