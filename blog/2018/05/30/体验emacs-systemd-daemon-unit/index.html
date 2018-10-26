@@ -86,7 +86,7 @@ Emacs26.1开始提供了一个systemd user unit file来让我们可以使用syte
 <div class="org-src-container">
 <pre class="src src-shell">mkdir -p ~/.config/systemd/user/
 cp /usr/lib/systemd/user/emacs.service ~/.config/systemd/user
-sed -i <span style="color: #8b2252;">'/Environment/ s/$/ LANG=zh_CN.UTF-8/'</span> ~/.config/systemd/user/emacs.service
+sed -i <span style="color: #2d9574;">'/Environment/ s/$/ LANG=zh_CN.UTF-8/'</span> ~/.config/systemd/user/emacs.service
 </pre>
 </div>
 
@@ -434,7 +434,7 @@ Welcome to the Emacs shell
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">sed -i <span style="color: #8b2252;">'/Environment/ s/$/ GTK_IM_MODULE=fcitx QT_IM_MODULE=fctix XMODIFIERS="@im=fcitx"/'</span> ~/.config/systemd/user/emacs.service
+<pre class="src src-shell">sed -i <span style="color: #2d9574;">'/Environment/ s/$/ GTK_IM_MODULE=fcitx QT_IM_MODULE=fctix XMODIFIERS="@im=fcitx"/'</span> ~/.config/systemd/user/emacs.service
 </pre>
 </div>
 
@@ -456,19 +456,19 @@ systemctl --user restart emacs.service
 最后的service unit file是这样的
 </p>
 <div class="org-src-container">
-<pre class="src src-conf">[<span style="color: #228b22;">Unit</span>]
-<span style="color: #a0522d;">Description</span>=Emacs text editor
-<span style="color: #a0522d;">Documentation</span>=info:emacs man:emacs(1) https://gnu.org/software/emacs/
+<pre class="src src-conf">[<span style="color: #ce537a; font-weight: bold;">Unit</span>]
+<span style="color: #7590db;">Description</span>=Emacs text editor
+<span style="color: #7590db;">Documentation</span>=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
-[<span style="color: #228b22;">Service</span>]
-<span style="color: #a0522d;">Type</span>=simple
-<span style="color: #a0522d;">ExecStart</span>=/usr/bin/emacs --fg-daemon
-<span style="color: #a0522d;">ExecStop</span>=/usr/bin/emacsclient --eval <span style="color: #8b2252;">"(kill-emacs)"</span>
-<span style="color: #a0522d;">Environment</span>=SSH_AUTH_SOCK=%t/keyring/ssh LANG=zh_CN.UTF-8 GTK_IM_MODULE=fcitx QT_IM_MODULE=fctix XMODIFIERS=<span style="color: #8b2252;">"@im=fcitx"</span>
-<span style="color: #a0522d;">Restart</span>=on-failure
+[<span style="color: #ce537a; font-weight: bold;">Service</span>]
+<span style="color: #7590db;">Type</span>=simple
+<span style="color: #7590db;">ExecStart</span>=/usr/bin/emacs --fg-daemon
+<span style="color: #7590db;">ExecStop</span>=/usr/bin/emacsclient --eval <span style="color: #2d9574;">"(kill-emacs)"</span>
+<span style="color: #7590db;">Environment</span>=SSH_AUTH_SOCK=%t/keyring/ssh LANG=zh_CN.UTF-8 GTK_IM_MODULE=fcitx QT_IM_MODULE=fctix XMODIFIERS=<span style="color: #2d9574;">"@im=fcitx"</span>
+<span style="color: #7590db;">Restart</span>=on-failure
 
-[<span style="color: #228b22;">Install</span>]
-<span style="color: #a0522d;">WantedBy</span>=default.target
+[<span style="color: #ce537a; font-weight: bold;">Install</span>]
+<span style="color: #7590db;">WantedBy</span>=default.target
 </pre>
 </div>
 

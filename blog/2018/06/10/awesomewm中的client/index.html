@@ -54,29 +54,29 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org708899a">client的常用操作</a>
+<li><a href="#org52f627a">client的常用操作</a>
 <ul>
-<li><a href="#orgdd4ba44">获取当前的client</a></li>
-<li><a href="#orgfff869c">获取client列表</a>
+<li><a href="#orgc4dbbe1">获取当前的client</a></li>
+<li><a href="#orga6c6c93">获取client列表</a>
 <ul>
-<li><a href="#org44d8fd2">获取所有的client列表</a></li>
-<li><a href="#orgfb3718f">获取符合某个条件的client列表</a></li>
-<li><a href="#orgafd5a9b">获取某个screen上的client列表</a></li>
+<li><a href="#orgcfd1487">获取所有的client列表</a></li>
+<li><a href="#org1f902db">获取符合某个条件的client列表</a></li>
+<li><a href="#org2867855">获取某个screen上的client列表</a></li>
 </ul>
 </li>
-<li><a href="#org562f68c">获取窗口的位置与大小</a></li>
-<li><a href="#org046f039">设置某个窗口的位置和大小</a></li>
-<li><a href="#org81f43ea">raise</a></li>
-<li><a href="#org07962e0">lower</a></li>
-<li><a href="#orgcc3c061">run or raise</a></li>
-<li><a href="#orgb808d19">给某个client设置鼠标操作</a></li>
-<li><a href="#orgc6cf5bd">给某个client设置快捷键</a></li>
-<li><a href="#org1b695a9">关闭某个client</a></li>
-<li><a href="#org8208fa9">为某个client设置所属tag</a></li>
-<li><a href="#orgdfde8e8">移动client到某个tag</a></li>
+<li><a href="#org30fb108">获取窗口的位置与大小</a></li>
+<li><a href="#orgf6e0fa8">设置某个窗口的位置和大小</a></li>
+<li><a href="#orgb597cbd">raise</a></li>
+<li><a href="#org93c08ad">lower</a></li>
+<li><a href="#org14aead4">run or raise</a></li>
+<li><a href="#orgf381d2c">给某个client设置鼠标操作</a></li>
+<li><a href="#org17b5642">给某个client设置快捷键</a></li>
+<li><a href="#org163a746">关闭某个client</a></li>
+<li><a href="#orgaf9aaa9">为某个client设置所属tag</a></li>
+<li><a href="#org4e3cc30">移动client到某个tag</a></li>
 </ul>
 </li>
-<li><a href="#org36ac71d">client中的signal处理</a></li>
+<li><a href="#org6944e23">client中的signal处理</a></li>
 </ul>
 </div>
 </div>
@@ -150,54 +150,54 @@ Awesome WM 使用 client 类来指代 XClient 应用程序的一个窗口。
 需要说明的是，修改client对象的属性可能会对窗口本身产生影响，比如设置
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">c.maximized=<span style="color: #008b8b;">true</span>
+<pre class="src src-lua">c.maximized=<span style="color: #a45bad;">true</span>
 </pre>
 </div>
 <p>
 会让该client最大化
 </p>
 
-<div id="outline-container-org708899a" class="outline-2">
-<h2 id="org708899a">client的常用操作</h2>
-<div class="outline-text-2" id="text-org708899a">
+<div id="outline-container-org52f627a" class="outline-2">
+<h2 id="org52f627a">client的常用操作</h2>
+<div class="outline-text-2" id="text-org52f627a">
 </div>
-<div id="outline-container-orgdd4ba44" class="outline-3">
-<h3 id="orgdd4ba44">获取当前的client</h3>
-<div class="outline-text-3" id="text-orgdd4ba44">
+<div id="outline-container-orgc4dbbe1" class="outline-3">
+<h3 id="orgc4dbbe1">获取当前的client</h3>
+<div class="outline-text-3" id="text-orgc4dbbe1">
 <p>
 client.focus对象总是代表当前获取焦点的窗口
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #a020f0;">local</span> <span style="color: #a0522d;">c</span> = client.focus
-<span style="color: #a020f0;">if</span> c <span style="color: #a020f0;">then</span>
-  <span style="color: #b22222;">-- </span><span style="color: #b22222;">&#22788;&#29702;&#24403;&#21069;client</span>
-<span style="color: #a020f0;">end</span>
+<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">c</span> = client.focus
+<span style="color: #4f97d7; font-weight: bold;">if</span> c <span style="color: #4f97d7; font-weight: bold;">then</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">&#22788;&#29702;&#24403;&#21069;client</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgfff869c" class="outline-3">
-<h3 id="orgfff869c">获取client列表</h3>
-<div class="outline-text-3" id="text-orgfff869c">
+<div id="outline-container-orga6c6c93" class="outline-3">
+<h3 id="orga6c6c93">获取client列表</h3>
+<div class="outline-text-3" id="text-orga6c6c93">
 </div>
-<div id="outline-container-org44d8fd2" class="outline-4">
-<h4 id="org44d8fd2">获取所有的client列表</h4>
-<div class="outline-text-4" id="text-org44d8fd2">
+<div id="outline-container-orgcfd1487" class="outline-4">
+<h4 id="orgcfd1487">获取所有的client列表</h4>
+<div class="outline-text-4" id="text-orgcfd1487">
 <p>
 client.get函数可以返回一个包含所有client对象的数组
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #a020f0;">for</span> <span style="color: #a0522d;">_</span>,<span style="color: #a0522d;">c</span> <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">ipairs</span>(client.get()) <span style="color: #a020f0;">do</span>
-  <span style="color: #b22222;">--</span><span style="color: #b22222;">do something</span>
-<span style="color: #a020f0;">end</span>
+<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #7590db;">_</span>,<span style="color: #7590db;">c</span> <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">ipairs</span><span style="color: #4f97d7;">(</span>client.get<span style="color: #bc6ec5;">()</span><span style="color: #4f97d7;">)</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">--</span><span style="color: #2aa1ae; background-color: #292e34;">do something</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfb3718f" class="outline-4">
-<h4 id="orgfb3718f">获取符合某个条件的client列表</h4>
-<div class="outline-text-4" id="text-orgfb3718f">
+<div id="outline-container-org1f902db" class="outline-4">
+<h4 id="org1f902db">获取符合某个条件的client列表</h4>
+<div class="outline-text-4" id="text-org1f902db">
 <p>
 awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client列表，其中
 </p>
@@ -212,21 +212,21 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 例如下面代码会取消所有 URxvt 应用窗口的最小化状态:
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">un-minimize all urxvt instances</span>
-<span style="color: #a020f0;">local</span> <span style="color: #0000ff;">urxvt</span> = <span style="color: #a020f0;">function</span> (c)
-  <span style="color: #a020f0;">return</span> awful.rules.match(c, {class = <span style="color: #8b2252;">"URxvt"</span>})
-<span style="color: #a020f0;">end</span>
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">un-minimize all urxvt instances</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #bc6ec5; font-weight: bold;">urxvt</span> = <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #4f97d7;">(</span>c<span style="color: #4f97d7;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">return</span> awful.rules.match<span style="color: #4f97d7;">(</span>c, <span style="color: #bc6ec5;">{</span>class = <span style="color: #2d9574;">"URxvt"</span><span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 
-<span style="color: #a020f0;">for</span> <span style="color: #a0522d;">c</span> <span style="color: #a020f0;">in</span> awful.client.iterate(urxvt) <span style="color: #a020f0;">do</span>
-  c.minimized = <span style="color: #008b8b;">false</span>
-<span style="color: #a020f0;">end</span>
+<span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #7590db;">c</span> <span style="color: #4f97d7; font-weight: bold;">in</span> awful.client.iterate<span style="color: #4f97d7;">(</span>urxvt<span style="color: #4f97d7;">)</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
+  c.minimized = <span style="color: #a45bad;">false</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgafd5a9b" class="outline-4">
-<h4 id="orgafd5a9b">获取某个screen上的client列表</h4>
-<div class="outline-text-4" id="text-orgafd5a9b">
+<div id="outline-container-org2867855" class="outline-4">
+<h4 id="org2867855">获取某个screen上的client列表</h4>
+<div class="outline-text-4" id="text-org2867855">
 <ul class="org-ul">
 <li>screen对象中的 <code>clients</code> 属性就是该screen上所有可见client的数组</li>
 <li>screen对象中的 <code>hidden_clients</code> 属性就是该screen上所有不可见client的数组</li>
@@ -237,18 +237,18 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-org562f68c" class="outline-3">
-<h3 id="org562f68c">获取窗口的位置与大小</h3>
-<div class="outline-text-3" id="text-org562f68c">
+<div id="outline-container-org30fb108" class="outline-3">
+<h3 id="org30fb108">获取窗口的位置与大小</h3>
+<div class="outline-text-3" id="text-org30fb108">
 <p>
 <code>client:geometry()</code> 方法返回一个包含 <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> key 的table, 指示了窗口(不包括边框宽度)在屏幕上的偏移量和长度与宽度。
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #a020f0;">local</span> <span style="color: #a0522d;">c</span> = client.focus
-<span style="color: #a020f0;">if</span> c <span style="color: #a020f0;">then</span>
-  x,y,width,height = c:geometry()
-  naughty.notify{text=<span style="color: #483d8b;">string</span>.<span style="color: #483d8b;">format</span>(<span style="color: #8b2252;">"x=%s,y=%s,w=%s,h=%s"</span>,x,y,width,height)}
-<span style="color: #a020f0;">end</span>
+<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">c</span> = client.focus
+<span style="color: #4f97d7; font-weight: bold;">if</span> c <span style="color: #4f97d7; font-weight: bold;">then</span>
+  x,y,width,height = c:geometry<span style="color: #4f97d7;">()</span>
+  naughty.notify<span style="color: #4f97d7;">{</span>text=<span style="color: #4f97d7;">string</span>.<span style="color: #4f97d7;">format</span><span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"x=%s,y=%s,w=%s,h=%s"</span>,x,y,width,height<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">}</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 </pre>
 </div>
 
@@ -258,9 +258,9 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-org046f039" class="outline-3">
-<h3 id="org046f039">设置某个窗口的位置和大小</h3>
-<div class="outline-text-3" id="text-org046f039">
+<div id="outline-container-orgf6e0fa8" class="outline-3">
+<h3 id="orgf6e0fa8">设置某个窗口的位置和大小</h3>
+<div class="outline-text-3" id="text-orgf6e0fa8">
 <p>
 <code>client:geometry(geo)</code> 方法也能用来设置窗口的位置和大小。
 方法是先设置好一个包含 <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> key 的table,然后使用它作为参数传递给 <code>geometry</code> 方法
@@ -268,27 +268,27 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-org81f43ea" class="outline-3">
-<h3 id="org81f43ea">raise</h3>
-<div class="outline-text-3" id="text-org81f43ea">
+<div id="outline-container-orgb597cbd" class="outline-3">
+<h3 id="orgb597cbd">raise</h3>
+<div class="outline-text-3" id="text-orgb597cbd">
 <p>
 client::raise() 方法可以唤起指定client，让它处于其他client的最上方。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org07962e0" class="outline-3">
-<h3 id="org07962e0">lower</h3>
-<div class="outline-text-3" id="text-org07962e0">
+<div id="outline-container-org93c08ad" class="outline-3">
+<h3 id="org93c08ad">lower</h3>
+<div class="outline-text-3" id="text-org93c08ad">
 <p>
 client::lower() 方法让该client向下降一级
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgcc3c061" class="outline-3">
-<h3 id="orgcc3c061">run or raise</h3>
-<div class="outline-text-3" id="text-orgcc3c061">
+<div id="outline-container-org14aead4" class="outline-3">
+<h3 id="org14aead4">run or raise</h3>
+<div class="outline-text-3" id="text-org14aead4">
 <p>
 awful.client.run_or_raise(cmd,matcher,merge) 函数可以在当某个符合条件的client存在时切换到该client，否则通过执行命令的方式运行新应用。 其中:
 </p>
@@ -302,54 +302,54 @@ awful.client.run_or_raise(cmd,matcher,merge) 函数可以在当某个符合条�
 比如，下面操作当有URxvt窗口存在时，弹出该窗口，否则运行一个新 <code>urxvt</code> 应用:
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #a020f0;">local</span> <span style="color: #0000ff;">matcher</span> = <span style="color: #a020f0;">function</span> (c)
-  <span style="color: #a020f0;">return</span> awful.rules.match(c, {class = <span style="color: #8b2252;">'URxvt'</span>})
-<span style="color: #a020f0;">end</span>
-awful.client.run_or_raise(<span style="color: #8b2252;">'urxvt'</span>, matcher)
+<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #bc6ec5; font-weight: bold;">matcher</span> = <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #4f97d7;">(</span>c<span style="color: #4f97d7;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">return</span> awful.rules.match<span style="color: #4f97d7;">(</span>c, <span style="color: #bc6ec5;">{</span>class = <span style="color: #2d9574;">'URxvt'</span><span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
+awful.client.run_or_raise<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'urxvt'</span>, matcher<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb808d19" class="outline-3">
-<h3 id="orgb808d19">给某个client设置鼠标操作</h3>
-<div class="outline-text-3" id="text-orgb808d19">
+<div id="outline-container-orgf381d2c" class="outline-3">
+<h3 id="orgf381d2c">给某个client设置鼠标操作</h3>
+<div class="outline-text-3" id="text-orgf381d2c">
 <p>
 client:buttons (buttons_array) 方法可以获取/设置某个client快捷键
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc6cf5bd" class="outline-3">
-<h3 id="orgc6cf5bd">给某个client设置快捷键</h3>
-<div class="outline-text-3" id="text-orgc6cf5bd">
+<div id="outline-container-org17b5642" class="outline-3">
+<h3 id="org17b5642">给某个client设置快捷键</h3>
+<div class="outline-text-3" id="text-org17b5642">
 <p>
 client::keys(keys_array) 方法可以获取/设置某个client的快捷键
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1b695a9" class="outline-3">
-<h3 id="org1b695a9">关闭某个client</h3>
-<div class="outline-text-3" id="text-org1b695a9">
+<div id="outline-container-org163a746" class="outline-3">
+<h3 id="org163a746">关闭某个client</h3>
+<div class="outline-text-3" id="text-org163a746">
 <p>
 client:kill() 关闭该client
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8208fa9" class="outline-3">
-<h3 id="org8208fa9">为某个client设置所属tag</h3>
-<div class="outline-text-3" id="text-org8208fa9">
+<div id="outline-container-orgaf9aaa9" class="outline-3">
+<h3 id="orgaf9aaa9">为某个client设置所属tag</h3>
+<div class="outline-text-3" id="text-orgaf9aaa9">
 <p>
 client:tags(tags_array) 方法获取/设置该client所属的tag
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgdfde8e8" class="outline-3">
-<h3 id="orgdfde8e8">移动client到某个tag</h3>
-<div class="outline-text-3" id="text-orgdfde8e8">
+<div id="outline-container-org4e3cc30" class="outline-3">
+<h3 id="org4e3cc30">移动client到某个tag</h3>
+<div class="outline-text-3" id="text-org4e3cc30">
 <p>
 client:move_to_tag(targe) 将client移动到某个tag
 </p>
@@ -357,9 +357,9 @@ client:move_to_tag(targe) 将client移动到某个tag
 </div>
 </div>
 
-<div id="outline-container-org36ac71d" class="outline-2">
-<h2 id="org36ac71d">client中的signal处理</h2>
-<div class="outline-text-2" id="text-org36ac71d">
+<div id="outline-container-org6944e23" class="outline-2">
+<h2 id="org6944e23">client中的signal处理</h2>
+<div class="outline-text-2" id="text-org6944e23">
 <ul class="org-ul">
 <li>当client对象中的某个属性发生改变时，会引发名为 <code>property::属性名</code> 的signal</li>
 

@@ -54,22 +54,22 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdb3067d">kernel module存放在哪里</a></li>
-<li><a href="#orga58be4d">如何加载module</a></li>
-<li><a href="#org400deac">卸载module</a></li>
+<li><a href="#org3801aee">kernel module存放在哪里</a></li>
+<li><a href="#org179e76c">如何加载module</a></li>
+<li><a href="#orgac5df35">卸载module</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgdb3067d" class="outline-2">
-<h2 id="orgdb3067d">kernel module存放在哪里</h2>
-<div class="outline-text-2" id="text-orgdb3067d">
+<div id="outline-container-org3801aee" class="outline-2">
+<h2 id="org3801aee">kernel module存放在哪里</h2>
+<div class="outline-text-2" id="text-org3801aee">
 <p>
 linux自带了很多kernel module文件, 这些文件一般以 <code>.ko</code> 或 <code>.ko.xz</code> 文件结尾,存放在 <code>/lib/module/$(uname -r)</code> 目录中。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">ls -l /lib/modules/$(<span style="color: #ff00ff;">uname</span> -r)
+<pre class="src src-shell">ls -l /lib/modules/$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">uname</span> -r<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -96,7 +96,7 @@ drwxr-xr-x 12 root root    4096 6&#26376;   1 12:04 kernel
 大部分的module file都按类别分好类存放在其中的 <code>kernel</code> 目录中。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ls -l /lib/modules/$(<span style="color: #ff00ff;">uname</span> -r)/kernel
+<pre class="src src-shell">ls -l /lib/modules/$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">uname</span> -r<span style="color: #4f97d7;">)</span>/kernel
 </pre>
 </div>
 
@@ -125,9 +125,9 @@ linux当然不可能将所有的module都加载进kernel，要查看目前加载
 </div>
 </div>
 
-<div id="outline-container-orga58be4d" class="outline-2">
-<h2 id="orga58be4d">如何加载module</h2>
-<div class="outline-text-2" id="text-orga58be4d">
+<div id="outline-container-org179e76c" class="outline-2">
+<h2 id="org179e76c">如何加载module</h2>
+<div class="outline-text-2" id="text-org179e76c">
 <p>
 加载module特别简单，只需要使用 <code>modprobe module名</code> 就行了。
 </p>
@@ -146,9 +146,9 @@ linux当然不可能将所有的module都加载进kernel，要查看目前加载
 </div>
 </div>
 
-<div id="outline-container-org400deac" class="outline-2">
-<h2 id="org400deac">卸载module</h2>
-<div class="outline-text-2" id="text-org400deac">
+<div id="outline-container-orgac5df35" class="outline-2">
+<h2 id="orgac5df35">卸载module</h2>
+<div class="outline-text-2" id="text-orgac5df35">
 <p>
 卸载module也很简单，只需要使用 <code>rmmod module名</code> 就行了。
 </p>

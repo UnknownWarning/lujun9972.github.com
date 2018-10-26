@@ -54,22 +54,22 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdb196db">格式化btrfs格式的文件系统</a></li>
-<li><a href="#org7496f06">挂载btrfs文件系统</a></li>
-<li><a href="#org15192bb">修改Btrfs文件系统的大小</a></li>
-<li><a href="#org83724c4">创建快照</a></li>
-<li><a href="#org6a0a3a8">子卷</a>
+<li><a href="#org9851599">格式化btrfs格式的文件系统</a></li>
+<li><a href="#org915909b">挂载btrfs文件系统</a></li>
+<li><a href="#org2cc4a67">修改Btrfs文件系统的大小</a></li>
+<li><a href="#org3203b6f">创建快照</a></li>
+<li><a href="#orgc195db5">子卷</a>
 <ul>
-<li><a href="#orgb158bd5">创建子卷</a></li>
-<li><a href="#orgcf79946">列出子卷</a></li>
-<li><a href="#orgd0a18f4">挂载子卷</a></li>
-<li><a href="#org1266ee2">删除子卷</a></li>
+<li><a href="#orgda8b9c4">创建子卷</a></li>
+<li><a href="#org325c0a0">列出子卷</a></li>
+<li><a href="#org89fad5e">挂载子卷</a></li>
+<li><a href="#orga7ffe51">删除子卷</a></li>
 </ul>
 </li>
-<li><a href="#orgd335d3a">RAID</a></li>
-<li><a href="#org617479b">添加/删除新设备</a></li>
-<li><a href="#org95303f8">文件系统转换</a></li>
-<li><a href="#org6582e63">检查btrfs文件系统</a></li>
+<li><a href="#org53663dd">RAID</a></li>
+<li><a href="#org4504c30">添加/删除新设备</a></li>
+<li><a href="#org406f63a">文件系统转换</a></li>
+<li><a href="#orgf20a576">检查btrfs文件系统</a></li>
 </ul>
 </div>
 </div>
@@ -77,9 +77,9 @@
 记录btrfs文件系统的常用操作
 </p>
 
-<div id="outline-container-orgdb196db" class="outline-2">
-<h2 id="orgdb196db">格式化btrfs格式的文件系统</h2>
-<div class="outline-text-2" id="text-orgdb196db">
+<div id="outline-container-org9851599" class="outline-2">
+<h2 id="org9851599">格式化btrfs格式的文件系统</h2>
+<div class="outline-text-2" id="text-org9851599">
 <div class="org-src-container">
 <pre class="src src-shell">sudo mkfs.btrfs /dev/sdc1
 </pre>
@@ -89,7 +89,7 @@
 通过 <code>-O</code> 选项可以设置btrfs文件系统的fature，这些feature可以通过下面命令看到
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">mkfs.btrfs -O list-all 2&gt;&amp;1
+<pre class="src src-shell">mkfs.btrfs -O list-all <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span>
 </pre>
 </div>
 
@@ -105,9 +105,9 @@ no-holes            - no explicit hole extents for files (0x200, compat=3.14, sa
 </div>
 </div>
 
-<div id="outline-container-org7496f06" class="outline-2">
-<h2 id="org7496f06">挂载btrfs文件系统</h2>
-<div class="outline-text-2" id="text-org7496f06">
+<div id="outline-container-org915909b" class="outline-2">
+<h2 id="org915909b">挂载btrfs文件系统</h2>
+<div class="outline-text-2" id="text-org915909b">
 <div class="org-src-container">
 <pre class="src src-shell">sudo mount -t btrds -o rw /dev/sdc1 /mnt
 </pre>
@@ -123,15 +123,15 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-shell">sudo mount -t btrds -o rw,ssd,<span style="color: #a0522d;">compress</span>=lzo /dev/sdc1 /mnt/mybtrfs
+<pre class="src src-shell">sudo mount -t btrds -o rw,ssd,<span style="color: #7590db;">compress</span>=lzo /dev/sdc1 /mnt/mybtrfs
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org15192bb" class="outline-2">
-<h2 id="org15192bb">修改Btrfs文件系统的大小</h2>
-<div class="outline-text-2" id="text-org15192bb">
+<div id="outline-container-org2cc4a67" class="outline-2">
+<h2 id="org2cc4a67">修改Btrfs文件系统的大小</h2>
+<div class="outline-text-2" id="text-org2cc4a67">
 <p>
 我们还可以修改创建好的btrfs文件系统的大小.
 </p>
@@ -164,9 +164,9 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-org83724c4" class="outline-2">
-<h2 id="org83724c4">创建快照</h2>
-<div class="outline-text-2" id="text-org83724c4">
+<div id="outline-container-org3203b6f" class="outline-2">
+<h2 id="org3203b6f">创建快照</h2>
+<div class="outline-text-2" id="text-org3203b6f">
 <p>
 快照是对文件系统某一时刻的完全备份。建立快照后，对文件系统的修改不会影响快照中的内容
 </p>
@@ -196,18 +196,18 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-org6a0a3a8" class="outline-2">
-<h2 id="org6a0a3a8">子卷</h2>
-<div class="outline-text-2" id="text-org6a0a3a8">
+<div id="outline-container-orgc195db5" class="outline-2">
+<h2 id="orgc195db5">子卷</h2>
+<div class="outline-text-2" id="text-orgc195db5">
 <p>
 我们可以把btrfs文件系统的一部分配置为一个完整的子文件系统，这些子文件系统被称为subvolume(子卷).
 这些子卷共享底层的设备空间，在需要磁盘空间时便从底层设备中分配。
 </p>
 </div>
 
-<div id="outline-container-orgb158bd5" class="outline-3">
-<h3 id="orgb158bd5">创建子卷</h3>
-<div class="outline-text-3" id="text-orgb158bd5">
+<div id="outline-container-orgda8b9c4" class="outline-3">
+<h3 id="orgda8b9c4">创建子卷</h3>
+<div class="outline-text-3" id="text-orgda8b9c4">
 <div class="org-src-container">
 <pre class="src src-shell">sudo btrfs subvolume create /mnt/sub1
 </pre>
@@ -220,9 +220,9 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-orgcf79946" class="outline-3">
-<h3 id="orgcf79946">列出子卷</h3>
-<div class="outline-text-3" id="text-orgcf79946">
+<div id="outline-container-org325c0a0" class="outline-3">
+<h3 id="org325c0a0">列出子卷</h3>
+<div class="outline-text-3" id="text-org325c0a0">
 <div class="org-src-container">
 <pre class="src src-shell">sudo btrfs subvolume list  /mnt
 </pre>
@@ -235,23 +235,23 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-orgd0a18f4" class="outline-3">
-<h3 id="orgd0a18f4">挂载子卷</h3>
-<div class="outline-text-3" id="text-orgd0a18f4">
+<div id="outline-container-org89fad5e" class="outline-3">
+<h3 id="org89fad5e">挂载子卷</h3>
+<div class="outline-text-3" id="text-org89fad5e">
 <p>
 通过 <code>subvol=/path/to/subvolumne</code> 或 <code>subvolid=objectid</code> 选项可以指定挂载那个子卷
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">sudo mount -t btrfs -o <span style="color: #a0522d;">subvol</span>=/mnt/sub1 /home/lujun9972/btrfs.img /media
+<pre class="src src-shell">sudo mount -t btrfs -o <span style="color: #7590db;">subvol</span>=/mnt/sub1 /home/lujun9972/btrfs.img /media
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1266ee2" class="outline-3">
-<h3 id="org1266ee2">删除子卷</h3>
-<div class="outline-text-3" id="text-org1266ee2">
+<div id="outline-container-orga7ffe51" class="outline-3">
+<h3 id="orga7ffe51">删除子卷</h3>
+<div class="outline-text-3" id="text-orga7ffe51">
 <div class="org-src-container">
 <pre class="src src-shell">sudo btrfs subvolume delete /mnt/sub1
 </pre>
@@ -265,9 +265,9 @@ btrfs还有许多feature，可以通过 <code>-o</code> 来指定。比较特别
 </div>
 </div>
 
-<div id="outline-container-orgd335d3a" class="outline-2">
-<h2 id="orgd335d3a">RAID</h2>
-<div class="outline-text-2" id="text-orgd335d3a">
+<div id="outline-container-org53663dd" class="outline-2">
+<h2 id="org53663dd">RAID</h2>
+<div class="outline-text-2" id="text-org53663dd">
 <p>
 执行mkfs时可以指定多个设备，并设定RAID级别，比如
 </p>
@@ -279,9 +279,9 @@ mount -t btrfs /dev/sde1 /mnt/raid
 </div>
 </div>
 
-<div id="outline-container-org617479b" class="outline-2">
-<h2 id="org617479b">添加/删除新设备</h2>
-<div class="outline-text-2" id="text-org617479b">
+<div id="outline-container-org4504c30" class="outline-2">
+<h2 id="org4504c30">添加/删除新设备</h2>
+<div class="outline-text-2" id="text-org4504c30">
 <p>
 当设备空间快要被用完时，可以通过 <code>btrfs device add</code> 命令为文件系统添加新磁盘设备，从而增加存储空间
 </p>
@@ -321,9 +321,9 @@ Filesystem      Size  Used Avail Use% Mounted on
 </div>
 </div>
 
-<div id="outline-container-org95303f8" class="outline-2">
-<h2 id="org95303f8">文件系统转换</h2>
-<div class="outline-text-2" id="text-org95303f8">
+<div id="outline-container-org406f63a" class="outline-2">
+<h2 id="org406f63a">文件系统转换</h2>
+<div class="outline-text-2" id="text-org406f63a">
 <p>
 可以通过命令将非Btrfs文件系统转换为Btrfs文件系统
 </p>
@@ -334,9 +334,9 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 <div class="org-src-container">
 <pre class="src src-org">create btrfs filesystem:
-        blocksize: 4096
-        nodesize:  16384
-        features:  extref, skinny-metadata (default)
+  blocksize: 4096
+  nodesize:  16384
+  features:  extref, skinny-metadata (default)
 creating ext2 image file
 creating btrfs metadata
 copy inodes [o] [         0/        11]
@@ -359,9 +359,9 @@ conversion complete
 </div>
 </div>
 
-<div id="outline-container-org6582e63" class="outline-2">
-<h2 id="org6582e63">检查btrfs文件系统</h2>
-<div class="outline-text-2" id="text-org6582e63">
+<div id="outline-container-orgf20a576" class="outline-2">
+<h2 id="orgf20a576">检查btrfs文件系统</h2>
+<div class="outline-text-2" id="text-orgf20a576">
 <p>
 可以通过以下命令检查Btrfs文件系统
 </p>

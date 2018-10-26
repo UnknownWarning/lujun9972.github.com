@@ -126,16 +126,16 @@ Proxy options:
 这就很好办了，我们可以把下面代码加入到初始化文件中:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">defvar</span> <span style="color: #a0522d;">play-this-video-player</span> <span style="color: #8b2252;">"mpv --autofit=100%"</span>
-  <span style="color: #8b2252;">"mplayer used to play the video"</span>)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defvar</span> <span style="color: #7590db;">play-this-video-player</span> <span style="color: #2d9574;">"mpv --autofit=100%"</span>
+  <span style="color: #2aa1ae;">"mplayer used to play the video"</span><span style="color: #4f97d7;">)</span>
 
-(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">play-this-video</span> ()
-  (<span style="color: #a020f0;">interactive</span>)
-  (<span style="color: #a020f0;">let</span> ((url (<span style="color: #a020f0;">or</span> w3m-current-url
-                 (eww-current-url)
-                 (<span style="color: #ff0000; font-weight: bold;">error</span> <span style="color: #8b2252;">"only w3m and eww supported"</span>)))
-        (player play-this-video-player))
-    (shell-command (format <span style="color: #8b2252;">"you-get %s -p '%s' &amp;"</span> url player))))
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">play-this-video</span> <span style="color: #bc6ec5;">()</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">interactive</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">let</span> <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>url <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">or</span> w3m-current-url
+                 <span style="color: #4f97d7;">(</span>eww-current-url<span style="color: #4f97d7;">)</span>
+                 <span style="color: #4f97d7;">(</span><span style="color: #dc752f; background-color: #292b2e;">error</span> <span style="color: #2d9574;">"only w3m and eww supported"</span><span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+        <span style="color: #67b11d;">(</span>player play-this-video-player<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span>shell-command <span style="color: #67b11d;">(</span>format <span style="color: #2d9574;">"you-get %s -p '%s' &amp;"</span> url player<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 

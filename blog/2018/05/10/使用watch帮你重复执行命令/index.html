@@ -54,12 +54,12 @@
 有时候你需要不断的执行某个命令，追踪其输出产生的变化情况。你可能会写一个死循环来做这件事情：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a020f0;">while</span> :
-<span style="color: #a020f0;">do</span>
+<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">while</span> :
+<span style="color: #4f97d7; font-weight: bold;">do</span>
     clear
     commands
-    sleep 1
-<span style="color: #a020f0;">done</span>
+    sleep <span style="color: #a45bad;">1</span>
+<span style="color: #4f97d7; font-weight: bold;">done</span>
 </pre>
 </div>
 
@@ -92,7 +92,7 @@
 通过 <code>-n INTERVAL</code> 你也可以设置重复执行命令的间隔时间，比如我可以调整为每5秒中执行一次 <code>date</code> 命令
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">watch -n 5 date
+<pre class="src src-shell">watch -n <span style="color: #a45bad;">5</span> date
 </pre>
 </div>
 
@@ -101,7 +101,7 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">watch -d -n 1 date
+<pre class="src src-shell">watch -d -n <span style="color: #a45bad;">1</span> date
 </pre>
 </div>
 

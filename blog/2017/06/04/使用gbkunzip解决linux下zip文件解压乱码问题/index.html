@@ -79,40 +79,12 @@ gbkunzip实际上就是一段python代码,它其实就是对 <code>gbzip</code> 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">cat $(<span style="color: #ff00ff;">whereis</span> gbkunzip |awk <span style="color: #8b2252;">'{print $2}'</span>)
+<pre class="src src-shell">cat $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">whereis</span> gbkunzip |awk <span style="color: #2d9574;">'{print $2}'</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/usr/bin/</span><span style="color: #a020f0;">env</span><span style="color: #b22222;"> python3</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">fileencoding=utf-8</span>
-
-<span style="color: #8b2252;">'''</span>
-<span style="color: #8b2252;">&#35299;&#21387; zip &#25991;&#20214;&#65292;&#20854;&#20013;&#30340;&#25991;&#20214;&#21517;&#26159; GB18030 &#32534;&#30721;&#65292;&#20294;&#31995;&#32479;&#26159; Unicode &#32534;&#30721;</span>
-<span style="color: #8b2252;">'''</span>
-
-import sys
-import os
-from gbzip import ZipFile
-from getpass import getpass
-
-def main():
-  try:
-    z = ZipFile(sys.argv[1])
-    <span style="color: #a020f0;">while</span> True:
-      try:
-        z.extractall()
-      except RuntimeError: <span style="color: #b22222;"># </span><span style="color: #b22222;">encrypted zipfile</span>
-        passwd = getpass(<span style="color: #8b2252;">'Enter correct password: '</span>).encode()
-        z.setpassword(passwd)
-      <span style="color: #a020f0;">else</span>:
-        <span style="color: #a020f0;">break</span>
-    print(<span style="color: #8b2252;">'Everything is ok.'</span>)
-  except IndexError:
-    sys.exit(<span style="color: #8b2252;">'give me exactly one zipfile to extract.'</span>)
-
-<span style="color: #a020f0;">if</span> __name__ == <span style="color: #8b2252;">'__main__'</span>:
-  main()
+<pre class="src src-shell">
 </pre>
 </div>
 

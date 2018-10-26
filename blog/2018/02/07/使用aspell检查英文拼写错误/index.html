@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga4d4920">安装aspell及其字典</a></li>
-<li><a href="#org3659f4d">使用aspell检查文件中的错误拼写</a></li>
-<li><a href="#orged075aa">aspell的常用选项</a></li>
+<li><a href="#orgd271059">安装aspell及其字典</a></li>
+<li><a href="#org4dde91c">使用aspell检查文件中的错误拼写</a></li>
+<li><a href="#org9f1cfa8">aspell的常用选项</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga4d4920" class="outline-2">
-<h2 id="orga4d4920">安装aspell及其字典</h2>
-<div class="outline-text-2" id="text-orga4d4920">
+<div id="outline-container-orgd271059" class="outline-2">
+<h2 id="orgd271059">安装aspell及其字典</h2>
+<div class="outline-text-2" id="text-orgd271059">
 <p>
 aspell是一款拼写检查工具，它存在于几乎所有的Linux发行版的仓库中。在archlinux上可以通过下面命令来安装:
 </p>
@@ -136,15 +136,15 @@ community/aspell-uk 1.8.0-1
 </div>
 </div>
 
-<div id="outline-container-org3659f4d" class="outline-2">
-<h2 id="org3659f4d">使用aspell检查文件中的错误拼写</h2>
-<div class="outline-text-2" id="text-org3659f4d">
+<div id="outline-container-org4dde91c" class="outline-2">
+<h2 id="org4dde91c">使用aspell检查文件中的错误拼写</h2>
+<div class="outline-text-2" id="text-org4dde91c">
 <p>
 使用aspell的 <code>check</code> 操作就能进行拼写检查了，像这样
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">aspell check file.txt
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#25110;&#32773;</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#25110;&#32773;</span>
 aspell -c file.txt
 </pre>
 </div>
@@ -164,10 +164,10 @@ aspell默认会根据当前的语言环境(具体来说是根据LC_MESSAGES变�
 你可以通过修改LANG变量或者使用aspell的 <code>--lang</code> / <code>-l</code> 选项来解决：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a0522d;">LANG</span>=C aspell -c file.txt
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#25110;&#32773;</span>
+<pre class="src src-shell"><span style="color: #7590db;">LANG</span>=C aspell -c file.txt
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#25110;&#32773;</span>
 aspell --lang=en -c file.txt
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#25110;&#32773;</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#25110;&#32773;</span>
 aspell -l en -c file.txt
 </pre>
 </div>
@@ -191,9 +191,9 @@ aspell -l en -c file.txt
 </div>
 </div>
 
-<div id="outline-container-orged075aa" class="outline-2">
-<h2 id="orged075aa">aspell的常用选项</h2>
-<div class="outline-text-2" id="text-orged075aa">
+<div id="outline-container-org9f1cfa8" class="outline-2">
+<h2 id="org9f1cfa8">aspell的常用选项</h2>
+<div class="outline-text-2" id="text-org9f1cfa8">
 <p>
 aspell提供了大量的选项，其中最常用的选项大概有这么几个:
 </p>

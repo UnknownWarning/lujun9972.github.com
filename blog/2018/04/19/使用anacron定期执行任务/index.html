@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1919f77">anacron与cron的不同点</a></li>
-<li><a href="#orgad82046">/etc/anacrontab配置文件说明</a></li>
-<li><a href="#org95161c9">anacron常用的选项</a></li>
+<li><a href="#org3fb0cc9">anacron与cron的不同点</a></li>
+<li><a href="#orgdd0710e">/etc/anacrontab配置文件说明</a></li>
+<li><a href="#org643a624">anacron常用的选项</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1919f77" class="outline-2">
-<h2 id="org1919f77">anacron与cron的不同点</h2>
-<div class="outline-text-2" id="text-org1919f77">
+<div id="outline-container-org3fb0cc9" class="outline-2">
+<h2 id="org3fb0cc9">anacron与cron的不同点</h2>
+<div class="outline-text-2" id="text-org3fb0cc9">
 <p>
 在网上可以可以看到很多文章都把anacron与cron来做比较，但实际上这两者之间的差距还是蛮大的。
 </p>
@@ -91,9 +91,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgad82046" class="outline-2">
-<h2 id="orgad82046">/etc/anacrontab配置文件说明</h2>
-<div class="outline-text-2" id="text-orgad82046">
+<div id="outline-container-orgdd0710e" class="outline-2">
+<h2 id="orgdd0710e">/etc/anacrontab配置文件说明</h2>
+<div class="outline-text-2" id="text-orgdd0710e">
 <p>
 一个 <code>/etc/anacrontab</code> 内容大致如下：
 </p>
@@ -103,22 +103,22 @@
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #b22222;"># /etc/anacrontab: configuration file for anacron</span>
+<pre class="src src-org"><span style="color: #2aa1ae; background-color: #292e34;"># /etc/anacrontab: configuration file for anacron</span>
 
-<span style="color: #b22222;"># See anacron(8) and anacrontab(5) for details.</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># See anacron(8) and anacrontab(5) for details.</span>
 
 SHELL=/bin/sh
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root
-<span style="color: #b22222;"># the maximal random delay added to the base delay of the jobs</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># the maximal random delay added to the base delay of the jobs</span>
 RANDOM_DELAY=45
-<span style="color: #b22222;"># the jobs will be started during the following hours only</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># the jobs will be started during the following hours only</span>
 START_HOURS_RANGE=3-22
 
 #period in days   delay in minutes   job-identifier   command
-1       5       cron.daily              nice run-parts /etc/cron.daily
-7       25      cron.weekly             nice run-parts /etc/cron.weekly
-@monthly 45     cron.monthly            nice run-parts /etc/cron.monthly
+1 5 cron.daily    nice run-parts /etc/cron.daily
+7 25  cron.weekly   nice run-parts /etc/cron.weekly
+@monthly 45 cron.monthly    nice run-parts /etc/cron.monthly
 </pre>
 </div>
 
@@ -158,9 +158,9 @@ START_HOURS_RANGE=3-22
 </div>
 </div>
 
-<div id="outline-container-org95161c9" class="outline-2">
-<h2 id="org95161c9">anacron常用的选项</h2>
-<div class="outline-text-2" id="text-org95161c9">
+<div id="outline-container-org643a624" class="outline-2">
+<h2 id="org643a624">anacron常用的选项</h2>
+<div class="outline-text-2" id="text-org643a624">
 <p>
 anacron的常用选项有下面几个:
 </p>

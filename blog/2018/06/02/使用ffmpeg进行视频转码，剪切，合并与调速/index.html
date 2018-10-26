@@ -54,23 +54,23 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org694edec">视频转码</a></li>
-<li><a href="#orgcd2691f">视频剪切</a></li>
-<li><a href="#org8d0a8f0">视频合并</a></li>
-<li><a href="#org46946d1">视频调速</a></li>
+<li><a href="#orgc9d7807">视频转码</a></li>
+<li><a href="#orgf0c456a">视频剪切</a></li>
+<li><a href="#org900d651">视频合并</a></li>
+<li><a href="#org7890874">视频调速</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org694edec" class="outline-2">
-<h2 id="org694edec">视频转码</h2>
-<div class="outline-text-2" id="text-org694edec">
+<div id="outline-container-orgc9d7807" class="outline-2">
+<h2 id="orgc9d7807">视频转码</h2>
+<div class="outline-text-2" id="text-orgc9d7807">
 <p>
 视频转码最简单的命令就是
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">ffmpeg -i ${<span style="color: #a0522d;">infile</span>} -vcodec ${<span style="color: #a0522d;">outcodec</span>} ${<span style="color: #a0522d;">outfile</span>}
+<pre class="src src-shell">ffmpeg -i $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">infile</span><span style="color: #4f97d7;">}</span> -vcodec $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">outcodec</span><span style="color: #4f97d7;">}</span> $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">outfile</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -554,16 +554,16 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">ffmpeg -i 01.mp4 -s 640x480 -b:v 500k -vcodec h264 -r 29.97  -ab 48k -ac 2 out.mp4
+<pre class="src src-shell">ffmpeg -i <span style="color: #a45bad;">01.mp4</span> -s <span style="color: #a45bad;">640x480</span> -b:v <span style="color: #a45bad;">500k</span> -vcodec h264 -r <span style="color: #a45bad;">29.97</span>  -ab <span style="color: #a45bad;">48k</span> -ac <span style="color: #a45bad;">2</span> out.mp4
 </pre>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-orgcd2691f" class="outline-2">
-<h2 id="orgcd2691f">视频剪切</h2>
-<div class="outline-text-2" id="text-orgcd2691f">
+<div id="outline-container-orgf0c456a" class="outline-2">
+<h2 id="orgf0c456a">视频剪切</h2>
+<div class="outline-text-2" id="text-orgf0c456a">
 <p>
 视频剪切可以认为是一种特殊的视频转换过程，不过它不需要经过decode再encode的过程，而是可以直接进行流拷贝。
 </p>
@@ -580,15 +580,15 @@
 比如下面命令截取从30秒开始，持续10秒钟的内容
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ffmpeg -i input.wmv -ss 00:00:30.0 -c copy -t 10 output.wmv
+<pre class="src src-shell">ffmpeg -i input.wmv -ss <span style="color: #a45bad;">00:00:30.0</span> -c copy -t <span style="color: #a45bad;">10</span> output.wmv
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8d0a8f0" class="outline-2">
-<h2 id="org8d0a8f0">视频合并</h2>
-<div class="outline-text-2" id="text-org8d0a8f0">
+<div id="outline-container-org900d651" class="outline-2">
+<h2 id="org900d651">视频合并</h2>
+<div class="outline-text-2" id="text-org900d651">
 <p>
 视频合并要求被合并的文件格式是一样的，否则需要先将它们转换成统一的中间格式。
 </p>
@@ -597,15 +597,15 @@
 然后将将所有要合并的视频，每个视频一行，将视频文件的路径存在一个列表文件中，然后执行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ffmpeg -f concat -i ${<span style="color: #a0522d;">listfile</span>} -c copy ${<span style="color: #a0522d;">outfile</span>}
+<pre class="src src-shell">ffmpeg -f concat -i $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">listfile</span><span style="color: #4f97d7;">}</span> -c copy $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">outfile</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org46946d1" class="outline-2">
-<h2 id="org46946d1">视频调速</h2>
-<div class="outline-text-2" id="text-org46946d1">
+<div id="outline-container-org7890874" class="outline-2">
+<h2 id="org7890874">视频调速</h2>
+<div class="outline-text-2" id="text-org7890874">
 <p>
 通过设置video filter来实现,比如
 </p>
@@ -615,7 +615,7 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">ffmpeg -i TheOrigin.mp4 -vf  <span style="color: #8b2252;">"setpts=0.25*PTS"</span> UpTheOrigin.mp4
+<pre class="src src-shell">ffmpeg -i TheOrigin.mp4 -vf  <span style="color: #2d9574;">"setpts=0.25*PTS"</span> UpTheOrigin.mp4
 </pre>
 </div>
 
@@ -624,7 +624,7 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">ffmpeg -i TheOrigin.mp4 -vf  <span style="color: #8b2252;">"setpts=4*PTS"</span> DownTheOrigin.mp4
+<pre class="src src-shell">ffmpeg -i TheOrigin.mp4 -vf  <span style="color: #2d9574;">"setpts=4*PTS"</span> DownTheOrigin.mp4
 </pre>
 </div>
 </div>

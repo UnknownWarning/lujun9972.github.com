@@ -54,25 +54,25 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2486d09">确保urxvt支持background images</a></li>
-<li><a href="#org2ba188e">为urxvt设置背景图片</a>
+<li><a href="#org779ad1e">确保urxvt支持background images</a></li>
+<li><a href="#org1f865e3">为urxvt设置背景图片</a>
 <ul>
-<li><a href="#orgcfa0c09">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</a></li>
-<li><a href="#orgb8a1a4b">通过配置.Xdefaults</a></li>
+<li><a href="#org2581b96">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</a></li>
+<li><a href="#orgd6d9f66">通过配置.Xdefaults</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2486d09" class="outline-2">
-<h2 id="org2486d09">确保urxvt支持background images</h2>
-<div class="outline-text-2" id="text-org2486d09">
+<div id="outline-container-org779ad1e" class="outline-2">
+<h2 id="org779ad1e">确保urxvt支持background images</h2>
+<div class="outline-text-2" id="text-org779ad1e">
 <p>
 要让urxvt设置桌面背景，首先需要确保urxvt编译时启用了 <code>pixbuf</code> 功能，可以通过下面命令来确认urxvt是否支持pixbuf
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">urxvt -help 2&gt;&amp;1 |grep ^options |grep pixbuf
+<pre class="src src-shell">urxvt -help <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span> |grep ^options |grep pixbuf
 </pre>
 </div>
 
@@ -93,22 +93,22 @@ archlinux的默认urxvt是不支持background images的，你需要安装aur中�
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">git clone https://github.com/exg/rxvt-unicode
-<span style="color: #483d8b;">cd</span> rxvt-unicode
+<span style="color: #4f97d7;">cd</span> rxvt-unicode
 ./configure --enable-256-color --enable-pixbuf 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2ba188e" class="outline-2">
-<h2 id="org2ba188e">为urxvt设置背景图片</h2>
-<div class="outline-text-2" id="text-org2ba188e">
+<div id="outline-container-org1f865e3" class="outline-2">
+<h2 id="org1f865e3">为urxvt设置背景图片</h2>
+<div class="outline-text-2" id="text-org1f865e3">
 </div>
-<div id="outline-container-orgcfa0c09" class="outline-3">
-<h3 id="orgcfa0c09">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</h3>
-<div class="outline-text-3" id="text-orgcfa0c09">
+<div id="outline-container-org2581b96" class="outline-3">
+<h3 id="org2581b96">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</h3>
+<div class="outline-text-3" id="text-org2581b96">
 <div class="org-src-container">
-<pre class="src src-shell">urxvt -pixmap file[;oplist]
+<pre class="src src-shell">urxvt -pixmap file<span style="color: #4f97d7;">[</span>;oplist<span style="color: #4f97d7;">]</span>
 </pre>
 </div>
 <p>
@@ -140,23 +140,23 @@ urxvt本身也预设了许多背景图片的设置方式:
 这种方法比较灵活，比如我们可以定义一个alias，让urxvt执行时自动从 <code>~/Pictures/wallpaper</code> 中随机挑选一张图片作为背景图片
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a020f0;">if</span>   urxvt -help 2&gt;&amp;1 |grep ^options |grep pixbuf &gt;/dev/null;<span style="color: #a020f0;">then</span>
-    <span style="color: #483d8b;">alias</span> <span style="color: #a0522d;">urxvt</span>=<span style="color: #8b2252;">'urxvt -pixmap $(</span><span style="color: #ff00ff;">find</span><span style="color: #8b2252;"> ~/Pictures/wallpaper -type f|shuf|head -n 1)'</span>
-<span style="color: #a020f0;">fi</span>
+<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">if</span>   urxvt -help <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span> |grep ^options |grep pixbuf &gt;/dev/null;<span style="color: #4f97d7; font-weight: bold;">then</span>
+    <span style="color: #4f97d7;">alias</span> <span style="color: #7590db;">urxvt</span>=<span style="color: #2d9574;">'urxvt -pixmap $(</span><span style="color: #fa8072;">find</span><span style="color: #2d9574;"> ~/Pictures/wallpaper -type f|shuf|head -n 1)'</span>
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb8a1a4b" class="outline-3">
-<h3 id="orgb8a1a4b">通过配置.Xdefaults</h3>
-<div class="outline-text-3" id="text-orgb8a1a4b">
+<div id="outline-container-orgd6d9f66" class="outline-3">
+<h3 id="orgd6d9f66">通过配置.Xdefaults</h3>
+<div class="outline-text-3" id="text-orgd6d9f66">
 <p>
 第二种方法是通过设置Xresource中的 <code>backgroundPixmap</code> 来实现,比如
 </p>
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">URxvt*backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png;style=tiled
-<span style="color: #a0522d;">URxvt.backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png
-<span style="color: #a0522d;">URxvt.backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png;+0+0:tile
+<pre class="src src-conf-xdefaults"><span style="color: #7590db;">URxvt*backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png;style=tiled
+<span style="color: #7590db;">URxvt.backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png
+<span style="color: #7590db;">URxvt.backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png;+0+0:tile
 </pre>
 </div>
 

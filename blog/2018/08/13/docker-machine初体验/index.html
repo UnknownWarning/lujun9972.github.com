@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgec15392">在本地创建带Docker的虚拟机</a></li>
-<li><a href="#org05c04c6">在远程主机上安装Docker</a></li>
-<li><a href="#org878bd2a">管理Docker Machine</a>
+<li><a href="#orgd269734">在本地创建带Docker的虚拟机</a></li>
+<li><a href="#org20b6cf7">在远程主机上安装Docker</a></li>
+<li><a href="#orgec85c0e">管理Docker Machine</a>
 <ul>
-<li><a href="#orgf5953fc">查看被管主机信息</a></li>
-<li><a href="#orgb9f692b">升级被管主机</a></li>
-<li><a href="#org1aea02c">停止被管主机</a></li>
-<li><a href="#orgf198591">启动被管主机</a></li>
-<li><a href="#org7440e00">删除被管主机</a></li>
-<li><a href="#orgebfc429">管理远程Docker</a></li>
+<li><a href="#orgf07eb8d">查看被管主机信息</a></li>
+<li><a href="#org478d32d">升级被管主机</a></li>
+<li><a href="#orgf8b7fb6">停止被管主机</a></li>
+<li><a href="#orgafd90be">启动被管主机</a></li>
+<li><a href="#orgd804008">删除被管主机</a></li>
+<li><a href="#org6344494">管理远程Docker</a></li>
 </ul>
 </li>
 </ul>
@@ -83,9 +83,9 @@ amazonec2        digitalocean     generic          hyperv           rackspace   
 azure            exoscale         google           openstack        softlayer        vmwarefusion     vmwarevsphere
 </pre>
 
-<div id="outline-container-orgec15392" class="outline-2">
-<h2 id="orgec15392">在本地创建带Docker的虚拟机</h2>
-<div class="outline-text-2" id="text-orgec15392">
+<div id="outline-container-orgd269734" class="outline-2">
+<h2 id="orgd269734">在本地创建带Docker的虚拟机</h2>
+<div class="outline-text-2" id="text-orgd269734">
 <p>
 通过 <code>docker-machine create</code> 命令可以创建主机并安装虚拟机，比如下面命令会创建三个使用VirtualBox驱动的主机并且在每台主机上安装好Docker
 </p>
@@ -184,9 +184,9 @@ To see how to connect your Docker Client to the Docker Engine running on this vi
 </div>
 </div>
 
-<div id="outline-container-org05c04c6" class="outline-2">
-<h2 id="org05c04c6">在远程主机上安装Docker</h2>
-<div class="outline-text-2" id="text-org05c04c6">
+<div id="outline-container-org20b6cf7" class="outline-2">
+<h2 id="org20b6cf7">在远程主机上安装Docker</h2>
+<div class="outline-text-2" id="text-org20b6cf7">
 <p>
 若远程主机是在Docker Machine支持的云服务商的，那么可以直接通过对应的驱动来帮助安装Docker，方法跟上面很类似。
 </p>
@@ -204,9 +204,9 @@ To see how to connect your Docker Client to the Docker Engine running on this vi
 在目标主机创建一个无需输入密码即可sudo操作的用户
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo adduser ${<span style="color: #a0522d;">user</span>}
-sudo usermod -a -G sudo wheel ${<span style="color: #a0522d;">user</span>}
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"${user} ALL=(ALL:ALL) NOPASSWD: ALL"</span> &gt;&gt;/etc/sudoers
+<pre class="src src-shell">sudo adduser $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">user</span><span style="color: #4f97d7;">}</span>
+sudo usermod -a -G sudo wheel $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">user</span><span style="color: #4f97d7;">}</span>
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"${user} ALL=(ALL:ALL) NOPASSWD: ALL"</span> &gt;&gt;/etc/sudoers
 </pre>
 </div></li>
 
@@ -214,7 +214,7 @@ sudo usermod -a -G sudo wheel ${<span style="color: #a0522d;">user</span>}
 在目标主机上添加密钥认证，使得登陆远程主机不同输入密码
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ssh-copy-id ${<span style="color: #a0522d;">user</span>}@${<span style="color: #a0522d;">remote_host</span>}
+<pre class="src src-shell">ssh-copy-id $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">user</span><span style="color: #4f97d7;">}</span>@$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">remote_host</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div></li>
 </ol>
@@ -224,11 +224,11 @@ sudo usermod -a -G sudo wheel ${<span style="color: #a0522d;">user</span>}
 准备工作完成后，我们可以在本地主机上运行下面命令
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">docker-machine create -d generic <span style="color: #8b2252;">\</span>
-    --generic-ip-address=xxx.xxx.xxx.xxx <span style="color: #8b2252;">\</span>
-    --generic-ssh-user=${<span style="color: #a0522d;">user</span>} <span style="color: #8b2252;">\</span>
-    --generic-ssh-key ~/.ssh/id_rsa <span style="color: #8b2252;">\</span>
-    ${<span style="color: #a0522d;">name</span>}
+<pre class="src src-shell">docker-machine create -d generic <span style="color: #2d9574;">\</span>
+    --generic-ip-address=xxx.xxx.xxx.xxx <span style="color: #2d9574;">\</span>
+    --generic-ssh-user=$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">user</span><span style="color: #4f97d7;">}</span> <span style="color: #2d9574;">\</span>
+    --generic-ssh-key ~/.ssh/id_rsa <span style="color: #2d9574;">\</span>
+    $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -238,13 +238,13 @@ sudo usermod -a -G sudo wheel ${<span style="color: #a0522d;">user</span>}
 </div>
 </div>
 
-<div id="outline-container-org878bd2a" class="outline-2">
-<h2 id="org878bd2a">管理Docker Machine</h2>
-<div class="outline-text-2" id="text-org878bd2a">
+<div id="outline-container-orgec85c0e" class="outline-2">
+<h2 id="orgec85c0e">管理Docker Machine</h2>
+<div class="outline-text-2" id="text-orgec85c0e">
 </div>
-<div id="outline-container-orgf5953fc" class="outline-3">
-<h3 id="orgf5953fc">查看被管主机信息</h3>
-<div class="outline-text-3" id="text-orgf5953fc">
+<div id="outline-container-orgf07eb8d" class="outline-3">
+<h3 id="orgf07eb8d">查看被管主机信息</h3>
+<div class="outline-text-3" id="text-orgf07eb8d">
 <p>
 Docker Machine可以用来列出、检查和升级被管主机，我们可以通过 <code>ls</code> 子命令来获得被管理的机器列表
 </p>
@@ -271,7 +271,7 @@ ACTIVE这一列若带星号，则表示这台机器是活跃的，也就是任�
 类似于 <code>docker</code>, 我们也可以使用 <code>inspect</code> 子命令来查看某台主机的配置
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">docker-machine inspect --format <span style="color: #8b2252;">"{{.Driver.IPAddress}}"</span> host2
+<pre class="src src-shell">docker-machine inspect --format <span style="color: #2d9574;">"{{.Driver.IPAddress}}"</span> host2
 </pre>
 </div>
 
@@ -296,9 +296,9 @@ ACTIVE这一列若带星号，则表示这台机器是活跃的，也就是任�
 </div>
 
 
-<div id="outline-container-orgb9f692b" class="outline-3">
-<h3 id="orgb9f692b">升级被管主机</h3>
-<div class="outline-text-3" id="text-orgb9f692b">
+<div id="outline-container-org478d32d" class="outline-3">
+<h3 id="org478d32d">升级被管主机</h3>
+<div class="outline-text-3" id="text-org478d32d">
 <div class="org-src-container">
 <pre class="src src-shell">docker-machine upgrade host1
 </pre>
@@ -320,9 +320,9 @@ Restarting docker...
 </div>
 </div>
 
-<div id="outline-container-org1aea02c" class="outline-3">
-<h3 id="org1aea02c">停止被管主机</h3>
-<div class="outline-text-3" id="text-org1aea02c">
+<div id="outline-container-orgf8b7fb6" class="outline-3">
+<h3 id="orgf8b7fb6">停止被管主机</h3>
+<div class="outline-text-3" id="text-orgf8b7fb6">
 <p>
 使用 <code>stop</code> 子命令来停止被管主机
 </p>
@@ -343,9 +343,9 @@ Machine "host2" was stopped.
 </div>
 </div>
 
-<div id="outline-container-orgf198591" class="outline-3">
-<h3 id="orgf198591">启动被管主机</h3>
-<div class="outline-text-3" id="text-orgf198591">
+<div id="outline-container-orgafd90be" class="outline-3">
+<h3 id="orgafd90be">启动被管主机</h3>
+<div class="outline-text-3" id="text-orgafd90be">
 <p>
 使用 <code>start</code> 子命令来启动被停止的主机
 </p>
@@ -367,9 +367,9 @@ Started machines may have new IP addresses. You may need to re-run the `docker-m
 </div>
 </div>
 
-<div id="outline-container-org7440e00" class="outline-3">
-<h3 id="org7440e00">删除被管主机</h3>
-<div class="outline-text-3" id="text-org7440e00">
+<div id="outline-container-orgd804008" class="outline-3">
+<h3 id="orgd804008">删除被管主机</h3>
+<div class="outline-text-3" id="text-orgd804008">
 <p>
 使用 <code>rm</code> 子命令来删除被管主机
 </p>
@@ -415,9 +415,9 @@ host3虚拟机被干掉了。
 </div>
 </div>
 
-<div id="outline-container-orgebfc429" class="outline-3">
-<h3 id="orgebfc429">管理远程Docker</h3>
-<div class="outline-text-3" id="text-orgebfc429">
+<div id="outline-container-org6344494" class="outline-3">
+<h3 id="org6344494">管理远程Docker</h3>
+<div class="outline-text-3" id="text-org6344494">
 <p>
 我们只需要更改更改环境变量就能让Docker客户端连接上远程主机上的Docker Daemon来进行操作。
 </p>
@@ -436,8 +436,8 @@ Docker Machine提供了一个 <code>env</code> 子命令来告诉你输入哪些
 export DOCKER_HOST="tcp://192.168.99.100:2376"
 export DOCKER_CERT_PATH="<span style="font-style: italic;">/home/lujun9972/</span>.docker/machine/machines/host1"
 export DOCKER_MACHINE_NAME="host1"
-<span style="color: #b22222;"># Run this command to configure your shell: </span>
-<span style="color: #b22222;"># eval $(docker-machine env host1)</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># Run this command to configure your shell: </span>
+<span style="color: #2aa1ae; background-color: #292e34;"># eval $(docker-machine env host1)</span>
 </pre>
 </div>
 
@@ -446,18 +446,18 @@ export DOCKER_MACHINE_NAME="host1"
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"&#28608;&#27963;host1&#21069;"</span>
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"check docker machines"</span>
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#28608;&#27963;host1&#21069;"</span>
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"check docker machines"</span>
 docker-machine ls
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"check docker images"</span>
-docker images |head -n 5
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"check docker images"</span>
+docker images |head -n <span style="color: #a45bad;">5</span>
 
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"&#28608;&#27963;host1&#21518;"</span>
-<span style="color: #483d8b;">eval</span> $(<span style="color: #ff00ff;">docker-machine</span> env host1)
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"check docker machines"</span>
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#28608;&#27963;host1&#21518;"</span>
+<span style="color: #4f97d7;">eval</span> $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">docker-machine</span> env host1<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"check docker machines"</span>
 docker-machine ls
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"check docker images"</span>
-docker images |head -n 5
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"check docker images"</span>
+docker images |head -n <span style="color: #a45bad;">5</span>
 </pre>
 </div>
 

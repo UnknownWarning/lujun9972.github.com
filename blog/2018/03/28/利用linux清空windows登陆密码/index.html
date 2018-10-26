@@ -87,10 +87,10 @@ Windows的用户和密码存放在SAM文件中，通过 <code>chntpw</code> 可�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">&#21551;&#21160;dhcpcd&#33719;&#21462;IP&#22320;&#22336;</span>
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21551;&#21160;dhcpcd&#33719;&#21462;IP&#22320;&#22336;</span>
 dhcpcd
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#23433;&#35013;chntpw</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#23433;&#35013;chntpw</span>
 pacman -Syy
 pacman -S chntpw --noconfirm
 </pre>
@@ -105,9 +105,9 @@ pacman -S chntpw --noconfirm
 挂载windows所在分区
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">&#26597;&#30475;windows&#20998;&#21306;</span>
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#26597;&#30475;windows&#20998;&#21306;</span>
 sfdisk -l
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#25346;&#36733;windows&#25152;&#22312;&#20998;&#21306;</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#25346;&#36733;windows&#25152;&#22312;&#20998;&#21306;</span>
 mount /dev/sda1 /mnt
 </pre>
 </div>
@@ -125,7 +125,7 @@ mount /dev/sda1 /mnt
 进入SAM文件所在目录，SAM文件在 <code>WINDOWS/system32/config/</code> 目录下
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">cd</span> /mnt/WINDOWS/system32/config
+<pre class="src src-shell"><span style="color: #4f97d7;">cd</span> /mnt/WINDOWS/system32/config
 </pre>
 </div>
 

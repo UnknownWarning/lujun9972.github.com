@@ -54,27 +54,27 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6aa08c2">安装TigerVNC</a></li>
-<li><a href="#orgd640471">启动VNC Server</a>
+<li><a href="#org630dd10">安装TigerVNC</a></li>
+<li><a href="#org7e60979">启动VNC Server</a>
 <ul>
-<li><a href="#org3b49845">通过systemd自动启动VNC Server</a></li>
+<li><a href="#orgc75777a">通过systemd自动启动VNC Server</a></li>
 </ul>
 </li>
-<li><a href="#org5e40d3f">关闭VNC Server</a></li>
-<li><a href="#orgf8f0f42">配置VNC Server</a>
+<li><a href="#org66c8742">关闭VNC Server</a></li>
+<li><a href="#org3261273">配置VNC Server</a>
 <ul>
-<li><a href="#orgaecdffb">VNC Server的启动脚本</a></li>
-<li><a href="#orgfa1a94d">VNC Server的其他配置信息</a></li>
+<li><a href="#org2ef1ecd">VNC Server的启动脚本</a></li>
+<li><a href="#org4db183f">VNC Server的其他配置信息</a></li>
 </ul>
 </li>
-<li><a href="#org4930eea">登陆VNC Server</a></li>
+<li><a href="#orgbebb6fc">登陆VNC Server</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6aa08c2" class="outline-2">
-<h2 id="org6aa08c2">安装TigerVNC</h2>
-<div class="outline-text-2" id="text-org6aa08c2">
+<div id="outline-container-org630dd10" class="outline-2">
+<h2 id="org630dd10">安装TigerVNC</h2>
+<div class="outline-text-2" id="text-org630dd10">
 <div class="org-src-container">
 <pre class="src src-shell">sudo pacman -S tigervnc --noconfirm
 </pre>
@@ -82,9 +82,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd640471" class="outline-2">
-<h2 id="orgd640471">启动VNC Server</h2>
-<div class="outline-text-2" id="text-orgd640471">
+<div id="outline-container-org7e60979" class="outline-2">
+<h2 id="org7e60979">启动VNC Server</h2>
+<div class="outline-text-2" id="text-org7e60979">
 <p>
 直接运行 <code>vncserver</code> 会初始化一个配置文件,再此期间会提示你输入并确认登陆SVN Server的密码
 </p>
@@ -144,9 +144,9 @@ Log file is /home/lujun9972/.vnc/T520:4.log
 </pre>
 </div>
 
-<div id="outline-container-org3b49845" class="outline-3">
-<h3 id="org3b49845">通过systemd自动启动VNC Server</h3>
-<div class="outline-text-3" id="text-org3b49845">
+<div id="outline-container-orgc75777a" class="outline-3">
+<h3 id="orgc75777a">通过systemd自动启动VNC Server</h3>
+<div class="outline-text-3" id="text-orgc75777a">
 <p>
 tigervnc安装后会有一个service模板单元，路径为 <code>/usr/lib/systemd/system/vncserver.service</code>,我们只需要通过它拷贝出一个实例，然后设置其中的 <code>USER</code> 参数即可
 </p>
@@ -156,7 +156,7 @@ tigervnc安装后会有一个service模板单元，路径为 <code>/usr/lib/syst
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">sudo cp /usr/lib/systemd/system/vncserver.service /etc/systemd/system/vncserver@:1.service
-sudo sed -i <span style="color: #8b2252;">"/^User=/ s/$/$USER/"</span> /etc/systemd/system/vncserver@:1.service
+sudo sed -i <span style="color: #2d9574;">"/^User=/ s/$/$USER/"</span> /etc/systemd/system/vncserver@:1.service
 </pre>
 </div>
 
@@ -173,9 +173,9 @@ sudo systemctl enable vncserver@:1.service
 </div>
 
 
-<div id="outline-container-org5e40d3f" class="outline-2">
-<h2 id="org5e40d3f">关闭VNC Server</h2>
-<div class="outline-text-2" id="text-org5e40d3f">
+<div id="outline-container-org66c8742" class="outline-2">
+<h2 id="org66c8742">关闭VNC Server</h2>
+<div class="outline-text-2" id="text-org66c8742">
 <p>
 使用 <code>vncserver -kill :X</code> 可以关闭指定编号的VNC Server
 </p>
@@ -187,13 +187,13 @@ Killing Xvnc process ID 10148
 </div>
 </div>
 
-<div id="outline-container-orgf8f0f42" class="outline-2">
-<h2 id="orgf8f0f42">配置VNC Server</h2>
-<div class="outline-text-2" id="text-orgf8f0f42">
+<div id="outline-container-org3261273" class="outline-2">
+<h2 id="org3261273">配置VNC Server</h2>
+<div class="outline-text-2" id="text-org3261273">
 </div>
-<div id="outline-container-orgaecdffb" class="outline-3">
-<h3 id="orgaecdffb">VNC Server的启动脚本</h3>
-<div class="outline-text-3" id="text-orgaecdffb">
+<div id="outline-container-org2ef1ecd" class="outline-3">
+<h3 id="org2ef1ecd">VNC Server的启动脚本</h3>
+<div class="outline-text-3" id="text-org2ef1ecd">
 <p>
 VNC Server 在启动时会运行 <code>~/.vnc/xstartup</code> 来初始化图形环境.
 </p>
@@ -203,52 +203,52 @@ VNC Server 在启动时会运行 <code>~/.vnc/xstartup</code> 来初始化图形
 只需要将 <code>/etc/X11/xinit/xinitrc</code> 改成 <code>~/.xinitrc</code> 即可
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">unset</span> SESSION_MANAGER
-<span style="color: #483d8b;">unset</span> DBUS_SESSION_BUS_ADDRESS
-<span style="color: #a0522d;">OS</span>=<span style="color: #ff00ff;">`uname -s`</span>
-<span style="color: #a020f0;">if</span> [ $<span style="color: #a0522d;">OS</span> = <span style="color: #8b2252;">'Linux'</span> ]; <span style="color: #a020f0;">then</span>
-    <span style="color: #a020f0;">case</span> <span style="color: #8b2252;">"$WINDOWMANAGER"</span><span style="color: #a020f0;"> in</span>
+<pre class="src src-shell"><span style="color: #4f97d7;">unset</span> SESSION_MANAGER
+<span style="color: #4f97d7;">unset</span> DBUS_SESSION_BUS_ADDRESS
+<span style="color: #7590db;">OS</span>=<span style="color: #fa8072;">`uname -s`</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> $<span style="color: #7590db;">OS</span> = <span style="color: #2d9574;">'Linux'</span> <span style="color: #4f97d7;">]</span>; <span style="color: #4f97d7; font-weight: bold;">then</span>
+    <span style="color: #4f97d7; font-weight: bold;">case</span> <span style="color: #2d9574;">"$WINDOWMANAGER"</span><span style="color: #4f97d7; font-weight: bold;"> in</span>
         *gnome*)
-            <span style="color: #a020f0;">if</span> [ -e /etc/SuSE-release ]; <span style="color: #a020f0;">then</span>
-                <span style="color: #a0522d;">PATH</span>=$<span style="color: #a0522d;">PATH</span>:/opt/gnome/bin
-                <span style="color: #483d8b;">export</span> PATH
-            <span style="color: #a020f0;">fi</span>
+            <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -e /etc/SuSE-release <span style="color: #4f97d7;">]</span>; <span style="color: #4f97d7; font-weight: bold;">then</span>
+                <span style="color: #7590db;">PATH</span>=$<span style="color: #7590db;">PATH</span>:/opt/gnome/bin
+                <span style="color: #4f97d7;">export</span> PATH
+            <span style="color: #4f97d7; font-weight: bold;">fi</span>
             ;;
-    <span style="color: #a020f0;">esac</span>
-<span style="color: #a020f0;">fi</span>
-<span style="color: #a020f0;">if</span> [ -x ~/.xinitrc ]; <span style="color: #a020f0;">then</span>
-    <span style="color: #a020f0;">exec</span> ~/.xinitrc
-<span style="color: #a020f0;">fi</span>
-<span style="color: #a020f0;">if</span> [ -f ~/.xinitrc ]; <span style="color: #a020f0;">then</span>
-    <span style="color: #a020f0;">exec</span> sh ~/.xinitrc
-<span style="color: #a020f0;">fi</span>
+    <span style="color: #4f97d7; font-weight: bold;">esac</span>
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -x ~/.xinitrc <span style="color: #4f97d7;">]</span>; <span style="color: #4f97d7; font-weight: bold;">then</span>
+    <span style="color: #4f97d7; font-weight: bold;">exec</span> ~/.xinitrc
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -f ~/.xinitrc <span style="color: #4f97d7;">]</span>; <span style="color: #4f97d7; font-weight: bold;">then</span>
+    <span style="color: #4f97d7; font-weight: bold;">exec</span> sh ~/.xinitrc
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgfa1a94d" class="outline-3">
-<h3 id="orgfa1a94d">VNC Server的其他配置信息</h3>
-<div class="outline-text-3" id="text-orgfa1a94d">
+<div id="outline-container-org4db183f" class="outline-3">
+<h3 id="org4db183f">VNC Server的其他配置信息</h3>
+<div class="outline-text-3" id="text-org4db183f">
 <p>
 <code>~/.vnc/config</code> 中则可以对VNC Server本身进行参数设置，比如我们可以配置一下分辨率
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">securitytypes=vncauth,tlsvnc</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">desktop=sandbox</span>
-<span style="color: #a0522d;">geometry</span>=1920x1080
-<span style="color: #b22222;"># </span><span style="color: #b22222;">localhost</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">alwaysshared</span>
-<span style="color: #a0522d;">dpi</span>=96
+<pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">securitytypes=vncauth,tlsvnc</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">desktop=sandbox</span>
+<span style="color: #7590db;">geometry</span>=1920x1080
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">localhost</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">alwaysshared</span>
+<span style="color: #7590db;">dpi</span>=96
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4930eea" class="outline-2">
-<h2 id="org4930eea">登陆VNC Server</h2>
-<div class="outline-text-2" id="text-org4930eea">
+<div id="outline-container-orgbebb6fc" class="outline-2">
+<h2 id="orgbebb6fc">登陆VNC Server</h2>
+<div class="outline-text-2" id="text-orgbebb6fc">
 <p>
 直接运行 <code>vncivew ${server}:${port}</code>,然后输入密码即可登陆VNC Server了
 </p>
@@ -263,7 +263,7 @@ VNC Server 在启动时会运行 <code>~/.vnc/xstartup</code> 来初始化图形
 不过VNC协议是没有加密的，可能被嗅探，因此推荐通过SSH tunnel进行封装
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ssh -L 5901:127.0.0.1:5901 -N -f -l ${<span style="color: #a0522d;">username</span>} ${<span style="color: #a0522d;">server</span>}
+<pre class="src src-shell">ssh -L <span style="color: #a45bad;">5901:127.0.0.1:5901</span> -N -f -l $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">username</span><span style="color: #4f97d7;">}</span> $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">server</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 

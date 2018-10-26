@@ -79,7 +79,7 @@
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">gpg2 --locate-keys torvalds@kernel.org gregkh@kernel.org
-xz -cd $<span style="color: #a0522d;">&#20195;&#30721;&#25991;&#20214;</span> | gpg2 --verify $<span style="color: #a0522d;">sign&#25991;&#20214;</span> -
+xz -cd $<span style="color: #7590db;">&#20195;&#30721;&#25991;&#20214;</span> | gpg2 --verify $<span style="color: #7590db;">sign&#25991;&#20214;</span> -
 </pre>
 </div></li>
 
@@ -104,7 +104,7 @@ xz -cd $<span style="color: #a0522d;">&#20195;&#30721;&#25991;&#20214;</span> | 
 将当前kernel的配置信息应用到新kernel
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">cp /boot/config-$(<span style="color: #ff00ff;">uname</span> -r) linux-4.17-rc3/.config
+<pre class="src src-shell">cp /boot/config-$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">uname</span> -r<span style="color: #4f97d7;">)</span> linux-4.17-rc3/.config
 </pre>
 </div>
 
@@ -117,7 +117,7 @@ xz -cd $<span style="color: #a0522d;">&#20195;&#30721;&#25991;&#20214;</span> | 
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #b22222;"># CONFIG_FONTS is not set</span>
+<pre class="src src-org"><span style="color: #2aa1ae; background-color: #292e34;"># CONFIG_FONTS is not set</span>
 CONFIG_FONT_8x8=y
 CONFIG_FONT_8x16=y
 CONFIG_SG_POOL=y
@@ -126,7 +126,7 @@ CONFIG_ARCH_HAS_PMEM_API=y
 CONFIG_ARCH_HAS_UACCESS_FLUSHCACHE=y
 CONFIG_SBITMAP=y
 CONFIG_PARMAN=m
-<span style="color: #b22222;"># CONFIG_STRING_SELFTEST is not set</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># CONFIG_STRING_SELFTEST is not set</span>
 </pre>
 </div>
 
@@ -150,7 +150,7 @@ CONFIG_PARMAN=m
 配置kernel
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">cd</span> linux-4.17-rc3
+<pre class="src src-shell"><span style="color: #4f97d7;">cd</span> linux-4.17-rc3
 make menuconfig
 </pre>
 </div>

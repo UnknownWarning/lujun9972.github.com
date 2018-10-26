@@ -54,8 +54,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org889f8d6">触发LED的条件(trigger)</a></li>
-<li><a href="#orgfb37122">点亮/熄灭LED灯</a></li>
+<li><a href="#orgf44fe8e">触发LED的条件(trigger)</a></li>
+<li><a href="#orga6bb20f">点亮/熄灭LED灯</a></li>
 </ul>
 </div>
 </div>
@@ -95,9 +95,9 @@
 </pre>
 </div>
 
-<div id="outline-container-org889f8d6" class="outline-2">
-<h2 id="org889f8d6">触发LED的条件(trigger)</h2>
-<div class="outline-text-2" id="text-org889f8d6">
+<div id="outline-container-orgf44fe8e" class="outline-2">
+<h2 id="orgf44fe8e">触发LED的条件(trigger)</h2>
+<div class="outline-text-2" id="text-orgf44fe8e">
 <p>
 我们可以使用LED灯来表现各种事件，通过查看 <code>trigger</code> 文件能够看到哪些事件可以用来出发LED闪亮：
 </p>
@@ -125,9 +125,9 @@
 </div>
 
 
-<div id="outline-container-orgfb37122" class="outline-2">
-<h2 id="orgfb37122">点亮/熄灭LED灯</h2>
-<div class="outline-text-2" id="text-orgfb37122">
+<div id="outline-container-orga6bb20f" class="outline-2">
+<h2 id="orga6bb20f">点亮/熄灭LED灯</h2>
+<div class="outline-text-2" id="text-orga6bb20f">
 <p>
 在LED灯目录中，还有一个 <code>brightness</code> 的文件，用来表示LED灯的亮度。其中0表示完全熄灭，255表示最大亮度。
 </p>
@@ -157,7 +157,7 @@
 要点亮或者熄灭LED灯，可以直接通过修改 <code>brightness</code> 的值来实现，比如：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> 0|sudo tee /sys/class/leds/orangepi:green:pwr/brightness
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #a45bad;">0</span>|sudo tee /sys/class/leds/orangepi:green:pwr/brightness
 </pre>
 </div>
 

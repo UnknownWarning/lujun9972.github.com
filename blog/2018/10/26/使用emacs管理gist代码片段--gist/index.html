@@ -53,35 +53,35 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga03864c">1. 安装gist库</a></li>
-<li><a href="#org7a6efd2">2. 使用</a>
+<li><a href="#orgd2d41b5">1. 安装gist库</a></li>
+<li><a href="#orgc0f1a94">2. 使用</a>
 <ul>
-<li><a href="#org23e5d39">2.1. 常用命令</a></li>
-<li><a href="#orgc83811d">2.2. gist-list buffer的操作</a></li>
-<li><a href="#orga84142b">2.3. gist-file buffer操作</a></li>
-<li><a href="#org8e79fbe">2.4. 与dired的整合</a></li>
+<li><a href="#org8226f61">2.1. 常用命令</a></li>
+<li><a href="#org705ba2b">2.2. gist-list buffer的操作</a></li>
+<li><a href="#org0f7f5a3">2.3. gist-file buffer操作</a></li>
+<li><a href="#org44e9dc4">2.4. 与dired的整合</a></li>
 </ul>
 </li>
-<li><a href="#orgdc8165d">3. 配置</a></li>
-<li><a href="#orgf11a13d">4. provide feature</a></li>
+<li><a href="#org7747514">3. 配置</a></li>
+<li><a href="#org9a82592">4. provide feature</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga03864c" class="outline-2">
-<h2 id="orga03864c"><span class="section-number-2">1</span> 安装gist库</h2>
+<div id="outline-container-orgd2d41b5" class="outline-2">
+<h2 id="orgd2d41b5"><span class="section-number-2">1</span> 安装gist库</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(package-install-new 'gist)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>package-install-new 'gist<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org7a6efd2" class="outline-2">
-<h2 id="org7a6efd2"><span class="section-number-2">2</span> 使用</h2>
+<div id="outline-container-orgc0f1a94" class="outline-2">
+<h2 id="orgc0f1a94"><span class="section-number-2">2</span> 使用</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org23e5d39" class="outline-3">
-<h3 id="org23e5d39"><span class="section-number-3">2.1</span> 常用命令</h3>
+<div id="outline-container-org8226f61" class="outline-3">
+<h3 id="org8226f61"><span class="section-number-3">2.1</span> 常用命令</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li><p>
@@ -158,8 +158,8 @@ gist-region-or-buffer-private
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc83811d" class="outline-3">
-<h3 id="orgc83811d"><span class="section-number-3">2.2</span> gist-list buffer的操作</h3>
+<div id="outline-container-org705ba2b" class="outline-3">
+<h3 id="org705ba2b"><span class="section-number-3">2.2</span> gist-list buffer的操作</h3>
 <div class="outline-text-3" id="text-2-2">
 <dl class="org-dl">
 <dt>g</dt><dd>从server端重新刷新gist列表</dd>
@@ -170,8 +170,8 @@ gist-region-or-buffer-private
 </dl>
 </div>
 </div>
-<div id="outline-container-orga84142b" class="outline-3">
-<h3 id="orga84142b"><span class="section-number-3">2.3</span> gist-file buffer操作</h3>
+<div id="outline-container-org0f7f5a3" class="outline-3">
+<h3 id="org0f7f5a3"><span class="section-number-3">2.3</span> gist-file buffer操作</h3>
 <div class="outline-text-3" id="text-2-3">
 <dl class="org-dl">
 <dt>C-x C-s</dt><dd>保存gist</dd>
@@ -179,8 +179,8 @@ gist-region-or-buffer-private
 </dl>
 </div>
 </div>
-<div id="outline-container-org8e79fbe" class="outline-3">
-<h3 id="org8e79fbe"><span class="section-number-3">2.4</span> 与dired的整合</h3>
+<div id="outline-container-org44e9dc4" class="outline-3">
+<h3 id="org44e9dc4"><span class="section-number-3">2.4</span> 与dired的整合</h3>
 <div class="outline-text-3" id="text-2-4">
 <dl class="org-dl">
 <dt>@</dt><dd>make a gist out of marked files (with a prefix, make it private)</dd>
@@ -188,8 +188,8 @@ gist-region-or-buffer-private
 </div>
 </div>
 </div>
-<div id="outline-container-orgdc8165d" class="outline-2">
-<h2 id="orgdc8165d"><span class="section-number-2">3</span> 配置</h2>
+<div id="outline-container-org7747514" class="outline-2">
+<h2 id="org7747514"><span class="section-number-2">3</span> 配置</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><p>
@@ -202,11 +202,11 @@ gist-view-gist
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf11a13d" class="outline-2">
-<h2 id="orgf11a13d"><span class="section-number-2">4</span> provide feature</h2>
+<div id="outline-container-org9a82592" class="outline-2">
+<h2 id="org9a82592"><span class="section-number-2">4</span> provide feature</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">provide</span> '<span style="color: #008b8b;">init-program-gist</span>)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">provide</span> '<span style="color: #a45bad;">init-program-gist</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>

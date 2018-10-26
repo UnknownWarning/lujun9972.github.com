@@ -54,14 +54,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcebdeb6">安装stress</a></li>
-<li><a href="#org821b92b">使用stress</a>
+<li><a href="#org1197397">安装stress</a></li>
+<li><a href="#orgbfaf0b7">使用stress</a>
 <ul>
-<li><a href="#orgcd60244">对CPU进行压力测试</a></li>
-<li><a href="#orga003ae5">对内存进行压力测试</a></li>
-<li><a href="#org437d176">对磁盘进行压力测试</a></li>
-<li><a href="#org039c737">同时对多项指标进行压力测试</a></li>
-<li><a href="#org813a4b7">设置超时时间</a></li>
+<li><a href="#org85d2190">对CPU进行压力测试</a></li>
+<li><a href="#org829d06b">对内存进行压力测试</a></li>
+<li><a href="#org2f12b6a">对磁盘进行压力测试</a></li>
+<li><a href="#org366ef13">同时对多项指标进行压力测试</a></li>
+<li><a href="#org6d36df1">设置超时时间</a></li>
 </ul>
 </li>
 </ul>
@@ -71,9 +71,9 @@
 stress,顾名思义是一款压力测试工具。你可以用它来对系统CPU，内存，以及磁盘IO生成负载。
 </p>
 
-<div id="outline-container-orgcebdeb6" class="outline-2">
-<h2 id="orgcebdeb6">安装stress</h2>
-<div class="outline-text-2" id="text-orgcebdeb6">
+<div id="outline-container-org1197397" class="outline-2">
+<h2 id="org1197397">安装stress</h2>
+<div class="outline-text-2" id="text-org1197397">
 <p>
 几乎所有主流的linux发行版的软件仓库中都收录有stress，可以直接使用包管理起来安装
 </p>
@@ -85,9 +85,9 @@ stress,顾名思义是一款压力测试工具。你可以用它来对系统CPU�
 </div>
 
 
-<div id="outline-container-org821b92b" class="outline-2">
-<h2 id="org821b92b">使用stress</h2>
-<div class="outline-text-2" id="text-org821b92b">
+<div id="outline-container-orgbfaf0b7" class="outline-2">
+<h2 id="orgbfaf0b7">使用stress</h2>
+<div class="outline-text-2" id="text-orgbfaf0b7">
 <p>
 直接运行 <code>stress</code> 就会列出关于 stress 的简单说明
 </p>
@@ -124,9 +124,9 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 </div>
 </div>
 
-<div id="outline-container-orgcd60244" class="outline-3">
-<h3 id="orgcd60244">对CPU进行压力测试</h3>
-<div class="outline-text-3" id="text-orgcd60244">
+<div id="outline-container-org85d2190" class="outline-3">
+<h3 id="org85d2190">对CPU进行压力测试</h3>
+<div class="outline-text-3" id="text-org85d2190">
 <p>
 使用 <code>stress -c N</code> 会让stress生成N个工作进程进行开方运算，以此对CPU产生负载。
 </p>
@@ -135,7 +135,7 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 比如你的CPU有四个核，那么可以运行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">stress -c 4
+<pre class="src src-shell">stress -c <span style="color: #a45bad;">4</span>
 </pre>
 </div>
 
@@ -162,14 +162,14 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 </div>
 </div>
 
-<div id="outline-container-orga003ae5" class="outline-3">
-<h3 id="orga003ae5">对内存进行压力测试</h3>
-<div class="outline-text-3" id="text-orga003ae5">
+<div id="outline-container-org829d06b" class="outline-3">
+<h3 id="org829d06b">对内存进行压力测试</h3>
+<div class="outline-text-3" id="text-org829d06b">
 <p>
 类似的，使用 <code>stress -m N</code> 会让stress生成N个工作进程来占用内存。每个进程默认占用256M内存，但可以通过 <code>--vm-bytes</code> 来进行设置。 例如
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">stress -m 3 --vm-bytes 300M
+<pre class="src src-shell">stress -m <span style="color: #a45bad;">3</span> --vm-bytes <span style="color: #a45bad;">300M</span>
 </pre>
 </div>
 <p>
@@ -195,9 +195,9 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 </div>
 </div>
 
-<div id="outline-container-org437d176" class="outline-3">
-<h3 id="org437d176">对磁盘进行压力测试</h3>
-<div class="outline-text-3" id="text-org437d176">
+<div id="outline-container-org2f12b6a" class="outline-3">
+<h3 id="org2f12b6a">对磁盘进行压力测试</h3>
+<div class="outline-text-3" id="text-org2f12b6a">
 <p>
 对磁盘压力测试有两个参数：
 </p>
@@ -212,7 +212,7 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">stress -i 2 -d 4 --hdd-bytes 512M
+<pre class="src src-shell">stress -i <span style="color: #a45bad;">2</span> -d <span style="color: #a45bad;">4</span> --hdd-bytes <span style="color: #a45bad;">512M</span>
 </pre>
 </div>
 
@@ -234,14 +234,14 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 </div>
 </div>
 
-<div id="outline-container-org039c737" class="outline-3">
-<h3 id="org039c737">同时对多项指标进行压力测试</h3>
-<div class="outline-text-3" id="text-org039c737">
+<div id="outline-container-org366ef13" class="outline-3">
+<h3 id="org366ef13">同时对多项指标进行压力测试</h3>
+<div class="outline-text-3" id="text-org366ef13">
 <p>
 stress支持同时对多个指标进行压力测试，只需要把上面的参数组合起来就行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">stress -c 4 -m 2 -d 1
+<pre class="src src-shell">stress -c <span style="color: #a45bad;">4</span> -m <span style="color: #a45bad;">2</span> -d <span style="color: #a45bad;">1</span>
 </pre>
 </div>
 
@@ -271,9 +271,9 @@ stress支持同时对多个指标进行压力测试，只需要把上面的参�
 </div>
 </div>
 
-<div id="outline-container-org813a4b7" class="outline-3">
-<h3 id="org813a4b7">设置超时时间</h3>
-<div class="outline-text-3" id="text-org813a4b7">
+<div id="outline-container-org6d36df1" class="outline-3">
+<h3 id="org6d36df1">设置超时时间</h3>
+<div class="outline-text-3" id="text-org6d36df1">
 <p>
 通过 <code>-t TIMEOUT</code> 可以让stress只运行一段时间后自动退出。这一般在写脚本的时候会用到。
 </p>
@@ -283,7 +283,7 @@ stress支持同时对多个指标进行压力测试，只需要把上面的参�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">stress -c 4 -m 2 -d 1 -t 10s
+<pre class="src src-shell">stress -c <span style="color: #a45bad;">4</span> -m <span style="color: #a45bad;">2</span> -d <span style="color: #a45bad;">1</span> -t <span style="color: #a45bad;">10s</span>
 </pre>
 </div>
 

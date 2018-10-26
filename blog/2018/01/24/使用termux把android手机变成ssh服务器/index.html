@@ -54,10 +54,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgde70dd4">安装Termux</a></li>
-<li><a href="#org1637b61">安装sshd</a></li>
-<li><a href="#orgd85273c">添加Public key</a></li>
-<li><a href="#orgda07ec3">客户端登陆</a></li>
+<li><a href="#orgf0c8e4f">安装Termux</a></li>
+<li><a href="#org1b0d75a">安装sshd</a></li>
+<li><a href="#org158eb21">添加Public key</a></li>
+<li><a href="#orgb9ef53e">客户端登陆</a></li>
 </ul>
 </div>
 </div>
@@ -65,9 +65,9 @@
 Termux是一款能够为Android手机提供Linux环境的应用。它最大的特点就是无需root，而且自带pkg包管理软件，可以很方便的其他linux应用。
 </p>
 
-<div id="outline-container-orgde70dd4" class="outline-2">
-<h2 id="orgde70dd4">安装Termux</h2>
-<div class="outline-text-2" id="text-orgde70dd4">
+<div id="outline-container-orgf0c8e4f" class="outline-2">
+<h2 id="orgf0c8e4f">安装Termux</h2>
+<div class="outline-text-2" id="text-orgf0c8e4f">
 <p>
 可以在Google Play Store或F-Droid上搜索Termux来安装，目前的版本是0.47。
 </p>
@@ -78,9 +78,9 @@ Termux是一款能够为Android手机提供Linux环境的应用。它最大的�
 </div>
 </div>
 
-<div id="outline-container-org1637b61" class="outline-2">
-<h2 id="org1637b61">安装sshd</h2>
-<div class="outline-text-2" id="text-org1637b61">
+<div id="outline-container-org1b0d75a" class="outline-2">
+<h2 id="org1b0d75a">安装sshd</h2>
+<div class="outline-text-2" id="text-org1b0d75a">
 <p>
 打开 <code>Termux</code> 会出现一个类似Linux终端的界面。
 </p>
@@ -105,7 +105,7 @@ Termux是一款能够为Android手机提供Linux环境的应用。它最大的�
 需要指出的是, <code>sshd</code> 监听的是8022端口而不是22号端口，因此可以使用下面命令来验证ssh服务是否开启
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ssh localhost -p 8022
+<pre class="src src-shell">ssh localhost -p <span style="color: #a45bad;">8022</span>
 </pre>
 </div>
 
@@ -113,15 +113,15 @@ Termux是一款能够为Android手机提供Linux环境的应用。它最大的�
 若要查看sshd的日志，则可以在Termux上执行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">logcat -s <span style="color: #8b2252;">'syslog:*'</span> 
+<pre class="src src-shell">logcat -s <span style="color: #2d9574;">'syslog:*'</span> 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd85273c" class="outline-2">
-<h2 id="orgd85273c">添加Public key</h2>
-<div class="outline-text-2" id="text-orgd85273c">
+<div id="outline-container-org158eb21" class="outline-2">
+<h2 id="org158eb21">添加Public key</h2>
+<div class="outline-text-2" id="text-org158eb21">
 <p>
 Termux的sshd只能通过密钥登陆，因此你需要在linux客户机上生成密钥对
 </p>
@@ -142,7 +142,7 @@ Termux的sshd只能通过密钥登陆，因此你需要在linux客户机上生�
 不过如果linux客户机上本身也开启了ssh服务的话，则会简单很多，可以在Termux上执行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ssh user@linux_clinet <span style="color: #8b2252;">"cat ~/.ssh/id_rsa.pub"</span> &gt;&gt; ~/.ssh/authorized_keys
+<pre class="src src-shell">ssh user@linux_clinet <span style="color: #2d9574;">"cat ~/.ssh/id_rsa.pub"</span> &gt;&gt; ~/.ssh/authorized_keys
 </pre>
 </div>
 
@@ -153,14 +153,14 @@ Termux的sshd只能通过密钥登陆，因此你需要在linux客户机上生�
 </div>
 
 
-<div id="outline-container-orgda07ec3" class="outline-2">
-<h2 id="orgda07ec3">客户端登陆</h2>
-<div class="outline-text-2" id="text-orgda07ec3">
+<div id="outline-container-orgb9ef53e" class="outline-2">
+<h2 id="orgb9ef53e">客户端登陆</h2>
+<div class="outline-text-2" id="text-orgb9ef53e">
 <p>
 在客户端上执行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ssh 192.4.4.9 -p 8022
+<pre class="src src-shell">ssh <span style="color: #a45bad;">192.4.4.9</span> -p <span style="color: #a45bad;">8022</span>
 </pre>
 </div>
 

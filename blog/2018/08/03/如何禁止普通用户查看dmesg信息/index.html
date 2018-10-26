@@ -66,7 +66,7 @@ This toggle indicates whether unprivileged users are prevented from using dmesg(
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">sudo sysctl -w kernel.dmesg_restrict=1
+<pre class="src src-shell">sudo sysctl -w kernel.dmesg_restrict=<span style="color: #a45bad;">1</span>
 </pre>
 </div>
 
@@ -99,7 +99,7 @@ dmesg: 读取内核缓冲区失败: 不允许的操作
 要让该设置永久生效，则需要修改 <code>/etc/sysctl.conf</code> 文件
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo echo <span style="color: #8b2252;">'kernel.dmesg_restrict=1'</span> &gt;&gt; /etc/sysctl.conf
+<pre class="src src-shell">sudo echo <span style="color: #2d9574;">'kernel.dmesg_restrict=1'</span> &gt;&gt; /etc/sysctl.conf
 </pre>
 </div>
 

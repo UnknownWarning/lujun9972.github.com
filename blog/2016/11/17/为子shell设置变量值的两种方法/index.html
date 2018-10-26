@@ -58,13 +58,13 @@
 一种很常见的方法是将变量export成环境变量,这样该变量就会被带到子shell中去了
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">'echo x=$x'</span> &gt; /tmp/echox
+<pre class="src src-sh"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">'echo x=$x'</span> &gt; /tmp/echox
 chmod +x /tmp/echox
-<span style="color: #a0522d;">x</span>=Hi
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"x&#19981;&#26159;&#29615;&#22659;&#21464;&#37327;&#30340;&#24773;&#20917;&#19979;"</span>
+<span style="color: #7590db;">x</span>=Hi
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"x&#19981;&#26159;&#29615;&#22659;&#21464;&#37327;&#30340;&#24773;&#20917;&#19979;"</span>
 /tmp/echox
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"x&#26159;&#29615;&#22659;&#21464;&#37327;&#30340;&#24773;&#20917;&#19979;"</span>
-<span style="color: #483d8b;">export</span> x
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"x&#26159;&#29615;&#22659;&#21464;&#37327;&#30340;&#24773;&#20917;&#19979;"</span>
+<span style="color: #4f97d7;">export</span> x
 /tmp/echox
 </pre>
 </div>
@@ -81,9 +81,9 @@ x=Hi
 还有一种不太常见的方法是在一个shell脚本执行的命令行前直接赋值
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">'echo x=$x'</span> &gt; /tmp/echox
+<pre class="src src-sh"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">'echo x=$x'</span> &gt; /tmp/echox
 chmod +x /tmp/echox
-<span style="color: #a0522d;">x</span>=Hi /tmp/echox
+<span style="color: #7590db;">x</span>=Hi /tmp/echox
 </pre>
 </div>
 
@@ -96,30 +96,33 @@ chmod +x /tmp/echox
 第二种方法的语法乍看起来有点怪,不过却可以使我们在同一个文件中使用两种不同的机制来改变变量的值.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #a0522d;">PATH</span>=/usr/bin:/usr/sbin:/bin:/sbin
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">'PATH=$PATH:/usr/games $*'</span> &gt;/tmp/games 
+<pre class="src src-sh"><span style="color: #7590db;">PATH</span>=/usr/bin:/usr/sbin:/bin:/sbin
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">'PATH=$PATH:/usr/games $*'</span> &gt;/tmp/games 
 chmod +x /tmp/games
 
-<span style="color: #483d8b;">echo</span> &#20320;&#21487;&#20197;&#19981;&#25913;&#21464;PATH&#21464;&#37327;&#30340;&#20540;,&#30452;&#25509;&#29992;game&#33050;&#26412;&#26469;&#36816;&#34892;&#19968;&#20010;&#28216;&#25103;
+<span style="color: #4f97d7;">echo</span> &#20320;&#21487;&#20197;&#19981;&#25913;&#21464;PATH&#21464;&#37327;&#30340;&#20540;,&#30452;&#25509;&#29992;game&#33050;&#26412;&#26469;&#36816;&#34892;&#19968;&#20010;&#28216;&#25103;
 /tmp/games fortune
-<span style="color: #483d8b;">echo</span> PATH&#30340;&#20540;&#20026;:$<span style="color: #a0522d;">PATH</span>
+<span style="color: #4f97d7;">echo</span> PATH&#30340;&#20540;&#20026;:$<span style="color: #7590db;">PATH</span>
 
-<span style="color: #483d8b;">echo</span> &#20320;&#20063;&#21487;&#20197;&#29992; =. <span style="color: #a0522d;">game</span>= &#26469;&#27704;&#20037;&#24615;&#22320;PATH&#21464;&#37327;&#30340;&#20540;,&#28982;&#21518;&#23601;&#21487;&#20197;&#36816;&#34892;&#28216;&#25103;&#20102;
-<span style="color: #483d8b;">.</span> /tmp/games
-<span style="color: #483d8b;">echo</span> PATH&#30340;&#20540;&#20026;:$<span style="color: #a0522d;">PATH</span>
+<span style="color: #4f97d7;">echo</span> &#20320;&#20063;&#21487;&#20197;&#29992; =. <span style="color: #7590db;">game</span>= &#26469;&#27704;&#20037;&#24615;&#22320;PATH&#21464;&#37327;&#30340;&#20540;,&#28982;&#21518;&#23601;&#21487;&#20197;&#36816;&#34892;&#28216;&#25103;&#20102;
+<span style="color: #4f97d7;">.</span> /tmp/games
+<span style="color: #4f97d7;">echo</span> PATH&#30340;&#20540;&#20026;:$<span style="color: #7590db;">PATH</span>
 fortune
 </pre>
 </div>
 
 <div class="org-src-container">
 <pre class="src src-org">&#20320;&#21487;&#20197;&#19981;&#25913;&#21464;PATH&#21464;&#37327;&#30340;&#20540;,&#30452;&#25509;&#29992;game&#33050;&#26412;&#26469;&#36816;&#34892;&#19968;&#20010;&#28216;&#25103;
-Every why hath a wherefore.
-                -- William Shakespeare, "A Comedy of Errors"
+         EARTH
+     smog  |   bricks
+ AIR  --  mud  --  FIRE
+soda water |   tequila
+         WATER
 PATH&#30340;&#20540;&#20026;:/usr/bin:/usr/sbin:/bin:/sbin
-&#20320;&#20063;&#21487;&#20197;&#29992; <span style="color: #7f7f7f;">=. game=</span> &#26469;&#27704;&#20037;&#24615;&#22320;PATH&#21464;&#37327;&#30340;&#20540;,&#28982;&#21518;&#23601;&#21487;&#20197;&#36816;&#34892;&#28216;&#25103;&#20102;
+&#20320;&#20063;&#21487;&#20197;&#29992; <span style="color: #4f97d7;">=. game=</span> &#26469;&#27704;&#20037;&#24615;&#22320;PATH&#21464;&#37327;&#30340;&#20540;,&#28982;&#21518;&#23601;&#21487;&#20197;&#36816;&#34892;&#28216;&#25103;&#20102;
 PATH&#30340;&#20540;&#20026;:/usr/bin:/usr/sbin:/bin:/sbin:/usr/games
-English literature's performing flea.
-                -- Sean O'Casey on P. G. Wodehouse
+"If you want to eat hippopotamus, you've got to pay the freight."
+    -- attributed to an IBM guy, about why IBM software uses so much memory
 </pre>
 </div>
 

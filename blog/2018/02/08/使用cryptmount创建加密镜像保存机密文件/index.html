@@ -54,12 +54,12 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org39ccbee">安装cryptmount</a></li>
-<li><a href="#org08135c5">配置cryptmount</a></li>
-<li><a href="#org26dd0f2">创建镜像文件</a></li>
-<li><a href="#org8f95365">创建密钥文件</a></li>
-<li><a href="#org768273c">格式化镜像文件</a></li>
-<li><a href="#org5d59c35">挂载和卸载加密镜像</a></li>
+<li><a href="#orgf9ee378">安装cryptmount</a></li>
+<li><a href="#org15df62d">配置cryptmount</a></li>
+<li><a href="#org2b432be">创建镜像文件</a></li>
+<li><a href="#org737864b">创建密钥文件</a></li>
+<li><a href="#org350f264">格式化镜像文件</a></li>
+<li><a href="#org11b7764">挂载和卸载加密镜像</a></li>
 </ul>
 </div>
 </div>
@@ -67,9 +67,9 @@
 cryptmount是一个创建、挂载和卸载加密镜像的工具，你可以用它来创建一个加密镜像并挂载到文件系统中，然后将机密文件存入其中，再卸载这个镜像，这样就能做到神不知、鬼不觉地保存机密文件了。
 </p>
 
-<div id="outline-container-org39ccbee" class="outline-2">
-<h2 id="org39ccbee">安装cryptmount</h2>
-<div class="outline-text-2" id="text-org39ccbee">
+<div id="outline-container-orgf9ee378" class="outline-2">
+<h2 id="orgf9ee378">安装cryptmount</h2>
+<div class="outline-text-2" id="text-orgf9ee378">
 <p>
 cryptmount是archlinux中的aur仓库中，因此可以通过下面命令来安装
 </p>
@@ -92,9 +92,9 @@ cryptmount是archlinux中的aur仓库中，因此可以通过下面命令来安�
 </div>
 </div>
 
-<div id="outline-container-org08135c5" class="outline-2">
-<h2 id="org08135c5">配置cryptmount</h2>
-<div class="outline-text-2" id="text-org08135c5">
+<div id="outline-container-org15df62d" class="outline-2">
+<h2 id="org15df62d">配置cryptmount</h2>
+<div class="outline-text-2" id="text-org15df62d">
 <p>
 使用root修改 <code>/etc/cryptmount/cmtab</code>,加入下面内容
 </p>
@@ -117,14 +117,14 @@ SecureImage {                               #配置项名称
 </div>
 </div>
 
-<div id="outline-container-org26dd0f2" class="outline-2">
-<h2 id="org26dd0f2">创建镜像文件</h2>
-<div class="outline-text-2" id="text-org26dd0f2">
+<div id="outline-container-org2b432be" class="outline-2">
+<h2 id="org2b432be">创建镜像文件</h2>
+<div class="outline-text-2" id="text-org2b432be">
 <p>
 使用 <code>dd</code> 创建一个镜像文件:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">dd <span style="color: #a0522d;">if</span>=/dev/zero <span style="color: #a0522d;">of</span>=/home/lujun9972/SecureImage.img <span style="color: #a0522d;">bs</span>=1M <span style="color: #a0522d;">count</span>=128
+<pre class="src src-shell">dd <span style="color: #7590db;">if</span>=/dev/zero <span style="color: #7590db;">of</span>=/home/lujun9972/SecureImage.img <span style="color: #7590db;">bs</span>=<span style="color: #a45bad;">1M</span> <span style="color: #7590db;">count</span>=<span style="color: #a45bad;">128</span>
 </pre>
 </div>
 
@@ -138,11 +138,11 @@ SecureImage {                               #配置项名称
 </div>
 </div>
 
-<div id="outline-container-org8f95365" class="outline-2">
-<h2 id="org8f95365">创建密钥文件</h2>
-<div class="outline-text-2" id="text-org8f95365">
+<div id="outline-container-org737864b" class="outline-2">
+<h2 id="org737864b">创建密钥文件</h2>
+<div class="outline-text-2" id="text-org737864b">
 <div class="org-src-container">
-<pre class="src src-shell">sudo cryptmount --generate-key 32 SecureImage
+<pre class="src src-shell">sudo cryptmount --generate-key <span style="color: #a45bad;">32</span> SecureImage
 </pre>
 </div>
 
@@ -160,9 +160,9 @@ cryptmount就根据 <code>cmtab</code> 中cmtab的 <code>keyfile</code> 生成�
 </div>
 </div>
 
-<div id="outline-container-org768273c" class="outline-2">
-<h2 id="org768273c">格式化镜像文件</h2>
-<div class="outline-text-2" id="text-org768273c">
+<div id="outline-container-org350f264" class="outline-2">
+<h2 id="org350f264">格式化镜像文件</h2>
+<div class="outline-text-2" id="text-org350f264">
 <p>
 首先根据镜像文件来创建设备文件，运行:
 </p>
@@ -193,9 +193,9 @@ cryptmount就根据 <code>cmtab</code> 中cmtab的 <code>keyfile</code> 生成�
 </div>
 </div>
 
-<div id="outline-container-org5d59c35" class="outline-2">
-<h2 id="org5d59c35">挂载和卸载加密镜像</h2>
-<div class="outline-text-2" id="text-org5d59c35">
+<div id="outline-container-org11b7764" class="outline-2">
+<h2 id="org11b7764">挂载和卸载加密镜像</h2>
+<div class="outline-text-2" id="text-org11b7764">
 <p>
 首先当然是创建挂载点了:
 </p>

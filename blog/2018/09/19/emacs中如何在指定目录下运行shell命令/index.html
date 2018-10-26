@@ -70,8 +70,8 @@
 因此，Emacs中在指定目录下运行shell命令只需要在 <code>let</code> 中临时修改 <code>default-directory</code> 的值就行了，像这样
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">let</span> ((default-directory <span style="color: #8b2252;">"/tmp"</span>))
-  (shell-command-to-string <span style="color: #8b2252;">"pwd"</span>))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">let</span> <span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span>default-directory <span style="color: #2d9574;">"/tmp"</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span>shell-command-to-string <span style="color: #2d9574;">"pwd"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 

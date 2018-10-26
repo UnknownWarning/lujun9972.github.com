@@ -54,19 +54,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0a81085">安装TLP</a></li>
-<li><a href="#orgb928286">启动TLP服务</a></li>
-<li><a href="#org35fadb8">使用TLP</a>
+<li><a href="#orgfcb08e8">安装TLP</a></li>
+<li><a href="#org9dfac34">启动TLP服务</a></li>
+<li><a href="#orgd43e15a">使用TLP</a>
 <ul>
-<li><a href="#orga89d837">tlp: 应用笔记本的节能设置。</a></li>
-<li><a href="#orgbaa54c5">tlp-stat: 显示当前的节能设置</a></li>
-<li><a href="#orge3e5d9e">wifi: 手动启动/关闭wifi</a></li>
-<li><a href="#org7c5c69f">bluetooth: 手动启动/关闭蓝牙</a></li>
-<li><a href="#orgd8af7db">wwan: 手动启动/关闭wwan(3G/4G)设备</a></li>
+<li><a href="#org1c802d4">tlp: 应用笔记本的节能设置。</a></li>
+<li><a href="#orgdc1f181">tlp-stat: 显示当前的节能设置</a></li>
+<li><a href="#org47a9ec3">wifi: 手动启动/关闭wifi</a></li>
+<li><a href="#orgb86fa6f">bluetooth: 手动启动/关闭蓝牙</a></li>
+<li><a href="#org8952dfe">wwan: 手动启动/关闭wwan(3G/4G)设备</a></li>
 </ul>
 </li>
-<li><a href="#org00bce6b">配置TLP</a></li>
-<li><a href="#org5f75493">TLPUI</a></li>
+<li><a href="#org3785306">配置TLP</a></li>
+<li><a href="#orgd24fc1d">TLPUI</a></li>
 </ul>
 </div>
 </div>
@@ -75,9 +75,9 @@ TLP是一款linux上的基于文本界面的高级电源管理工具。TLP默认
 此外TLP也具有很高的可配置性，能够让你充分的配置以满足特殊需求。
 </p>
 
-<div id="outline-container-org0a81085" class="outline-2">
-<h2 id="org0a81085">安装TLP</h2>
-<div class="outline-text-2" id="text-org0a81085">
+<div id="outline-container-orgfcb08e8" class="outline-2">
+<h2 id="orgfcb08e8">安装TLP</h2>
+<div class="outline-text-2" id="text-orgfcb08e8">
 <p>
 在archlinux上通过下面命令来安装：
 </p>
@@ -96,15 +96,15 @@ TLP是一款linux上的基于文本界面的高级电源管理工具。TLP默认
 </div>
 </div>
 
-<div id="outline-container-orgb928286" class="outline-2">
-<h2 id="orgb928286">启动TLP服务</h2>
-<div class="outline-text-2" id="text-orgb928286">
+<div id="outline-container-org9dfac34" class="outline-2">
+<h2 id="org9dfac34">启动TLP服务</h2>
+<div class="outline-text-2" id="text-org9dfac34">
 <p>
 TLP默认会启动 <code>NetworkManager.service</code>,然而我使用的是 <code>netctl</code> 来管理网络，因此还需要修改一下 <code>tlp.service</code>
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">sudo cp /usr/lib/systemd/system/tlp.service /etc/systemd/system/
-sudo sed -i <span style="color: #8b2252;">'/Wants/ s/NetworkManager.service//'</span> /etc/systemd/system/tlp.service
+sudo sed -i <span style="color: #2d9574;">'/Wants/ s/NetworkManager.service//'</span> /etc/systemd/system/tlp.service
 </pre>
 </div>
 
@@ -171,17 +171,17 @@ Power source   = AC
 </div>
 </div>
 
-<div id="outline-container-org35fadb8" class="outline-2">
-<h2 id="org35fadb8">使用TLP</h2>
-<div class="outline-text-2" id="text-org35fadb8">
+<div id="outline-container-orgd43e15a" class="outline-2">
+<h2 id="orgd43e15a">使用TLP</h2>
+<div class="outline-text-2" id="text-orgd43e15a">
 <p>
 TLP中最常用的命令有这么几个：
 </p>
 </div>
 
-<div id="outline-container-orga89d837" class="outline-3">
-<h3 id="orga89d837">tlp: 应用笔记本的节能设置。</h3>
-<div class="outline-text-3" id="text-orga89d837">
+<div id="outline-container-org1c802d4" class="outline-3">
+<h3 id="org1c802d4">tlp: 应用笔记本的节能设置。</h3>
+<div class="outline-text-3" id="text-org1c802d4">
 <dl class="org-dl">
 <dt>sudo tlp start</dt><dd>根据实际情况是使用交流电还是电池，来应用对应的节能设置</dd>
 <dt>sudo tlp ac</dt><dd>强制切换到交流电对应的节能设置</dd>
@@ -189,9 +189,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-orgbaa54c5" class="outline-3">
-<h3 id="orgbaa54c5">tlp-stat: 显示当前的节能设置</h3>
-<div class="outline-text-3" id="text-orgbaa54c5">
+<div id="outline-container-orgdc1f181" class="outline-3">
+<h3 id="orgdc1f181">tlp-stat: 显示当前的节能设置</h3>
+<div class="outline-text-3" id="text-orgdc1f181">
 <dl class="org-dl">
 <dt>sudo tlp-stat -b</dt><dd>显示电池的相关信息</dd>
 <dt>tlp-stat -c</dt><dd>显示tlp当前的配置信息</dd>
@@ -205,9 +205,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-orge3e5d9e" class="outline-3">
-<h3 id="orge3e5d9e">wifi: 手动启动/关闭wifi</h3>
-<div class="outline-text-3" id="text-orge3e5d9e">
+<div id="outline-container-org47a9ec3" class="outline-3">
+<h3 id="org47a9ec3">wifi: 手动启动/关闭wifi</h3>
+<div class="outline-text-3" id="text-org47a9ec3">
 <dl class="org-dl">
 <dt>sudo wifi on</dt><dd>手动启动wifi</dd>
 <dt>sudo wifi off</dt><dd>手动关闭wifi</dd>
@@ -215,9 +215,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-org7c5c69f" class="outline-3">
-<h3 id="org7c5c69f">bluetooth: 手动启动/关闭蓝牙</h3>
-<div class="outline-text-3" id="text-org7c5c69f">
+<div id="outline-container-orgb86fa6f" class="outline-3">
+<h3 id="orgb86fa6f">bluetooth: 手动启动/关闭蓝牙</h3>
+<div class="outline-text-3" id="text-orgb86fa6f">
 <dl class="org-dl">
 <dt>sudo bluetooth on</dt><dd>手动启动蓝牙</dd>
 <dt>sudo bluetooth off</dt><dd>手动关闭蓝牙</dd>
@@ -225,9 +225,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-orgd8af7db" class="outline-3">
-<h3 id="orgd8af7db">wwan: 手动启动/关闭wwan(3G/4G)设备</h3>
-<div class="outline-text-3" id="text-orgd8af7db">
+<div id="outline-container-org8952dfe" class="outline-3">
+<h3 id="org8952dfe">wwan: 手动启动/关闭wwan(3G/4G)设备</h3>
+<div class="outline-text-3" id="text-org8952dfe">
 <dl class="org-dl">
 <dt>sudo wwan on</dt><dd>手动启动wwlan设备</dd>
 <dt>sudo wwan off</dt><dd>手动关闭wwlan设备</dd>
@@ -236,17 +236,17 @@ TLP中最常用的命令有这么几个：
 </div>
 </div>
 </div>
-<div id="outline-container-org00bce6b" class="outline-2">
-<h2 id="org00bce6b">配置TLP</h2>
-<div class="outline-text-2" id="text-org00bce6b">
+<div id="outline-container-org3785306" class="outline-2">
+<h2 id="org3785306">配置TLP</h2>
+<div class="outline-text-2" id="text-org3785306">
 <p>
 TLP的配置文件放在 <code>/etc/default/tlp</code> 中，详细的配置方法请参见<a href="http://linrunner.de/en/tlp/docs/tlp-configuration.html">官网上的说明</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org5f75493" class="outline-2">
-<h2 id="org5f75493">TLPUI</h2>
-<div class="outline-text-2" id="text-org5f75493">
+<div id="outline-container-orgd24fc1d" class="outline-2">
+<h2 id="orgd24fc1d">TLPUI</h2>
+<div class="outline-text-2" id="text-orgd24fc1d">
 <p>
 TLP本身并不自带图形化用户界面，但是有一个第三方的GTK GUI界面可以使用，名叫 TLPUI
 </p>

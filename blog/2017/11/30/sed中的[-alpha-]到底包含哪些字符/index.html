@@ -58,7 +58,7 @@
 然而实验的结果表明 <code>[:alpha:]</code> 是包含中文字符的！ 
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"123&#20013;&#25991;english"</span> |sed <span style="color: #8b2252;">'s/[[:alpha:]]//g'</span>
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"123&#20013;&#25991;english"</span> |sed <span style="color: #2d9574;">'s/[[:alpha:]]//g'</span>
 </pre>
 </div>
 
@@ -75,7 +75,7 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"123&#20013;&#25991;english"</span> |sed <span style="color: #8b2252;">'s/[[:upper:][:lower:]]//g'</span>
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"123&#20013;&#25991;english"</span> |sed <span style="color: #2d9574;">'s/[[:upper:][:lower:]]//g'</span>
 </pre>
 </div>
 

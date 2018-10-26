@@ -58,14 +58,14 @@
 我试了一下，发现真的是这样的！例如下面这个例子
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">export</span> <span style="color: #a0522d;">LANG</span>=C
-<span style="color: #483d8b;">cd</span> /tmp
-<span style="color: #a0522d;">tmpfile</span>=$(<span style="color: #ff00ff;">mktemp</span>)
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"-------------------------------"</span> &gt;${<span style="color: #a0522d;">tmpfile</span>}
-stat ${<span style="color: #a0522d;">tmpfile</span>} |grep Access
-sleep 5
-cat ${<span style="color: #a0522d;">tmpfile</span>}
-stat ${<span style="color: #a0522d;">tmpfile</span>} |grep Access
+<pre class="src src-shell"><span style="color: #4f97d7;">export</span> <span style="color: #7590db;">LANG</span>=C
+<span style="color: #4f97d7;">cd</span> /tmp
+<span style="color: #7590db;">tmpfile</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">mktemp</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"-------------------------------"</span> &gt;$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">tmpfile</span><span style="color: #4f97d7;">}</span>
+stat $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">tmpfile</span><span style="color: #4f97d7;">}</span> |grep Access
+sleep <span style="color: #a45bad;">5</span>
+cat $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">tmpfile</span><span style="color: #4f97d7;">}</span>
+stat $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">tmpfile</span><span style="color: #4f97d7;">}</span> |grep Access
 </pre>
 </div>
 

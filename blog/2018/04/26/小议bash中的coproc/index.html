@@ -54,14 +54,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga994d04">COPROC语法</a>
+<li><a href="#orgbe3d9e6">COPROC语法</a>
 <ul>
-<li><a href="#orgfda67ca">COPROC基本语法</a></li>
-<li><a href="#org22b1658">COPROC的扩展语法</a></li>
-<li><a href="#org4c7b84c">关闭不需要的管道</a></li>
+<li><a href="#orgfb87e80">COPROC基本语法</a></li>
+<li><a href="#org8f677d3">COPROC的扩展语法</a></li>
+<li><a href="#orgae54530">关闭不需要的管道</a></li>
 </ul>
 </li>
-<li><a href="#org2eb15fd">注意事项</a></li>
+<li><a href="#orge41d10d">注意事项</a></li>
 </ul>
 </div>
 </div>
@@ -82,12 +82,12 @@
 一个常见的解决方法就是使用命名管道:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">mkfifo<span style="color: #a020f0;"> in</span> out
-<span style="color: #a020f0;">trap</span> <span style="color: #8b2252;">'rm in out'</span> EXIT
+<pre class="src src-shell">mkfifo<span style="color: #4f97d7; font-weight: bold;"> in</span> out
+<span style="color: #4f97d7; font-weight: bold;">trap</span> <span style="color: #2d9574;">'rm in out'</span> EXIT
 cmd &lt;in &gt;out &amp;
-<span style="color: #a020f0;">exec</span> 3&gt;<span style="color: #a020f0;"> in</span> 4&lt; out
-<span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">data</span> &gt;&amp;3
-<span style="color: #483d8b;">read</span> $<span style="color: #a0522d;">data</span> &lt;&amp;4
+<span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">3</span>&gt;<span style="color: #4f97d7; font-weight: bold;"> in</span> <span style="color: #a45bad;">4</span>&lt; out
+<span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">data</span> &gt;&amp;<span style="color: #a45bad;">3</span>
+<span style="color: #4f97d7;">read</span> $<span style="color: #7590db;">data</span> &lt;&amp;<span style="color: #a45bad;">4</span>
 </pre>
 </div>
 
@@ -103,14 +103,14 @@ cmd &lt;in &gt;out &amp;
 有点类似于C中的 <code>FILE * popen ( const char * command , const char * type );</code> 函数,只不过它同时产生输入和输出两个句柄。
 </p>
 
-<div id="outline-container-orga994d04" class="outline-2">
-<h2 id="orga994d04">COPROC语法</h2>
-<div class="outline-text-2" id="text-orga994d04">
+<div id="outline-container-orgbe3d9e6" class="outline-2">
+<h2 id="orgbe3d9e6">COPROC语法</h2>
+<div class="outline-text-2" id="text-orgbe3d9e6">
 <p>
 根据bash manual的说法，coprocess的语法为
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">coproc</span> [NAME] command [redirections]
+<pre class="src src-shell"><span style="color: #4f97d7;">coproc</span> <span style="color: #4f97d7;">[</span>NAME<span style="color: #4f97d7;">]</span> command <span style="color: #4f97d7;">[</span>redirections<span style="color: #4f97d7;">]</span>
 </pre>
 </div>
 <p>
@@ -126,14 +126,14 @@ cmd &lt;in &gt;out &amp;
 </p>
 </div>
 
-<div id="outline-container-orgfda67ca" class="outline-3">
-<h3 id="orgfda67ca">COPROC基本语法</h3>
-<div class="outline-text-3" id="text-orgfda67ca">
+<div id="outline-container-orgfb87e80" class="outline-3">
+<h3 id="orgfb87e80">COPROC基本语法</h3>
+<div class="outline-text-3" id="text-orgfb87e80">
 <p>
 COPROC的基本语法适用于当只需要有一个coprocess的情况，它的语法为
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">coproc</span> cmd [redirections]
+<pre class="src src-shell"><span style="color: #4f97d7;">coproc</span> cmd <span style="color: #4f97d7;">[</span>redirections<span style="color: #4f97d7;">]</span>
 </pre>
 </div>
 
@@ -148,14 +148,14 @@ COPROC的基本语法适用于当只需要有一个coprocess的情况，它的�
 </div>
 </div>
 
-<div id="outline-container-org22b1658" class="outline-3">
-<h3 id="org22b1658">COPROC的扩展语法</h3>
-<div class="outline-text-3" id="text-org22b1658">
+<div id="outline-container-org8f677d3" class="outline-3">
+<h3 id="org8f677d3">COPROC的扩展语法</h3>
+<div class="outline-text-3" id="text-org8f677d3">
 <p>
 当需要创建多个coprocess时，你就需要使用coproc的扩展语法了，因为它允许你为coprocess命名。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">coproc</span> NAME {cmds} [redirections]
+<pre class="src src-shell"><span style="color: #4f97d7;">coproc</span> NAME <span style="color: #4f97d7;">{</span>cmds<span style="color: #4f97d7;">}</span> <span style="color: #4f97d7;">[</span>redirections<span style="color: #4f97d7;">]</span>
 </pre>
 </div>
 
@@ -174,24 +174,24 @@ COPROC的基本语法适用于当只需要有一个coprocess的情况，它的�
 </div>
 </div>
 
-<div id="outline-container-org4c7b84c" class="outline-3">
-<h3 id="org4c7b84c">关闭不需要的管道</h3>
-<div class="outline-text-3" id="text-org4c7b84c">
+<div id="outline-container-orgae54530" class="outline-3">
+<h3 id="orgae54530">关闭不需要的管道</h3>
+<div class="outline-text-3" id="text-orgae54530">
 <p>
 若coprocess只需要输入句柄或输出句柄，则可以使用 <code>exec</code> 来关闭不需要的文件句柄
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a020f0;">exec</span> {NAME[0]}&gt;&amp;-
-<span style="color: #a020f0;">exec</span> {NAME[1]}&gt;&amp;-
+<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #4f97d7;">{</span>NAME<span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">0</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">}</span>&gt;&amp;-
+<span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #4f97d7;">{</span>NAME<span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">}</span>&gt;&amp;-
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2eb15fd" class="outline-2">
-<h2 id="org2eb15fd">注意事项</h2>
-<div class="outline-text-2" id="text-org2eb15fd">
+<div id="outline-container-orge41d10d" class="outline-2">
+<h2 id="orge41d10d">注意事项</h2>
+<div class="outline-text-2" id="text-orge41d10d">
 <p>
 使用coprocess虽然方便,但要当心coprocess由于输出缓存而导致的卡死。
 </p>
@@ -200,9 +200,9 @@ COPROC的基本语法适用于当只需要有一个coprocess的情况，它的�
 比如下面这个例子
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">coproc</span> tr a b
-<span style="color: #483d8b;">echo</span> a &gt;&amp;<span style="color: #8b2252;">"${COPROC[1]}"</span>
-<span style="color: #483d8b;">read</span> var&lt;&amp;<span style="color: #8b2252;">"${COPROC[0]}"</span>
+<pre class="src src-shell"><span style="color: #4f97d7;">coproc</span> tr a b
+<span style="color: #4f97d7;">echo</span> a &gt;&amp;<span style="color: #2d9574;">"${COPROC[1]}"</span>
+<span style="color: #4f97d7;">read</span> var&lt;&amp;<span style="color: #2d9574;">"${COPROC[0]}"</span>
 </pre>
 </div>
 

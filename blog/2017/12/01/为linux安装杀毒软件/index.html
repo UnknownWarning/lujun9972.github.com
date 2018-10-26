@@ -88,7 +88,7 @@ systemctl enable clamd
 我们来设置一下，用crontab每天做一次更新签名数据库
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">'/usr/bin/freshclam'</span> &gt; /etc/cron.daily/freshclam
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">'/usr/bin/freshclam'</span> &gt; /etc/cron.daily/freshclam
 </pre>
 </div>
 
@@ -96,7 +96,7 @@ systemctl enable clamd
 为了保障安全，我们设置每天自动扫描一下
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">'/usr/bin/clamscan -i -r /home &gt;&gt; /var/log/ClamAV/daily_scan.log'</span> &gt;/etc/cron.daily/daily_scan
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">'/usr/bin/clamscan -i -r /home &gt;&gt; /var/log/ClamAV/daily_scan.log'</span> &gt;/etc/cron.daily/daily_scan
 </pre>
 </div>
 

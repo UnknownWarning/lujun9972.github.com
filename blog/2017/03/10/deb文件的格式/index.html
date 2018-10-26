@@ -54,14 +54,14 @@
 一个 <code>deb</code> 包其实就是一个ar格式的打包文件. 可以用 <code>ar</code> 命令解开 <code>deb</code> 包. 
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a0522d;">debdir</span>=/tmp/sl
-mkdir -p $<span style="color: #a0522d;">debdir</span>
-<span style="color: #a0522d;">debfile</span>=$<span style="color: #a0522d;">debdir</span>/sl.deb
-<span style="color: #a020f0;">if</span> ! [[ -f $<span style="color: #a0522d;">debfile</span> ]];<span style="color: #a020f0;">then</span>
-    wget http://mirrors.kernel.org/ubuntu/pool/restricted/s/sl-modem/sl-modem-daemon_2.9.11~20110321-12_i386.deb -O $<span style="color: #a0522d;">debfile</span>
-<span style="color: #a020f0;">fi</span>
-ar -x $<span style="color: #a0522d;">debfile</span>
-ls $<span style="color: #a0522d;">debdir</span>
+<pre class="src src-shell"><span style="color: #7590db;">debdir</span>=/tmp/sl
+mkdir -p $<span style="color: #7590db;">debdir</span>
+<span style="color: #7590db;">debfile</span>=$<span style="color: #7590db;">debdir</span>/sl.deb
+<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #a45bad;">!</span> <span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">[</span> -f $<span style="color: #7590db;">debfile</span> <span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+    wget http://mirrors.kernel.org/ubuntu/pool/restricted/s/sl-modem/sl-modem-daemon_2.9.11~20110321-12_i386.deb -O $<span style="color: #7590db;">debfile</span>
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
+ar -x $<span style="color: #7590db;">debfile</span>
+ls $<span style="color: #7590db;">debdir</span>
 </pre>
 </div>
 

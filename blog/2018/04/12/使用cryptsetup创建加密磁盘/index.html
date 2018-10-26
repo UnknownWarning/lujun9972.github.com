@@ -54,24 +54,24 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7631169">dm-crypt的特点</a></li>
-<li><a href="#orgb084b32">使用cryptsetup创建加密磁盘</a>
+<li><a href="#orge771dc8">dm-crypt的特点</a></li>
+<li><a href="#org0adf9e6">使用cryptsetup创建加密磁盘</a>
 <ul>
-<li><a href="#org0cc47d9">创建虚拟磁盘分区</a></li>
-<li><a href="#org1c80254">创建加密磁盘分区</a></li>
-<li><a href="#org7133e63">打开密码盘</a></li>
-<li><a href="#org7e3f70e">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></a></li>
-<li><a href="#org09faa64">查看加密盘状态</a></li>
-<li><a href="#org0ef3e7e">关闭加密盘</a></li>
+<li><a href="#orgc64dc40">创建虚拟磁盘分区</a></li>
+<li><a href="#org5461937">创建加密磁盘分区</a></li>
+<li><a href="#orged3d5ed">打开密码盘</a></li>
+<li><a href="#org32ffbc1">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></a></li>
+<li><a href="#org7003c1f">查看加密盘状态</a></li>
+<li><a href="#org77c655f">关闭加密盘</a></li>
 </ul>
 </li>
-<li><a href="#org250e0c7">让加密盘使用keyfile认证</a>
+<li><a href="#org805c9c4">让加密盘使用keyfile认证</a>
 <ul>
-<li><a href="#orgb62b341">创建随机文件作为keyfile</a></li>
-<li><a href="#orgd5120b0">查看key slot</a></li>
-<li><a href="#org8126b33">添加keyfile认证</a></li>
-<li><a href="#org8657d5c">使用keyfile打开加密盘</a></li>
-<li><a href="#org1233e91">删除keyslot</a></li>
+<li><a href="#orgc38898c">创建随机文件作为keyfile</a></li>
+<li><a href="#org018b90f">查看key slot</a></li>
+<li><a href="#org653d7fe">添加keyfile认证</a></li>
+<li><a href="#orgba2263a">使用keyfile打开加密盘</a></li>
+<li><a href="#org896f7c0">删除keyslot</a></li>
 </ul>
 </li>
 </ul>
@@ -81,9 +81,9 @@
 cryptsetup是linux下的一个分区加密工具，它通过调用内核中的"dm-crypt"来实现磁盘加密的功能。
 </p>
 
-<div id="outline-container-org7631169" class="outline-2">
-<h2 id="org7631169">dm-crypt的特点</h2>
-<div class="outline-text-2" id="text-org7631169">
+<div id="outline-container-orge771dc8" class="outline-2">
+<h2 id="orge771dc8">dm-crypt的特点</h2>
+<div class="outline-text-2" id="text-orge771dc8">
 <p>
 dm-crypt具有如下几个特点:
 </p>
@@ -120,19 +120,19 @@ dm-crypt是整合到linux内核中的，而它的命令行前端cryptsetup,在�
 </div>
 </div>
 
-<div id="outline-container-orgb084b32" class="outline-2">
-<h2 id="orgb084b32">使用cryptsetup创建加密磁盘</h2>
-<div class="outline-text-2" id="text-orgb084b32">
+<div id="outline-container-org0adf9e6" class="outline-2">
+<h2 id="org0adf9e6">使用cryptsetup创建加密磁盘</h2>
+<div class="outline-text-2" id="text-org0adf9e6">
 </div>
-<div id="outline-container-org0cc47d9" class="outline-3">
-<h3 id="org0cc47d9">创建虚拟磁盘分区</h3>
-<div class="outline-text-3" id="text-org0cc47d9">
+<div id="outline-container-orgc64dc40" class="outline-3">
+<h3 id="orgc64dc40">创建虚拟磁盘分区</h3>
+<div class="outline-text-3" id="text-orgc64dc40">
 <p>
 为了方便，我这里用 <code>dd</code> 命令创建一个文件来代替真实的磁盘分区(因为操作过程会清空整个磁盘分区的内容:()。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">dd <span style="color: #a0522d;">if</span>=/dev/zero <span style="color: #a0522d;">of</span>=/tmp/USB.img <span style="color: #a0522d;">bs</span>=1M <span style="color: #a0522d;">count</span>=100
+<pre class="src src-shell">dd <span style="color: #7590db;">if</span>=/dev/zero <span style="color: #7590db;">of</span>=/tmp/USB.img <span style="color: #7590db;">bs</span>=<span style="color: #a45bad;">1M</span> <span style="color: #7590db;">count</span>=<span style="color: #a45bad;">100</span>
 
 ls -l /tmp/USB.img
 </pre>
@@ -148,9 +148,9 @@ ls -l /tmp/USB.img
 </div>
 </div>
 
-<div id="outline-container-org1c80254" class="outline-3">
-<h3 id="org1c80254">创建加密磁盘分区</h3>
-<div class="outline-text-3" id="text-org1c80254">
+<div id="outline-container-org5461937" class="outline-3">
+<h3 id="org5461937">创建加密磁盘分区</h3>
+<div class="outline-text-3" id="text-org5461937">
 <p>
 虽然说dm-crypt支持多种加密格式，但最常用的还是LUKS。
 </p>
@@ -159,7 +159,7 @@ ls -l /tmp/USB.img
 创建LUKS加密盘的命令为:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">cryptsetup [&#20854;&#20182;&#21442;&#25968;] luksFormat &#35774;&#22791;&#21517;
+<pre class="src src-shell">cryptsetup <span style="color: #4f97d7;">[</span>&#20854;&#20182;&#21442;&#25968;<span style="color: #4f97d7;">]</span> luksFormat &#35774;&#22791;&#21517;
 </pre>
 </div>
 
@@ -197,9 +197,9 @@ Are you sure? (Type uppercase yes): YES
 </div>
 
 
-<div id="outline-container-org7133e63" class="outline-3">
-<h3 id="org7133e63">打开密码盘</h3>
-<div class="outline-text-3" id="text-org7133e63">
+<div id="outline-container-orged3d5ed" class="outline-3">
+<h3 id="orged3d5ed">打开密码盘</h3>
+<div class="outline-text-3" id="text-orged3d5ed">
 <p>
 cryptsetup可以打开前面提到的各种加密盘。
 </p>
@@ -241,9 +241,9 @@ cryptsetup可以打开前面提到的各种加密盘。
 </div>
 </div>
 
-<div id="outline-container-org7e3f70e" class="outline-3">
-<h3 id="org7e3f70e">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></h3>
-<div class="outline-text-3" id="text-org7e3f70e">
+<div id="outline-container-org32ffbc1" class="outline-3">
+<h3 id="org32ffbc1">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></h3>
+<div class="outline-text-3" id="text-org32ffbc1">
 <p>
 你可以像普通磁盘一样来操作 <code>/dev/mapper/USB</code>.
 </p>
@@ -263,7 +263,7 @@ ls -l /mnt/secret
 <pre class="src src-org">Creating filesystem with 100352 1k blocks and 25168 inodes
 Filesystem UUID: b1557874-a538-4ffa-9ce0-c17e8feb4b1c
 Superblock backups stored on blocks: 
-        8193, 24577, 40961, 57345, 73729
+  8193, 24577, 40961, 57345, 73729
 
 Allocating group tables:  0/13&#8;&#8;&#8;&#8;&#8;     &#8;&#8;&#8;&#8;&#8;done                            
 Writing inode tables:  0/13&#8;&#8;&#8;&#8;&#8;     &#8;&#8;&#8;&#8;&#8;done                            
@@ -276,9 +276,9 @@ Writing superblocks and filesystem accounting information:  0/13&#8;&#8;&#8;&#8;
 </div>
 </div>
 
-<div id="outline-container-org09faa64" class="outline-3">
-<h3 id="org09faa64">查看加密盘状态</h3>
-<div class="outline-text-3" id="text-org09faa64">
+<div id="outline-container-org7003c1f" class="outline-3">
+<h3 id="org7003c1f">查看加密盘状态</h3>
+<div class="outline-text-3" id="text-org7003c1f">
 <p>
 在打开加密盘后，可以查看该加密盘的状态，语法为
 </p>
@@ -315,9 +315,9 @@ Writing superblocks and filesystem accounting information:  0/13&#8;&#8;&#8;&#8;
 </div>
 </div>
 
-<div id="outline-container-org0ef3e7e" class="outline-3">
-<h3 id="org0ef3e7e">关闭加密盘</h3>
-<div class="outline-text-3" id="text-org0ef3e7e">
+<div id="outline-container-org77c655f" class="outline-3">
+<h3 id="org77c655f">关闭加密盘</h3>
+<div class="outline-text-3" id="text-org77c655f">
 <p>
 操作完磁盘后，使用下面命令关闭加密盘
 </p>
@@ -337,22 +337,22 @@ sudo cryptsetup close USB
 </div>
 </div>
 </div>
-<div id="outline-container-org250e0c7" class="outline-2">
-<h2 id="org250e0c7">让加密盘使用keyfile认证</h2>
-<div class="outline-text-2" id="text-org250e0c7">
+<div id="outline-container-org805c9c4" class="outline-2">
+<h2 id="org805c9c4">让加密盘使用keyfile认证</h2>
+<div class="outline-text-2" id="text-org805c9c4">
 </div>
-<div id="outline-container-orgb62b341" class="outline-3">
-<h3 id="orgb62b341">创建随机文件作为keyfile</h3>
-<div class="outline-text-3" id="text-orgb62b341">
+<div id="outline-container-orgc38898c" class="outline-3">
+<h3 id="orgc38898c">创建随机文件作为keyfile</h3>
+<div class="outline-text-3" id="text-orgc38898c">
 <div class="org-src-container">
-<pre class="src src-shell">dd <span style="color: #a0522d;">if</span>=/dev/urandom <span style="color: #a0522d;">of</span>=/tmp/keyfile <span style="color: #a0522d;">bs</span>=1K <span style="color: #a0522d;">count</span>=64
+<pre class="src src-shell">dd <span style="color: #7590db;">if</span>=/dev/urandom <span style="color: #7590db;">of</span>=/tmp/keyfile <span style="color: #7590db;">bs</span>=<span style="color: #a45bad;">1K</span> <span style="color: #7590db;">count</span>=<span style="color: #a45bad;">64</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd5120b0" class="outline-3">
-<h3 id="orgd5120b0">查看key slot</h3>
-<div class="outline-text-3" id="text-orgd5120b0">
+<div id="outline-container-org018b90f" class="outline-3">
+<h3 id="org018b90f">查看key slot</h3>
+<div class="outline-text-3" id="text-org018b90f">
 <p>
 LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一个解密的钥匙，使用任何一把钥匙都能打开这个LUKS加密盘。
 </p>
@@ -382,9 +382,9 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </p>
 </div>
 </div>
-<div id="outline-container-org8126b33" class="outline-3">
-<h3 id="org8126b33">添加keyfile认证</h3>
-<div class="outline-text-3" id="text-org8126b33">
+<div id="outline-container-org653d7fe" class="outline-3">
+<h3 id="org653d7fe">添加keyfile认证</h3>
+<div class="outline-text-3" id="text-org653d7fe">
 <p>
 使用下面命令为LUKS加密盘添加keyfile认证
 </p>
@@ -415,9 +415,9 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </p>
 </div>
 </div>
-<div id="outline-container-org8657d5c" class="outline-3">
-<h3 id="org8657d5c">使用keyfile打开加密盘</h3>
-<div class="outline-text-3" id="text-org8657d5c">
+<div id="outline-container-orgba2263a" class="outline-3">
+<h3 id="orgba2263a">使用keyfile打开加密盘</h3>
+<div class="outline-text-3" id="text-orgba2263a">
 <p>
 使用keyfile打开加密盘的方式跟普通打开加密盘的方式类似，只是要多用一个 <code>--keyfile</code> 来指定keyfile的路径
 </p>
@@ -427,14 +427,14 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </div>
 </div>
 </div>
-<div id="outline-container-org1233e91" class="outline-3">
-<h3 id="org1233e91">删除keyslot</h3>
-<div class="outline-text-3" id="text-org1233e91">
+<div id="outline-container-org896f7c0" class="outline-3">
+<h3 id="org896f7c0">删除keyslot</h3>
+<div class="outline-text-3" id="text-org896f7c0">
 <p>
 使用下面命令可以删除加密盘的其中一个key slot
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">cryptsetup luksKillSlot /tmp/USB.img 0
+<pre class="src src-shell">cryptsetup luksKillSlot /tmp/USB.img <span style="color: #a45bad;">0</span>
 </pre>
 </div>
 

@@ -66,12 +66,12 @@
 比如，我们可以先创建一个示例程序：
 </p>
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #483d8b;">#include</span><span style="color: #8b2252;">&lt;iostream&gt;</span>
-<span style="color: #a020f0;">using</span> <span style="color: #a020f0;">namespace</span> <span style="color: #008b8b;">std</span>;
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>(){
-cout &lt;&lt; <span style="color: #8b2252;">"Hello World \n "</span>;
-<span style="color: #a020f0;">return</span> 0;
-}
+<pre class="src src-c++"><span style="color: #bc6ec5;">#include</span><span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">iostream</span><span style="color: #4f97d7;">&gt;</span>
+<span style="color: #4f97d7; font-weight: bold;">using</span> <span style="color: #4f97d7; font-weight: bold;">namespace</span> <span style="color: #a45bad;">std</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #4f97d7;">(){</span>
+cout &lt;&lt; <span style="color: #2d9574;">"Hello World \n "</span>;
+<span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">0</span>;
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -89,7 +89,7 @@ cout &lt;&lt; <span style="color: #8b2252;">"Hello World \n "</span>;
 <div class="org-src-container">
 <pre class="src src-conf">FROM scratch
 ADD hello /
-CMD [<span style="color: #8b2252;">"/hello"</span>]
+CMD [<span style="color: #2d9574;">"/hello"</span>]
 </pre>
 </div>
 

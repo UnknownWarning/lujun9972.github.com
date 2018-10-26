@@ -73,10 +73,10 @@
 不过你也可以用 <code>-f</code> 选项指定录入哪个手指的指纹
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a020f0;">for</span> finger<span style="color: #a020f0;"> in</span> {left,right}-{thumb,{index,middle,ring,little}-finger};
-<span style="color: #a020f0;">do</span>
-    fprintd-enroll -f <span style="color: #8b2252;">"$finger"</span>
-<span style="color: #a020f0;">done</span>
+<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">for</span> finger<span style="color: #4f97d7; font-weight: bold;"> in</span> <span style="color: #4f97d7;">{</span>left,right<span style="color: #4f97d7;">}</span>-<span style="color: #4f97d7;">{</span>thumb,<span style="color: #bc6ec5;">{</span>index,middle,ring,little<span style="color: #bc6ec5;">}</span>-finger<span style="color: #4f97d7;">}</span>;
+<span style="color: #4f97d7; font-weight: bold;">do</span>
+    fprintd-enroll -f <span style="color: #2d9574;">"$finger"</span>
+<span style="color: #4f97d7; font-weight: bold;">done</span>
 </pre>
 </div></li>
 
@@ -101,7 +101,7 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">sed -i  <span style="color: #8b2252;">"/^$/aauth      sufficient pam_fprintd.so"</span> /etc/pam.d/system-local-login
+<pre class="src src-shell">sed -i  <span style="color: #2d9574;">"/^$/aauth      sufficient pam_fprintd.so"</span> /etc/pam.d/system-local-login
 </pre>
 </div></li>
 </ol>

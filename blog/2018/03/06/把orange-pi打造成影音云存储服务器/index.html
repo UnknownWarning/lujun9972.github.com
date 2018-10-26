@@ -54,11 +54,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf063e1b">安装MiniDLNA</a></li>
-<li><a href="#orgb86368b">配置 /etc/minidlna.conf</a></li>
-<li><a href="#org43c8010">重启MiniDLNA</a></li>
-<li><a href="#org6b302b9">使用MiniDLNA</a></li>
-<li><a href="#org4c25f8e">使用Docker简化安装</a></li>
+<li><a href="#org816e755">安装MiniDLNA</a></li>
+<li><a href="#org0d146f6">配置 /etc/minidlna.conf</a></li>
+<li><a href="#orgc4e9d96">重启MiniDLNA</a></li>
+<li><a href="#orgbd0b136">使用MiniDLNA</a></li>
+<li><a href="#orgdef30a8">使用Docker简化安装</a></li>
 </ul>
 </div>
 </div>
@@ -66,9 +66,9 @@
 运用MiniDLNA这款软件，可以把Orange Pi变成一个家庭影音云存储设备，从而将电影、音乐分享给局域网中其他用户。
 </p>
 
-<div id="outline-container-orgf063e1b" class="outline-2">
-<h2 id="orgf063e1b">安装MiniDLNA</h2>
-<div class="outline-text-2" id="text-orgf063e1b">
+<div id="outline-container-org816e755" class="outline-2">
+<h2 id="org816e755">安装MiniDLNA</h2>
+<div class="outline-text-2" id="text-org816e755">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install -y minidlna
 </pre>
@@ -76,28 +76,28 @@
 </div>
 </div>
 
-<div id="outline-container-orgb86368b" class="outline-2">
-<h2 id="orgb86368b">配置 /etc/minidlna.conf</h2>
-<div class="outline-text-2" id="text-orgb86368b">
+<div id="outline-container-org0d146f6" class="outline-2">
+<h2 id="org0d146f6">配置 /etc/minidlna.conf</h2>
+<div class="outline-text-2" id="text-org0d146f6">
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">&#23186;&#20307;&#25991;&#20214;&#30446;&#24405;</span>
-<span style="color: #a0522d;">media_dir</span>=/media/usb0
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#25968;&#25454;&#24211;&#30446;&#24405;</span>
-<span style="color: #a0522d;">db_dir</span>=/var/cache/minidlna
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#35775;&#38382;&#30340;&#31471;&#21475;&#21495;</span>
-<span style="color: #a0522d;">port</span>=8200
-<span style="color: #b22222;"># </span><span style="color: #b22222;">DLNA&#26381;&#21153;&#21517;&#31216;,&#40664;&#35748;&#20026;minidlna</span>
-<span style="color: #a0522d;">friendly_name</span>=minidlna
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#33258;&#21160;&#21457;&#29616;media_dir&#20013;&#30340;&#26032;&#23186;&#20307;</span>
-<span style="color: #a0522d;">inotify</span>=yes
+<pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#23186;&#20307;&#25991;&#20214;&#30446;&#24405;</span>
+<span style="color: #7590db;">media_dir</span>=/media/usb0
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#25968;&#25454;&#24211;&#30446;&#24405;</span>
+<span style="color: #7590db;">db_dir</span>=/var/cache/minidlna
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#35775;&#38382;&#30340;&#31471;&#21475;&#21495;</span>
+<span style="color: #7590db;">port</span>=8200
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">DLNA&#26381;&#21153;&#21517;&#31216;,&#40664;&#35748;&#20026;minidlna</span>
+<span style="color: #7590db;">friendly_name</span>=minidlna
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#33258;&#21160;&#21457;&#29616;media_dir&#20013;&#30340;&#26032;&#23186;&#20307;</span>
+<span style="color: #7590db;">inotify</span>=yes
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org43c8010" class="outline-2">
-<h2 id="org43c8010">重启MiniDLNA</h2>
-<div class="outline-text-2" id="text-org43c8010">
+<div id="outline-container-orgc4e9d96" class="outline-2">
+<h2 id="orgc4e9d96">重启MiniDLNA</h2>
+<div class="outline-text-2" id="text-orgc4e9d96">
 <div class="org-src-container">
 <pre class="src src-shell">sudo systemctl restart minidlna
 </pre>
@@ -105,9 +105,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6b302b9" class="outline-2">
-<h2 id="org6b302b9">使用MiniDLNA</h2>
-<div class="outline-text-2" id="text-org6b302b9">
+<div id="outline-container-orgbd0b136" class="outline-2">
+<h2 id="orgbd0b136">使用MiniDLNA</h2>
+<div class="outline-text-2" id="text-orgbd0b136">
 <p>
 在Pad上查看UPNP/DLNA Media Servers就能看到一个名为 <code>orangepipc2:minidlna</code> 的服务器了。
 </p>
@@ -121,20 +121,20 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org4c25f8e" class="outline-2">
-<h2 id="org4c25f8e">使用Docker简化安装</h2>
-<div class="outline-text-2" id="text-org4c25f8e">
+<div id="outline-container-orgdef30a8" class="outline-2">
+<h2 id="orgdef30a8">使用Docker简化安装</h2>
+<div class="outline-text-2" id="text-orgdef30a8">
 <p>
 如果你觉得上面操作太麻烦，那么可以直接使用Docker帮你搞定。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">docker run -d <span style="color: #8b2252;">\</span>
-       --name <span style="color: #8b2252;">"minidlna"</span> <span style="color: #8b2252;">\</span>
-       --net=host <span style="color: #8b2252;">\</span>
-       -p 8200:8200/tcp <span style="color: #8b2252;">\</span>
-       -v ${<span style="color: #a0522d;">media_dir</span>}:/data <span style="color: #8b2252;">\</span>
-       -e <span style="color: #a0522d;">FRIENDLY_NAME</span>=<span style="color: #8b2252;">"DLNA Server"</span> <span style="color: #8b2252;">\</span>
-       -e <span style="color: #a0522d;">MEDIA_DIR</span>=/data <span style="color: #8b2252;">\</span>
+<pre class="src src-shell">docker run -d <span style="color: #2d9574;">\</span>
+       --name <span style="color: #2d9574;">"minidlna"</span> <span style="color: #2d9574;">\</span>
+       --net=host <span style="color: #2d9574;">\</span>
+       -p <span style="color: #a45bad;">8200:8200/tcp</span> <span style="color: #2d9574;">\</span>
+       -v $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">media_dir</span><span style="color: #4f97d7;">}</span>:/data <span style="color: #2d9574;">\</span>
+       -e <span style="color: #7590db;">FRIENDLY_NAME</span>=<span style="color: #2d9574;">"DLNA Server"</span> <span style="color: #2d9574;">\</span>
+       -e <span style="color: #7590db;">MEDIA_DIR</span>=/data <span style="color: #2d9574;">\</span>
        forumi0721alpineaarch64/alpine-aarch64-minidlna:latest
 </pre>
 </div>

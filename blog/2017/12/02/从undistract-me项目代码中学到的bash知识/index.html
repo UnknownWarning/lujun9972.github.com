@@ -141,7 +141,7 @@ BASH_COMMAND
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">local</span> <span style="color: #a0522d;">this_command</span>=$(<span style="color: #ff00ff;">HISTTIMEFORMAT</span>= history 1 | sed -e <span style="color: #8b2252;">"s/^[ ]*[0-9]*[ ]*//g"</span>);  <span style="color: #b22222;"># </span><span style="color: #b22222;">&#24403;&#24102;&#31649;&#36947;&#26102;&#65292;$BASH_COMMAND&#23601;&#19981;&#20934;&#30830;&#20102;</span>
+<pre class="src src-shell"><span style="color: #4f97d7;">local</span> <span style="color: #7590db;">this_command</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">HISTTIMEFORMAT</span>= history <span style="color: #a45bad;">1</span> | sed -e <span style="color: #2d9574;">"s/^[ ]*[0-9]*[ ]*//g"</span><span style="color: #4f97d7;">)</span>;  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#24403;&#24102;&#31649;&#36947;&#26102;&#65292;$BASH_COMMAND&#23601;&#19981;&#20934;&#30830;&#20102;</span>
 </pre>
 </div>
 

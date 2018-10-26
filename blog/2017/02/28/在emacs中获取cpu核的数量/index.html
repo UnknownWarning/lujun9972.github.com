@@ -54,10 +54,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgecfb107">在linux/cygwin下获取CPU核的数量</a></li>
-<li><a href="#orgb92278a">在Windows下获取CPU核的数量</a></li>
-<li><a href="#org5886022">在BSD/OSX下获取CPU核的数量</a></li>
-<li><a href="#orgdca2e6b">综合起来</a></li>
+<li><a href="#orge6c6ad1">在linux/cygwin下获取CPU核的数量</a></li>
+<li><a href="#org28cdea5">在Windows下获取CPU核的数量</a></li>
+<li><a href="#org613208a">在BSD/OSX下获取CPU核的数量</a></li>
+<li><a href="#org1b1267b">综合起来</a></li>
 </ul>
 </div>
 </div>
@@ -65,80 +65,80 @@
 从 <a href="http://nullprogram.com/blog/2015/10/14/">Counting Processor Cores in Emacs</a> 这里看到的,记录一下
 </p>
 
-<div id="outline-container-orgecfb107" class="outline-2">
-<h2 id="orgecfb107">在linux/cygwin下获取CPU核的数量</h2>
-<div class="outline-text-2" id="text-orgecfb107">
+<div id="outline-container-orge6c6ad1" class="outline-2">
+<h2 id="orge6c6ad1">在linux/cygwin下获取CPU核的数量</h2>
+<div class="outline-text-2" id="text-orge6c6ad1">
 <p>
 linux/cygwin提供了 <code>/proc</code> 虚拟文件系统可以获取系统信息,具体来说,在 <code>/proc/cpuinfo</code> 中会列出所有CPU核的信息
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">when</span> (file-exists-p <span style="color: #8b2252;">"/proc/cpuinfo"</span>)
-  (<span style="color: #a020f0;">with-temp-buffer</span>
-    (insert-file-contents <span style="color: #8b2252;">"/proc/cpuinfo"</span>)
-    (how-many <span style="color: #8b2252;">"^processor[[:space:]]+:"</span>)))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">when</span> <span style="color: #bc6ec5;">(</span>file-exists-p <span style="color: #2d9574;">"/proc/cpuinfo"</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">with-temp-buffer</span>
+    <span style="color: #2d9574;">(</span>insert-file-contents <span style="color: #2d9574;">"/proc/cpuinfo"</span><span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span>how-many <span style="color: #2d9574;">"^processor[[:space:]]+:"</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb92278a" class="outline-2">
-<h2 id="orgb92278a">在Windows下获取CPU核的数量</h2>
-<div class="outline-text-2" id="text-orgb92278a">
+<div id="outline-container-org28cdea5" class="outline-2">
+<h2 id="org28cdea5">在Windows下获取CPU核的数量</h2>
+<div class="outline-text-2" id="text-org28cdea5">
 <p>
 Windows提供了一个名为 <code>NUMBER_OF_PROCESSORS</code> 的环境变量,里面存的就是核的数量
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">let</span> ((number-of-processors (getenv <span style="color: #8b2252;">"NUMBER_OF_PROCESSORS"</span>)))
-  (<span style="color: #a020f0;">when</span> number-of-processors
-    (string-to-number number-of-processors)))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">let</span> <span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span>number-of-processors <span style="color: #67b11d;">(</span>getenv <span style="color: #2d9574;">"NUMBER_OF_PROCESSORS"</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">when</span> number-of-processors
+    <span style="color: #2d9574;">(</span>string-to-number number-of-processors<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5886022" class="outline-2">
-<h2 id="org5886022">在BSD/OSX下获取CPU核的数量</h2>
-<div class="outline-text-2" id="text-org5886022">
+<div id="outline-container-org613208a" class="outline-2">
+<h2 id="org613208a">在BSD/OSX下获取CPU核的数量</h2>
+<div class="outline-text-2" id="text-org613208a">
 <p>
 需要调用 <code>sysctl</code> 来获取
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">with-temp-buffer</span>
-  (<span style="color: #a020f0;">ignore-errors</span>
-    (<span style="color: #a020f0;">when</span> (zerop (call-process <span style="color: #8b2252;">"sysctl"</span> nil t nil <span style="color: #8b2252;">"-n"</span> <span style="color: #8b2252;">"hw.ncpu"</span>))
-      (string-to-number (buffer-string)))))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">with-temp-buffer</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">ignore-errors</span>
+    <span style="color: #2d9574;">(</span><span style="color: #4f97d7; font-weight: bold;">when</span> <span style="color: #67b11d;">(</span>zerop <span style="color: #b1951d;">(</span>call-process <span style="color: #2d9574;">"sysctl"</span> nil t nil <span style="color: #2d9574;">"-n"</span> <span style="color: #2d9574;">"hw.ncpu"</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+      <span style="color: #67b11d;">(</span>string-to-number <span style="color: #b1951d;">(</span>buffer-string<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgdca2e6b" class="outline-2">
-<h2 id="orgdca2e6b">综合起来</h2>
-<div class="outline-text-2" id="text-orgdca2e6b">
+<div id="outline-container-org1b1267b" class="outline-2">
+<h2 id="org1b1267b">综合起来</h2>
+<div class="outline-text-2" id="text-org1b1267b">
 <p>
 通过变量 <code>system-type</code> 可以获得操作系统的类型,不同操作系统调用不同的方法来获取CPU核的数量
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">numcores</span> ()
-  <span style="color: #8b2252;">"Return number of cores"</span>
-  (<span style="color: #a020f0;">case</span> system-type
-    ((gnu/linux cygwin)
-     (<span style="color: #a020f0;">when</span> (file-exists-p <span style="color: #8b2252;">"/proc/cpuinfo"</span>)
-       (<span style="color: #a020f0;">with-temp-buffer</span>
-         (insert-file-contents <span style="color: #8b2252;">"/proc/cpuinfo"</span>)
-         (how-many <span style="color: #8b2252;">"^processor[[:space:]]+:"</span>)))
-     )
-    ((gnu/kfreebsd darwin)
-     (<span style="color: #a020f0;">with-temp-buffer</span>
-       (<span style="color: #a020f0;">ignore-errors</span>
-         (<span style="color: #a020f0;">when</span> (zerop (call-process <span style="color: #8b2252;">"sysctl"</span> nil t nil <span style="color: #8b2252;">"-n"</span> <span style="color: #8b2252;">"hw.ncpu"</span>))
-           (string-to-number (buffer-string)))))
-     )
-    ((windows-nt)
-     (<span style="color: #a020f0;">let</span> ((number-of-processors (getenv <span style="color: #8b2252;">"NUMBER_OF_PROCESSORS"</span>)))
-       (<span style="color: #a020f0;">when</span> number-of-processors
-         (string-to-number number-of-processors)))
-     )))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">numcores</span> <span style="color: #bc6ec5;">()</span>
+  <span style="color: #2aa1ae;">"Return number of cores"</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">case</span> system-type
+    <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>gnu/linux cygwin<span style="color: #67b11d;">)</span>
+     <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">when</span> <span style="color: #b1951d;">(</span>file-exists-p <span style="color: #2d9574;">"/proc/cpuinfo"</span><span style="color: #b1951d;">)</span>
+       <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">with-temp-buffer</span>
+         <span style="color: #4f97d7;">(</span>insert-file-contents <span style="color: #2d9574;">"/proc/cpuinfo"</span><span style="color: #4f97d7;">)</span>
+         <span style="color: #4f97d7;">(</span>how-many <span style="color: #2d9574;">"^processor[[:space:]]+:"</span><span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+     <span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>gnu/kfreebsd darwin<span style="color: #67b11d;">)</span>
+     <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">with-temp-buffer</span>
+       <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">ignore-errors</span>
+         <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">when</span> <span style="color: #bc6ec5;">(</span>zerop <span style="color: #2d9574;">(</span>call-process <span style="color: #2d9574;">"sysctl"</span> nil t nil <span style="color: #2d9574;">"-n"</span> <span style="color: #2d9574;">"hw.ncpu"</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+           <span style="color: #bc6ec5;">(</span>string-to-number <span style="color: #2d9574;">(</span>buffer-string<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+     <span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>windows-nt<span style="color: #67b11d;">)</span>
+     <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">let</span> <span style="color: #b1951d;">(</span><span style="color: #4f97d7;">(</span>number-of-processors <span style="color: #bc6ec5;">(</span>getenv <span style="color: #2d9574;">"NUMBER_OF_PROCESSORS"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span>
+       <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">when</span> number-of-processors
+         <span style="color: #4f97d7;">(</span>string-to-number number-of-processors<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+     <span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>

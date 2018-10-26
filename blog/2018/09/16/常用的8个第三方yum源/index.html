@@ -54,14 +54,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc0114a8">EPEL</a></li>
-<li><a href="#org947d907">REMI</a></li>
-<li><a href="#orgf9dc038">RPM Fusion</a></li>
-<li><a href="#org5d33470">ELRepo</a></li>
-<li><a href="#org470ad7a">NUX-dextop</a></li>
-<li><a href="#org43cea7c">GhettoForge</a></li>
-<li><a href="#orgd99384b">Psychotic Ninja</a></li>
-<li><a href="#org7c438d4">IUS</a></li>
+<li><a href="#org56f8197">EPEL</a></li>
+<li><a href="#orgc8e8cd8">REMI</a></li>
+<li><a href="#orgbcd2410">RPM Fusion</a></li>
+<li><a href="#org0ab4007">ELRepo</a></li>
+<li><a href="#org3f8332e">NUX-dextop</a></li>
+<li><a href="#orgc092fd7">GhettoForge</a></li>
+<li><a href="#orgae6c02a">Psychotic Ninja</a></li>
+<li><a href="#orgdb04473">IUS</a></li>
 </ul>
 </div>
 </div>
@@ -69,9 +69,9 @@
 从 <a href="https://www.tecmint.com/yum-thirdparty-repositories-for-centos-rhel/">https://www.tecmint.com/yum-thirdparty-repositories-for-centos-rhel/</a> 看到的，记录一下。
 </p>
 
-<div id="outline-container-orgc0114a8" class="outline-2">
-<h2 id="orgc0114a8">EPEL</h2>
-<div class="outline-text-2" id="text-orgc0114a8">
+<div id="outline-container-org56f8197" class="outline-2">
+<h2 id="org56f8197">EPEL</h2>
+<div class="outline-text-2" id="text-org56f8197">
 <p>
 EPEL 是 Extra Packages for Enterprise Linux 的缩写（EPEL），是用于 Fedora-based Red Hat Enterprise Linux (RHEL) 的一个高质量软件源
 </p>
@@ -80,11 +80,11 @@ EPEL 是 Extra Packages for Enterprise Linux 的缩写（EPEL），是用于 Fed
 运行下面命令启用EPEL仓库
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">RHEL/CentOS 7 64-Bit ##</span>
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">RHEL/CentOS 7 64-Bit ##</span>
 wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo rpm -ivh epel-release-latest-7.noarch.rpm
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">RHEL/CentOS 6 64-Bit ##</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">RHEL/CentOS 6 64-Bit ##</span>
 wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 rpm -ivh epel-release-6-8.noarch.rpm
 </pre>
@@ -94,15 +94,15 @@ rpm -ivh epel-release-6-8.noarch.rpm
 由于EPEL仓库可能会依赖某些来自optional和extras仓库的包，因此RHEL7上还需要启用这两个仓库
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo subscription-manager repos --enable <span style="color: #8b2252;">"rhel-*-optional-rpms"</span> --enable <span style="color: #8b2252;">"rhel-*-extras-rpms"</span>
+<pre class="src src-shell">sudo subscription-manager repos --enable <span style="color: #2d9574;">"rhel-*-optional-rpms"</span> --enable <span style="color: #2d9574;">"rhel-*-extras-rpms"</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org947d907" class="outline-2">
-<h2 id="org947d907">REMI</h2>
-<div class="outline-text-2" id="text-org947d907">
+<div id="outline-container-orgc8e8cd8" class="outline-2">
+<h2 id="orgc8e8cd8">REMI</h2>
+<div class="outline-text-2" id="text-orgc8e8cd8">
 <p>
 REMI仓库提供了最新版本PHP相关的软件,不过在在启用REMI之前，需要先启用EPEL
 </p>
@@ -127,9 +127,9 @@ rpm -Uvh remi-release-6.rpm
 </div>
 </div>
 
-<div id="outline-container-orgf9dc038" class="outline-2">
-<h2 id="orgf9dc038">RPM Fusion</h2>
-<div class="outline-text-2" id="text-orgf9dc038">
+<div id="outline-container-orgbcd2410" class="outline-2">
+<h2 id="orgbcd2410">RPM Fusion</h2>
+<div class="outline-text-2" id="text-orgbcd2410">
 <p>
 RPM Fusion同时提供了一些自由和非自由的软件，同样的它也需要先启用EPEL
 </p>
@@ -154,9 +154,9 @@ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/nonfree/el/rp
 </div>
 </div>
 
-<div id="outline-container-org5d33470" class="outline-2">
-<h2 id="org5d33470">ELRepo</h2>
-<div class="outline-text-2" id="text-org5d33470">
+<div id="outline-container-org0ab4007" class="outline-2">
+<h2 id="org0ab4007">ELRepo</h2>
+<div class="outline-text-2" id="text-org0ab4007">
 <p>
 ELRepo提供了一些硬件驱动相关的包
 </p>
@@ -181,9 +181,9 @@ sudo rpm -Uvh https://www.elrepo.org/elrepo-release-6-8.el6.elrepo.noarch.rpm
 </div>
 </div>
 
-<div id="outline-container-org470ad7a" class="outline-2">
-<h2 id="org470ad7a">NUX-dextop</h2>
-<div class="outline-text-2" id="text-org470ad7a">
+<div id="outline-container-org3f8332e" class="outline-2">
+<h2 id="org3f8332e">NUX-dextop</h2>
+<div class="outline-text-2" id="text-org3f8332e">
 <p>
 NUX-dextop提供了一些桌面和多媒体软件包,它也需要先启用EPEL仓库
 </p>
@@ -206,9 +206,9 @@ CentOS/RHEL6
 </div>
 </div>
 
-<div id="outline-container-org43cea7c" class="outline-2">
-<h2 id="org43cea7c">GhettoForge</h2>
-<div class="outline-text-2" id="text-org43cea7c">
+<div id="outline-container-orgc092fd7" class="outline-2">
+<h2 id="orgc092fd7">GhettoForge</h2>
+<div class="outline-text-2" id="text-orgc092fd7">
 <p>
 CentOS/RHEL7
 </p>
@@ -227,9 +227,9 @@ CentOS/RHEL6
 </div>
 </div>
 
-<div id="outline-container-orgd99384b" class="outline-2">
-<h2 id="orgd99384b">Psychotic Ninja</h2>
-<div class="outline-text-2" id="text-orgd99384b">
+<div id="outline-container-orgae6c02a" class="outline-2">
+<h2 id="orgae6c02a">Psychotic Ninja</h2>
+<div class="outline-text-2" id="text-orgae6c02a">
 <div class="org-src-container">
 <pre class="src src-shell">sudo rpm --import http://wiki.psychotic.ninja/RPM-GPG-KEY-psychotic
 sudo rpm -ivh http://packages.psychotic.ninja/6/base/i386/RPMS/psychotic-release-1.0.0-1.el6.psychotic.noarch.rpm
@@ -238,9 +238,9 @@ sudo rpm -ivh http://packages.psychotic.ninja/6/base/i386/RPMS/psychotic-release
 </div>
 </div>
 
-<div id="outline-container-org7c438d4" class="outline-2">
-<h2 id="org7c438d4">IUS</h2>
-<div class="outline-text-2" id="text-org7c438d4">
+<div id="outline-container-orgdb04473" class="outline-2">
+<h2 id="orgdb04473">IUS</h2>
+<div class="outline-text-2" id="text-orgdb04473">
 <p>
 IUS (Inline with Upstream Stable) 是一个新创立不久的由社区支持的第三方仓库，它提供了最新版的PHP，Python，MYSQL
 </p>

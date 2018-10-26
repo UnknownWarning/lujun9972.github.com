@@ -59,7 +59,7 @@
 比如，我们可以做一个定时任务，每天一早把angeda view通过邮件发送给自己查看
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">/usr/bin/emacs --batch -l ~/.emacs -eval <span style="color: #8b2252;">'(org-batch-agenda "a" org-agenda-span 14)'</span> 2&gt;/dev/null | mail -s <span style="color: #8b2252;">"$USER 's Agenda for $(</span><span style="color: #ff00ff;">date</span><span style="color: #8b2252;"> +'\%A \%D')"</span> user@someemail.com
+<pre class="src src-shell">/usr/bin/emacs --batch -l ~/.emacs -eval <span style="color: #2d9574;">'(org-batch-agenda "a" org-agenda-span 14)'</span> <span style="color: #a45bad;">2</span>&gt;/dev/null | mail -s <span style="color: #2d9574;">"$USER 's Agenda for $(</span><span style="color: #fa8072;">date</span><span style="color: #2d9574;"> +'\%A \%D')"</span> user@someemail.com
 </pre>
 </div>
 

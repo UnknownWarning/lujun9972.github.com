@@ -54,8 +54,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org48b5937">Buffered Output Review</a></li>
-<li><a href="#org8288a12">Debugger to the Rescue</a></li>
+<li><a href="#org8c0a41c">Buffered Output Review</a></li>
+<li><a href="#org4909b79">Debugger to the Rescue</a></li>
 </ul>
 </div>
 </div>
@@ -75,27 +75,27 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-c++"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span>
-<span style="color: #0000ff;">main</span>(<span style="color: #228b22;">void</span>)
-{
-  <span style="color: #b22222;">/* </span><span style="color: #b22222;">Compute output. */</span>
-  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; 10; i++)
-    printf(<span style="color: #8b2252;">"%d/%d "</span>, i, i * i);
-  putchar(<span style="color: #8b2252;">'\n'</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span>
+<span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">void</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">{</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">Compute output. */</span>
+  <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span> = <span style="color: #a45bad;">0</span>; i &lt; <span style="color: #a45bad;">10</span>; i++<span style="color: #bc6ec5;">)</span>
+    printf<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"%d/%d "</span>, i, i * i<span style="color: #bc6ec5;">)</span>;
+  putchar<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">'\n'</span><span style="color: #bc6ec5;">)</span>;
 
-  <span style="color: #b22222;">/* </span><span style="color: #b22222;">"Slow" cleanup operation ... */</span>
-  <span style="color: #a020f0;">for</span> (;;)
+  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">"Slow" cleanup operation ... */</span>
+  <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #bc6ec5;">(</span>;;<span style="color: #bc6ec5;">)</span>
     ;
-  <span style="color: #a020f0;">return</span> 0;
-}
+  <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">0</span>;
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
-<div id="outline-container-org48b5937" class="outline-2">
-<h2 id="org48b5937">Buffered Output Review</h2>
-<div class="outline-text-2" id="text-org48b5937">
+<div id="outline-container-org8c0a41c" class="outline-2">
+<h2 id="org8c0a41c">Buffered Output Review</h2>
+<div class="outline-text-2" id="text-org8c0a41c">
 <p>
 <code>printf</code> and <code>putchar</code> 这两个C库函数,都会以某种方式来缓存输出的内容. 这意味着不是每次调用这些函数都会实际输出数据.
 另一方面, POSIX定义的函数 <code>read</code> 和 <code>write</code> 则是不带buffer的系统调用.
@@ -130,9 +130,9 @@ $ ./a.out &gt; output.txt
 </div>
 </div>
 
-<div id="outline-container-org8288a12" class="outline-2">
-<h2 id="org8288a12">Debugger to the Rescue</h2>
-<div class="outline-text-2" id="text-org8288a12">
+<div id="outline-container-org4909b79" class="outline-2">
+<h2 id="org4909b79">Debugger to the Rescue</h2>
+<div class="outline-text-2" id="text-org4909b79">
 <p>
 幸运的是,有一个东西可以暂停正在运行的程序并帮我们维护程序的状态:那就是调试器.
 </p>

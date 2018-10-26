@@ -54,21 +54,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb662781">了解内存分配机制(共享映射与请求分页)</a></li>
-<li><a href="#orgf568801">了解内存释放机制</a></li>
+<li><a href="#orgfdbbaf5">了解内存分配机制(共享映射与请求分页)</a></li>
+<li><a href="#orgfb46832">了解内存释放机制</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orgb662781" class="outline-2">
-<h2 id="orgb662781">了解内存分配机制(共享映射与请求分页)</h2>
-<div class="outline-text-2" id="text-orgb662781">
+<div id="outline-container-orgfdbbaf5" class="outline-2">
+<h2 id="orgfdbbaf5">了解内存分配机制(共享映射与请求分页)</h2>
+<div class="outline-text-2" id="text-orgfdbbaf5">
 <p>
 通过 <code>pmap</code> 命令，可以获取用户进程逻辑地址空间中映射的内存信息：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">pmap -x $<span style="color: #a0522d;">pid</span>
+<pre class="src src-shell">pmap -x $<span style="color: #7590db;">pid</span>
 </pre>
 </div>
 <p>
@@ -79,7 +79,7 @@
 下面是一个例子：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">pmap -x $(<span style="color: #ff00ff;">pidof</span> emacs) |head -20
+<pre class="src src-shell">pmap -x $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">pidof</span> emacs<span style="color: #4f97d7;">)</span> |head -20
 </pre>
 </div>
 
@@ -126,9 +126,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgf568801" class="outline-2">
-<h2 id="orgf568801">了解内存释放机制</h2>
-<div class="outline-text-2" id="text-orgf568801">
+<div id="outline-container-orgfb46832" class="outline-2">
+<h2 id="orgfb46832">了解内存释放机制</h2>
+<div class="outline-text-2" id="text-orgfb46832">
 <p>
 当其他进程需要新的物理内存时，就涉及到如何将尚有数据残余的物理内存释放或换出来的问题了。
 </p>
@@ -176,21 +176,21 @@ Linux内核使用两种机制来加快换出处理速度：
 每个进程的内存使用情况可以通过查看 <code>/proc/进程ID/status</code> 来查看
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">cat /proc/$(<span style="color: #ff00ff;">pidof</span> emacs)/status
+<pre class="src src-shell">cat /proc/$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">pidof</span> emacs<span style="color: #4f97d7;">)</span>/status
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org">Name:   emacs
+<pre class="src src-org">Name: emacs
 Umask:  0022
 State:  S (sleeping)
-Tgid:   6769
-Ngid:   0
-Pid:    6769
-PPid:   1
-TracerPid:      0
-Uid:    1000    1000    1000    1000
-Gid:    1000    1000    1000    1000
+Tgid: 6769
+Ngid: 0
+Pid:  6769
+PPid: 1
+TracerPid:  0
+Uid:  1000  1000  1000  1000
+Gid:  1000  1000  1000  1000
 FDSize: 64
 Groups: 986 998 1000 
 NStgid: 6769
@@ -203,19 +203,19 @@ VmLck:         0 kB
 VmPin:         0 kB
 VmHWM:    241176 kB
 VmRSS:    241176 kB
-RssAnon:          204544 kB
-RssFile:           36604 kB
-RssShmem:             28 kB
+RssAnon:    204544 kB
+RssFile:     36604 kB
+RssShmem:       28 kB
 VmData:   231712 kB
 VmStk:      1596 kB
 VmExe:      2332 kB
 VmLib:     47832 kB
 VmPTE:      1008 kB
 VmSwap:        0 kB
-HugetlbPages:          0 kB
-CoreDumping:    0
-Threads:        4
-SigQ:   1/15456
+HugetlbPages:        0 kB
+CoreDumping:  0
+Threads:  4
+SigQ: 1/15456
 SigPnd: 0000000000000000
 ShdPnd: 0000000000000000
 SigBlk: 0000000000000000
@@ -226,14 +226,14 @@ CapPrm: 0000000000000000
 CapEff: 0000000000000000
 CapBnd: 0000003fffffffff
 CapAmb: 0000000000000000
-NoNewPrivs:     0
-Seccomp:        0
-Cpus_allowed:   3
-Cpus_allowed_list:      0-1
-Mems_allowed:   1
-Mems_allowed_list:      0
-voluntary_ctxt_switches:        12951
-nonvoluntary_ctxt_switches:     21641
+NoNewPrivs: 0
+Seccomp:  0
+Cpus_allowed: 3
+Cpus_allowed_list:  0-1
+Mems_allowed: 1
+Mems_allowed_list:  0
+voluntary_ctxt_switches:  12951
+nonvoluntary_ctxt_switches: 21641
 </pre>
 </div>
 

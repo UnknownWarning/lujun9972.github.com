@@ -54,13 +54,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org167f494">配置</a></li>
-<li><a href="#org74a06ef">编写新邮件</a></li>
-<li><a href="#org8fe97a5">添加附件</a></li>
-<li><a href="#org26211cb">设置mail address的别名</a></li>
-<li><a href="#org013e1d1">添加签名</a></li>
-<li><a href="#orgd29bb5a">Queued delivery</a></li>
-<li><a href="#org14a35c9">调试</a></li>
+<li><a href="#orge5d59b1">配置</a></li>
+<li><a href="#org102b64c">编写新邮件</a></li>
+<li><a href="#org5012c1b">添加附件</a></li>
+<li><a href="#orgd2343fe">设置mail address的别名</a></li>
+<li><a href="#org37f2fbb">添加签名</a></li>
+<li><a href="#org222549d">Queued delivery</a></li>
+<li><a href="#org4b58467">调试</a></li>
 </ul>
 </div>
 </div>
@@ -68,16 +68,16 @@
 Emacs自带了SMTP库,这使的Emacs无需任何第三方软件的帮助就能通过第三方邮件服务商发送电子邮件.
 </p>
 
-<div id="outline-container-org167f494" class="outline-2">
-<h2 id="org167f494">配置</h2>
-<div class="outline-text-2" id="text-org167f494">
+<div id="outline-container-orge5d59b1" class="outline-2">
+<h2 id="orge5d59b1">配置</h2>
+<div class="outline-text-2" id="text-orge5d59b1">
 <p>
 在写邮件之前,推荐先配置一下 <code>user-full-name</code> 与 <code>user-mail-address</code> 这两个变量. 
 在编写新邮件时,Emacs会使用这两个变量来形成邮件中的 <code>From</code> header域的值.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> user-full-name <span style="color: #8b2252;">"lujun9972"</span>)
-(<span style="color: #a020f0;">setq</span> user-mail-address <span style="color: #8b2252;">"lujun9972@sina.com"</span>)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> user-full-name <span style="color: #2d9574;">"lujun9972"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> user-mail-address <span style="color: #2d9574;">"lujun9972@sina.com"</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -97,7 +97,7 @@ Emacs自带了SMTP库,这使的Emacs无需任何第三方软件的帮助就能�
 可以看到其中后面3中发送方式都依赖于第三方的程序,唯一不依赖第三方程序的只有 <code>smtpmail-send-it</code>,所以我们可以直接这么设置:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> send-mail-function 'smtpmail-send-it)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> send-mail-function 'smtpmail-send-it<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -105,26 +105,26 @@ Emacs自带了SMTP库,这使的Emacs无需任何第三方软件的帮助就能�
 如果我们明确总是使用某一个smtp服务器来发送电子邮件的话,我们还可以预先配置好  <code>smtpmail-smtp-server</code> , <code>smtpmail-smtp-user</code> , <code>smtpmail-smtp-service</code> , <code>smtpmail-stream-type</code> 这几个变量,省得到时候发送时手输.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> smtpmail-smtp-server <span style="color: #8b2252;">"smtp.sina.com"</span>)
-(<span style="color: #a020f0;">setq</span> smtpmail-smtp-user <span style="color: #8b2252;">"lujun9972"</span>)
-(<span style="color: #a020f0;">setq</span> smtpmail-smtp-service 25)
-(<span style="color: #a020f0;">setq</span> smtpmail-stream-type 'starttls)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> smtpmail-smtp-server <span style="color: #2d9574;">"smtp.sina.com"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> smtpmail-smtp-user <span style="color: #2d9574;">"lujun9972"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> smtpmail-smtp-service <span style="color: #a45bad;">25</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> smtpmail-stream-type 'starttls<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org74a06ef" class="outline-2">
-<h2 id="org74a06ef">编写新邮件</h2>
-<div class="outline-text-2" id="text-org74a06ef">
+<div id="outline-container-org102b64c" class="outline-2">
+<h2 id="org102b64c">编写新邮件</h2>
+<div class="outline-text-2" id="text-org102b64c">
 <p>
 按下 <code>C-x m</code> 或者直接执行 <code>M-x compose-mail</code> 就会弹出一个 <code>*unsent mail*</code> 的buffer,看起来大概是这样的:
 </p>
 <div class="org-src-container">
-<pre class="src src-message"><span style="color: #6495ed;">To:</span><span style="color: #191970; font-weight: bold;"> </span>
-<span style="color: #6495ed;">Subject:</span><span style="color: #000080; font-weight: bold;"> </span>
-<span style="color: #6495ed;">From:</span> <span style="color: #4682b4;">lujun9972 <a href="mailto:lujun9972%40sina.com">&lt;lujun9972@sina.com&gt;</a></span>
-<span style="color: #a52a2a;">--text follows this line--</span>
+<pre class="src src-message"><span style="color: #00ff00;">To:</span><span style="color: #caff70; font-weight: bold;"> </span>
+<span style="color: #00ff00;">Subject:</span><span style="color: #c0ff3e;"> </span>
+<span style="color: #00ff00;">From:</span> <span style="color: #ff3e96;">lujun9972 <a href="mailto:lujun9972%40sina.com">&lt;lujun9972@sina.com&gt;</a></span>
+<span style="color: #b0e2ff;">--text follows this line--</span>
 
 </pre>
 </div>
@@ -168,9 +168,9 @@ machine smtp服务器地址 login 用户名 port 端口号 password 密码
 </div>
 </div>
 
-<div id="outline-container-org8fe97a5" class="outline-2">
-<h2 id="org8fe97a5">添加附件</h2>
-<div class="outline-text-2" id="text-org8fe97a5">
+<div id="outline-container-org5012c1b" class="outline-2">
+<h2 id="org5012c1b">添加附件</h2>
+<div class="outline-text-2" id="text-org5012c1b">
 <p>
 按下 <code>C-c C-a (mml-attach-file)</code>  就能为邮件添加附件. Emacs会依次提示输入附件路径,类型,描述以及整合方式.
 </p>
@@ -179,22 +179,22 @@ machine smtp服务器地址 login 用户名 port 端口号 password 密码
 不过插入附件并不会真的把附件的内容添加到邮件内容中,相反它只会在邮件内容中插入一个 &lt;#part&gt; 的引用,像这样:
 </p>
 <div class="org-src-container">
-<pre class="src src-message"><span style="color: #6495ed;">To:</span> <span style="color: #191970; font-weight: bold;">29464846@qq.com</span>
-<span style="color: #6495ed;">Subject:</span> <span style="color: #000080; font-weight: bold;">&#20351;&#29992;Emacs&#21457;&#36865;&#30005;&#23376;&#37038;&#20214;&#23454;&#39564;</span>
-<span style="color: #6495ed;">From:</span> <span style="color: #4682b4;">lujun9972 <a href="mailto:lujun9972%40sina.com">&lt;lujun9972@sina.com&gt;</a></span>
-<span style="color: #a52a2a;">--text follows this line--</span>
+<pre class="src src-message"><span style="color: #00ff00;">To:</span> <span style="color: #caff70; font-weight: bold;">29464846@qq.com</span>
+<span style="color: #00ff00;">Subject:</span> <span style="color: #c0ff3e;">&#20351;&#29992;Emacs&#21457;&#36865;&#30005;&#23376;&#37038;&#20214;&#23454;&#39564;</span>
+<span style="color: #00ff00;">From:</span> <span style="color: #ff3e96;">lujun9972 <a href="mailto:lujun9972%40sina.com">&lt;lujun9972@sina.com&gt;</a></span>
+<span style="color: #b0e2ff;">--text follows this line--</span>
 &#36825;&#26159;&#20869;&#23481;
 
-<span style="color: #228b22;">&lt;#part type="text/x-org" filename="/home/lujun9972/github/lujun9972.github.com/Emacs&#20043;&#24594;/&#20351;&#29992;Emacs&#21457;&#36865;&#30005;&#23376;&#37038;&#20214;.org" disposition=attachment description=&#20351;&#29992;Emacs&#21457;&#36865;&#30005;&#23376;&#37038;&#20214;.org&gt;</span>
-<span style="color: #228b22;">&lt;#/part&gt;</span>
+<span style="color: #00fa9a;">&lt;#part type="text/x-org" filename="/home/lujun9972/github/lujun9972.github.com/Emacs&#20043;&#24594;/&#20351;&#29992;Emacs&#21457;&#36865;&#30005;&#23376;&#37038;&#20214;.org" disposition=attachment description=&#20351;&#29992;Emacs&#21457;&#36865;&#30005;&#23376;&#37038;&#20214;.org&gt;</span>
+<span style="color: #00fa9a;">&lt;#/part&gt;</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org26211cb" class="outline-2">
-<h2 id="org26211cb">设置mail address的别名</h2>
-<div class="outline-text-2" id="text-org26211cb">
+<div id="outline-container-orgd2343fe" class="outline-2">
+<h2 id="orgd2343fe">设置mail address的别名</h2>
+<div class="outline-text-2" id="text-orgd2343fe">
 <p>
 一个别名可以代表一个或多个邮件地址.
 </p>
@@ -233,9 +233,9 @@ source FILENAME
 </div>
 </div>
 
-<div id="outline-container-org013e1d1" class="outline-2">
-<h2 id="org013e1d1">添加签名</h2>
-<div class="outline-text-2" id="text-org013e1d1">
+<div id="outline-container-org37f2fbb" class="outline-2">
+<h2 id="org37f2fbb">添加签名</h2>
+<div class="outline-text-2" id="text-org37f2fbb">
 <p>
 变量 <code>message-signature</code> 的值决定了Emacs如何处理你的邮件签名, 它支持以下几种值:
 </p>
@@ -254,15 +254,15 @@ source FILENAME
 使用函数 <code>(fortune-file &amp;optional FILE)</code> 可以使用fortune程序为你声称一个签名, 你可以为每个邮件插入不同的fortune cookie message:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(add-hook 'mail-setup-hook 'fortune-to-signature)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>add-hook 'mail-setup-hook 'fortune-to-signature<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd29bb5a" class="outline-2">
-<h2 id="orgd29bb5a">Queued delivery</h2>
-<div class="outline-text-2" id="text-orgd29bb5a">
+<div id="outline-container-org222549d" class="outline-2">
+<h2 id="org222549d">Queued delivery</h2>
+<div class="outline-text-2" id="text-org222549d">
 <p>
 若你的电脑不是一直连接到互联网上的,则你可以先写好邮件,将这些邮件暂存到一个队列中,然后等到连接到互联网上之后再一次性发送出去.
 </p>
@@ -273,15 +273,15 @@ source FILENAME
 </div>
 </div>
 
-<div id="outline-container-org14a35c9" class="outline-2">
-<h2 id="org14a35c9">调试</h2>
-<div class="outline-text-2" id="text-org14a35c9">
+<div id="outline-container-org4b58467" class="outline-2">
+<h2 id="org4b58467">调试</h2>
+<div class="outline-text-2" id="text-org4b58467">
 <p>
 在发送邮件的过程中如果出现问题想调试,可以开启smtpmail的调试功能:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> smtpmail-debug-info t)
-(<span style="color: #a020f0;">setq</span> smtpmail-debug-verb t)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> smtpmail-debug-info t<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> smtpmail-debug-verb t<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 <p>

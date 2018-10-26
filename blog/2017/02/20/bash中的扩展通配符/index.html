@@ -64,7 +64,7 @@
 而通过开启extglob选项,可以使用扩展的通配符.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">shopt</span> -s extglob
+<pre class="src src-shell"><span style="color: #4f97d7;">shopt</span> -s extglob
 </pre>
 </div>
 
@@ -89,8 +89,8 @@
 列出所有不包含ssh的org文件
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">shopt</span> -s extglob
-ls !(*ssh*).org                 
+<pre class="src src-shell"><span style="color: #4f97d7;">shopt</span> -s extglob
+ls !<span style="color: #4f97d7;">(</span>*ssh*<span style="color: #4f97d7;">)</span>.org                 
 </pre>
 </div></li>
 
@@ -98,8 +98,8 @@ ls !(*ssh*).org
 列出所有由任意 <code>a</code> 和 <code>s</code> 组合的org文件
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">shopt</span> -s extglob
-ls +(s|a).org
+<pre class="src src-shell"><span style="color: #4f97d7;">shopt</span> -s extglob
+ls +<span style="color: #4f97d7;">(</span>s|a<span style="color: #4f97d7;">)</span>.org
 </pre>
 </div></li>
 
@@ -107,8 +107,8 @@ ls +(s|a).org
 列出以 <code>s</code> 开头,后接单个 <code>a</code>, <code>s</code>, 或什么也不接的org文件
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">shopt</span> -s extglob
-ls  s?(s|a).org
+<pre class="src src-shell"><span style="color: #4f97d7;">shopt</span> -s extglob
+ls  s?<span style="color: #4f97d7;">(</span>s|a<span style="color: #4f97d7;">)</span>.org
 </pre>
 </div></li>
 </ul>

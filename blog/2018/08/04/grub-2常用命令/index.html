@@ -54,30 +54,30 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1efbc45">如何进入GRUB 2命令行界面</a></li>
-<li><a href="#org44b4fb8">常用命令</a>
+<li><a href="#orgc0b77ff">如何进入GRUB 2命令行界面</a></li>
+<li><a href="#org6863f1d">常用命令</a>
 <ul>
-<li><a href="#org7abb9bb">help:查看命令用法</a></li>
-<li><a href="#org7c55df7">set:设置变量值</a></li>
-<li><a href="#orga933af4">insmod:加载模块</a></li>
-<li><a href="#orgf4488ba">rmmod:移除模块</a></li>
-<li><a href="#org4fe911e">drivemap:映射磁盘分区</a></li>
-<li><a href="#orgf753599">ls:列出设备/文件</a></li>
-<li><a href="#org4a90f7c">search:搜索符合条件的分区</a></li>
-<li><a href="#org9f486bf">loopback:创建loop设备</a></li>
-<li><a href="#org6150b3c">pager:设置是否分页现实</a></li>
-<li><a href="#org9417bd0">linux:加载内核</a></li>
-<li><a href="#org226fbba">initrd:引导特定的内核</a></li>
-<li><a href="#orge9f4905">chainloader:调用另一个启动器</a></li>
+<li><a href="#org5ad6f2d">help:查看命令用法</a></li>
+<li><a href="#orgb906b1d">set:设置变量值</a></li>
+<li><a href="#orgb2d5b47">insmod:加载模块</a></li>
+<li><a href="#org950bc1c">rmmod:移除模块</a></li>
+<li><a href="#org5ca6835">drivemap:映射磁盘分区</a></li>
+<li><a href="#org3881f6f">ls:列出设备/文件</a></li>
+<li><a href="#orgbde2b27">search:搜索符合条件的分区</a></li>
+<li><a href="#orgf3c55fc">loopback:创建loop设备</a></li>
+<li><a href="#org9686fa9">pager:设置是否分页现实</a></li>
+<li><a href="#orge76c29b">linux:加载内核</a></li>
+<li><a href="#org0dfbb2f">initrd:引导特定的内核</a></li>
+<li><a href="#orgd7dc0e9">chainloader:调用另一个启动器</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1efbc45" class="outline-2">
-<h2 id="org1efbc45">如何进入GRUB 2命令行界面</h2>
-<div class="outline-text-2" id="text-org1efbc45">
+<div id="outline-container-orgc0b77ff" class="outline-2">
+<h2 id="orgc0b77ff">如何进入GRUB 2命令行界面</h2>
+<div class="outline-text-2" id="text-orgc0b77ff">
 <p>
 进入GRUB 2命令行有两种方法:
 </p>
@@ -89,26 +89,26 @@
 </div>
 </div>
 
-<div id="outline-container-org44b4fb8" class="outline-2">
-<h2 id="org44b4fb8">常用命令</h2>
-<div class="outline-text-2" id="text-org44b4fb8">
+<div id="outline-container-org6863f1d" class="outline-2">
+<h2 id="org6863f1d">常用命令</h2>
+<div class="outline-text-2" id="text-org6863f1d">
 </div>
-<div id="outline-container-org7abb9bb" class="outline-3">
-<h3 id="org7abb9bb"><a href="查看命令用法">查看命令用法</a></h3>
-<div class="outline-text-3" id="text-org7abb9bb">
+<div id="outline-container-org5ad6f2d" class="outline-3">
+<h3 id="org5ad6f2d"><a href="查看命令用法">查看命令用法</a></h3>
+<div class="outline-text-3" id="text-org5ad6f2d">
 <p>
 查看search命令的用法
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">help</span> search
+<pre class="src src-shell"><span style="color: #4f97d7;">help</span> search
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org7c55df7" class="outline-3">
-<h3 id="org7c55df7">set:设置变量值</h3>
-<div class="outline-text-3" id="text-org7c55df7">
+<div id="outline-container-orgb906b1d" class="outline-3">
+<h3 id="orgb906b1d">set:设置变量值</h3>
+<div class="outline-text-3" id="text-orgb906b1d">
 <pre class="example">
 set default=0
 set timeout=5
@@ -126,27 +126,27 @@ set root=(hd0,1)
 </div>
 </div>
 
-<div id="outline-container-orga933af4" class="outline-3">
-<h3 id="orga933af4">insmod:加载模块</h3>
-<div class="outline-text-3" id="text-orga933af4">
+<div id="outline-container-orgb2d5b47" class="outline-3">
+<h3 id="orgb2d5b47">insmod:加载模块</h3>
+<div class="outline-text-3" id="text-orgb2d5b47">
 <pre class="example">
 insmod ntfs
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgf4488ba" class="outline-3">
-<h3 id="orgf4488ba">rmmod:移除模块</h3>
-<div class="outline-text-3" id="text-orgf4488ba">
+<div id="outline-container-org950bc1c" class="outline-3">
+<h3 id="org950bc1c">rmmod:移除模块</h3>
+<div class="outline-text-3" id="text-org950bc1c">
 <pre class="example">
 rmmod png
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org4fe911e" class="outline-3">
-<h3 id="org4fe911e">drivemap:映射磁盘分区</h3>
-<div class="outline-text-3" id="text-org4fe911e">
+<div id="outline-container-org5ca6835" class="outline-3">
+<h3 id="org5ca6835">drivemap:映射磁盘分区</h3>
+<div class="outline-text-3" id="text-org5ca6835">
 <p>
 有些操作系统只能从hd0（第一块磁盘）引导，但实际上可能安装在其他磁盘上，那么可以使用 <code>drivemap</code> 进行映射
 </p>
@@ -161,9 +161,9 @@ clainloader +1
 </div>
 </div>
 
-<div id="outline-container-orgf753599" class="outline-3">
-<h3 id="orgf753599">ls:列出设备/文件</h3>
-<div class="outline-text-3" id="text-orgf753599">
+<div id="outline-container-org3881f6f" class="outline-3">
+<h3 id="org3881f6f">ls:列出设备/文件</h3>
+<div class="outline-text-3" id="text-org3881f6f">
 <p>
 详细列出当前所有设备:
 </p>
@@ -187,9 +187,9 @@ ls (hd1,1)/
 </div>
 </div>
 
-<div id="outline-container-org4a90f7c" class="outline-3">
-<h3 id="org4a90f7c">search:搜索符合条件的分区</h3>
-<div class="outline-text-3" id="text-org4a90f7c">
+<div id="outline-container-orgbde2b27" class="outline-3">
+<h3 id="orgbde2b27">search:搜索符合条件的分区</h3>
+<div class="outline-text-3" id="text-orgbde2b27">
 <p>
 找到根目录中包含ntldr文件的分区
 </p>
@@ -213,9 +213,9 @@ search --set -l LINUX
 </div>
 </div>
 
-<div id="outline-container-org9f486bf" class="outline-3">
-<h3 id="org9f486bf">loopback:创建loop设备</h3>
-<div class="outline-text-3" id="text-org9f486bf">
+<div id="outline-container-orgf3c55fc" class="outline-3">
+<h3 id="orgf3c55fc">loopback:创建loop设备</h3>
+<div class="outline-text-3" id="text-orgf3c55fc">
 <p>
 通过 <code>loopback</code> 可以从ISO文件中进行引导
 </p>
@@ -244,9 +244,9 @@ loopback -d lo0
 </div>
 </div>
 
-<div id="outline-container-org6150b3c" class="outline-3">
-<h3 id="org6150b3c">pager:设置是否分页现实</h3>
-<div class="outline-text-3" id="text-org6150b3c">
+<div id="outline-container-org9686fa9" class="outline-3">
+<h3 id="org9686fa9">pager:设置是否分页现实</h3>
+<div class="outline-text-3" id="text-org9686fa9">
 <p>
 分页现实会在输出内容满屏后暂停输出，按空格后继续输出
 </p>
@@ -267,27 +267,27 @@ set pager=0
 </div>
 </div>
 
-<div id="outline-container-org9417bd0" class="outline-3">
-<h3 id="org9417bd0">linux:加载内核</h3>
-<div class="outline-text-3" id="text-org9417bd0">
+<div id="outline-container-orge76c29b" class="outline-3">
+<h3 id="orge76c29b">linux:加载内核</h3>
+<div class="outline-text-3" id="text-orge76c29b">
 <pre class="example">
 kernel /bzImage-2.6.14.2
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org226fbba" class="outline-3">
-<h3 id="org226fbba">initrd:引导特定的内核</h3>
-<div class="outline-text-3" id="text-org226fbba">
+<div id="outline-container-org0dfbb2f" class="outline-3">
+<h3 id="org0dfbb2f">initrd:引导特定的内核</h3>
+<div class="outline-text-3" id="text-org0dfbb2f">
 <pre class="example">
 initrd /initrd-2.6.14.2.img
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orge9f4905" class="outline-3">
-<h3 id="orge9f4905">chainloader:调用另一个启动器</h3>
-<div class="outline-text-3" id="text-orge9f4905">
+<div id="outline-container-orgd7dc0e9" class="outline-3">
+<h3 id="orgd7dc0e9">chainloader:调用另一个启动器</h3>
+<div class="outline-text-3" id="text-orgd7dc0e9">
 <p>
 调用地一块硬盘第一个分区引导扇区内的启动器:
 </p>

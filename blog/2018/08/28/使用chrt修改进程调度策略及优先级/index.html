@@ -54,21 +54,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge1f7f64">Linux内核调度策略</a></li>
-<li><a href="#orgdebb7de">使用chrt查看/修改进程调度策略</a>
+<li><a href="#org61a2cf5">Linux内核调度策略</a></li>
+<li><a href="#org039352e">使用chrt查看/修改进程调度策略</a>
 <ul>
-<li><a href="#org6ac11a4">查看进程的调度策略及优先级</a></li>
-<li><a href="#org16d544c">查看每种策略的有效优先级范围</a></li>
-<li><a href="#orge2d5e58">设置进程的调度策略</a></li>
+<li><a href="#org9c26c75">查看进程的调度策略及优先级</a></li>
+<li><a href="#org375de30">查看每种策略的有效优先级范围</a></li>
+<li><a href="#orgef6096a">设置进程的调度策略</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge1f7f64" class="outline-2">
-<h2 id="orge1f7f64">Linux内核调度策略</h2>
-<div class="outline-text-2" id="text-orge1f7f64">
+<div id="outline-container-org61a2cf5" class="outline-2">
+<h2 id="org61a2cf5">Linux内核调度策略</h2>
+<div class="outline-text-2" id="text-org61a2cf5">
 <p>
 linux内核有五种调度方法：
 </p>
@@ -126,15 +126,15 @@ SCHED_IDLE策略则是只有在没有其他进程可运行的状态下才才会�
 </div>
 </div>
 
-<div id="outline-container-orgdebb7de" class="outline-2">
-<h2 id="orgdebb7de">使用chrt查看/修改进程调度策略</h2>
-<div class="outline-text-2" id="text-orgdebb7de">
+<div id="outline-container-org039352e" class="outline-2">
+<h2 id="org039352e">使用chrt查看/修改进程调度策略</h2>
+<div class="outline-text-2" id="text-org039352e">
 </div>
-<div id="outline-container-org6ac11a4" class="outline-3">
-<h3 id="org6ac11a4">查看进程的调度策略及优先级</h3>
-<div class="outline-text-3" id="text-org6ac11a4">
+<div id="outline-container-org9c26c75" class="outline-3">
+<h3 id="org9c26c75">查看进程的调度策略及优先级</h3>
+<div class="outline-text-3" id="text-org9c26c75">
 <div class="org-src-container">
-<pre class="src src-shell">chrt -p $<span style="color: #a0522d;">pid</span>
+<pre class="src src-shell">chrt -p $<span style="color: #7590db;">pid</span>
 </pre>
 </div>
 
@@ -142,7 +142,7 @@ SCHED_IDLE策略则是只有在没有其他进程可运行的状态下才才会�
 比如，我想查看Emacs进程的调度策略及优先级那么可以
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">chrt -p $(<span style="color: #ff00ff;">pidof</span> emacs)
+<pre class="src src-shell">chrt -p $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">pidof</span> emacs<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -154,31 +154,31 @@ pid 1032 &#30340;&#24403;&#21069;&#35843;&#24230;&#20248;&#20808;&#32423;&#65306
 </div>
 </div>
 
-<div id="outline-container-org16d544c" class="outline-3">
-<h3 id="org16d544c">查看每种策略的有效优先级范围</h3>
-<div class="outline-text-3" id="text-org16d544c">
+<div id="outline-container-org375de30" class="outline-3">
+<h3 id="org375de30">查看每种策略的有效优先级范围</h3>
+<div class="outline-text-3" id="text-org375de30">
 <div class="org-src-container">
 <pre class="src src-shell">chrt -m
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org">SCHED_OTHER &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423;    : 0/0
-SCHED_FIFO &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423;     : 1/99
-SCHED_RR &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423;       : 1/99
-SCHED_BATCH &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423;    : 0/0
-SCHED_IDLE &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423;     : 0/0
+<pre class="src src-org">SCHED_OTHER &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423;  : 0/0
+SCHED_FIFO &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423; : 1/99
+SCHED_RR &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423; : 1/99
+SCHED_BATCH &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423;  : 0/0
+SCHED_IDLE &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423; : 0/0
 SCHED_DEADLINE &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423; : 0/0
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge2d5e58" class="outline-3">
-<h3 id="orge2d5e58">设置进程的调度策略</h3>
-<div class="outline-text-3" id="text-orge2d5e58">
+<div id="outline-container-orgef6096a" class="outline-3">
+<h3 id="orgef6096a">设置进程的调度策略</h3>
+<div class="outline-text-3" id="text-orgef6096a">
 <div class="org-src-container">
-<pre class="src src-shell">chrt [-b/-f/-o/-r/-i/-d] -p [$<span style="color: #a0522d;">priority</span>] $<span style="color: #a0522d;">pid</span>
+<pre class="src src-shell">chrt <span style="color: #4f97d7;">[</span>-b/-f/-o/-r/-i/-d<span style="color: #4f97d7;">]</span> -p <span style="color: #4f97d7;">[</span>$<span style="color: #7590db;">priority</span><span style="color: #4f97d7;">]</span> $<span style="color: #7590db;">pid</span>
 </pre>
 </div>
 

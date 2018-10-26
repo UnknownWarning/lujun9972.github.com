@@ -54,9 +54,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga5e54f7">安装mypy</a></li>
-<li><a href="#org6e8e0d6">使用mypy进行静态检查</a></li>
-<li><a href="#org9e7f92f">帮助信息</a></li>
+<li><a href="#orgee15b80">安装mypy</a></li>
+<li><a href="#orgecd1e00">使用mypy进行静态检查</a></li>
+<li><a href="#orgcae8218">帮助信息</a></li>
 </ul>
 </div>
 </div>
@@ -68,9 +68,9 @@
 mypy就是这么一个python type checker.
 </p>
 
-<div id="outline-container-orga5e54f7" class="outline-2">
-<h2 id="orga5e54f7">安装mypy</h2>
-<div class="outline-text-2" id="text-orga5e54f7">
+<div id="outline-container-orgee15b80" class="outline-2">
+<h2 id="orgee15b80">安装mypy</h2>
+<div class="outline-text-2" id="text-orgee15b80">
 <p>
 我们可以使用 <code>pip</code> 来安装mypy。
 </p>
@@ -89,31 +89,31 @@ Successfully installed mypy-0.570 typed-ast-1.1.0
 </div>
 </div>
 
-<div id="outline-container-org6e8e0d6" class="outline-2">
-<h2 id="org6e8e0d6">使用mypy进行静态检查</h2>
-<div class="outline-text-2" id="text-org6e8e0d6">
+<div id="outline-container-orgecd1e00" class="outline-2">
+<h2 id="orgecd1e00">使用mypy进行静态检查</h2>
+<div class="outline-text-2" id="text-orgecd1e00">
 <p>
 假设有这么一个 <code>test.py</code> 的文件：
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">class</span> <span style="color: #228b22;">Student</span>():
-    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__init__</span>(<span style="color: #a020f0;">self</span>,<span style="color: #483d8b;">id</span>,name,age,major):
-        <span style="color: #a020f0;">self</span>.<span style="color: #483d8b;">id</span> = <span style="color: #483d8b;">id</span>
-        <span style="color: #a020f0;">self</span>.name = name
-        <span style="color: #a020f0;">self</span>.age = age
-        <span style="color: #a020f0;">self</span>.major = major
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Student</span><span style="color: #4f97d7;">()</span>:
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__init__</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span>,<span style="color: #4f97d7;">id</span>,name,age,major<span style="color: #4f97d7;">)</span>:
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.<span style="color: #4f97d7;">id</span> = <span style="color: #4f97d7;">id</span>
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.name = name
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.age = age
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.major = major
 
 
-<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">display</span>(persons):
-    <span style="color: #a020f0;">for</span> person <span style="color: #a020f0;">in</span> persons:
-        <span style="color: #a020f0;">print</span>(f<span style="color: #8b2252;">'{person.id} {person.name}'</span>)
+<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">display</span><span style="color: #4f97d7;">(</span>persons<span style="color: #4f97d7;">)</span>:
+    <span style="color: #4f97d7; font-weight: bold;">for</span> person <span style="color: #4f97d7; font-weight: bold;">in</span> persons:
+        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>f<span style="color: #2d9574;">'{person.id} {person.name}'</span><span style="color: #4f97d7;">)</span>
 
-<span style="color: #a0522d;">dark</span> = Student(<span style="color: #8b2252;">'1'</span>, <span style="color: #8b2252;">'Dark'</span>, <span style="color: #8b2252;">'19'</span>, <span style="color: #8b2252;">'computer'</span>)
-<span style="color: #a0522d;">sun</span> = Student(<span style="color: #8b2252;">'2'</span>, <span style="color: #8b2252;">'Sun'</span>, 21, <span style="color: #8b2252;">'account'</span>)
-<span style="color: #a0522d;">lujun</span>= Student(3, <span style="color: #8b2252;">'lujun'</span>, <span style="color: #8b2252;">'MBA'</span>, 25)
+<span style="color: #7590db;">dark</span> = Student<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'1'</span>, <span style="color: #2d9574;">'Dark'</span>, <span style="color: #2d9574;">'19'</span>, <span style="color: #2d9574;">'computer'</span><span style="color: #4f97d7;">)</span>
+<span style="color: #7590db;">sun</span> = Student<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'2'</span>, <span style="color: #2d9574;">'Sun'</span>, <span style="color: #a45bad;">21</span>, <span style="color: #2d9574;">'account'</span><span style="color: #4f97d7;">)</span>
+<span style="color: #7590db;">lujun</span>= Student<span style="color: #4f97d7;">(</span><span style="color: #a45bad;">3</span>, <span style="color: #2d9574;">'lujun'</span>, <span style="color: #2d9574;">'MBA'</span>, <span style="color: #a45bad;">25</span><span style="color: #4f97d7;">)</span>
 
-display(dark)
-display([sun, dark, <span style="color: #8b2252;">'lujun'</span>])
+display<span style="color: #4f97d7;">(</span>dark<span style="color: #4f97d7;">)</span>
+display<span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">[</span>sun, dark, <span style="color: #2d9574;">'lujun'</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -138,25 +138,25 @@ display([sun, dark, <span style="color: #8b2252;">'lujun'</span>])
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">from</span> typing <span style="color: #a020f0;">import</span> List
-<span style="color: #a020f0;">class</span> <span style="color: #228b22;">Student</span>():
-    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__init__</span>(<span style="color: #a020f0;">self</span>, <span style="color: #483d8b;">id</span>:<span style="color: #483d8b;">int</span>, name:<span style="color: #483d8b;">str</span>, age:<span style="color: #483d8b;">int</span>, major:<span style="color: #483d8b;">str</span>)-&gt;<span style="color: #008b8b;">None</span>:
-        <span style="color: #a020f0;">self</span>.<span style="color: #483d8b;">id</span> = <span style="color: #483d8b;">id</span>
-        <span style="color: #a020f0;">self</span>.name = name
-        <span style="color: #a020f0;">self</span>.age = age
-        <span style="color: #a020f0;">self</span>.major = major
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> typing <span style="color: #4f97d7; font-weight: bold;">import</span> List
+<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Student</span><span style="color: #4f97d7;">()</span>:
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__init__</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span>, <span style="color: #4f97d7;">id</span>:<span style="color: #4f97d7;">int</span>, name:<span style="color: #4f97d7;">str</span>, age:<span style="color: #4f97d7;">int</span>, major:<span style="color: #4f97d7;">str</span><span style="color: #4f97d7;">)</span>-&gt;<span style="color: #a45bad;">None</span>:
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.<span style="color: #4f97d7;">id</span> = <span style="color: #4f97d7;">id</span>
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.name = name
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.age = age
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.major = major
 
 
-<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">display</span>(persons:List[Student])-&gt;<span style="color: #008b8b;">None</span>:
-    <span style="color: #a020f0;">for</span> person <span style="color: #a020f0;">in</span> persons:
-        <span style="color: #a020f0;">print</span>(f<span style="color: #8b2252;">'{person.id} {person.name}'</span>)
+<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">display</span><span style="color: #4f97d7;">(</span>persons:List<span style="color: #bc6ec5;">[</span>Student<span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span>-&gt;<span style="color: #a45bad;">None</span>:
+    <span style="color: #4f97d7; font-weight: bold;">for</span> person <span style="color: #4f97d7; font-weight: bold;">in</span> persons:
+        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>f<span style="color: #2d9574;">'{person.id} {person.name}'</span><span style="color: #4f97d7;">)</span>
 
-<span style="color: #a0522d;">dark</span> = Student(<span style="color: #8b2252;">'1'</span>, <span style="color: #8b2252;">'Dark'</span>, <span style="color: #8b2252;">'19'</span>, <span style="color: #8b2252;">'computer'</span>)
-<span style="color: #a0522d;">sun</span> = Student(<span style="color: #8b2252;">'2'</span>, <span style="color: #8b2252;">'Sun'</span>, 21, <span style="color: #8b2252;">'account'</span>)
-<span style="color: #a0522d;">lujun</span>= Student(3, <span style="color: #8b2252;">'lujun'</span>, <span style="color: #8b2252;">'MBA'</span>, 25)
+<span style="color: #7590db;">dark</span> = Student<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'1'</span>, <span style="color: #2d9574;">'Dark'</span>, <span style="color: #2d9574;">'19'</span>, <span style="color: #2d9574;">'computer'</span><span style="color: #4f97d7;">)</span>
+<span style="color: #7590db;">sun</span> = Student<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'2'</span>, <span style="color: #2d9574;">'Sun'</span>, <span style="color: #a45bad;">21</span>, <span style="color: #2d9574;">'account'</span><span style="color: #4f97d7;">)</span>
+<span style="color: #7590db;">lujun</span>= Student<span style="color: #4f97d7;">(</span><span style="color: #a45bad;">3</span>, <span style="color: #2d9574;">'lujun'</span>, <span style="color: #2d9574;">'MBA'</span>, <span style="color: #a45bad;">25</span><span style="color: #4f97d7;">)</span>
 
-display(dark)
-display([sun, dark, <span style="color: #8b2252;">'lujun'</span>])
+display<span style="color: #4f97d7;">(</span>dark<span style="color: #4f97d7;">)</span>
+display<span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">[</span>sun, dark, <span style="color: #2d9574;">'lujun'</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -180,9 +180,9 @@ display([sun, dark, <span style="color: #8b2252;">'lujun'</span>])
 </div>
 </div>
 
-<div id="outline-container-org9e7f92f" class="outline-2">
-<h2 id="org9e7f92f">帮助信息</h2>
-<div class="outline-text-2" id="text-org9e7f92f">
+<div id="outline-container-orgcae8218" class="outline-2">
+<h2 id="orgcae8218">帮助信息</h2>
+<div class="outline-text-2" id="text-orgcae8218">
 <p>
 mypy还带有一堆的参数来定义检查的方法，运行 <code>mypy -h</code> 就会列出帮助信息了：
 </p>

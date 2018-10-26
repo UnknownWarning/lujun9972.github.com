@@ -54,10 +54,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2a9ac21">安装netctl</a></li>
-<li><a href="#orge91baed">查看网络设备名称</a></li>
-<li><a href="#org001340b">创建网络配置文件</a></li>
-<li><a href="#org07b141a">启停连接</a></li>
+<li><a href="#orgde44fef">安装netctl</a></li>
+<li><a href="#orga4f661f">查看网络设备名称</a></li>
+<li><a href="#orgb104c59">创建网络配置文件</a></li>
+<li><a href="#orgdd51810">启停连接</a></li>
 </ul>
 </div>
 </div>
@@ -65,9 +65,9 @@
 netclt是一款archlinux上常用的管理网络配置的工具,它的参数与 <code>systemctl</code> 很类似
 </p>
 
-<div id="outline-container-org2a9ac21" class="outline-2">
-<h2 id="org2a9ac21">安装netctl</h2>
-<div class="outline-text-2" id="text-org2a9ac21">
+<div id="outline-container-orgde44fef" class="outline-2">
+<h2 id="orgde44fef">安装netctl</h2>
+<div class="outline-text-2" id="text-orgde44fef">
 <div class="org-src-container">
 <pre class="src src-shell">sudo pacman -S netctl
 </pre>
@@ -85,9 +85,9 @@ ethernet-dhcp    mobile_ppp       tuntap       wireless-wep   wireless-wpa-stati
 </pre>
 </div>
 </div>
-<div id="outline-container-orge91baed" class="outline-2">
-<h2 id="orge91baed">查看网络设备名称</h2>
-<div class="outline-text-2" id="text-orge91baed">
+<div id="outline-container-orga4f661f" class="outline-2">
+<h2 id="orga4f661f">查看网络设备名称</h2>
+<div class="outline-text-2" id="text-orga4f661f">
 <div class="org-src-container">
 <pre class="src src-shell">ip link
 </pre>
@@ -114,9 +114,9 @@ ethernet-dhcp    mobile_ppp       tuntap       wireless-wep   wireless-wpa-stati
 </div>
 </div>
 
-<div id="outline-container-org001340b" class="outline-2">
-<h2 id="org001340b">创建网络配置文件</h2>
-<div class="outline-text-2" id="text-org001340b">
+<div id="outline-container-orgb104c59" class="outline-2">
+<h2 id="orgb104c59">创建网络配置文件</h2>
+<div class="outline-text-2" id="text-orgb104c59">
 <p>
 一般我们可以直接从 <code>examples</code> 中拷贝案例文件来做修改就行了。
 </p>
@@ -170,9 +170,9 @@ Key='WirelessKey'
 </div>
 </div>
 
-<div id="outline-container-org07b141a" class="outline-2">
-<h2 id="org07b141a">启停连接</h2>
-<div class="outline-text-2" id="text-org07b141a">
+<div id="outline-container-orgdd51810" class="outline-2">
+<h2 id="orgdd51810">启停连接</h2>
+<div class="outline-text-2" id="text-orgdd51810">
 <p>
 netctl的命令参数跟systemctl很类似。
 </p>

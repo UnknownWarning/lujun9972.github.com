@@ -54,23 +54,23 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org765be1b">解压zip文件到当前目录</a></li>
-<li><a href="#org73b1a56">静默解压</a></li>
-<li><a href="#orge12fb38">解压zip文件到指定目录</a></li>
-<li><a href="#org6908c1f">解压密码保护的zip文件</a></li>
-<li><a href="#org6129abb">解压时排除某些文件不解压出来</a></li>
-<li><a href="#orgb930c40">解压时直接覆盖已有文件</a></li>
-<li><a href="#org77f3586">解压时跳过已有文件</a></li>
-<li><a href="#org318b0a6">列出zip文件中的内容</a></li>
+<li><a href="#orge30a358">解压zip文件到当前目录</a></li>
+<li><a href="#org0542192">静默解压</a></li>
+<li><a href="#org86a8cd4">解压zip文件到指定目录</a></li>
+<li><a href="#org0e005d6">解压密码保护的zip文件</a></li>
+<li><a href="#orgc8f6246">解压时排除某些文件不解压出来</a></li>
+<li><a href="#orgc189949">解压时直接覆盖已有文件</a></li>
+<li><a href="#org31aa508">解压时跳过已有文件</a></li>
+<li><a href="#orgad6b57a">列出zip文件中的内容</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org765be1b" class="outline-2">
-<h2 id="org765be1b">解压zip文件到当前目录</h2>
-<div class="outline-text-2" id="text-org765be1b">
+<div id="outline-container-orge30a358" class="outline-2">
+<h2 id="orge30a358">解压zip文件到当前目录</h2>
+<div class="outline-text-2" id="text-orge30a358">
 <div class="org-src-container">
-<pre class="src src-shell">unzip ${<span style="color: #a0522d;">zip_file</span>}
+<pre class="src src-shell">unzip $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -80,80 +80,80 @@ zip文件不包含linux所有者权限信息，因此所有解压出来的内容
 </div>
 </div>
 
-<div id="outline-container-org73b1a56" class="outline-2">
-<h2 id="org73b1a56">静默解压</h2>
-<div class="outline-text-2" id="text-org73b1a56">
+<div id="outline-container-org0542192" class="outline-2">
+<h2 id="org0542192">静默解压</h2>
+<div class="outline-text-2" id="text-org0542192">
 <p>
 默认解压时会列出解压出来的文件名称等信息，可以使用 <code>-q</code> 参数屏蔽这些信息
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">unzip -q ${<span style="color: #a0522d;">zip_file</span>}
+<pre class="src src-shell">unzip -q $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge12fb38" class="outline-2">
-<h2 id="orge12fb38">解压zip文件到指定目录</h2>
-<div class="outline-text-2" id="text-orge12fb38">
+<div id="outline-container-org86a8cd4" class="outline-2">
+<h2 id="org86a8cd4">解压zip文件到指定目录</h2>
+<div class="outline-text-2" id="text-org86a8cd4">
 <div class="org-src-container">
-<pre class="src src-shell">unzip ${<span style="color: #a0522d;">zip_file</span>} -d ${<span style="color: #a0522d;">directory</span>}
+<pre class="src src-shell">unzip $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span> -d $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">directory</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6908c1f" class="outline-2">
-<h2 id="org6908c1f">解压密码保护的zip文件</h2>
-<div class="outline-text-2" id="text-org6908c1f">
+<div id="outline-container-org0e005d6" class="outline-2">
+<h2 id="org0e005d6">解压密码保护的zip文件</h2>
+<div class="outline-text-2" id="text-org0e005d6">
 <div class="org-src-container">
-<pre class="src src-shell">unzip -P ${<span style="color: #a0522d;">password</span>} ${<span style="color: #a0522d;">zip_file</span>}
+<pre class="src src-shell">unzip -P $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">password</span><span style="color: #4f97d7;">}</span> $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6129abb" class="outline-2">
-<h2 id="org6129abb">解压时排除某些文件不解压出来</h2>
-<div class="outline-text-2" id="text-org6129abb">
+<div id="outline-container-orgc8f6246" class="outline-2">
+<h2 id="orgc8f6246">解压时排除某些文件不解压出来</h2>
+<div class="outline-text-2" id="text-orgc8f6246">
 <div class="org-src-container">
-<pre class="src src-shell">unzip ${<span style="color: #a0522d;">zip_file</span>} -x ${<span style="color: #a0522d;">exclude_pattern</span>}
+<pre class="src src-shell">unzip $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span> -x $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">exclude_pattern</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb930c40" class="outline-2">
-<h2 id="orgb930c40">解压时直接覆盖已有文件</h2>
-<div class="outline-text-2" id="text-orgb930c40">
+<div id="outline-container-orgc189949" class="outline-2">
+<h2 id="orgc189949">解压时直接覆盖已有文件</h2>
+<div class="outline-text-2" id="text-orgc189949">
 <p>
 当解压时，若当前目录或指定目录已经有了同名的文件，则unzip会询问你该如何操作。通过 <code>-o</code> 参数可以让unzip不做提示，直接覆盖已有文件
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">unzip -o ${<span style="color: #a0522d;">zip_file</span>}
+<pre class="src src-shell">unzip -o $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org77f3586" class="outline-2">
-<h2 id="org77f3586">解压时跳过已有文件</h2>
-<div class="outline-text-2" id="text-org77f3586">
+<div id="outline-container-org31aa508" class="outline-2">
+<h2 id="org31aa508">解压时跳过已有文件</h2>
+<div class="outline-text-2" id="text-org31aa508">
 <p>
 通过 <code>-n</code> 参数可以让unzip在遇到已有文件时，跳过
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">unzip -n ${<span style="color: #a0522d;">zip_file</span>}
+<pre class="src src-shell">unzip -n $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org318b0a6" class="outline-2">
-<h2 id="org318b0a6">列出zip文件中的内容</h2>
-<div class="outline-text-2" id="text-org318b0a6">
+<div id="outline-container-orgad6b57a" class="outline-2">
+<h2 id="orgad6b57a">列出zip文件中的内容</h2>
+<div class="outline-text-2" id="text-orgad6b57a">
 <div class="org-src-container">
-<pre class="src src-shell">unzip -l ${<span style="color: #a0522d;">zip_file</span>}
+<pre class="src src-shell">unzip -l $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>

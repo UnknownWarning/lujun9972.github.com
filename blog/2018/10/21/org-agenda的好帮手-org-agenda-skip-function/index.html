@@ -95,11 +95,11 @@ A good way to set it is through options in ‘org-agenda-custom-commands’.
 这个过滤函数的结构一般是这样的
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">let*</span> ((next-headline (<span style="color: #a020f0;">save-excursion</span> (<span style="color: #a020f0;">or</span> (outline-next-heading) (point-max))))
-       (subtree-end (<span style="color: #a020f0;">save-excursion</span> (org-end-of-subtree t)))
-       (subtree-valid (&#36807;&#28388;&#26465;&#20214;&#21028;&#26029;)))
-  (<span style="color: #a020f0;">unless</span> subtree-valid
-    next-headline))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">let*</span> <span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span>next-headline <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">save-excursion</span> <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">or</span> <span style="color: #4f97d7;">(</span>outline-next-heading<span style="color: #4f97d7;">)</span> <span style="color: #4f97d7;">(</span>point-max<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+       <span style="color: #2d9574;">(</span>subtree-end <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">save-excursion</span> <span style="color: #b1951d;">(</span>org-end-of-subtree t<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+       <span style="color: #2d9574;">(</span>subtree-valid <span style="color: #67b11d;">(</span>&#36807;&#28388;&#26465;&#20214;&#21028;&#26029;<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">unless</span> subtree-valid
+    next-headline<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -107,21 +107,21 @@ A good way to set it is through options in ‘org-agenda-custom-commands’.
 比如我的agenda实现是这样的：
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">org/schedule-until</span> (<span style="color: #228b22;">&amp;optional</span> time)
-  <span style="color: #8b2252;">"List Agenda items that scheduled until TIME."</span>
-  (<span style="color: #a020f0;">let*</span> ((next-headline (<span style="color: #a020f0;">save-excursion</span> (<span style="color: #a020f0;">or</span> (outline-next-heading) (point-max))))
-         (subtree-end (<span style="color: #a020f0;">save-excursion</span> (org-end-of-subtree t)))
-         (scheduled-time (org-get-scheduled-time (point)))
-         (time (<span style="color: #a020f0;">or</span> time (format-time-string <span style="color: #8b2252;">"%Y-%m-%d 23:59:59"</span>)))
-         (time (apply #'encode-time (org-parse-time-string time)))
-         (subtree-valid (<span style="color: #a020f0;">or</span> (null scheduled-time) (time-less-p scheduled-time time))))
-    (until subtree-valid
-           next-headline)))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">org/schedule-until</span> <span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">&amp;optional</span> time<span style="color: #bc6ec5;">)</span>
+  <span style="color: #2aa1ae;">"List Agenda items that scheduled until TIME."</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">let*</span> <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>next-headline <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">save-excursion</span> <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">or</span> <span style="color: #bc6ec5;">(</span>outline-next-heading<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">(</span>point-max<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>subtree-end <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">save-excursion</span> <span style="color: #4f97d7;">(</span>org-end-of-subtree t<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>scheduled-time <span style="color: #b1951d;">(</span>org-get-scheduled-time <span style="color: #4f97d7;">(</span>point<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>time <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">or</span> time <span style="color: #4f97d7;">(</span>format-time-string <span style="color: #2d9574;">"%Y-%m-%d 23:59:59"</span><span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>time <span style="color: #b1951d;">(</span>apply #'encode-time <span style="color: #4f97d7;">(</span>org-parse-time-string time<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>subtree-valid <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">or</span> <span style="color: #4f97d7;">(</span>null scheduled-time<span style="color: #4f97d7;">)</span> <span style="color: #4f97d7;">(</span>time-less-p scheduled-time time<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span>until subtree-valid
+           next-headline<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 
-(<span style="color: #a020f0;">setq</span> org-agenda-custom-commands
-      '((<span style="color: #8b2252;">"n"</span> <span style="color: #8b2252;">"Next"</span> todo <span style="color: #8b2252;">"NEXT"</span>
-         ((org-agenda-overriding-header <span style="color: #8b2252;">"NEXT"</span>)
-          (org-agenda-skip-function 'org/schedule-until)))))
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> org-agenda-custom-commands
+      '<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span><span style="color: #2d9574;">"n"</span> <span style="color: #2d9574;">"Next"</span> todo <span style="color: #2d9574;">"</span><span style="color: #dca3a3;">NEXT</span><span style="color: #2d9574;">"</span>
+         <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>org-agenda-overriding-header <span style="color: #2d9574;">"</span><span style="color: #dca3a3;">NEXT</span><span style="color: #2d9574;">"</span><span style="color: #b1951d;">)</span>
+          <span style="color: #b1951d;">(</span>org-agenda-skip-function 'org/schedule-until<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 

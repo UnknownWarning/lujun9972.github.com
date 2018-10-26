@@ -54,19 +54,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org14315c1">直接将敏感信息保存到镜像中</a></li>
-<li><a href="#orga69696f">通过环境变量传递敏感信息</a></li>
-<li><a href="#org2fe3650">将敏感信息以文件的形式存储到卷中</a></li>
-<li><a href="#org773e5fb">使用第三方键值存储应用</a></li>
+<li><a href="#orgd0767d2">直接将敏感信息保存到镜像中</a></li>
+<li><a href="#org6cc5bdd">通过环境变量传递敏感信息</a></li>
+<li><a href="#org9f3d91a">将敏感信息以文件的形式存储到卷中</a></li>
+<li><a href="#org2f30813">使用第三方键值存储应用</a></li>
 </ul>
 </div>
 </div>
 <p>
 摘自《Docker开发指南》9.7节"分享秘密信息"
 </p>
-<div id="outline-container-org14315c1" class="outline-2">
-<h2 id="org14315c1">直接将敏感信息保存到镜像中</h2>
-<div class="outline-text-2" id="text-org14315c1">
+<div id="outline-container-orgd0767d2" class="outline-2">
+<h2 id="orgd0767d2">直接将敏感信息保存到镜像中</h2>
+<div class="outline-text-2" id="text-orgd0767d2">
 <p>
 这是最简单的方法，但这意味着任何能够获取镜像的人都能看到敏感信息，而且它还无法被删除，一直都会存在于上层镜像中。
 </p>
@@ -77,14 +77,14 @@
 </div>
 </div>
 
-<div id="outline-container-orga69696f" class="outline-2">
-<h2 id="orga69696f">通过环境变量传递敏感信息</h2>
-<div class="outline-text-2" id="text-orga69696f">
+<div id="outline-container-org6cc5bdd" class="outline-2">
+<h2 id="org6cc5bdd">通过环境变量传递敏感信息</h2>
+<div class="outline-text-2" id="text-org6cc5bdd">
 <p>
 这是 “<a href="http://12factor.net">十二要素应用宣言</a>” 推荐的方法，使用起来也很简单，只需要把敏感信息作为参数传递给docker run即可
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">docker run -d -e <span style="color: #a0522d;">API_TOKEN</span>=xxxxxxxxxxxx image
+<pre class="src src-shell">docker run -d -e <span style="color: #7590db;">API_TOKEN</span>=xxxxxxxxxxxx image
 </pre>
 </div>
 
@@ -99,9 +99,9 @@
 </div>
 </div>
 
-<div id="outline-container-org2fe3650" class="outline-2">
-<h2 id="org2fe3650">将敏感信息以文件的形式存储到卷中</h2>
-<div class="outline-text-2" id="text-org2fe3650">
+<div id="outline-container-org9f3d91a" class="outline-2">
+<h2 id="org9f3d91a">将敏感信息以文件的形式存储到卷中</h2>
+<div class="outline-text-2" id="text-org9f3d91a">
 <div class="org-src-container">
 <pre class="src src-shell">docker run -d -v /secret-file:/secret-file:ro image
 </pre>
@@ -114,9 +114,9 @@
 </div>
 </div>
 
-<div id="outline-container-org773e5fb" class="outline-2">
-<h2 id="org773e5fb">使用第三方键值存储应用</h2>
-<div class="outline-text-2" id="text-org773e5fb">
+<div id="outline-container-org2f30813" class="outline-2">
+<h2 id="org2f30813">使用第三方键值存储应用</h2>
+<div class="outline-text-2" id="text-org2f30813">
 <p>
 第三方键值存储容器可以对容器进行身份验证，还可以实现灵活管理敏感信息，是目前来说最好的解决方案.
 </p>

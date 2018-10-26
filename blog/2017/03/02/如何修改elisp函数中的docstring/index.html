@@ -54,13 +54,13 @@
 Elisp提供了 <code>documentation</code> 函数可以用来获取另一个函数的docstring,然而可惜它是不能通过 <code>setf</code> 修改的:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">foo</span> ()
-  <span style="color: #8b2252;">"Old Docstring"</span>)
-(documentation 'foo)
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">=&gt;"Old Docstring"</span>
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">foo</span> <span style="color: #bc6ec5;">()</span>
+  <span style="color: #2aa1ae;">"Old Docstring"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span>documentation 'foo<span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">=&gt;"Old Docstring"</span>
 
-(fset (documentation 'foo) <span style="color: #8b2252;">"New Docstring"</span>)
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">Debugger entered--Lisp error: (wrong-type-argument symbolp "Old Docstring")</span>
+<span style="color: #4f97d7;">(</span>fset <span style="color: #bc6ec5;">(</span>documentation 'foo<span style="color: #bc6ec5;">)</span> <span style="color: #2d9574;">"New Docstring"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Debugger entered--Lisp error: (wrong-type-argument symbolp "Old Docstring")</span>
 </pre>
 </div>
 
@@ -68,9 +68,9 @@ Elisp提供了 <code>documentation</code> 函数可以用来获取另一个函�
 不过有一个比较hack的方法,就是修改symbol的 <code>function-documentation</code> 属性. 它的优先级要高于函数本身存储的docstring
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(put 'foo 'function-documentation <span style="color: #8b2252;">"New Docstring"</span>)
-(documentation 'foo)
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">=&gt;"New Docstring"</span>
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>put 'foo 'function-documentation <span style="color: #2d9574;">"New Docstring"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span>documentation 'foo<span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">=&gt;"New Docstring"</span>
 </pre>
 </div>
 

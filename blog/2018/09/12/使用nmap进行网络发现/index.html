@@ -54,27 +54,27 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3ede640">扫描主机</a>
+<li><a href="#orgf861d60">扫描主机</a>
 <ul>
-<li><a href="#org386269f">扫描单个主机</a></li>
-<li><a href="#org5499c95">扫描多个主机</a></li>
-<li><a href="#orga33feb8">扫描一个范围的主机</a></li>
-<li><a href="#org79270da">扫描一个子网</a></li>
-<li><a href="#org60f6337">从文件中读取要扫描的IP地址</a></li>
+<li><a href="#org4ab4f8c">扫描单个主机</a></li>
+<li><a href="#org43e40f9">扫描多个主机</a></li>
+<li><a href="#org8052f9c">扫描一个范围的主机</a></li>
+<li><a href="#org12766c4">扫描一个子网</a></li>
+<li><a href="#org079900d">从文件中读取要扫描的IP地址</a></li>
 </ul>
 </li>
-<li><a href="#orgcc99d21">扫描端口</a>
+<li><a href="#org9efb219">扫描端口</a>
 <ul>
-<li><a href="#org88408a1">扫描单个端口</a></li>
-<li><a href="#org5ed1d12">也可以扫描一个范围的端口</a></li>
-<li><a href="#orgea97515">执行快速扫描</a></li>
-<li><a href="#orga02d50f">设置扫描协议</a></li>
+<li><a href="#orgedcaca1">扫描单个端口</a></li>
+<li><a href="#org0e0dcec">也可以扫描一个范围的端口</a></li>
+<li><a href="#org5b4b2f5">执行快速扫描</a></li>
+<li><a href="#org3da64d5">设置扫描协议</a></li>
 </ul>
 </li>
-<li><a href="#org597da61">Ping设备</a></li>
-<li><a href="#org76b42b2">扫描操作系统</a></li>
-<li><a href="#org0a4415e">扫描主机提供的服务</a></li>
-<li><a href="#org21b81f8">输出结果到文件中</a></li>
+<li><a href="#org2468b96">Ping设备</a></li>
+<li><a href="#orgc12ee2f">扫描操作系统</a></li>
+<li><a href="#org93589c7">扫描主机提供的服务</a></li>
+<li><a href="#org3b5ef47">输出结果到文件中</a></li>
 </ul>
 </div>
 </div>
@@ -86,18 +86,18 @@ nmap是一款网络发现工具，它可以扫描网络主机的开放端口并�
 摘自 <a href="https://linuxtechlab.com/beginners-reference-guide-nmap-command/">https://linuxtechlab.com/beginners-reference-guide-nmap-command/</a>
 </p>
 
-<div id="outline-container-org3ede640" class="outline-2">
-<h2 id="org3ede640">扫描主机</h2>
-<div class="outline-text-2" id="text-org3ede640">
+<div id="outline-container-orgf861d60" class="outline-2">
+<h2 id="orgf861d60">扫描主机</h2>
+<div class="outline-text-2" id="text-orgf861d60">
 </div>
-<div id="outline-container-org386269f" class="outline-3">
-<h3 id="org386269f">扫描单个主机</h3>
-<div class="outline-text-3" id="text-org386269f">
+<div id="outline-container-org4ab4f8c" class="outline-3">
+<h3 id="org4ab4f8c">扫描单个主机</h3>
+<div class="outline-text-3" id="text-org4ab4f8c">
 <p>
 nmap最简单的用法莫过于直接用它来扫描某个主机了
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap 14.120.7.52
+<pre class="src src-shell">nmap <span style="color: #a45bad;">14.120.7.52</span>
 </pre>
 </div>
 
@@ -111,76 +111,76 @@ nmap最简单的用法莫过于直接用它来扫描某个主机了
 </div>
 </div>
 
-<div id="outline-container-org5499c95" class="outline-3">
-<h3 id="org5499c95">扫描多个主机</h3>
-<div class="outline-text-3" id="text-org5499c95">
+<div id="outline-container-org43e40f9" class="outline-3">
+<h3 id="org43e40f9">扫描多个主机</h3>
+<div class="outline-text-3" id="text-org43e40f9">
 <p>
 你也可以让nmap一次性扫描多个台主机
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap 14.120.7.52 14.120.3.84
+<pre class="src src-shell">nmap <span style="color: #a45bad;">14.120.7.52</span> <span style="color: #a45bad;">14.120.3.84</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga33feb8" class="outline-3">
-<h3 id="orga33feb8">扫描一个范围的主机</h3>
-<div class="outline-text-3" id="text-orga33feb8">
+<div id="outline-container-org8052f9c" class="outline-3">
+<h3 id="org8052f9c">扫描一个范围的主机</h3>
+<div class="outline-text-3" id="text-org8052f9c">
 <p>
 可以用 <code>-</code> 来指定一个主机范围
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap 14.120.7.52-70
+<pre class="src src-shell">nmap <span style="color: #a45bad;">14.120.7.52-70</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org79270da" class="outline-3">
-<h3 id="org79270da">扫描一个子网</h3>
-<div class="outline-text-3" id="text-org79270da">
+<div id="outline-container-org12766c4" class="outline-3">
+<h3 id="org12766c4">扫描一个子网</h3>
+<div class="outline-text-3" id="text-org12766c4">
 <p>
 我们还能直接指定一个子网
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap 14.120.7.0/24
+<pre class="src src-shell">nmap <span style="color: #a45bad;">14.120.7.0/24</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org60f6337" class="outline-3">
-<h3 id="org60f6337">从文件中读取要扫描的IP地址</h3>
-<div class="outline-text-3" id="text-org60f6337">
+<div id="outline-container-org079900d" class="outline-3">
+<h3 id="org079900d">从文件中读取要扫描的IP地址</h3>
+<div class="outline-text-3" id="text-org079900d">
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a0522d;">file</span>=$(<span style="color: #ff00ff;">mktemp</span>)
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"14.120.16.124"</span> &gt; ${<span style="color: #a0522d;">file</span>}
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"14.120.25.246"</span> &gt;&gt; ${<span style="color: #a0522d;">file</span>}
-nmap -iL ${<span style="color: #a0522d;">file</span>}
+<pre class="src src-shell"><span style="color: #7590db;">file</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">mktemp</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"14.120.16.124"</span> &gt; $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"14.120.25.246"</span> &gt;&gt; $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
+nmap -iL $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcc99d21" class="outline-2">
-<h2 id="orgcc99d21">扫描端口</h2>
-<div class="outline-text-2" id="text-orgcc99d21">
+<div id="outline-container-org9efb219" class="outline-2">
+<h2 id="org9efb219">扫描端口</h2>
+<div class="outline-text-2" id="text-org9efb219">
 <p>
 通过 <code>-p</code> 参数可以指定扫描主机的哪些端口
 </p>
 </div>
-<div id="outline-container-org88408a1" class="outline-3">
-<h3 id="org88408a1">扫描单个端口</h3>
-<div class="outline-text-3" id="text-org88408a1">
+<div id="outline-container-orgedcaca1" class="outline-3">
+<h3 id="orgedcaca1">扫描单个端口</h3>
+<div class="outline-text-3" id="text-orgedcaca1">
 <div class="org-src-container">
-<pre class="src src-shell">nmap -p 22 14.120.25.246
+<pre class="src src-shell">nmap -p <span style="color: #a45bad;">22</span> <span style="color: #a45bad;">14.120.25.246</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org5ed1d12" class="outline-3">
-<h3 id="org5ed1d12">也可以扫描一个范围的端口</h3>
-<div class="outline-text-3" id="text-org5ed1d12">
+<div id="outline-container-org0e0dcec" class="outline-3">
+<h3 id="org0e0dcec">也可以扫描一个范围的端口</h3>
+<div class="outline-text-3" id="text-org0e0dcec">
 <div class="org-src-container">
-<pre class="src src-shell">nmap -p 22-1024 14.120.25.246
+<pre class="src src-shell">nmap -p <span style="color: #a45bad;">22-1024</span> <span style="color: #a45bad;">14.120.25.246</span>
 </pre>
 </div>
 
@@ -188,17 +188,17 @@ nmap -iL ${<span style="color: #a0522d;">file</span>}
 扫描范围时，也可以省略端口下限和上限
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">set</span> -x &amp;&amp; <span style="color: #a020f0;">exec</span> 2&gt;&amp;1
-nmap -p -2000 14.120.25.246
-nmap -p 2000- 14.120.25.246
-nmap -p - 14.120.25.246
+<pre class="src src-shell"><span style="color: #4f97d7;">set</span> -x &amp;&amp; <span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span>
+nmap -p -2000 <span style="color: #a45bad;">14.120.25.246</span>
+nmap -p <span style="color: #a45bad;">2000-</span> <span style="color: #a45bad;">14.120.25.246</span>
+nmap -p - <span style="color: #a45bad;">14.120.25.246</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgea97515" class="outline-3">
-<h3 id="orgea97515">执行快速扫描</h3>
-<div class="outline-text-3" id="text-orgea97515">
+<div id="outline-container-org5b4b2f5" class="outline-3">
+<h3 id="org5b4b2f5">执行快速扫描</h3>
+<div class="outline-text-3" id="text-org5b4b2f5">
 <p>
 <code>-F</code> 参数执行快速扫描，所谓快速扫描会扫描最常用的100个端口
 </p>
@@ -208,9 +208,9 @@ nmap -p - 14.120.25.246
 </div>
 </div>
 </div>
-<div id="outline-container-orga02d50f" class="outline-3">
-<h3 id="orga02d50f">设置扫描协议</h3>
-<div class="outline-text-3" id="text-orga02d50f">
+<div id="outline-container-org3da64d5" class="outline-3">
+<h3 id="org3da64d5">设置扫描协议</h3>
+<div class="outline-text-3" id="text-org3da64d5">
 <p>
 通过 <code>-sT</code> 和 <code>-sU</code> 参数可以指定扫描TCP端口或是UDP端口.
 </p>
@@ -234,48 +234,48 @@ nmap -p - 14.120.25.246
 </div>
 </div>
 
-<div id="outline-container-org597da61" class="outline-2">
-<h2 id="org597da61">Ping设备</h2>
-<div class="outline-text-2" id="text-org597da61">
+<div id="outline-container-org2468b96" class="outline-2">
+<h2 id="org2468b96">Ping设备</h2>
+<div class="outline-text-2" id="text-org2468b96">
 <p>
 判断设备是否在线，可以使用 <code>sP</code> 参数来ping该设备
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap -sP 14.120.25.0/24
+<pre class="src src-shell">nmap -sP <span style="color: #a45bad;">14.120.25.0/24</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org76b42b2" class="outline-2">
-<h2 id="org76b42b2">扫描操作系统</h2>
-<div class="outline-text-2" id="text-org76b42b2">
+<div id="outline-container-orgc12ee2f" class="outline-2">
+<h2 id="orgc12ee2f">扫描操作系统</h2>
+<div class="outline-text-2" id="text-orgc12ee2f">
 <p>
 通过 <code>-O</code> 参数可以让nmap尝试猜测主机的操作系统
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo nmap -O 14.120.25.246
+<pre class="src src-shell">sudo nmap -O <span style="color: #a45bad;">14.120.25.246</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0a4415e" class="outline-2">
-<h2 id="org0a4415e">扫描主机提供的服务</h2>
-<div class="outline-text-2" id="text-org0a4415e">
+<div id="outline-container-org93589c7" class="outline-2">
+<h2 id="org93589c7">扫描主机提供的服务</h2>
+<div class="outline-text-2" id="text-org93589c7">
 <p>
 通过 <code>-A</code> 参数可以扫描主机操作系统和所启用的服务
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap -A 14.120.25.246
+<pre class="src src-shell">nmap -A <span style="color: #a45bad;">14.120.25.246</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org21b81f8" class="outline-2">
-<h2 id="org21b81f8">输出结果到文件中</h2>
-<div class="outline-text-2" id="text-org21b81f8">
+<div id="outline-container-org3b5ef47" class="outline-2">
+<h2 id="org3b5ef47">输出结果到文件中</h2>
+<div class="outline-text-2" id="text-org3b5ef47">
 <p>
 可以通过 <code>-o</code> 选项来将扫描结果存入文件中，nmap允许将结果以多种格式的方式存储，最常见的有普通模式和XML模式
 </p>
@@ -284,7 +284,7 @@ nmap -p - 14.120.25.246
 将结果以普通格式存入文件中:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">set</span> -x &amp;&amp; <span style="color: #a020f0;">exec</span> 2&gt;&amp;1
+<pre class="src src-shell"><span style="color: #4f97d7;">set</span> -x &amp;&amp; <span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span>
 nmap -oN /tmp/output.txt localhost
 cat /tmp/output.txt
 </pre>
@@ -295,7 +295,7 @@ cat /tmp/output.txt
 将结果以XML格式存入文件中:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">set</span> -x &amp;&amp; <span style="color: #a020f0;">exec</span> 2&gt;&amp;1
+<pre class="src src-shell"><span style="color: #4f97d7;">set</span> -x &amp;&amp; <span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span>
 nmap -oX /tmp/output.xml localhost
 cat /tmp/output.xml
 </pre>

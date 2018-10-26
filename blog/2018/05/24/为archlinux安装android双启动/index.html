@@ -76,7 +76,7 @@ rpmextract会把rpm中的内容解压到当前目录，解压出来的目录结�
 解压下载下来的android rpm文件
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">cd</span> /
+<pre class="src src-shell"><span style="color: #4f97d7;">cd</span> /
 sudo rpmextract.sh ~lujun9972/android/android-x86-7.1-r2.i686.rpm
 </pre>
 </div></li>
@@ -85,9 +85,9 @@ sudo rpmextract.sh ~lujun9972/android/android-x86-7.1-r2.i686.rpm
 往 <code>/etc/grub.d/40_custom</code> 中添加如下内容
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #228b22;">menuentry </span><span style="color: #228b22;">"Android 7.1-r2"</span> {
-<span style="color: #a0522d;">search --set</span>=root --file /android-7.1-r2/kernel
-<span style="color: #a0522d;">linux /android-7.1-r2/kernel quiet root</span>=/dev/ram0 androidboot.selinux=permissive
+<pre class="src src-conf"><span style="color: #ce537a; font-weight: bold;">menuentry </span><span style="color: #ce537a; font-weight: bold;">"Android 7.1-r2"</span> {
+<span style="color: #7590db;">search --set</span>=root --file /android-7.1-r2/kernel
+<span style="color: #7590db;">linux /android-7.1-r2/kernel quiet root</span>=/dev/ram0 androidboot.selinux=permissive
 initrd /android-7.1-r2/initrd.img
 }
 </pre>
@@ -97,13 +97,13 @@ initrd /android-7.1-r2/initrd.img
 可以通过执行下面脚本来添加
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">cat &gt;&gt;/etc/grub.d/40_custom &lt;&lt;<span style="color: #8b2252;">'EOF'</span>
-<span style="color: #ffa54f;">menuentry "Android 7.1-r2" {</span>
-<span style="color: #ffa54f;">search --set=root --file /android-7.1-r2/kernel</span>
-<span style="color: #ffa54f;">linux /android-7.1-r2/kernel quiet root=/dev/ram0 androidboot.selinux=permissive</span>
-<span style="color: #ffa54f;">initrd /android-7.1-r2/initrd.img</span>
-<span style="color: #ffa54f;">}</span>
-<span style="color: #ffa54f;">EOF</span>
+<pre class="src src-shell">cat &gt;&gt;/etc/grub.d/40_custom &lt;&lt;<span style="color: #2d9574;">'EOF'</span>
+<span style="color: #ffff00; font-weight: bold;">menuentry "Android 7.1-r2" {</span>
+<span style="color: #ffff00; font-weight: bold;">search --set=root --file /android-7.1-r2/kernel</span>
+<span style="color: #ffff00; font-weight: bold;">linux /android-7.1-r2/kernel quiet root=/dev/ram0 androidboot.selinux=permissive</span>
+<span style="color: #ffff00; font-weight: bold;">initrd /android-7.1-r2/initrd.img</span>
+<span style="color: #ffff00; font-weight: bold;">}</span>
+<span style="color: #ffff00; font-weight: bold;">EOF</span>
 </pre>
 </div></li>
 

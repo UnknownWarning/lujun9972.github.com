@@ -131,8 +131,8 @@
 如果要进入Emacs图像界面也很简单，让容器共享主机的XServer就好了，具体方法如下：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">xhost +local:                         <span style="color: #b22222;"># </span><span style="color: #b22222;">&#20801;&#35768;&#26412;&#22320;&#35775;&#38382;Xserver</span>
-docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs:master <span style="color: #b22222;"># </span><span style="color: #b22222;">&#20849;&#20139;&#20027;&#26426;&#30340;Xserver</span>
+<pre class="src src-shell">xhost +local:                         <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#20801;&#35768;&#26412;&#22320;&#35775;&#38382;Xserver</span>
+docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs:master <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#20849;&#20139;&#20027;&#26426;&#30340;Xserver</span>
 </pre>
 </div>
 

@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5566f51">症状</a></li>
-<li><a href="#org8a7358f">排查过程</a></li>
-<li><a href="#org3c6c42d">另一种解决方法</a></li>
+<li><a href="#orgeb96f42">症状</a></li>
+<li><a href="#org39cb927">排查过程</a></li>
+<li><a href="#orgd252090">另一种解决方法</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5566f51" class="outline-2">
-<h2 id="org5566f51">症状</h2>
-<div class="outline-text-2" id="text-org5566f51">
+<div id="outline-container-orgeb96f42" class="outline-2">
+<h2 id="orgeb96f42">症状</h2>
+<div class="outline-text-2" id="text-orgeb96f42">
 <p>
 某一次在对OrangePiPC2进行系统升级后，提示内核已更新，需要进行重启。
 </p>
@@ -74,9 +74,9 @@
 </div>
 </div>
 
-<div id="outline-container-org8a7358f" class="outline-2">
-<h2 id="org8a7358f">排查过程</h2>
-<div class="outline-text-2" id="text-org8a7358f">
+<div id="outline-container-org39cb927" class="outline-2">
+<h2 id="org39cb927">排查过程</h2>
+<div class="outline-text-2" id="text-org39cb927">
 <ol class="org-ol">
 <li><p>
 怀疑是不是音量被调成0了，因此运行 <code>alsamixer</code>,发现提示 <code>This sound device does not have any controls.</code>
@@ -119,8 +119,8 @@
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">cat /proc/asound/cards
-<span style="color: #483d8b;">echo</span> &#25110;&#32773;
-aplay -l | awk -F <span style="color: #8b2252;">\:</span> <span style="color: #8b2252;">'/,/{print $2}'</span> | awk <span style="color: #8b2252;">'{print $1}'</span> | uniq
+<span style="color: #4f97d7;">echo</span> &#25110;&#32773;
+aplay -l | awk -F <span style="color: #2d9574;">\:</span> <span style="color: #2d9574;">'/,/{print $2}'</span> | awk <span style="color: #2d9574;">'{print $1}'</span> | uniq
 </pre>
 </div>
 
@@ -139,12 +139,12 @@ Codec
 可以看到我想要的默认声卡名为 <code>Codec</code>,其编号为1,那么创建文件 <code>/etc/asound.conf</code> 填入下面内容
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #228b22;">pcm.!default</span> {
+<pre class="src src-conf"><span style="color: #ce537a; font-weight: bold;">pcm.!default</span> {
     type hw
     card 1
 }
 
-<span style="color: #228b22;">ctl.!default</span> {
+<span style="color: #ce537a; font-weight: bold;">ctl.!default</span> {
     type hw           
     card 1
 }
@@ -159,9 +159,9 @@ Codec
 </div>
 </div>
 
-<div id="outline-container-org3c6c42d" class="outline-2">
-<h2 id="org3c6c42d">另一种解决方法</h2>
-<div class="outline-text-2" id="text-org3c6c42d">
+<div id="outline-container-orgd252090" class="outline-2">
+<h2 id="orgd252090">另一种解决方法</h2>
+<div class="outline-text-2" id="text-orgd252090">
 <p>
 其实还有另一种解决方法就是控制声卡module的载入顺序，让 <code>H3 Audio Codec</code> 声卡成为第一顺位的声卡就行了. 方法如下:
 </p>
@@ -199,8 +199,8 @@ snd_timer              32768  1 snd_pcm
 创建 <code>/etc/modprobe.d/alsa-base.conf</code> 文件，填入下面内容
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #a0522d;">options snd_soc_hdmi_codec index</span>=-1
-<span style="color: #a0522d;">options snd_soc_simple_card index</span>=-2
+<pre class="src src-conf"><span style="color: #7590db;">options snd_soc_hdmi_codec index</span>=-1
+<span style="color: #7590db;">options snd_soc_simple_card index</span>=-2
 </pre>
 </div></li>
 </ol>

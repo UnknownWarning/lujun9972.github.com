@@ -54,9 +54,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org52d9f39">安装partclone</a></li>
-<li><a href="#orgb5801f4">备份磁盘分区</a></li>
-<li><a href="#orgf2196df">从备份还原</a></li>
+<li><a href="#orgee49ecd">安装partclone</a></li>
+<li><a href="#org869eb8e">备份磁盘分区</a></li>
+<li><a href="#orgf84ee52">从备份还原</a></li>
 </ul>
 </div>
 </div>
@@ -81,9 +81,9 @@ partclone 跟 <code>dd</code> 类似，也是一款 <code>block level</code> 的
 对于不支持的文件系统， <code>partclone</code> 也提供了 <code>partclone.dd</code> 来备份。
 </p>
 
-<div id="outline-container-org52d9f39" class="outline-2">
-<h2 id="org52d9f39">安装partclone</h2>
-<div class="outline-text-2" id="text-org52d9f39">
+<div id="outline-container-orgee49ecd" class="outline-2">
+<h2 id="orgee49ecd">安装partclone</h2>
+<div class="outline-text-2" id="text-orgee49ecd">
 <p>
 archlinux上可以直接使用pacman来安装：
 </p>
@@ -94,9 +94,9 @@ archlinux上可以直接使用pacman来安装：
 </div>
 </div>
 
-<div id="outline-container-orgb5801f4" class="outline-2">
-<h2 id="orgb5801f4">备份磁盘分区</h2>
-<div class="outline-text-2" id="text-orgb5801f4">
+<div id="outline-container-org869eb8e" class="outline-2">
+<h2 id="org869eb8e">备份磁盘分区</h2>
+<div class="outline-text-2" id="text-org869eb8e">
 <p>
 在备份磁盘分区之前，请先确保被备份的分区需要先卸载。不过如果你是用的 <code>lvm</code> ，那么可以创建一个逻辑卷的 live snapshot,因此可以不受此限制。
 </p>
@@ -136,7 +136,7 @@ archlinux上可以直接使用pacman来安装：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">sudo bash -c <span style="color: #8b2252;">"partclone.ext4 -c -s /dev/sdb1 |gzip -c -9 &gt;/mnt/orangepilite.pcl.gz"</span>
+<pre class="src src-shell">sudo bash -c <span style="color: #2d9574;">"partclone.ext4 -c -s /dev/sdb1 |gzip -c -9 &gt;/mnt/orangepilite.pcl.gz"</span>
 </pre>
 </div>
 
@@ -164,9 +164,9 @@ archlinux上可以直接使用pacman来安装：
 </div>
 </div>
 
-<div id="outline-container-orgf2196df" class="outline-2">
-<h2 id="orgf2196df">从备份还原</h2>
-<div class="outline-text-2" id="text-orgf2196df">
+<div id="outline-container-orgf84ee52" class="outline-2">
+<h2 id="orgf84ee52">从备份还原</h2>
+<div class="outline-text-2" id="text-orgf84ee52">
 <p>
 从备份还原很简单
 </p>
@@ -183,7 +183,7 @@ archlinux上可以直接使用pacman来安装：
 若备份的是压缩过的文件，则只需要运行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo bash -c <span style="color: #8b2252;">"gzip -c -d /mnt/orangepilite.pcl.gz | partclone.ext4 -r -o /dev/sdb1"</span>
+<pre class="src src-shell">sudo bash -c <span style="color: #2d9574;">"gzip -c -d /mnt/orangepilite.pcl.gz | partclone.ext4 -r -o /dev/sdb1"</span>
 </pre>
 </div>
 </div>

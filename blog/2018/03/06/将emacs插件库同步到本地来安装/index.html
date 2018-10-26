@@ -71,11 +71,11 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> package-archives
-      '((<span style="color: #8b2252;">"melpa-cn"</span> . <span style="color: #8b2252;">"/media/emacs_plugins/melpa/"</span>)
-        (<span style="color: #8b2252;">"org-cn"</span>   . <span style="color: #8b2252;">"/media/emacs_plugins/org/"</span>)
-        (<span style="color: #8b2252;">"gnu-cn"</span>   . <span style="color: #8b2252;">"/media/emacs_plugins/gnu/"</span>)
-        (<span style="color: #8b2252;">"marmalade-cn"</span>   . <span style="color: #8b2252;">"/media/emacs_plugins//marmalade/"</span>)))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> package-archives
+      '<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span><span style="color: #2d9574;">"melpa-cn"</span> . <span style="color: #2d9574;">"/media/emacs_plugins/melpa/"</span><span style="color: #2d9574;">)</span>
+        <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"org-cn"</span>   . <span style="color: #2d9574;">"/media/emacs_plugins/org/"</span><span style="color: #2d9574;">)</span>
+        <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"gnu-cn"</span>   . <span style="color: #2d9574;">"/media/emacs_plugins/gnu/"</span><span style="color: #2d9574;">)</span>
+        <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"marmalade-cn"</span>   . <span style="color: #2d9574;">"/media/emacs_plugins//marmalade/"</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -84,11 +84,11 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> configuration-layer--elpa-archives
-      '((<span style="color: #8b2252;">"melpa-cn"</span> . <span style="color: #8b2252;">"/media/emacs_plugins/melpa/"</span>)
-        (<span style="color: #8b2252;">"org-cn"</span>   . <span style="color: #8b2252;">"/media/emacs_plugins/org/"</span>)
-        (<span style="color: #8b2252;">"gnu-cn"</span>   . <span style="color: #8b2252;">"/media/emacs_plugins/gnu/"</span>)
-        (<span style="color: #8b2252;">"marmalade-cn"</span>   . <span style="color: #8b2252;">"/media/emacs_plugins//marmalade/"</span>)))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> configuration-layer--elpa-archives
+      '<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span><span style="color: #2d9574;">"melpa-cn"</span> . <span style="color: #2d9574;">"/media/emacs_plugins/melpa/"</span><span style="color: #2d9574;">)</span>
+        <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"org-cn"</span>   . <span style="color: #2d9574;">"/media/emacs_plugins/org/"</span><span style="color: #2d9574;">)</span>
+        <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"gnu-cn"</span>   . <span style="color: #2d9574;">"/media/emacs_plugins/gnu/"</span><span style="color: #2d9574;">)</span>
+        <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"marmalade-cn"</span>   . <span style="color: #2d9574;">"/media/emacs_plugins//marmalade/"</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -104,19 +104,19 @@
 在 <code>/etc/systemd/system/</code> 目录下创建一个 <code>rsync_emacs_china.service</code> 文件
 </p>
 <div class="org-src-container">
-<pre class="src src-conf">[<span style="color: #228b22;">Unit</span>]
-<span style="color: #a0522d;">Description</span>=Sync emacs-china elpa repos with rsync
-<span style="color: #a0522d;">Documentation</span>=http://elpa.emacs-china.org/
-<span style="color: #a0522d;">After</span>=network.target
+<pre class="src src-conf">[<span style="color: #ce537a; font-weight: bold;">Unit</span>]
+<span style="color: #7590db;">Description</span>=Sync emacs-china elpa repos with rsync
+<span style="color: #7590db;">Documentation</span>=http://elpa.emacs-china.org/
+<span style="color: #7590db;">After</span>=network.target
 
-[<span style="color: #228b22;">Service</span>]
-<span style="color: #a0522d;">Type</span>=simple
-<span style="color: #a0522d;">TimeoutStartSec</span>=infinity
-<span style="color: #a0522d;">User</span>=root
-<span style="color: #a0522d;">Group</span>=root
-<span style="color: #a0522d;">WorkingDirectory</span>=/root
-<span style="color: #a0522d;">ExecStartPre</span>=/usr/bin/mkdir -p /media/emacs_plugins
-<span style="color: #a0522d;">ExecStart</span>=/usr/bin/rsync -avz rsync://elpa.emacs-china.org/elpa /media/emacs_plugins
+[<span style="color: #ce537a; font-weight: bold;">Service</span>]
+<span style="color: #7590db;">Type</span>=simple
+<span style="color: #7590db;">TimeoutStartSec</span>=infinity
+<span style="color: #7590db;">User</span>=root
+<span style="color: #7590db;">Group</span>=root
+<span style="color: #7590db;">WorkingDirectory</span>=/root
+<span style="color: #7590db;">ExecStartPre</span>=/usr/bin/mkdir -p /media/emacs_plugins
+<span style="color: #7590db;">ExecStart</span>=/usr/bin/rsync -avz rsync://elpa.emacs-china.org/elpa /media/emacs_plugins
 </pre>
 </div>
 
@@ -124,17 +124,17 @@
 然后在 <code>/etc/systemd/system/</code> 目录下创建一个 <code>rsync_emacs_china.timer</code> 文件
 </p>
 <div class="org-src-container">
-<pre class="src src-conf">[<span style="color: #228b22;">Unit</span>]
-<span style="color: #a0522d;">Description</span>=Sync emacs-china elpa repos with rsync every 30 mins
-<span style="color: #a0522d;">Documentation</span>=http://elpa.emacs-china.org/
+<pre class="src src-conf">[<span style="color: #ce537a; font-weight: bold;">Unit</span>]
+<span style="color: #7590db;">Description</span>=Sync emacs-china elpa repos with rsync every 30 mins
+<span style="color: #7590db;">Documentation</span>=http://elpa.emacs-china.org/
 
-[<span style="color: #228b22;">Timer</span>]
-<span style="color: #a0522d;">OnBootSec</span>=15min
-<span style="color: #a0522d;">OnUnitInactiveSec</span>=30min
-<span style="color: #a0522d;">Unit</span>=rsync_emacs_china.service
+[<span style="color: #ce537a; font-weight: bold;">Timer</span>]
+<span style="color: #7590db;">OnBootSec</span>=15min
+<span style="color: #7590db;">OnUnitInactiveSec</span>=30min
+<span style="color: #7590db;">Unit</span>=rsync_emacs_china.service
 
-[<span style="color: #228b22;">Install</span>]
-<span style="color: #a0522d;">WantedBy</span>=multi-user.target
+[<span style="color: #ce537a; font-weight: bold;">Install</span>]
+<span style="color: #7590db;">WantedBy</span>=multi-user.target
 </pre>
 </div>
 

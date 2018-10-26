@@ -53,38 +53,38 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org656c0b1">1. 安装Stack Exchange for Emacs</a></li>
-<li><a href="#orgf194cf7">2. 使用</a>
+<li><a href="#orgd315870">1. 安装Stack Exchange for Emacs</a></li>
+<li><a href="#org918ea1c">2. 使用</a>
 <ul>
-<li><a href="#org8ecc6aa">2.1. 授权</a></li>
-<li><a href="#org39b4434">2.2. 查看问题</a></li>
-<li><a href="#orgc478afd">2.3. sx-question-list-mode</a></li>
+<li><a href="#org88c3e0a">2.1. 授权</a></li>
+<li><a href="#org96f7b1d">2.2. 查看问题</a></li>
+<li><a href="#org02c1818">2.3. sx-question-list-mode</a></li>
 </ul>
 </li>
-<li><a href="#org25762b4">3. provide feature</a></li>
+<li><a href="#org29be720">3. provide feature</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org656c0b1" class="outline-2">
-<h2 id="org656c0b1"><span class="section-number-2">1</span> 安装Stack Exchange for Emacs</h2>
+<div id="outline-container-orgd315870" class="outline-2">
+<h2 id="orgd315870"><span class="section-number-2">1</span> 安装Stack Exchange for Emacs</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 SX使得可以在Emacs中直接访问StackExchange系列网站
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(package-install-new 'sx)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>package-install-new 'sx<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf194cf7" class="outline-2">
-<h2 id="orgf194cf7"><span class="section-number-2">2</span> 使用</h2>
+<div id="outline-container-org918ea1c" class="outline-2">
+<h2 id="org918ea1c"><span class="section-number-2">2</span> 使用</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org8ecc6aa" class="outline-3">
-<h3 id="org8ecc6aa"><span class="section-number-3">2.1</span> 授权</h3>
+<div id="outline-container-org88c3e0a" class="outline-3">
+<h3 id="org88c3e0a"><span class="section-number-3">2.1</span> 授权</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 若要开放提问,回答,评论,投票功能,则需要使用`sx-authenticate'命令先对SX进行授权.
@@ -96,8 +96,8 @@ SX使得可以在Emacs中直接访问StackExchange系列网站
 </div>
 </div>
 
-<div id="outline-container-org39b4434" class="outline-3">
-<h3 id="org39b4434"><span class="section-number-3">2.2</span> 查看问题</h3>
+<div id="outline-container-org96f7b1d" class="outline-3">
+<h3 id="org96f7b1d"><span class="section-number-3">2.2</span> 查看问题</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 使用`sx-tab-xxx'系列命令来查看问题. 这些命令的功能相当于你点击官方网站上的xxx tab. 
@@ -116,8 +116,8 @@ SX使得可以在Emacs中直接访问StackExchange系列网站
 </div>
 </div>
 
-<div id="outline-container-orgc478afd" class="outline-3">
-<h3 id="orgc478afd"><span class="section-number-3">2.3</span> sx-question-list-mode</h3>
+<div id="outline-container-org02c1818" class="outline-3">
+<h3 id="org02c1818"><span class="section-number-3">2.3</span> sx-question-list-mode</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 `sx-tab-xxx'系列命令会列出一系列的问题,并进入`sx-question-list-mode'. 在这里可以进行以下操作:
@@ -142,11 +142,11 @@ SX使得可以在Emacs中直接访问StackExchange系列网站
 </div>
 </div>
 </div>
-<div id="outline-container-org25762b4" class="outline-2">
-<h2 id="org25762b4"><span class="section-number-2">3</span> provide feature</h2>
+<div id="outline-container-org29be720" class="outline-2">
+<h2 id="org29be720"><span class="section-number-2">3</span> provide feature</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">provide</span> '<span style="color: #008b8b;">init-life-internet-sx</span>)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">provide</span> '<span style="color: #a45bad;">init-life-internet-sx</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>

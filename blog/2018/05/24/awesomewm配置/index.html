@@ -54,54 +54,54 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org051f1c3">配置文件所在路径</a></li>
-<li><a href="#org4c10790">更改主题</a>
+<li><a href="#org3d90dd2">配置文件所在路径</a></li>
+<li><a href="#orgb7215c0">更改主题</a>
 <ul>
-<li><a href="#orgf6077ef">更改背景图片</a></li>
+<li><a href="#org20f4b5c">更改背景图片</a></li>
 </ul>
 </li>
-<li><a href="#org62f89d4">设置可用的layout</a></li>
-<li><a href="#org94b61db">设置tags</a></li>
-<li><a href="#org6d639bf">我的配置说明</a>
+<li><a href="#org7a56f53">设置可用的layout</a></li>
+<li><a href="#org2ff731b">设置tags</a></li>
+<li><a href="#org0da2fb5">我的配置说明</a>
 <ul>
-<li><a href="#orgdd66026">加载Awesome API library</a></li>
-<li><a href="#org4e316c4">自定义一些函数</a></li>
-<li><a href="#orga6ee4d1">错误处理</a></li>
-<li><a href="#org9b8d447">加载主题</a></li>
-<li><a href="#org7594cd7">定义一些变量</a></li>
-<li><a href="#org2daa5ab">Menu</a></li>
-<li><a href="#org1444c62">Wibar</a>
+<li><a href="#org16291e5">加载Awesome API library</a></li>
+<li><a href="#org6471d96">自定义一些函数</a></li>
+<li><a href="#org4c3ea9a">错误处理</a></li>
+<li><a href="#org784984c">加载主题</a></li>
+<li><a href="#orgfd778c9">定义一些变量</a></li>
+<li><a href="#orgfbfacce">Menu</a></li>
+<li><a href="#orge784450">Wibar</a>
 <ul>
-<li><a href="#org407ec0d">定义点击tag的行为</a></li>
-<li><a href="#orgbd4c70f">定义点击任务栏的行为</a></li>
-<li><a href="#org6459d2a">当屏幕发生改变时，重新设置壁纸</a></li>
-<li><a href="#org5fa43bc">设置屏幕布局</a></li>
+<li><a href="#orgbece02f">定义点击tag的行为</a></li>
+<li><a href="#orgde08819">定义点击任务栏的行为</a></li>
+<li><a href="#org8d5a82d">当屏幕发生改变时，重新设置壁纸</a></li>
+<li><a href="#org62a28fa">设置屏幕布局</a></li>
 </ul>
 </li>
-<li><a href="#orgbfa3d1f">设置鼠标操作</a>
+<li><a href="#org36f7cbc">设置鼠标操作</a>
 <ul>
-<li><a href="#orgfd4179d">设置全局鼠标操作</a></li>
-<li><a href="#org98aa869">设置client鼠标操作</a></li>
+<li><a href="#org01b34b4">设置全局鼠标操作</a></li>
+<li><a href="#org6e1cb3d">设置client鼠标操作</a></li>
 </ul>
 </li>
-<li><a href="#org2711169">设置快捷键</a>
+<li><a href="#orgbc129f9">设置快捷键</a>
 <ul>
-<li><a href="#org831246e">设置全局快捷</a></li>
-<li><a href="#org68ff89b">设置client快捷键</a></li>
+<li><a href="#org19179b0">设置全局快捷</a></li>
+<li><a href="#org9370ea6">设置client快捷键</a></li>
 </ul>
 </li>
-<li><a href="#orgee72a7c">Rules</a></li>
-<li><a href="#orgbcf8129">Signal</a></li>
-<li><a href="#org6680cd7">设置自启动程序</a></li>
+<li><a href="#orgbe8e7f5">Rules</a></li>
+<li><a href="#org3640167">Signal</a></li>
+<li><a href="#orgabf4ee1">设置自启动程序</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org051f1c3" class="outline-2">
-<h2 id="org051f1c3">配置文件所在路径</h2>
-<div class="outline-text-2" id="text-org051f1c3">
+<div id="outline-container-org3d90dd2" class="outline-2">
+<h2 id="org3d90dd2">配置文件所在路径</h2>
+<div class="outline-text-2" id="text-org3d90dd2">
 <p>
 用户定义的配置文件路径为 <code>~/.config/awesome/rc.lua</code>
 </p>
@@ -112,9 +112,9 @@
 </div>
 </div>
 
-<div id="outline-container-org4c10790" class="outline-2">
-<h2 id="org4c10790">更改主题</h2>
-<div class="outline-text-2" id="text-org4c10790">
+<div id="outline-container-orgb7215c0" class="outline-2">
+<h2 id="orgb7215c0">更改主题</h2>
+<div class="outline-text-2" id="text-orgb7215c0">
 <p>
 Awesome自带4个主题:default,sky,xresources和zenburn:
 </p>
@@ -135,33 +135,33 @@ zenburn
 使用 <code>beautiful.init(path/to/theme.lua)</code> 来设置主题
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">beautiful.init(gears.filesystem.get_dir(<span style="color: #8b2252;">"config"</span>) .. <span style="color: #8b2252;">"/themes/sky/theme.lua"</span>)
+<pre class="src src-lua">beautiful.init<span style="color: #4f97d7;">(</span>gears.filesystem.get_dir<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"config"</span><span style="color: #bc6ec5;">)</span> .. <span style="color: #2d9574;">"/themes/sky/theme.lua"</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgf6077ef" class="outline-3">
-<h3 id="orgf6077ef">更改背景图片</h3>
-<div class="outline-text-3" id="text-orgf6077ef">
+<div id="outline-container-org20f4b5c" class="outline-3">
+<h3 id="org20f4b5c">更改背景图片</h3>
+<div class="outline-text-3" id="text-org20f4b5c">
 <p>
 在theme文件中找到并修改 <code>beautiful.get().wallpaper</code> 的值
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">beautiful.get().wallpaper = <span style="color: #8b2252;">"/usr/share/awesome/themes/default/background.png"</span>
+<pre class="src src-lua">beautiful.get<span style="color: #4f97d7;">()</span>.wallpaper = <span style="color: #2d9574;">"/usr/share/awesome/themes/default/background.png"</span>
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org62f89d4" class="outline-2">
-<h2 id="org62f89d4">设置可用的layout</h2>
-<div class="outline-text-2" id="text-org62f89d4">
+<div id="outline-container-org7a56f53" class="outline-2">
+<h2 id="org7a56f53">设置可用的layout</h2>
+<div class="outline-text-2" id="text-org7a56f53">
 <p>
 <code>awful.layout.layouts</code> 中包含了所有可用的layout
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">awful.layout.layouts = {
+<pre class="src src-lua">awful.layout.layouts = <span style="color: #4f97d7;">{</span>
     awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
@@ -175,18 +175,18 @@ zenburn
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
     awful.layout.suit.corner.nw,
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">awful.layout.suit.corner.ne,</span>
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">awful.layout.suit.corner.sw,</span>
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">awful.layout.suit.corner.se,</span>
-}
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">awful.layout.suit.corner.ne,</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">awful.layout.suit.corner.sw,</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">awful.layout.suit.corner.se,</span>
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org94b61db" class="outline-2">
-<h2 id="org94b61db">设置tags</h2>
-<div class="outline-text-2" id="text-org94b61db">
+<div id="outline-container-org2ff731b" class="outline-2">
+<h2 id="org2ff731b">设置tags</h2>
+<div class="outline-text-2" id="text-org2ff731b">
 <p>
 通过 <code>awful.tag(names,s,layouts)</code> 可以设置各个tag的名称以及对应的layout
 </p>
@@ -200,23 +200,23 @@ zenburn
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Each screen has its own tag table.</span>
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">names</span> = { <span style="color: #8b2252;">"main"</span>, <span style="color: #8b2252;">"www"</span>, <span style="color: #8b2252;">"skype"</span>, <span style="color: #8b2252;">"gimp"</span>, <span style="color: #8b2252;">"office"</span>, <span style="color: #8b2252;">"im"</span>, <span style="color: #8b2252;">"7"</span>, <span style="color: #8b2252;">"8"</span>, <span style="color: #8b2252;">"9"</span> }
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">l</span> = awful.layout.suit  <span style="color: #b22222;">-- </span><span style="color: #b22222;">Just to save some typing: use an alias.</span>
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">layouts</span> = { l.floating, l.tile, l.floating, l.fair, l.max,
-    l.floating, l.tile.left, l.floating, l.floating }
-awful.tag(names, s, layouts)
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Each screen has its own tag table.</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">names</span> = <span style="color: #4f97d7;">{</span> <span style="color: #2d9574;">"main"</span>, <span style="color: #2d9574;">"www"</span>, <span style="color: #2d9574;">"skype"</span>, <span style="color: #2d9574;">"gimp"</span>, <span style="color: #2d9574;">"office"</span>, <span style="color: #2d9574;">"im"</span>, <span style="color: #2d9574;">"7"</span>, <span style="color: #2d9574;">"8"</span>, <span style="color: #2d9574;">"9"</span> <span style="color: #4f97d7;">}</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">l</span> = awful.layout.suit  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Just to save some typing: use an alias.</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">layouts</span> = <span style="color: #4f97d7;">{</span> l.floating, l.tile, l.floating, l.fair, l.max,
+    l.floating, l.tile.left, l.floating, l.floating <span style="color: #4f97d7;">}</span>
+awful.tag<span style="color: #4f97d7;">(</span>names, s, layouts<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org6d639bf" class="outline-2">
-<h2 id="org6d639bf">我的配置说明</h2>
-<div class="outline-text-2" id="text-org6d639bf">
+<div id="outline-container-org0da2fb5" class="outline-2">
+<h2 id="org0da2fb5">我的配置说明</h2>
+<div class="outline-text-2" id="text-org0da2fb5">
 </div>
-<div id="outline-container-orgdd66026" class="outline-3">
-<h3 id="orgdd66026">加载Awesome API library</h3>
-<div class="outline-text-3" id="text-orgdd66026">
+<div id="outline-container-org16291e5" class="outline-3">
+<h3 id="org16291e5">加载Awesome API library</h3>
+<div class="outline-text-3" id="text-org16291e5">
 <p>
 Awesome API分布在多个库中，需要一一加载才能用. 这些库包括:
 </p>
@@ -231,58 +231,58 @@ Awesome API分布在多个库中，需要一一加载才能用. 这些库包括:
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Standard awesome library</span>
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">gears</span> = <span style="color: #483d8b;">require</span>(<span style="color: #8b2252;">"gears"</span>)
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">awful</span> = <span style="color: #483d8b;">require</span>(<span style="color: #8b2252;">"awful"</span>)
-<span style="color: #483d8b;">require</span>(<span style="color: #8b2252;">"awful.autofocus"</span>)
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Widget and layout library</span>
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">wibox</span> = <span style="color: #483d8b;">require</span>(<span style="color: #8b2252;">"wibox"</span>)
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Theme handling library</span>
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">beautiful</span> = <span style="color: #483d8b;">require</span>(<span style="color: #8b2252;">"beautiful"</span>)
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Notification library</span>
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">naughty</span> = <span style="color: #483d8b;">require</span>(<span style="color: #8b2252;">"naughty"</span>)
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">menubar</span> = <span style="color: #483d8b;">require</span>(<span style="color: #8b2252;">"menubar"</span>)
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">hotkeys_popup</span> = <span style="color: #483d8b;">require</span>(<span style="color: #8b2252;">"awful.hotkeys_popup"</span>).widget
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Enable VIM help for hotkeys widget when client with matching name is opened:</span>
-<span style="color: #483d8b;">require</span>(<span style="color: #8b2252;">"awful.hotkeys_popup.keys.vim"</span>)
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Standard awesome library</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">gears</span> = <span style="color: #4f97d7;">require</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"gears"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">awful</span> = <span style="color: #4f97d7;">require</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"awful"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">require</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"awful.autofocus"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Widget and layout library</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">wibox</span> = <span style="color: #4f97d7;">require</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"wibox"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Theme handling library</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">beautiful</span> = <span style="color: #4f97d7;">require</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"beautiful"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Notification library</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">naughty</span> = <span style="color: #4f97d7;">require</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"naughty"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">menubar</span> = <span style="color: #4f97d7;">require</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"menubar"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">hotkeys_popup</span> = <span style="color: #4f97d7;">require</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"awful.hotkeys_popup"</span><span style="color: #4f97d7;">)</span>.widget
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Enable VIM help for hotkeys widget when client with matching name is opened:</span>
+<span style="color: #4f97d7;">require</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"awful.hotkeys_popup.keys.vim"</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4e316c4" class="outline-3">
-<h3 id="org4e316c4">自定义一些函数</h3>
-<div class="outline-text-3" id="text-org4e316c4">
+<div id="outline-container-org6471d96" class="outline-3">
+<h3 id="org6471d96">自定义一些函数</h3>
+<div class="outline-text-3" id="text-org6471d96">
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #a020f0;">function</span> <span style="color: #0000ff;">file_exist_p</span> (file)
-  <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">f</span> = <span style="color: #483d8b;">io</span>.<span style="color: #483d8b;">open</span>(file)
-  <span style="color: #a020f0;">if</span> f ~= <span style="color: #008b8b;">nil</span> <span style="color: #a020f0;">then</span>
-    <span style="color: #483d8b;">io</span>.<span style="color: #483d8b;">close</span>(f)
-    <span style="color: #a020f0;">return</span> <span style="color: #008b8b;">true</span>
-  <span style="color: #a020f0;">else</span>
-    <span style="color: #a020f0;">return</span> <span style="color: #008b8b;">false</span>
-  <span style="color: #a020f0;">end</span>
-<span style="color: #a020f0;">end</span>
+<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">file_exist_p</span> <span style="color: #4f97d7;">(</span>file<span style="color: #4f97d7;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">f</span> = <span style="color: #4f97d7;">io</span>.<span style="color: #4f97d7;">open</span><span style="color: #4f97d7;">(</span>file<span style="color: #4f97d7;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> f ~= <span style="color: #a45bad;">nil</span> <span style="color: #4f97d7; font-weight: bold;">then</span>
+    <span style="color: #4f97d7;">io</span>.<span style="color: #4f97d7;">close</span><span style="color: #4f97d7;">(</span>f<span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">true</span>
+  <span style="color: #4f97d7; font-weight: bold;">else</span>
+    <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">false</span>
+  <span style="color: #4f97d7; font-weight: bold;">end</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 
-<span style="color: #a020f0;">local</span> <span style="color: #a020f0;">function</span> <span style="color: #0000ff;">client_menu_toggle_fn</span>()
-  <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">instance</span> = <span style="color: #008b8b;">nil</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">client_menu_toggle_fn</span><span style="color: #4f97d7;">()</span>
+  <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">instance</span> = <span style="color: #a45bad;">nil</span>
 
-  <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">function</span> ()
-    <span style="color: #a020f0;">if</span> instance <span style="color: #a020f0;">and</span> instance.wibox.visible <span style="color: #a020f0;">then</span>
-      instance:hide()
-      instance = <span style="color: #008b8b;">nil</span>
-    <span style="color: #a020f0;">else</span>
-      instance = awful.menu.clients({ theme = { width = 250 } })
-    <span style="color: #a020f0;">end</span>
-  <span style="color: #a020f0;">end</span>
-<span style="color: #a020f0;">end</span>
+  <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #4f97d7;">()</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> instance <span style="color: #4f97d7; font-weight: bold;">and</span> instance.wibox.visible <span style="color: #4f97d7; font-weight: bold;">then</span>
+      instance:hide<span style="color: #4f97d7;">()</span>
+      instance = <span style="color: #a45bad;">nil</span>
+    <span style="color: #4f97d7; font-weight: bold;">else</span>
+      instance = awful.menu.clients<span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">{</span> theme = <span style="color: #2d9574;">{</span> width = <span style="color: #a45bad;">250</span> <span style="color: #2d9574;">}</span> <span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">end</span>
+  <span style="color: #4f97d7; font-weight: bold;">end</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga6ee4d1" class="outline-3">
-<h3 id="orga6ee4d1">错误处理</h3>
-<div class="outline-text-3" id="text-orga6ee4d1">
+<div id="outline-container-org4c3ea9a" class="outline-3">
+<h3 id="org4c3ea9a">错误处理</h3>
+<div class="outline-text-3" id="text-org4c3ea9a">
 <p>
 错误可能会有以下几类：
 </p>
@@ -297,13 +297,13 @@ Awesome API分布在多个库中，需要一一加载才能用. 这些库包括:
 <code>awesome.startup_errors</code> 中包含的是awesome启动期间的错误信息
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Check if awesome encountered an error during startup and fell back to</span>
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">another config (This code will only ever execute for the fallback config)</span>
-<span style="color: #a020f0;">if</span> awesome.startup_errors <span style="color: #a020f0;">then</span>
-    naughty.notify({ preset = naughty.config.presets.critical,
-                     title = <span style="color: #8b2252;">"Oops, there were errors during startup!"</span>,
-                     text = awesome.startup_errors })
-<span style="color: #a020f0;">end</span>
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Check if awesome encountered an error during startup and fell back to</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">another config (This code will only ever execute for the fallback config)</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> awesome.startup_errors <span style="color: #4f97d7; font-weight: bold;">then</span>
+    naughty.notify<span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">{</span> preset = naughty.config.presets.critical,
+                     title = <span style="color: #2d9574;">"Oops, there were errors during startup!"</span>,
+                     text = awesome.startup_errors <span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 </pre>
 </div>
 
@@ -316,27 +316,27 @@ Awesome API分布在多个库中，需要一一加载才能用. 这些库包括:
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Handle runtime errors after startup</span>
-<span style="color: #a020f0;">do</span>
-    <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">in_error</span> = <span style="color: #008b8b;">false</span>
-    awesome.connect_signal(<span style="color: #8b2252;">"debug::error"</span>, <span style="color: #a020f0;">function</span> (err)
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">Make sure we don't go into an endless error loop</span>
-        <span style="color: #a020f0;">if</span> in_error <span style="color: #a020f0;">then</span> <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">end</span>
-        in_error = <span style="color: #008b8b;">true</span>
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Handle runtime errors after startup</span>
+<span style="color: #4f97d7; font-weight: bold;">do</span>
+    <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">in_error</span> = <span style="color: #a45bad;">false</span>
+    awesome.connect_signal<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"debug::error"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5;">(</span>err<span style="color: #bc6ec5;">)</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Make sure we don't go into an endless error loop</span>
+        <span style="color: #4f97d7; font-weight: bold;">if</span> in_error <span style="color: #4f97d7; font-weight: bold;">then</span> <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7; font-weight: bold;">end</span>
+        in_error = <span style="color: #a45bad;">true</span>
 
-        naughty.notify({ preset = naughty.config.presets.critical,
-                         title = <span style="color: #8b2252;">"Oops, an error happened!"</span>,
-                         text = <span style="color: #483d8b;">tostring</span>(err) })
-        in_error = <span style="color: #008b8b;">false</span>
-    <span style="color: #a020f0;">end</span>)
-<span style="color: #a020f0;">end</span>
+        naughty.notify<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> preset = naughty.config.presets.critical,
+                         title = <span style="color: #2d9574;">"Oops, an error happened!"</span>,
+                         text = <span style="color: #4f97d7;">tostring</span><span style="color: #67b11d;">(</span>err<span style="color: #67b11d;">)</span> <span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>
+        in_error = <span style="color: #a45bad;">false</span>
+    <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org9b8d447" class="outline-3">
-<h3 id="org9b8d447">加载主题</h3>
-<div class="outline-text-3" id="text-org9b8d447">
+<div id="outline-container-org784984c" class="outline-3">
+<h3 id="org784984c">加载主题</h3>
+<div class="outline-text-3" id="text-org784984c">
 <p>
 <code>beautiful.init(config)</code> 函数初始化主题
 </p>
@@ -364,25 +364,25 @@ Awesome API分布在多个库中，需要一一加载才能用. 这些库包括:
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Themes define colours, icons, font and wallpapers.</span>
-beautiful.init(awful.util.get_themes_dir() .. <span style="color: #8b2252;">"default/theme.lua"</span>)
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">beautiful.init("~/.config/awesome/theme.lua")</span>
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Themes define colours, icons, font and wallpapers.</span>
+beautiful.init<span style="color: #4f97d7;">(</span>awful.util.get_themes_dir<span style="color: #bc6ec5;">()</span> .. <span style="color: #2d9574;">"default/theme.lua"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">beautiful.init("~/.config/awesome/theme.lua")</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org7594cd7" class="outline-3">
-<h3 id="org7594cd7">定义一些变量</h3>
-<div class="outline-text-3" id="text-org7594cd7">
+<div id="outline-container-orgfd778c9" class="outline-3">
+<h3 id="orgfd778c9">定义一些变量</h3>
+<div class="outline-text-3" id="text-orgfd778c9">
 <p>
 定义终端、默认编辑器
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">This is used later as the default terminal and editor to run.</span>
-terminal = <span style="color: #8b2252;">"urxvt"</span>
-editor = <span style="color: #483d8b;">os</span>.<span style="color: #483d8b;">getenv</span>(<span style="color: #8b2252;">"EDITOR"</span>) <span style="color: #a020f0;">or</span> <span style="color: #8b2252;">"vi"</span>
-editor_cmd = terminal .. <span style="color: #8b2252;">" -e "</span> .. editor
-emacsclient_newframe = <span style="color: #8b2252;">"emacsclient -a \"\" -n -c "</span>
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">This is used later as the default terminal and editor to run.</span>
+terminal = <span style="color: #2d9574;">"urxvt"</span>
+editor = <span style="color: #4f97d7;">os</span>.<span style="color: #4f97d7;">getenv</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"EDITOR"</span><span style="color: #4f97d7;">)</span> <span style="color: #4f97d7; font-weight: bold;">or</span> <span style="color: #2d9574;">"vi"</span>
+editor_cmd = terminal .. <span style="color: #2d9574;">" -e "</span> .. editor
+emacsclient_newframe = <span style="color: #2d9574;">"emacsclient -a \"\" -n -c "</span>
 </pre>
 </div>
 
@@ -390,12 +390,12 @@ emacsclient_newframe = <span style="color: #8b2252;">"emacsclient -a \"\" -n -c 
 设置默认的modkey
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Default modkey.</span>
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Usually, Mod4 is the key with a logo between Control and Alt.</span>
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">If you do not like this or do not have such a key,</span>
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">I suggest you to remap Mod4 to another key using xmodmap or other tools.</span>
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">However, you can use another modifier like Mod1, but it may interact with others.</span>
-modkey = <span style="color: #8b2252;">"Mod4"</span>
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Default modkey.</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Usually, Mod4 is the key with a logo between Control and Alt.</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">If you do not like this or do not have such a key,</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">I suggest you to remap Mod4 to another key using xmodmap or other tools.</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">However, you can use another modifier like Mod1, but it may interact with others.</span>
+modkey = <span style="color: #2d9574;">"Mod4"</span>
 </pre>
 </div>
 
@@ -403,8 +403,8 @@ modkey = <span style="color: #8b2252;">"Mod4"</span>
 定义可用的布局
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Table of layouts to cover with awful.layout.inc, order matters.</span>
-awful.layout.layouts = {
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Table of layouts to cover with awful.layout.inc, order matters.</span>
+awful.layout.layouts = <span style="color: #4f97d7;">{</span>
     awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
@@ -418,17 +418,17 @@ awful.layout.layouts = {
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
     awful.layout.suit.corner.nw,
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">awful.layout.suit.corner.ne,</span>
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">awful.layout.suit.corner.sw,</span>
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">awful.layout.suit.corner.se,</span>
-}
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">awful.layout.suit.corner.ne,</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">awful.layout.suit.corner.sw,</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">awful.layout.suit.corner.se,</span>
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org2daa5ab" class="outline-3">
-<h3 id="org2daa5ab">Menu</h3>
-<div class="outline-text-3" id="text-org2daa5ab">
+<div id="outline-container-orgfbfacce" class="outline-3">
+<h3 id="orgfbfacce">Menu</h3>
+<div class="outline-text-3" id="text-orgfbfacce">
 <p>
 自定义菜单，其中一个菜单就是一个包含菜单项的数组。
 </p>
@@ -437,31 +437,31 @@ awful.layout.layouts = {
 而一个菜单项可以是：一个菜单或一个形如 <code>{菜单项名称,菜单项对应的函数或命令字符串[,菜单项图标]}</code>, 其中 <code>菜单项图标</code> 可以省略。
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Create a launcher widget and a main menu</span>
-myawesomemenu = {
-   { <span style="color: #8b2252;">"hotkeys"</span>, <span style="color: #a020f0;">function</span>() <span style="color: #a020f0;">return</span> <span style="color: #008b8b;">false</span>, hotkeys_popup.show_help <span style="color: #a020f0;">end</span>},
-   { <span style="color: #8b2252;">"manual"</span>, emacsclient_newframe .. <span style="color: #8b2252;">" -e '(man \"awesome\")'"</span> },
-   { <span style="color: #8b2252;">"&#37325;&#24314;&#33756;&#21333;"</span>, <span style="color: #a020f0;">function</span> ()
-       <span style="color: #483d8b;">os</span>.<span style="color: #483d8b;">execute</span>(<span style="color: #8b2252;">"xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu &gt;~/.config/awesome/archmenu.lua"</span> )
-       awesome.restart()
-   <span style="color: #a020f0;">end</span>},
-   <span style="color: #b22222;">-- </span><span style="color: #b22222;">{ "edit config", emacsclient_newframe .. awesome.conffile },</span>
-   { <span style="color: #8b2252;">"edit config"</span>, emacsclient_newframe .. <span style="color: #8b2252;">"~/github/dotfile/dotfile.org"</span> },
-   <span style="color: #b22222;">-- </span><span style="color: #b22222;">{ "manual", terminal .. " -e man awesome" },</span>
-   <span style="color: #b22222;">-- </span><span style="color: #b22222;">{ "edit config", editor_cmd .. " " .. awesome.conffile },</span>
-   { <span style="color: #8b2252;">"restart"</span>, awesome.restart },
-   { <span style="color: #8b2252;">"quit"</span>, <span style="color: #a020f0;">function</span>() awesome.quit() <span style="color: #a020f0;">end</span>}
-}
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Create a launcher widget and a main menu</span>
+myawesomemenu = <span style="color: #4f97d7;">{</span>
+   <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"hotkeys"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #2d9574;">()</span> <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">false</span>, hotkeys_popup.show_help <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">}</span>,
+   <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"manual"</span>, emacsclient_newframe .. <span style="color: #2d9574;">" -e '(man \"awesome\")'"</span> <span style="color: #bc6ec5;">}</span>,
+   <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"&#37325;&#24314;&#33756;&#21333;"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+       <span style="color: #4f97d7;">os</span>.<span style="color: #4f97d7;">execute</span><span style="color: #2d9574;">(</span><span style="color: #2d9574;">"xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu &gt;~/.config/awesome/archmenu.lua"</span> <span style="color: #2d9574;">)</span>
+       awesome.restart<span style="color: #2d9574;">()</span>
+   <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">}</span>,
+   <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">{ "edit config", emacsclient_newframe .. awesome.conffile },</span>
+   <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"edit config"</span>, emacsclient_newframe .. <span style="color: #2d9574;">"~/github/dotfile/dotfile.org"</span> <span style="color: #bc6ec5;">}</span>,
+   <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">{ "manual", terminal .. " -e man awesome" },</span>
+   <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">{ "edit config", editor_cmd .. " " .. awesome.conffile },</span>
+   <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"restart"</span>, awesome.restart <span style="color: #bc6ec5;">}</span>,
+   <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"quit"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #2d9574;">()</span> awesome.quit<span style="color: #2d9574;">()</span> <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>
 
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">&#33258;&#21160;&#29983;&#25104;&#30340;xdg_menu</span>
-xdg_menu = <span style="color: #483d8b;">require</span>(<span style="color: #8b2252;">"archmenu"</span>)
-mainmenu_items = { { <span style="color: #8b2252;">"awesome"</span>, myawesomemenu, beautiful.awesome_icon },
-  { <span style="color: #8b2252;">"Applications"</span>, xdgmenu },
-  { <span style="color: #8b2252;">"Eshell"</span>, <span style="color: #8b2252;">"eshell.sh"</span>},
-  { <span style="color: #8b2252;">"dired"</span>, <span style="color: #8b2252;">"dired.sh"</span> },
-  { <span style="color: #8b2252;">"Firefox"</span>, <span style="color: #8b2252;">"firefox"</span> },
-  { <span style="color: #8b2252;">"open terminal"</span>, terminal }
-}
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">&#33258;&#21160;&#29983;&#25104;&#30340;xdg_menu</span>
+xdg_menu = <span style="color: #4f97d7;">require</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"archmenu"</span><span style="color: #4f97d7;">)</span>
+mainmenu_items = <span style="color: #4f97d7;">{</span> <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"awesome"</span>, myawesomemenu, beautiful.awesome_icon <span style="color: #bc6ec5;">}</span>,
+  <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"Applications"</span>, xdgmenu <span style="color: #bc6ec5;">}</span>,
+  <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"Eshell"</span>, <span style="color: #2d9574;">"eshell.sh"</span><span style="color: #bc6ec5;">}</span>,
+  <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"dired"</span>, <span style="color: #2d9574;">"dired.sh"</span> <span style="color: #bc6ec5;">}</span>,
+  <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"Firefox"</span>, <span style="color: #2d9574;">"firefox"</span> <span style="color: #bc6ec5;">}</span>,
+  <span style="color: #bc6ec5;">{</span> <span style="color: #2d9574;">"open terminal"</span>, terminal <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -476,8 +476,8 @@ awful.menu:new(args,parent)用于生成menu对象，其中 <code>args</code> 是
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-lua">mymainmenu = awful.menu({ items = mainmenu_items
-                        })
+<pre class="src src-lua">mymainmenu = awful.menu<span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">{</span> items = mainmenu_items
+                        <span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -496,11 +496,11 @@ awful.widget.launcher:new (args)函数创建一个button widget，点击之后�
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-lua">mylauncher= awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
+<pre class="src src-lua">mylauncher= awful.widget.launcher<span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">{</span> image = beautiful.awesome_icon,
+                                     menu = mymainmenu <span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
 
-emacslauncher = awful.widget.launcher({ image = <span style="color: #8b2252;">"/usr/share/icons/hicolor/128x128/apps/emacs.png"</span>,
-command = <span style="color: #8b2252;">"/usr/bin/emacsclient -a '' -n -c"</span>})
+emacslauncher = awful.widget.launcher<span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">{</span> image = <span style="color: #2d9574;">"/usr/share/icons/hicolor/128x128/apps/emacs.png"</span>,
+command = <span style="color: #2d9574;">"/usr/bin/emacsclient -a '' -n -c"</span><span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
 
 </pre>
 </div>
@@ -509,7 +509,7 @@ command = <span style="color: #8b2252;">"/usr/bin/emacsclient -a '' -n -c"</span
 menubar.utils.terminal指定了当应用需要在终端运行时，打开哪个终端
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">menubar.utils.terminal = terminal <span style="color: #b22222;">-- </span><span style="color: #b22222;">Set the terminal for applications that require it</span>
+<pre class="src src-lua">menubar.utils.terminal = terminal <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Set the terminal for applications that require it</span>
 </pre>
 </div>
 
@@ -517,15 +517,15 @@ menubar.utils.terminal指定了当应用需要在终端运行时，打开哪个�
 awful.widget.keyboardlayout:new ()创建一个键盘布局的widget,用于显示当前的键盘布局
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Keyboard map indicator and switcher</span>
-mykeyboardlayout = awful.widget.keyboardlayout()
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Keyboard map indicator and switcher</span>
+mykeyboardlayout = awful.widget.keyboardlayout<span style="color: #4f97d7;">()</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org1444c62" class="outline-3">
-<h3 id="org1444c62">Wibar</h3>
-<div class="outline-text-3" id="text-org1444c62">
+<div id="outline-container-orge784450" class="outline-3">
+<h3 id="orge784450">Wibar</h3>
+<div class="outline-text-3" id="text-orge784450">
 <p>
 <code>wibox.widget.textclock ([format[, timeout[, timezone]]])</code> 创建一个textclock widget，用于显示时间。其中
 </p>
@@ -537,15 +537,15 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Create a textclock widget</span>
-mytextclock = wibox.widget.textclock()
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Create a textclock widget</span>
+mytextclock = wibox.widget.textclock<span style="color: #4f97d7;">()</span>
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org407ec0d" class="outline-4">
-<h4 id="org407ec0d">定义点击tag的行为</h4>
-<div class="outline-text-4" id="text-org407ec0d">
+<div id="outline-container-orgbece02f" class="outline-4">
+<h4 id="orgbece02f">定义点击tag的行为</h4>
+<div class="outline-text-4" id="text-orgbece02f">
 <p>
 <code>gears.table.join(tables)</code> 会遍历参数中的所有table中的key，插入成一个新的table
 </p>
@@ -566,67 +566,67 @@ mytextclock = wibox.widget.textclock()
 比如，默认 <code>awful.button.ignore_modifiers</code> 会忽略  <code>{ "Lock", "Mod2" }</code> 这两个按键，那么 <code>awful.button:new</code> 会生成4个button object，分别对应没有按下 <code>{ "Lock", "Mod2" }</code> 的情况，按下 <code>{ "Lock", "Mod2" }</code> 的情况， 按下 <code>{ "Lock"}</code>  的情况和按下 <code>{ "Mod2"}</code> 的情况.
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Create a wibox for each screen and add it</span>
-<span style="color: #a020f0;">local</span> <span style="color: #a0522d;">taglist_buttons</span> = gears.table.join(
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Create a wibox for each screen and add it</span>
+<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">taglist_buttons</span> = gears.table.join<span style="color: #4f97d7;">(</span>
 
-  <span style="color: #b22222;">-- </span><span style="color: #b22222;">&#28857;&#20987;&#24038;&#38190;&#65292;&#20999;&#25442;&#21040;&#35813;tag</span>
-  awful.button({ }, 1, <span style="color: #a020f0;">function</span>(t) t:view_only() <span style="color: #a020f0;">end</span>), 
-  <span style="color: #b22222;">-- </span><span style="color: #b22222;">modkey+&#24038;&#38190;&#65292;&#23558;&#24403;&#21069;window&#31227;&#21160;&#21040;&#25351;&#23450;tag</span>
-  awful.button({ modkey }, 1, <span style="color: #a020f0;">function</span>(t)
-      <span style="color: #a020f0;">if</span> client.focus <span style="color: #a020f0;">then</span>
-        client.focus:move_to_tag(t)
-      <span style="color: #a020f0;">end</span>
-  <span style="color: #a020f0;">end</span>),
-  <span style="color: #b22222;">-- </span><span style="color: #b22222;">&#28857;&#20987;&#21491;&#38190;&#65292;&#35753;&#25351;&#23450;tag&#20063;&#21487;&#35265;</span>
-  awful.button({ }, 3, awful.tag.viewtoggle),
-  <span style="color: #b22222;">-- </span><span style="color: #b22222;">modkey+&#21491;&#38190;&#65292;&#35753;&#24403;&#21069;window&#22312;&#25351;&#23450;tag&#20063;&#21487;&#35265;</span>
-  awful.button({ modkey }, 3, <span style="color: #a020f0;">function</span>(t)
-      <span style="color: #a020f0;">if</span> client.focus <span style="color: #a020f0;">then</span>
-        client.focus:toggle_tag(t)
-      <span style="color: #a020f0;">end</span>
-  <span style="color: #a020f0;">end</span>),
-  awful.button({ }, 4, <span style="color: #a020f0;">function</span>(t) awful.tag.viewnext(t.screen) <span style="color: #a020f0;">end</span>),
-  awful.button({ }, 5, <span style="color: #a020f0;">function</span>(t) awful.tag.viewprev(t.screen) <span style="color: #a020f0;">end</span>)
-)
+  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">&#28857;&#20987;&#24038;&#38190;&#65292;&#20999;&#25442;&#21040;&#35813;tag</span>
+  awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">1</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #2d9574;">(</span>t<span style="color: #2d9574;">)</span> t:view_only<span style="color: #2d9574;">()</span> <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">)</span>, 
+  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">modkey+&#24038;&#38190;&#65292;&#23558;&#24403;&#21069;window&#31227;&#21160;&#21040;&#25351;&#23450;tag</span>
+  awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">1</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #2d9574;">(</span>t<span style="color: #2d9574;">)</span>
+      <span style="color: #4f97d7; font-weight: bold;">if</span> client.focus <span style="color: #4f97d7; font-weight: bold;">then</span>
+        client.focus:move_to_tag<span style="color: #2d9574;">(</span>t<span style="color: #2d9574;">)</span>
+      <span style="color: #4f97d7; font-weight: bold;">end</span>
+  <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">)</span>,
+  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">&#28857;&#20987;&#21491;&#38190;&#65292;&#35753;&#25351;&#23450;tag&#20063;&#21487;&#35265;</span>
+  awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">3</span>, awful.tag.viewtoggle<span style="color: #bc6ec5;">)</span>,
+  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">modkey+&#21491;&#38190;&#65292;&#35753;&#24403;&#21069;window&#22312;&#25351;&#23450;tag&#20063;&#21487;&#35265;</span>
+  awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">3</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #2d9574;">(</span>t<span style="color: #2d9574;">)</span>
+      <span style="color: #4f97d7; font-weight: bold;">if</span> client.focus <span style="color: #4f97d7; font-weight: bold;">then</span>
+        client.focus:toggle_tag<span style="color: #2d9574;">(</span>t<span style="color: #2d9574;">)</span>
+      <span style="color: #4f97d7; font-weight: bold;">end</span>
+  <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">)</span>,
+  awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">4</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #2d9574;">(</span>t<span style="color: #2d9574;">)</span> awful.tag.viewnext<span style="color: #2d9574;">(</span>t.screen<span style="color: #2d9574;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">)</span>,
+  awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">5</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #2d9574;">(</span>t<span style="color: #2d9574;">)</span> awful.tag.viewprev<span style="color: #2d9574;">(</span>t.screen<span style="color: #2d9574;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">)</span>
+<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbd4c70f" class="outline-4">
-<h4 id="orgbd4c70f">定义点击任务栏的行为</h4>
-<div class="outline-text-4" id="text-orgbd4c70f">
+<div id="outline-container-orgde08819" class="outline-4">
+<h4 id="orgde08819">定义点击任务栏的行为</h4>
+<div class="outline-text-4" id="text-orgde08819">
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #a020f0;">local</span> <span style="color: #a0522d;">tasklist_buttons</span> = gears.table.join(
-  awful.button({ }, 1, <span style="color: #a020f0;">function</span> (c)
-      <span style="color: #a020f0;">if</span> c == client.focus <span style="color: #a020f0;">then</span>
-        c.minimized = <span style="color: #008b8b;">true</span>
-      <span style="color: #a020f0;">else</span>
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">Without this, the following</span>
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">:isvisible() makes no sense</span>
-        c.minimized = <span style="color: #008b8b;">false</span>
-        <span style="color: #a020f0;">if</span> <span style="color: #a020f0;">not</span> c:isvisible() <span style="color: #a020f0;">and</span> c.first_tag <span style="color: #a020f0;">then</span>
-          c.first_tag:view_only()
-        <span style="color: #a020f0;">end</span>
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">This will also un-minimize</span>
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">the client, if needed</span>
+<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">tasklist_buttons</span> = gears.table.join<span style="color: #4f97d7;">(</span>
+  awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">1</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span>
+      <span style="color: #4f97d7; font-weight: bold;">if</span> c == client.focus <span style="color: #4f97d7; font-weight: bold;">then</span>
+        c.minimized = <span style="color: #a45bad;">true</span>
+      <span style="color: #4f97d7; font-weight: bold;">else</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Without this, the following</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">:isvisible() makes no sense</span>
+        c.minimized = <span style="color: #a45bad;">false</span>
+        <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7; font-weight: bold;">not</span> c:isvisible<span style="color: #2d9574;">()</span> <span style="color: #4f97d7; font-weight: bold;">and</span> c.first_tag <span style="color: #4f97d7; font-weight: bold;">then</span>
+          c.first_tag:view_only<span style="color: #2d9574;">()</span>
+        <span style="color: #4f97d7; font-weight: bold;">end</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">This will also un-minimize</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">the client, if needed</span>
         client.focus = c
-        c:raise()
-      <span style="color: #a020f0;">end</span>
-  <span style="color: #a020f0;">end</span>),
-  awful.button({ }, 3, client_menu_toggle_fn()),
-  awful.button({ }, 4, <span style="color: #a020f0;">function</span> ()
-      awful.client.focus.byidx(1)
-  <span style="color: #a020f0;">end</span>),
-  awful.button({ }, 5, <span style="color: #a020f0;">function</span> ()
-      awful.client.focus.byidx(-1)
-<span style="color: #a020f0;">end</span>))
+        c:raise<span style="color: #2d9574;">()</span>
+      <span style="color: #4f97d7; font-weight: bold;">end</span>
+  <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">)</span>,
+  awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">3</span>, client_menu_toggle_fn<span style="color: #2d9574;">()</span><span style="color: #bc6ec5;">)</span>,
+  awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">4</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+      awful.client.focus.byidx<span style="color: #2d9574;">(</span><span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">)</span>,
+  awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">5</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+      awful.client.focus.byidx<span style="color: #2d9574;">(</span>-<span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org6459d2a" class="outline-4">
-<h4 id="org6459d2a">当屏幕发生改变时，重新设置壁纸</h4>
-<div class="outline-text-4" id="text-org6459d2a">
+<div id="outline-container-org8d5a82d" class="outline-4">
+<h4 id="org8d5a82d">当屏幕发生改变时，重新设置壁纸</h4>
+<div class="outline-text-4" id="text-org8d5a82d">
 <p>
 <code>gears.wallpaper.maximized(surf, s, ignore_aspect, offset)</code> 以最大化的方式设置壁纸，其中
 </p>
@@ -648,90 +648,90 @@ mytextclock = wibox.widget.textclock()
 <li>fit (surf, s, background)</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #a020f0;">local</span> <span style="color: #a020f0;">function</span> <span style="color: #0000ff;">set_wallpaper</span>(s)
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Wallpaper</span>
-    <span style="color: #a020f0;">if</span> beautiful.wallpaper <span style="color: #a020f0;">then</span>
-        <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">wallpaper</span> = beautiful.wallpaper
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">If wallpaper is a function, call it with the screen</span>
-        <span style="color: #a020f0;">if</span> <span style="color: #483d8b;">type</span>(wallpaper) == <span style="color: #8b2252;">"function"</span> <span style="color: #a020f0;">then</span>
-            wallpaper = wallpaper(s)
-        <span style="color: #a020f0;">end</span>
-        gears.wallpaper.maximized(wallpaper, s, <span style="color: #008b8b;">true</span>)
-    <span style="color: #a020f0;">end</span>
-<span style="color: #a020f0;">end</span>
+<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">set_wallpaper</span><span style="color: #4f97d7;">(</span>s<span style="color: #4f97d7;">)</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Wallpaper</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> beautiful.wallpaper <span style="color: #4f97d7; font-weight: bold;">then</span>
+        <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">wallpaper</span> = beautiful.wallpaper
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">If wallpaper is a function, call it with the screen</span>
+        <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">type</span><span style="color: #4f97d7;">(</span>wallpaper<span style="color: #4f97d7;">)</span> == <span style="color: #2d9574;">"function"</span> <span style="color: #4f97d7; font-weight: bold;">then</span>
+            wallpaper = wallpaper<span style="color: #4f97d7;">(</span>s<span style="color: #4f97d7;">)</span>
+        <span style="color: #4f97d7; font-weight: bold;">end</span>
+        gears.wallpaper.maximized<span style="color: #4f97d7;">(</span>wallpaper, s, <span style="color: #a45bad;">true</span><span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">end</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Re-set wallpaper when a screen's geometry changes (e.g. different resolution)</span>
-screen.connect_signal(<span style="color: #8b2252;">"property::geometry"</span>, set_wallpaper)
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Re-set wallpaper when a screen's geometry changes (e.g. different resolution)</span>
+screen.connect_signal<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"property::geometry"</span>, set_wallpaper<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5fa43bc" class="outline-4">
-<h4 id="org5fa43bc">设置屏幕布局</h4>
-<div class="outline-text-4" id="text-org5fa43bc">
+<div id="outline-container-org62a28fa" class="outline-4">
+<h4 id="org62a28fa">设置屏幕布局</h4>
+<div class="outline-text-4" id="text-org62a28fa">
 <p>
 <code>awful.screen.connect_for_each_screen (func)</code> 为每个已存在的，且后面新创建的屏幕都调用 <code>func</code>, 其中 <code>func</code> 接受一个 <code>screen</code> 作为参数
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">awful.screen.connect_for_each_screen(<span style="color: #a020f0;">function</span>(s)
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Wallpaper</span>
-    set_wallpaper(s)
+<pre class="src src-lua">awful.screen.connect_for_each_screen<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #bc6ec5;">(</span>s<span style="color: #bc6ec5;">)</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Wallpaper</span>
+    set_wallpaper<span style="color: #bc6ec5;">(</span>s<span style="color: #bc6ec5;">)</span>
 
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Each screen has its own tag table.</span>
-    awful.tag({ <span style="color: #8b2252;">"1.HOME"</span>, <span style="color: #8b2252;">"2.STUDIO"</span>, <span style="color: #8b2252;">"3.GAMES"</span>, <span style="color: #8b2252;">"4.EDIT"</span>, <span style="color: #8b2252;">"5.VM"</span>, <span style="color: #8b2252;">"6.IRC"</span>}, s, awful.layout.layouts[1])
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Each screen has its own tag table.</span>
+    awful.tag<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> <span style="color: #2d9574;">"1.HOME"</span>, <span style="color: #2d9574;">"2.STUDIO"</span>, <span style="color: #2d9574;">"3.GAMES"</span>, <span style="color: #2d9574;">"4.EDIT"</span>, <span style="color: #2d9574;">"5.VM"</span>, <span style="color: #2d9574;">"6.IRC"</span><span style="color: #2d9574;">}</span>, s, awful.layout.layouts<span style="color: #2d9574;">[</span><span style="color: #a45bad;">1</span><span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">)</span>
 
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Create a promptbox for each screen</span>
-    s.mypromptbox = awful.widget.prompt()
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Create an imagebox widget which will contains an icon indicating which layout we're using.</span>
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">We need one layoutbox per screen.</span>
-    s.mylayoutbox = awful.widget.layoutbox(s)
-    s.mylayoutbox:buttons(gears.table.join(
-                           awful.button({ }, 1, <span style="color: #a020f0;">function</span> () awful.layout.inc( 1) <span style="color: #a020f0;">end</span>),
-                           awful.button({ }, 3, <span style="color: #a020f0;">function</span> () awful.layout.inc(-1) <span style="color: #a020f0;">end</span>),
-                           awful.button({ }, 4, <span style="color: #a020f0;">function</span> () awful.layout.inc( 1) <span style="color: #a020f0;">end</span>),
-                           awful.button({ }, 5, <span style="color: #a020f0;">function</span> () awful.layout.inc(-1) <span style="color: #a020f0;">end</span>)))
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Create a taglist widget</span>
-    s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist_buttons)
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Create a promptbox for each screen</span>
+    s.mypromptbox = awful.widget.prompt<span style="color: #bc6ec5;">()</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Create an imagebox widget which will contains an icon indicating which layout we're using.</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">We need one layoutbox per screen.</span>
+    s.mylayoutbox = awful.widget.layoutbox<span style="color: #bc6ec5;">(</span>s<span style="color: #bc6ec5;">)</span>
+    s.mylayoutbox:buttons<span style="color: #bc6ec5;">(</span>gears.table.join<span style="color: #2d9574;">(</span>
+                           awful.button<span style="color: #67b11d;">(</span><span style="color: #b1951d;">{</span> <span style="color: #b1951d;">}</span>, <span style="color: #a45bad;">1</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #b1951d;">()</span> awful.layout.inc<span style="color: #b1951d;">(</span> <span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #67b11d;">)</span>,
+                           awful.button<span style="color: #67b11d;">(</span><span style="color: #b1951d;">{</span> <span style="color: #b1951d;">}</span>, <span style="color: #a45bad;">3</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #b1951d;">()</span> awful.layout.inc<span style="color: #b1951d;">(</span>-<span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #67b11d;">)</span>,
+                           awful.button<span style="color: #67b11d;">(</span><span style="color: #b1951d;">{</span> <span style="color: #b1951d;">}</span>, <span style="color: #a45bad;">4</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #b1951d;">()</span> awful.layout.inc<span style="color: #b1951d;">(</span> <span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #67b11d;">)</span>,
+                           awful.button<span style="color: #67b11d;">(</span><span style="color: #b1951d;">{</span> <span style="color: #b1951d;">}</span>, <span style="color: #a45bad;">5</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #b1951d;">()</span> awful.layout.inc<span style="color: #b1951d;">(</span>-<span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Create a taglist widget</span>
+    s.mytaglist = awful.widget.taglist<span style="color: #bc6ec5;">(</span>s, awful.widget.taglist.filter.all, taglist_buttons<span style="color: #bc6ec5;">)</span>
 
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Create a tasklist widget</span>
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Create a tasklist widget</span>
+    s.mytasklist = awful.widget.tasklist<span style="color: #bc6ec5;">(</span>s, awful.widget.tasklist.filter.currenttags, tasklist_buttons<span style="color: #bc6ec5;">)</span>
 
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Create the wibox</span>
-    s.mywibox = awful.wibar({ position = <span style="color: #8b2252;">"top"</span>, screen = s })
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Create the wibox</span>
+    s.mywibox = awful.wibar<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> position = <span style="color: #2d9574;">"top"</span>, screen = s <span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>
 
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Add widgets to the wibox</span>
-    s.mywibox:setup {
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Add widgets to the wibox</span>
+    s.mywibox:setup <span style="color: #bc6ec5;">{</span>
         layout = wibox.layout.align.horizontal,
-        { <span style="color: #b22222;">-- </span><span style="color: #b22222;">Left widgets</span>
+        <span style="color: #2d9574;">{</span> <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Left widgets</span>
             layout = wibox.layout.fixed.horizontal,
             mylauncher,
             emacslauncher,
             s.mytaglist,
             s.mypromptbox,
-        },
-        s.mytasklist, <span style="color: #b22222;">-- </span><span style="color: #b22222;">Middle widget</span>
-        { <span style="color: #b22222;">-- </span><span style="color: #b22222;">Right widgets</span>
+        <span style="color: #2d9574;">}</span>,
+        s.mytasklist, <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Middle widget</span>
+        <span style="color: #2d9574;">{</span> <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Right widgets</span>
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
-            wibox.widget.systray(),
+            wibox.widget.systray<span style="color: #67b11d;">()</span>,
             mytextclock,
             s.mylayoutbox,
-        },
-    }
-<span style="color: #a020f0;">end</span>)
+        <span style="color: #2d9574;">}</span>,
+    <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbfa3d1f" class="outline-3">
-<h3 id="orgbfa3d1f">设置鼠标操作</h3>
-<div class="outline-text-3" id="text-orgbfa3d1f">
+<div id="outline-container-org36f7cbc" class="outline-3">
+<h3 id="org36f7cbc">设置鼠标操作</h3>
+<div class="outline-text-3" id="text-org36f7cbc">
 </div>
-<div id="outline-container-orgfd4179d" class="outline-4">
-<h4 id="orgfd4179d">设置全局鼠标操作</h4>
-<div class="outline-text-4" id="text-orgfd4179d">
+<div id="outline-container-org01b34b4" class="outline-4">
+<h4 id="org01b34b4">设置全局鼠标操作</h4>
+<div class="outline-text-4" id="text-org01b34b4">
 <p>
 全局鼠标操作是在root窗口进行鼠标操作时触发的操作，awesome不带任何参数调用对应的函数。
 </p>
@@ -740,26 +740,26 @@ screen.connect_signal(<span style="color: #8b2252;">"property::geometry"</span>,
 使用 <code>root.buttons (button_table)</code> 函数获取/设置全局的鼠标操作
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">root.buttons(gears.table.join(
-    awful.button({ }, 3, <span style="color: #a020f0;">function</span> () mymainmenu:toggle() <span style="color: #a020f0;">end</span>),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
-))
+<pre class="src src-lua">root.buttons<span style="color: #4f97d7;">(</span>gears.table.join<span style="color: #bc6ec5;">(</span>
+    awful.button<span style="color: #2d9574;">(</span><span style="color: #67b11d;">{</span> <span style="color: #67b11d;">}</span>, <span style="color: #a45bad;">3</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #67b11d;">()</span> mymainmenu:toggle<span style="color: #67b11d;">()</span> <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #2d9574;">)</span>,
+    awful.button<span style="color: #2d9574;">(</span><span style="color: #67b11d;">{</span> <span style="color: #67b11d;">}</span>, <span style="color: #a45bad;">4</span>, awful.tag.viewnext<span style="color: #2d9574;">)</span>,
+    awful.button<span style="color: #2d9574;">(</span><span style="color: #67b11d;">{</span> <span style="color: #67b11d;">}</span>, <span style="color: #a45bad;">5</span>, awful.tag.viewprev<span style="color: #2d9574;">)</span>
+<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org98aa869" class="outline-4">
-<h4 id="org98aa869">设置client鼠标操作</h4>
-<div class="outline-text-4" id="text-org98aa869">
+<div id="outline-container-org6e1cb3d" class="outline-4">
+<h4 id="org6e1cb3d">设置client鼠标操作</h4>
+<div class="outline-text-4" id="text-org6e1cb3d">
 <p>
 client鼠标操作是当有window获取到焦点时触发的操作，awesome将当前捕获到焦点的window作为参数传递给对应的函数。
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">clientbuttons = gears.table.join(
-    awful.button({ }, 1, <span style="color: #a020f0;">function</span> (c) client.focus = c; c:raise() <span style="color: #a020f0;">end</span>),
-    awful.button({ modkey }, 1, awful.mouse.client.move),
-    awful.button({ modkey }, 3, awful.mouse.client.resize))
+<pre class="src src-lua">clientbuttons = gears.table.join<span style="color: #4f97d7;">(</span>
+    awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">1</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span> client.focus = c; c:raise<span style="color: #2d9574;">()</span> <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #bc6ec5;">)</span>,
+    awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">1</span>, awful.mouse.client.move<span style="color: #bc6ec5;">)</span>,
+    awful.button<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey <span style="color: #2d9574;">}</span>, <span style="color: #a45bad;">3</span>, awful.mouse.client.resize<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -769,9 +769,9 @@ client鼠标操作需要通client的buttons属性来设置，参见后面的Rule
 </div>
 </div>
 </div>
-<div id="outline-container-org2711169" class="outline-3">
-<h3 id="org2711169">设置快捷键</h3>
-<div class="outline-text-3" id="text-org2711169">
+<div id="outline-container-orgbc129f9" class="outline-3">
+<h3 id="orgbc129f9">设置快捷键</h3>
+<div class="outline-text-3" id="text-orgbc129f9">
 <p>
 每个快捷键都保存为一个key对象。
 </p>
@@ -797,165 +797,165 @@ key对象通过 <code>awful.key:new (mod, _key, press[, release], data)</code> �
 </p>
 </div>
 
-<div id="outline-container-org831246e" class="outline-4">
-<h4 id="org831246e">设置全局快捷</h4>
-<div class="outline-text-4" id="text-org831246e">
+<div id="outline-container-org19179b0" class="outline-4">
+<h4 id="org19179b0">设置全局快捷</h4>
+<div class="outline-text-4" id="text-org19179b0">
 <p>
 全局快捷键在任何情况下都可触发，当触发全局快捷键的函数时，awesome并不会传递任何参数
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lua">globalkeys = gears.table.join(
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"s"</span>,      hotkeys_popup.show_help,
-              {description=<span style="color: #8b2252;">"show help"</span>, group=<span style="color: #8b2252;">"awesome"</span>}),
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"Left"</span>,   awful.tag.viewprev,
-              {description = <span style="color: #8b2252;">"view previous"</span>, group = <span style="color: #8b2252;">"tag"</span>}),
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"Right"</span>,  awful.tag.viewnext,
-              {description = <span style="color: #8b2252;">"view next"</span>, group = <span style="color: #8b2252;">"tag"</span>}),
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"Escape"</span>, awful.tag.history.restore,
-              {description = <span style="color: #8b2252;">"go back"</span>, group = <span style="color: #8b2252;">"tag"</span>}),
+<pre class="src src-lua">globalkeys = gears.table.join<span style="color: #4f97d7;">(</span>
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"s"</span>,      hotkeys_popup.show_help,
+              <span style="color: #2d9574;">{</span>description=<span style="color: #2d9574;">"show help"</span>, group=<span style="color: #2d9574;">"awesome"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"Left"</span>,   awful.tag.viewprev,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"view previous"</span>, group = <span style="color: #2d9574;">"tag"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"Right"</span>,  awful.tag.viewnext,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"view next"</span>, group = <span style="color: #2d9574;">"tag"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"Escape"</span>, awful.tag.history.restore,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"go back"</span>, group = <span style="color: #2d9574;">"tag"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
 
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"j"</span>,
-        <span style="color: #a020f0;">function</span> ()
-            awful.client.focus.byidx( 1)
-        <span style="color: #a020f0;">end</span>,
-        {description = <span style="color: #8b2252;">"focus next by index"</span>, group = <span style="color: #8b2252;">"client"</span>}
-    ),
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"k"</span>,
-        <span style="color: #a020f0;">function</span> ()
-            awful.client.focus.byidx(-1)
-        <span style="color: #a020f0;">end</span>,
-        {description = <span style="color: #8b2252;">"focus previous by index"</span>, group = <span style="color: #8b2252;">"client"</span>}
-    ),
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"w"</span>, <span style="color: #a020f0;">function</span> () mymainmenu:show() <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"show main menu"</span>, group = <span style="color: #8b2252;">"awesome"</span>}),
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"j"</span>,
+        <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+            awful.client.focus.byidx<span style="color: #2d9574;">(</span> <span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>
+        <span style="color: #4f97d7; font-weight: bold;">end</span>,
+        <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"focus next by index"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span>
+    <span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"k"</span>,
+        <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+            awful.client.focus.byidx<span style="color: #2d9574;">(</span>-<span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>
+        <span style="color: #4f97d7; font-weight: bold;">end</span>,
+        <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"focus previous by index"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span>
+    <span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"w"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> mymainmenu:show<span style="color: #2d9574;">()</span> <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"show main menu"</span>, group = <span style="color: #2d9574;">"awesome"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
 
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Layout manipulation</span>
-    awful.key({ modkey, <span style="color: #8b2252;">"Shift"</span>   }, <span style="color: #8b2252;">"j"</span>, <span style="color: #a020f0;">function</span> () awful.client.swap.byidx(  1)    <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"swap with next client by index"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-    awful.key({ modkey, <span style="color: #8b2252;">"Shift"</span>   }, <span style="color: #8b2252;">"k"</span>, <span style="color: #a020f0;">function</span> () awful.client.swap.byidx( -1)    <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"swap with previous client by index"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-    awful.key({ modkey, <span style="color: #8b2252;">"Control"</span> }, <span style="color: #8b2252;">"j"</span>, <span style="color: #a020f0;">function</span> () awful.screen.focus_relative( 1) <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"focus the next screen"</span>, group = <span style="color: #8b2252;">"screen"</span>}),
-    awful.key({ modkey, <span style="color: #8b2252;">"Control"</span> }, <span style="color: #8b2252;">"k"</span>, <span style="color: #a020f0;">function</span> () awful.screen.focus_relative(-1) <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"focus the previous screen"</span>, group = <span style="color: #8b2252;">"screen"</span>}),
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"u"</span>, awful.client.urgent.jumpto,
-              {description = <span style="color: #8b2252;">"jump to urgent client"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"Tab"</span>,
-        <span style="color: #a020f0;">function</span> ()
-            awful.client.focus.history.previous()
-            <span style="color: #a020f0;">if</span> client.focus <span style="color: #a020f0;">then</span>
-                client.focus:raise()
-            <span style="color: #a020f0;">end</span>
-        <span style="color: #a020f0;">end</span>,
-        {description = <span style="color: #8b2252;">"go back"</span>, group = <span style="color: #8b2252;">"client"</span>}),
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Layout manipulation</span>
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Shift"</span>   <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"j"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.client.swap.byidx<span style="color: #2d9574;">(</span>  <span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>    <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"swap with next client by index"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Shift"</span>   <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"k"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.client.swap.byidx<span style="color: #2d9574;">(</span> -<span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>    <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"swap with previous client by index"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"j"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.screen.focus_relative<span style="color: #2d9574;">(</span> <span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"focus the next screen"</span>, group = <span style="color: #2d9574;">"screen"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"k"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.screen.focus_relative<span style="color: #2d9574;">(</span>-<span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"focus the previous screen"</span>, group = <span style="color: #2d9574;">"screen"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"u"</span>, awful.client.urgent.jumpto,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"jump to urgent client"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"Tab"</span>,
+        <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+            awful.client.focus.history.previous<span style="color: #2d9574;">()</span>
+            <span style="color: #4f97d7; font-weight: bold;">if</span> client.focus <span style="color: #4f97d7; font-weight: bold;">then</span>
+                client.focus:raise<span style="color: #2d9574;">()</span>
+            <span style="color: #4f97d7; font-weight: bold;">end</span>
+        <span style="color: #4f97d7; font-weight: bold;">end</span>,
+        <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"go back"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
 
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Standard program</span>
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"Return"</span>, <span style="color: #a020f0;">function</span> () awful.spawn(terminal) <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"open a terminal"</span>, group = <span style="color: #8b2252;">"launcher"</span>}),
-    awful.key({ modkey,  <span style="color: #8b2252;">"Shift"</span> }, <span style="color: #8b2252;">"f"</span>, <span style="color: #a020f0;">function</span> () awful.spawn(<span style="color: #8b2252;">"rox"</span>) <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"open a file manager"</span>, group = <span style="color: #8b2252;">"launcher"</span>}),
-    awful.key({ modkey, <span style="color: #8b2252;">"Control"</span> }, <span style="color: #8b2252;">"r"</span>, awesome.restart,
-              {description = <span style="color: #8b2252;">"reload awesome"</span>, group = <span style="color: #8b2252;">"awesome"</span>}),
-    awful.key({ modkey, <span style="color: #8b2252;">"Shift"</span>   }, <span style="color: #8b2252;">"q"</span>, awesome.quit,
-              {description = <span style="color: #8b2252;">"quit awesome"</span>, group = <span style="color: #8b2252;">"awesome"</span>}),
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Standard program</span>
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"Return"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.spawn<span style="color: #2d9574;">(</span>terminal<span style="color: #2d9574;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"open a terminal"</span>, group = <span style="color: #2d9574;">"launcher"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,  <span style="color: #2d9574;">"Shift"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"f"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.spawn<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"rox"</span><span style="color: #2d9574;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"open a file manager"</span>, group = <span style="color: #2d9574;">"launcher"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"r"</span>, awesome.restart,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"reload awesome"</span>, group = <span style="color: #2d9574;">"awesome"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Shift"</span>   <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"q"</span>, awesome.quit,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"quit awesome"</span>, group = <span style="color: #2d9574;">"awesome"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
 
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"l"</span>,     <span style="color: #a020f0;">function</span> () awful.tag.incmwfact( 0.05)          <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"increase master width factor"</span>, group = <span style="color: #8b2252;">"layout"</span>}),
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"h"</span>,     <span style="color: #a020f0;">function</span> () awful.tag.incmwfact(-0.05)          <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"decrease master width factor"</span>, group = <span style="color: #8b2252;">"layout"</span>}),
-    awful.key({ modkey, <span style="color: #8b2252;">"Shift"</span>   }, <span style="color: #8b2252;">"h"</span>,     <span style="color: #a020f0;">function</span> () awful.tag.incnmaster( 1, <span style="color: #008b8b;">nil</span>, <span style="color: #008b8b;">true</span>) <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"increase the number of master clients"</span>, group = <span style="color: #8b2252;">"layout"</span>}),
-    awful.key({ modkey, <span style="color: #8b2252;">"Shift"</span>   }, <span style="color: #8b2252;">"l"</span>,     <span style="color: #a020f0;">function</span> () awful.tag.incnmaster(-1, <span style="color: #008b8b;">nil</span>, <span style="color: #008b8b;">true</span>) <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"decrease the number of master clients"</span>, group = <span style="color: #8b2252;">"layout"</span>}),
-    awful.key({ modkey, <span style="color: #8b2252;">"Control"</span> }, <span style="color: #8b2252;">"h"</span>,     <span style="color: #a020f0;">function</span> () awful.tag.incncol( 1, <span style="color: #008b8b;">nil</span>, <span style="color: #008b8b;">true</span>)    <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"increase the number of columns"</span>, group = <span style="color: #8b2252;">"layout"</span>}),
-    awful.key({ modkey, <span style="color: #8b2252;">"Control"</span> }, <span style="color: #8b2252;">"l"</span>,     <span style="color: #a020f0;">function</span> () awful.tag.incncol(-1, <span style="color: #008b8b;">nil</span>, <span style="color: #008b8b;">true</span>)    <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"decrease the number of columns"</span>, group = <span style="color: #8b2252;">"layout"</span>}),
-    awful.key({ modkey,           }, <span style="color: #8b2252;">"space"</span>, <span style="color: #a020f0;">function</span> () awful.layout.inc( 1)                <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"select next"</span>, group = <span style="color: #8b2252;">"layout"</span>}),
-    awful.key({ modkey, <span style="color: #8b2252;">"Shift"</span>   }, <span style="color: #8b2252;">"space"</span>, <span style="color: #a020f0;">function</span> () awful.layout.inc(-1)                <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"select previous"</span>, group = <span style="color: #8b2252;">"layout"</span>}),
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"l"</span>,     <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.tag.incmwfact<span style="color: #2d9574;">(</span> <span style="color: #a45bad;">0</span>.<span style="color: #a45bad;">05</span><span style="color: #2d9574;">)</span>          <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"increase master width factor"</span>, group = <span style="color: #2d9574;">"layout"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"h"</span>,     <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.tag.incmwfact<span style="color: #2d9574;">(</span>-<span style="color: #a45bad;">0</span>.<span style="color: #a45bad;">05</span><span style="color: #2d9574;">)</span>          <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"decrease master width factor"</span>, group = <span style="color: #2d9574;">"layout"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Shift"</span>   <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"h"</span>,     <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.tag.incnmaster<span style="color: #2d9574;">(</span> <span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">nil</span>, <span style="color: #a45bad;">true</span><span style="color: #2d9574;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"increase the number of master clients"</span>, group = <span style="color: #2d9574;">"layout"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Shift"</span>   <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"l"</span>,     <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.tag.incnmaster<span style="color: #2d9574;">(</span>-<span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">nil</span>, <span style="color: #a45bad;">true</span><span style="color: #2d9574;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"decrease the number of master clients"</span>, group = <span style="color: #2d9574;">"layout"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"h"</span>,     <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.tag.incncol<span style="color: #2d9574;">(</span> <span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">nil</span>, <span style="color: #a45bad;">true</span><span style="color: #2d9574;">)</span>    <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"increase the number of columns"</span>, group = <span style="color: #2d9574;">"layout"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"l"</span>,     <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.tag.incncol<span style="color: #2d9574;">(</span>-<span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">nil</span>, <span style="color: #a45bad;">true</span><span style="color: #2d9574;">)</span>    <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"decrease the number of columns"</span>, group = <span style="color: #2d9574;">"layout"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"space"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.layout.inc<span style="color: #2d9574;">(</span> <span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>                <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"select next"</span>, group = <span style="color: #2d9574;">"layout"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Shift"</span>   <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"space"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.layout.inc<span style="color: #2d9574;">(</span>-<span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>                <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"select previous"</span>, group = <span style="color: #2d9574;">"layout"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
 
-    awful.key({ modkey, <span style="color: #8b2252;">"Control"</span> }, <span style="color: #8b2252;">"n"</span>,
-              <span style="color: #a020f0;">function</span> ()
-                  <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">c</span> = awful.client.restore()
-                  <span style="color: #b22222;">-- </span><span style="color: #b22222;">Focus restored client</span>
-                  <span style="color: #a020f0;">if</span> c <span style="color: #a020f0;">then</span>
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"n"</span>,
+              <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+                  <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">c</span> = awful.client.restore<span style="color: #2d9574;">()</span>
+                  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Focus restored client</span>
+                  <span style="color: #4f97d7; font-weight: bold;">if</span> c <span style="color: #4f97d7; font-weight: bold;">then</span>
                       client.focus = c
-                      c:raise()
-                  <span style="color: #a020f0;">end</span>
-              <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"restore minimized"</span>, group = <span style="color: #8b2252;">"client"</span>}),
+                      c:raise<span style="color: #2d9574;">()</span>
+                  <span style="color: #4f97d7; font-weight: bold;">end</span>
+              <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"restore minimized"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
 
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Prompt</span>
-    awful.key({ modkey },            <span style="color: #8b2252;">"r"</span>,     <span style="color: #a020f0;">function</span> () awful.screen.focused().mypromptbox:run() <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"run prompt"</span>, group = <span style="color: #8b2252;">"launcher"</span>}),
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Prompt</span>
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey <span style="color: #2d9574;">}</span>,            <span style="color: #2d9574;">"r"</span>,     <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span> awful.screen.focused<span style="color: #2d9574;">()</span>.mypromptbox:run<span style="color: #2d9574;">()</span> <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"run prompt"</span>, group = <span style="color: #2d9574;">"launcher"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
 
-    awful.key({ modkey }, <span style="color: #8b2252;">"x"</span>,
-              <span style="color: #a020f0;">function</span> ()
-                  awful.prompt.run {
-                    prompt       = <span style="color: #8b2252;">"Run Lua code: "</span>,
-                    textbox      = awful.screen.focused().mypromptbox.widget,
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"x"</span>,
+              <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+                  awful.prompt.run <span style="color: #2d9574;">{</span>
+                    prompt       = <span style="color: #2d9574;">"Run Lua code: "</span>,
+                    textbox      = awful.screen.focused<span style="color: #67b11d;">()</span>.mypromptbox.widget,
                     exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. <span style="color: #8b2252;">"/history_eval"</span>
-                  }
-              <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"lua execute prompt"</span>, group = <span style="color: #8b2252;">"awesome"</span>}),
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Menubar</span>
-    awful.key({ modkey }, <span style="color: #8b2252;">"p"</span>, <span style="color: #a020f0;">function</span>() menubar.show() <span style="color: #a020f0;">end</span>,
-              {description = <span style="color: #8b2252;">"show the menubar"</span>, group = <span style="color: #8b2252;">"launcher"</span>})
-)
+                    history_path = awful.util.get_cache_dir<span style="color: #67b11d;">()</span> .. <span style="color: #2d9574;">"/history_eval"</span>
+                  <span style="color: #2d9574;">}</span>
+              <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"lua execute prompt"</span>, group = <span style="color: #2d9574;">"awesome"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Menubar</span>
+    awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"p"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #2d9574;">()</span> menubar.show<span style="color: #2d9574;">()</span> <span style="color: #4f97d7; font-weight: bold;">end</span>,
+              <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"show the menubar"</span>, group = <span style="color: #2d9574;">"launcher"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>
+<span style="color: #4f97d7;">)</span>
 
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Bind all key numbers to tags.</span>
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Be careful: we use keycodes to make it work on any keyboard layout.</span>
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">This should map on the top row of your keyboard, usually 1 to 9.</span>
-<span style="color: #a020f0;">for</span> <span style="color: #a0522d;">i</span> = 1, 9 <span style="color: #a020f0;">do</span>
-    globalkeys = gears.table.join(globalkeys,
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">View tag only.</span>
-        awful.key({ modkey }, <span style="color: #8b2252;">"#"</span> .. i + 9,
-                  <span style="color: #a020f0;">function</span> ()
-                        <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">screen</span> = awful.screen.focused()
-                        <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">tag</span> = screen.tags[i]
-                        <span style="color: #a020f0;">if</span> tag <span style="color: #a020f0;">then</span>
-                           tag:view_only()
-                        <span style="color: #a020f0;">end</span>
-                  <span style="color: #a020f0;">end</span>,
-                  {description = <span style="color: #8b2252;">"view tag #"</span>..i, group = <span style="color: #8b2252;">"tag"</span>}),
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">Toggle tag display.</span>
-        awful.key({ modkey, <span style="color: #8b2252;">"Control"</span> }, <span style="color: #8b2252;">"#"</span> .. i + 9,
-                  <span style="color: #a020f0;">function</span> ()
-                      <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">screen</span> = awful.screen.focused()
-                      <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">tag</span> = screen.tags[i]
-                      <span style="color: #a020f0;">if</span> tag <span style="color: #a020f0;">then</span>
-                         awful.tag.viewtoggle(tag)
-                      <span style="color: #a020f0;">end</span>
-                  <span style="color: #a020f0;">end</span>,
-                  {description = <span style="color: #8b2252;">"toggle tag #"</span> .. i, group = <span style="color: #8b2252;">"tag"</span>}),
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">Move client to tag.</span>
-        awful.key({ modkey, <span style="color: #8b2252;">"Shift"</span> }, <span style="color: #8b2252;">"#"</span> .. i + 9,
-                  <span style="color: #a020f0;">function</span> ()
-                      <span style="color: #a020f0;">if</span> client.focus <span style="color: #a020f0;">then</span>
-                          <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">tag</span> = client.focus.screen.tags[i]
-                          <span style="color: #a020f0;">if</span> tag <span style="color: #a020f0;">then</span>
-                              client.focus:move_to_tag(tag)
-                          <span style="color: #a020f0;">end</span>
-                     <span style="color: #a020f0;">end</span>
-                  <span style="color: #a020f0;">end</span>,
-                  {description = <span style="color: #8b2252;">"move focused client to tag #"</span>..i, group = <span style="color: #8b2252;">"tag"</span>}),
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">Toggle tag on focused client.</span>
-        awful.key({ modkey, <span style="color: #8b2252;">"Control"</span>, <span style="color: #8b2252;">"Shift"</span> }, <span style="color: #8b2252;">"#"</span> .. i + 9,
-                  <span style="color: #a020f0;">function</span> ()
-                      <span style="color: #a020f0;">if</span> client.focus <span style="color: #a020f0;">then</span>
-                          <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">tag</span> = client.focus.screen.tags[i]
-                          <span style="color: #a020f0;">if</span> tag <span style="color: #a020f0;">then</span>
-                              client.focus:toggle_tag(tag)
-                          <span style="color: #a020f0;">end</span>
-                      <span style="color: #a020f0;">end</span>
-                  <span style="color: #a020f0;">end</span>,
-                  {description = <span style="color: #8b2252;">"toggle focused client on tag #"</span> .. i, group = <span style="color: #8b2252;">"tag"</span>})
-    )
-<span style="color: #a020f0;">end</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Bind all key numbers to tags.</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Be careful: we use keycodes to make it work on any keyboard layout.</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">This should map on the top row of your keyboard, usually 1 to 9.</span>
+<span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #7590db;">i</span> = <span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">9</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
+    globalkeys = gears.table.join<span style="color: #4f97d7;">(</span>globalkeys,
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">View tag only.</span>
+        awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"#"</span> .. i + <span style="color: #a45bad;">9</span>,
+                  <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+                        <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">screen</span> = awful.screen.focused<span style="color: #2d9574;">()</span>
+                        <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">tag</span> = screen.tags<span style="color: #2d9574;">[</span>i<span style="color: #2d9574;">]</span>
+                        <span style="color: #4f97d7; font-weight: bold;">if</span> tag <span style="color: #4f97d7; font-weight: bold;">then</span>
+                           tag:view_only<span style="color: #2d9574;">()</span>
+                        <span style="color: #4f97d7; font-weight: bold;">end</span>
+                  <span style="color: #4f97d7; font-weight: bold;">end</span>,
+                  <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"view tag #"</span>..i, group = <span style="color: #2d9574;">"tag"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Toggle tag display.</span>
+        awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"#"</span> .. i + <span style="color: #a45bad;">9</span>,
+                  <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+                      <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">screen</span> = awful.screen.focused<span style="color: #2d9574;">()</span>
+                      <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">tag</span> = screen.tags<span style="color: #2d9574;">[</span>i<span style="color: #2d9574;">]</span>
+                      <span style="color: #4f97d7; font-weight: bold;">if</span> tag <span style="color: #4f97d7; font-weight: bold;">then</span>
+                         awful.tag.viewtoggle<span style="color: #2d9574;">(</span>tag<span style="color: #2d9574;">)</span>
+                      <span style="color: #4f97d7; font-weight: bold;">end</span>
+                  <span style="color: #4f97d7; font-weight: bold;">end</span>,
+                  <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"toggle tag #"</span> .. i, group = <span style="color: #2d9574;">"tag"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Move client to tag.</span>
+        awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Shift"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"#"</span> .. i + <span style="color: #a45bad;">9</span>,
+                  <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+                      <span style="color: #4f97d7; font-weight: bold;">if</span> client.focus <span style="color: #4f97d7; font-weight: bold;">then</span>
+                          <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">tag</span> = client.focus.screen.tags<span style="color: #2d9574;">[</span>i<span style="color: #2d9574;">]</span>
+                          <span style="color: #4f97d7; font-weight: bold;">if</span> tag <span style="color: #4f97d7; font-weight: bold;">then</span>
+                              client.focus:move_to_tag<span style="color: #2d9574;">(</span>tag<span style="color: #2d9574;">)</span>
+                          <span style="color: #4f97d7; font-weight: bold;">end</span>
+                     <span style="color: #4f97d7; font-weight: bold;">end</span>
+                  <span style="color: #4f97d7; font-weight: bold;">end</span>,
+                  <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"move focused client to tag #"</span>..i, group = <span style="color: #2d9574;">"tag"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Toggle tag on focused client.</span>
+        awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span>, <span style="color: #2d9574;">"Shift"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"#"</span> .. i + <span style="color: #a45bad;">9</span>,
+                  <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">()</span>
+                      <span style="color: #4f97d7; font-weight: bold;">if</span> client.focus <span style="color: #4f97d7; font-weight: bold;">then</span>
+                          <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">tag</span> = client.focus.screen.tags<span style="color: #2d9574;">[</span>i<span style="color: #2d9574;">]</span>
+                          <span style="color: #4f97d7; font-weight: bold;">if</span> tag <span style="color: #4f97d7; font-weight: bold;">then</span>
+                              client.focus:toggle_tag<span style="color: #2d9574;">(</span>tag<span style="color: #2d9574;">)</span>
+                          <span style="color: #4f97d7; font-weight: bold;">end</span>
+                      <span style="color: #4f97d7; font-weight: bold;">end</span>
+                  <span style="color: #4f97d7; font-weight: bold;">end</span>,
+                  <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"toggle focused client on tag #"</span> .. i, group = <span style="color: #2d9574;">"tag"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>
+    <span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 </pre>
 </div>
 
@@ -963,61 +963,61 @@ key对象通过 <code>awful.key:new (mod, _key, press[, release], data)</code> �
 使用 <code>root.keys(keys_array)</code> 来获取/设置全局的快捷方式
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">root.keys(globalkeys)
+<pre class="src src-lua">root.keys<span style="color: #4f97d7;">(</span>globalkeys<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org68ff89b" class="outline-4">
-<h4 id="org68ff89b">设置client快捷键</h4>
-<div class="outline-text-4" id="text-org68ff89b">
+<div id="outline-container-org9370ea6" class="outline-4">
+<h4 id="org9370ea6">设置client快捷键</h4>
+<div class="outline-text-4" id="text-org9370ea6">
 <p>
 client快捷键是当有焦点在window(client)上时才能触发的。这时awesome调用快捷键上的函数时会将当前client作为参数传递过去。
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">clientkeys = gears.table.join(
-  awful.key({ modkey,           }, <span style="color: #8b2252;">"f"</span>,
-    <span style="color: #a020f0;">function</span> (c)
-      c.fullscreen = <span style="color: #a020f0;">not</span> c.fullscreen
-      c:raise()
-    <span style="color: #a020f0;">end</span>,
-    {description = <span style="color: #8b2252;">"toggle fullscreen"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-  awful.key({ modkey, <span style="color: #8b2252;">"Shift"</span>   }, <span style="color: #8b2252;">"c"</span>,      <span style="color: #a020f0;">function</span> (c) c:kill()                         <span style="color: #a020f0;">end</span>,
-    {description = <span style="color: #8b2252;">"close"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-  awful.key({ modkey, <span style="color: #8b2252;">"Control"</span> }, <span style="color: #8b2252;">"space"</span>,  awful.client.floating.toggle                     ,
-    {description = <span style="color: #8b2252;">"toggle floating"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-  awful.key({ modkey, <span style="color: #8b2252;">"Control"</span> }, <span style="color: #8b2252;">"Return"</span>, <span style="color: #a020f0;">function</span> (c) c:swap(awful.client.getmaster()) <span style="color: #a020f0;">end</span>,
-    {description = <span style="color: #8b2252;">"move to master"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-  awful.key({ modkey,           }, <span style="color: #8b2252;">"o"</span>,      <span style="color: #a020f0;">function</span> (c) c:move_to_screen()               <span style="color: #a020f0;">end</span>,
-    {description = <span style="color: #8b2252;">"move to screen"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-  awful.key({ modkey,           }, <span style="color: #8b2252;">"t"</span>,      <span style="color: #a020f0;">function</span> (c) c.ontop = <span style="color: #a020f0;">not</span> c.ontop            <span style="color: #a020f0;">end</span>,
-    {description = <span style="color: #8b2252;">"toggle keep on top"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-  awful.key({ modkey,           }, <span style="color: #8b2252;">"n"</span>,
-    <span style="color: #a020f0;">function</span> (c)
-      <span style="color: #b22222;">-- </span><span style="color: #b22222;">The client currently has the input focus, so it cannot be</span>
-      <span style="color: #b22222;">-- </span><span style="color: #b22222;">minimized, since minimized clients can't have the focus.</span>
-      c.minimized = <span style="color: #008b8b;">true</span>
-    <span style="color: #a020f0;">end</span> ,
-    {description = <span style="color: #8b2252;">"minimize"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-  awful.key({ modkey,           }, <span style="color: #8b2252;">"m"</span>,
-    <span style="color: #a020f0;">function</span> (c)
-      c.maximized = <span style="color: #a020f0;">not</span> c.maximized
-      c:raise()
-    <span style="color: #a020f0;">end</span> ,
-    {description = <span style="color: #8b2252;">"(un)maximize"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-  awful.key({ modkey, <span style="color: #8b2252;">"Control"</span> }, <span style="color: #8b2252;">"m"</span>,
-    <span style="color: #a020f0;">function</span> (c)
-      c.maximized_vertical = <span style="color: #a020f0;">not</span> c.maximized_vertical
-      c:raise()
-    <span style="color: #a020f0;">end</span> ,
-    {description = <span style="color: #8b2252;">"(un)maximize vertically"</span>, group = <span style="color: #8b2252;">"client"</span>}),
-  awful.key({ modkey, <span style="color: #8b2252;">"Shift"</span>   }, <span style="color: #8b2252;">"m"</span>,
-    <span style="color: #a020f0;">function</span> (c)
-      c.maximized_horizontal = <span style="color: #a020f0;">not</span> c.maximized_horizontal
-      c:raise()
-    <span style="color: #a020f0;">end</span> ,
-    {description = <span style="color: #8b2252;">"(un)maximize horizontally"</span>, group = <span style="color: #8b2252;">"client"</span>})
-)
+<pre class="src src-lua">clientkeys = gears.table.join<span style="color: #4f97d7;">(</span>
+  awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"f"</span>,
+    <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span>
+      c.fullscreen = <span style="color: #4f97d7; font-weight: bold;">not</span> c.fullscreen
+      c:raise<span style="color: #2d9574;">()</span>
+    <span style="color: #4f97d7; font-weight: bold;">end</span>,
+    <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"toggle fullscreen"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+  awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Shift"</span>   <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"c"</span>,      <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span> c:kill<span style="color: #2d9574;">()</span>                         <span style="color: #4f97d7; font-weight: bold;">end</span>,
+    <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"close"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+  awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"space"</span>,  awful.client.floating.toggle                     ,
+    <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"toggle floating"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+  awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"Return"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span> c:swap<span style="color: #2d9574;">(</span>awful.client.getmaster<span style="color: #67b11d;">()</span><span style="color: #2d9574;">)</span> <span style="color: #4f97d7; font-weight: bold;">end</span>,
+    <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"move to master"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+  awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"o"</span>,      <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span> c:move_to_screen<span style="color: #2d9574;">()</span>               <span style="color: #4f97d7; font-weight: bold;">end</span>,
+    <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"move to screen"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+  awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"t"</span>,      <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span> c.ontop = <span style="color: #4f97d7; font-weight: bold;">not</span> c.ontop            <span style="color: #4f97d7; font-weight: bold;">end</span>,
+    <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"toggle keep on top"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+  awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"n"</span>,
+    <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span>
+      <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">The client currently has the input focus, so it cannot be</span>
+      <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">minimized, since minimized clients can't have the focus.</span>
+      c.minimized = <span style="color: #a45bad;">true</span>
+    <span style="color: #4f97d7; font-weight: bold;">end</span> ,
+    <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"minimize"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+  awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey,           <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"m"</span>,
+    <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span>
+      c.maximized = <span style="color: #4f97d7; font-weight: bold;">not</span> c.maximized
+      c:raise<span style="color: #2d9574;">()</span>
+    <span style="color: #4f97d7; font-weight: bold;">end</span> ,
+    <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"(un)maximize"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+  awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Control"</span> <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"m"</span>,
+    <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span>
+      c.maximized_vertical = <span style="color: #4f97d7; font-weight: bold;">not</span> c.maximized_vertical
+      c:raise<span style="color: #2d9574;">()</span>
+    <span style="color: #4f97d7; font-weight: bold;">end</span> ,
+    <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"(un)maximize vertically"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>,
+  awful.key<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span> modkey, <span style="color: #2d9574;">"Shift"</span>   <span style="color: #2d9574;">}</span>, <span style="color: #2d9574;">"m"</span>,
+    <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #2d9574;">(</span>c<span style="color: #2d9574;">)</span>
+      c.maximized_horizontal = <span style="color: #4f97d7; font-weight: bold;">not</span> c.maximized_horizontal
+      c:raise<span style="color: #2d9574;">()</span>
+    <span style="color: #4f97d7; font-weight: bold;">end</span> ,
+    <span style="color: #2d9574;">{</span>description = <span style="color: #2d9574;">"(un)maximize horizontally"</span>, group = <span style="color: #2d9574;">"client"</span><span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span>
+<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -1027,9 +1027,9 @@ client快捷键需要通过对client的keys属性来进行设置(参见Rules章�
 </div>
 </div>
 </div>
-<div id="outline-container-orgee72a7c" class="outline-3">
-<h3 id="orgee72a7c">Rules</h3>
-<div class="outline-text-3" id="text-orgee72a7c">
+<div id="outline-container-orgbe8e7f5" class="outline-3">
+<h3 id="orgbe8e7f5">Rules</h3>
+<div class="outline-text-3" id="text-orgbe8e7f5">
 <p>
 <code>awful.rules.rules</code> 是全局的规则表，这里定义的规则适用于所有新开的window。
 </p>
@@ -1066,163 +1066,163 @@ client快捷键需要通过对client的keys属性来进行设置(参见Rules章�
 
 
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">Rules to apply to new clients (through the "manage" signal).</span>
-awful.rules.rules = {
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">All clients will match this rule.</span>
-    { rule = { },
-      properties = { border_width = beautiful.border_width,
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Rules to apply to new clients (through the "manage" signal).</span>
+awful.rules.rules = <span style="color: #4f97d7;">{</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">All clients will match this rule.</span>
+    <span style="color: #bc6ec5;">{</span> rule = <span style="color: #2d9574;">{</span> <span style="color: #2d9574;">}</span>,
+      properties = <span style="color: #2d9574;">{</span> border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
-                     raise = <span style="color: #008b8b;">true</span>,
+                     raise = <span style="color: #a45bad;">true</span>,
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
-     }
-    },
-    { rule = { class = <span style="color: #8b2252;">"MPlayer"</span> },
-      properties = { floating = <span style="color: #008b8b;">true</span> } },
-    { rule = { class = <span style="color: #8b2252;">"pinentry"</span> },
-      properties = { floating = <span style="color: #008b8b;">true</span> } },
-    { rule = { class = <span style="color: #8b2252;">"gimp"</span> },
-      properties = { floating = <span style="color: #008b8b;">true</span> } },
-    { rule = { class = <span style="color: #8b2252;">"Firefox"</span> },
-      properties = { floating = <span style="color: #008b8b;">true</span> } },
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">&#36825;&#37324;class&#36890;&#36807;xprop&#31243;&#24207;&#26469;&#33719;&#21462;</span>
-    { rule = { class = <span style="color: #8b2252;">"VirtualBox Manager"</span> },
-      properties = { tag=<span style="color: #8b2252;">"5.VM"</span>, switchtotag = <span style="color: #008b8b;">true</span> } },
+     <span style="color: #2d9574;">}</span>
+    <span style="color: #bc6ec5;">}</span>,
+    <span style="color: #bc6ec5;">{</span> rule = <span style="color: #2d9574;">{</span> class = <span style="color: #2d9574;">"MPlayer"</span> <span style="color: #2d9574;">}</span>,
+      properties = <span style="color: #2d9574;">{</span> floating = <span style="color: #a45bad;">true</span> <span style="color: #2d9574;">}</span> <span style="color: #bc6ec5;">}</span>,
+    <span style="color: #bc6ec5;">{</span> rule = <span style="color: #2d9574;">{</span> class = <span style="color: #2d9574;">"pinentry"</span> <span style="color: #2d9574;">}</span>,
+      properties = <span style="color: #2d9574;">{</span> floating = <span style="color: #a45bad;">true</span> <span style="color: #2d9574;">}</span> <span style="color: #bc6ec5;">}</span>,
+    <span style="color: #bc6ec5;">{</span> rule = <span style="color: #2d9574;">{</span> class = <span style="color: #2d9574;">"gimp"</span> <span style="color: #2d9574;">}</span>,
+      properties = <span style="color: #2d9574;">{</span> floating = <span style="color: #a45bad;">true</span> <span style="color: #2d9574;">}</span> <span style="color: #bc6ec5;">}</span>,
+    <span style="color: #bc6ec5;">{</span> rule = <span style="color: #2d9574;">{</span> class = <span style="color: #2d9574;">"Firefox"</span> <span style="color: #2d9574;">}</span>,
+      properties = <span style="color: #2d9574;">{</span> floating = <span style="color: #a45bad;">true</span> <span style="color: #2d9574;">}</span> <span style="color: #bc6ec5;">}</span>,
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">&#36825;&#37324;class&#36890;&#36807;xprop&#31243;&#24207;&#26469;&#33719;&#21462;</span>
+    <span style="color: #bc6ec5;">{</span> rule = <span style="color: #2d9574;">{</span> class = <span style="color: #2d9574;">"VirtualBox Manager"</span> <span style="color: #2d9574;">}</span>,
+      properties = <span style="color: #2d9574;">{</span> tag=<span style="color: #2d9574;">"5.VM"</span>, switchtotag = <span style="color: #a45bad;">true</span> <span style="color: #2d9574;">}</span> <span style="color: #bc6ec5;">}</span>,
 
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Floating clients.</span>
-    { rule_any = {
-        instance = {
-          <span style="color: #8b2252;">"DTA"</span>,  <span style="color: #b22222;">-- </span><span style="color: #b22222;">Firefox addon DownThemAll.</span>
-          <span style="color: #8b2252;">"copyq"</span>,  <span style="color: #b22222;">-- </span><span style="color: #b22222;">Includes session name in class.</span>
-        },
-        class = {
-          <span style="color: #8b2252;">"Arandr"</span>,
-          <span style="color: #8b2252;">"Gpick"</span>,
-          <span style="color: #8b2252;">"Kruler"</span>,
-          <span style="color: #8b2252;">"MessageWin"</span>,  <span style="color: #b22222;">-- </span><span style="color: #b22222;">kalarm.</span>
-          <span style="color: #8b2252;">"Sxiv"</span>,
-          <span style="color: #8b2252;">"Wpa_gui"</span>,
-          <span style="color: #8b2252;">"pinentry"</span>,
-          <span style="color: #8b2252;">"veromix"</span>,
-          <span style="color: #8b2252;">"xtightvncviewer"</span>},
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Floating clients.</span>
+    <span style="color: #bc6ec5;">{</span> rule_any = <span style="color: #2d9574;">{</span>
+        instance = <span style="color: #67b11d;">{</span>
+          <span style="color: #2d9574;">"DTA"</span>,  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Firefox addon DownThemAll.</span>
+          <span style="color: #2d9574;">"copyq"</span>,  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Includes session name in class.</span>
+        <span style="color: #67b11d;">}</span>,
+        class = <span style="color: #67b11d;">{</span>
+          <span style="color: #2d9574;">"Arandr"</span>,
+          <span style="color: #2d9574;">"Gpick"</span>,
+          <span style="color: #2d9574;">"Kruler"</span>,
+          <span style="color: #2d9574;">"MessageWin"</span>,  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">kalarm.</span>
+          <span style="color: #2d9574;">"Sxiv"</span>,
+          <span style="color: #2d9574;">"Wpa_gui"</span>,
+          <span style="color: #2d9574;">"pinentry"</span>,
+          <span style="color: #2d9574;">"veromix"</span>,
+          <span style="color: #2d9574;">"xtightvncviewer"</span><span style="color: #67b11d;">}</span>,
 
-        name = {
-          <span style="color: #8b2252;">"Event Tester"</span>,  <span style="color: #b22222;">-- </span><span style="color: #b22222;">xev.</span>
-        },
-        role = {
-          <span style="color: #8b2252;">"AlarmWindow"</span>,  <span style="color: #b22222;">-- </span><span style="color: #b22222;">Thunderbird's calendar.</span>
-          <span style="color: #8b2252;">"pop-up"</span>,       <span style="color: #b22222;">-- </span><span style="color: #b22222;">e.g. Google Chrome's (detached) Developer Tools.</span>
-        }
-      }, properties = { floating = <span style="color: #008b8b;">true</span> }},
+        name = <span style="color: #67b11d;">{</span>
+          <span style="color: #2d9574;">"Event Tester"</span>,  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">xev.</span>
+        <span style="color: #67b11d;">}</span>,
+        role = <span style="color: #67b11d;">{</span>
+          <span style="color: #2d9574;">"AlarmWindow"</span>,  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Thunderbird's calendar.</span>
+          <span style="color: #2d9574;">"pop-up"</span>,       <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">e.g. Google Chrome's (detached) Developer Tools.</span>
+        <span style="color: #67b11d;">}</span>
+      <span style="color: #2d9574;">}</span>, properties = <span style="color: #2d9574;">{</span> floating = <span style="color: #a45bad;">true</span> <span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">}</span>,
 
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Add titlebars to normal clients and dialogs</span>
-    { rule_any = {<span style="color: #483d8b;">type</span> = { <span style="color: #8b2252;">"normal"</span>, <span style="color: #8b2252;">"dialog"</span> }
-      }, properties = { titlebars_enabled = <span style="color: #008b8b;">true</span> }
-    },
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Add titlebars to normal clients and dialogs</span>
+    <span style="color: #bc6ec5;">{</span> rule_any = <span style="color: #2d9574;">{</span><span style="color: #4f97d7;">type</span> = <span style="color: #67b11d;">{</span> <span style="color: #2d9574;">"normal"</span>, <span style="color: #2d9574;">"dialog"</span> <span style="color: #67b11d;">}</span>
+      <span style="color: #2d9574;">}</span>, properties = <span style="color: #2d9574;">{</span> titlebars_enabled = <span style="color: #a45bad;">true</span> <span style="color: #2d9574;">}</span>
+    <span style="color: #bc6ec5;">}</span>,
 
-}
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbcf8129" class="outline-3">
-<h3 id="orgbcf8129">Signal</h3>
-<div class="outline-text-3" id="text-orgbcf8129">
+<div id="outline-container-org3640167" class="outline-3">
+<h3 id="org3640167">Signal</h3>
+<div class="outline-text-3" id="text-org3640167">
 <p>
 注册事件发生时的触发函数,该函数接受一个窗口(client对象)作为参数
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">{{{ Signals</span>
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Signal function to execute when a new client appears.</span>
-client.connect_signal(<span style="color: #8b2252;">"manage"</span>, <span style="color: #a020f0;">function</span> (c)
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">Set the windows at the slave,</span>
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">i.e. put it at the end of others instead of setting it master.</span>
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">if not awesome.startup then awful.client.setslave(c) end</span>
+<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">{{{ Signals</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Signal function to execute when a new client appears.</span>
+client.connect_signal<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"manage"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5;">(</span>c<span style="color: #bc6ec5;">)</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Set the windows at the slave,</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">i.e. put it at the end of others instead of setting it master.</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">if not awesome.startup then awful.client.setslave(c) end</span>
 
-    <span style="color: #a020f0;">if</span> awesome.startup <span style="color: #a020f0;">and</span>
-      <span style="color: #a020f0;">not</span> c.size_hints.user_position
-      <span style="color: #a020f0;">and</span> <span style="color: #a020f0;">not</span> c.size_hints.program_position <span style="color: #a020f0;">then</span>
-        <span style="color: #b22222;">-- </span><span style="color: #b22222;">Prevent clients from being unreachable after screen count changes.</span>
-        awful.placement.no_offscreen(c)
-    <span style="color: #a020f0;">end</span>
-<span style="color: #a020f0;">end</span>)
+    <span style="color: #4f97d7; font-weight: bold;">if</span> awesome.startup <span style="color: #4f97d7; font-weight: bold;">and</span>
+      <span style="color: #4f97d7; font-weight: bold;">not</span> c.size_hints.user_position
+      <span style="color: #4f97d7; font-weight: bold;">and</span> <span style="color: #4f97d7; font-weight: bold;">not</span> c.size_hints.program_position <span style="color: #4f97d7; font-weight: bold;">then</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Prevent clients from being unreachable after screen count changes.</span>
+        awful.placement.no_offscreen<span style="color: #bc6ec5;">(</span>c<span style="color: #bc6ec5;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">end</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #4f97d7;">)</span>
 
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Add a titlebar if titlebars_enabled is set to true in the rules.</span>
-client.connect_signal(<span style="color: #8b2252;">"request::titlebars"</span>, <span style="color: #a020f0;">function</span>(c)
-    <span style="color: #b22222;">-- </span><span style="color: #b22222;">buttons for the titlebar</span>
-    <span style="color: #a020f0;">local</span> <span style="color: #a0522d;">buttons</span> = gears.table.join(
-        awful.button({ }, 1, <span style="color: #a020f0;">function</span>()
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Add a titlebar if titlebars_enabled is set to true in the rules.</span>
+client.connect_signal<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"request::titlebars"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #bc6ec5;">(</span>c<span style="color: #bc6ec5;">)</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">buttons for the titlebar</span>
+    <span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">buttons</span> = gears.table.join<span style="color: #bc6ec5;">(</span>
+        awful.button<span style="color: #2d9574;">(</span><span style="color: #67b11d;">{</span> <span style="color: #67b11d;">}</span>, <span style="color: #a45bad;">1</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #67b11d;">()</span>
             client.focus = c
-            c:raise()
-            awful.mouse.client.move(c)
-        <span style="color: #a020f0;">end</span>),
-        awful.button({ }, 3, <span style="color: #a020f0;">function</span>()
+            c:raise<span style="color: #67b11d;">()</span>
+            awful.mouse.client.move<span style="color: #67b11d;">(</span>c<span style="color: #67b11d;">)</span>
+        <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #2d9574;">)</span>,
+        awful.button<span style="color: #2d9574;">(</span><span style="color: #67b11d;">{</span> <span style="color: #67b11d;">}</span>, <span style="color: #a45bad;">3</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #67b11d;">()</span>
             client.focus = c
-            c:raise()
-            awful.mouse.client.resize(c)
-        <span style="color: #a020f0;">end</span>)
-    )
+            c:raise<span style="color: #67b11d;">()</span>
+            awful.mouse.client.resize<span style="color: #67b11d;">(</span>c<span style="color: #67b11d;">)</span>
+        <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #2d9574;">)</span>
+    <span style="color: #bc6ec5;">)</span>
 
-    awful.titlebar(c) : setup {
-        { <span style="color: #b22222;">-- </span><span style="color: #b22222;">Left</span>
-            awful.titlebar.widget.iconwidget(c),
+    awful.titlebar<span style="color: #bc6ec5;">(</span>c<span style="color: #bc6ec5;">)</span> : setup <span style="color: #bc6ec5;">{</span>
+        <span style="color: #2d9574;">{</span> <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Left</span>
+            awful.titlebar.widget.iconwidget<span style="color: #67b11d;">(</span>c<span style="color: #67b11d;">)</span>,
             buttons = buttons,
             layout  = wibox.layout.fixed.horizontal
-        },
-        { <span style="color: #b22222;">-- </span><span style="color: #b22222;">Middle</span>
-            { <span style="color: #b22222;">-- </span><span style="color: #b22222;">Title</span>
-                align  = <span style="color: #8b2252;">"center"</span>,
-                widget = awful.titlebar.widget.titlewidget(c)
-            },
+        <span style="color: #2d9574;">}</span>,
+        <span style="color: #2d9574;">{</span> <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Middle</span>
+            <span style="color: #67b11d;">{</span> <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Title</span>
+                align  = <span style="color: #2d9574;">"center"</span>,
+                widget = awful.titlebar.widget.titlewidget<span style="color: #b1951d;">(</span>c<span style="color: #b1951d;">)</span>
+            <span style="color: #67b11d;">}</span>,
             buttons = buttons,
             layout  = wibox.layout.flex.horizontal
-        },
-        { <span style="color: #b22222;">-- </span><span style="color: #b22222;">Right</span>
-            awful.titlebar.widget.floatingbutton (c),
-            awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.stickybutton   (c),
-            awful.titlebar.widget.ontopbutton    (c),
-            awful.titlebar.widget.closebutton    (c),
-            layout = wibox.layout.fixed.horizontal()
-        },
+        <span style="color: #2d9574;">}</span>,
+        <span style="color: #2d9574;">{</span> <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Right</span>
+            awful.titlebar.widget.floatingbutton <span style="color: #67b11d;">(</span>c<span style="color: #67b11d;">)</span>,
+            awful.titlebar.widget.maximizedbutton<span style="color: #67b11d;">(</span>c<span style="color: #67b11d;">)</span>,
+            awful.titlebar.widget.stickybutton   <span style="color: #67b11d;">(</span>c<span style="color: #67b11d;">)</span>,
+            awful.titlebar.widget.ontopbutton    <span style="color: #67b11d;">(</span>c<span style="color: #67b11d;">)</span>,
+            awful.titlebar.widget.closebutton    <span style="color: #67b11d;">(</span>c<span style="color: #67b11d;">)</span>,
+            layout = wibox.layout.fixed.horizontal<span style="color: #67b11d;">()</span>
+        <span style="color: #2d9574;">}</span>,
         layout = wibox.layout.align.horizontal
-    }
-<span style="color: #a020f0;">end</span>)
+    <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #4f97d7;">)</span>
 
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">Enable sloppy focus, so that focus follows mouse.</span>
-client.connect_signal(<span style="color: #8b2252;">"mouse::enter"</span>, <span style="color: #a020f0;">function</span>(c)
-    <span style="color: #a020f0;">if</span> awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-        <span style="color: #a020f0;">and</span> awful.client.focus.filter(c) <span style="color: #a020f0;">then</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Enable sloppy focus, so that focus follows mouse.</span>
+client.connect_signal<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"mouse::enter"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #bc6ec5;">(</span>c<span style="color: #bc6ec5;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> awful.layout.get<span style="color: #bc6ec5;">(</span>c.screen<span style="color: #bc6ec5;">)</span> ~= awful.layout.suit.magnifier
+        <span style="color: #4f97d7; font-weight: bold;">and</span> awful.client.focus.filter<span style="color: #bc6ec5;">(</span>c<span style="color: #bc6ec5;">)</span> <span style="color: #4f97d7; font-weight: bold;">then</span>
         client.focus = c
-    <span style="color: #a020f0;">end</span>
-<span style="color: #a020f0;">end</span>)
+    <span style="color: #4f97d7; font-weight: bold;">end</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #4f97d7;">)</span>
 
-client.connect_signal(<span style="color: #8b2252;">"focus"</span>, <span style="color: #a020f0;">function</span>(c) c.border_color = beautiful.border_focus <span style="color: #a020f0;">end</span>)
-client.connect_signal(<span style="color: #8b2252;">"unfocus"</span>, <span style="color: #a020f0;">function</span>(c) c.border_color = beautiful.border_normal <span style="color: #a020f0;">end</span>)
-<span style="color: #b22222;">-- </span><span style="color: #b22222;">}}}</span>
+client.connect_signal<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"focus"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #bc6ec5;">(</span>c<span style="color: #bc6ec5;">)</span> c.border_color = beautiful.border_focus <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #4f97d7;">)</span>
+client.connect_signal<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"unfocus"</span>, <span style="color: #4f97d7; font-weight: bold;">function</span><span style="color: #bc6ec5;">(</span>c<span style="color: #bc6ec5;">)</span> c.border_color = beautiful.border_normal <span style="color: #4f97d7; font-weight: bold;">end</span><span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">}}}</span>
 
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org6680cd7" class="outline-3">
-<h3 id="org6680cd7">设置自启动程序</h3>
-<div class="outline-text-3" id="text-org6680cd7">
+<div id="outline-container-orgabf4ee1" class="outline-3">
+<h3 id="orgabf4ee1">设置自启动程序</h3>
+<div class="outline-text-3" id="text-orgabf4ee1">
 <div class="org-src-container">
-<pre class="src src-lua">autorun = <span style="color: #008b8b;">true</span>
+<pre class="src src-lua">autorun = <span style="color: #a45bad;">true</span>
 autorunApps = 
-  { 
-    <span style="color: #8b2252;">"ps -fu $(whoami)|grep \"emacs --daemon\"|grep -v grep || emacs --daemon"</span>
-  }
+  <span style="color: #4f97d7;">{</span> 
+    <span style="color: #2d9574;">"ps -fu $(whoami)|grep \"emacs --daemon\"|grep -v grep || emacs --daemon"</span>
+  <span style="color: #4f97d7;">}</span>
 
-<span style="color: #a020f0;">if</span> autorun <span style="color: #a020f0;">then</span>
-  <span style="color: #a020f0;">for</span> <span style="color: #a0522d;">app</span> = 1, #autorunApps <span style="color: #a020f0;">do</span>
-    awful.util.spawn_with_shell(autorunApps[app])
-  <span style="color: #a020f0;">end</span>
-<span style="color: #a020f0;">end</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> autorun <span style="color: #4f97d7; font-weight: bold;">then</span>
+  <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #7590db;">app</span> = <span style="color: #a45bad;">1</span>, #autorunApps <span style="color: #4f97d7; font-weight: bold;">do</span>
+    awful.util.spawn_with_shell<span style="color: #4f97d7;">(</span>autorunApps<span style="color: #bc6ec5;">[</span>app<span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">end</span>
+<span style="color: #4f97d7; font-weight: bold;">end</span>
 </pre>
 </div>
 </div>

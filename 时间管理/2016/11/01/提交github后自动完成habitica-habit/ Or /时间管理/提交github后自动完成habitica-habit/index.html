@@ -55,16 +55,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3696457">什么是Habitica</a></li>
-<li><a href="#org4cb13f2">Habash介绍</a></li>
-<li><a href="#org342e9e4">结合Habash与Travis-ci自动完成habit</a></li>
+<li><a href="#org4a2dbc3">什么是Habitica</a></li>
+<li><a href="#orgf8c529d">Habash介绍</a></li>
+<li><a href="#org679dc7c">结合Habash与Travis-ci自动完成habit</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3696457" class="outline-2">
-<h2 id="org3696457">什么是Habitica</h2>
-<div class="outline-text-2" id="text-org3696457">
+<div id="outline-container-org4a2dbc3" class="outline-2">
+<h2 id="org4a2dbc3">什么是Habitica</h2>
+<div class="outline-text-2" id="text-org4a2dbc3">
 <p>
 <a href="https://habitica.com">Habitica</a> 是一个款超赞的游戏化软件，它致力于帮助用户培养习惯和提高效率。
 与传统的效率类软件不同的是，Habitica使生活看起来就像一场复古的像素风角色扮演游戏。
@@ -88,9 +88,9 @@
 </div>
 </div>
 
-<div id="outline-container-org4cb13f2" class="outline-2">
-<h2 id="org4cb13f2">Habash介绍</h2>
-<div class="outline-text-2" id="text-org4cb13f2">
+<div id="outline-container-orgf8c529d" class="outline-2">
+<h2 id="orgf8c529d">Habash介绍</h2>
+<div class="outline-text-2" id="text-orgf8c529d">
 <p>
 habash是一款由shell实现的habitica api，它的用法也很简单，只需要：
 </p>
@@ -103,9 +103,9 @@ habash是一款由shell实现的habitica api，它的用法也很简单，只需
 </div>
 </div>
 
-<div id="outline-container-org342e9e4" class="outline-2">
-<h2 id="org342e9e4">结合Habash与Travis-ci自动完成habit</h2>
-<div class="outline-text-2" id="text-org342e9e4">
+<div id="outline-container-org679dc7c" class="outline-2">
+<h2 id="org679dc7c">结合Habash与Travis-ci自动完成habit</h2>
+<div class="outline-text-2" id="text-org679dc7c">
 <p>
 travis-ci能让我们在每次提交github后自动触发执行一段脚本。 所以我们只需要让travis-ci帮我们自动调用habash来完成任务就行了。 
 </p>
@@ -119,20 +119,20 @@ travis-ci能让我们在每次提交github后自动触发执行一段脚本。 �
 在要监控的github repo上添加一个 <code>.travis.yml</code> 文件，录入下面内容
 </p>
 <div class="org-src-container">
-<pre class="src src-yaml"><span style="color: #a0522d;">language</span>: generic
-<span style="color: #a0522d;">sudo</span>: <span style="color: #008b8b;">false</span>
+<pre class="src src-yaml"><span style="color: #7590db;">language</span>: generic
+<span style="color: #7590db;">sudo</span>: <span style="color: #a45bad;">false</span>
 
-<span style="color: #a0522d;">branches</span>:
-  <span style="color: #a0522d;">only</span>:
+<span style="color: #7590db;">branches</span>:
+  <span style="color: #7590db;">only</span>:
     - master
     - source
-    <span style="color: #b22222;"># </span><span style="color: #b22222;">&#36825;&#37324;&#21487;&#20197;&#28155;&#21152;&#20320;&#35201;&#30417;&#25511;&#21738;&#20123;branch</span>
+    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#36825;&#37324;&#21487;&#20197;&#28155;&#21152;&#20320;&#35201;&#30417;&#25511;&#21738;&#20123;branch</span>
 
-<span style="color: #a0522d;">before_install</span>:
+<span style="color: #7590db;">before_install</span>:
  - git clone https://github.com/nasfarley88/habash
 
-<span style="color: #a0522d;">script</span>:
-- ./habash/habash up <span style="color: #8b2252;">"&lt;&#20320;&#33258;&#24049;&#30340;Habit&#20219;&#21153;&#25551;&#36848;&gt;"</span>
+<span style="color: #7590db;">script</span>:
+- ./habash/habash up <span style="color: #2d9574;">"&lt;&#20320;&#33258;&#24049;&#30340;Habit&#20219;&#21153;&#25551;&#36848;&gt;"</span>
 </pre>
 </div></li>
 

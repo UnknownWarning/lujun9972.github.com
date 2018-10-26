@@ -59,22 +59,22 @@ mpg123本身是支持URL MP3的,可惜它只支持http协议的url mp3.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/bin/</span><span style="color: #a020f0;">bash</span>
+<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/bin/</span><span style="color: #4f97d7; font-weight: bold;">bash</span>
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">play https mp3 using mpg123</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">play https mp3 using mpg123</span>
 
-<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">https_url_p</span> ()
-{
-    <span style="color: #483d8b;">local</span> <span style="color: #a0522d;">url</span>=$<span style="color: #a0522d;">1</span>
-    <span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">url</span> |egrep <span style="color: #8b2252;">"^https://"</span> &gt;/dev/null
-}
+<span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">https_url_p</span> <span style="color: #4f97d7;">()</span>
+<span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">url</span>=$<span style="color: #a45bad;">1</span>
+    <span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">url</span> |egrep <span style="color: #2d9574;">"^https://"</span> &gt;/dev/null
+<span style="color: #4f97d7;">}</span>
 
-<span style="color: #a0522d;">uri</span>=$<span style="color: #a0522d;">1</span>
-<span style="color: #a020f0;">if</span> https_url_p $<span style="color: #a0522d;">uri</span>;<span style="color: #a020f0;">then</span>
-    curl -L $<span style="color: #a0522d;">uri</span> | mpg123 -
-<span style="color: #a020f0;">else</span>
-    mpg123 $<span style="color: #a0522d;">curi</span>
-<span style="color: #a020f0;">fi</span>
+<span style="color: #7590db;">uri</span>=$<span style="color: #a45bad;">1</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> https_url_p $<span style="color: #7590db;">uri</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+    curl -L $<span style="color: #7590db;">uri</span> | mpg123 -
+<span style="color: #4f97d7; font-weight: bold;">else</span>
+    mpg123 $<span style="color: #7590db;">curi</span>
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
 </pre>
 </div>
 
@@ -95,7 +95,7 @@ mpg123本身是支持URL MP3的,可惜它只支持http协议的url mp3.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh">mpg123 $<span style="color: #a0522d;">1</span> || curl -L $<span style="color: #a0522d;">1</span> |mpg123 -
+<pre class="src src-sh">mpg123 $<span style="color: #a45bad;">1</span> || curl -L $<span style="color: #a45bad;">1</span> |mpg123 -
 </pre>
 </div>
 

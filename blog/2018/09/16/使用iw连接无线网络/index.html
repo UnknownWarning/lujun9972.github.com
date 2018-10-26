@@ -54,24 +54,24 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd385e59">查看无线网络接口</a></li>
-<li><a href="#org584e40c">启动无线接口</a></li>
-<li><a href="#org658a868">获取SSID</a></li>
-<li><a href="#org53f8a70">连接无线路由</a>
+<li><a href="#org958db68">查看无线网络接口</a></li>
+<li><a href="#org2ca4c62">启动无线接口</a></li>
+<li><a href="#orgdd2ec6a">获取SSID</a></li>
+<li><a href="#org0dcb558">连接无线路由</a>
 <ul>
-<li><a href="#org59a374c">连接无密码的无线路由</a></li>
-<li><a href="#org3520d73">连接使用WEP加密的无线路由</a></li>
-<li><a href="#org636e3fb">连接WPA加密的无线路由</a></li>
+<li><a href="#orga1dd7ef">连接无密码的无线路由</a></li>
+<li><a href="#orgb9b3fbe">连接使用WEP加密的无线路由</a></li>
+<li><a href="#orgb223ee1">连接WPA加密的无线路由</a></li>
 </ul>
 </li>
-<li><a href="#orgeeba97b">断开连接</a></li>
+<li><a href="#org887331e">断开连接</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd385e59" class="outline-2">
-<h2 id="orgd385e59">查看无线网络接口</h2>
-<div class="outline-text-2" id="text-orgd385e59">
+<div id="outline-container-org958db68" class="outline-2">
+<h2 id="org958db68">查看无线网络接口</h2>
+<div class="outline-text-2" id="text-org958db68">
 <div class="org-src-container">
 <pre class="src src-shell">iw dev
 </pre>
@@ -79,14 +79,14 @@
 
 <div class="org-src-container">
 <pre class="src src-org">phy#0
-        Interface wlp3s0
-                ifindex 2
-                wdev 0x1
-                addr a4:4e:31:33:2a:48
-                ssid NETGEAR90
-                type managed
-                channel 2 (2417 MHz), width: 20 MHz, center1: 2417 MHz
-                txpower 15.00 dBm
+  Interface wlp3s0
+    ifindex 2
+    wdev 0x1
+    addr a4:4e:31:33:2a:48
+    ssid NETGEAR90
+    type managed
+    channel 2 (2417 MHz), width: 20 MHz, center1: 2417 MHz
+    txpower 15.00 dBm
 </pre>
 </div>
 
@@ -96,9 +96,9 @@
 </div>
 </div>
 
-<div id="outline-container-org584e40c" class="outline-2">
-<h2 id="org584e40c">启动无线接口</h2>
-<div class="outline-text-2" id="text-org584e40c">
+<div id="outline-container-org2ca4c62" class="outline-2">
+<h2 id="org2ca4c62">启动无线接口</h2>
+<div class="outline-text-2" id="text-org2ca4c62">
 <div class="org-src-container">
 <pre class="src src-shell">sudo ip link set wlp3s0 up
 </pre>
@@ -106,9 +106,9 @@
 </div>
 </div>
 
-<div id="outline-container-org658a868" class="outline-2">
-<h2 id="org658a868">获取SSID</h2>
-<div class="outline-text-2" id="text-org658a868">
+<div id="outline-container-orgdd2ec6a" class="outline-2">
+<h2 id="orgdd2ec6a">获取SSID</h2>
+<div class="outline-text-2" id="text-orgdd2ec6a">
 <div class="org-src-container">
 <pre class="src src-shell">sudo iw wlp3s0 scan |grep SSID
 </pre>
@@ -122,7 +122,7 @@ SSID: ChinaNet-TZF2
 SSID: JATEN-2.4G
 SSID: NETGEAR90
 SSID: Xiaomi_plus17
-         * SSID List
+   * SSID List
 SSID: TP-LINK_WU
 SSID: HiWiFi_200A32
 SSID: TP-LINK_5G_610C
@@ -137,17 +137,17 @@ SSID: CMCC-j667
 </div>
 </div>
 
-<div id="outline-container-org53f8a70" class="outline-2">
-<h2 id="org53f8a70">连接无线路由</h2>
-<div class="outline-text-2" id="text-org53f8a70">
+<div id="outline-container-org0dcb558" class="outline-2">
+<h2 id="org0dcb558">连接无线路由</h2>
+<div class="outline-text-2" id="text-org0dcb558">
 <p>
 这里假设我们想要连接MyHomeCloud
 </p>
 </div>
 
-<div id="outline-container-org59a374c" class="outline-3">
-<h3 id="org59a374c">连接无密码的无线路由</h3>
-<div class="outline-text-3" id="text-org59a374c">
+<div id="outline-container-orga1dd7ef" class="outline-3">
+<h3 id="orga1dd7ef">连接无密码的无线路由</h3>
+<div class="outline-text-3" id="text-orga1dd7ef">
 <div class="org-src-container">
 <pre class="src src-shell">sudo iw wlp3s0 connect -w MyHomeCloud
 </pre>
@@ -155,9 +155,9 @@ SSID: CMCC-j667
 </div>
 </div>
 
-<div id="outline-container-org3520d73" class="outline-3">
-<h3 id="org3520d73">连接使用WEP加密的无线路由</h3>
-<div class="outline-text-3" id="text-org3520d73">
+<div id="outline-container-orgb9b3fbe" class="outline-3">
+<h3 id="orgb9b3fbe">连接使用WEP加密的无线路由</h3>
+<div class="outline-text-3" id="text-orgb9b3fbe">
 <p>
 这里假设WEP密码是1234567890
 </p>
@@ -168,9 +168,9 @@ SSID: CMCC-j667
 </div>
 </div>
 
-<div id="outline-container-org636e3fb" class="outline-3">
-<h3 id="org636e3fb">连接WPA加密的无线路由</h3>
-<div class="outline-text-3" id="text-org636e3fb">
+<div id="outline-container-orgb223ee1" class="outline-3">
+<h3 id="orgb223ee1">连接WPA加密的无线路由</h3>
+<div class="outline-text-3" id="text-orgb223ee1">
 <p>
 可惜iw只能处理WEP加密，要连接WPA需要 <code>wpasupplicant</code>
 </p>
@@ -180,8 +180,8 @@ SSID: CMCC-j667
 生成配置信息
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">wpa_passphrase ${<span style="color: #a0522d;">SSID</span>} &gt;&gt;/etc/wpa_supplicant.conf
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#28982;&#21518;&#36755;&#20837;&#30331;&#38470;&#23494;&#30721;</span>
+<pre class="src src-shell">wpa_passphrase $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">SSID</span><span style="color: #4f97d7;">}</span> &gt;&gt;/etc/wpa_supplicant.conf
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#28982;&#21518;&#36755;&#20837;&#30331;&#38470;&#23494;&#30721;</span>
 </pre>
 </div></li>
 
@@ -197,7 +197,7 @@ SSID: CMCC-j667
 获取无线路由提供的DHCP IP
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">&#30003;&#35831;&#21069;&#20808;&#37322;&#25918;&#21407;&#26377;&#22320;&#22336;</span>
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#30003;&#35831;&#21069;&#20808;&#37322;&#25918;&#21407;&#26377;&#22320;&#22336;</span>
 sudo dhclient -r wlp3s0
 sudo dhclient wlp3s0
 </pre>
@@ -207,9 +207,9 @@ sudo dhclient wlp3s0
 </div>
 </div>
 
-<div id="outline-container-orgeeba97b" class="outline-2">
-<h2 id="orgeeba97b">断开连接</h2>
-<div class="outline-text-2" id="text-orgeeba97b">
+<div id="outline-container-org887331e" class="outline-2">
+<h2 id="org887331e">断开连接</h2>
+<div class="outline-text-2" id="text-org887331e">
 <div class="org-src-container">
 <pre class="src src-shell">iw wlp3s0 disconnect
 </pre>

@@ -53,54 +53,54 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7e60b8c">1. 流与FILE对象</a>
+<li><a href="#orgd63c93b">1. 流与FILE对象</a>
 <ul>
-<li><a href="#org9c3b4f2">1.1. 流定向</a>
+<li><a href="#org3d47370">1.1. 流定向</a>
 <ul>
-<li><a href="#org8ffc627">1.1.1. fwide函数:设置流的定向</a></li>
-<li><a href="#orgcd7bb76">1.1.2. freopen函数:清除一个流的定向</a></li>
+<li><a href="#orgeb3a329">1.1.1. fwide函数:设置流的定向</a></li>
+<li><a href="#orgcf592e7">1.1.2. freopen函数:清除一个流的定向</a></li>
 </ul>
 </li>
-<li><a href="#orgd585c25">1.2. 打开流</a></li>
-<li><a href="#org58c05bb">1.3. 读写流</a>
+<li><a href="#org9cf4cab">1.2. 打开流</a></li>
+<li><a href="#org3ddad01">1.3. 读写流</a>
 <ul>
-<li><a href="#org4e0eefc">1.3.1. 一次一个字符的IO</a></li>
-<li><a href="#org2cb369c">1.3.2. 一次一行的IO</a></li>
-<li><a href="#orgd988b57">1.3.3. 二进制直接IO</a></li>
+<li><a href="#org92771ec">1.3.1. 一次一个字符的IO</a></li>
+<li><a href="#orgae08d0b">1.3.2. 一次一行的IO</a></li>
+<li><a href="#org6b1724e">1.3.3. 二进制直接IO</a></li>
 </ul>
 </li>
-<li><a href="#orgba29e78">1.4. 定位流</a></li>
-<li><a href="#orge2a8dea">1.5. 错误判断</a></li>
-<li><a href="#orgb4ec03b">1.6. fileno:获取流对应的文件描述符</a></li>
+<li><a href="#orgb127864">1.4. 定位流</a></li>
+<li><a href="#org0fa1aa1">1.5. 错误判断</a></li>
+<li><a href="#org1800046">1.6. fileno:获取流对应的文件描述符</a></li>
 </ul>
 </li>
-<li><a href="#orgced2d15">2. 缓冲</a>
+<li><a href="#orgc76b1b7">2. 缓冲</a>
 <ul>
-<li><a href="#org2fd0925">2.1. 全缓冲</a></li>
-<li><a href="#org9de2e51">2.2. 行缓冲</a></li>
-<li><a href="#org739920e">2.3. 缓冲的惯例</a></li>
-<li><a href="#org15c0973">2.4. 更改缓冲类型</a>
+<li><a href="#org4a2738f">2.1. 全缓冲</a></li>
+<li><a href="#org66804df">2.2. 行缓冲</a></li>
+<li><a href="#org08e7767">2.3. 缓冲的惯例</a></li>
+<li><a href="#orgd916e3f">2.4. 更改缓冲类型</a>
 <ul>
-<li><a href="#orgc436590">2.4.1. setbuf函数:打开/关闭缓冲机制</a></li>
-<li><a href="#org916a8cf">2.4.2. setvbuf函数:精确指定缓冲类型</a></li>
-<li><a href="#org178b9c6">2.4.3. fflush函数:强制将缓冲区内容写入磁盘</a></li>
+<li><a href="#org5392101">2.4.1. setbuf函数:打开/关闭缓冲机制</a></li>
+<li><a href="#orgf6a6077">2.4.2. setvbuf函数:精确指定缓冲类型</a></li>
+<li><a href="#org4c00d69">2.4.3. fflush函数:强制将缓冲区内容写入磁盘</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge448330">3. 标准输入,标准输出和标准出错</a></li>
-<li><a href="#org9f8e05c">4. 产生临时文件</a></li>
-<li><a href="#org36e6361">5. 线程安全的方式管理FILE对象</a></li>
+<li><a href="#orgb7cc441">3. 标准输入,标准输出和标准出错</a></li>
+<li><a href="#org245ab1b">4. 产生临时文件</a></li>
+<li><a href="#org51d9b09">5. 线程安全的方式管理FILE对象</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7e60b8c" class="outline-2">
-<h2 id="org7e60b8c"><span class="section-number-2">1</span> 流与FILE对象</h2>
+<div id="outline-container-orgd63c93b" class="outline-2">
+<h2 id="orgd63c93b"><span class="section-number-2">1</span> 流与FILE对象</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org9c3b4f2" class="outline-3">
-<h3 id="org9c3b4f2"><span class="section-number-3">1.1</span> 流定向</h3>
+<div id="outline-container-org3d47370" class="outline-3">
+<h3 id="org3d47370"><span class="section-number-3">1.1</span> 流定向</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 标准IO文件流可用于单字符或多字符字符集. 流的定向(orientation)决定了所读,写的字符是单字符还是多字符的.
@@ -119,17 +119,17 @@
 </p>
 </div>
 
-<div id="outline-container-org8ffc627" class="outline-4">
-<h4 id="org8ffc627"><span class="section-number-4">1.1.1</span> fwide函数:设置流的定向</h4>
+<div id="outline-container-orgeb3a329" class="outline-4">
+<h4 id="orgeb3a329"><span class="section-number-4">1.1.1</span> fwide函数:设置流的定向</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
-<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;wchar.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
+<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">wchar.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;mode&#21442;&#25968;&#20540;&#20026;&#36127;,fwide&#23581;&#35797;&#23558;&#27969;&#35774;&#32622;&#20026;&#21333;&#23383;&#33410;&#23450;&#21521; </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;mode&#21442;&#25968;&#20540;&#20026;&#27491;,fwide&#23581;&#35797;&#23558;&#27969;&#35774;&#32622;&#20026;&#22810;&#23383;&#33410;&#23450;&#21521; </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;mode&#21442;&#25968;&#20540;&#20026;0,fwide&#19981;&#35774;&#32622;&#23450;&#21521;,&#21482;&#26159;&#36820;&#22238;&#35813;&#27969;&#30340;&#23450;&#21521; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fwide</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">mode</span>);  <span style="color: #b22222;">/*  </span><span style="color: #b22222;">&#36820;&#22238;&#20540;&#34920;&#31034;&#27969;&#30340;&#23450;&#21521;,&#27491;&#20026;&#23485;&#23450;&#21521;,&#36127;&#20026;&#20294;&#23450;&#21521;,0&#20026;&#26410;&#23450;&#21521;</span><span style="color: #b22222;">*/</span>
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;mode&#21442;&#25968;&#20540;&#20026;&#36127;,fwide&#23581;&#35797;&#23558;&#27969;&#35774;&#32622;&#20026;&#21333;&#23383;&#33410;&#23450;&#21521; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;mode&#21442;&#25968;&#20540;&#20026;&#27491;,fwide&#23581;&#35797;&#23558;&#27969;&#35774;&#32622;&#20026;&#22810;&#23383;&#33410;&#23450;&#21521; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;mode&#21442;&#25968;&#20540;&#20026;0,fwide&#19981;&#35774;&#32622;&#23450;&#21521;,&#21482;&#26159;&#36820;&#22238;&#35813;&#27969;&#30340;&#23450;&#21521; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fwide</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">mode</span><span style="color: #4f97d7;">)</span>;  <span style="color: #2aa1ae; background-color: #292e34;">/*  </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#20540;&#34920;&#31034;&#27969;&#30340;&#23450;&#21521;,&#27491;&#20026;&#23485;&#23450;&#21521;,&#36127;&#20026;&#20294;&#23450;&#21521;,0&#20026;&#26410;&#23450;&#21521;</span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
 </pre>
 </div>
 
@@ -143,20 +143,20 @@
 </div>
 </div>
 
-<div id="outline-container-orgcd7bb76" class="outline-4">
-<h4 id="orgcd7bb76"><span class="section-number-4">1.1.2</span> freopen函数:清除一个流的定向</h4>
+<div id="outline-container-orgcf592e7" class="outline-4">
+<h4 id="orgcf592e7"><span class="section-number-4">1.1.2</span> freopen函数:清除一个流的定向</h4>
 </div>
 </div>
 
-<div id="outline-container-orgd585c25" class="outline-3">
-<h3 id="orgd585c25"><span class="section-number-3">1.2</span> 打开流</h3>
+<div id="outline-container-org9cf4cab" class="outline-3">
+<h3 id="org9cf4cab"><span class="section-number-3">1.2</span> 打开流</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">FILE</span>* <span style="color: #0000ff;">fopen</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">type</span>);
-<span style="color: #228b22;">FILE</span>* <span style="color: #0000ff;">freopen</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">type</span>,<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">FILE</span>* <span style="color: #0000ff;">fdopen</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">type</span>);
+<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #bc6ec5; font-weight: bold;">fopen</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">type</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #bc6ec5; font-weight: bold;">freopen</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">type</span>,<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #bc6ec5; font-weight: bold;">fdopen</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">type</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 
@@ -197,24 +197,24 @@ fdopen将一个标准IO流与文件描述符相结合.
 </div>
 </div>
 
-<div id="outline-container-org58c05bb" class="outline-3">
-<h3 id="org58c05bb"><span class="section-number-3">1.3</span> 读写流</h3>
+<div id="outline-container-org3ddad01" class="outline-3">
+<h3 id="org3ddad01"><span class="section-number-3">1.3</span> 读写流</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-org4e0eefc" class="outline-4">
-<h4 id="org4e0eefc"><span class="section-number-4">1.3.1</span> 一次一个字符的IO</h4>
+<div id="outline-container-org92771ec" class="outline-4">
+<h4 id="org92771ec"><span class="section-number-4">1.3.1</span> 一次一个字符的IO</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">getc</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fgetc</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">getchar</span>();
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">ungetc</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">c</span>,<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">getc</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fgetc</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">getchar</span><span style="color: #4f97d7;">()</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">ungetc</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">c</span>,<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">putc</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">c</span>,<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fputc</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">c</span>,<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">putchar</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">c</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">putc</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">c</span>,<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fputc</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">c</span>,<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">putchar</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">c</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>
@@ -232,16 +232,16 @@ putc和fputc的区别类似于getc和fgetc的区别.
 </p>
 </div>
 </div>
-<div id="outline-container-org2cb369c" class="outline-4">
-<h4 id="org2cb369c"><span class="section-number-4">1.3.2</span> 一次一行的IO</h4>
+<div id="outline-container-orgae08d0b" class="outline-4">
+<h4 id="orgae08d0b"><span class="section-number-4">1.3.2</span> 一次一行的IO</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">char</span>* <span style="color: #0000ff;">fgets</span>(<span style="color: #228b22;">char</span>* <span style="color: #a0522d;">buf</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">n</span>,<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">char</span>* <span style="color: #0000ff;">gets</span>(<span style="color: #228b22;">char</span>* <span style="color: #a0522d;">buf</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fputs</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">str</span>,<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">puts</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">str</span>);
+<span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #bc6ec5; font-weight: bold;">fgets</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">buf</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>,<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #bc6ec5; font-weight: bold;">gets</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">buf</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fputs</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">str</span>,<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">puts</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">str</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>
@@ -255,14 +255,14 @@ putc和fputc的区别类似于getc和fgetc的区别.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd988b57" class="outline-4">
-<h4 id="orgd988b57"><span class="section-number-4">1.3.3</span> 二进制直接IO</h4>
+<div id="outline-container-org6b1724e" class="outline-4">
+<h4 id="org6b1724e"><span class="section-number-4">1.3.3</span> 二进制直接IO</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">size_t</span> <span style="color: #0000ff;">fread</span>(<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">ptr</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">size</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">ntimes</span>,<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">size_t</span> <span style="color: #0000ff;">fwrite</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">ptr</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">size</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">ntimes</span>,<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #bc6ec5; font-weight: bold;">fread</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">ptr</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">size</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">ntimes</span>,<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #bc6ec5; font-weight: bold;">fwrite</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">ptr</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">size</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">ntimes</span>,<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -272,66 +272,66 @@ putc和fputc的区别类似于getc和fgetc的区别.
 </div>
 </div>
 
-<div id="outline-container-orgba29e78" class="outline-3">
-<h3 id="orgba29e78"><span class="section-number-3">1.4</span> 定位流</h3>
+<div id="outline-container-orgb127864" class="outline-3">
+<h3 id="orgb127864"><span class="section-number-3">1.4</span> 定位流</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">long</span> <span style="color: #0000ff;">ftell</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fseek</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>,<span style="color: #228b22;">long</span> <span style="color: #a0522d;">offset</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">whence</span>);
-<span style="color: #228b22;">void</span> <span style="color: #0000ff;">rewind</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">long</span> <span style="color: #bc6ec5; font-weight: bold;">ftell</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fseek</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span>,<span style="color: #ce537a; font-weight: bold;">long</span> <span style="color: #7590db;">offset</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">whence</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">rewind</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #228b22;">off_t</span> <span style="color: #0000ff;">ftello</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fseeko</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>,<span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">offset</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">whence</span>);
+<span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #bc6ec5; font-weight: bold;">ftello</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fseeko</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span>,<span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">offset</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">whence</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fgetpos</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>,<span style="color: #228b22;">fpos_t</span>* <span style="color: #a0522d;">pos</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fsetpos</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">fpos_t</span>* <span style="color: #a0522d;">pos</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fgetpos</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span>,<span style="color: #ce537a; font-weight: bold;">fpos_t</span>* <span style="color: #7590db;">pos</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fsetpos</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">fpos_t</span>* <span style="color: #7590db;">pos</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge2a8dea" class="outline-3">
-<h3 id="orge2a8dea"><span class="section-number-3">1.5</span> 错误判断</h3>
+<div id="outline-container-org0fa1aa1" class="outline-3">
+<h3 id="org0fa1aa1"><span class="section-number-3">1.5</span> 错误判断</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 读取出错或到达文件结尾,读取函数的返回值都是同一个值. 为了区分这两种不同的情况,必须调用ferror或feof
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">ferror</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">feof</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">ferror</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">feof</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #228b22;">void</span> <span style="color: #0000ff;">clearerr</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">clearerr</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb4ec03b" class="outline-3">
-<h3 id="orgb4ec03b"><span class="section-number-3">1.6</span> fileno:获取流对应的文件描述符</h3>
+<div id="outline-container-org1800046" class="outline-3">
+<h3 id="org1800046"><span class="section-number-3">1.6</span> fileno:获取流对应的文件描述符</h3>
 <div class="outline-text-3" id="text-1-6">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fileno</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fileno</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgced2d15" class="outline-2">
-<h2 id="orgced2d15"><span class="section-number-2">2</span> 缓冲</h2>
+<div id="outline-container-orgc76b1b7" class="outline-2">
+<h2 id="orgc76b1b7"><span class="section-number-2">2</span> 缓冲</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 标准IO提供了2种类型的缓冲
 </p>
 </div>
 
-<div id="outline-container-org2fd0925" class="outline-3">
-<h3 id="org2fd0925"><span class="section-number-3">2.1</span> 全缓冲</h3>
+<div id="outline-container-org4a2738f" class="outline-3">
+<h3 id="org4a2738f"><span class="section-number-3">2.1</span> 全缓冲</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 填满IO缓冲区才进行实际的IO操作
@@ -343,8 +343,8 @@ putc和fputc的区别类似于getc和fgetc的区别.
 </div>
 </div>
 
-<div id="outline-container-org9de2e51" class="outline-3">
-<h3 id="org9de2e51"><span class="section-number-3">2.2</span> 行缓冲</h3>
+<div id="outline-container-org66804df" class="outline-3">
+<h3 id="org66804df"><span class="section-number-3">2.2</span> 行缓冲</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 当输入和输出中遇到换行符时,标准IO库执行IO操作
@@ -356,8 +356,8 @@ putc和fputc的区别类似于getc和fgetc的区别.
 </div>
 </div>
 
-<div id="outline-container-org739920e" class="outline-3">
-<h3 id="org739920e"><span class="section-number-3">2.3</span> 缓冲的惯例</h3>
+<div id="outline-container-org08e7767" class="outline-3">
+<h3 id="org08e7767"><span class="section-number-3">2.3</span> 缓冲的惯例</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 一般标准IO缓冲的惯例为:标准出错不带缓冲,打开至终端设备的流是行缓冲,其他流是全缓冲.
@@ -365,20 +365,20 @@ putc和fputc的区别类似于getc和fgetc的区别.
 </div>
 </div>
 
-<div id="outline-container-org15c0973" class="outline-3">
-<h3 id="org15c0973"><span class="section-number-3">2.4</span> 更改缓冲类型</h3>
+<div id="outline-container-orgd916e3f" class="outline-3">
+<h3 id="orgd916e3f"><span class="section-number-3">2.4</span> 更改缓冲类型</h3>
 <div class="outline-text-3" id="text-2-4">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">void</span> <span style="color: #0000ff;">setbuf</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>,<span style="color: #228b22;">char</span>* <span style="color: #a0522d;">buf</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">setvbuf</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>,<span style="color: #228b22;">char</span>* <span style="color: #a0522d;">buf</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">mode</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">size</span>);
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">setbuf</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span>,<span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">buf</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">setvbuf</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span>,<span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">buf</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">mode</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">size</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgc436590" class="outline-4">
-<h4 id="orgc436590"><span class="section-number-4">2.4.1</span> setbuf函数:打开/关闭缓冲机制</h4>
+<div id="outline-container-org5392101" class="outline-4">
+<h4 id="org5392101"><span class="section-number-4">2.4.1</span> setbuf函数:打开/关闭缓冲机制</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <p>
 当为打开缓冲机制时,这里参数buf必须为一个长度为BUFSIZ的缓冲区(BUFSIZ定义在stdio.h中)
@@ -390,8 +390,8 @@ putc和fputc的区别类似于getc和fgetc的区别.
 </div>
 </div>
 
-<div id="outline-container-org916a8cf" class="outline-4">
-<h4 id="org916a8cf"><span class="section-number-4">2.4.2</span> setvbuf函数:精确指定缓冲类型</h4>
+<div id="outline-container-orgf6a6077" class="outline-4">
+<h4 id="orgf6a6077"><span class="section-number-4">2.4.2</span> setvbuf函数:精确指定缓冲类型</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <ul class="org-ul">
 <li><p>
@@ -438,21 +438,21 @@ putc和fputc的区别类似于getc和fgetc的区别.
 </div>
 </div>
 
-<div id="outline-container-org178b9c6" class="outline-4">
-<h4 id="org178b9c6"><span class="section-number-4">2.4.3</span> fflush函数:强制将缓冲区内容写入磁盘</h4>
+<div id="outline-container-org4c00d69" class="outline-4">
+<h4 id="org4c00d69"><span class="section-number-4">2.4.3</span> fflush函数:强制将缓冲区内容写入磁盘</h4>
 <div class="outline-text-4" id="text-2-4-3">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fflush</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fflush</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orge448330" class="outline-2">
-<h2 id="orge448330"><span class="section-number-2">3</span> 标准输入,标准输出和标准出错</h2>
+<div id="outline-container-orgb7cc441" class="outline-2">
+<h2 id="orgb7cc441"><span class="section-number-2">3</span> 标准输入,标准输出和标准出错</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 &lt;stdio.h&gt;中预定义了三个文件指针:stdin,stdout和stderr
@@ -460,17 +460,17 @@ putc和fputc的区别类似于getc和fgetc的区别.
 </p>
 </div>
 </div>
-<div id="outline-container-org9f8e05c" class="outline-2">
-<h2 id="org9f8e05c"><span class="section-number-2">4</span> 产生临时文件</h2>
+<div id="outline-container-org245ab1b" class="outline-2">
+<h2 id="org245ab1b"><span class="section-number-2">4</span> 产生临时文件</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">char</span>* <span style="color: #0000ff;">tmpnam</span>(<span style="color: #228b22;">char</span>* <span style="color: #a0522d;">ptr</span>);
-<span style="color: #228b22;">char</span>* <span style="color: #0000ff;">tempnam</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">directory</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">prefix</span>);
+<span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #bc6ec5; font-weight: bold;">tmpnam</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">ptr</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #bc6ec5; font-weight: bold;">tempnam</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">directory</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">prefix</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #228b22;">FILE</span>* <span style="color: #0000ff;">tmpfile</span>();
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">mkstemp</span>(<span style="color: #228b22;">char</span>* <span style="color: #a0522d;">template</span>);
+<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #bc6ec5; font-weight: bold;">tmpfile</span><span style="color: #4f97d7;">()</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">mkstemp</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">template</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -502,8 +502,8 @@ putc和fputc的区别类似于getc和fgetc的区别.
 </div>
 </div>
 
-<div id="outline-container-org36e6361" class="outline-2">
-<h2 id="org36e6361"><span class="section-number-2">5</span> 线程安全的方式管理FILE对象</h2>
+<div id="outline-container-org51d9b09" class="outline-2">
+<h2 id="org51d9b09"><span class="section-number-2">5</span> 线程安全的方式管理FILE对象</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 PSOXI.1提供了以线程安全的方式管理FILE文件的方法. 可以使用`flockfile'和`ftrylockfile'获取与FILE对象关联的锁,且这个锁为递归锁.
@@ -513,13 +513,13 @@ PSOXI.1提供了以线程安全的方式管理FILE文件的方法. 可以使用`
 所有操作FILE对象的标准IO函数,都需要表现的好像内部调用了flockfile和funlockfile一样,即不能出现多个线程同时写入同一FILE对象时出现乱序的情况.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">ftrylockfile</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">ftrylockfile</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #228b22;">void</span> <span style="color: #0000ff;">flockfile</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">flockfile</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #228b22;">void</span> <span style="color: #0000ff;">funlockfile</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">funlockfile</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>
@@ -530,13 +530,13 @@ PSOXI.1提供了以线程安全的方式管理FILE文件的方法. 可以使用`
 若标准IO函数每次操作都获取自己的锁再释放,那么在进行单字符的IO操作时,会消耗大量的性能到加解锁中,因此就有了 <b>不加锁的基于字符的标准IO函数</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">getchar_unlocked</span>();
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">getc_unlocked</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">getchar_unlocked</span><span style="color: #4f97d7;">()</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">getc_unlocked</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">putchar_unlocked</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">c</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">putc_unlocked</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">c</span>,<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">putchar_unlocked</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">c</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">putc_unlocked</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">c</span>,<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>

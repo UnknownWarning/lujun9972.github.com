@@ -54,30 +54,30 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgef397e5">配置</a></li>
-<li><a href="#orgf389eed">阅读邮件</a></li>
-<li><a href="#org74eb327">修改邮件</a></li>
-<li><a href="#org9db00bb">删除邮件</a></li>
-<li><a href="#org95ec158">保存邮件</a></li>
-<li><a href="#org684449d">回复邮件</a></li>
-<li><a href="#orgb52eeff">邮件标签</a>
+<li><a href="#org03a92a2">配置</a></li>
+<li><a href="#orgcf7eefb">阅读邮件</a></li>
+<li><a href="#org67e1182">修改邮件</a></li>
+<li><a href="#orgfdea0ea">删除邮件</a></li>
+<li><a href="#orga78c6b9">保存邮件</a></li>
+<li><a href="#org02c0614">回复邮件</a></li>
+<li><a href="#orge3b725c">邮件标签</a>
 <ul>
-<li><a href="#orgae8aa4c">邮件属性</a></li>
+<li><a href="#org348d8ba">邮件属性</a></li>
 </ul>
 </li>
-<li><a href="#org1044b35">邮件概览</a>
+<li><a href="#org676b956">邮件概览</a>
 <ul>
-<li><a href="#org381f8e8">进入Summary buffer</a></li>
-<li><a href="#org0c7691e">Summary buffer的操作</a></li>
+<li><a href="#orgd4a66ff">进入Summary buffer</a></li>
+<li><a href="#orgb8e60ee">Summary buffer的操作</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgef397e5" class="outline-2">
-<h2 id="orgef397e5">配置</h2>
-<div class="outline-text-2" id="text-orgef397e5">
+<div id="outline-container-org03a92a2" class="outline-2">
+<h2 id="org03a92a2">配置</h2>
+<div class="outline-text-2" id="text-org03a92a2">
 <p>
 Rmail启动时会调用 <code>movemail</code> 这个程序来从各个inbox中获取新邮件并合并到一个所谓的 <code>primary Rmail file</code> 中,然后读取其中的第一个未读邮件.
 </p>
@@ -86,7 +86,7 @@ Rmail启动时会调用 <code>movemail</code> 这个程序来从各个inbox中�
 因此我们首先要设置 <code>movemail</code> 这个程序的路径. 需要注意的是,存在两个版本的 <code>movemail</code>, 一个是Emacs版的movemail,一个是mailutil版本的movemail. 其中Emacs版的movemail功能很受限,不支持imap协议,也不支持TLS加密. 因此比较推荐使用mailutil版的movemail.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> rmail-movemail-program <span style="color: #8b2252;">"/usr/bin/movemail"</span>)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> rmail-movemail-program <span style="color: #2d9574;">"/usr/bin/movemail"</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -94,7 +94,7 @@ Rmail启动时会调用 <code>movemail</code> 这个程序来从各个inbox中�
 另外,参数 <code>rmail-movemail-flags</code> 中可以传递额外的命令行参数给movemail程序, 例如要反转下载邮件的顺序可以添加 <code>-r</code> 选项,要支持TLS加密,可以添加 <code>--tls</code> 参数.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> rmail-movemail-flags (cons <span style="color: #8b2252;">"--tls"</span> rmail-movemail-flags))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> rmail-movemail-flags <span style="color: #bc6ec5;">(</span>cons <span style="color: #2d9574;">"--tls"</span> rmail-movemail-flags<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -102,7 +102,7 @@ Rmail启动时会调用 <code>movemail</code> 这个程序来从各个inbox中�
 不过 <b>如果想让movemail下载邮件后依然让服务器保持原邮件,不要向 <code>rmail-movemail-flags</code> 添加 <code>-p</code> 参数,而应该配置 <code>rmail-preserve-inbox</code> 参数</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> rmail-preserve-inbox t)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> rmail-preserve-inbox t<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -131,7 +131,7 @@ PROTO://[USER[:PASSWORD]@]HOST-OR-FILE-NAME
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">push</span> <span style="color: #8b2252;">"imap://lujun9972@imap.sina.com"</span> rmail-primary-inbox-list)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">push</span> <span style="color: #2d9574;">"imap://lujun9972@imap.sina.com"</span> rmail-primary-inbox-list<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -139,15 +139,15 @@ PROTO://[USER[:PASSWORD]@]HOST-OR-FILE-NAME
 最后我们告诉Rmail,读取远程server上的mail需要密码
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> rmail-remote-password-required t)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> rmail-remote-password-required t<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf389eed" class="outline-2">
-<h2 id="orgf389eed">阅读邮件</h2>
-<div class="outline-text-2" id="text-orgf389eed">
+<div id="outline-container-orgcf7eefb" class="outline-2">
+<h2 id="orgcf7eefb">阅读邮件</h2>
+<div class="outline-text-2" id="text-orgcf7eefb">
 <p>
 设置完之后就可以直接运行 <code>M-x rmail</code> 了,rmail会从自动进入Rmail文件中第一个未读的邮件中.
 </p>
@@ -174,9 +174,9 @@ PROTO://[USER[:PASSWORD]@]HOST-OR-FILE-NAME
 </div>
 </div>
 
-<div id="outline-container-org74eb327" class="outline-2">
-<h2 id="org74eb327">修改邮件</h2>
-<div class="outline-text-2" id="text-org74eb327">
+<div id="outline-container-org67e1182" class="outline-2">
+<h2 id="org67e1182">修改邮件</h2>
+<div class="outline-text-2" id="text-org67e1182">
 <p>
 默认情况下Rmail阅读邮件时是只读的. 但是你可以通过 <code>e (rmail-edit-current-message)</code> 编辑当前邮件.
 </p>
@@ -191,9 +191,9 @@ PROTO://[USER[:PASSWORD]@]HOST-OR-FILE-NAME
 </div>
 </div>
 
-<div id="outline-container-org9db00bb" class="outline-2">
-<h2 id="org9db00bb">删除邮件</h2>
-<div class="outline-text-2" id="text-org9db00bb">
+<div id="outline-container-orgfdea0ea" class="outline-2">
+<h2 id="orgfdea0ea">删除邮件</h2>
+<div class="outline-text-2" id="text-orgfdea0ea">
 <p>
 有两种删除邮件的方法:
 </p>
@@ -216,9 +216,9 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 
-<div id="outline-container-org95ec158" class="outline-2">
-<h2 id="org95ec158">保存邮件</h2>
-<div class="outline-text-2" id="text-org95ec158">
+<div id="outline-container-orga78c6b9" class="outline-2">
+<h2 id="orga78c6b9">保存邮件</h2>
+<div class="outline-text-2" id="text-orga78c6b9">
 <p>
 以下命令可以将邮件保存到其他文件:
 </p>
@@ -231,9 +231,9 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 
-<div id="outline-container-org684449d" class="outline-2">
-<h2 id="org684449d">回复邮件</h2>
-<div class="outline-text-2" id="text-org684449d">
+<div id="outline-container-org02c0614" class="outline-2">
+<h2 id="org02c0614">回复邮件</h2>
+<div class="outline-text-2" id="text-org02c0614">
 <p>
 除了 <code>C-x m</code> 之外,Rmail还提供了以下快捷键帮你发送邮件:
 </p>
@@ -257,9 +257,9 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 
-<div id="outline-container-orgb52eeff" class="outline-2">
-<h2 id="orgb52eeff">邮件标签</h2>
-<div class="outline-text-2" id="text-orgb52eeff">
+<div id="outline-container-orge3b725c" class="outline-2">
+<h2 id="orge3b725c">邮件标签</h2>
+<div class="outline-text-2" id="text-orge3b725c">
 <p>
 你可以为邮件添加各式的标签并以此作为邮件分类的一种方法:
 </p>
@@ -273,9 +273,9 @@ Rmail提供了如下命令来删除邮件:
 </dl>
 </div>
 
-<div id="outline-container-orgae8aa4c" class="outline-3">
-<h3 id="orgae8aa4c">邮件属性</h3>
-<div class="outline-text-3" id="text-orgae8aa4c">
+<div id="outline-container-org348d8ba" class="outline-3">
+<h3 id="org348d8ba">邮件属性</h3>
+<div class="outline-text-3" id="text-org348d8ba">
 <p>
 某些特定的标签有其特定的意义,这些标签被称之为属性,一般由Rmail自己维护:
 </p>
@@ -294,9 +294,9 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 
-<div id="outline-container-org1044b35" class="outline-2">
-<h2 id="org1044b35">邮件概览</h2>
-<div class="outline-text-2" id="text-org1044b35">
+<div id="outline-container-org676b956" class="outline-2">
+<h2 id="org676b956">邮件概览</h2>
+<div class="outline-text-2" id="text-org676b956">
 <p>
 你可以以概览的方式浏览所有的邮件,这时buffer中的每一行都代表一个邮件,并列出了该邮件的编号,日期,发送者,行数,标签以及标题.
 若觉得邮件的总行数显示了也没有意义,可以设置变量 <code>rmail-summary-line-count-flag</code> 为 <code>nil</code>. 这样在概览信息中就不会显示邮件的总行数了.
@@ -311,9 +311,9 @@ Rmail提供了如下命令来删除邮件:
 </p>
 </div>
 
-<div id="outline-container-org381f8e8" class="outline-3">
-<h3 id="org381f8e8">进入Summary buffer</h3>
-<div class="outline-text-3" id="text-org381f8e8">
+<div id="outline-container-orgd4a66ff" class="outline-3">
+<h3 id="orgd4a66ff">进入Summary buffer</h3>
+<div class="outline-text-3" id="text-orgd4a66ff">
 <p>
 概览buffer中的信息会随着Rmail文件的改变而自动更新.
 </p>
@@ -329,9 +329,9 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 
-<div id="outline-container-org0c7691e" class="outline-3">
-<h3 id="org0c7691e">Summary buffer的操作</h3>
-<div class="outline-text-3" id="text-org0c7691e">
+<div id="outline-container-orgb8e60ee" class="outline-3">
+<h3 id="orgb8e60ee">Summary buffer的操作</h3>
+<div class="outline-text-3" id="text-orgb8e60ee">
 <p>
 在概览buffer中,可以使用几乎所有的Rmail命令,这些命令会作用于光标所在行的邮件上. 例如
 </p>

@@ -54,15 +54,15 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga819f90">ps命令</a></li>
-<li><a href="#orgf26af69">pmap命令</a></li>
+<li><a href="#org9e2d116">ps命令</a></li>
+<li><a href="#org313f8af">pmap命令</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga819f90" class="outline-2">
-<h2 id="orga819f90">ps命令</h2>
-<div class="outline-text-2" id="text-orga819f90">
+<div id="outline-container-org9e2d116" class="outline-2">
+<h2 id="org9e2d116">ps命令</h2>
+<div class="outline-text-2" id="text-org9e2d116">
 <p>
 严格来说，ps命令只能看到进程内存占用的百分比。
 </p>
@@ -91,14 +91,14 @@
 </div>
 </div>
 
-<div id="outline-container-orgf26af69" class="outline-2">
-<h2 id="orgf26af69">pmap命令</h2>
-<div class="outline-text-2" id="text-orgf26af69">
+<div id="outline-container-org313f8af" class="outline-2">
+<h2 id="org313f8af">pmap命令</h2>
+<div class="outline-text-2" id="text-org313f8af">
 <p>
 使用命令 <code>pmap $pid</code> 可以查看 <code>$pid</code> 这个进程及其依赖库的内存占用量（单位为K）
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">pmap $<span style="color: #a0522d;">$</span>
+<pre class="src src-shell">pmap $<span style="color: #7590db;">$</span>
 </pre>
 </div>
 
@@ -149,7 +149,7 @@
 如果觉得pmap使用单位为K不好看，也可以让它跟 <span class="ego_link"><a href="https://lujun9972.github.io/blog/2018/05/09/numfmt-让数字变得更容易理解/">numfmt</a></span> 命令结合
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">pmap $<span style="color: #a0522d;">$</span> |numfmt --header=1 --field 2-2 --to=iec --from iec
+<pre class="src src-shell">pmap $<span style="color: #7590db;">$</span> |numfmt --header=<span style="color: #a45bad;">1</span> --field <span style="color: #a45bad;">2-2</span> --to=iec --from iec
 </pre>
 </div>
 

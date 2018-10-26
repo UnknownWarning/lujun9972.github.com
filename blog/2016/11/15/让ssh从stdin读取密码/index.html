@@ -85,11 +85,11 @@ pty-process.py脚本的实现如下:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/bin/env python3</span>
-<span style="color: #a020f0;">import</span> pty
-<span style="color: #a020f0;">import</span> sys
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/bin/env python3</span>
+<span style="color: #4f97d7; font-weight: bold;">import</span> pty
+<span style="color: #4f97d7; font-weight: bold;">import</span> sys
 
-pty.spawn(sys.argv[1:])
+pty.spawn<span style="color: #4f97d7;">(</span>sys.argv<span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">1</span>:<span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -97,7 +97,7 @@ pty.spawn(sys.argv[1:])
 借助于这个pty-process.py我们可以这样执行secure command了
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">passwd</span> |pty-process.py ssh $<span style="color: #a0522d;">usr</span>@$<span style="color: #a0522d;">remote</span> $<span style="color: #a0522d;">command</span>
+<pre class="src src-sh"><span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">passwd</span> |pty-process.py ssh $<span style="color: #7590db;">usr</span>@$<span style="color: #7590db;">remote</span> $<span style="color: #7590db;">command</span>
 </pre>
 </div>
 

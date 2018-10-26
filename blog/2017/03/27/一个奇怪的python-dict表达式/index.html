@@ -54,7 +54,7 @@
 从<a href="https://dbader.org/blog/python-mystery-dict-expression">https://dbader.org/blog/python-mystery-dict-expression</a> 中看到了一个很奇怪的dict表达式:
 </p>
 <div class="org-src-container">
-<pre class="src src-python">{<span style="color: #008b8b;">True</span>: <span style="color: #8b2252;">'yes'</span>, 1: <span style="color: #8b2252;">'no'</span>, 1.0: <span style="color: #8b2252;">'maybe'</span>}
+<pre class="src src-python"><span style="color: #4f97d7;">{</span><span style="color: #a45bad;">True</span>: <span style="color: #2d9574;">'yes'</span>, <span style="color: #a45bad;">1</span>: <span style="color: #2d9574;">'no'</span>, <span style="color: #a45bad;">1</span>.<span style="color: #a45bad;">0</span>: <span style="color: #2d9574;">'maybe'</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -75,7 +75,7 @@
 在Python中, <code>True</code> 和 <code>1</code> 和 <code>1.0</code> 是相等的:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">return</span> <span style="color: #008b8b;">True</span> == 1 == 1.0
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">True</span> == <span style="color: #a45bad;">1</span> == <span style="color: #a45bad;">1</span>.<span style="color: #a45bad;">0</span>
 </pre>
 </div>
 
@@ -87,7 +87,7 @@
 不仅如此, <code>True</code> 和 <code>1</code> 和 <code>1.0</code> 的hash值也是一样的:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">return</span> <span style="color: #483d8b;">hash</span>(<span style="color: #008b8b;">True</span>) == <span style="color: #483d8b;">hash</span>(1) == <span style="color: #483d8b;">hash</span>(1.0)
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7;">hash</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">True</span><span style="color: #4f97d7;">)</span> == <span style="color: #4f97d7;">hash</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">1</span><span style="color: #4f97d7;">)</span> == <span style="color: #4f97d7;">hash</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">1</span>.<span style="color: #a45bad;">0</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div></li>
 

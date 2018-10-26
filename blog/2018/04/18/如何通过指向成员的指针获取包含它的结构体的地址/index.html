@@ -54,15 +54,15 @@
 假设我们有一个结构体
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">Food</span>{
-  <span style="color: #228b22;">char</span> <span style="color: #a0522d;">name</span>[20];
-  <span style="color: #228b22;">double</span> <span style="color: #a0522d;">price</span>;
-} <span style="color: #228b22;">Food</span>;
+<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">typedef</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">Food</span><span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">char</span> <span style="color: #7590db;">name</span><span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">20</span><span style="color: #bc6ec5;">]</span>;
+  <span style="color: #ce537a; font-weight: bold;">double</span> <span style="color: #7590db;">price</span>;
+<span style="color: #4f97d7;">}</span> <span style="color: #ce537a; font-weight: bold;">Food</span>;
 
-<span style="color: #228b22;">Food</span> <span style="color: #a0522d;">apple</span>={
-  .name = <span style="color: #8b2252;">"apple"</span>,
-  .price = 7.8
-};
+<span style="color: #ce537a; font-weight: bold;">Food</span> <span style="color: #7590db;">apple</span>=<span style="color: #4f97d7;">{</span>
+  .name = <span style="color: #2d9574;">"apple"</span>,
+  .price = <span style="color: #a45bad;">7.8</span>
+<span style="color: #4f97d7;">}</span>;
 </pre>
 </div>
 
@@ -70,8 +70,8 @@
 我们已知有一个指针指向了这个结构体的成员，那么能否从而推测出指向包含该成员的结构体本身的指针呢？
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #228b22;">double</span>* <span style="color: #a0522d;">p</span> = &amp;apple.price;
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#22914;&#20309;&#36890;&#36807;p&#33719;&#21462;&amp;apple&#65311;&#65311; </span><span style="color: #b22222;">*/</span>
+<pre class="src src-C"><span style="color: #ce537a; font-weight: bold;">double</span>* <span style="color: #7590db;">p</span> = &amp;apple.price;
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#22914;&#20309;&#36890;&#36807;p&#33719;&#21462;&amp;apple&#65311;&#65311; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
 </pre>
 </div>
 
@@ -79,12 +79,12 @@
 在linux内核源码中就定义了这么一个神奇的宏。
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#define</span> <span style="color: #0000ff;">container_of</span>(<span style="color: #a0522d;">ptr</span>, <span style="color: #a0522d;">type</span>, <span style="color: #a0522d;">member</span>) ({ \
-  <span style="color: #a020f0;">const</span> <span style="color: #a020f0;">typeof</span>( ((<span style="color: #228b22;">type</span> *)0)-&gt;member ) *<span style="color: #a0522d;">__mptr</span> = (ptr); \
-  (<span style="color: #228b22;">type</span> *)( (<span style="color: #228b22;">char</span> *)__mptr - offsetof(type,member) );})
+<pre class="src src-C"><span style="color: #bc6ec5;">#define</span> <span style="color: #bc6ec5; font-weight: bold;">container_of</span><span style="color: #4f97d7;">(</span><span style="color: #7590db;">ptr</span>, <span style="color: #7590db;">type</span>, <span style="color: #7590db;">member</span><span style="color: #4f97d7;">)</span> <span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">{</span> \
+  <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">typeof</span><span style="color: #2d9574;">(</span> <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span><span style="color: #ce537a; font-weight: bold;">type</span> *<span style="color: #b1951d;">)</span><span style="color: #a45bad;">0</span><span style="color: #67b11d;">)</span>-&gt;member <span style="color: #2d9574;">)</span> *<span style="color: #7590db;">__mptr</span> = <span style="color: #2d9574;">(</span>ptr<span style="color: #2d9574;">)</span>; \
+  <span style="color: #2d9574;">(</span><span style="color: #ce537a; font-weight: bold;">type</span> *<span style="color: #2d9574;">)(</span> <span style="color: #67b11d;">(</span><span style="color: #ce537a; font-weight: bold;">char</span> *<span style="color: #67b11d;">)</span>__mptr - offsetof<span style="color: #67b11d;">(</span>type,member<span style="color: #67b11d;">)</span> <span style="color: #2d9574;">)</span>;<span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
 
 
-<span style="color: #483d8b;">#define</span> <span style="color: #0000ff;">offsetof</span>(<span style="color: #a0522d;">TYPE</span>, <span style="color: #a0522d;">MEMBER</span>) ((<span style="color: #228b22;">size_t</span>) &amp;((<span style="color: #228b22;">TYPE</span> *)0)-&gt;MEMBER)
+<span style="color: #bc6ec5;">#define</span> <span style="color: #bc6ec5; font-weight: bold;">offsetof</span><span style="color: #4f97d7;">(</span><span style="color: #7590db;">TYPE</span>, <span style="color: #7590db;">MEMBER</span><span style="color: #4f97d7;">)</span> <span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">size_t</span><span style="color: #bc6ec5;">)</span> &amp;<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span><span style="color: #ce537a; font-weight: bold;">TYPE</span> *<span style="color: #2d9574;">)</span><span style="color: #a45bad;">0</span><span style="color: #bc6ec5;">)</span>-&gt;MEMBER<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -96,8 +96,8 @@
 比如，上面例子中要得到 <code>apple</code> 的地址，可以这么做
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #228b22;">Food</span>* <span style="color: #a0522d;">fp</span> = container_of(p,Food,price);
-printf(<span style="color: #8b2252;">"%x,%x\n"</span>,fp,&amp;apple);
+<pre class="src src-C"><span style="color: #ce537a; font-weight: bold;">Food</span>* <span style="color: #7590db;">fp</span> = container_of<span style="color: #4f97d7;">(</span>p,Food,price<span style="color: #4f97d7;">)</span>;
+printf<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"%x,%x\n"</span>,fp,&amp;apple<span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 

@@ -54,8 +54,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge72b689">lspci</a></li>
-<li><a href="#org622b556">lshw</a></li>
+<li><a href="#org118fc80">lspci</a></li>
+<li><a href="#org3156cb4">lshw</a></li>
 </ul>
 </div>
 </div>
@@ -63,9 +63,9 @@
 有两个命令可以帮助我们查看GPU的内存容量，一个时lspci,一个是lshw
 </p>
 
-<div id="outline-container-orge72b689" class="outline-2">
-<h2 id="orge72b689">lspci</h2>
-<div class="outline-text-2" id="text-orge72b689">
+<div id="outline-container-org118fc80" class="outline-2">
+<h2 id="org118fc80">lspci</h2>
+<div class="outline-text-2" id="text-org118fc80">
 <ol class="org-ol">
 <li><p>
 查找显卡的设备地址
@@ -88,7 +88,7 @@
 查看详细信息
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">lspci -v -s 00:02.0
+<pre class="src src-shell">lspci -v -s <span style="color: #a45bad;">00:02.0</span>
 </pre>
 </div>
 
@@ -114,9 +114,9 @@
 </div>
 </div>
 
-<div id="outline-container-org622b556" class="outline-2">
-<h2 id="org622b556">lshw</h2>
-<div class="outline-text-2" id="text-org622b556">
+<div id="outline-container-org3156cb4" class="outline-2">
+<h2 id="org3156cb4">lshw</h2>
+<div class="outline-text-2" id="text-org3156cb4">
 <div class="org-src-container">
 <pre class="src src-shell">lshw -C display
 </pre>

@@ -54,8 +54,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org087650f">Java Duck Typing</a></li>
-<li><a href="#org806e79e">Signals and Slots and Events! Oh My!</a></li>
+<li><a href="#org8c8b25b">Java Duck Typing</a></li>
+<li><a href="#org999dec3">Signals and Slots and Events! Oh My!</a></li>
 </ul>
 </div>
 </div>
@@ -68,14 +68,14 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<pre class="src src-c++"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">iostream</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #a020f0;">template</span> &lt;<span style="color: #a020f0;">typename</span> <span style="color: #228b22;">T</span>&gt;
-<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">Caller</span> {
-  <span style="color: #a020f0;">const</span> <span style="color: #228b22;">T</span> <span style="color: #a0522d;">callee_</span>;
-  <span style="color: #0000ff;">Caller</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">T</span> <span style="color: #a0522d;">callee</span>) : callee_(callee) {}
-  <span style="color: #228b22;">void</span> <span style="color: #0000ff;">go</span>() { callee_.call(); }
-};
+<span style="color: #4f97d7; font-weight: bold;">template</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #4f97d7; font-weight: bold;">typename</span> <span style="color: #ce537a; font-weight: bold;">T</span><span style="color: #4f97d7;">&gt;</span>
+<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">Caller</span> <span style="color: #4f97d7;">{</span>
+  <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">T</span> <span style="color: #7590db;">callee_</span>;
+  <span style="color: #bc6ec5; font-weight: bold;">Caller</span><span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">T</span> <span style="color: #7590db;">callee</span><span style="color: #bc6ec5;">)</span> : callee_<span style="color: #bc6ec5;">(</span>callee<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{}</span>
+  <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">go</span><span style="color: #bc6ec5;">()</span> <span style="color: #bc6ec5;">{</span> callee_.call<span style="color: #2d9574;">()</span>; <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>;
 </pre>
 </div>
 
@@ -85,22 +85,22 @@ Caller可以接受任何类型的参数,只要该参数有 <code>call()</code> �
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #a020f0;">struct</span> <span style="color: #228b22;">Foo</span> {
-  <span style="color: #228b22;">void</span> <span style="color: #0000ff;">call</span>() <span style="color: #a020f0;">const</span> { <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Foo"</span>; }
-};
+<pre class="src src-c++"><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">Foo</span> <span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">call</span><span style="color: #bc6ec5;">()</span> <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #bc6ec5;">{</span> <span style="color: #a45bad;">std</span>::cout &lt;&lt; <span style="color: #2d9574;">"Foo"</span>; <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>;
 
-<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">Bar</span> {
-  <span style="color: #228b22;">void</span> <span style="color: #0000ff;">call</span>() <span style="color: #a020f0;">const</span> { <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Bar"</span>; }
-};
+<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">Bar</span> <span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">call</span><span style="color: #bc6ec5;">()</span> <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #bc6ec5;">{</span> <span style="color: #a45bad;">std</span>::cout &lt;&lt; <span style="color: #2d9574;">"Bar"</span>; <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>;
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
-  <span style="color: #228b22;">Caller</span>&lt;<span style="color: #228b22;">Foo</span>&gt; <span style="color: #a0522d;">foo</span>{Foo()};
-  <span style="color: #228b22;">Caller</span>&lt;<span style="color: #228b22;">Bar</span>&gt; <span style="color: #a0522d;">bar</span>{Bar()};
-  foo.go();
-  bar.go();
-  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
-  <span style="color: #a020f0;">return</span> 0;
-}
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #4f97d7;">()</span> <span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">Caller</span><span style="color: #bc6ec5;">&lt;</span><span style="color: #ce537a; font-weight: bold;">Foo</span><span style="color: #bc6ec5;">&gt;</span> <span style="color: #7590db;">foo</span><span style="color: #bc6ec5;">{</span>Foo<span style="color: #2d9574;">()</span><span style="color: #bc6ec5;">}</span>;
+  <span style="color: #ce537a; font-weight: bold;">Caller</span><span style="color: #bc6ec5;">&lt;</span><span style="color: #ce537a; font-weight: bold;">Bar</span><span style="color: #bc6ec5;">&gt;</span> <span style="color: #7590db;">bar</span><span style="color: #bc6ec5;">{</span>Bar<span style="color: #2d9574;">()</span><span style="color: #bc6ec5;">}</span>;
+  foo.go<span style="color: #bc6ec5;">()</span>;
+  bar.go<span style="color: #bc6ec5;">()</span>;
+  <span style="color: #a45bad;">std</span>::cout &lt;&lt; <span style="color: #a45bad;">std</span>::endl;
+  <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">0</span>;
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -116,41 +116,41 @@ Caller可以接受任何类型的参数,只要该参数有 <code>call()</code> �
 without sacrificing any type safety.
 </p>
 
-<div id="outline-container-org087650f" class="outline-2">
-<h2 id="org087650f">Java Duck Typing</h2>
-<div class="outline-text-2" id="text-org087650f">
+<div id="outline-container-org8c8b25b" class="outline-2">
+<h2 id="org8c8b25b">Java Duck Typing</h2>
+<div class="outline-text-2" id="text-org8c8b25b">
 <p>
 让我们再试试Java的泛型.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #a020f0;">class</span> <span style="color: #228b22;">Caller</span>&lt;<span style="color: #228b22;">T</span>&gt; {
-    <span style="color: #a020f0;">final</span> <span style="color: #228b22;">T</span> <span style="color: #a0522d;">callee</span>;
-    <span style="color: #0000ff;">Caller</span>(<span style="color: #228b22;">T</span> <span style="color: #a0522d;">callee</span>) {
-        <span style="color: #a020f0;">this</span>.callee = callee;
-    }
-    <span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">go</span>() {
-        callee.call();  <span style="color: #b22222;">// </span><span style="color: #b22222;">compiler error: cannot find symbol call</span>
-    }
-}
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Caller</span><span style="color: #4f97d7;">&lt;</span><span style="color: #ce537a; font-weight: bold;">T</span><span style="color: #4f97d7;">&gt;</span> <span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">final</span> <span style="color: #ce537a; font-weight: bold;">T</span> <span style="color: #7590db;">callee</span>;
+    <span style="color: #bc6ec5; font-weight: bold;">Caller</span><span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">T</span> <span style="color: #7590db;">callee</span><span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+        <span style="color: #4f97d7; font-weight: bold;">this</span>.callee = callee;
+    <span style="color: #bc6ec5;">}</span>
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">go</span><span style="color: #bc6ec5;">()</span> <span style="color: #bc6ec5;">{</span>
+        callee.call<span style="color: #2d9574;">()</span>;  <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">compiler error: cannot find symbol call</span>
+    <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>
 
-<span style="color: #a020f0;">class</span> <span style="color: #228b22;">Foo</span> {
-    <span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">call</span>() { System.out.print(<span style="color: #8b2252;">"Foo"</span>); }
-}
+<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Foo</span> <span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">call</span><span style="color: #bc6ec5;">()</span> <span style="color: #bc6ec5;">{</span> System.out.print<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"Foo"</span><span style="color: #2d9574;">)</span>; <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>
 
-<span style="color: #a020f0;">class</span> <span style="color: #228b22;">Bar</span> {
-    <span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">call</span>() { System.out.print(<span style="color: #8b2252;">"Bar"</span>); }
-}
+<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Bar</span> <span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">call</span><span style="color: #bc6ec5;">()</span> <span style="color: #bc6ec5;">{</span> System.out.print<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"Bar"</span><span style="color: #2d9574;">)</span>; <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>
 
-<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">Main</span> {
-    <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">args</span>[]) {
-        <span style="color: #228b22;">Caller</span>&lt;<span style="color: #228b22;">Foo</span>&gt; <span style="color: #a0522d;">f</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Caller</span>&lt;&gt;(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">Foo</span>());
-        <span style="color: #228b22;">Caller</span>&lt;<span style="color: #228b22;">Bar</span>&gt; <span style="color: #a0522d;">b</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Caller</span>&lt;&gt;(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">Bar</span>());
-        f.go();
-        b.go();
-        System.out.println();
-    }
-}
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Main</span> <span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">args</span><span style="color: #2d9574;">[]</span><span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+        <span style="color: #ce537a; font-weight: bold;">Caller</span><span style="color: #2d9574;">&lt;</span><span style="color: #ce537a; font-weight: bold;">Foo</span><span style="color: #2d9574;">&gt;</span> <span style="color: #7590db;">f</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Caller</span><span style="color: #2d9574;">&lt;&gt;(</span><span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Foo</span><span style="color: #67b11d;">()</span><span style="color: #2d9574;">)</span>;
+        <span style="color: #ce537a; font-weight: bold;">Caller</span><span style="color: #2d9574;">&lt;</span><span style="color: #ce537a; font-weight: bold;">Bar</span><span style="color: #2d9574;">&gt;</span> <span style="color: #7590db;">b</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Caller</span><span style="color: #2d9574;">&lt;&gt;(</span><span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Bar</span><span style="color: #67b11d;">()</span><span style="color: #2d9574;">)</span>;
+        f.go<span style="color: #2d9574;">()</span>;
+        b.go<span style="color: #2d9574;">()</span>;
+        System.out.println<span style="color: #2d9574;">()</span>;
+    <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -171,9 +171,9 @@ C++模板有点类似于宏, 它由编译器负责进行扩展,每一个类型�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #a020f0;">interface</span> <span style="color: #228b22;">Callee</span> {
-    <span style="color: #228b22;">void</span> <span style="color: #0000ff;">call</span>();
-}
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">interface</span> <span style="color: #ce537a; font-weight: bold;">Callee</span> <span style="color: #4f97d7;">{</span>
+    <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">call</span><span style="color: #bc6ec5;">()</span>;
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -182,9 +182,9 @@ C++模板有点类似于宏, 它由编译器负责进行扩展,每一个类型�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #a020f0;">class</span> <span style="color: #228b22;">Caller</span>&lt;<span style="color: #228b22;">T</span> <span style="color: #a020f0;">extends</span> <span style="color: #228b22;">Callee</span>&gt; {
-    <span style="color: #b22222;">// </span><span style="color: #b22222;">...</span>
-}
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Caller</span><span style="color: #4f97d7;">&lt;</span><span style="color: #ce537a; font-weight: bold;">T</span> <span style="color: #4f97d7; font-weight: bold;">extends</span> <span style="color: #ce537a; font-weight: bold;">Callee</span><span style="color: #4f97d7;">&gt;</span> <span style="color: #4f97d7;">{</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">...</span>
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -194,13 +194,13 @@ C++模板有点类似于宏, 它由编译器负责进行扩展,每一个类型�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #a020f0;">class</span> <span style="color: #228b22;">Foo</span> <span style="color: #a020f0;">implements</span> <span style="color: #228b22;">Callee</span> {
-    <span style="color: #b22222;">// </span><span style="color: #b22222;">...</span>
-}
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Foo</span> <span style="color: #4f97d7; font-weight: bold;">implements</span> <span style="color: #ce537a; font-weight: bold;">Callee</span> <span style="color: #4f97d7;">{</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">...</span>
+<span style="color: #4f97d7;">}</span>
 
-<span style="color: #a020f0;">class</span> <span style="color: #228b22;">Bar</span> <span style="color: #a020f0;">implements</span> <span style="color: #228b22;">Callee</span> {
-    <span style="color: #b22222;">// </span><span style="color: #b22222;">...</span>
-}
+<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Bar</span> <span style="color: #4f97d7; font-weight: bold;">implements</span> <span style="color: #ce537a; font-weight: bold;">Callee</span> <span style="color: #4f97d7;">{</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">...</span>
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -210,9 +210,9 @@ C++模板有点类似于宏, 它由编译器负责进行扩展,每一个类型�
 </div>
 </div>
 
-<div id="outline-container-org806e79e" class="outline-2">
-<h2 id="org806e79e">Signals and Slots and Events! Oh My!</h2>
-<div class="outline-text-2" id="text-org806e79e">
+<div id="outline-container-org999dec3" class="outline-2">
+<h2 id="org999dec3">Signals and Slots and Events! Oh My!</h2>
+<div class="outline-text-2" id="text-org999dec3">
 <p>
 "鸭子类型" 在是现在观察者模型时非常有用,它无需让你定义那么多的模板(boilerplate). 
 它并不要求一个类必须 <a href="http://raganwald.com/2014/03/31/class-hierarchies-dont-do-that.htmlL">继承自特定的类</a> 或者实现特定的接口(interface).

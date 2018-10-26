@@ -54,29 +54,29 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org76d4059">Session</a>
+<li><a href="#org084986a">Session</a>
 <ul>
-<li><a href="#org8c9a004">未指定名称的Tmux session</a></li>
-<li><a href="#org68d7431">创建指定名称的Tmux session</a></li>
-<li><a href="#org401673e">从Tmux Session中分离</a></li>
-<li><a href="#org678daf6">查看现有哪些Tmux Session</a></li>
-<li><a href="#org33ef53a">重新接入Tmux Session</a></li>
+<li><a href="#org105409f">未指定名称的Tmux session</a></li>
+<li><a href="#org68bbf55">创建指定名称的Tmux session</a></li>
+<li><a href="#org94b1092">从Tmux Session中分离</a></li>
+<li><a href="#org256c9d6">查看现有哪些Tmux Session</a></li>
+<li><a href="#orgf49b506">重新接入Tmux Session</a></li>
 </ul>
 </li>
-<li><a href="#org497a5e6">Tmux Windows</a></li>
-<li><a href="#org82c6108">Tmux Panes</a></li>
-<li><a href="#org62f8942">配置Tmux</a></li>
+<li><a href="#orgdb55bb5">Tmux Windows</a></li>
+<li><a href="#org673f305">Tmux Panes</a></li>
+<li><a href="#org4242a86">配置Tmux</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org76d4059" class="outline-2">
-<h2 id="org76d4059">Session</h2>
-<div class="outline-text-2" id="text-org76d4059">
+<div id="outline-container-org084986a" class="outline-2">
+<h2 id="org084986a">Session</h2>
+<div class="outline-text-2" id="text-org084986a">
 </div>
-<div id="outline-container-org8c9a004" class="outline-3">
-<h3 id="org8c9a004">未指定名称的Tmux session</h3>
-<div class="outline-text-3" id="text-org8c9a004">
+<div id="outline-container-org105409f" class="outline-3">
+<h3 id="org105409f">未指定名称的Tmux session</h3>
+<div class="outline-text-3" id="text-org105409f">
 <p>
 直接运行 <code>tmux</code> 会产生一个Tmux Session
 </p>
@@ -90,18 +90,18 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org68d7431" class="outline-3">
-<h3 id="org68d7431">创建指定名称的Tmux session</h3>
-<div class="outline-text-3" id="text-org68d7431">
+<div id="outline-container-org68bbf55" class="outline-3">
+<h3 id="org68bbf55">创建指定名称的Tmux session</h3>
+<div class="outline-text-3" id="text-org68bbf55">
 <div class="org-src-container">
-<pre class="src src-shell">tmux new -s ${<span style="color: #a0522d;">session_name</span>}
+<pre class="src src-shell">tmux new -s $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">session_name</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org401673e" class="outline-3">
-<h3 id="org401673e">从Tmux Session中分离</h3>
-<div class="outline-text-3" id="text-org401673e">
+<div id="outline-container-org94b1092" class="outline-3">
+<h3 id="org94b1092">从Tmux Session中分离</h3>
+<div class="outline-text-3" id="text-org94b1092">
 <p>
 在Tmux Session中输入 <code>Ctrl+b d</code> 就能从Tmux Session中分离，并回到原shell。
 </p>
@@ -111,9 +111,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org678daf6" class="outline-3">
-<h3 id="org678daf6">查看现有哪些Tmux Session</h3>
-<div class="outline-text-3" id="text-org678daf6">
+<div id="outline-container-org256c9d6" class="outline-3">
+<h3 id="org256c9d6">查看现有哪些Tmux Session</h3>
+<div class="outline-text-3" id="text-org256c9d6">
 <p>
 要获取现在正在运行的session有哪些，可以运行下列命令:
 </p>
@@ -129,22 +129,22 @@ session1: 1 windows (created Thu Sep 20 16:40:40 2018) [122x13]
 </div>
 </div>
 </div>
-<div id="outline-container-org33ef53a" class="outline-3">
-<h3 id="org33ef53a">重新接入Tmux Session</h3>
-<div class="outline-text-3" id="text-org33ef53a">
+<div id="outline-container-orgf49b506" class="outline-3">
+<h3 id="orgf49b506">重新接入Tmux Session</h3>
+<div class="outline-text-3" id="text-orgf49b506">
 <p>
 要重新接入指定名称的Tmux Session，可以运行:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">tmux attach-session -t ${<span style="color: #a0522d;">session_name</span>}
+<pre class="src src-shell">tmux attach-session -t $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">session_name</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org497a5e6" class="outline-2">
-<h2 id="org497a5e6">Tmux Windows</h2>
-<div class="outline-text-2" id="text-org497a5e6">
+<div id="outline-container-orgdb55bb5" class="outline-2">
+<h2 id="orgdb55bb5">Tmux Windows</h2>
+<div class="outline-text-2" id="text-orgdb55bb5">
 <p>
 一个Tmux Session中可以包括多个Windows，这些Windows的列表显示在屏幕底部的状态栏中
 <img src="https://lujun9972.github.io/assets/blog/2018/09/20/tmux常用操作说明/Tmux-60.png" alt="Tmux-60.png" />
@@ -197,9 +197,9 @@ session1: 1 windows (created Thu Sep 20 16:40:40 2018) [122x13]
 </div>
 </div>
 
-<div id="outline-container-org82c6108" class="outline-2">
-<h2 id="org82c6108">Tmux Panes</h2>
-<div class="outline-text-2" id="text-org82c6108">
+<div id="outline-container-org673f305" class="outline-2">
+<h2 id="org673f305">Tmux Panes</h2>
+<div class="outline-text-2" id="text-org673f305">
 <p>
 类似的，一个Tmux Window可以包含多个Pane,一个Window刚创建时，只包含一个覆盖全Window的pane。
 <img src="https://lujun9972.github.io/assets/blog/2018/09/20/tmux常用操作说明/Tmux-61.png" alt="Tmux-61.png" />
@@ -253,9 +253,9 @@ session1: 1 windows (created Thu Sep 20 16:40:40 2018) [122x13]
 </div>
 </div>
 
-<div id="outline-container-org62f8942" class="outline-2">
-<h2 id="org62f8942">配置Tmux</h2>
-<div class="outline-text-2" id="text-org62f8942">
+<div id="outline-container-org4242a86" class="outline-2">
+<h2 id="org4242a86">配置Tmux</h2>
+<div class="outline-text-2" id="text-org4242a86">
 <p>
 Tmux的配置信息在 <code>~/.tmux.conf</code> 中
 </p>
@@ -269,18 +269,18 @@ Tmux的配置信息在 <code>~/.tmux.conf</code> 中
 </p>
 
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">&#22914;&#26524;&#20351;&#29992;&#30340;&#26159; 256 &#33394;&#30340;&#32456;&#31471;&#65292;&#24517;&#39035;&#22312; tmux &#30340;&#37197;&#32622;&#25991;&#20214; tmux.conf &#20013;&#23558;&#32456;&#31471;&#35774;&#32622;&#20026; tmux &#25110; tmux-256color</span>
-set -g default-terminal <span style="color: #8b2252;">"tmux-256color"</span>
+<pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#22914;&#26524;&#20351;&#29992;&#30340;&#26159; 256 &#33394;&#30340;&#32456;&#31471;&#65292;&#24517;&#39035;&#22312; tmux &#30340;&#37197;&#32622;&#25991;&#20214; tmux.conf &#20013;&#23558;&#32456;&#31471;&#35774;&#32622;&#20026; tmux &#25110; tmux-256color</span>
+set -g default-terminal <span style="color: #2d9574;">"tmux-256color"</span>
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#35774;&#32622;&#26368;&#22810;&#22238;&#28378;&#30340;&#34892;&#25968;</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#35774;&#32622;&#26368;&#22810;&#22238;&#28378;&#30340;&#34892;&#25968;</span>
 set -g history-limit 10000
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#21551;&#21160;non-login shell</span>
-set -g default-command <span style="color: #8b2252;">"${SHELL}"</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21551;&#21160;non-login shell</span>
+set -g default-command <span style="color: #2d9574;">"${SHELL}"</span>
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#26631;&#39064;&#26639;&#33258;&#21160;&#26356;&#25913;</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#26631;&#39064;&#26639;&#33258;&#21160;&#26356;&#25913;</span>
 set -g set-titles on
-set -g set-titles-string <span style="color: #8b2252;">"#T"</span>
+set -g set-titles-string <span style="color: #2d9574;">"#T"</span>
 </pre>
 </div>
 </div>

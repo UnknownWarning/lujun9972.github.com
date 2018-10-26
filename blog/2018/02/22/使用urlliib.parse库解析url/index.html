@@ -54,10 +54,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org070ee56">解析url</a></li>
-<li><a href="#org2c3cab1">组建URL</a></li>
-<li><a href="#org9d428bc">相对路径转换绝对路径</a></li>
-<li><a href="#org034b048">查询参数的构造和解析</a></li>
+<li><a href="#orgf1b5781">解析url</a></li>
+<li><a href="#org035b876">组建URL</a></li>
+<li><a href="#orgd8f2b16">相对路径转换绝对路径</a></li>
+<li><a href="#org46bedd8">查询参数的构造和解析</a></li>
 </ul>
 </div>
 </div>
@@ -65,9 +65,9 @@
 python中的urllib.parse module提供了很多解析和组建URL的函数。
 </p>
 
-<div id="outline-container-org070ee56" class="outline-2">
-<h2 id="org070ee56">解析url</h2>
-<div class="outline-text-2" id="text-org070ee56">
+<div id="outline-container-orgf1b5781" class="outline-2">
+<h2 id="orgf1b5781">解析url</h2>
+<div class="outline-text-2" id="text-orgf1b5781">
 <p>
 <code>urlparse()</code> 函数可以将url解析成 <code>ParseResult</code> 对象. 对象中包含了六个元素,分别为：
 </p>
@@ -82,14 +82,14 @@ python中的urllib.parse module提供了很多解析和组建URL的函数。
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">from</span> urllib.parse <span style="color: #a020f0;">import</span> urlparse
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> urllib.parse <span style="color: #4f97d7; font-weight: bold;">import</span> urlparse
 
-<span style="color: #a0522d;">url</span>=<span style="color: #8b2252;">'http://user:pwd@domain:80/path;params?query=queryarg#fragment'</span>
+<span style="color: #7590db;">url</span>=<span style="color: #2d9574;">'http://user:pwd@domain:80/path;params?query=queryarg#fragment'</span>
 
-<span style="color: #a0522d;">parsed_result</span>=urlparse(url)
+<span style="color: #7590db;">parsed_result</span>=urlparse<span style="color: #4f97d7;">(</span>url<span style="color: #4f97d7;">)</span>
 
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'parsed_result&#21253;&#21547;&#20102;'</span>,<span style="color: #483d8b;">len</span>(parsed_result),<span style="color: #8b2252;">'&#20010;&#20803;&#32032;'</span>)
-<span style="color: #a020f0;">print</span>(parsed_result)
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'parsed_result&#21253;&#21547;&#20102;'</span>,<span style="color: #4f97d7;">len</span><span style="color: #bc6ec5;">(</span>parsed_result<span style="color: #bc6ec5;">)</span>,<span style="color: #2d9574;">'&#20010;&#20803;&#32032;'</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>parsed_result<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -110,16 +110,16 @@ ParseResult(scheme='http', netloc='user:pwd@domain:80', path='/path', params='pa
 为了方便起见， <code>ParseResult</code> 还提供了 <code>username</code>, <code>password</code>, <code>hostname</code>, <code>port</code> 对 <code>netloc</code> 进一步进行拆分。
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'scheme  :'</span>, parsed_result.scheme)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'netloc  :'</span>, parsed_result.netloc)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'path    :'</span>, parsed_result.path)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'params  :'</span>, parsed_result.params)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'query   :'</span>, parsed_result.query)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'fragment:'</span>, parsed_result.fragment)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'username:'</span>, parsed_result.username)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'password:'</span>, parsed_result.password)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'hostname:'</span>, parsed_result.hostname)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'port    :'</span>, parsed_result.port)
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'scheme  :'</span>, parsed_result.scheme<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'netloc  :'</span>, parsed_result.netloc<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'path    :'</span>, parsed_result.path<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'params  :'</span>, parsed_result.params<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'query   :'</span>, parsed_result.query<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'fragment:'</span>, parsed_result.fragment<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'username:'</span>, parsed_result.username<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'password:'</span>, parsed_result.password<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'hostname:'</span>, parsed_result.hostname<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'port    :'</span>, parsed_result.port<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -149,13 +149,13 @@ port    : 80
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a0522d;">url</span>=<span style="color: #8b2252;">'http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment'</span>
+<pre class="src src-python"><span style="color: #7590db;">url</span>=<span style="color: #2d9574;">'http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment'</span>
 
-<span style="color: #a0522d;">parsed_result</span>=urlparse(url)
+<span style="color: #7590db;">parsed_result</span>=urlparse<span style="color: #4f97d7;">(</span>url<span style="color: #4f97d7;">)</span>
 
-<span style="color: #a020f0;">print</span>(parsed_result)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'parsed.path    :'</span>, parsed_result.path)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'parsed.params  :'</span>, parsed_result.params)
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>parsed_result<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'parsed.path    :'</span>, parsed_result.path<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'parsed.params  :'</span>, parsed_result.params<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -173,12 +173,12 @@ parsed.params  : params2
 这时可以使用 <code>urlsplit()</code> 来解析
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">from</span> urllib.parse <span style="color: #a020f0;">import</span> urlsplit
-<span style="color: #a0522d;">split_result</span>=urlsplit(url)
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> urllib.parse <span style="color: #4f97d7; font-weight: bold;">import</span> urlsplit
+<span style="color: #7590db;">split_result</span>=urlsplit<span style="color: #4f97d7;">(</span>url<span style="color: #4f97d7;">)</span>
 
-<span style="color: #a020f0;">print</span>(split_result)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'split.path    :'</span>, split_result.path)
-<span style="color: #b22222;"># </span><span style="color: #b22222;">SplitResult &#27809;&#26377;params&#23646;&#24615;</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>split_result<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'split.path    :'</span>, split_result.path<span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">SplitResult &#27809;&#26377;params&#23646;&#24615;</span>
 </pre>
 </div>
 
@@ -195,14 +195,14 @@ split.path    : /path1;params1/path2;params2
 若只是要将URL后的fragment标识拆分出来，可以使用 <code>urldefrag()</code> 函数
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">from</span> urllib.parse <span style="color: #a020f0;">import</span> urldefrag
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> urllib.parse <span style="color: #4f97d7; font-weight: bold;">import</span> urldefrag
 
-<span style="color: #a0522d;">url</span> = <span style="color: #8b2252;">'http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment'</span>
+<span style="color: #7590db;">url</span> = <span style="color: #2d9574;">'http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment'</span>
 
-<span style="color: #a0522d;">d</span> = urldefrag(url)
-<span style="color: #a020f0;">print</span>(d)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'url     :'</span>, d.url)
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'fragment:'</span>, d.fragment)
+<span style="color: #7590db;">d</span> = urldefrag<span style="color: #4f97d7;">(</span>url<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>d<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'url     :'</span>, d.url<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'fragment:'</span>, d.fragment<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -211,22 +211,22 @@ split.path    : /path1;params1/path2;params2
 </p>
 <div class="org-src-container">
 <pre class="src src-org">DefragResult(url='http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg', fragment='fragment')
-url     : <span style="color: #3a5fcd; text-decoration: underline;"><a href="http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg">http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg</a></span>
+url     : <span style="color: #2aa1ae; text-decoration: underline;"><a href="http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg">http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg</a></span>
 fragment: fragment
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2c3cab1" class="outline-2">
-<h2 id="org2c3cab1">组建URL</h2>
-<div class="outline-text-2" id="text-org2c3cab1">
+<div id="outline-container-org035b876" class="outline-2">
+<h2 id="org035b876">组建URL</h2>
+<div class="outline-text-2" id="text-org035b876">
 <p>
 ParsedResult对象和SplitResult对象都有一个 <code>geturl()</code> 方法，可以返回一个完整的URL字符串
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">print</span>(parsed_result.geturl())
-<span style="color: #a020f0;">print</span>(split_result.geturl())
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>parsed_result.geturl<span style="color: #bc6ec5;">()</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>split_result.geturl<span style="color: #bc6ec5;">()</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -234,8 +234,8 @@ ParsedResult对象和SplitResult对象都有一个 <code>geturl()</code> 方法�
 结果为:
 </p>
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #3a5fcd; text-decoration: underline;"><a href="http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment">http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment</a></span>
-<span style="color: #3a5fcd; text-decoration: underline;"><a href="http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment">http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment</a></span>
+<pre class="src src-org"><span style="color: #2aa1ae; text-decoration: underline;"><a href="http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment">http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment</a></span>
+<span style="color: #2aa1ae; text-decoration: underline;"><a href="http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment">http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment</a></span>
 </pre>
 </div>
 
@@ -243,9 +243,9 @@ ParsedResult对象和SplitResult对象都有一个 <code>geturl()</code> 方法�
 但是 <code>geturl()</code> 只在ParsedResult和SplitResult对象中有，若想将一个普通的元组组成URL，则需要使用 <code>urlunparse()</code> 函数
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">from</span> urllib.parse <span style="color: #a020f0;">import</span> urlunparse
-<span style="color: #a0522d;">url_compos</span> = (<span style="color: #8b2252;">'http'</span>, <span style="color: #8b2252;">'user:pwd@domain:80'</span>, <span style="color: #8b2252;">'/path1;params1/path2'</span>, <span style="color: #8b2252;">'params2'</span>, <span style="color: #8b2252;">'query=queryarg'</span>, <span style="color: #8b2252;">'fragment'</span>)
-<span style="color: #a020f0;">print</span>(urlunparse(url_compos))
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> urllib.parse <span style="color: #4f97d7; font-weight: bold;">import</span> urlunparse
+<span style="color: #7590db;">url_compos</span> = <span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'http'</span>, <span style="color: #2d9574;">'user:pwd@domain:80'</span>, <span style="color: #2d9574;">'/path1;params1/path2'</span>, <span style="color: #2d9574;">'params2'</span>, <span style="color: #2d9574;">'query=queryarg'</span>, <span style="color: #2d9574;">'fragment'</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>urlunparse<span style="color: #bc6ec5;">(</span>url_compos<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -253,25 +253,25 @@ ParsedResult对象和SplitResult对象都有一个 <code>geturl()</code> 方法�
 结果为:
 </p>
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #3a5fcd; text-decoration: underline;"><a href="http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment">http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment</a></span>
+<pre class="src src-org"><span style="color: #2aa1ae; text-decoration: underline;"><a href="http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment">http://user:pwd@domain:80/path1;params1/path2;params2?query=queryarg#fragment</a></span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org9d428bc" class="outline-2">
-<h2 id="org9d428bc">相对路径转换绝对路径</h2>
-<div class="outline-text-2" id="text-org9d428bc">
+<div id="outline-container-orgd8f2b16" class="outline-2">
+<h2 id="orgd8f2b16">相对路径转换绝对路径</h2>
+<div class="outline-text-2" id="text-orgd8f2b16">
 <p>
 除此之外，urllib.parse 还提供了一个 <code>urljoin()</code> 函数，来将相对路径转换成绝对路径的URL
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">from</span> urllib.parse <span style="color: #a020f0;">import</span> urljoin
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> urllib.parse <span style="color: #4f97d7; font-weight: bold;">import</span> urljoin
 
-<span style="color: #a020f0;">print</span>(urljoin(<span style="color: #8b2252;">'http://www.example.com/path/file.html'</span>, <span style="color: #8b2252;">'anotherfile.html'</span>))
-<span style="color: #a020f0;">print</span>(urljoin(<span style="color: #8b2252;">'http://www.example.com/path/'</span>, <span style="color: #8b2252;">'anotherfile.html'</span>))
-<span style="color: #a020f0;">print</span>(urljoin(<span style="color: #8b2252;">'http://www.example.com/path/file.html'</span>, <span style="color: #8b2252;">'../anotherfile.html'</span>))
-<span style="color: #a020f0;">print</span>(urljoin(<span style="color: #8b2252;">'http://www.example.com/path/file.html'</span>, <span style="color: #8b2252;">'/anotherfile.html'</span>))
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>urljoin<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">'http://www.example.com/path/file.html'</span>, <span style="color: #2d9574;">'anotherfile.html'</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>urljoin<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">'http://www.example.com/path/'</span>, <span style="color: #2d9574;">'anotherfile.html'</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>urljoin<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">'http://www.example.com/path/file.html'</span>, <span style="color: #2d9574;">'../anotherfile.html'</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>urljoin<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">'http://www.example.com/path/file.html'</span>, <span style="color: #2d9574;">'/anotherfile.html'</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -279,31 +279,31 @@ ParsedResult对象和SplitResult对象都有一个 <code>geturl()</code> 方法�
 结果为:
 </p>
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #3a5fcd; text-decoration: underline;"><a href="http://www.example.com/path/anotherfile.html">http://www.example.com/path/anotherfile.html</a></span>
-<span style="color: #3a5fcd; text-decoration: underline;"><a href="http://www.example.com/path/anotherfile.html">http://www.example.com/path/anotherfile.html</a></span>
-<span style="color: #3a5fcd; text-decoration: underline;"><a href="http://www.example.com/anotherfile.html">http://www.example.com/anotherfile.html</a></span>
-<span style="color: #3a5fcd; text-decoration: underline;"><a href="http://www.example.com/anotherfile.html">http://www.example.com/anotherfile.html</a></span>
+<pre class="src src-org"><span style="color: #2aa1ae; text-decoration: underline;"><a href="http://www.example.com/path/anotherfile.html">http://www.example.com/path/anotherfile.html</a></span>
+<span style="color: #2aa1ae; text-decoration: underline;"><a href="http://www.example.com/path/anotherfile.html">http://www.example.com/path/anotherfile.html</a></span>
+<span style="color: #2aa1ae; text-decoration: underline;"><a href="http://www.example.com/anotherfile.html">http://www.example.com/anotherfile.html</a></span>
+<span style="color: #2aa1ae; text-decoration: underline;"><a href="http://www.example.com/anotherfile.html">http://www.example.com/anotherfile.html</a></span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org034b048" class="outline-2">
-<h2 id="org034b048">查询参数的构造和解析</h2>
-<div class="outline-text-2" id="text-org034b048">
+<div id="outline-container-org46bedd8" class="outline-2">
+<h2 id="org46bedd8">查询参数的构造和解析</h2>
+<div class="outline-text-2" id="text-org46bedd8">
 <p>
 使用 <code>urlencode()</code> 函数可以将一个dict转换成合法的查询参数:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">from</span> urllib.parse <span style="color: #a020f0;">import</span> urlencode
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> urllib.parse <span style="color: #4f97d7; font-weight: bold;">import</span> urlencode
 
-<span style="color: #a0522d;">query_args</span> = {
-    <span style="color: #8b2252;">'name'</span>: <span style="color: #8b2252;">'dark sun'</span>,
-    <span style="color: #8b2252;">'country'</span>: <span style="color: #8b2252;">'&#20013;&#22269;'</span>
-}
+<span style="color: #7590db;">query_args</span> = <span style="color: #4f97d7;">{</span>
+    <span style="color: #2d9574;">'name'</span>: <span style="color: #2d9574;">'dark sun'</span>,
+    <span style="color: #2d9574;">'country'</span>: <span style="color: #2d9574;">'&#20013;&#22269;'</span>
+<span style="color: #4f97d7;">}</span>
 
-<span style="color: #a0522d;">query_args</span> = urlencode(query_args)
-<span style="color: #a020f0;">print</span>(query_args)
+<span style="color: #7590db;">query_args</span> = urlencode<span style="color: #4f97d7;">(</span>query_args<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>query_args<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -323,8 +323,8 @@ ParsedResult对象和SplitResult对象都有一个 <code>geturl()</code> 方法�
 相对的，可以使用 <code>parse_qs()</code> 来将查询参数解析成dict
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">from</span> urllib.parse <span style="color: #a020f0;">import</span> parse_qs
-<span style="color: #a020f0;">print</span>(parse_qs(query_args))
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> urllib.parse <span style="color: #4f97d7; font-weight: bold;">import</span> parse_qs
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>parse_qs<span style="color: #bc6ec5;">(</span>query_args<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -340,12 +340,12 @@ ParsedResult对象和SplitResult对象都有一个 <code>geturl()</code> 方法�
 如果只是希望对特殊字符进行转义，那么可以使用 <code>quote</code> 或 <code>quote_plus</code> 函数,其中 <code>quote_plus</code> 比 <code>quote</code> 更激进一些，会把 <code>:/</code> 一类的符号也给转义了
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">from</span> urllib.parse <span style="color: #a020f0;">import</span> quote, quote_plus, urlencode
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> urllib.parse <span style="color: #4f97d7; font-weight: bold;">import</span> quote, quote_plus, urlencode
 
-<span style="color: #a0522d;">url</span> = <span style="color: #8b2252;">'http://localhost:1080/~hello!/'</span>
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'urlencode :'</span>, urlencode({<span style="color: #8b2252;">'url'</span>: url}))
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'quote     :'</span>, quote(url))
-<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'quote_plus:'</span>, quote_plus(url))
+<span style="color: #7590db;">url</span> = <span style="color: #2d9574;">'http://localhost:1080/~hello!/'</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'urlencode :'</span>, urlencode<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">{</span><span style="color: #2d9574;">'url'</span>: url<span style="color: #2d9574;">}</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'quote     :'</span>, quote<span style="color: #bc6ec5;">(</span>url<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'quote_plus:'</span>, quote_plus<span style="color: #bc6ec5;">(</span>url<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -367,11 +367,11 @@ quote_plus: http%3A%2F%2Flocalhost%3A1080%2F%7Ehello%21%2F
 逆向操作则使用 <code>unquote</code> 或 <code>unquote_plus</code> 函数
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">from</span> urllib.parse <span style="color: #a020f0;">import</span> unquote, unquote_plus
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> urllib.parse <span style="color: #4f97d7; font-weight: bold;">import</span> unquote, unquote_plus
 
-<span style="color: #a0522d;">encoded_url</span> = <span style="color: #8b2252;">'http%3A%2F%2Flocalhost%3A1080%2F%7Ehello%21%2F'</span>
-<span style="color: #a020f0;">print</span>(unquote(encoded_url))
-<span style="color: #a020f0;">print</span>(unquote_plus(encoded_url))
+<span style="color: #7590db;">encoded_url</span> = <span style="color: #2d9574;">'http%3A%2F%2Flocalhost%3A1080%2F%7Ehello%21%2F'</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>unquote<span style="color: #bc6ec5;">(</span>encoded_url<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>unquote_plus<span style="color: #bc6ec5;">(</span>encoded_url<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -379,8 +379,8 @@ quote_plus: http%3A%2F%2Flocalhost%3A1080%2F%7Ehello%21%2F
 结果为:
 </p>
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #3a5fcd; text-decoration: underline;"><a href="http://localhost:1080/~hello!/">http://localhost:1080/~hello!/</a></span>
-<span style="color: #3a5fcd; text-decoration: underline;"><a href="http://localhost:1080/~hello!/">http://localhost:1080/~hello!/</a></span>
+<pre class="src src-org"><span style="color: #2aa1ae; text-decoration: underline;"><a href="http://localhost:1080/~hello!/">http://localhost:1080/~hello!/</a></span>
+<span style="color: #2aa1ae; text-decoration: underline;"><a href="http://localhost:1080/~hello!/">http://localhost:1080/~hello!/</a></span>
 </pre>
 </div>
 

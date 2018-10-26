@@ -58,33 +58,33 @@
 在对银联前置系统做自动发布改造的时候，遇到一个脚本，类似于下面这样的菜单操作:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a020f0;">while</span> :
-<span style="color: #a020f0;">do</span>
+<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">while</span> :
+<span style="color: #4f97d7; font-weight: bold;">do</span>
     cat&lt;&lt;EOF
-<span style="color: #ffa54f;">1) &#30331;&#20986;</span>
-<span style="color: #ffa54f;">2) &#30331;&#24405;</span>
-<span style="color: #ffa54f;">3) &#20572;&#27490;&#24212;&#29992;</span>
-<span style="color: #ffa54f;">4) &#21551;&#21160;&#24212;&#29992;</span>
-<span style="color: #ffa54f;">EOF</span>
-    <span style="color: #483d8b;">read</span> choice
-    <span style="color: #a020f0;">case</span> $<span style="color: #a0522d;">choice</span><span style="color: #a020f0;"> in</span>
-        1)
-            <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"&#30331;&#20986;"</span>
+<span style="color: #ffff00; font-weight: bold;">1) &#30331;&#20986;</span>
+<span style="color: #ffff00; font-weight: bold;">2) &#30331;&#24405;</span>
+<span style="color: #ffff00; font-weight: bold;">3) &#20572;&#27490;&#24212;&#29992;</span>
+<span style="color: #ffff00; font-weight: bold;">4) &#21551;&#21160;&#24212;&#29992;</span>
+<span style="color: #ffff00; font-weight: bold;">EOF</span>
+    <span style="color: #4f97d7;">read</span> choice
+    <span style="color: #4f97d7; font-weight: bold;">case</span> $<span style="color: #7590db;">choice</span><span style="color: #4f97d7; font-weight: bold;"> in</span>
+        <span style="color: #a45bad;">1</span>)
+            <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#30331;&#20986;"</span>
             ;;
-        2)
-            <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"&#30331;&#24405;"</span>
+        <span style="color: #a45bad;">2</span>)
+            <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#30331;&#24405;"</span>
             ;;
-        3)
-            <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"&#20572;&#27490;&#24212;&#29992;"</span>
+        <span style="color: #a45bad;">3</span>)
+            <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#20572;&#27490;&#24212;&#29992;"</span>
             ;;
-        4)
-            <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"&#21551;&#21160;&#24212;&#29992;"</span>
+        <span style="color: #a45bad;">4</span>)
+            <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#21551;&#21160;&#24212;&#29992;"</span>
             ;;
-        99)
-            <span style="color: #a020f0;">break</span>
+        <span style="color: #a45bad;">99</span>)
+            <span style="color: #4f97d7; font-weight: bold;">break</span>
             ;;
-    <span style="color: #a020f0;">esac</span>
-<span style="color: #a020f0;">done</span>
+    <span style="color: #4f97d7; font-weight: bold;">esac</span>
+<span style="color: #4f97d7; font-weight: bold;">done</span>
 </pre>
 </div>
 
@@ -92,7 +92,7 @@
 我要在自动发布的脚本中调用这个菜单中的某些功能。 由于操作比较繁琐，我想着一步一步的重定向输入内容到这个菜单脚本中，于是我试着运行了一下
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"1"</span> |menu.sh
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"1"</span> |menu.sh
 </pre>
 </div>
 

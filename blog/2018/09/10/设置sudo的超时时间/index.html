@@ -54,9 +54,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge3cef27">设置sudo的超时时间</a></li>
-<li><a href="#org85f2165">设置下一次sudo需要输入密码</a></li>
-<li><a href="#orgbdac102">输入密码太麻烦？</a></li>
+<li><a href="#org0727b71">设置sudo的超时时间</a></li>
+<li><a href="#orge68c4a7">设置下一次sudo需要输入密码</a></li>
+<li><a href="#orgd317bde">输入密码太麻烦？</a></li>
 </ul>
 </div>
 </div>
@@ -64,9 +64,9 @@
 默认情况下sudo的超时时间为15分钟，也就是说，在上一个sudo命令后的15分种内是不需要重复输入密码的，而15分钟后则需要重复输入密码。
 </p>
 
-<div id="outline-container-orge3cef27" class="outline-2">
-<h2 id="orge3cef27">设置sudo的超时时间</h2>
-<div class="outline-text-2" id="text-orge3cef27">
+<div id="outline-container-org0727b71" class="outline-2">
+<h2 id="org0727b71">设置sudo的超时时间</h2>
+<div class="outline-text-2" id="text-org0727b71">
 <p>
 要设置sudo的超时时间，只需要在 <code>/etc/sudoers</code> 中的 <code>Defaults specification</code> 中指定 <code>timestamp_timeout=N</code> 就可以了
 </p>
@@ -90,9 +90,9 @@ Defaults timestamp_timeout=10
 </div>
 </div>
 
-<div id="outline-container-org85f2165" class="outline-2">
-<h2 id="org85f2165">设置下一次sudo需要输入密码</h2>
-<div class="outline-text-2" id="text-org85f2165">
+<div id="outline-container-orge68c4a7" class="outline-2">
+<h2 id="orge68c4a7">设置下一次sudo需要输入密码</h2>
+<div class="outline-text-2" id="text-orge68c4a7">
 <p>
 若确定自己已经完成sudo操作，则可以执行 <code>sudo -k</code> 命令。
 </p>
@@ -103,9 +103,9 @@ Defaults timestamp_timeout=10
 </div>
 </div>
 
-<div id="outline-container-orgbdac102" class="outline-2">
-<h2 id="orgbdac102">输入密码太麻烦？</h2>
-<div class="outline-text-2" id="text-orgbdac102">
+<div id="outline-container-orgd317bde" class="outline-2">
+<h2 id="orgd317bde">输入密码太麻烦？</h2>
+<div class="outline-text-2" id="text-orgd317bde">
 <p>
 如果觉得老是输入密码太麻烦，可以输入 <code>sudo -s</code>,这样你会发现以 <code>root</code> 用户的身份进入一个新shell中。
 </p>

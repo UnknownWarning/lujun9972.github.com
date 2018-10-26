@@ -54,21 +54,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge09e777">静态补全</a></li>
-<li><a href="#orgb7da0d4">动态补全</a>
+<li><a href="#org86c8a1e">静态补全</a></li>
+<li><a href="#org2c8080d">动态补全</a>
 <ul>
-<li><a href="#orgb771d34">compgen命令</a></li>
-<li><a href="#orgc650055">注册动态补全函数</a></li>
-<li><a href="#org25b807c">举个例子</a></li>
+<li><a href="#org8df1dbb">compgen命令</a></li>
+<li><a href="#orge167392">注册动态补全函数</a></li>
+<li><a href="#orge3ffc34">举个例子</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge09e777" class="outline-2">
-<h2 id="orge09e777">静态补全</h2>
-<div class="outline-text-2" id="text-orge09e777">
+<div id="outline-container-org86c8a1e" class="outline-2">
+<h2 id="org86c8a1e">静态补全</h2>
+<div class="outline-text-2" id="text-org86c8a1e">
 <p>
 创建静态补全很简单，只需要使用 <code>complete</code> 的 <code>-W</code> (wordlist) 选项为脚本注册补全的单词列表就行了。
 </p>
@@ -77,7 +77,7 @@
 比如，假设有一个 <code>myscript</code> 脚本，可以接参数 <code>him,her,me,you</code>, 那么我们可以执行：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">complete</span> -W <span style="color: #8b2252;">"him her me you"</span> myscript
+<pre class="src src-shell"><span style="color: #4f97d7;">complete</span> -W <span style="color: #2d9574;">"him her me you"</span> myscript
 </pre>
 </div>
 
@@ -119,9 +119,9 @@ her  him
 </div>
 </div>
 
-<div id="outline-container-orgb7da0d4" class="outline-2">
-<h2 id="orgb7da0d4">动态补全</h2>
-<div class="outline-text-2" id="text-orgb7da0d4">
+<div id="outline-container-org2c8080d" class="outline-2">
+<h2 id="org2c8080d">动态补全</h2>
+<div class="outline-text-2" id="text-org2c8080d">
 <p>
 动态补全能够根据用户的环境动态的生成补全的内容。 当出发动态补全时，bash会在当前shell中执行一个补全函数，然后从变量 <code>COMPREPLY</code> 中读取补全的内容。
 </p>
@@ -136,14 +136,14 @@ her  him
 <dt>COMP_LINE</dt><dd>当前命令行的内容</dd>
 </dl>
 </div>
-<div id="outline-container-orgb771d34" class="outline-3">
-<h3 id="orgb771d34">compgen命令</h3>
-<div class="outline-text-3" id="text-orgb771d34">
+<div id="outline-container-org8df1dbb" class="outline-3">
+<h3 id="org8df1dbb">compgen命令</h3>
+<div class="outline-text-3" id="text-org8df1dbb">
 <p>
 compgen是一款内置命令,它与 <code>complete</code> 命令类似，但可以根据已经输入的内容对补全内容进行过滤，比如
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">compgen</span> -W <span style="color: #8b2252;">"him her me you"</span> h
+<pre class="src src-shell"><span style="color: #4f97d7;">compgen</span> -W <span style="color: #2d9574;">"him her me you"</span> h
 </pre>
 </div>
 
@@ -161,9 +161,9 @@ her
 </p>
 </div>
 </div>
-<div id="outline-container-orgc650055" class="outline-3">
-<h3 id="orgc650055">注册动态补全函数</h3>
-<div class="outline-text-3" id="text-orgc650055">
+<div id="outline-container-orge167392" class="outline-3">
+<h3 id="orge167392">注册动态补全函数</h3>
+<div class="outline-text-3" id="text-orge167392">
 <p>
 要为命令注册动态补全函数，则需要使用 <code>completion</code> 的 <code>-F 函数</code> 参数:
 </p>
@@ -173,9 +173,9 @@ her
 </div>
 </div>
 </div>
-<div id="outline-container-org25b807c" class="outline-3">
-<h3 id="org25b807c">举个例子</h3>
-<div class="outline-text-3" id="text-org25b807c">
+<div id="outline-container-orge3ffc34" class="outline-3">
+<h3 id="orge3ffc34">举个例子</h3>
+<div class="outline-text-3" id="text-orge3ffc34">
 <p>
 比如，我想为 <code>myscript</code> 增加一个补全，这个补全的逻辑是:
 </p>
@@ -190,21 +190,21 @@ her
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">&#39318;&#20808;&#65292;&#23450;&#20041;&#19968;&#20010;&#34917;&#20840;&#20989;&#25968;</span>
-<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">_myscript_completion</span>()
-{
-    <span style="color: #a020f0;">if</span> [[ <span style="color: #8b2252;">"${COMP_CWORD}"</span> == <span style="color: #8b2252;">"1"</span> ]];<span style="color: #a020f0;">then</span>
-        <span style="color: #b22222;"># </span><span style="color: #b22222;">&#33509;&#34917;&#20840;&#30340;&#26159;&#31532;&#19968;&#20010;&#21442;&#25968;&#65292;&#21017;&#21487;&#20197;&#26159; -f &#25110; -d</span>
-        <span style="color: #a0522d;">COMPREPLY</span>=($(<span style="color: #ff00ff;">compgen</span> -W <span style="color: #8b2252;">"-f -d"</span> ${<span style="color: #a0522d;">COMP_WORDS</span>[${<span style="color: #a0522d;">COMP_CWORD</span>}]}))
-    <span style="color: #a020f0;">elif</span> [[ <span style="color: #8b2252;">"${COMP_WORDS[1]}"</span> == <span style="color: #8b2252;">"-f"</span> ]];<span style="color: #a020f0;">then</span>
-        <span style="color: #a0522d;">COMPREPLY</span>=($(<span style="color: #ff00ff;">compgen</span> -f ${<span style="color: #a0522d;">COMP_WORDS</span>[${<span style="color: #a0522d;">COMP_CWORD</span>}]}))
-    <span style="color: #a020f0;">elif</span> [[ <span style="color: #8b2252;">"${COMP_WORDS[1]}"</span> == <span style="color: #8b2252;">"-d"</span> ]];<span style="color: #a020f0;">then</span>
-        <span style="color: #a0522d;">COMPREPLY</span>=($(<span style="color: #ff00ff;">compgen</span> -d ${<span style="color: #a0522d;">COMP_WORDS</span>[${<span style="color: #a0522d;">COMP_CWORD</span>}]}))
-    <span style="color: #a020f0;">fi</span>
-}
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#39318;&#20808;&#65292;&#23450;&#20041;&#19968;&#20010;&#34917;&#20840;&#20989;&#25968;</span>
+<span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">_myscript_completion</span><span style="color: #4f97d7;">()</span>
+<span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> <span style="color: #2d9574;">"${COMP_CWORD}"</span> == <span style="color: #2d9574;">"1"</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#34917;&#20840;&#30340;&#26159;&#31532;&#19968;&#20010;&#21442;&#25968;&#65292;&#21017;&#21487;&#20197;&#26159; -f &#25110; -d</span>
+        <span style="color: #7590db;">COMPREPLY</span>=<span style="color: #bc6ec5;">(</span>$<span style="color: #2d9574;">(</span><span style="color: #fa8072;">compgen</span> -W <span style="color: #2d9574;">"-f -d"</span> $<span style="color: #67b11d;">{</span><span style="color: #7590db;">COMP_WORDS</span><span style="color: #b1951d;">[</span>$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">COMP_CWORD</span><span style="color: #4f97d7;">}</span><span style="color: #b1951d;">]</span><span style="color: #67b11d;">}</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">elif</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> <span style="color: #2d9574;">"${COMP_WORDS[1]}"</span> == <span style="color: #2d9574;">"-f"</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+        <span style="color: #7590db;">COMPREPLY</span>=<span style="color: #bc6ec5;">(</span>$<span style="color: #2d9574;">(</span><span style="color: #fa8072;">compgen</span> -f $<span style="color: #67b11d;">{</span><span style="color: #7590db;">COMP_WORDS</span><span style="color: #b1951d;">[</span>$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">COMP_CWORD</span><span style="color: #4f97d7;">}</span><span style="color: #b1951d;">]</span><span style="color: #67b11d;">}</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">elif</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> <span style="color: #2d9574;">"${COMP_WORDS[1]}"</span> == <span style="color: #2d9574;">"-d"</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+        <span style="color: #7590db;">COMPREPLY</span>=<span style="color: #bc6ec5;">(</span>$<span style="color: #2d9574;">(</span><span style="color: #fa8072;">compgen</span> -d $<span style="color: #67b11d;">{</span><span style="color: #7590db;">COMP_WORDS</span><span style="color: #b1951d;">[</span>$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">COMP_CWORD</span><span style="color: #4f97d7;">}</span><span style="color: #b1951d;">]</span><span style="color: #67b11d;">}</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">fi</span>
+<span style="color: #4f97d7;">}</span>
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">&#27880;&#20876;&#34917;&#20840;&#20989;&#25968;</span>
-<span style="color: #483d8b;">complete</span> -F _myscript_completion myscript
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#27880;&#20876;&#34917;&#20840;&#20989;&#25968;</span>
+<span style="color: #4f97d7;">complete</span> -F _myscript_completion myscript
 </pre>
 </div>
 </div>

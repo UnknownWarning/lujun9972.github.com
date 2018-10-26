@@ -62,9 +62,9 @@
 只要使用 <code>jq</code> 的 <code>--arg jq参数名 jq参数值</code> 参数就能将shell变量的值传递，然后直接在 <code>jq</code> 表达式中写出要拼装JSON的结构就行了，类似这样：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a0522d;">title</span>=<span style="color: #8b2252;">"TEST OF JQ"</span>
-<span style="color: #a0522d;">source</span>=<span style="color: #8b2252;">"JQ NB"</span>
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">'{}'</span>|jq <span style="color: #8b2252;">'{"title":$title,"content":$source}'</span> --arg title <span style="color: #8b2252;">"$title"</span> --arg source <span style="color: #8b2252;">"$source"</span>
+<pre class="src src-shell"><span style="color: #7590db;">title</span>=<span style="color: #2d9574;">"TEST OF JQ"</span>
+<span style="color: #7590db;">source</span>=<span style="color: #2d9574;">"JQ NB"</span>
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">'{}'</span>|jq <span style="color: #2d9574;">'{"title":$title,"content":$source}'</span> --arg title <span style="color: #2d9574;">"$title"</span> --arg source <span style="color: #2d9574;">"$source"</span>
 </pre>
 </div>
 

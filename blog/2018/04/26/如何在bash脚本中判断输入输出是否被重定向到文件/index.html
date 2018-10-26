@@ -55,23 +55,23 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a020f0;">if</span> [[ -t 0 ]];<span style="color: #a020f0;">then</span>
-    <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"stdin is a terminal"</span>
-<span style="color: #a020f0;">else</span>
-    <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"stdin is not a terminal"</span>
-<span style="color: #a020f0;">fi</span>
+<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">[</span> -t <span style="color: #a45bad;">0</span> <span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+    <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"stdin is a terminal"</span>
+<span style="color: #4f97d7; font-weight: bold;">else</span>
+    <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"stdin is not a terminal"</span>
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
 
-<span style="color: #a020f0;">if</span> [[ -t 1 ]];<span style="color: #a020f0;">then</span>
-    <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"stdout is a terminal"</span>
-<span style="color: #a020f0;">else</span>
-    <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"stdout is not a terminal"</span>
-<span style="color: #a020f0;">fi</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">[</span> -t <span style="color: #a45bad;">1</span> <span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+    <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"stdout is a terminal"</span>
+<span style="color: #4f97d7; font-weight: bold;">else</span>
+    <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"stdout is not a terminal"</span>
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
 
-<span style="color: #a020f0;">if</span> [[ -t 2 ]];<span style="color: #a020f0;">then</span>
-    <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"stderr is a terminal"</span>
-<span style="color: #a020f0;">else</span>
-    <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"stderr is not a terminal"</span>
-<span style="color: #a020f0;">fi</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">[</span> -t <span style="color: #a45bad;">2</span> <span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+    <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"stderr is a terminal"</span>
+<span style="color: #4f97d7; font-weight: bold;">else</span>
+    <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"stderr is not a terminal"</span>
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
 </pre>
 </div>
 <p>

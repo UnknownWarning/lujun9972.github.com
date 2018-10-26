@@ -54,15 +54,15 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc0e0527">Netrc文件</a></li>
-<li><a href="#orgcae5355">auth-source库</a></li>
+<li><a href="#org57ad855">Netrc文件</a></li>
+<li><a href="#org4a7f60e">auth-source库</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc0e0527" class="outline-2">
-<h2 id="orgc0e0527">Netrc文件</h2>
-<div class="outline-text-2" id="text-orgc0e0527">
+<div id="outline-container-org57ad855" class="outline-2">
+<h2 id="org57ad855">Netrc文件</h2>
+<div class="outline-text-2" id="text-org57ad855">
 <p>
 Netrc文件常用于存储登陆主机时的用户名和密码，它的格式是这样的：
 </p>
@@ -101,9 +101,9 @@ Netrc文件一般是保存为 <code>～/.authinfo</code> 或者 <code>～/.netrc
 </div>
 </div>
 
-<div id="outline-container-orgcae5355" class="outline-2">
-<h2 id="orgcae5355">auth-source库</h2>
-<div class="outline-text-2" id="text-orgcae5355">
+<div id="outline-container-org4a7f60e" class="outline-2">
+<h2 id="org4a7f60e">auth-source库</h2>
+<div class="outline-text-2" id="text-org4a7f60e">
 <p>
 auth-source是一款Emacs自带的用于解析Netrc文件的库. 
 </p>
@@ -129,22 +129,22 @@ auth-source是一款Emacs自带的用于解析Netrc文件的库.
 下面是网络上的一个例子：
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">use-package</span> <span style="color: #008b8b;">org2blog</span>
-  <span style="color: #483d8b;">:ensure</span> t
-  <span style="color: #483d8b;">:config</span>
-  <span style="color: #b22222;">;; </span><span style="color: #b22222;">Experiments</span>
-  (<span style="color: #a020f0;">require</span> '<span style="color: #008b8b;">auth-source</span>) <span style="color: #b22222;">;; </span><span style="color: #b22222;">or nothing if already in the load-path</span>
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">use-package</span> <span style="color: #a45bad;">org2blog</span>
+  <span style="color: #4f97d7;">:ensure</span> t
+  <span style="color: #4f97d7;">:config</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Experiments</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">require</span> '<span style="color: #a45bad;">auth-source</span><span style="color: #bc6ec5;">)</span> <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">or nothing if already in the load-path</span>
 
-  (<span style="color: #a020f0;">let</span> (credentials)
-    <span style="color: #b22222;">;; </span><span style="color: #b22222;">only required if your auth file is not already in the list of auth-sources</span>
-    <span style="color: #b22222;">;; </span><span style="color: #b22222;">Always keep config and username/password separated</span>
-    (add-to-list 'auth-sources <span style="color: #8b2252;">"~/.authinfo"</span>)
-    (<span style="color: #a020f0;">setq</span> credentials (auth-source-user-and-password <span style="color: #8b2252;">"buildfunthings.com"</span>))
-    (<span style="color: #a020f0;">setq</span> org2blog/wp-blog-alist
-          `((<span style="color: #8b2252;">"bft"</span>
-             <span style="color: #483d8b;">:url</span> <span style="color: #8b2252;">"https://www.buildfunthings.com/xmlrpc.php"</span>
-             <span style="color: #483d8b;">:username</span> ,(car credentials)
-             <span style="color: #483d8b;">:password</span> ,(cadr credentials))))))
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">let</span> <span style="color: #2d9574;">(</span>credentials<span style="color: #2d9574;">)</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">only required if your auth file is not already in the list of auth-sources</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Always keep config and username/password separated</span>
+    <span style="color: #2d9574;">(</span>add-to-list 'auth-sources <span style="color: #2d9574;">"~/.authinfo"</span><span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> credentials <span style="color: #67b11d;">(</span>auth-source-user-and-password <span style="color: #2d9574;">"buildfunthings.com"</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> org2blog/wp-blog-alist
+          `<span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span><span style="color: #2d9574;">"bft"</span>
+             <span style="color: #4f97d7;">:url</span> <span style="color: #2d9574;">"https://www.buildfunthings.com/xmlrpc.php"</span>
+             <span style="color: #4f97d7;">:username</span> ,<span style="color: #4f97d7;">(</span>car credentials<span style="color: #4f97d7;">)</span>
+             <span style="color: #4f97d7;">:password</span> ,<span style="color: #4f97d7;">(</span>cadr credentials<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>

@@ -85,8 +85,8 @@
 </p>
 <div class="org-src-container">
 <pre class="src src-yaml">- hosts:ALL
-  <span style="color: #a0522d;">tasks</span>:
-    <span style="color: #b22222;"># </span><span style="color: #b22222;">&#20219;&#21153;&#35828;&#26126;</span>
+  <span style="color: #7590db;">tasks</span>:
+    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#20219;&#21153;&#35828;&#26126;</span>
 </pre>
 </div>
 <p>
@@ -94,8 +94,8 @@
 </p>
 <div class="org-src-container">
 <pre class="src src-yaml">- hosts:ALL
-<span style="color: #a0522d;">tasks</span>:
-  <span style="color: #b22222;"># </span><span style="color: #b22222;">&#20219;&#21153;&#35828;&#26126;</span>
+<span style="color: #7590db;">tasks</span>:
+  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#20219;&#21153;&#35828;&#26126;</span>
 </pre>
 </div></li>
 
@@ -107,23 +107,23 @@
 所以只能这样写:
 </p>
 <div class="org-src-container">
-<pre class="src src-yaml"><span style="color: #b22222;">---</span>
+<pre class="src src-yaml"><span style="color: #2aa1ae; background-color: #292e34;">---</span>
 - hosts:ALL
-  <span style="color: #a0522d;">tasks</span>:
-    - <span style="color: #a0522d;">name</span>: test
-      <span style="color: #a0522d;">command</span>: ls
+  <span style="color: #7590db;">tasks</span>:
+    - <span style="color: #7590db;">name</span>: test
+      <span style="color: #7590db;">command</span>: ls
 </pre>
 </div>
 <p>
 而不能写成
 </p>
 <div class="org-src-container">
-<pre class="src src-yaml"><span style="color: #b22222;">---</span>
+<pre class="src src-yaml"><span style="color: #2aa1ae; background-color: #292e34;">---</span>
 - hosts:ALL
-  <span style="color: #a0522d;">tasks</span>:
-    - <span style="color: #a0522d;">name</span>: test
-      <span style="color: #a0522d;">command</span>: ls
-      <span style="color: #a0522d;">command</span>: df
+  <span style="color: #7590db;">tasks</span>:
+    - <span style="color: #7590db;">name</span>: test
+      <span style="color: #7590db;">command</span>: ls
+      <span style="color: #7590db;">command</span>: df
 </pre>
 </div></li>
 

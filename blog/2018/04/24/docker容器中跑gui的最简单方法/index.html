@@ -54,8 +54,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org75fbb0c">步骤</a></li>
-<li><a href="#org5280d72">=/tmp/.X11-unix=是什么玩意？</a></li>
+<li><a href="#orgd77b1ca">步骤</a></li>
+<li><a href="#org21a1de4">=/tmp/.X11-unix=是什么玩意？</a></li>
 </ul>
 </div>
 </div>
@@ -63,9 +63,9 @@
 最简单的方法就是让docker容器中的xclient应用直接使用主机上的Xserver就好了。
 </p>
 
-<div id="outline-container-org75fbb0c" class="outline-2">
-<h2 id="org75fbb0c">步骤</h2>
-<div class="outline-text-2" id="text-org75fbb0c">
+<div id="outline-container-orgd77b1ca" class="outline-2">
+<h2 id="orgd77b1ca">步骤</h2>
+<div class="outline-text-2" id="text-orgd77b1ca">
 <p>
 步骤上就两步
 </p>
@@ -83,7 +83,7 @@
 将 <code>/tmp/.X11-unix</code> 共享到容器中
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">docker run -it --rm -v /tmp/.X11-unix:/tmp/.X11-unix ${<span style="color: #a0522d;">docker_image</span>}
+<pre class="src src-shell">docker run -it --rm -v /tmp/.X11-unix:/tmp/.X11-unix $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">docker_image</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div></li>
 </ol>
@@ -92,16 +92,16 @@
 当然，你也可以在放开权限时，指定容器主机名，这样会安全一些，只是步骤上会麻烦一点
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">xhost +local:$(<span style="color: #ff00ff;">docker</span> inspect --format=<span style="color: #8b2252;">'{{ .Config.Hostname }}'</span> $<span style="color: #a0522d;">containerId</span>)
-docker start $<span style="color: #a0522d;">containerId</span>
+<pre class="src src-shell">xhost +local:$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">docker</span> inspect --format=<span style="color: #2d9574;">'{{ .Config.Hostname }}'</span> $<span style="color: #7590db;">containerId</span><span style="color: #4f97d7;">)</span>
+docker start $<span style="color: #7590db;">containerId</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5280d72" class="outline-2">
-<h2 id="org5280d72">=/tmp/.X11-unix=是什么玩意？</h2>
-<div class="outline-text-2" id="text-org5280d72">
+<div id="outline-container-org21a1de4" class="outline-2">
+<h2 id="org21a1de4">=/tmp/.X11-unix=是什么玩意？</h2>
+<div class="outline-text-2" id="text-org21a1de4">
 <p>
 X11 server需要有一种途径来跟X11 client来进行沟通。
 在网络上它们可以通过TCP/IP Socket来实现沟通，而在本机上它们通过一个<a href="http://en.wikipedia.org/wiki/Unix_domain_socket">Unix-domain socket</a>来沟通.
@@ -137,7 +137,7 @@ srwxrwxrwx 1 lujun9972 lujun9972 0 4&#26376;  24 09:18 X0
 我们可以使用 <code>lsof -U</code> 来查看有那些进程在使用这个 Unix-domain Socket
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">lsof -U /tmp/.X11-unix/X0 |cut -f1 -d <span style="color: #8b2252;">" "</span> |uniq
+<pre class="src src-shell">lsof -U /tmp/.X11-unix/X0 |cut -f1 -d <span style="color: #2d9574;">" "</span> |uniq
 </pre>
 </div>
 </div>

@@ -58,7 +58,7 @@
 当我们想往root所属文件中添加内容时,你可能会写出这样的语句
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo echo <span style="color: #8b2252;">'192.168.1.254 route'</span> &gt;&gt; /etc/hosts
+<pre class="src src-shell">sudo echo <span style="color: #2d9574;">'192.168.1.254 route'</span> &gt;&gt; /etc/hosts
 </pre>
 </div>
 
@@ -79,7 +79,7 @@
 使用tee命令
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">'192.168.1.254 router'</span> | sudo tee -a /etc/hosts
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">'192.168.1.254 router'</span> | sudo tee -a /etc/hosts
 </pre>
 </div></li>
 
@@ -87,7 +87,7 @@
 使用shell本身
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo sh -c <span style="color: #8b2252;">'echo "192.168.1.254 router" &gt;&gt; /etc/hosts'</span>
+<pre class="src src-shell">sudo sh -c <span style="color: #2d9574;">'echo "192.168.1.254 router" &gt;&gt; /etc/hosts'</span>
 </pre>
 </div></li>
 </ol>

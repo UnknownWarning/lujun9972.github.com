@@ -53,32 +53,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8ae5a07">1. 终端登录过程</a></li>
-<li><a href="#org078ed48">2. 网络登录过程</a></li>
-<li><a href="#org498d18a">3. 进程组</a>
+<li><a href="#org225529b">1. 终端登录过程</a></li>
+<li><a href="#org72b3841">2. 网络登录过程</a></li>
+<li><a href="#org6a30941">3. 进程组</a>
 <ul>
-<li><a href="#org8070c0a">3.1. 获取进程的所属进程组</a></li>
-<li><a href="#orgb244212">3.2. 加入现有的/创建新进程组</a></li>
+<li><a href="#org2c1e000">3.1. 获取进程的所属进程组</a></li>
+<li><a href="#org80bed33">3.2. 加入现有的/创建新进程组</a></li>
 </ul>
 </li>
-<li><a href="#org247d2b0">4. 会话</a>
+<li><a href="#org2569a84">4. 会话</a>
 <ul>
-<li><a href="#org3f65962">4.1. setsid创建新会话</a></li>
-<li><a href="#org9b2f480">4.2. getsid获取会话ID</a></li>
+<li><a href="#org60eabe9">4.1. setsid创建新会话</a></li>
+<li><a href="#orgd995844">4.2. getsid获取会话ID</a></li>
 </ul>
 </li>
-<li><a href="#org74855b8">5. 前后台进程组</a>
+<li><a href="#orgc80f81c">5. 前后台进程组</a>
 <ul>
-<li><a href="#org84a1503">5.1. 设置/获取前台进程组</a></li>
-<li><a href="#orgb0c5a78">5.2. 后台作业的IO处理</a></li>
+<li><a href="#org9c17c34">5.1. 设置/获取前台进程组</a></li>
+<li><a href="#orge9d83fc">5.2. 后台作业的IO处理</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8ae5a07" class="outline-2">
-<h2 id="org8ae5a07"><span class="section-number-2">1</span> 终端登录过程</h2>
+<div id="outline-container-org225529b" class="outline-2">
+<h2 id="org225529b"><span class="section-number-2">1</span> 终端登录过程</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>init进程针对每个tty frok并exec一个getty子进程
@@ -95,7 +95,7 @@
 getty exec login程序,并传递用户名,密码到login程序
 </p>
 <div class="org-src-container">
-<pre class="src src-C">execle(<span style="color: #8b2252;">"/bin/login"</span>,<span style="color: #8b2252;">"login"</span>,<span style="color: #8b2252;">"-p"</span>,username,(<span style="color: #228b22;">char</span>*)0,envp);
+<pre class="src src-C">execle<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"/bin/login"</span>,<span style="color: #2d9574;">"login"</span>,<span style="color: #2d9574;">"-p"</span>,username,<span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">char</span>*<span style="color: #bc6ec5;">)</span><span style="color: #a45bad;">0</span>,envp<span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -124,8 +124,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </div>
 </div>
 
-<div id="outline-container-org078ed48" class="outline-2">
-<h2 id="org078ed48"><span class="section-number-2">2</span> 网络登录过程</h2>
+<div id="outline-container-org72b3841" class="outline-2">
+<h2 id="org72b3841"><span class="section-number-2">2</span> 网络登录过程</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 网络登录过程与终端登录过程不同点在于网络登录过程不过是一种网络服务.
@@ -141,8 +141,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </div>
 </div>
 
-<div id="outline-container-org498d18a" class="outline-2">
-<h2 id="org498d18a"><span class="section-number-2">3</span> 进程组</h2>
+<div id="outline-container-org6a30941" class="outline-2">
+<h2 id="org6a30941"><span class="section-number-2">3</span> 进程组</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 每个进程除了有一个进程ID外,还属于一个进程组.
@@ -180,28 +180,28 @@ getty exec login程序,并传递用户名,密码到login程序
 </p>
 </div>
 
-<div id="outline-container-org8070c0a" class="outline-3">
-<h3 id="org8070c0a"><span class="section-number-3">3.1</span> 获取进程的所属进程组</h3>
+<div id="outline-container-org2c1e000" class="outline-3">
+<h3 id="org2c1e000"><span class="section-number-3">3.1</span> 获取进程的所属进程组</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">pid_t</span> <span style="color: #0000ff;">getpgrp</span>();
+<span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #bc6ec5; font-weight: bold;">getpgrp</span><span style="color: #4f97d7;">()</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;pid == 0,&#21017;&#36820;&#22238;&#35843;&#29992;&#36827;&#31243;&#30340;&#36827;&#31243;&#32452;ID </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">pid_t</span> <span style="color: #0000ff;">getpgid</span>(<span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">pid</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;pid == 0,&#21017;&#36820;&#22238;&#35843;&#29992;&#36827;&#31243;&#30340;&#36827;&#31243;&#32452;ID </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #bc6ec5; font-weight: bold;">getpgid</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">pid</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb244212" class="outline-3">
-<h3 id="orgb244212"><span class="section-number-3">3.2</span> 加入现有的/创建新进程组</h3>
+<div id="outline-container-org80bed33" class="outline-3">
+<h3 id="org80bed33"><span class="section-number-3">3.2</span> 加入现有的/创建新进程组</h3>
 <div class="outline-text-3" id="text-3-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">setpgid</span>(<span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">pid</span>,<span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">pgid</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">setpgid</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">pid</span>,<span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">pgid</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -214,8 +214,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </div>
 </div>
 
-<div id="outline-container-org247d2b0" class="outline-2">
-<h2 id="org247d2b0"><span class="section-number-2">4</span> 会话</h2>
+<div id="outline-container-org2569a84" class="outline-2">
+<h2 id="org2569a84"><span class="section-number-2">4</span> 会话</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 会话是一个或多个进程组的集合. 这些进程组可以分成一个前台进程组和多个后台进程组.
@@ -246,16 +246,16 @@ getty exec login程序,并传递用户名,密码到login程序
 </p>
 </div>
 
-<div id="outline-container-org3f65962" class="outline-3">
-<h3 id="org3f65962"><span class="section-number-3">4.1</span> setsid创建新会话</h3>
+<div id="outline-container-org60eabe9" class="outline-3">
+<h3 id="org60eabe9"><span class="section-number-3">4.1</span> setsid创建新会话</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 进程调用setsid函数建立一个新会话和新进程组
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">pid_t</span> <span style="color: #0000ff;">setsid</span>();                 <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#21017;&#36820;&#22238;&#36827;&#31243;&#32452;ID,&#21542;&#21017;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #bc6ec5; font-weight: bold;">setsid</span><span style="color: #4f97d7;">()</span>;                 <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#21017;&#36820;&#22238;&#36827;&#31243;&#32452;ID,&#21542;&#21017;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
 </pre>
 </div>
 
@@ -273,18 +273,18 @@ getty exec login程序,并传递用户名,密码到login程序
 </ol>
 </div>
 </div>
-<div id="outline-container-org9b2f480" class="outline-3">
-<h3 id="org9b2f480"><span class="section-number-3">4.2</span> getsid获取会话ID</h3>
+<div id="outline-container-orgd995844" class="outline-3">
+<h3 id="orgd995844"><span class="section-number-3">4.2</span> getsid获取会话ID</h3>
 <div class="outline-text-3" id="text-4-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">pid_t</span> <span style="color: #0000ff;">getsid</span>(<span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">pid</span>);        <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;&#25104;&#21151;&#36820;&#22238;&#20250;&#35805;ID,&#21542;&#21017;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #bc6ec5; font-weight: bold;">getsid</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">pid</span><span style="color: #4f97d7;">)</span>;        <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#25104;&#21151;&#36820;&#22238;&#20250;&#35805;ID,&#21542;&#21017;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
 
-<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;termios.h&gt;</span>
+<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">termios.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;tty_filedes&#30456;&#20851;&#32456;&#31471;&#23545;&#24212;&#30340;&#20250;&#35805;ID,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">pid_t</span> <span style="color: #0000ff;">tcgetsid</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">tty_filedes</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;tty_filedes&#30456;&#20851;&#32456;&#31471;&#23545;&#24212;&#30340;&#20250;&#35805;ID,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #bc6ec5; font-weight: bold;">tcgetsid</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">tty_filedes</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -292,15 +292,15 @@ getty exec login程序,并传递用户名,密码到login程序
 处于安全考虑,若参数pid并不属于调用者所在的会话ID,则会出错.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
-<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>()
-{
-  printf(<span style="color: #8b2252;">"&#26412;&#36827;&#31243;&#25152;&#23646;&#20250;&#35805;ID&#20026;%d\n"</span>,getsid(getpid()));
-  printf(<span style="color: #8b2252;">"&#36827;&#31243;1&#25152;&#23646;&#20250;&#35805;ID&#20026;%d\n"</span>,getsid(1));
-  <span style="color: #a020f0;">return</span> 0;
-}
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #4f97d7;">()</span>
+<span style="color: #4f97d7;">{</span>
+  printf<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"&#26412;&#36827;&#31243;&#25152;&#23646;&#20250;&#35805;ID&#20026;%d\n"</span>,getsid<span style="color: #2d9574;">(</span>getpid<span style="color: #67b11d;">()</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>;
+  printf<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"&#36827;&#31243;1&#25152;&#23646;&#20250;&#35805;ID&#20026;%d\n"</span>,getsid<span style="color: #2d9574;">(</span><span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>;
+  <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">0</span>;
+<span style="color: #4f97d7;">}</span>
 
 </pre>
 </div>
@@ -325,30 +325,30 @@ getty exec login程序,并传递用户名,密码到login程序
 </div>
 </div>
 </div>
-<div id="outline-container-org74855b8" class="outline-2">
-<h2 id="org74855b8"><span class="section-number-2">5</span> 前后台进程组</h2>
+<div id="outline-container-orgc80f81c" class="outline-2">
+<h2 id="orgc80f81c"><span class="section-number-2">5</span> 前后台进程组</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org84a1503" class="outline-3">
-<h3 id="org84a1503"><span class="section-number-3">5.1</span> 设置/获取前台进程组</h3>
+<div id="outline-container-org9c17c34" class="outline-3">
+<h3 id="org9c17c34"><span class="section-number-3">5.1</span> 设置/获取前台进程组</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 需要有一种方法来通知内核哪一个进程组是前台进程组,这样终端设备驱动程序就能了解将终端输入和终端产生的信号送到何处
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#19982;tty_filedes&#30456;&#20851;&#32852;&#30340;&#32456;&#31471;&#30340;&#21069;&#21488;&#36827;&#31243;&#32452;ID,&#22833;&#36133;&#21017;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">pid_t</span> <span style="color: #0000ff;">tcgetpgrp</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">tty_filedes</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#19982;tty_filedes&#30456;&#20851;&#32852;&#30340;&#32456;&#31471;&#30340;&#21069;&#21488;&#36827;&#31243;&#32452;ID,&#22833;&#36133;&#21017;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #bc6ec5; font-weight: bold;">tcgetpgrp</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">tty_filedes</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#35774;&#32622;&#19982;tty_filedes&#30456;&#20851;&#32852;&#30340;&#32456;&#31471;&#30340;&#21069;&#21488;&#36827;&#31243;&#32452;,&#25104;&#21151;&#36820;&#22238;0,&#22833;&#36133;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">tcsetpgrp</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">tty_filedes</span>,<span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">pgrpid</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#35774;&#32622;&#19982;tty_filedes&#30456;&#20851;&#32852;&#30340;&#32456;&#31471;&#30340;&#21069;&#21488;&#36827;&#31243;&#32452;,&#25104;&#21151;&#36820;&#22238;0,&#22833;&#36133;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">tcsetpgrp</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">tty_filedes</span>,<span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">pgrpid</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb0c5a78" class="outline-3">
-<h3 id="orgb0c5a78"><span class="section-number-3">5.2</span> 后台作业的IO处理</h3>
+<div id="outline-container-orge9d83fc" class="outline-3">
+<h3 id="orge9d83fc"><span class="section-number-3">5.2</span> 后台作业的IO处理</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 若后台作业试图读取终端,则终端驱动程序将检测到这种情况,并且向后台作业发送一个特定信号SIGTTIN. 该信号通常会暂停此后台作业,而shell向有关用户发出作业被暂停的通知.

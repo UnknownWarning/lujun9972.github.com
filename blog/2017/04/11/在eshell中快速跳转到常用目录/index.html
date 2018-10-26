@@ -54,11 +54,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3f1ee35">marks函数</a></li>
-<li><a href="#orgebe4ca7">jump函数</a></li>
-<li><a href="#org238dce1">mark函数</a></li>
-<li><a href="#org35c69b9">unmark函数</a></li>
-<li><a href="#org0e02cf1">补全</a></li>
+<li><a href="#orgc10808f">marks函数</a></li>
+<li><a href="#org2dd07cf">jump函数</a></li>
+<li><a href="#org5fdde5b">mark函数</a></li>
+<li><a href="#orge77cddd">unmark函数</a></li>
+<li><a href="#orgec92fc7">补全</a></li>
 </ul>
 </div>
 </div>
@@ -78,26 +78,26 @@
 现在我们就来尝试实现一下吧.
 </p>
 
-<div id="outline-container-org3f1ee35" class="outline-2">
-<h2 id="org3f1ee35">marks函数</h2>
-<div class="outline-text-2" id="text-org3f1ee35">
+<div id="outline-container-orgc10808f" class="outline-2">
+<h2 id="orgc10808f">marks函数</h2>
+<div class="outline-text-2" id="text-orgc10808f">
 <p>
 该函数用于列出所有的书签及其指向的目录:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">require</span> '<span style="color: #008b8b;">bookmark</span>)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">require</span> '<span style="color: #a45bad;">bookmark</span><span style="color: #4f97d7;">)</span>
 
-(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">eshell/marks</span> ()
-  (bookmark-maybe-load-default-file)
-  (<span style="color: #a020f0;">let*</span> ((bookmarks (bookmark-maybe-sort-alist))
-         (directory-bookmarks (remove-if-not (<span style="color: #a020f0;">lambda</span> (bookmark)
-                                               (file-directory-p (bookmark-get-filename bookmark)))
-                                             bookmarks))
-         (show-bookmark-fn (<span style="color: #a020f0;">lambda</span> (bookmark)
-                             (<span style="color: #a020f0;">let</span> ((name (bookmark-name-from-full-record bookmark))
-                                   (filename (bookmark-get-filename bookmark)))
-                               (format <span style="color: #8b2252;">"%s      -&gt;      %s"</span> name filename)))))
-    (mapconcat show-bookmark-fn directory-bookmarks <span style="color: #8b2252;">"\n"</span>)))
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">eshell/marks</span> <span style="color: #bc6ec5;">()</span>
+  <span style="color: #bc6ec5;">(</span>bookmark-maybe-load-default-file<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">let*</span> <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>bookmarks <span style="color: #b1951d;">(</span>bookmark-maybe-sort-alist<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>directory-bookmarks <span style="color: #b1951d;">(</span>remove-if-not <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">lambda</span> <span style="color: #bc6ec5;">(</span>bookmark<span style="color: #bc6ec5;">)</span>
+                                               <span style="color: #bc6ec5;">(</span>file-directory-p <span style="color: #2d9574;">(</span>bookmark-get-filename bookmark<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+                                             bookmarks<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>show-bookmark-fn <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">lambda</span> <span style="color: #4f97d7;">(</span>bookmark<span style="color: #4f97d7;">)</span>
+                             <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">let</span> <span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span>name <span style="color: #9cb6ad;">(</span>bookmark-name-from-full-record bookmark<span style="color: #9cb6ad;">)</span><span style="color: #2d9574;">)</span>
+                                   <span style="color: #2d9574;">(</span>filename <span style="color: #9cb6ad;">(</span>bookmark-get-filename bookmark<span style="color: #9cb6ad;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+                               <span style="color: #bc6ec5;">(</span>format <span style="color: #2d9574;">"%s  -&gt;  %s"</span> name filename<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span>mapconcat show-bookmark-fn directory-bookmarks <span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -131,19 +131,19 @@
 </div>
 </div>
 
-<div id="outline-container-orgebe4ca7" class="outline-2">
-<h2 id="orgebe4ca7">jump函数</h2>
-<div class="outline-text-2" id="text-orgebe4ca7">
+<div id="outline-container-org2dd07cf" class="outline-2">
+<h2 id="org2dd07cf">jump函数</h2>
+<div class="outline-text-2" id="text-org2dd07cf">
 <p>
 jump函数接一个书签名作为参数,跳转到其指向的目录中:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">eshell/jump</span> (bookmark-name)
-  (bookmark-maybe-load-default-file)
-  (<span style="color: #a020f0;">let</span> ((filename (bookmark-get-filename bookmark-name)))
-    (<span style="color: #a020f0;">if</span> (file-directory-p filename)
-        (eshell/cd filename)
-      (<span style="color: #ff0000; font-weight: bold;">error</span> <span style="color: #8b2252;">"%s is not a directory"</span> bookmark-name))))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">eshell/jump</span> <span style="color: #bc6ec5;">(</span>bookmark-name<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span>bookmark-maybe-load-default-file<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">let</span> <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>filename <span style="color: #b1951d;">(</span>bookmark-get-filename bookmark-name<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #67b11d;">(</span>file-directory-p filename<span style="color: #67b11d;">)</span>
+        <span style="color: #67b11d;">(</span>eshell/cd filename<span style="color: #67b11d;">)</span>
+      <span style="color: #67b11d;">(</span><span style="color: #dc752f; background-color: #292b2e;">error</span> <span style="color: #2d9574;">"%s is not a directory"</span> bookmark-name<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -161,16 +161,16 @@ jump函数接一个书签名作为参数,跳转到其指向的目录中:
 </div>
 </div>
 
-<div id="outline-container-org238dce1" class="outline-2">
-<h2 id="org238dce1">mark函数</h2>
-<div class="outline-text-2" id="text-org238dce1">
+<div id="outline-container-org5fdde5b" class="outline-2">
+<h2 id="org5fdde5b">mark函数</h2>
+<div class="outline-text-2" id="text-org5fdde5b">
 <p>
 mark函数接受一个书签名,并将当前目录加为书签:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">eshell/mark</span> (<span style="color: #228b22;">&amp;optional</span> bookmark-name no-overwrite)
-  (<span style="color: #a020f0;">let</span> ((buffer-file-name default-directory))
-    (bookmark-set bookmark-name no-overwrite)))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">eshell/mark</span> <span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">&amp;optional</span> bookmark-name no-overwrite<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">let</span> <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>buffer-file-name default-directory<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span>bookmark-set bookmark-name no-overwrite<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -196,14 +196,14 @@ bookmark库本身提供了一个 <code>bookmark-set</code> 函数用于添加书
 </div>
 </div>
 
-<div id="outline-container-org35c69b9" class="outline-2">
-<h2 id="org35c69b9">unmark函数</h2>
-<div class="outline-text-2" id="text-org35c69b9">
+<div id="outline-container-orge77cddd" class="outline-2">
+<h2 id="orge77cddd">unmark函数</h2>
+<div class="outline-text-2" id="text-orge77cddd">
 <p>
 unmark函数接受一个书签名做参数,然后删掉指定的书签:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">defalias</span> '<span style="color: #0000ff;">eshell/unmark</span> 'bookmark-delete)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defalias</span> '<span style="color: #bc6ec5; font-weight: bold;">eshell/unmark</span> 'bookmark-delete<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -213,31 +213,31 @@ unmark函数接受一个书签名做参数,然后删掉指定的书签:
 </div>
 </div>
 
-<div id="outline-container-org0e02cf1" class="outline-2">
-<h2 id="org0e02cf1">补全</h2>
-<div class="outline-text-2" id="text-org0e02cf1">
+<div id="outline-container-orgec92fc7" class="outline-2">
+<h2 id="orgec92fc7">补全</h2>
+<div class="outline-text-2" id="text-orgec92fc7">
 <p>
 最后是为jump函数添加补全功能. eshell使用pcomplete这个库来进行补全,至于怎么来写补全函数以后找时间再写另一片文章吧.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">pcmpl-bookmark-names</span> (<span style="color: #228b22;">&amp;optional</span> name)
-  <span style="color: #8b2252;">"Return a list of directory bookmark names"</span>
-  (bookmark-maybe-load-default-file)
-  (<span style="color: #a020f0;">let*</span> ((name (<span style="color: #a020f0;">or</span> name <span style="color: #8b2252;">""</span>))
-         (bookmarks (bookmark-maybe-sort-alist))
-         (directory-bookmarks (cl-remove-if-not (<span style="color: #a020f0;">lambda</span> (bookmark)
-                                               (file-directory-p (bookmark-get-filename bookmark)))
-                                             bookmarks))
-         (bookmark-names (mapcar #'bookmark-name-from-full-record directory-bookmarks)))
-    (cl-remove-if-not (<span style="color: #a020f0;">lambda</span> (bookmark-name)
-                     (string-prefix-p name bookmark-name))
-                   bookmark-names)))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">pcmpl-bookmark-names</span> <span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">&amp;optional</span> name<span style="color: #bc6ec5;">)</span>
+  <span style="color: #2aa1ae;">"Return a list of directory bookmark names"</span>
+  <span style="color: #bc6ec5;">(</span>bookmark-maybe-load-default-file<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">let*</span> <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>name <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">or</span> name <span style="color: #2d9574;">""</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>bookmarks <span style="color: #b1951d;">(</span>bookmark-maybe-sort-alist<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>directory-bookmarks <span style="color: #b1951d;">(</span>cl-remove-if-not <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">lambda</span> <span style="color: #bc6ec5;">(</span>bookmark<span style="color: #bc6ec5;">)</span>
+                                               <span style="color: #bc6ec5;">(</span>file-directory-p <span style="color: #2d9574;">(</span>bookmark-get-filename bookmark<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+                                             bookmarks<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>bookmark-names <span style="color: #b1951d;">(</span>mapcar #'bookmark-name-from-full-record directory-bookmarks<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span>cl-remove-if-not <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">lambda</span> <span style="color: #b1951d;">(</span>bookmark-name<span style="color: #b1951d;">)</span>
+                     <span style="color: #b1951d;">(</span>string-prefix-p name bookmark-name<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+                   bookmark-names<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 
-(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">pcomplete/jump</span> ()
-  <span style="color: #8b2252;">"completion for `</span><span style="color: #008b8b;">jump</span><span style="color: #8b2252;">'"</span>
-  (<span style="color: #a020f0;">while</span>
-      (<span style="color: #a020f0;">pcomplete-here</span>
-       (pcmpl-bookmark-names (pcomplete-arg 'last)))))
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">pcomplete/jump</span> <span style="color: #bc6ec5;">()</span>
+  <span style="color: #2aa1ae;">"completion for `</span><span style="color: #a45bad;">jump</span><span style="color: #2aa1ae;">'"</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">while</span>
+      <span style="color: #2d9574;">(</span><span style="color: #4f97d7; font-weight: bold;">pcomplete-here</span>
+       <span style="color: #67b11d;">(</span>pcmpl-bookmark-names <span style="color: #b1951d;">(</span>pcomplete-arg 'last<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>

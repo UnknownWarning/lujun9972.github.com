@@ -53,135 +53,135 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgca7b2a2">1. 基本文件IO操作函数</a>
+<li><a href="#orgc4eac93">1. 基本文件IO操作函数</a>
 <ul>
-<li><a href="#org2d8b42e">1.1. open函数</a></li>
-<li><a href="#org8e76e09">1.2. create函数</a></li>
-<li><a href="#orge54f3e7">1.3. close函数</a></li>
-<li><a href="#org6666f2f">1.4. lseek函数</a></li>
-<li><a href="#orgf420446">1.5. read函数</a></li>
-<li><a href="#org14f9935">1.6. write函数</a></li>
+<li><a href="#org502db07">1.1. open函数</a></li>
+<li><a href="#orgc5f9370">1.2. create函数</a></li>
+<li><a href="#org9b6e53d">1.3. close函数</a></li>
+<li><a href="#org845d8a1">1.4. lseek函数</a></li>
+<li><a href="#org8a8c806">1.5. read函数</a></li>
+<li><a href="#orgabcca47">1.6. write函数</a></li>
 </ul>
 </li>
-<li><a href="#org14705fb">2. 文件共享</a>
+<li><a href="#org0e3fdb3">2. 文件共享</a>
 <ul>
-<li><a href="#orgd5b0e87">2.1. 内核是如何表示打开的文件的?</a></li>
-<li><a href="#orgd657087">2.2. 当多个进程打开同一个文件时,发生了什么?</a></li>
-<li><a href="#org01db699">2.3. 多个进程打开同一个文件带来的影响是什么?</a></li>
-<li><a href="#org46ab133">2.4. dup和dup2函数</a></li>
+<li><a href="#org373e78a">2.1. 内核是如何表示打开的文件的?</a></li>
+<li><a href="#orgf50adc0">2.2. 当多个进程打开同一个文件时,发生了什么?</a></li>
+<li><a href="#org1a99afd">2.3. 多个进程打开同一个文件带来的影响是什么?</a></li>
+<li><a href="#org79d8317">2.4. dup和dup2函数</a></li>
 </ul>
 </li>
-<li><a href="#orgb42ac66">3. sync,fsync和fdatasync</a></li>
-<li><a href="#orge57a66e">4. fcntl函数</a></li>
-<li><a href="#orga18a566">5. ioctl函数</a></li>
-<li><a href="#org4577454">6. /dev/fd</a>
+<li><a href="#org7d907d0">3. sync,fsync和fdatasync</a></li>
+<li><a href="#org1146d74">4. fcntl函数</a></li>
+<li><a href="#org6b1c8a9">5. ioctl函数</a></li>
+<li><a href="#orgc978d19">6. /dev/fd</a>
 <ul>
-<li><a href="#org04c2723">6.1. 参数filedes</a></li>
-<li><a href="#org2fbee40">6.2. 参数cmd</a></li>
+<li><a href="#orgbf062dc">6.1. 参数filedes</a></li>
+<li><a href="#org3daf82b">6.2. 参数cmd</a></li>
 </ul>
 </li>
-<li><a href="#orgb2451ca">7. 非阻塞IO</a>
+<li><a href="#orgdb779ec">7. 非阻塞IO</a>
 <ul>
-<li><a href="#orgd5bf042">7.1. 指定非阻塞IO的方法</a></li>
+<li><a href="#org32e2abc">7.1. 指定非阻塞IO的方法</a></li>
 </ul>
 </li>
-<li><a href="#org9112cc2">8. 记录锁</a>
+<li><a href="#orgf33c5e0">8. 记录锁</a>
 <ul>
-<li><a href="#org8e76d3f">8.1. fcntl记录锁</a>
+<li><a href="#orgfcb16ad">8.1. fcntl记录锁</a>
 <ul>
-<li><a href="#orga857a16">8.1.1. cmd操作说明</a></li>
-<li><a href="#org414c722">8.1.2. flock结构说明</a></li>
+<li><a href="#orgd62a9eb">8.1.1. cmd操作说明</a></li>
+<li><a href="#org7d85500">8.1.2. flock结构说明</a></li>
 </ul>
 </li>
-<li><a href="#org9ee13a7">8.2. 关于锁的释放与继承</a>
+<li><a href="#org808a617">8.2. 关于锁的释放与继承</a>
 <ul>
-<li><a href="#org9555b9c">8.2.1. 锁的释放</a></li>
-<li><a href="#org6c7311a">8.2.2. 锁的继承</a></li>
+<li><a href="#orgce0c56b">8.2.1. 锁的释放</a></li>
+<li><a href="#org22ef470">8.2.2. 锁的继承</a></li>
 </ul>
 </li>
-<li><a href="#org44fb71d">8.3. 建议性锁和强制性锁</a></li>
-<li><a href="#org573d6d8">8.4. flock文件锁</a></li>
+<li><a href="#org8e567aa">8.3. 建议性锁和强制性锁</a></li>
+<li><a href="#org61d00e6">8.4. flock文件锁</a></li>
 </ul>
 </li>
-<li><a href="#orgc14ce68">9. IO多路转换</a>
+<li><a href="#org9ff010a">9. IO多路转换</a>
 <ul>
-<li><a href="#orgfeee2f5">9.1. select</a>
+<li><a href="#org668d3a4">9.1. select</a>
 <ul>
-<li><a href="#orgb4db08b">9.1.1. 时间参数tvptr意义说明:</a></li>
-<li><a href="#orga43207e">9.1.2. fd_set数据类型说明</a></li>
-<li><a href="#org28adaa3">9.1.3. fd_set*三个参数说明</a></li>
-<li><a href="#org4667c4a">9.1.4. 参数maxfdp说明</a></li>
+<li><a href="#org8992d37">9.1.1. 时间参数tvptr意义说明:</a></li>
+<li><a href="#org97a2faa">9.1.2. fd_set数据类型说明</a></li>
+<li><a href="#orgbd50fbe">9.1.3. fd_set*三个参数说明</a></li>
+<li><a href="#org5acc76b">9.1.4. 参数maxfdp说明</a></li>
 </ul>
 </li>
-<li><a href="#org0fb9b87">9.2. pselect</a>
+<li><a href="#orgb53ba4c">9.2. pselect</a>
 <ul>
-<li><a href="#org3425d24">9.2.1. pselect与select的不同之处</a></li>
+<li><a href="#orgaf4c800">9.2.1. pselect与select的不同之处</a></li>
 </ul>
 </li>
-<li><a href="#org48c1bf9">9.3. 函数poll</a>
+<li><a href="#orgf122d4c">9.3. 函数poll</a>
 <ul>
-<li><a href="#org8edb9ea">9.3.1. poll中的事件说明</a></li>
-<li><a href="#orga217599">9.3.2. timeout说明</a></li>
+<li><a href="#org1ba9811">9.3.1. poll中的事件说明</a></li>
+<li><a href="#orgc343c58">9.3.2. timeout说明</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org91e15b8">10. POSIX异步IO</a>
+<li><a href="#org8b92efd">10. POSIX异步IO</a>
 <ul>
-<li><a href="#org9cd7b7b">10.1. 异步读写操作</a></li>
-<li><a href="#org3687e7c">10.2. 强制同步</a></li>
-<li><a href="#orgbe0dd3d">10.3. 获取异步读,写,同步操作的完成状态</a></li>
-<li><a href="#orgdb9bcc9">10.4. 异步操作管理</a></li>
+<li><a href="#org4062c40">10.1. 异步读写操作</a></li>
+<li><a href="#orgdc15f5c">10.2. 强制同步</a></li>
+<li><a href="#org90b8a87">10.3. 获取异步读,写,同步操作的完成状态</a></li>
+<li><a href="#org61af13c">10.4. 异步操作管理</a></li>
 </ul>
 </li>
-<li><a href="#orgf775a0f">11. 散布读(scatter read)和聚集写(gather write)</a></li>
-<li><a href="#org606e207">12. 存储映射IO</a>
+<li><a href="#org12dcb6b">11. 散布读(scatter read)和聚集写(gather write)</a></li>
+<li><a href="#org4068382">12. 存储映射IO</a>
 <ul>
-<li><a href="#org7519bbf">12.1. 将文件映射到缓冲区</a></li>
-<li><a href="#org6ed387c">12.2. 更改映射权限</a></li>
-<li><a href="#org6c604d8">12.3. 写回修改到源文件</a>
+<li><a href="#org628f814">12.1. 将文件映射到缓冲区</a></li>
+<li><a href="#org96a4d73">12.2. 更改映射权限</a></li>
+<li><a href="#orgfff6126">12.3. 写回修改到源文件</a>
 <ul>
-<li><a href="#orgc359993">12.3.1. flags参数说明</a></li>
+<li><a href="#orgf3fd927">12.3.1. flags参数说明</a></li>
 </ul>
 </li>
-<li><a href="#org495f75c">12.4. 解除映射</a></li>
-<li><a href="#orgb12dab9">12.5. 相关信号</a></li>
-<li><a href="#org657f4c3">12.6. 关于子进程的共享问题</a></li>
+<li><a href="#org0acaffe">12.4. 解除映射</a></li>
+<li><a href="#org4dcf1cb">12.5. 相关信号</a></li>
+<li><a href="#orgc132b63">12.6. 关于子进程的共享问题</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgca7b2a2" class="outline-2">
-<h2 id="orgca7b2a2"><span class="section-number-2">1</span> 基本文件IO操作函数</h2>
+<div id="outline-container-orgc4eac93" class="outline-2">
+<h2 id="orgc4eac93"><span class="section-number-2">1</span> 基本文件IO操作函数</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org2d8b42e" class="outline-3">
-<h3 id="org2d8b42e"><span class="section-number-3">1.1</span> open函数</h3>
+<div id="outline-container-org502db07" class="outline-3">
+<h3 id="org502db07"><span class="section-number-3">1.1</span> open函数</h3>
 </div>
-<div id="outline-container-org8e76e09" class="outline-3">
-<h3 id="org8e76e09"><span class="section-number-3">1.2</span> create函数</h3>
+<div id="outline-container-orgc5f9370" class="outline-3">
+<h3 id="orgc5f9370"><span class="section-number-3">1.2</span> create函数</h3>
 </div>
-<div id="outline-container-orge54f3e7" class="outline-3">
-<h3 id="orge54f3e7"><span class="section-number-3">1.3</span> close函数</h3>
+<div id="outline-container-org9b6e53d" class="outline-3">
+<h3 id="org9b6e53d"><span class="section-number-3">1.3</span> close函数</h3>
 </div>
-<div id="outline-container-org6666f2f" class="outline-3">
-<h3 id="org6666f2f"><span class="section-number-3">1.4</span> lseek函数</h3>
+<div id="outline-container-org845d8a1" class="outline-3">
+<h3 id="org845d8a1"><span class="section-number-3">1.4</span> lseek函数</h3>
 </div>
-<div id="outline-container-orgf420446" class="outline-3">
-<h3 id="orgf420446"><span class="section-number-3">1.5</span> read函数</h3>
+<div id="outline-container-org8a8c806" class="outline-3">
+<h3 id="org8a8c806"><span class="section-number-3">1.5</span> read函数</h3>
 </div>
-<div id="outline-container-org14f9935" class="outline-3">
-<h3 id="org14f9935"><span class="section-number-3">1.6</span> write函数</h3>
+<div id="outline-container-orgabcca47" class="outline-3">
+<h3 id="orgabcca47"><span class="section-number-3">1.6</span> write函数</h3>
 </div>
 </div>
-<div id="outline-container-org14705fb" class="outline-2">
-<h2 id="org14705fb"><span class="section-number-2">2</span> 文件共享</h2>
+<div id="outline-container-org0e3fdb3" class="outline-2">
+<h2 id="org0e3fdb3"><span class="section-number-2">2</span> 文件共享</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgd5b0e87" class="outline-3">
-<h3 id="orgd5b0e87"><span class="section-number-3">2.1</span> 内核是如何表示打开的文件的?</h3>
+<div id="outline-container-org373e78a" class="outline-3">
+<h3 id="org373e78a"><span class="section-number-3">2.1</span> 内核是如何表示打开的文件的?</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 内核使用三种数据结构表示打开的文件,它们之间的关系决定了在文件共享方面一个进程对另一个进程可能产生的影响.
@@ -220,8 +220,8 @@ v节点包含了文件类型和对此文件进行各种操作的函数的指针.
 </div>
 </div>
 
-<div id="outline-container-orgd657087" class="outline-3">
-<h3 id="orgd657087"><span class="section-number-3">2.2</span> 当多个进程打开同一个文件时,发生了什么?</h3>
+<div id="outline-container-orgf50adc0" class="outline-3">
+<h3 id="orgf50adc0"><span class="section-number-3">2.2</span> 当多个进程打开同一个文件时,发生了什么?</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 一般来说,多个进程打开同一个文件时,会分别在不同的文件描述符上打开该文件. 不同的文件描述符指向不同的文件表项. 但不同的文件表项指向了同一个v节点.
@@ -237,8 +237,8 @@ v节点包含了文件类型和对此文件进行各种操作的函数的指针.
 </div>
 </div>
 
-<div id="outline-container-org01db699" class="outline-3">
-<h3 id="org01db699"><span class="section-number-3">2.3</span> 多个进程打开同一个文件带来的影响是什么?</h3>
+<div id="outline-container-org1a99afd" class="outline-3">
+<h3 id="org1a99afd"><span class="section-number-3">2.3</span> 多个进程打开同一个文件带来的影响是什么?</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 多个进程读取同一个文件时,由于各个进程都由自己的文件表项,也就有自己的当前文件偏移符,因此多个进程读取同一个文件时很正常.
@@ -256,34 +256,34 @@ v节点包含了文件类型和对此文件进行各种操作的函数的指针.
 XSI扩展还定义了pread和pwrite函数用于将定位搜索和执行IO统一为一个原子操作:
 </p>
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20808;lseek&#21040;offset&#22788;,&#28982;&#21518;&#35835;&#21462;&#25991;&#20214;&#20869;&#23481; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">pread</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">buf</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">n</span>,<span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">offset</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20808;lseek&#21040;offset&#22788;,&#28982;&#21518;&#35835;&#21462;&#25991;&#20214;&#20869;&#23481; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">pread</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">buf</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">n</span>,<span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">offset</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20808;lseek&#21040;offset&#22788;,&#28982;&#21518;&#20889;&#20837;buf&#20869;&#23481; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">pwrite</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">buf</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">n</span>,<span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">offset</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20808;lseek&#21040;offset&#22788;,&#28982;&#21518;&#20889;&#20837;buf&#20869;&#23481; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">pwrite</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">buf</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">n</span>,<span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">offset</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org46ab133" class="outline-3">
-<h3 id="org46ab133"><span class="section-number-3">2.4</span> dup和dup2函数</h3>
+<div id="outline-container-org79d8317" class="outline-3">
+<h3 id="org79d8317"><span class="section-number-3">2.4</span> dup和dup2函数</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 可以用dup和dup2函数来复制一个现存的文件描述符,复制出来的文件描述符与原文件描述符共享同一个文件表项,即它们共享同一个文件标志状态及文件偏移量:
 </p>
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<pre class="src src-c++"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">// </span><span style="color: #b22222;">dup&#36820;&#22238;&#30340;&#26032;&#25991;&#20214;&#25551;&#36848;&#31526;&#26159;&#24403;&#21069;&#21487;&#29992;&#25991;&#20214;&#25551;&#36848;&#31526;&#30340;&#26368;&#23567;&#25968;&#20540;</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">dup</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">dup&#36820;&#22238;&#30340;&#26032;&#25991;&#20214;&#25551;&#36848;&#31526;&#26159;&#24403;&#21069;&#21487;&#29992;&#25991;&#20214;&#25551;&#36848;&#31526;&#30340;&#26368;&#23567;&#25968;&#20540;</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">dup</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">// </span><span style="color: #b22222;">dup2&#21487;&#20197;&#29992;filedes2&#21442;&#25968;&#25351;&#23450;&#26032;&#25551;&#36848;&#31526;&#30340;&#25968;&#20540;.</span>
-<span style="color: #b22222;">// </span><span style="color: #b22222;">&#22914;&#26524;filedes2&#24050;&#32463;&#25171;&#24320;,&#21017;&#20808;&#20851;&#38381;&#23427;.</span>
-<span style="color: #b22222;">// </span><span style="color: #b22222;">&#22914;&#26524;filedes == filedes2,&#21017;dup2&#30452;&#25509;&#36820;&#22238;filedes2,&#32780;&#19981;&#20851;&#38381;&#23427;</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">dup2</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes2</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">dup2&#21487;&#20197;&#29992;filedes2&#21442;&#25968;&#25351;&#23450;&#26032;&#25551;&#36848;&#31526;&#30340;&#25968;&#20540;.</span>
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">&#22914;&#26524;filedes2&#24050;&#32463;&#25171;&#24320;,&#21017;&#20808;&#20851;&#38381;&#23427;.</span>
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">&#22914;&#26524;filedes == filedes2,&#21017;dup2&#30452;&#25509;&#36820;&#22238;filedes2,&#32780;&#19981;&#20851;&#38381;&#23427;</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">dup2</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes2</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 
@@ -291,21 +291,21 @@ XSI扩展还定义了pread和pwrite函数用于将定位搜索和执行IO统一�
 除了dup和dup2外,也可以使用fcntl函数来复制描述符.
 </p>
 <div class="org-src-container">
-<pre class="src src-c++">dup(filedes);
-<span style="color: #b22222;">// </span><span style="color: #b22222;">&#31867;&#20284;&#20110;</span>
-fcntl(filedes,F_DUPFD,0);
+<pre class="src src-c++">dup<span style="color: #4f97d7;">(</span>filedes<span style="color: #4f97d7;">)</span>;
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">&#31867;&#20284;&#20110;</span>
+fcntl<span style="color: #4f97d7;">(</span>filedes,F_DUPFD,<span style="color: #a45bad;">0</span><span style="color: #4f97d7;">)</span>;
 
-dup2(filedes,filedes2);
-<span style="color: #b22222;">// </span><span style="color: #b22222;">&#31867;&#20284;&#20110;</span>
-close(filedes2);fcntl(filedes,F_DUPFD,filedes2);
+dup2<span style="color: #4f97d7;">(</span>filedes,filedes2<span style="color: #4f97d7;">)</span>;
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">&#31867;&#20284;&#20110;</span>
+close<span style="color: #4f97d7;">(</span>filedes2<span style="color: #4f97d7;">)</span>;fcntl<span style="color: #4f97d7;">(</span>filedes,F_DUPFD,filedes2<span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb42ac66" class="outline-2">
-<h2 id="orgb42ac66"><span class="section-number-2">3</span> sync,fsync和fdatasync</h2>
+<div id="outline-container-org7d907d0" class="outline-2">
+<h2 id="org7d907d0"><span class="section-number-2">3</span> sync,fsync和fdatasync</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 传统UNIX实现在内核中设置了缓冲区,当数据写入文件时,内核现将数据复制到一个缓冲区中,而不立即将其排入输出队列.
@@ -315,42 +315,42 @@ close(filedes2);fcntl(filedes,F_DUPFD,filedes2);
 UNIX系统提供了sync,fsync和fdatasync三个函数用于通知内核将数据立即排入输出队列中:
 </p>
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#23558;filedes&#25351;&#23450;&#30340;&#25991;&#20214;&#20869;&#23481;&#20889;&#20837;&#30913;&#30424;,&#35813;&#20989;&#25968;&#31561;&#24453;&#20889;&#30913;&#30424;&#25805;&#20316;&#32467;&#26463;&#21518;&#25165;&#36820;&#22238;,&#24182;&#21516;&#27493;&#26356;&#26032;&#25991;&#20214;&#23646;&#24615; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fsync</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#23558;filedes&#25351;&#23450;&#30340;&#25991;&#20214;&#20869;&#23481;&#20889;&#20837;&#30913;&#30424;,&#35813;&#20989;&#25968;&#31561;&#24453;&#20889;&#30913;&#30424;&#25805;&#20316;&#32467;&#26463;&#21518;&#25165;&#36820;&#22238;,&#24182;&#21516;&#27493;&#26356;&#26032;&#25991;&#20214;&#23646;&#24615; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fsync</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#31867;&#20284;fsync,&#20294;&#19981;&#26356;&#26032;&#25991;&#20214;&#23646;&#24615; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fdatasync</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#31867;&#20284;fsync,&#20294;&#19981;&#26356;&#26032;&#25991;&#20214;&#23646;&#24615; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fdatasync</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">sync&#21482;&#26159;&#23558;&#25152;&#26377;&#20462;&#25913;&#36807;&#30340;&#22359;&#32531;&#20914;&#21306;&#25490;&#20837;&#20889;&#38431;&#21015;,&#28982;&#21518;&#23601;&#36820;&#22238;,&#32780;&#24182;&#31561;&#24453;&#23454;&#38469;&#20889;&#30913;&#30424;&#25805;&#20316;&#32467;&#26463; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">void</span> <span style="color: #0000ff;">sync</span>(<span style="color: #228b22;">void</span>)
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">sync&#21482;&#26159;&#23558;&#25152;&#26377;&#20462;&#25913;&#36807;&#30340;&#22359;&#32531;&#20914;&#21306;&#25490;&#20837;&#20889;&#38431;&#21015;,&#28982;&#21518;&#23601;&#36820;&#22238;,&#32780;&#24182;&#31561;&#24453;&#23454;&#38469;&#20889;&#30913;&#30424;&#25805;&#20316;&#32467;&#26463; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">sync</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">void</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge57a66e" class="outline-2">
-<h2 id="orge57a66e"><span class="section-number-2">4</span> fcntl函数</h2>
+<div id="outline-container-org1146d74" class="outline-2">
+<h2 id="org1146d74"><span class="section-number-2">4</span> fcntl函数</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 fcntl函数可以改变已打开的文件属性,该函数常用于修改由shell代为打开的文件描述符的属性.
 </p>
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;fcntl.h&gt;</span>
+<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">fcntl.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fcntl</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">cmd</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fcntl</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">cmd</span>,<span style="color: #228b22;">long</span> <span style="color: #a0522d;">arg</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fcntl</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">cmd</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">flock</span>* <span style="color: #a0522d;">lock</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fcntl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">cmd</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fcntl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">cmd</span>,<span style="color: #ce537a; font-weight: bold;">long</span> <span style="color: #7590db;">arg</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fcntl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">cmd</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">flock</span>* <span style="color: #7590db;">lock</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">flock</span>
-{
-  <span style="color: #228b22;">short</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">l_type</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38145;&#31867;&#22411;:F_RDLCK,F_WRLCK,F_UNLCK </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">short</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">l_whence</span>;           <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20915;&#23450;l_start&#30340;&#20301;&#32622;:SEEK_SET,SEEK_CUR,SEEK_END </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">l_start</span>;                <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38145;&#23450;&#21306;&#22495;&#30340;&#24320;&#22836;&#20301;&#32622; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">l_len</span>;                  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38145;&#23450;&#21306;&#22495;&#30340;&#22823;&#23567; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">l_pid</span>;                  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38145;&#23450;&#25805;&#20316;&#30340;&#36827;&#31243; </span><span style="color: #b22222;">*/</span>
-}
+<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">flock</span>
+<span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">l_type</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38145;&#31867;&#22411;:F_RDLCK,F_WRLCK,F_UNLCK </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">l_whence</span>;           <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20915;&#23450;l_start&#30340;&#20301;&#32622;:SEEK_SET,SEEK_CUR,SEEK_END </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">l_start</span>;                <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38145;&#23450;&#21306;&#22495;&#30340;&#24320;&#22836;&#20301;&#32622; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">l_len</span>;                  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38145;&#23450;&#21306;&#22495;&#30340;&#22823;&#23567; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">l_pid</span>;                  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38145;&#23450;&#25805;&#20316;&#30340;&#36827;&#31243; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -368,33 +368,33 @@ fcntl函数可以改变已打开的文件属性,该函数常用于修改由shell
 </div>
 </div>
 
-<div id="outline-container-orga18a566" class="outline-2">
-<h2 id="orga18a566"><span class="section-number-2">5</span> ioctl函数</h2>
+<div id="outline-container-org6b1c8a9" class="outline-2">
+<h2 id="org6b1c8a9"><span class="section-number-2">5</span> ioctl函数</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 每个驱动程序都定义了它自己的专门的一组ioctl命令,而系统提供一个统一的ioctl函数来调用这些专门的命令.
 </p>
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>             <span style="color: #b22222;">/* </span><span style="color: #b22222;">System V </span><span style="color: #b22222;">*/</span>
-<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/ioctl.h&gt;</span>          <span style="color: #b22222;">/* </span><span style="color: #b22222;">BSD and Linux </span><span style="color: #b22222;">*/</span>
-<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stropts.h&gt;</span>            <span style="color: #b22222;">/* </span><span style="color: #b22222;">XSI STREAMS </span><span style="color: #b22222;">*/</span>
+<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">System V </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/ioctl.h</span><span style="color: #4f97d7;">&gt;</span>          <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">BSD and Linux </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stropts.h</span><span style="color: #4f97d7;">&gt;</span>            <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">XSI STREAMS </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">ioctl</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">request</span>,...);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">ioctl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">request</span>,...<span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4577454" class="outline-2">
-<h2 id="org4577454"><span class="section-number-2">6</span> /dev/fd</h2>
+<div id="outline-container-orgc978d19" class="outline-2">
+<h2 id="orgc978d19"><span class="section-number-2">6</span> /dev/fd</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 新UNIX系统一般都提供了名为/dev/fd的目录,其中包含0,1,2等文件. 打开文件/dev/fd/n等效于复制描述符n.
 </p>
 <div class="org-src-container">
-<pre class="src src-c">fd = open(<span style="color: #8b2252;">"/dev/fd/n"</span>,mode);
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#31561;&#25928;&#20110; </span><span style="color: #b22222;">*/</span>
-fd = dup(n);
+<pre class="src src-c">fd = open<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"/dev/fd/n"</span>,mode<span style="color: #4f97d7;">)</span>;
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#31561;&#25928;&#20110; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+fd = dup<span style="color: #4f97d7;">(</span>n<span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 
@@ -403,8 +403,8 @@ fd = dup(n);
 <code>=====</code>
 </p>
 </div>
-<div id="outline-container-org04c2723" class="outline-3">
-<h3 id="org04c2723"><span class="section-number-3">6.1</span> 参数filedes</h3>
+<div id="outline-container-orgbf062dc" class="outline-3">
+<h3 id="orgbf062dc"><span class="section-number-3">6.1</span> 参数filedes</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 filedes参数为待设置的文件描述符
@@ -412,8 +412,8 @@ filedes参数为待设置的文件描述符
 </div>
 </div>
 
-<div id="outline-container-org2fbee40" class="outline-3">
-<h3 id="org2fbee40"><span class="section-number-3">6.2</span> 参数cmd</h3>
+<div id="outline-container-org3daf82b" class="outline-3">
+<h3 id="org3daf82b"><span class="section-number-3">6.2</span> 参数cmd</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 cmd参数表示欲操作的指令
@@ -471,16 +471,16 @@ cmd参数表示欲操作的指令
 </div>
 </div>
 </div>
-<div id="outline-container-orgb2451ca" class="outline-2">
-<h2 id="orgb2451ca"><span class="section-number-2">7</span> 非阻塞IO</h2>
+<div id="outline-container-orgdb779ec" class="outline-2">
+<h2 id="orgdb779ec"><span class="section-number-2">7</span> 非阻塞IO</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 非阻塞IO使得我们在调用open,read和write这样的IO操作时,若操作不能完成,则直接返回错误提示,而不是阻塞.
 </p>
 </div>
 
-<div id="outline-container-orgd5bf042" class="outline-3">
-<h3 id="orgd5bf042"><span class="section-number-3">7.1</span> 指定非阻塞IO的方法</h3>
+<div id="outline-container-org32e2abc" class="outline-3">
+<h3 id="org32e2abc"><span class="section-number-3">7.1</span> 指定非阻塞IO的方法</h3>
 <div class="outline-text-3" id="text-7-1">
 <ul class="org-ul">
 <li>调用open获得描述符时,指定`O_NONBLOCK'标志</li>
@@ -490,30 +490,30 @@ cmd参数表示欲操作的指令
 </div>
 </div>
 
-<div id="outline-container-org9112cc2" class="outline-2">
-<h2 id="org9112cc2"><span class="section-number-2">8</span> 记录锁</h2>
+<div id="outline-container-orgf33c5e0" class="outline-2">
+<h2 id="orgf33c5e0"><span class="section-number-2">8</span> 记录锁</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 所谓记录锁,更合适的术语应该叫`字节范围锁'. 它的功能是,当进程读取或修改文件的 <b>某个部分时</b>,阻止其他进程修改 <b>同一文件区域</b>.
 </p>
 </div>
 
-<div id="outline-container-org8e76d3f" class="outline-3">
-<h3 id="org8e76d3f"><span class="section-number-3">8.1</span> fcntl记录锁</h3>
+<div id="outline-container-orgfcb16ad" class="outline-3">
+<h3 id="orgfcb16ad"><span class="section-number-3">8.1</span> fcntl记录锁</h3>
 <div class="outline-text-3" id="text-8-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;fcntl.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">fcntl.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fcntl</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">fieldes</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">cmd</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">flock</span>* <span style="color: #a0522d;">lock</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fcntl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fieldes</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">cmd</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">flock</span>* <span style="color: #7590db;">lock</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">flock</span>
-{
-  <span style="color: #228b22;">short</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">l_type</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38145;&#31867;&#22411;:F_RDLCK(&#35835;&#38145;),F_WRLCK(&#20889;&#38145;),F_UNLCK(&#35299;&#38145;) </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">short</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">l_whence</span>;           <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20915;&#23450;l_start&#30340;&#20301;&#32622;:SEEK_SET,SEEK_CUR,SEEK_END </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">l_start</span>;                <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38145;&#23450;&#21306;&#22495;&#30340;&#24320;&#22836;&#20301;&#32622; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">l_len</span>;                  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38145;&#23450;&#21306;&#22495;&#30340;&#22823;&#23567; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">l_pid</span>;                  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38145;&#23450;&#25805;&#20316;&#30340;&#36827;&#31243; </span><span style="color: #b22222;">*/</span>
-};
+<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">flock</span>
+<span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">l_type</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38145;&#31867;&#22411;:F_RDLCK(&#35835;&#38145;),F_WRLCK(&#20889;&#38145;),F_UNLCK(&#35299;&#38145;) </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">l_whence</span>;           <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20915;&#23450;l_start&#30340;&#20301;&#32622;:SEEK_SET,SEEK_CUR,SEEK_END </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">l_start</span>;                <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38145;&#23450;&#21306;&#22495;&#30340;&#24320;&#22836;&#20301;&#32622; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">l_len</span>;                  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38145;&#23450;&#21306;&#22495;&#30340;&#22823;&#23567; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">l_pid</span>;                  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38145;&#23450;&#25805;&#20316;&#30340;&#36827;&#31243; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #4f97d7;">}</span>;
 </pre>
 </div>
 <p>
@@ -535,8 +535,8 @@ fcntl的锁分读锁和写所,其规则类似线程的rwlock,但它只能影响�
 若又对150位字节加锁,则系统又合并相邻的三个加锁区为一个区
 </p>
 </div>
-<div id="outline-container-orga857a16" class="outline-4">
-<h4 id="orga857a16"><span class="section-number-4">8.1.1</span> cmd操作说明</h4>
+<div id="outline-container-orgd62a9eb" class="outline-4">
+<h4 id="orgd62a9eb"><span class="section-number-4">8.1.1</span> cmd操作说明</h4>
 <div class="outline-text-4" id="text-8-1-1">
 <p>
 fcntl中与记录锁相关的cmd操作是`F_GETLK',`F_SETLK',`F_SETLKW'. 且第三个参数为flock类型的指针
@@ -585,8 +585,8 @@ F_SETLKW
 </p>
 </div>
 </div>
-<div id="outline-container-org414c722" class="outline-4">
-<h4 id="org414c722"><span class="section-number-4">8.1.2</span> flock结构说明</h4>
+<div id="outline-container-org7d85500" class="outline-4">
+<h4 id="org7d85500"><span class="section-number-4">8.1.2</span> flock结构说明</h4>
 <div class="outline-text-4" id="text-8-1-2">
 <ul class="org-ul">
 <li>flock结构中的l_type标明了锁的类型</li>
@@ -602,12 +602,12 @@ F_SETLKW
 </div>
 </div>
 </div>
-<div id="outline-container-org9ee13a7" class="outline-3">
-<h3 id="org9ee13a7"><span class="section-number-3">8.2</span> 关于锁的释放与继承</h3>
+<div id="outline-container-org808a617" class="outline-3">
+<h3 id="org808a617"><span class="section-number-3">8.2</span> 关于锁的释放与继承</h3>
 <div class="outline-text-3" id="text-8-2">
 </div>
-<div id="outline-container-org9555b9c" class="outline-4">
-<h4 id="org9555b9c"><span class="section-number-4">8.2.1</span> 锁的释放</h4>
+<div id="outline-container-orgce0c56b" class="outline-4">
+<h4 id="orgce0c56b"><span class="section-number-4">8.2.1</span> 锁的释放</h4>
 <div class="outline-text-4" id="text-8-2-1">
 <ul class="org-ul">
 <li>当进程终止时,该进程所建立的锁全部释放</li>
@@ -616,21 +616,21 @@ F_SETLKW
 当关闭一个文件描述符时,所有与该文件描述符 <b>指向同一个文件</b> 的相关锁全部被释放. 即
 </p>
 <div class="org-src-container">
-<pre class="src src-C">fd1 = open(pathname,...);
-fd2 = dup(fd1);                 <span style="color: #b22222;">/* </span><span style="color: #b22222;">fd1&#21644;fd2&#25351;&#21521;&#21516;&#19968;&#20010;&#25991;&#20214; </span><span style="color: #b22222;">*/</span>
-<span style="color: #0000ff;">close</span>(fd2);                     <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#27492;&#26102;,fd1&#19978;&#35774;&#32622;&#30340;&#38145;&#20063;&#20250;&#34987;&#37322;&#25918; </span><span style="color: #b22222;">*/</span>
+<pre class="src src-C">fd1 = open<span style="color: #4f97d7;">(</span>pathname,...<span style="color: #4f97d7;">)</span>;
+fd2 = dup<span style="color: #4f97d7;">(</span>fd1<span style="color: #4f97d7;">)</span>;                 <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">fd1&#21644;fd2&#25351;&#21521;&#21516;&#19968;&#20010;&#25991;&#20214; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #bc6ec5; font-weight: bold;">close</span><span style="color: #4f97d7;">(</span>fd2<span style="color: #4f97d7;">)</span>;                     <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#27492;&#26102;,fd1&#19978;&#35774;&#32622;&#30340;&#38145;&#20063;&#20250;&#34987;&#37322;&#25918; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
 
 
-fd1 = open(pathname,...);
-fd2 = open(pathname,...);       <span style="color: #b22222;">/* </span><span style="color: #b22222;">fd1&#21644;fd2&#20063;&#26159;&#25351;&#21521;&#21516;&#19968;&#20010;&#25991;&#20214; </span><span style="color: #b22222;">*/</span>
-<span style="color: #0000ff;">close</span>(fd2);                     <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#27492;&#26102;,fd1&#19978;&#35774;&#32622;&#30340;&#38145;&#20063;&#20250;&#34987;&#37322;&#25918; </span><span style="color: #b22222;">*/</span>
+fd1 = open<span style="color: #4f97d7;">(</span>pathname,...<span style="color: #4f97d7;">)</span>;
+fd2 = open<span style="color: #4f97d7;">(</span>pathname,...<span style="color: #4f97d7;">)</span>;       <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">fd1&#21644;fd2&#20063;&#26159;&#25351;&#21521;&#21516;&#19968;&#20010;&#25991;&#20214; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #bc6ec5; font-weight: bold;">close</span><span style="color: #4f97d7;">(</span>fd2<span style="color: #4f97d7;">)</span>;                     <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#27492;&#26102;,fd1&#19978;&#35774;&#32622;&#30340;&#38145;&#20063;&#20250;&#34987;&#37322;&#25918; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6c7311a" class="outline-4">
-<h4 id="org6c7311a"><span class="section-number-4">8.2.2</span> 锁的继承</h4>
+<div id="outline-container-org22ef470" class="outline-4">
+<h4 id="org22ef470"><span class="section-number-4">8.2.2</span> 锁的继承</h4>
 <div class="outline-text-4" id="text-8-2-2">
 <ul class="org-ul">
 <li><p>
@@ -656,8 +656,8 @@ fork产生的子进程不继承父进程所设置的锁.
 </div>
 </div>
 </div>
-<div id="outline-container-org44fb71d" class="outline-3">
-<h3 id="org44fb71d"><span class="section-number-3">8.3</span> 建议性锁和强制性锁</h3>
+<div id="outline-container-org8e567aa" class="outline-3">
+<h3 id="org8e567aa"><span class="section-number-3">8.3</span> 建议性锁和强制性锁</h3>
 <div class="outline-text-3" id="text-8-3">
 <p>
 一个文件加锁时是使用建议性锁还是强制性锁,是由文件本身的权限决定的. 若文件打开了其设置组ID位并关闭了组的执行位,则表示文件开启的是强制性锁机制(之所以这样设计是因为当组执行位关闭时,设置组ID位不再有意义).
@@ -672,16 +672,16 @@ fork产生的子进程不继承父进程所设置的锁.
 </p>
 </div>
 </div>
-<div id="outline-container-org573d6d8" class="outline-3">
-<h3 id="org573d6d8"><span class="section-number-3">8.4</span> flock文件锁</h3>
+<div id="outline-container-org61d00e6" class="outline-3">
+<h3 id="org61d00e6"><span class="section-number-3">8.4</span> flock文件锁</h3>
 <div class="outline-text-3" id="text-8-4">
 <p>
 flock只能对锁定整个文件而无法锁定某个区域
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/file.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/file.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">flock</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">operatioon</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">flock</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fd</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">operatioon</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>
@@ -700,8 +700,8 @@ flock只能对锁定整个文件而无法锁定某个区域
 </div>
 </div>
 </div>
-<div id="outline-container-orgc14ce68" class="outline-2">
-<h2 id="orgc14ce68"><span class="section-number-2">9</span> IO多路转换</h2>
+<div id="outline-container-org9ff010a" class="outline-2">
+<h2 id="org9ff010a"><span class="section-number-2">9</span> IO多路转换</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 IO多路转换需要先构造一张描述符的列表,然后调用一个函数,该函数直到这些描述符中的一个已经准备好IO时,才返回.
@@ -711,8 +711,8 @@ IO多路转换需要先构造一张描述符的列表,然后调用一个函数,�
 poll,pselect和select这三个函数使得我们能够执行IO多路转换,并返回哪些描述符已经准备好进行IO了.
 </p>
 </div>
-<div id="outline-container-orgfeee2f5" class="outline-3">
-<h3 id="orgfeee2f5"><span class="section-number-3">9.1</span> select</h3>
+<div id="outline-container-org668d3a4" class="outline-3">
+<h3 id="org668d3a4"><span class="section-number-3">9.1</span> select</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 传给select的参数告诉内核:
@@ -732,16 +732,16 @@ select返回时的到的消息包括:
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/select.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/select.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#20934;&#22791;&#23601;&#32490;&#30340;&#25551;&#36848;&#31526;&#25968;&#30446;,&#33509;&#36229;&#26102;&#21017;&#36820;&#22238;0,&#33509;&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;&#19981;&#21516;fd_set&#20013;&#21253;&#21547;&#21516;&#19968;&#20010;&#23601;&#32490;&#30340;fd,&#21017;&#36820;&#22238;&#20540;&#20250;&#37325;&#22797;&#32047;&#21152; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">select</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">maxfdp</span>,<span style="color: #228b22;">fd_set</span>* <span style="color: #a0522d;">readfds</span>,<span style="color: #228b22;">fd_set</span>* <span style="color: #a0522d;">writefds</span>,<span style="color: #228b22;">fd_set</span>* <span style="color: #a0522d;">exceptfds</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">timeval</span>* <span style="color: #a0522d;">tvptr</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#20934;&#22791;&#23601;&#32490;&#30340;&#25551;&#36848;&#31526;&#25968;&#30446;,&#33509;&#36229;&#26102;&#21017;&#36820;&#22238;0,&#33509;&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#19981;&#21516;fd_set&#20013;&#21253;&#21547;&#21516;&#19968;&#20010;&#23601;&#32490;&#30340;fd,&#21017;&#36820;&#22238;&#20540;&#20250;&#37325;&#22797;&#32047;&#21152; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">select</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">maxfdp</span>,<span style="color: #ce537a; font-weight: bold;">fd_set</span>* <span style="color: #7590db;">readfds</span>,<span style="color: #ce537a; font-weight: bold;">fd_set</span>* <span style="color: #7590db;">writefds</span>,<span style="color: #ce537a; font-weight: bold;">fd_set</span>* <span style="color: #7590db;">exceptfds</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">timeval</span>* <span style="color: #7590db;">tvptr</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
-<div id="outline-container-orgb4db08b" class="outline-4">
-<h4 id="orgb4db08b"><span class="section-number-4">9.1.1</span> 时间参数tvptr意义说明:</h4>
+<div id="outline-container-org8992d37" class="outline-4">
+<h4 id="org8992d37"><span class="section-number-4">9.1.1</span> 时间参数tvptr意义说明:</h4>
 <div class="outline-text-4" id="text-9-1-1">
 <p>
 select函数等待tvptr时间,若时间内有描述符准备好则返回准备好描述符的数量. 若超时则返回0.
@@ -760,32 +760,32 @@ tvptr == NULL表示无限等待.
 </p>
 </div>
 </div>
-<div id="outline-container-orga43207e" class="outline-4">
-<h4 id="orga43207e"><span class="section-number-4">9.1.2</span> fd_set数据类型说明</h4>
+<div id="outline-container-org97a2faa" class="outline-4">
+<h4 id="org97a2faa"><span class="section-number-4">9.1.2</span> fd_set数据类型说明</h4>
 <div class="outline-text-4" id="text-9-1-2">
 <p>
 使用fd_set数据类型,唯一可进行的处理就是同类型之间的变量进行赋值,或者使用一下四个函数修改数据值
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/select.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/select.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#21028;&#26029;fd&#26159;&#21542;&#22312;fd_set&#20013; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">FD_ISSET</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>,<span style="color: #228b22;">fd_set</span>* <span style="color: #a0522d;">fdset</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#21028;&#26029;fd&#26159;&#21542;&#22312;fd_set&#20013; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">FD_ISSET</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fd</span>,<span style="color: #ce537a; font-weight: bold;">fd_set</span>* <span style="color: #7590db;">fdset</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20174;fd_set&#20013;&#21024;&#38500;&#35843;fd </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">void</span> <span style="color: #0000ff;">FD_CLR</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>,<span style="color: #228b22;">fd_set</span>* <span style="color: #a0522d;">fdset</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20174;fd_set&#20013;&#21024;&#38500;&#35843;fd </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">FD_CLR</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fd</span>,<span style="color: #ce537a; font-weight: bold;">fd_set</span>* <span style="color: #7590db;">fdset</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#28155;&#21152;fd&#21040;fd_set&#20013; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">void</span> <span style="color: #0000ff;">FD_SET</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>,<span style="color: #228b22;">fd_set</span>* <span style="color: #a0522d;">fdset</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#28155;&#21152;fd&#21040;fd_set&#20013; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">FD_SET</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fd</span>,<span style="color: #ce537a; font-weight: bold;">fd_set</span>* <span style="color: #7590db;">fdset</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#28165;&#31354;fset </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">void</span> <span style="color: #0000ff;">FD_ZERO</span>(<span style="color: #228b22;">fd_set</span>* <span style="color: #a0522d;">fdset</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#28165;&#31354;fset </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">FD_ZERO</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">fd_set</span>* <span style="color: #7590db;">fdset</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org28adaa3" class="outline-4">
-<h4 id="org28adaa3"><span class="section-number-4">9.1.3</span> fd_set*三个参数说明</h4>
+<div id="outline-container-orgbd50fbe" class="outline-4">
+<h4 id="orgbd50fbe"><span class="section-number-4">9.1.3</span> fd_set*三个参数说明</h4>
 <div class="outline-text-4" id="text-9-1-3">
 <p>
 select函数会修改各fd_set值,使得他们只保留准备好的fd.
@@ -804,8 +804,8 @@ fd_set*的参数值可以为NULL,表表示不关心响应条件
 </p>
 </div>
 </div>
-<div id="outline-container-org4667c4a" class="outline-4">
-<h4 id="org4667c4a"><span class="section-number-4">9.1.4</span> 参数maxfdp说明</h4>
+<div id="outline-container-org5acc76b" class="outline-4">
+<h4 id="org5acc76b"><span class="section-number-4">9.1.4</span> 参数maxfdp说明</h4>
 <div class="outline-text-4" id="text-9-1-4">
 <p>
 该参数一般为三个fd_set中最大fd的值+1(加1的原因在于描述符编号从0开始). 它的意义在于提供給select函数一个搜索fd的范围. 使得内核不用搜索fd_Set中数百个无用的fd.
@@ -817,26 +817,26 @@ fd_set*的参数值可以为NULL,表表示不关心响应条件
 </div>
 </div>
 </div>
-<div id="outline-container-org0fb9b87" class="outline-3">
-<h3 id="org0fb9b87"><span class="section-number-3">9.2</span> pselect</h3>
+<div id="outline-container-orgb53ba4c" class="outline-3">
+<h3 id="orgb53ba4c"><span class="section-number-3">9.2</span> pselect</h3>
 <div class="outline-text-3" id="text-9-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/select.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/select.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#23601;&#32490;&#30340;&#25551;&#36848;&#31526;&#24635;&#25968;,&#36229;&#26102;&#21017;&#36820;&#22238;0,&#20986;&#38169;&#21017;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">pselect</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">maxfdp</span>,
-            <span style="color: #228b22;">fd_set</span>* <span style="color: #a0522d;">readfds</span>,
-            <span style="color: #228b22;">fd_set</span>* <span style="color: #a0522d;">writefds</span>,
-            <span style="color: #228b22;">fd_set</span>* <span style="color: #a0522d;">exceptfds</span>,
-            <span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">timespec</span>*<span style="color: #a0522d;">tsptr</span>,
-            <span style="color: #a020f0;">const</span> <span style="color: #228b22;">sigset_t</span>* <span style="color: #a0522d;">sigmask</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#23601;&#32490;&#30340;&#25551;&#36848;&#31526;&#24635;&#25968;,&#36229;&#26102;&#21017;&#36820;&#22238;0,&#20986;&#38169;&#21017;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">pselect</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">maxfdp</span>,
+            <span style="color: #ce537a; font-weight: bold;">fd_set</span>* <span style="color: #7590db;">readfds</span>,
+            <span style="color: #ce537a; font-weight: bold;">fd_set</span>* <span style="color: #7590db;">writefds</span>,
+            <span style="color: #ce537a; font-weight: bold;">fd_set</span>* <span style="color: #7590db;">exceptfds</span>,
+            <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">timespec</span>*<span style="color: #7590db;">tsptr</span>,
+            <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">sigset_t</span>* <span style="color: #7590db;">sigmask</span><span style="color: #4f97d7;">)</span>;
 
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org3425d24" class="outline-4">
-<h4 id="org3425d24"><span class="section-number-4">9.2.1</span> pselect与select的不同之处</h4>
+<div id="outline-container-orgaf4c800" class="outline-4">
+<h4 id="orgaf4c800"><span class="section-number-4">9.2.1</span> pselect与select的不同之处</h4>
 <div class="outline-text-4" id="text-9-2-1">
 <ul class="org-ul">
 <li>select用timeval结构指定超时,而pselect用timespec结构指定超时. timespec能提供更精确的超时时间</li>
@@ -849,14 +849,14 @@ fd_set*的参数值可以为NULL,表表示不关心响应条件
 </div>
 </div>
 
-<div id="outline-container-org48c1bf9" class="outline-3">
-<h3 id="org48c1bf9"><span class="section-number-3">9.3</span> 函数poll</h3>
+<div id="outline-container-orgf122d4c" class="outline-3">
+<h3 id="orgf122d4c"><span class="section-number-3">9.3</span> 函数poll</h3>
 <div class="outline-text-3" id="text-9-3">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;poll.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">poll.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#20934;&#22791;&#23601;&#32490;&#30340;&#25551;&#36848;&#31526;&#25968;&#30446;,&#33509;&#36229;&#26102;&#36820;&#22238;0,&#20986;&#38169;&#21017;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">poll</span>(<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">pollfd</span> <span style="color: #a0522d;">fdarray</span>[],<span style="color: #228b22;">nfds_t</span> <span style="color: #a0522d;">nfds</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">timeout</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#20934;&#22791;&#23601;&#32490;&#30340;&#25551;&#36848;&#31526;&#25968;&#30446;,&#33509;&#36229;&#26102;&#36820;&#22238;0,&#20986;&#38169;&#21017;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">poll</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">pollfd</span> <span style="color: #7590db;">fdarray</span><span style="color: #bc6ec5;">[]</span>,<span style="color: #ce537a; font-weight: bold;">nfds_t</span> <span style="color: #7590db;">nfds</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">timeout</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>
@@ -867,18 +867,18 @@ poll函数的作用类似select,但poll并不是为每个条件(读,写,异常)�
 poll是构造一个pollfd结构的数组. 每个pollfd结构体指定了一个描述符编号以及我们对描述符感兴趣的条件
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #a020f0;">struct</span> <span style="color: #228b22;">pollfd</span>
-{
-  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>;                       <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#35201;&#26816;&#27979;&#30340;&#25991;&#20214;&#25551;&#36848;&#31526; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">short</span> <span style="color: #a0522d;">events</span>;                 <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20851;&#27880;&#25991;&#20214;&#25551;&#36848;&#31526;&#19978;&#30340;&#21738;&#20123;&#20107;&#20214; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">short</span> <span style="color: #a0522d;">revents</span>;                <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20989;&#25968;&#36820;&#22238;&#26102;,&#34987;&#20462;&#25913;&#20026;&#35813;&#25551;&#36848;&#31526;&#21457;&#29983;&#20102;&#21738;&#20123;&#20107;&#20214; </span><span style="color: #b22222;">*/</span>
-}
+<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">pollfd</span>
+<span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fd</span>;                       <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#35201;&#26816;&#27979;&#30340;&#25991;&#20214;&#25551;&#36848;&#31526; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #7590db;">events</span>;                 <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20851;&#27880;&#25991;&#20214;&#25551;&#36848;&#31526;&#19978;&#30340;&#21738;&#20123;&#20107;&#20214; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #7590db;">revents</span>;                <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20989;&#25968;&#36820;&#22238;&#26102;,&#34987;&#20462;&#25913;&#20026;&#35813;&#25551;&#36848;&#31526;&#21457;&#29983;&#20102;&#21738;&#20123;&#20107;&#20214; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org8edb9ea" class="outline-4">
-<h4 id="org8edb9ea"><span class="section-number-4">9.3.1</span> poll中的事件说明</h4>
+<div id="outline-container-org1ba9811" class="outline-4">
+<h4 id="org1ba9811"><span class="section-number-4">9.3.1</span> poll中的事件说明</h4>
 <div class="outline-text-4" id="text-9-3-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -977,8 +977,8 @@ poll是构造一个pollfd结构的数组. 每个pollfd结构体指定了一个�
 </div>
 </div>
 
-<div id="outline-container-orga217599" class="outline-4">
-<h4 id="orga217599"><span class="section-number-4">9.3.2</span> timeout说明</h4>
+<div id="outline-container-orgc343c58" class="outline-4">
+<h4 id="orgc343c58"><span class="section-number-4">9.3.2</span> timeout说明</h4>
 <div class="outline-text-4" id="text-9-3-2">
 <ul class="org-ul">
 <li>timeout == -1表示一直等待</li>
@@ -990,8 +990,8 @@ poll是构造一个pollfd结构的数组. 每个pollfd结构体指定了一个�
 </div>
 </div>
 
-<div id="outline-container-org91e15b8" class="outline-2">
-<h2 id="org91e15b8"><span class="section-number-2">10</span> POSIX异步IO</h2>
+<div id="outline-container-org8b92efd" class="outline-2">
+<h2 id="org8b92efd"><span class="section-number-2">10</span> POSIX异步IO</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 执行IO操作时,如果还有其他事务需要处理而不想被IO操作阻塞,就可以使用异步IO.
@@ -1001,16 +1001,16 @@ poll是构造一个pollfd结构的数组. 每个pollfd结构体指定了一个�
 异步IO接口使用AIO控制块来描述IO操作. aiocb定义了AIO控制块
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #a020f0;">struct</span> <span style="color: #228b22;">aiocb</span>
-{
-  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">aio_fildes</span>;               <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25991;&#20214;&#25551;&#36848;&#31526; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">aio_offset</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">IO&#25805;&#20316;&#26102;&#30340;&#25991;&#20214;&#20559;&#31227;&#37327; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #a020f0;">volatile</span> <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">aio_buffer</span>;    <span style="color: #b22222;">/* </span><span style="color: #b22222;">IO&#25805;&#20316;&#29992;&#30340;&#32531;&#20914;&#21306; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">aio_nbytes</span>;            <span style="color: #b22222;">/* </span><span style="color: #b22222;">IO&#25805;&#20316;&#20256;&#36755;&#30340;&#23383;&#33410;&#25968; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">aio_reqprio</span>;              <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20248;&#20808;&#32423; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sigevent</span> <span style="color: #a0522d;">aio_sigevent</span>; <span style="color: #b22222;">/* </span><span style="color: #b22222;">IO&#23436;&#25104;&#21518;&#36890;&#30693;&#36827;&#31243;&#30340;&#26041;&#24335; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">aio_lio_opcode</span>;           <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#35843;&#29992;lio_listio&#20989;&#25968;&#26102;&#20351;&#29992; </span><span style="color: #b22222;">*/</span>
-};
+<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">aiocb</span>
+<span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">aio_fildes</span>;               <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25991;&#20214;&#25551;&#36848;&#31526; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">aio_offset</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">IO&#25805;&#20316;&#26102;&#30340;&#25991;&#20214;&#20559;&#31227;&#37327; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #4f97d7; font-weight: bold;">volatile</span> <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">aio_buffer</span>;    <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">IO&#25805;&#20316;&#29992;&#30340;&#32531;&#20914;&#21306; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">aio_nbytes</span>;            <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">IO&#25805;&#20316;&#20256;&#36755;&#30340;&#23383;&#33410;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">aio_reqprio</span>;              <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20248;&#20808;&#32423; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sigevent</span> <span style="color: #7590db;">aio_sigevent</span>; <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">IO&#23436;&#25104;&#21518;&#36890;&#30693;&#36827;&#31243;&#30340;&#26041;&#24335; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">aio_lio_opcode</span>;           <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#35843;&#29992;lio_listio&#20989;&#25968;&#26102;&#20351;&#29992; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #4f97d7;">}</span>;
 
 </pre>
 </div>
@@ -1023,14 +1023,14 @@ poll是构造一个pollfd结构的数组. 每个pollfd结构体指定了一个�
 aio_sigevent字段控制IO事件完成后,如何通知应用程序.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sigevent</span>
-{
-  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">sigev_notify</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36890;&#30693;&#30340;&#31867;&#22411; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">sigev_signo</span>;              <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20449;&#21495;&#32534;&#30721; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #a020f0;">union</span> <span style="color: #228b22;">sigval</span> <span style="color: #a0522d;">sigev_value</span>;     <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20256;&#36882;&#32473;&#36890;&#30693;&#20989;&#25968;&#30340;&#21442;&#25968; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">void</span> (*sigev_notify_function)(<span style="color: #a020f0;">union</span> <span style="color: #228b22;">sigval</span>); <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36890;&#30693;&#20989;&#25968; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">pthread_attr_t</span>* <span style="color: #a0522d;">sigev_notify_attributes</span>;     <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#35843;&#29992;&#36890;&#30693;&#20989;&#25968;&#30340;&#32447;&#31243;&#23646;&#24615;,&#40664;&#35748;&#20250;&#22312;&#20998;&#31163;&#29366;&#24577;&#19979;&#30340;&#32447;&#31243;&#20013;&#35843;&#29992;&#36890;&#30693;&#20989;&#25968; </span><span style="color: #b22222;">*/</span>
-};
+<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sigevent</span>
+<span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sigev_notify</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36890;&#30693;&#30340;&#31867;&#22411; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sigev_signo</span>;              <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20449;&#21495;&#32534;&#30721; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #4f97d7; font-weight: bold;">union</span> <span style="color: #ce537a; font-weight: bold;">sigval</span> <span style="color: #7590db;">sigev_value</span>;     <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20256;&#36882;&#32473;&#36890;&#30693;&#20989;&#25968;&#30340;&#21442;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5;">(</span>*sigev_notify_function<span style="color: #bc6ec5;">)(</span><span style="color: #4f97d7; font-weight: bold;">union</span> <span style="color: #ce537a; font-weight: bold;">sigval</span><span style="color: #bc6ec5;">)</span>; <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36890;&#30693;&#20989;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">pthread_attr_t</span>* <span style="color: #7590db;">sigev_notify_attributes</span>;     <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#35843;&#29992;&#36890;&#30693;&#20989;&#25968;&#30340;&#32447;&#31243;&#23646;&#24615;,&#40664;&#35748;&#20250;&#22312;&#20998;&#31163;&#29366;&#24577;&#19979;&#30340;&#32447;&#31243;&#20013;&#35843;&#29992;&#36890;&#30693;&#20989;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #4f97d7;">}</span>;
 </pre>
 </div>
 
@@ -1073,20 +1073,20 @@ sigev_notify_attribute字段表示调用通知函数线程的属性,为NULL,则�
 </ul>
 </div>
 
-<div id="outline-container-org9cd7b7b" class="outline-3">
-<h3 id="org9cd7b7b"><span class="section-number-3">10.1</span> 异步读写操作</h3>
+<div id="outline-container-org4062c40" class="outline-3">
+<h3 id="org4062c40"><span class="section-number-3">10.1</span> 异步读写操作</h3>
 <div class="outline-text-3" id="text-10-1">
 <p>
 在进行异步IO之前需要先初始化AIO控制块,然后调用aio_read函数进行异步读操作,或调用aio_write函数来进行异步写操作
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;aio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">aio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;0,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">aio_read</span>(<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">aiocb</span>* <span style="color: #a0522d;">aiocb</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;0,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">aio_read</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">aiocb</span>* <span style="color: #7590db;">aiocb</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;0,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">aio_write</span>(<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">aiocb</span>* <span style="color: #a0522d;">aiocb</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;0,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">aio_write</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">aiocb</span>* <span style="color: #7590db;">aiocb</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>
@@ -1101,9 +1101,9 @@ sigev_notify_attribute字段表示调用通知函数线程的属性,为NULL,则�
 lio_listio函数既能以同步的方式来使用,也能以异步的方式来使用. 该函数会提交一系列由一个AIO控制块列表描述的IO请求.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;aio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">aio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">lio_listio</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">mode</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">aiocb</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">list</span>[],<span style="color: #228b22;">int</span> <span style="color: #a0522d;">n</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sigevent</span>* <span style="color: #a0522d;">sigev</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">lio_listio</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">mode</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">aiocb</span>* <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #7590db;">list</span><span style="color: #bc6ec5;">[]</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sigevent</span>* <span style="color: #7590db;">sigev</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -1126,16 +1126,16 @@ lio_listio函数既能以同步的方式来使用,也能以异步的方式来使
 </div>
 
 
-<div id="outline-container-org3687e7c" class="outline-3">
-<h3 id="org3687e7c"><span class="section-number-3">10.2</span> 强制同步</h3>
+<div id="outline-container-orgdc15f5c" class="outline-3">
+<h3 id="orgdc15f5c"><span class="section-number-3">10.2</span> 强制同步</h3>
 <div class="outline-text-3" id="text-10-2">
 <p>
 要强制等待中的异步操作立即同步到存储中,可以设立一个AIO控制块,并调用aio_fsync函数
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;aio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">aio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">aio_fsync</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">op</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">aiocb</span>* <span style="color: #a0522d;">aiocb</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">aio_fsync</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">op</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">aiocb</span>* <span style="color: #7590db;">aiocb</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>
@@ -1152,16 +1152,16 @@ AIO控制块中的aio_fildes字段指明了其异步写操作被同步的文件.
 </div>
 </div>
 
-<div id="outline-container-orgbe0dd3d" class="outline-3">
-<h3 id="orgbe0dd3d"><span class="section-number-3">10.3</span> 获取异步读,写,同步操作的完成状态</h3>
+<div id="outline-container-org90b8a87" class="outline-3">
+<h3 id="org90b8a87"><span class="section-number-3">10.3</span> 获取异步读,写,同步操作的完成状态</h3>
 <div class="outline-text-3" id="text-10-3">
 <p>
 为了获取一个异步读,写或同步操作的完成状态,需要调用aio_error函数
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;aio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">aio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">aio_error</span>(<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">aiocb</span>* <span style="color: #a0522d;">aiocb</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">aio_error</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">aiocb</span>* <span style="color: #7590db;">aiocb</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>
@@ -1178,11 +1178,11 @@ AIO控制块中的aio_fildes字段指明了其异步写操作被同步的文件.
 如果异步操作成功,可以调用aio_return函数来获取异步操作的返回值
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;aio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">aio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">aio_return&#20989;&#25968;&#26412;&#36523;&#22833;&#36133;&#36820;&#22238;-1,&#24182;&#35774;&#32622;errno.</span>
-<span style="color: #b22222;">   &#21542;&#21017;&#36820;&#22238;&#24322;&#27493;&#25805;&#20316;&#30340;&#32467;&#26524;</span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">aio_return</span>(<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">aiocb</span>* <span style="color: #a0522d;">aiocb</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">aio_return&#20989;&#25968;&#26412;&#36523;&#22833;&#36133;&#36820;&#22238;-1,&#24182;&#35774;&#32622;errno.</span>
+<span style="color: #2aa1ae; background-color: #292e34;">   &#21542;&#21017;&#36820;&#22238;&#24322;&#27493;&#25805;&#20316;&#30340;&#32467;&#26524;</span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">aio_return</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">aiocb</span>* <span style="color: #7590db;">aiocb</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -1192,20 +1192,20 @@ AIO控制块中的aio_fildes字段指明了其异步写操作被同步的文件.
 </div>
 </div>
 
-<div id="outline-container-orgdb9bcc9" class="outline-3">
-<h3 id="orgdb9bcc9"><span class="section-number-3">10.4</span> 异步操作管理</h3>
+<div id="outline-container-org61af13c" class="outline-3">
+<h3 id="org61af13c"><span class="section-number-3">10.4</span> 异步操作管理</h3>
 <div class="outline-text-3" id="text-10-4">
 <p>
 若完成要操作的事务后,还有异步操作未完成,可以调用aio_suspend函数来 <b>阻塞进程</b>.直到操作完成
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;aio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">aio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;&#35813;&#20989;&#25968;&#34987;&#20449;&#21495;&#32456;&#31471;,&#21017;&#36820;&#22238;-1,&#19988;errno&#20026;EINTR </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;timeout&#26102;&#38388;&#20869;&#27809;&#26377;&#20219;&#20309;IO&#25805;&#20316;&#23436;&#25104;,&#21017;&#36820;&#22238;-1,&#19988;errno&#20026;EAGAIN </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;timeout&#26102;&#38388;&#20869;,list&#25968;&#32452;&#20013;&#26377;&#20219;&#20309;&#19968;&#20010;&#24322;&#27493;&#25805;&#20316;&#23436;&#25104;,&#21017;&#36820;&#22238;0 </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;&#35843;&#29992;aio_suspend&#25805;&#20316;&#26102;,&#25152;&#26377;&#30340;&#24322;&#27493;IO&#25805;&#20316;&#37117;&#24050;&#23436;&#25104;,&#37027;&#20040;aio_suspend&#23558;&#22312;&#19981;&#38459;&#22622;&#30340;&#24773;&#20917;&#19979;&#30452;&#25509;&#36820;&#22238; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">aio_suspend</span>(<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">aiocb</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">list</span>[],<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nent</span>,<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">timespec</span>* <span style="color: #a0522d;">timeout</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#35813;&#20989;&#25968;&#34987;&#20449;&#21495;&#32456;&#31471;,&#21017;&#36820;&#22238;-1,&#19988;errno&#20026;EINTR </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;timeout&#26102;&#38388;&#20869;&#27809;&#26377;&#20219;&#20309;IO&#25805;&#20316;&#23436;&#25104;,&#21017;&#36820;&#22238;-1,&#19988;errno&#20026;EAGAIN </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;timeout&#26102;&#38388;&#20869;,list&#25968;&#32452;&#20013;&#26377;&#20219;&#20309;&#19968;&#20010;&#24322;&#27493;&#25805;&#20316;&#23436;&#25104;,&#21017;&#36820;&#22238;0 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#35843;&#29992;aio_suspend&#25805;&#20316;&#26102;,&#25152;&#26377;&#30340;&#24322;&#27493;IO&#25805;&#20316;&#37117;&#24050;&#23436;&#25104;,&#37027;&#20040;aio_suspend&#23558;&#22312;&#19981;&#38459;&#22622;&#30340;&#24773;&#20917;&#19979;&#30452;&#25509;&#36820;&#22238; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">aio_suspend</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">aiocb</span>* <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #7590db;">list</span><span style="color: #bc6ec5;">[]</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">nent</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">timespec</span>* <span style="color: #7590db;">timeout</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -1217,13 +1217,13 @@ AIO控制块中的aio_fildes字段指明了其异步写操作被同步的文件.
 若我们不想再完成等待中的异步IO,可以使用aio_cancel函数取消之
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;aio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">aio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">AIO_ALLDONE:&#25152;&#26377;&#25805;&#20316;&#22312;&#23581;&#35797;&#21462;&#28040;&#20182;&#20204;&#21069;&#23601;&#24050;&#32463;&#23436;&#25104; </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">AIO_CANCELED:&#25152;&#26377;&#35201;&#27714;&#30340;&#25805;&#20316;&#24050;&#32463;&#34987;&#21462;&#28040; </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">AIO_NOTCANCELED:&#33267;&#23569;&#26377;&#19968;&#20010;&#35201;&#27714;&#30340;&#25805;&#20316;&#27809;&#26377;&#34987;&#21462;&#28040; </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">-1 : &#23545;aio_cancel&#35843;&#29992;&#22833;&#36133;,&#38169;&#35823;&#30721;&#23384;&#20648;&#22312;errno&#20013; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">aio_cancel</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">aioch</span>* <span style="color: #a0522d;">aiocb</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">AIO_ALLDONE:&#25152;&#26377;&#25805;&#20316;&#22312;&#23581;&#35797;&#21462;&#28040;&#20182;&#20204;&#21069;&#23601;&#24050;&#32463;&#23436;&#25104; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">AIO_CANCELED:&#25152;&#26377;&#35201;&#27714;&#30340;&#25805;&#20316;&#24050;&#32463;&#34987;&#21462;&#28040; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">AIO_NOTCANCELED:&#33267;&#23569;&#26377;&#19968;&#20010;&#35201;&#27714;&#30340;&#25805;&#20316;&#27809;&#26377;&#34987;&#21462;&#28040; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">-1 : &#23545;aio_cancel&#35843;&#29992;&#22833;&#36133;,&#38169;&#35823;&#30721;&#23384;&#20648;&#22312;errno&#20013; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">aio_cancel</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fd</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">aioch</span>* <span style="color: #7590db;">aiocb</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -1235,23 +1235,23 @@ AIO控制块中的aio_fildes字段指明了其异步写操作被同步的文件.
 </div>
 </div>
 
-<div id="outline-container-orgf775a0f" class="outline-2">
-<h2 id="orgf775a0f"><span class="section-number-2">11</span> 散布读(scatter read)和聚集写(gather write)</h2>
+<div id="outline-container-org12dcb6b" class="outline-2">
+<h2 id="org12dcb6b"><span class="section-number-2">11</span> 散布读(scatter read)和聚集写(gather write)</h2>
 <div class="outline-text-2" id="text-11">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/uio.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/uio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#25152;&#26377;&#24050;&#35835;&#30340;&#23383;&#33410;&#25968; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">readv</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>,<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">iovec</span>* <span style="color: #a0522d;">iov</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">iovcnt</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#25152;&#26377;&#24050;&#35835;&#30340;&#23383;&#33410;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">readv</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fd</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">iovec</span>* <span style="color: #7590db;">iov</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">iovcnt</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#25152;&#26377;&#24050;&#20889;&#30340;&#23383;&#33410;&#25968; </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">sszie_t</span> <span style="color: #0000ff;">writev</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>,<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">iovec</span>* <span style="color: #a0522d;">iov</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">iovcnt</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#25152;&#26377;&#24050;&#20889;&#30340;&#23383;&#33410;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">sszie_t</span> <span style="color: #bc6ec5; font-weight: bold;">writev</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fd</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">iovec</span>* <span style="color: #7590db;">iov</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">iovcnt</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">iovec</span>
-{
-  <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">iov_base</span>;               <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#32531;&#20914;&#21306;&#30340;&#22320;&#22336; </span><span style="color: #b22222;">*/</span>
-  <span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">iov_len</span>;               <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#32531;&#20914;&#21306;&#30340;&#22823;&#23567; </span><span style="color: #b22222;">*/</span>
-};
+<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">iovec</span>
+<span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">iov_base</span>;               <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#32531;&#20914;&#21306;&#30340;&#22320;&#22336; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+  <span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">iov_len</span>;               <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#32531;&#20914;&#21306;&#30340;&#22823;&#23567; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #4f97d7;">}</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -1264,22 +1264,22 @@ AIO控制块中的aio_fildes字段指明了其异步写操作被同步的文件.
 </div>
 </div>
 
-<div id="outline-container-org606e207" class="outline-2">
-<h2 id="org606e207"><span class="section-number-2">12</span> 存储映射IO</h2>
+<div id="outline-container-org4068382" class="outline-2">
+<h2 id="org4068382"><span class="section-number-2">12</span> 存储映射IO</h2>
 <div class="outline-text-2" id="text-12">
 <p>
 存储映射IO能将一个磁盘文件映射到内存的一个缓冲区中,这样从缓冲区中读取数据就相当于读文件中的相应字节. 将数据存入缓冲区时,相应字节就自动写入文件. 这样就可以在不使用read和write的情况下执行IO
 </p>
 </div>
 
-<div id="outline-container-org7519bbf" class="outline-3">
-<h3 id="org7519bbf"><span class="section-number-3">12.1</span> 将文件映射到缓冲区</h3>
+<div id="outline-container-org628f814" class="outline-3">
+<h3 id="org628f814"><span class="section-number-3">12.1</span> 将文件映射到缓冲区</h3>
 <div class="outline-text-3" id="text-12-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/mman.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/mman.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;&#25104;&#21151;,&#36820;&#22238;&#26144;&#23556;&#21306;&#30340;&#36215;&#22987;&#22320;&#22336;;&#33509;&#20986;&#38169;&#36820;&#22238;MAP_FAILED </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">void</span>* <span style="color: #0000ff;">mmap</span>(<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">addr</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">len</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">prot</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flag</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>,<span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">off</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#25104;&#21151;,&#36820;&#22238;&#26144;&#23556;&#21306;&#30340;&#36215;&#22987;&#22320;&#22336;;&#33509;&#20986;&#38169;&#36820;&#22238;MAP_FAILED </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #bc6ec5; font-weight: bold;">mmap</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">addr</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">len</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">prot</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flag</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fd</span>,<span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">off</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -1368,17 +1368,17 @@ MAP_PRIVATE
 </div>
 </div>
 
-<div id="outline-container-org6ed387c" class="outline-3">
-<h3 id="org6ed387c"><span class="section-number-3">12.2</span> 更改映射权限</h3>
+<div id="outline-container-org96a4d73" class="outline-3">
+<h3 id="org96a4d73"><span class="section-number-3">12.2</span> 更改映射权限</h3>
 <div class="outline-text-3" id="text-12-2">
 <p>
 调用mprotect函数可以更改一个现有映射的权限
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/mman.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/mman.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;0,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">mprotect</span>(<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">addr</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">len</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">prot</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;0,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">mprotect</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">addr</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">len</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">prot</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>
@@ -1387,8 +1387,8 @@ MAP_PRIVATE
 </div>
 </div>
 
-<div id="outline-container-org6c604d8" class="outline-3">
-<h3 id="org6c604d8"><span class="section-number-3">12.3</span> 写回修改到源文件</h3>
+<div id="outline-container-orgfff6126" class="outline-3">
+<h3 id="orgfff6126"><span class="section-number-3">12.3</span> 写回修改到源文件</h3>
 <div class="outline-text-3" id="text-12-3">
 <p>
 如果缓冲区是通过MAP_SHARED标志打开的,则对缓冲区的修改并不会立即写回文件中,具体的时间由系统决定. 
@@ -1398,16 +1398,16 @@ MAP_PRIVATE
 那么可以调用msync将修改强制写回原文件.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/mman.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/mman.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;&#25104;&#21151;,&#36820;&#22238;0;&#33509;&#20986;&#38169;,&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">msync</span>(<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">addr</span> ,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">len</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flags</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#25104;&#21151;,&#36820;&#22238;0;&#33509;&#20986;&#38169;,&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">msync</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">addr</span> ,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">len</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flags</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgc359993" class="outline-4">
-<h4 id="orgc359993"><span class="section-number-4">12.3.1</span> flags参数说明</h4>
+<div id="outline-container-orgf3fd927" class="outline-4">
+<h4 id="orgf3fd927"><span class="section-number-4">12.3.1</span> flags参数说明</h4>
 <div class="outline-text-4" id="text-12-3-1">
 <ul class="org-ul">
 <li><p>
@@ -1438,17 +1438,17 @@ MS_INVALIDATE asks to invalidate other mappings of the same file (so that they c
 </div>
 </div>
 
-<div id="outline-container-org495f75c" class="outline-3">
-<h3 id="org495f75c"><span class="section-number-3">12.4</span> 解除映射</h3>
+<div id="outline-container-org0acaffe" class="outline-3">
+<h3 id="org0acaffe"><span class="section-number-3">12.4</span> 解除映射</h3>
 <div class="outline-text-3" id="text-12-4">
 <p>
 当进程终止时,会自动解除存储映射区的映射,或者直接调用munmap函数也可以解除映射区. 
 但 <b>关闭映射存储区使用的文件描述符并不解除映射区</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/mman.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/mman.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">munmap</span>(<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">addr</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">len</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">munmap</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">addr</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">len</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <p>
@@ -1457,8 +1457,8 @@ MS_INVALIDATE asks to invalidate other mappings of the same file (so that they c
 </div>
 </div>
 
-<div id="outline-container-orgb12dab9" class="outline-3">
-<h3 id="orgb12dab9"><span class="section-number-3">12.5</span> 相关信号</h3>
+<div id="outline-container-org4dcf1cb" class="outline-3">
+<h3 id="org4dcf1cb"><span class="section-number-3">12.5</span> 相关信号</h3>
 <div class="outline-text-3" id="text-12-5">
 <p>
 与映射区相关的信号有SIGSEGV和SIGBUS.
@@ -1474,8 +1474,8 @@ SIGSEGV信用通常用于表明进程试图访问不可用的存储区,或尝试
 </div>
 </div>
 
-<div id="outline-container-org657f4c3" class="outline-3">
-<h3 id="org657f4c3"><span class="section-number-3">12.6</span> 关于子进程的共享问题</h3>
+<div id="outline-container-orgc132b63" class="outline-3">
+<h3 id="orgc132b63"><span class="section-number-3">12.6</span> 关于子进程的共享问题</h3>
 <div class="outline-text-3" id="text-12-6">
 <p>
 子进程能通过fork继承存储映射区,但exec后则存储映射区被重置

@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org73b1cdb">bash prompt中显示仓库branch的名字</a></li>
-<li><a href="#org49fabe6">git git</a></li>
-<li><a href="#orgdf83579">自动修正输入错误的git command</a></li>
+<li><a href="#org8cfce73">bash prompt中显示仓库branch的名字</a></li>
+<li><a href="#orgf77c6d3">git git</a></li>
+<li><a href="#orgf6bd2b8">自动修正输入错误的git command</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org73b1cdb" class="outline-2">
-<h2 id="org73b1cdb">bash prompt中显示仓库branch的名字</h2>
-<div class="outline-text-2" id="text-org73b1cdb">
+<div id="outline-container-org8cfce73" class="outline-2">
+<h2 id="org8cfce73">bash prompt中显示仓库branch的名字</h2>
+<div class="outline-text-2" id="text-org8cfce73">
 <p>
 在bash prompt中显示仓库branch，可以防止你在错误的branch下修改了代码。
 </p>
@@ -77,7 +77,7 @@
 比如我的PS1定义为：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">export</span> <span style="color: #a0522d;">PS1</span>=<span style="color: #8b2252;">"\u@\h \[\033[32m\]\W\[\033[33m\]\$(</span><span style="color: #ff00ff;">git</span><span style="color: #8b2252;"> branch 2&gt; /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\033[00m\] $ "</span>
+<pre class="src src-shell"><span style="color: #4f97d7;">export</span> <span style="color: #7590db;">PS1</span>=<span style="color: #2d9574;">"\u@\h \[\033[32m\]\W\[\033[33m\]\$(</span><span style="color: #fa8072;">git</span><span style="color: #2d9574;"> branch 2&gt; /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\033[00m\] $ "</span>
 </pre>
 </div>
 
@@ -96,9 +96,9 @@
 </div>
 </div>
 
-<div id="outline-container-org49fabe6" class="outline-2">
-<h2 id="org49fabe6">git git</h2>
-<div class="outline-text-2" id="text-org49fabe6">
+<div id="outline-container-orgf77c6d3" class="outline-2">
+<h2 id="orgf77c6d3">git git</h2>
+<div class="outline-text-2" id="text-orgf77c6d3">
 <p>
 有没有遇到过头脑花昏，输入git命令时重复输入 <code>git</code> 的情况？比如这样
 </p>
@@ -114,7 +114,7 @@ git：'git' 不是一个 git 命令。参见 'git --help'。
 不过，当执行 <code>git command</code> 时，实际上执行的是  <code>git-command</code> 这个命令,所以我们可以通过手工创建一个 <code>git-git</code> 命令来解决这一问题
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">'git $@'</span> &gt; /usr/local/bin/git-git
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">'git $@'</span> &gt; /usr/local/bin/git-git
 chmod +x /usr/local/bin/git-git
 </pre>
 </div>
@@ -134,9 +134,9 @@ lujun9972@T520 lctt-scripts (master) $ git git git git status
 </div>
 </div>
 
-<div id="outline-container-orgdf83579" class="outline-2">
-<h2 id="orgdf83579">自动修正输入错误的git command</h2>
-<div class="outline-text-2" id="text-orgdf83579">
+<div id="outline-container-orgf6bd2b8" class="outline-2">
+<h2 id="orgf6bd2b8">自动修正输入错误的git command</h2>
+<div class="outline-text-2" id="text-orgf6bd2b8">
 <p>
 有的时候可能会出现输入错误的git command的情况
 </p>
@@ -169,7 +169,7 @@ lujun9972@T520 lctt-scripts (master) $ git status
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">git config --global help.autoCorrect 10
+<pre class="src src-shell">git config --global help.autoCorrect <span style="color: #a45bad;">10</span>
 </pre>
 </div>
 
@@ -219,7 +219,7 @@ lujun9972@T520 lctt-scripts (master) $ git stau
 要警用git的自动修正功能，则将超时时间设置为0,这也是初始的默认值
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">git config --global help.autoCorrect 0
+<pre class="src src-shell">git config --global help.autoCorrect <span style="color: #a45bad;">0</span>
 </pre>
 </div>
 

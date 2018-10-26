@@ -62,12 +62,12 @@ shell中似乎没有直接的命令可以实现字母与ASCII码之间的转换�
 ASCII码转字母:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a020f0;">function</span> <span style="color: #0000ff;">chr</span>() {
-  [ <span style="color: #8b2252;">"$1"</span> -lt 256 ] || <span style="color: #a020f0;">return</span> 1
-  <span style="color: #483d8b;">printf</span> <span style="color: #8b2252;">"\\$(</span><span style="color: #ff00ff;">printf</span><span style="color: #8b2252;"> '%03o' "$1")"</span>
-}
+<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">chr</span><span style="color: #4f97d7;">()</span> <span style="color: #4f97d7;">{</span>
+  <span style="color: #bc6ec5;">[</span> <span style="color: #2d9574;">"$1"</span> -lt <span style="color: #a45bad;">256</span> <span style="color: #bc6ec5;">]</span> || <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">1</span>
+  <span style="color: #4f97d7;">printf</span> <span style="color: #2d9574;">"\\$(</span><span style="color: #fa8072;">printf</span><span style="color: #2d9574;"> '%03o' "$1")"</span>
+<span style="color: #4f97d7;">}</span>
 
-chr 68
+chr <span style="color: #a45bad;">68</span>
 </pre>
 </div>
 
@@ -81,9 +81,9 @@ chr 68
 字母转ASCII码
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #0000ff;">ord</span>() {
-  <span style="color: #a0522d;">LC_CTYPE</span>=C printf <span style="color: #8b2252;">'%d'</span> <span style="color: #8b2252;">"'$1"</span>
-}
+<pre class="src src-shell"><span style="color: #bc6ec5; font-weight: bold;">ord</span><span style="color: #4f97d7;">()</span> <span style="color: #4f97d7;">{</span>
+  <span style="color: #7590db;">LC_CTYPE</span>=C printf <span style="color: #2d9574;">'%d'</span> <span style="color: #2d9574;">"'$1"</span>
+<span style="color: #4f97d7;">}</span>
 
 ord a
 </pre>

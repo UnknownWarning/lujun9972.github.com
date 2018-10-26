@@ -60,18 +60,18 @@
 创建一个脚本来帮助你调用Ediff进行文件比较。
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/bin/</span><span style="color: #a020f0;">bash</span>
+<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/bin/</span><span style="color: #4f97d7; font-weight: bold;">bash</span>
 
-<span style="color: #a0522d;">base</span>=$<span style="color: #a0522d;">1</span>
-<span style="color: #a0522d;">local</span>=$<span style="color: #a0522d;">2</span>
-<span style="color: #a0522d;">remote</span>=$<span style="color: #a0522d;">3</span>
-<span style="color: #a0522d;">merged</span>=$<span style="color: #a0522d;">4</span>
+<span style="color: #7590db;">base</span>=$<span style="color: #a45bad;">1</span>
+<span style="color: #7590db;">local</span>=$<span style="color: #a45bad;">2</span>
+<span style="color: #7590db;">remote</span>=$<span style="color: #a45bad;">3</span>
+<span style="color: #7590db;">merged</span>=$<span style="color: #a45bad;">4</span>
 
-<span style="color: #a020f0;">if</span> [ -r $<span style="color: #a0522d;">base</span> ];<span style="color: #a020f0;">then</span>
-    emacsclient -a <span style="color: #8b2252;">""</span> -c -n --eval <span style="color: #8b2252;">"(require 'ediff)"</span> --eval <span style="color: #8b2252;">"(ediff-merge-with-ancestor \"$local\" \"$remote\" \"$base\" nil \"$merged\")"</span>
-<span style="color: #a020f0;">else</span>
-    emacsclient -a <span style="color: #8b2252;">""</span> -c -n --eval <span style="color: #8b2252;">"(require 'ediff)"</span> --eval <span style="color: #8b2252;">"(ediff-merge \"$local\" \"$remote\" nil \"$merged\")"</span>
-<span style="color: #a020f0;">fi</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -r $<span style="color: #7590db;">base</span> <span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+    emacsclient -a <span style="color: #2d9574;">""</span> -c -n --eval <span style="color: #2d9574;">"(require 'ediff)"</span> --eval <span style="color: #2d9574;">"(ediff-merge-with-ancestor \"$local\" \"$remote\" \"$base\" nil \"$merged\")"</span>
+<span style="color: #4f97d7; font-weight: bold;">else</span>
+    emacsclient -a <span style="color: #2d9574;">""</span> -c -n --eval <span style="color: #2d9574;">"(require 'ediff)"</span> --eval <span style="color: #2d9574;">"(ediff-merge \"$local\" \"$remote\" nil \"$merged\")"</span>
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
 </pre>
 </div>
 
@@ -93,9 +93,9 @@ emacsclient后面的 <code>-a</code> 参数表示如果没有启动Emacs daemon�
 
 <div class="org-src-container">
 <pre class="src src-sh">git config --global merge.tool ediff
-git config --global mergetool.ediff.cmd <span style="color: #8b2252;">'~/bin/ediff_merge.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"'</span>
+git config --global mergetool.ediff.cmd <span style="color: #2d9574;">'~/bin/ediff_merge.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"'</span>
 git config --global mergetool.prompt false
-<span style="color: #b22222;"># </span><span style="color: #b22222;">git config --global mergetool.ediff.trustExitCode true</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">git config --global mergetool.ediff.trustExitCode true</span>
 </pre>
 </div></li>
 </ol>

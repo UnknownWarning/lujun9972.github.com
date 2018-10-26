@@ -54,15 +54,15 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfffbeaa">Tramp ssh协议访问Termux</a></li>
-<li><a href="#org4749152">Tramp 与 org-babel 联用</a></li>
+<li><a href="#orgaf05475">Tramp ssh协议访问Termux</a></li>
+<li><a href="#org015b7b3">Tramp 与 org-babel 联用</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgfffbeaa" class="outline-2">
-<h2 id="orgfffbeaa">Tramp ssh协议访问Termux</h2>
-<div class="outline-text-2" id="text-orgfffbeaa">
+<div id="outline-container-orgaf05475" class="outline-2">
+<h2 id="orgaf05475">Tramp ssh协议访问Termux</h2>
+<div class="outline-text-2" id="text-orgaf05475">
 <p>
 当使用Tramp通过ssh访问Termux上的文件时，你可能会发现出现下面这样的错误:
 </p>
@@ -76,7 +76,7 @@ tramp-file-name-handler: Method ‘ssh’ should specify both encoding and decod
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">PATH</span>
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">PATH</span>
 </pre>
 </div>
 
@@ -93,7 +93,7 @@ tramp-file-name-handler: Method ‘ssh’ should specify both encoding and decod
 解决方法其实很简单，往 <code>tramp-remote-path</code> 变量中加入 <code>tramp-own-remote-path</code> 就行了.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> tramp-remote-path `(,@tramp-remote-path tramp-own-remote-path))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> tramp-remote-path `<span style="color: #bc6ec5;">(</span>,@tramp-remote-path tramp-own-remote-path<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -103,9 +103,9 @@ Tramp 根据 <code>tramp-remote-path</code> 中配置的路径来搜索远程主
 </div>
 </div>
 
-<div id="outline-container-org4749152" class="outline-2">
-<h2 id="org4749152">Tramp 与 org-babel 联用</h2>
-<div class="outline-text-2" id="text-org4749152">
+<div id="outline-container-org015b7b3" class="outline-2">
+<h2 id="org015b7b3">Tramp 与 org-babel 联用</h2>
+<div class="outline-text-2" id="text-org015b7b3">
 <p>
 即使经过上面的配置，当将Tramp与org-babel联用时，依然会有类似下面的错误出现:
 </p>
@@ -122,9 +122,9 @@ tramp-file-name-handler: Couldn’t write region to ‘/ssh:phone#8022:/tmp/ob-i
 你可能会觉得这很好解决，只需要改一下 <code>tramp-connection-properties</code> 向Tramp指明 <code>tmpdir</code> 的路径就行了，像这样:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(add-to-list 'tramp-connection-properties
-             (list (regexp-quote <span style="color: #8b2252;">"/ssh:phone#8022:"</span>)
-                   <span style="color: #8b2252;">"tmpdir"</span> <span style="color: #8b2252;">"/data/data/com.termux/files/usr/tmp"</span>))
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>add-to-list 'tramp-connection-properties
+             <span style="color: #bc6ec5;">(</span>list <span style="color: #2d9574;">(</span>regexp-quote <span style="color: #2d9574;">"/ssh:phone#8022:"</span><span style="color: #2d9574;">)</span>
+                   <span style="color: #2d9574;">"tmpdir"</span> <span style="color: #2d9574;">"/data/data/com.termux/files/usr/tmp"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -140,7 +140,7 @@ tramp-file-name-handler: Couldn’t write region to ‘/ssh:phone#8022:/tmp/ob-i
 我们首先看一下 Termux 中定义的 tmpdir 是哪个路径
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">TMPDIR</span>
+<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">TMPDIR</span>
 </pre>
 </div>
 
@@ -153,7 +153,7 @@ tramp-file-name-handler: Couldn’t write region to ‘/ssh:phone#8022:/tmp/ob-i
 然后将其设置为 <code>org-babel-remote-temporary-directory</code> 的值
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(set-default 'org-babel-remote-temporary-directory <span style="color: #8b2252;">"/data/data/com.termux/files/usr/tmp"</span>)
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>set-default 'org-babel-remote-temporary-directory <span style="color: #2d9574;">"/data/data/com.termux/files/usr/tmp"</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 

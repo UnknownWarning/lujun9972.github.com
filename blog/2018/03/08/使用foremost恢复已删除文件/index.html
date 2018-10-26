@@ -54,8 +54,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb436214">安装foremost</a></li>
-<li><a href="#org152333a">使用foremost扫描文件</a></li>
+<li><a href="#org64f2826">安装foremost</a></li>
+<li><a href="#org736a9ed">使用foremost扫描文件</a></li>
 </ul>
 </div>
 </div>
@@ -71,9 +71,9 @@ foremost默认可以扫描出 <code>jpg</code>, <code>gif</code>, <code>png</cod
 但是通过配置它的配置文件(默认为 <code>/etc/foremost.conf</code>),你还可以为它增加新的支持类型。
 </p>
 
-<div id="outline-container-orgb436214" class="outline-2">
-<h2 id="orgb436214">安装foremost</h2>
-<div class="outline-text-2" id="text-orgb436214">
+<div id="outline-container-org64f2826" class="outline-2">
+<h2 id="org64f2826">安装foremost</h2>
+<div class="outline-text-2" id="text-org64f2826">
 <div class="org-src-container">
 <pre class="src src-shell">sudo pacman -S foremost
 </pre>
@@ -81,9 +81,9 @@ foremost默认可以扫描出 <code>jpg</code>, <code>gif</code>, <code>png</cod
 </div>
 </div>
 
-<div id="outline-container-org152333a" class="outline-2">
-<h2 id="org152333a">使用foremost扫描文件</h2>
-<div class="outline-text-2" id="text-org152333a">
+<div id="outline-container-org736a9ed" class="outline-2">
+<h2 id="org736a9ed">使用foremost扫描文件</h2>
+<div class="outline-text-2" id="text-org736a9ed">
 <p>
 最常用的方法就是
 </p>
@@ -136,7 +136,7 @@ foremost默认可以扫描出 <code>jpg</code>, <code>gif</code>, <code>png</cod
 与 <code>-q</code> 常连用的是 <code>-b number</code>, 它可以指定磁盘每个扇区的大小，默认是512个字节。但对于 <code>ext4</code> 文件系统来说，这个值一般是4096.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo formost -q -b 4096 -t png -i /dev/sda1 -T
+<pre class="src src-shell">sudo formost -q -b <span style="color: #a45bad;">4096</span> -t png -i /dev/sda1 -T
 </pre>
 </div>
 
@@ -144,7 +144,7 @@ foremost默认可以扫描出 <code>jpg</code>, <code>gif</code>, <code>png</cod
 具体文件系统的扇区大小是多少，可以通过 <code>dumpe2fs</code> 来查看
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo  dumpe2fs /dev/sda1 |grep <span style="color: #8b2252;">"Block size"</span> |cut -f2 -d <span style="color: #8b2252;">":"</span>
+<pre class="src src-shell">sudo  dumpe2fs /dev/sda1 |grep <span style="color: #2d9574;">"Block size"</span> |cut -f2 -d <span style="color: #2d9574;">":"</span>
 </pre>
 </div>
 
@@ -152,11 +152,11 @@ foremost默认可以扫描出 <code>jpg</code>, <code>gif</code>, <code>png</cod
 我们可以写一个脚本,将 <code>foremost</code> 和 <code>dumpe2fs</code> 结合起来实现快速扫描。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a0522d;">TYPE</span>=$<span style="color: #a0522d;">1</span>
-<span style="color: #a0522d;">DIR</span>=$<span style="color: #a0522d;">2</span>
-<span style="color: #a0522d;">fs</span>=$(<span style="color: #ff00ff;">df</span>  ${<span style="color: #a0522d;">DIR</span>}|tail -n 1 |cut -f 1 -d <span style="color: #8b2252;">" "</span>)
-<span style="color: #a0522d;">block_size</span>=$(<span style="color: #ff00ff;">sudo</span>  dumpe2fs ${<span style="color: #a0522d;">fs</span>} |grep <span style="color: #8b2252;">"Block size"</span> |cut -f2 -d <span style="color: #8b2252;">":"</span>)
-foremost -t ${<span style="color: #a0522d;">TYPE</span>} -q -b ${<span style="color: #a0522d;">block_size</span>} -i ${<span style="color: #a0522d;">fs</span>} -T
+<pre class="src src-shell"><span style="color: #7590db;">TYPE</span>=$<span style="color: #a45bad;">1</span>
+<span style="color: #7590db;">DIR</span>=$<span style="color: #a45bad;">2</span>
+<span style="color: #7590db;">fs</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">df</span>  $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">DIR</span><span style="color: #bc6ec5;">}</span>|tail -n <span style="color: #a45bad;">1</span> |cut -f <span style="color: #a45bad;">1</span> -d <span style="color: #2d9574;">" "</span><span style="color: #4f97d7;">)</span>
+<span style="color: #7590db;">block_size</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">sudo</span>  dumpe2fs $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">fs</span><span style="color: #bc6ec5;">}</span> |grep <span style="color: #2d9574;">"Block size"</span> |cut -f2 -d <span style="color: #2d9574;">":"</span><span style="color: #4f97d7;">)</span>
+foremost -t $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">TYPE</span><span style="color: #4f97d7;">}</span> -q -b $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">block_size</span><span style="color: #4f97d7;">}</span> -i $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">fs</span><span style="color: #4f97d7;">}</span> -T
 </pre>
 </div>
 

@@ -53,35 +53,35 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7ef4bd4">1. 实际ID,有效ID与保存的设置ID</a></li>
-<li><a href="#org5d500f3">2. 更改用户/组ID函数</a>
+<li><a href="#orgc95f053">1. 实际ID,有效ID与保存的设置ID</a></li>
+<li><a href="#orga48bf38">2. 更改用户/组ID函数</a>
 <ul>
-<li><a href="#org397013f">2.1. 关于设置用户ID的规则说明</a></li>
-<li><a href="#org3f7c121">2.2. 关于设置组ID的规则说明</a></li>
+<li><a href="#org630215d">2.1. 关于设置用户ID的规则说明</a></li>
+<li><a href="#orgfcab78d">2.2. 关于设置组ID的规则说明</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7ef4bd4" class="outline-2">
-<h2 id="org7ef4bd4"><span class="section-number-2">1</span> 实际ID,有效ID与保存的设置ID</h2>
+<div id="outline-container-orgc95f053" class="outline-2">
+<h2 id="orgc95f053"><span class="section-number-2">1</span> 实际ID,有效ID与保存的设置ID</h2>
 </div>
-<div id="outline-container-org5d500f3" class="outline-2">
-<h2 id="org5d500f3"><span class="section-number-2">2</span> 更改用户/组ID函数</h2>
+<div id="outline-container-orga48bf38" class="outline-2">
+<h2 id="orga48bf38"><span class="section-number-2">2</span> 更改用户/组ID函数</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">setuid</span>(<span style="color: #228b22;">uid_t</span> <span style="color: #a0522d;">uid</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">setgid</span>(<span style="color: #228b22;">gid_t</span> <span style="color: #a0522d;">gid</span>);
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">setuid</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">uid_t</span> <span style="color: #7590db;">uid</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">setgid</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">gid_t</span> <span style="color: #7590db;">gid</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#21516;&#26102;&#35774;&#32622;&#23454;&#38469;/&#26377;&#25928;ID </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">setreuid</span>(<span style="color: #228b22;">uid_t</span> <span style="color: #a0522d;">ruid</span>,<span style="color: #228b22;">uid_t</span> <span style="color: #a0522d;">euid</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">setregid</span>(<span style="color: #228b22;">gid_t</span> <span style="color: #a0522d;">rgid</span>,<span style="color: #228b22;">gid_t</span> <span style="color: #a0522d;">egid</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#21516;&#26102;&#35774;&#32622;&#23454;&#38469;/&#26377;&#25928;ID </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">setreuid</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">uid_t</span> <span style="color: #7590db;">ruid</span>,<span style="color: #ce537a; font-weight: bold;">uid_t</span> <span style="color: #7590db;">euid</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">setregid</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">gid_t</span> <span style="color: #7590db;">rgid</span>,<span style="color: #ce537a; font-weight: bold;">gid_t</span> <span style="color: #7590db;">egid</span><span style="color: #4f97d7;">)</span>;
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#21482;&#26356;&#25913;&#26377;&#25928;ID </span><span style="color: #b22222;">*/</span>
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">seteuid</span>(<span style="color: #228b22;">uid_t</span> <span style="color: #a0522d;">uid</span>);
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">setegid</span>(<span style="color: #228b22;">gid_t</span> <span style="color: #a0522d;">gid</span>);
+<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#21482;&#26356;&#25913;&#26377;&#25928;ID </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">seteuid</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">uid_t</span> <span style="color: #7590db;">uid</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">setegid</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">gid_t</span> <span style="color: #7590db;">gid</span><span style="color: #4f97d7;">)</span>;
 </pre>
 </div>
 <ol class="org-ol">
@@ -91,8 +91,8 @@
 <li>若上面条件都不满足,则将errno设置为EPERM,并返回-1</li>
 </ol>
 </div>
-<div id="outline-container-org397013f" class="outline-3">
-<h3 id="org397013f"><span class="section-number-3">2.1</span> 关于设置用户ID的规则说明</h3>
+<div id="outline-container-org630215d" class="outline-3">
+<h3 id="org630215d"><span class="section-number-3">2.1</span> 关于设置用户ID的规则说明</h3>
 <div class="outline-text-3" id="text-2-1">
 <ol class="org-ol">
 <li>只有超级用户进程可以更改实际用户ID</li>
@@ -103,8 +103,8 @@
 </ol>
 </div>
 </div>
-<div id="outline-container-org3f7c121" class="outline-3">
-<h3 id="org3f7c121"><span class="section-number-3">2.2</span> 关于设置组ID的规则说明</h3>
+<div id="outline-container-orgfcab78d" class="outline-3">
+<h3 id="orgfcab78d"><span class="section-number-3">2.2</span> 关于设置组ID的规则说明</h3>
 <div class="outline-text-3" id="text-2-2">
 <ol class="org-ol">
 <li>组ID的规则类似用户ID的规则</li>

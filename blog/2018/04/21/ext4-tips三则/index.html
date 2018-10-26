@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org32ce689">瞬间创建空文件</a></li>
-<li><a href="#org1e4b40f">缩短文件系统格式化时间</a></li>
-<li><a href="#org3ae28ca">显示纳秒级的文件时间戳</a></li>
+<li><a href="#org6afb5ac">瞬间创建空文件</a></li>
+<li><a href="#org3f3ea42">缩短文件系统格式化时间</a></li>
+<li><a href="#org1bbd251">显示纳秒级的文件时间戳</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org32ce689" class="outline-2">
-<h2 id="org32ce689">瞬间创建空文件</h2>
-<div class="outline-text-2" id="text-org32ce689">
+<div id="outline-container-org6afb5ac" class="outline-2">
+<h2 id="org6afb5ac">瞬间创建空文件</h2>
+<div class="outline-text-2" id="text-org6afb5ac">
 <p>
 在ext4中，是以范围为单位将磁盘空间分割成多个连续的去块的。利用ext4的范围预分配能力，可以在几乎一瞬间完成空文件的创建。
 </p>
@@ -76,15 +76,15 @@
 使用 <code>fallocate</code> 命令能够通过ext4的范围预分配功能创建空文件。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">fallocate -l $<span style="color: #a0522d;">size</span> /path/to/blank/file
+<pre class="src src-shell">fallocate -l $<span style="color: #7590db;">size</span> /path/to/blank/file
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1e4b40f" class="outline-2">
-<h2 id="org1e4b40f">缩短文件系统格式化时间</h2>
-<div class="outline-text-2" id="text-org1e4b40f">
+<div id="outline-container-org3f3ea42" class="outline-2">
+<h2 id="org3f3ea42">缩短文件系统格式化时间</h2>
+<div class="outline-text-2" id="text-org3f3ea42">
 <p>
 在格式化大容量文件系统时，初始化inode表会相当费时间。
 </p>
@@ -99,9 +99,9 @@
 </div>
 </div>
 
-<div id="outline-container-org3ae28ca" class="outline-2">
-<h2 id="org3ae28ca">显示纳秒级的文件时间戳</h2>
-<div class="outline-text-2" id="text-org3ae28ca">
+<div id="outline-container-org1bbd251" class="outline-2">
+<h2 id="org1bbd251">显示纳秒级的文件时间戳</h2>
+<div class="outline-text-2" id="text-org1bbd251">
 <p>
 ext4中，文件的时间戳改为以纳秒为单位了，为ls命令使用 <code>--full-time</code> 能够显示以纳秒为单位的时间戳。
 </p>

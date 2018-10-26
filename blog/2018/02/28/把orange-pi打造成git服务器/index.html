@@ -54,10 +54,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org61402fd">安装golang</a></li>
-<li><a href="#org112884b">安装git</a></li>
-<li><a href="#orgedae9dc">安装Gogs</a></li>
-<li><a href="#org6bdde73">自动运行Gogs服务器</a></li>
+<li><a href="#orgb3d448c">安装golang</a></li>
+<li><a href="#org8ed3b30">安装git</a></li>
+<li><a href="#orga962671">安装Gogs</a></li>
+<li><a href="#org5d136a2">自动运行Gogs服务器</a></li>
 </ul>
 </div>
 </div>
@@ -65,9 +65,9 @@
 目前主流的开源git服务器有 <code>gitlab</code> 和 <code>gogs</code> ，考虑到 <code>gogs</code> 相对轻量级，而OrangePi的性能普遍不高，因此这里选择 <code>gogs</code>
 </p>
 
-<div id="outline-container-org61402fd" class="outline-2">
-<h2 id="org61402fd">安装golang</h2>
-<div class="outline-text-2" id="text-org61402fd">
+<div id="outline-container-orgb3d448c" class="outline-2">
+<h2 id="orgb3d448c">安装golang</h2>
+<div class="outline-text-2" id="text-orgb3d448c">
 <p>
 gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此我们直接用 <code>apt</code> 安装
 </p>
@@ -78,9 +78,9 @@ gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此
 </div>
 </div>
 
-<div id="outline-container-org112884b" class="outline-2">
-<h2 id="org112884b">安装git</h2>
-<div class="outline-text-2" id="text-org112884b">
+<div id="outline-container-org8ed3b30" class="outline-2">
+<h2 id="org8ed3b30">安装git</h2>
+<div class="outline-text-2" id="text-org8ed3b30">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install git
 </pre>
@@ -90,7 +90,7 @@ gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此
 然后创建 <code>git</code> 用户
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo adduser --disabled-login --gecos <span style="color: #8b2252;">'Gogs'</span> git
+<pre class="src src-shell">sudo adduser --disabled-login --gecos <span style="color: #2d9574;">'Gogs'</span> git
 </pre>
 </div>
 
@@ -99,24 +99,24 @@ gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">sudo su - git
-<span style="color: #483d8b;">cd</span> ~
-<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">'export GOPATH=$HOME/go'</span> &gt;&gt; $<span style="color: #a0522d;">HOME</span>/.bashrc
-<span style="color: #483d8b;">source</span> $<span style="color: #a0522d;">HOME</span>/.bashrc
+<span style="color: #4f97d7;">cd</span> ~
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">'export GOPATH=$HOME/go'</span> &gt;&gt; $<span style="color: #7590db;">HOME</span>/.bashrc
+<span style="color: #4f97d7;">source</span> $<span style="color: #7590db;">HOME</span>/.bashrc
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgedae9dc" class="outline-2">
-<h2 id="orgedae9dc">安装Gogs</h2>
-<div class="outline-text-2" id="text-orgedae9dc">
+<div id="outline-container-orga962671" class="outline-2">
+<h2 id="orga962671">安装Gogs</h2>
+<div class="outline-text-2" id="text-orga962671">
 <p>
 由于我们只是自己使用，需求很低，因此让Gogs直接使用SQLite3数据库
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">go get -u -tags <span style="color: #8b2252;">"sqlite"</span> github.com/gogits/gogs <span style="color: #b22222;"># </span><span style="color: #b22222;">&#27880;&#24847;&#65292;&#36825;&#19968;&#27493;&#35201;&#30340;&#26102;&#38388;&#36229;&#32423;&#38271;</span>
-<span style="color: #483d8b;">cd</span> $<span style="color: #a0522d;">GOPATH</span>/src/github.com/gogits/gogs
-go build -tags <span style="color: #8b2252;">"sqlite"</span>
+<pre class="src src-shell">go get -u -tags <span style="color: #2d9574;">"sqlite"</span> github.com/gogits/gogs <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#27880;&#24847;&#65292;&#36825;&#19968;&#27493;&#35201;&#30340;&#26102;&#38388;&#36229;&#32423;&#38271;</span>
+<span style="color: #4f97d7;">cd</span> $<span style="color: #7590db;">GOPATH</span>/src/github.com/gogits/gogs
+go build -tags <span style="color: #2d9574;">"sqlite"</span>
 </pre>
 </div>
 
@@ -148,9 +148,9 @@ git@orangepipc2:~/go/src/github.com/gogits/gogs$ ./gogs web
 </div>
 </div>
 
-<div id="outline-container-org6bdde73" class="outline-2">
-<h2 id="org6bdde73">自动运行Gogs服务器</h2>
-<div class="outline-text-2" id="text-org6bdde73">
+<div id="outline-container-org5d136a2" class="outline-2">
+<h2 id="org5d136a2">自动运行Gogs服务器</h2>
+<div class="outline-text-2" id="text-org5d136a2">
 <p>
 Gogs提供了一个默认的service文件供我们使用： <code>~/go/src/github.com/gogits/gogs/scripts/systemd/gogs.service</code>
 </p>
@@ -170,8 +170,8 @@ cp /home/git/go/src/github.com/gogits/gogs/scripts/systemd/gogs.service /etc/sys
 然后创建一个软连接
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">cd</span> ~/go/src/github.com/gogits/gogs
-ln -s $(<span style="color: #ff00ff;">pwd</span>) /home/git/gogs
+<pre class="src src-shell"><span style="color: #4f97d7;">cd</span> ~/go/src/github.com/gogits/gogs
+ln -s $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">pwd</span><span style="color: #4f97d7;">)</span> /home/git/gogs
 </pre>
 </div>
 

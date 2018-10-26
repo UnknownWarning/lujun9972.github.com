@@ -54,9 +54,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga812385">Debian/Ubuntu</a></li>
-<li><a href="#org73e176c">Archlinux</a></li>
-<li><a href="#orgd3827bd">Redhat,Fedora,Centos</a></li>
+<li><a href="#org95dfcef">Debian/Ubuntu</a></li>
+<li><a href="#org00a69b3">Archlinux</a></li>
+<li><a href="#orga0c62f0">Redhat,Fedora,Centos</a></li>
 </ul>
 </div>
 </div>
@@ -64,9 +64,9 @@
 从<a href="https://www.garron.me/en/linux/find-which-package-library-belongs.html%E5%AD%A6%E5%88%B0%E7%9A%84">https://www.garron.me/en/linux/find-which-package-library-belongs.html学到的</a>
 </p>
 
-<div id="outline-container-orga812385" class="outline-2">
-<h2 id="orga812385">Debian/Ubuntu</h2>
-<div class="outline-text-2" id="text-orga812385">
+<div id="outline-container-org95dfcef" class="outline-2">
+<h2 id="org95dfcef">Debian/Ubuntu</h2>
+<div class="outline-text-2" id="text-org95dfcef">
 <p>
 我们需要借助 <code>apt-file</code> 来实现
 </p>
@@ -87,20 +87,20 @@
 然后搜索
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">apt-file search ${<span style="color: #a0522d;">file</span>}
+<pre class="src src-shell">apt-file search $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org73e176c" class="outline-2">
-<h2 id="org73e176c">Archlinux</h2>
-<div class="outline-text-2" id="text-org73e176c">
+<div id="outline-container-org00a69b3" class="outline-2">
+<h2 id="org00a69b3">Archlinux</h2>
+<div class="outline-text-2" id="text-org00a69b3">
 <p>
 若只需要在已经安装的包内查询，则可以直接使用pacman
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">pacman -Qo ${<span style="color: #a0522d;">file</span>}
+<pre class="src src-shell">pacman -Qo $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 
@@ -124,20 +124,20 @@
 使用pkgfile查询
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">pkgfile ${<span style="color: #a0522d;">file</span>}
+<pre class="src src-shell">pkgfile $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd3827bd" class="outline-2">
-<h2 id="orgd3827bd">Redhat,Fedora,Centos</h2>
-<div class="outline-text-2" id="text-orgd3827bd">
+<div id="outline-container-orga0c62f0" class="outline-2">
+<h2 id="orga0c62f0">Redhat,Fedora,Centos</h2>
+<div class="outline-text-2" id="text-orga0c62f0">
 <p>
 在已安装的包中检查执行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">rpm -qf $(<span style="color: #ff00ff;">which</span> ${<span style="color: #a0522d;">file</span>})
+<pre class="src src-shell">rpm -qf $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">which</span> $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">file</span><span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 
@@ -145,7 +145,7 @@
 或者，在所有包中检查，执行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">yum provides */${<span style="color: #a0522d;">file</span>}
+<pre class="src src-shell">yum provides */$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>

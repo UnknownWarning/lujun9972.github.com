@@ -54,9 +54,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org111f9a4">安装Kgotobed</a></li>
-<li><a href="#orgd5dc8b4">使用Kgotobed</a></li>
-<li><a href="#orgf4387b1">删除kgotobed</a></li>
+<li><a href="#orgeec62a3">安装Kgotobed</a></li>
+<li><a href="#org4f21003">使用Kgotobed</a></li>
+<li><a href="#org52927b5">删除kgotobed</a></li>
 </ul>
 </div>
 </div>
@@ -64,9 +64,9 @@
 Kgotobed是一个很变态的Kernel Module。它会强制linux在特定时间关闭，而你却毫无办法(即使你是root用户)
 </p>
 
-<div id="outline-container-org111f9a4" class="outline-2">
-<h2 id="org111f9a4">安装Kgotobed</h2>
-<div class="outline-text-2" id="text-org111f9a4">
+<div id="outline-container-orgeec62a3" class="outline-2">
+<h2 id="orgeec62a3">安装Kgotobed</h2>
+<div class="outline-text-2" id="text-orgeec62a3">
 <p>
 在archlinux上要安装 <code>kgotobed</code>,首先需要安装 <code>dkms</code> 和 <code>linux</code> 这两个包
 </p>
@@ -87,7 +87,7 @@ Kgotobed是一个很变态的Kernel Module。它会强制linux在特定时间关
 编译之
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #483d8b;">cd</span> kgotobed/
+<pre class="src src-shell"><span style="color: #4f97d7;">cd</span> kgotobed/
 sudo make install
 </pre>
 </div>
@@ -150,9 +150,9 @@ systemctl start kgotobed.service
 </div>
 </div>
 
-<div id="outline-container-orgd5dc8b4" class="outline-2">
-<h2 id="orgd5dc8b4">使用Kgotobed</h2>
-<div class="outline-text-2" id="text-orgd5dc8b4">
+<div id="outline-container-org4f21003" class="outline-2">
+<h2 id="org4f21003">使用Kgotobed</h2>
+<div class="outline-text-2" id="text-org4f21003">
 <p>
 直接运行 <code>gotobed</code> 就能看到设置的强行关机的时间：
 </p>
@@ -212,9 +212,9 @@ Current bedtime is 2018-04-13 02:00:00
 </pre>
 </div>
 </div>
-<div id="outline-container-orgf4387b1" class="outline-2">
-<h2 id="orgf4387b1">删除kgotobed</h2>
-<div class="outline-text-2" id="text-orgf4387b1">
+<div id="outline-container-org52927b5" class="outline-2">
+<h2 id="org52927b5">删除kgotobed</h2>
+<div class="outline-text-2" id="text-org52927b5">
 <p>
 要逃脱强制关机的命运，几乎唯一的办法就是卸载kgotobed了，执行 <code>make uninstall</code> 卸载
 </p>

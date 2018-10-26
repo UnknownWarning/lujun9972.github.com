@@ -54,31 +54,31 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org89aebbe">常用的选项</a>
+<li><a href="#org5fae68d">常用的选项</a>
 <ul>
-<li><a href="#org4af8729">-t --expire-time=TIME</a></li>
-<li><a href="#orgcb4febb">-u --urgency=LEVEL</a></li>
-<li><a href="#org74bedaf">-i --icon=ICON[,ICON...]</a>
+<li><a href="#org7d23d53">-t --expire-time=TIME</a></li>
+<li><a href="#org1980bcf">-u --urgency=LEVEL</a></li>
+<li><a href="#orge59a9b4">-i --icon=ICON[,ICON...]</a>
 <ul>
-<li><a href="#org64ea02d">Standard Action Icons</a></li>
-<li><a href="#org747c06a">Standard Animation Icons</a></li>
-<li><a href="#org4d2dd23">Standard Application Icons</a></li>
-<li><a href="#org7f0e6cf">Standard Category Icons</a></li>
-<li><a href="#org9bfe9ad">Standard Device Icons</a></li>
-<li><a href="#org50878c9">Standard Emblem Icons</a></li>
-<li><a href="#orga65f6a2">Standard Emotion Icons</a></li>
-<li><a href="#org5264dff">Standard International Icons</a></li>
-<li><a href="#orge954a71">Standard MIME Type Icons</a></li>
-<li><a href="#org443f65d">Standard Place Icons</a></li>
-<li><a href="#org9a4158e">Standard Status Icons</a></li>
+<li><a href="#orgec5a57f">Standard Action Icons</a></li>
+<li><a href="#org8fcb69c">Standard Animation Icons</a></li>
+<li><a href="#org4f363b9">Standard Application Icons</a></li>
+<li><a href="#org9a59451">Standard Category Icons</a></li>
+<li><a href="#orgab94db7">Standard Device Icons</a></li>
+<li><a href="#org22b6923">Standard Emblem Icons</a></li>
+<li><a href="#org3c7e094">Standard Emotion Icons</a></li>
+<li><a href="#org3e123fb">Standard International Icons</a></li>
+<li><a href="#org958dbdc">Standard MIME Type Icons</a></li>
+<li><a href="#orgca9dce4">Standard Place Icons</a></li>
+<li><a href="#org69453f8">Standard Status Icons</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga894536">不常用的选项</a>
+<li><a href="#org08b5596">不常用的选项</a>
 <ul>
-<li><a href="#org21d30b5">-c --category=TYPE[,TYPE...]</a></li>
-<li><a href="#org59086b7">-h --hint=TYPE:NAME:VALUE</a></li>
+<li><a href="#org757c043">-c --category=TYPE[,TYPE...]</a></li>
+<li><a href="#orga6ac3b7">-h --hint=TYPE:NAME:VALUE</a></li>
 </ul>
 </li>
 </ul>
@@ -88,7 +88,7 @@
 通过notify-send是一个可以让你发送桌面通知的命令. 它的语法非常简单:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">notify-send [&#20854;&#20182;&#36873;&#39033;...] &#26631;&#39064; [&#20869;&#23481;]
+<pre class="src src-sh">notify-send <span style="color: #4f97d7;">[</span>&#20854;&#20182;&#36873;&#39033;...<span style="color: #4f97d7;">]</span> &#26631;&#39064; <span style="color: #4f97d7;">[</span>&#20869;&#23481;<span style="color: #4f97d7;">]</span>
 </pre>
 </div>
 
@@ -138,17 +138,17 @@
 </tbody>
 </table>
 
-<div id="outline-container-org89aebbe" class="outline-2">
-<h2 id="org89aebbe">常用的选项</h2>
-<div class="outline-text-2" id="text-org89aebbe">
+<div id="outline-container-org5fae68d" class="outline-2">
+<h2 id="org5fae68d">常用的选项</h2>
+<div class="outline-text-2" id="text-org5fae68d">
 <p>
 notify-send的常用的几个选项有这么几个:
 </p>
 </div>
 
-<div id="outline-container-org4af8729" class="outline-3">
-<h3 id="org4af8729">-t --expire-time=TIME</h3>
-<div class="outline-text-3" id="text-org4af8729">
+<div id="outline-container-org7d23d53" class="outline-3">
+<h3 id="org7d23d53">-t --expire-time=TIME</h3>
+<div class="outline-text-3" id="text-org7d23d53">
 <p>
 指定通知显示多长时间后消失,单位是毫秒. (Ubuntu的Notify OSD以及GNOME Shell会忽略该参数)
 </p>
@@ -163,9 +163,9 @@ notify-send的常用的几个选项有这么几个:
 </div>
 </div>
 
-<div id="outline-container-orgcb4febb" class="outline-3">
-<h3 id="orgcb4febb">-u --urgency=LEVEL</h3>
-<div class="outline-text-3" id="text-orgcb4febb">
+<div id="outline-container-org1980bcf" class="outline-3">
+<h3 id="org1980bcf">-u --urgency=LEVEL</h3>
+<div class="outline-text-3" id="text-org1980bcf">
 <p>
 指定通知的级别,只能是 <code>low</code>, <code>normal</code>, <code>critical</code> 这三个值中的一个.
 </p>
@@ -178,13 +178,13 @@ notify-send的常用的几个选项有这么几个:
 例如在我的机器上运行
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/bin/</span><span style="color: #a020f0;">bash</span>
+<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/bin/</span><span style="color: #4f97d7; font-weight: bold;">bash</span>
 
 notify-send ignore
-<span style="color: #a020f0;">for</span> level<span style="color: #a020f0;"> in</span> low normal critical
-<span style="color: #a020f0;">do</span>
-    notify-send -u $<span style="color: #a0522d;">level</span> $<span style="color: #a0522d;">level</span>
-<span style="color: #a020f0;">done</span>
+<span style="color: #4f97d7; font-weight: bold;">for</span> level<span style="color: #4f97d7; font-weight: bold;"> in</span> low normal critical
+<span style="color: #4f97d7; font-weight: bold;">do</span>
+    notify-send -u $<span style="color: #7590db;">level</span> $<span style="color: #7590db;">level</span>
+<span style="color: #4f97d7; font-weight: bold;">done</span>
 </pre>
 </div>
 <p>
@@ -197,9 +197,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org74bedaf" class="outline-3">
-<h3 id="org74bedaf">-i --icon=ICON[,ICON...]</h3>
-<div class="outline-text-3" id="text-org74bedaf">
+<div id="outline-container-orge59a9b4" class="outline-3">
+<h3 id="orge59a9b4">-i --icon=ICON[,ICON...]</h3>
+<div class="outline-text-3" id="text-orge59a9b4">
 <p>
 指定显示通知的图标. 其中ICON既可以是一个指向图标文件的路径,也可以是标准图标的名称.
 </p>
@@ -209,9 +209,9 @@ notify-send ignore
 </p>
 </div>
 
-<div id="outline-container-org64ea02d" class="outline-4">
-<h4 id="org64ea02d">Standard Action Icons</h4>
-<div class="outline-text-4" id="text-org64ea02d">
+<div id="outline-container-orgec5a57f" class="outline-4">
+<h4 id="orgec5a57f">Standard Action Icons</h4>
+<div class="outline-text-4" id="text-orgec5a57f">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -742,9 +742,9 @@ notify-send ignore
 </div>
 
 
-<div id="outline-container-org747c06a" class="outline-4">
-<h4 id="org747c06a">Standard Animation Icons</h4>
-<div class="outline-text-4" id="text-org747c06a">
+<div id="outline-container-org8fcb69c" class="outline-4">
+<h4 id="org8fcb69c">Standard Animation Icons</h4>
+<div class="outline-text-4" id="text-org8fcb69c">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -769,9 +769,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org4d2dd23" class="outline-4">
-<h4 id="org4d2dd23">Standard Application Icons</h4>
-<div class="outline-text-4" id="text-org4d2dd23">
+<div id="outline-container-org4f363b9" class="outline-4">
+<h4 id="org4f363b9">Standard Application Icons</h4>
+<div class="outline-text-4" id="text-org4f363b9">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -886,9 +886,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org7f0e6cf" class="outline-4">
-<h4 id="org7f0e6cf">Standard Category Icons</h4>
-<div class="outline-text-4" id="text-org7f0e6cf">
+<div id="outline-container-org9a59451" class="outline-4">
+<h4 id="org9a59451">Standard Category Icons</h4>
+<div class="outline-text-4" id="text-org9a59451">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1003,9 +1003,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org9bfe9ad" class="outline-4">
-<h4 id="org9bfe9ad">Standard Device Icons</h4>
-<div class="outline-text-4" id="text-org9bfe9ad">
+<div id="outline-container-orgab94db7" class="outline-4">
+<h4 id="orgab94db7">Standard Device Icons</h4>
+<div class="outline-text-4" id="text-orgab94db7">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1160,9 +1160,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org50878c9" class="outline-4">
-<h4 id="org50878c9">Standard Emblem Icons</h4>
-<div class="outline-text-4" id="text-org50878c9">
+<div id="outline-container-org22b6923" class="outline-4">
+<h4 id="org22b6923">Standard Emblem Icons</h4>
+<div class="outline-text-4" id="text-org22b6923">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1247,9 +1247,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-orga65f6a2" class="outline-4">
-<h4 id="orga65f6a2">Standard Emotion Icons</h4>
-<div class="outline-text-4" id="text-orga65f6a2">
+<div id="outline-container-org3c7e094" class="outline-4">
+<h4 id="org3c7e094">Standard Emotion Icons</h4>
+<div class="outline-text-4" id="text-org3c7e094">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1374,9 +1374,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org5264dff" class="outline-4">
-<h4 id="org5264dff">Standard International Icons</h4>
-<div class="outline-text-4" id="text-org5264dff">
+<div id="outline-container-org3e123fb" class="outline-4">
+<h4 id="org3e123fb">Standard International Icons</h4>
+<div class="outline-text-4" id="text-org3e123fb">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1401,9 +1401,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-orge954a71" class="outline-4">
-<h4 id="orge954a71">Standard MIME Type Icons</h4>
-<div class="outline-text-4" id="text-orge954a71">
+<div id="outline-container-org958dbdc" class="outline-4">
+<h4 id="org958dbdc">Standard MIME Type Icons</h4>
+<div class="outline-text-4" id="text-org958dbdc">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1498,9 +1498,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org443f65d" class="outline-4">
-<h4 id="org443f65d">Standard Place Icons</h4>
-<div class="outline-text-4" id="text-org443f65d">
+<div id="outline-container-orgca9dce4" class="outline-4">
+<h4 id="orgca9dce4">Standard Place Icons</h4>
+<div class="outline-text-4" id="text-orgca9dce4">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1565,9 +1565,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org9a4158e" class="outline-4">
-<h4 id="org9a4158e">Standard Status Icons</h4>
-<div class="outline-text-4" id="text-org9a4158e">
+<div id="outline-container-org69453f8" class="outline-4">
+<h4 id="org69453f8">Standard Status Icons</h4>
+<div class="outline-text-4" id="text-org69453f8">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1884,13 +1884,13 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-orga894536" class="outline-2">
-<h2 id="orga894536">不常用的选项</h2>
-<div class="outline-text-2" id="text-orga894536">
+<div id="outline-container-org08b5596" class="outline-2">
+<h2 id="org08b5596">不常用的选项</h2>
+<div class="outline-text-2" id="text-org08b5596">
 </div>
-<div id="outline-container-org21d30b5" class="outline-3">
-<h3 id="org21d30b5">-c --category=TYPE[,TYPE...]</h3>
-<div class="outline-text-3" id="text-org21d30b5">
+<div id="outline-container-org757c043" class="outline-3">
+<h3 id="org757c043">-c --category=TYPE[,TYPE...]</h3>
+<div class="outline-text-3" id="text-org757c043">
 <p>
 指定通知的类别. 
 </p>
@@ -2021,9 +2021,9 @@ notification标准定义了如下几种类别:
 </table>
 </div>
 </div>
-<div id="outline-container-org59086b7" class="outline-3">
-<h3 id="org59086b7">-h --hint=TYPE:NAME:VALUE</h3>
-<div class="outline-text-3" id="text-org59086b7">
+<div id="outline-container-orga6ac3b7" class="outline-3">
+<h3 id="orga6ac3b7">-h --hint=TYPE:NAME:VALUE</h3>
+<div class="outline-text-3" id="text-orga6ac3b7">
 <p>
 指定传递给notification server的额外数据,其中TYPE只能是int,double,string以及byte中的一个.
 </p>

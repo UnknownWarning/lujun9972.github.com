@@ -54,14 +54,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6244dbd">安装lshw</a></li>
-<li><a href="#org533619e">使用lshw</a>
+<li><a href="#orgae7fe4a">安装lshw</a></li>
+<li><a href="#orge6640bb">使用lshw</a>
 <ul>
-<li><a href="#orgbac9330">列出硬件信息</a></li>
-<li><a href="#org1a94afd">让lshw现实SCSI，USB，IDE和PCI设备的信息</a></li>
-<li><a href="#org45707ad">指定lshw输出信息的格式</a></li>
-<li><a href="#orgc064e21">让lshw显示出敏感信息</a></li>
-<li><a href="#orgcbfffcc">获取帮助</a></li>
+<li><a href="#org6a1ea63">列出硬件信息</a></li>
+<li><a href="#org4702ba3">让lshw现实SCSI，USB，IDE和PCI设备的信息</a></li>
+<li><a href="#orgee8e87d">指定lshw输出信息的格式</a></li>
+<li><a href="#orga72f9ca">让lshw显示出敏感信息</a></li>
+<li><a href="#orgbffaf5b">获取帮助</a></li>
 </ul>
 </li>
 </ul>
@@ -71,9 +71,9 @@
 lshw是一个读取硬件信息的命令行工具。
 </p>
 
-<div id="outline-container-org6244dbd" class="outline-2">
-<h2 id="org6244dbd">安装lshw</h2>
-<div class="outline-text-2" id="text-org6244dbd">
+<div id="outline-container-orgae7fe4a" class="outline-2">
+<h2 id="orgae7fe4a">安装lshw</h2>
+<div class="outline-text-2" id="text-orgae7fe4a">
 <p>
 archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </p>
@@ -84,17 +84,17 @@ archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </div>
 </div>
 
-<div id="outline-container-org533619e" class="outline-2">
-<h2 id="org533619e">使用lshw</h2>
-<div class="outline-text-2" id="text-org533619e">
+<div id="outline-container-orge6640bb" class="outline-2">
+<h2 id="orge6640bb">使用lshw</h2>
+<div class="outline-text-2" id="text-orge6640bb">
 <p>
 注意： <b>由于lshw需要读取硬件信息，因此需要使用root权限</b>
 </p>
 </div>
 
-<div id="outline-container-orgbac9330" class="outline-3">
-<h3 id="orgbac9330">列出硬件信息</h3>
-<div class="outline-text-3" id="text-orgbac9330">
+<div id="outline-container-org6a1ea63" class="outline-3">
+<h3 id="org6a1ea63">列出硬件信息</h3>
+<div class="outline-text-3" id="text-org6a1ea63">
 <p>
 直接运行lshw就能列出本机上的硬件信息了：
 </p>
@@ -638,9 +638,9 @@ archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </div>
 </div>
 
-<div id="outline-container-org1a94afd" class="outline-3">
-<h3 id="org1a94afd">让lshw现实SCSI，USB，IDE和PCI设备的信息</h3>
-<div class="outline-text-3" id="text-org1a94afd">
+<div id="outline-container-org4702ba3" class="outline-3">
+<h3 id="org4702ba3">让lshw现实SCSI，USB，IDE和PCI设备的信息</h3>
+<div class="outline-text-3" id="text-org4702ba3">
 <p>
 通过 <code>-businfo</code> 可以获取主线信息
 </p>
@@ -654,7 +654,7 @@ archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </p>
 <div class="org-src-container">
 <pre class="src src-org">Bus info          Device       Class       Description
-<span style="color: #7f7f7f;">======================================================</span>
+<span style="color: #4f97d7;">======================================================</span>
                                system      F31
                                bus         F31
                                memory      102KiB BIOS
@@ -710,15 +710,15 @@ usb@2:1           wlp0s29f7u1  network     Wireless interface
 </div>
 </div>
 
-<div id="outline-container-org45707ad" class="outline-3">
-<h3 id="org45707ad">指定lshw输出信息的格式</h3>
-<div class="outline-text-3" id="text-org45707ad">
+<div id="outline-container-orgee8e87d" class="outline-3">
+<h3 id="orgee8e87d">指定lshw输出信息的格式</h3>
+<div class="outline-text-3" id="text-orgee8e87d">
 <p>
 lshw可以将信息以html，xml或json的格式进行输出：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">lshw -html</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">lshw -xml</span>
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">lshw -html</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">lshw -xml</span>
 lshw -json
 </pre>
 </div>
@@ -1913,9 +1913,9 @@ lshw -json
 </div>
 </div>
 
-<div id="outline-container-orgc064e21" class="outline-3">
-<h3 id="orgc064e21">让lshw显示出敏感信息</h3>
-<div class="outline-text-3" id="text-orgc064e21">
+<div id="outline-container-orga72f9ca" class="outline-3">
+<h3 id="orga72f9ca">让lshw显示出敏感信息</h3>
+<div class="outline-text-3" id="text-orga72f9ca">
 <p>
 默认情况下，lshw会隐藏IP地址、serial number之类的敏感信息，若你希望把这类信息也显示出来，则可以执行
 </p>
@@ -1926,9 +1926,9 @@ lshw -json
 </div>
 </div>
 
-<div id="outline-container-orgcbfffcc" class="outline-3">
-<h3 id="orgcbfffcc">获取帮助</h3>
-<div class="outline-text-3" id="text-orgcbfffcc">
+<div id="outline-container-orgbffaf5b" class="outline-3">
+<h3 id="orgbffaf5b">获取帮助</h3>
+<div class="outline-text-3" id="text-orgbffaf5b">
 <div class="org-src-container">
 <pre class="src src-shell">lshw -help
 </pre>
@@ -1943,25 +1943,25 @@ lshw -json
 usage: lshw [-format] [-options ...]
        lshw -version
 
-        -version        print program version (unknown)
+  -version        print program version (unknown)
 
 format can be
-        -html           output hardware tree as HTML
-        -xml            output hardware tree as XML
-        -short          output hardware paths
-        -businfo        output bus information
-        -X              use graphical interface
+  -html           output hardware tree as HTML
+  -xml            output hardware tree as XML
+  -short          output hardware paths
+  -businfo        output bus information
+  -X              use graphical interface
 
 options can be
-        -class CLASS    only show a certain class of hardware
-        -C CLASS        same as '-class CLASS'
-        -c CLASS        same as '-class CLASS'
-        -disable TEST   disable a test (like pci, isapnp, cpuid, etc. )
-        -enable TEST    enable a test (like pci, isapnp, cpuid, etc. )
-        -quiet          don't display status
-        -sanitize       sanitize output (remove sensitive information like serial numbers, etc.)
-        -numeric        output numeric IDs (for PCI, USB, etc.)
-        -notime         exclude volatile attributes (timestamps) from output
+  -class CLASS    only show a certain class of hardware
+  -C CLASS        same as '-class CLASS'
+  -c CLASS        same as '-class CLASS'
+  -disable TEST   disable a test (like pci, isapnp, cpuid, etc. )
+  -enable TEST    enable a test (like pci, isapnp, cpuid, etc. )
+  -quiet          don't display status
+  -sanitize       sanitize output (remove sensitive information like serial numbers, etc.)
+  -numeric        output numeric IDs (for PCI, USB, etc.)
+  -notime         exclude volatile attributes (timestamps) from output
 
 </pre>
 </div>

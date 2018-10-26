@@ -77,13 +77,13 @@
 <div class="org-src-container">
 <pre class="src src-shell">wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.15.tar.gz
 tar xvzf libsodium-1.0.15.tar.gz
-<span style="color: #483d8b;">cd</span> libsodium-1.0.15
+<span style="color: #4f97d7;">cd</span> libsodium-1.0.15
 ./configure
 make
 make install
-<span style="color: #483d8b;">cd</span> ..
+<span style="color: #4f97d7;">cd</span> ..
 
-<span style="color: #483d8b;">echo</span> /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf
+<span style="color: #4f97d7;">echo</span> /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf
 ldconfig
 </pre>
 </div></li>
@@ -92,17 +92,17 @@ ldconfig
 创建Shadowsocks配置文件
 </p>
 <div class="org-src-container">
-<pre class="src src-json">{
-    <span style="color: #a020f0;">"server"</span>: <span style="color: #8b2252;">"jp1-sta9.27dzn.site"</span>,
-    <span style="color: #a020f0;">"server_port"</span>: <span style="color: #008b8b;">17588</span>,
-    <span style="color: #a020f0;">"local_address"</span>: <span style="color: #8b2252;">"0.0.0.0"</span>,
-    <span style="color: #a020f0;">"local_port"</span>:<span style="color: #008b8b;">1080</span>,
-    <span style="color: #a020f0;">"password"</span>:<span style="color: #8b2252;">"&#23494;&#30721;"</span>,
-    <span style="color: #a020f0;">"timeout"</span>:<span style="color: #008b8b;">300</span>,
-    <span style="color: #a020f0;">"method"</span>: <span style="color: #8b2252;">"chacha20-ietf-poly1305"</span>,
-    <span style="color: #a020f0;">"fast_open"</span>: <span style="color: #008b8b;">false</span>,
-    <span style="color: #a020f0;">"workers"</span>: <span style="color: #008b8b;">1</span>
-}
+<pre class="src src-json"><span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">"server"</span>: "jp<span style="color: #a45bad;">1</span>-sta9.<span style="color: #a45bad;">27dzn</span>.site",
+    <span style="color: #4f97d7; font-weight: bold;">"server_port"</span>: <span style="color: #a45bad;">17588</span>,
+    <span style="color: #4f97d7; font-weight: bold;">"local_address"</span>: "<span style="color: #a45bad;">0</span>.<span style="color: #a45bad;">0</span>.<span style="color: #a45bad;">0</span>.<span style="color: #a45bad;">0</span>",
+    <span style="color: #4f97d7; font-weight: bold;">"local_port"</span>:<span style="color: #a45bad;">1080</span>,
+    <span style="color: #4f97d7; font-weight: bold;">"password"</span>:<span style="color: #2d9574;">"&#23494;&#30721;"</span>,
+    <span style="color: #4f97d7; font-weight: bold;">"timeout"</span>:<span style="color: #a45bad;">300</span>,
+    <span style="color: #4f97d7; font-weight: bold;">"method"</span>: <span style="color: #2d9574;">"chacha20-ietf-poly1305"</span>,
+    <span style="color: #4f97d7; font-weight: bold;">"fast_open"</span>: <span style="color: #a45bad;">false</span>,
+    <span style="color: #4f97d7; font-weight: bold;">"workers"</span>: <span style="color: #a45bad;">1</span>
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div></li>
 
@@ -122,22 +122,22 @@ ldconfig
 新建文件 <code>/etc/systemd/system/shadowsocks.service</code> ，然后输入以下内容
 </p>
 <div class="org-src-container">
-<pre class="src src-conf">[<span style="color: #228b22;">Unit</span>]
-<span style="color: #a0522d;">Description</span>=ShadowSocks
-<span style="color: #a0522d;">After</span>=syslog.target
-<span style="color: #a0522d;">After</span>=network.target
+<pre class="src src-conf">[<span style="color: #ce537a; font-weight: bold;">Unit</span>]
+<span style="color: #7590db;">Description</span>=ShadowSocks
+<span style="color: #7590db;">After</span>=syslog.target
+<span style="color: #7590db;">After</span>=network.target
 
-[<span style="color: #228b22;">Service</span>]
-<span style="color: #a0522d;">Type</span>=simple
-<span style="color: #a0522d;">User</span>=root
-<span style="color: #a0522d;">Group</span>=root
-<span style="color: #a0522d;">WorkingDirectory</span>=/root
-<span style="color: #a0522d;">ExecStart</span>=/usr/local/bin/ssserver /etc/shadowsocks.json
-<span style="color: #a0522d;">Restart</span>=always
-<span style="color: #a0522d;">Environment</span>=USER=root HOME=/root
+[<span style="color: #ce537a; font-weight: bold;">Service</span>]
+<span style="color: #7590db;">Type</span>=simple
+<span style="color: #7590db;">User</span>=root
+<span style="color: #7590db;">Group</span>=root
+<span style="color: #7590db;">WorkingDirectory</span>=/root
+<span style="color: #7590db;">ExecStart</span>=/usr/local/bin/ssserver /etc/shadowsocks.json
+<span style="color: #7590db;">Restart</span>=always
+<span style="color: #7590db;">Environment</span>=USER=root HOME=/root
 
-[<span style="color: #228b22;">Install</span>]
-<span style="color: #a0522d;">WantedBy</span>=multi-user.target
+[<span style="color: #ce537a; font-weight: bold;">Install</span>]
+<span style="color: #7590db;">WantedBy</span>=multi-user.target
 </pre>
 </div></li>
 </ol>
