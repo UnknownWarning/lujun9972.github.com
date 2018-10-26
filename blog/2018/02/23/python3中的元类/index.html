@@ -3,22 +3,24 @@
 <head>
   <title>python3中的元类 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="编程之旅,python,metaclass" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,23 +54,23 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org47f27c5">元类(metaclass)</a></li>
-<li><a href="#org3ec7d46">Metaclass的工作原理</a>
+<li><a href="#org0d90054">元类(metaclass)</a></li>
+<li><a href="#org3abd565">Metaclass的工作原理</a>
 <ul>
-<li><a href="#org3f2b73e">查看对象的类型</a></li>
-<li><a href="#org06ed6fb">查看类的类型</a></li>
-<li><a href="#org8c11c5e">type的类型又是什么呢</a></li>
-<li><a href="#org1c9c39e">元类中的那些特殊方法</a></li>
+<li><a href="#org1de9bb5">查看对象的类型</a></li>
+<li><a href="#org483e158">查看类的类型</a></li>
+<li><a href="#orge5cd29e">type的类型又是什么呢</a></li>
+<li><a href="#org99367a7">元类中的那些特殊方法</a></li>
 </ul>
 </li>
-<li><a href="#org1af360e">class语法的实质是什么</a></li>
+<li><a href="#org1f2fdb5">class语法的实质是什么</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org47f27c5" class="outline-2">
-<h2 id="org47f27c5">元类(metaclass)</h2>
-<div class="outline-text-2" id="text-org47f27c5">
+<div id="outline-container-org0d90054" class="outline-2">
+<h2 id="org0d90054">元类(metaclass)</h2>
+<div class="outline-text-2" id="text-org0d90054">
 <p>
 Python元编程依赖于一种特别的类，叫做元类(metaclass). 根据 <a href="https://en.wikipedia.org/wiki/Metaclass">Wikipedia</a> 的说法: "面向对象中的元类就是实例为类的类"
 </p>
@@ -79,30 +79,30 @@ Python元编程依赖于一种特别的类，叫做元类(metaclass). 根据 <a 
 metaclass可以为新类定义属性，比如，下面这个名为 <code>HelloMeta</code> 的元类，可以为每个使用该元类为模板的类添加一个 <code>hello</code> 属性，而无需这些类自己定义:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">HelloMeta</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">type</span><span style="color: #4f97d7;">)</span>:
-    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#23450;&#20041;&#19968;&#20010; hello &#26041;&#27861;</span>
-    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">hello</span><span style="color: #4f97d7;">(</span>cls<span style="color: #4f97d7;">)</span>:
-        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"greetings from %s, a HelloMeta type class"</span> % <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">type</span><span style="color: #2d9574;">(</span>cls<span style="color: #67b11d;">()</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a020f0;">class</span> <span style="color: #228b22;">HelloMeta</span>(<span style="color: #483d8b;">type</span>):
+    <span style="color: #b22222;"># </span><span style="color: #b22222;">&#23450;&#20041;&#19968;&#20010; hello &#26041;&#27861;</span>
+    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">hello</span>(cls):
+        <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"greetings from %s, a HelloMeta type class"</span> % (<span style="color: #483d8b;">type</span>(cls())))
 
-    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#35843;&#29992;&#35813;metaclass&#30340;&#26041;&#27861;</span>
-    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__call__</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span>, *args, **kwargs<span style="color: #4f97d7;">)</span>:
-        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#27491;&#24120;&#21019;&#24314;&#26032;&#31867;</span>
-        <span style="color: #7590db;">cls</span> = <span style="color: #4f97d7;">type</span>.__call__<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span>, *args, **kwargs<span style="color: #4f97d7;">)</span>
+    <span style="color: #b22222;"># </span><span style="color: #b22222;">&#35843;&#29992;&#35813;metaclass&#30340;&#26041;&#27861;</span>
+    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__call__</span>(<span style="color: #a020f0;">self</span>, *args, **kwargs):
+        <span style="color: #b22222;"># </span><span style="color: #b22222;">&#27491;&#24120;&#21019;&#24314;&#26032;&#31867;</span>
+        <span style="color: #a0522d;">cls</span> = <span style="color: #483d8b;">type</span>.__call__(<span style="color: #a020f0;">self</span>, *args, **kwargs)
 
-        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#20294;&#26159;&#20026;&#27599;&#20010;&#21019;&#24314;&#30340;&#31867;&#28155;&#21152;&#19968;&#20010;hello&#26041;&#27861;</span>
-        <span style="color: #4f97d7;">setattr</span><span style="color: #4f97d7;">(</span>cls, <span style="color: #2d9574;">"hello"</span>, <span style="color: #4f97d7; font-weight: bold;">self</span>.hello<span style="color: #4f97d7;">)</span>
+        <span style="color: #b22222;"># </span><span style="color: #b22222;">&#20294;&#26159;&#20026;&#27599;&#20010;&#21019;&#24314;&#30340;&#31867;&#28155;&#21152;&#19968;&#20010;hello&#26041;&#27861;</span>
+        <span style="color: #483d8b;">setattr</span>(cls, <span style="color: #8b2252;">"hello"</span>, <span style="color: #a020f0;">self</span>.hello)
 
-        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">print('__call__() from HelloMeta',args,kwargs)</span>
-        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#36825;&#20010;&#26032;&#24314;&#30340;&#31867;</span>
-        <span style="color: #4f97d7; font-weight: bold;">return</span> cls
+        <span style="color: #b22222;"># </span><span style="color: #b22222;">print('__call__() from HelloMeta',args,kwargs)</span>
+        <span style="color: #b22222;"># </span><span style="color: #b22222;">&#36820;&#22238;&#36825;&#20010;&#26032;&#24314;&#30340;&#31867;</span>
+        <span style="color: #a020f0;">return</span> cls
 
-<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">TryHello</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">object</span>, metaclass=HelloMeta<span style="color: #4f97d7;">)</span>:
-    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">greet</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span><span style="color: #4f97d7;">)</span>:
-        <span style="color: #4f97d7; font-weight: bold;">self</span>.hello<span style="color: #4f97d7;">()</span>
+<span style="color: #a020f0;">class</span> <span style="color: #228b22;">TryHello</span>(<span style="color: #483d8b;">object</span>, metaclass=HelloMeta):
+    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">greet</span>(<span style="color: #a020f0;">self</span>):
+        <span style="color: #a020f0;">self</span>.hello()
 
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">TryHello.hello()</span>
-<span style="color: #7590db;">greeter</span> = TryHello<span style="color: #4f97d7;">()</span>
-greeter.hello<span style="color: #4f97d7;">()</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">TryHello.hello()</span>
+<span style="color: #a0522d;">greeter</span> = TryHello()
+greeter.hello()
 </pre>
 </div>
 
@@ -124,23 +124,23 @@ greeter.hello<span style="color: #4f97d7;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org3ec7d46" class="outline-2">
-<h2 id="org3ec7d46">Metaclass的工作原理</h2>
-<div class="outline-text-2" id="text-org3ec7d46">
+<div id="outline-container-org3abd565" class="outline-2">
+<h2 id="org3abd565">Metaclass的工作原理</h2>
+<div class="outline-text-2" id="text-org3abd565">
 <p>
 在了解Metaclass的工作原理之前先需要了解Python中的类型(type).
 </p>
 </div>
 
-<div id="outline-container-org3f2b73e" class="outline-3">
-<h3 id="org3f2b73e">查看对象的类型</h3>
-<div class="outline-text-3" id="text-org3f2b73e">
+<div id="outline-container-org1de9bb5" class="outline-3">
+<h3 id="org1de9bb5">查看对象的类型</h3>
+<div class="outline-text-3" id="text-org1de9bb5">
 <p>
 我们可以使用 <code>type(object)</code> 来查看 <code>object</code> 的类型
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #7590db;">obj</span>=<span style="color: #2d9574;">"Hello"</span>
-<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"obj&#30340;&#31867;&#22411;&#20026;"</span>, <span style="color: #4f97d7;">type</span><span style="color: #bc6ec5;">(</span>obj<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a0522d;">obj</span>=<span style="color: #8b2252;">"Hello"</span>
+<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"obj&#30340;&#31867;&#22411;&#20026;"</span>, <span style="color: #483d8b;">type</span>(obj))
 </pre>
 </div>
 
@@ -154,14 +154,14 @@ greeter.hello<span style="color: #4f97d7;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org06ed6fb" class="outline-3">
-<h3 id="org06ed6fb">查看类的类型</h3>
-<div class="outline-text-3" id="text-org06ed6fb">
+<div id="outline-container-org483e158" class="outline-3">
+<h3 id="org483e158">查看类的类型</h3>
+<div class="outline-text-3" id="text-org483e158">
 <p>
 上面可以看出变量 <code>obj</code> 的类型(type)为 <code>str</code> 类(class),那么 <code>str</code> 类本身的类型又是什么呢？让我们来看一下
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">type</span><span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">str</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a020f0;">print</span>(<span style="color: #483d8b;">type</span>(<span style="color: #483d8b;">str</span>))
 </pre>
 </div>
 
@@ -179,14 +179,14 @@ greeter.hello<span style="color: #4f97d7;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org8c11c5e" class="outline-3">
-<h3 id="org8c11c5e">type的类型又是什么呢</h3>
-<div class="outline-text-3" id="text-org8c11c5e">
+<div id="outline-container-orge5cd29e" class="outline-3">
+<h3 id="orge5cd29e">type的类型又是什么呢</h3>
+<div class="outline-text-3" id="text-orge5cd29e">
 <p>
 那么你一定很好奇， <code>type</code> 的类似又是什么呢？让我们来看一下
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">type</span><span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">type</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a020f0;">print</span>(<span style="color: #483d8b;">type</span>(<span style="color: #483d8b;">type</span>))
 </pre>
 </div>
 
@@ -208,9 +208,9 @@ greeter.hello<span style="color: #4f97d7;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org1c9c39e" class="outline-3">
-<h3 id="org1c9c39e">元类中的那些特殊方法</h3>
-<div class="outline-text-3" id="text-org1c9c39e">
+<div id="outline-container-org99367a7" class="outline-3">
+<h3 id="org99367a7">元类中的那些特殊方法</h3>
+<div class="outline-text-3" id="text-org99367a7">
 <p>
 <code>type</code> 类，作为Python中所有类（包括type本身）的默认元类，定义了一些特殊方法，可供自定义的元类覆盖，以完成特定的行为。
 </p>
@@ -229,25 +229,25 @@ greeter.hello<span style="color: #4f97d7;">()</span>
 
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">NewMeta</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">type</span><span style="color: #4f97d7;">)</span>:
-    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__new__</span><span style="color: #4f97d7;">(</span>*args, **kwargs<span style="color: #4f97d7;">)</span>:
-        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'__new__() from NewMeta'</span>,args,kwargs<span style="color: #4f97d7;">)</span>
-        <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7;">type</span>.__new__<span style="color: #4f97d7;">(</span>*args, **kwargs<span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a020f0;">class</span> <span style="color: #228b22;">NewMeta</span>(<span style="color: #483d8b;">type</span>):
+    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__new__</span>(*args, **kwargs):
+        <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'__new__() from NewMeta'</span>,args,kwargs)
+        <span style="color: #a020f0;">return</span> <span style="color: #483d8b;">type</span>.__new__(*args, **kwargs)
 
-    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__init__</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span>,name,*args,**kwargs<span style="color: #4f97d7;">)</span>:
-        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'__init__() from NewMeta'</span>,args,kwargs<span style="color: #4f97d7;">)</span>
-        <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7;">type</span>.__init__<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span>,name,*args,**kwargs<span style="color: #4f97d7;">)</span>
+    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__init__</span>(<span style="color: #a020f0;">self</span>,name,*args,**kwargs):
+        <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'__init__() from NewMeta'</span>,args,kwargs)
+        <span style="color: #a020f0;">return</span> <span style="color: #483d8b;">type</span>.__init__(<span style="color: #a020f0;">self</span>,name,*args,**kwargs)
 
-    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__call__</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span>, *args, **kwargs<span style="color: #4f97d7;">)</span>:
-        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'__call__() from NewMeta'</span>,args,kwargs<span style="color: #4f97d7;">)</span>
-        <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7;">type</span>.__call__<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span>, *args, **kwargs<span style="color: #4f97d7;">)</span>
+    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__call__</span>(<span style="color: #a020f0;">self</span>, *args, **kwargs):
+        <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'__call__() from NewMeta'</span>,args,kwargs)
+        <span style="color: #a020f0;">return</span> <span style="color: #483d8b;">type</span>.__call__(<span style="color: #a020f0;">self</span>, *args, **kwargs)
 
 
-<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Test</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">object</span>,metaclass=NewMeta<span style="color: #4f97d7;">)</span>:
-    <span style="color: #4f97d7; font-weight: bold;">pass</span>
+<span style="color: #a020f0;">class</span> <span style="color: #228b22;">Test</span>(<span style="color: #483d8b;">object</span>,metaclass=NewMeta):
+    <span style="color: #a020f0;">pass</span>
 
-<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'---------------------------------'</span><span style="color: #4f97d7;">)</span>
-Test<span style="color: #4f97d7;">()</span>
+<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'---------------------------------'</span>)
+Test()
 </pre>
 </div>
 
@@ -266,9 +266,9 @@ __call__() from NewMeta () {}
 </div>
 
 
-<div id="outline-container-org1af360e" class="outline-2">
-<h2 id="org1af360e">class语法的实质是什么</h2>
-<div class="outline-text-2" id="text-org1af360e">
+<div id="outline-container-org1f2fdb5" class="outline-2">
+<h2 id="org1f2fdb5">class语法的实质是什么</h2>
+<div class="outline-text-2" id="text-org1f2fdb5">
 <p>
 要了解class语法的实质，首先要明白，python中的类其实也就是对象，只不过这个对象具有创建其他对象的能力而已。
 </p>
@@ -292,7 +292,7 @@ __call__() from NewMeta () {}
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">  <span style="color: #7590db;">&#31867;</span>=&#20803;&#31867;<span style="color: #4f97d7;">(</span>&#31867;&#21517;,&#29238;&#31867;&#32452;&#25104;&#30340;&#20803;&#32452;,&#21253;&#21547;&#23646;&#24615;&#30340;&#23383;&#20856;<span style="color: #4f97d7;">)</span>
+<pre class="src src-python">  <span style="color: #a0522d;">&#31867;</span>=&#20803;&#31867;(&#31867;&#21517;,&#29238;&#31867;&#32452;&#25104;&#30340;&#20803;&#32452;,&#21253;&#21547;&#23646;&#24615;&#30340;&#23383;&#20856;)
 </pre>
 </div>
 <p>
@@ -303,14 +303,14 @@ __call__() from NewMeta () {}
 比如:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">MyType</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">type</span><span style="color: #4f97d7;">)</span>:
-    <span style="color: #4f97d7; font-weight: bold;">pass</span>
+<pre class="src src-python"><span style="color: #a020f0;">class</span> <span style="color: #228b22;">MyType</span>(<span style="color: #483d8b;">type</span>):
+    <span style="color: #a020f0;">pass</span>
 
-<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Foo</span><span style="color: #4f97d7;">(</span>metaclass=MyType<span style="color: #4f97d7;">)</span>:
-    <span style="color: #7590db;">hello</span>=<span style="color: #a45bad;">True</span>
+<span style="color: #a020f0;">class</span> <span style="color: #228b22;">Foo</span>(metaclass=MyType):
+    <span style="color: #a0522d;">hello</span>=<span style="color: #008b8b;">True</span>
 
-<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Bar</span><span style="color: #4f97d7;">(</span>Foo<span style="color: #4f97d7;">)</span>:
-    <span style="color: #4f97d7; font-weight: bold;">pass</span>
+<span style="color: #a020f0;">class</span> <span style="color: #228b22;">Bar</span>(Foo):
+    <span style="color: #a020f0;">pass</span>
 </pre>
 </div>
 
@@ -319,9 +319,9 @@ __call__() from NewMeta () {}
 其实就是
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #7590db;">Foo</span>=MyType<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'Foo'</span>, <span style="color: #bc6ec5;">()</span>, <span style="color: #bc6ec5;">{</span><span style="color: #2d9574;">'hello'</span>:<span style="color: #a45bad;">True</span><span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a0522d;">Foo</span>=MyType(<span style="color: #8b2252;">'Foo'</span>, (), {<span style="color: #8b2252;">'hello'</span>:<span style="color: #008b8b;">True</span>})
 
-<span style="color: #7590db;">Bar</span>=MyType<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'Bar'</span>, <span style="color: #bc6ec5;">(</span>Foo,<span style="color: #bc6ec5;">)</span>, <span style="color: #bc6ec5;">{}</span><span style="color: #4f97d7;">)</span>
+<span style="color: #a0522d;">Bar</span>=MyType(<span style="color: #8b2252;">'Bar'</span>, (Foo,), {})
 </pre>
 </div>
 </div>
@@ -330,77 +330,49 @@ __call__() from NewMeta () {}
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-02-23</span>
-            <span title="last modification date" class="post-info">2018-03-01</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/编程之旅">编程之旅</a> : <a href="https://lujun9972.github.io/tags/python">python</a> : <a href="https://lujun9972.github.io/tags/metaclass">metaclass</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-02-23</span>
+    <span title="last modification date" class="post-info">2018-03-01</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/编程之旅">编程之旅</a> : <a href="https://lujun9972.github.io/tags/python">python</a> : <a href="https://lujun9972.github.io/tags/metaclass">metaclass</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/02/23/python3中的元类/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/02/23/python3中的元类/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/02/23/python3中的元类/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/02/23/python3中的元类/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

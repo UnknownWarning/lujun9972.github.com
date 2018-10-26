@@ -3,22 +3,24 @@
 <head>
   <title>使用Rmail收取邮件 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="Emacs之怒" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,30 +54,30 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org36849fb">配置</a></li>
-<li><a href="#org6c607c3">阅读邮件</a></li>
-<li><a href="#org4456c1e">修改邮件</a></li>
-<li><a href="#org0c9fd07">删除邮件</a></li>
-<li><a href="#org9b901aa">保存邮件</a></li>
-<li><a href="#orgc6f9f8e">回复邮件</a></li>
-<li><a href="#orgc844462">邮件标签</a>
+<li><a href="#orgef397e5">配置</a></li>
+<li><a href="#orgf389eed">阅读邮件</a></li>
+<li><a href="#org74eb327">修改邮件</a></li>
+<li><a href="#org9db00bb">删除邮件</a></li>
+<li><a href="#org95ec158">保存邮件</a></li>
+<li><a href="#org684449d">回复邮件</a></li>
+<li><a href="#orgb52eeff">邮件标签</a>
 <ul>
-<li><a href="#org2327e96">邮件属性</a></li>
+<li><a href="#orgae8aa4c">邮件属性</a></li>
 </ul>
 </li>
-<li><a href="#org55b8b01">邮件概览</a>
+<li><a href="#org1044b35">邮件概览</a>
 <ul>
-<li><a href="#orgab5c55f">进入Summary buffer</a></li>
-<li><a href="#orge33c307">Summary buffer的操作</a></li>
+<li><a href="#org381f8e8">进入Summary buffer</a></li>
+<li><a href="#org0c7691e">Summary buffer的操作</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org36849fb" class="outline-2">
-<h2 id="org36849fb">配置</h2>
-<div class="outline-text-2" id="text-org36849fb">
+<div id="outline-container-orgef397e5" class="outline-2">
+<h2 id="orgef397e5">配置</h2>
+<div class="outline-text-2" id="text-orgef397e5">
 <p>
 Rmail启动时会调用 <code>movemail</code> 这个程序来从各个inbox中获取新邮件并合并到一个所谓的 <code>primary Rmail file</code> 中,然后读取其中的第一个未读邮件.
 </p>
@@ -86,7 +86,7 @@ Rmail启动时会调用 <code>movemail</code> 这个程序来从各个inbox中�
 因此我们首先要设置 <code>movemail</code> 这个程序的路径. 需要注意的是,存在两个版本的 <code>movemail</code>, 一个是Emacs版的movemail,一个是mailutil版本的movemail. 其中Emacs版的movemail功能很受限,不支持imap协议,也不支持TLS加密. 因此比较推荐使用mailutil版的movemail.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> rmail-movemail-program <span style="color: #2d9574;">"/usr/bin/movemail"</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> rmail-movemail-program <span style="color: #8b2252;">"/usr/bin/movemail"</span>)
 </pre>
 </div>
 
@@ -94,7 +94,7 @@ Rmail启动时会调用 <code>movemail</code> 这个程序来从各个inbox中�
 另外,参数 <code>rmail-movemail-flags</code> 中可以传递额外的命令行参数给movemail程序, 例如要反转下载邮件的顺序可以添加 <code>-r</code> 选项,要支持TLS加密,可以添加 <code>--tls</code> 参数.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> rmail-movemail-flags <span style="color: #bc6ec5;">(</span>cons <span style="color: #2d9574;">"--tls"</span> rmail-movemail-flags<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> rmail-movemail-flags (cons <span style="color: #8b2252;">"--tls"</span> rmail-movemail-flags))
 </pre>
 </div>
 
@@ -102,7 +102,7 @@ Rmail启动时会调用 <code>movemail</code> 这个程序来从各个inbox中�
 不过 <b>如果想让movemail下载邮件后依然让服务器保持原邮件,不要向 <code>rmail-movemail-flags</code> 添加 <code>-p</code> 参数,而应该配置 <code>rmail-preserve-inbox</code> 参数</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> rmail-preserve-inbox t<span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> rmail-preserve-inbox t)
 </pre>
 </div>
 
@@ -131,7 +131,7 @@ PROTO://[USER[:PASSWORD]@]HOST-OR-FILE-NAME
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">push</span> <span style="color: #2d9574;">"imap://lujun9972@imap.sina.com"</span> rmail-primary-inbox-list<span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">push</span> <span style="color: #8b2252;">"imap://lujun9972@imap.sina.com"</span> rmail-primary-inbox-list)
 </pre>
 </div>
 
@@ -139,15 +139,15 @@ PROTO://[USER[:PASSWORD]@]HOST-OR-FILE-NAME
 最后我们告诉Rmail,读取远程server上的mail需要密码
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">setq</span> rmail-remote-password-required t<span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">setq</span> rmail-remote-password-required t)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6c607c3" class="outline-2">
-<h2 id="org6c607c3">阅读邮件</h2>
-<div class="outline-text-2" id="text-org6c607c3">
+<div id="outline-container-orgf389eed" class="outline-2">
+<h2 id="orgf389eed">阅读邮件</h2>
+<div class="outline-text-2" id="text-orgf389eed">
 <p>
 设置完之后就可以直接运行 <code>M-x rmail</code> 了,rmail会从自动进入Rmail文件中第一个未读的邮件中.
 </p>
@@ -174,9 +174,9 @@ PROTO://[USER[:PASSWORD]@]HOST-OR-FILE-NAME
 </div>
 </div>
 
-<div id="outline-container-org4456c1e" class="outline-2">
-<h2 id="org4456c1e">修改邮件</h2>
-<div class="outline-text-2" id="text-org4456c1e">
+<div id="outline-container-org74eb327" class="outline-2">
+<h2 id="org74eb327">修改邮件</h2>
+<div class="outline-text-2" id="text-org74eb327">
 <p>
 默认情况下Rmail阅读邮件时是只读的. 但是你可以通过 <code>e (rmail-edit-current-message)</code> 编辑当前邮件.
 </p>
@@ -191,9 +191,9 @@ PROTO://[USER[:PASSWORD]@]HOST-OR-FILE-NAME
 </div>
 </div>
 
-<div id="outline-container-org0c9fd07" class="outline-2">
-<h2 id="org0c9fd07">删除邮件</h2>
-<div class="outline-text-2" id="text-org0c9fd07">
+<div id="outline-container-org9db00bb" class="outline-2">
+<h2 id="org9db00bb">删除邮件</h2>
+<div class="outline-text-2" id="text-org9db00bb">
 <p>
 有两种删除邮件的方法:
 </p>
@@ -216,9 +216,9 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 
-<div id="outline-container-org9b901aa" class="outline-2">
-<h2 id="org9b901aa">保存邮件</h2>
-<div class="outline-text-2" id="text-org9b901aa">
+<div id="outline-container-org95ec158" class="outline-2">
+<h2 id="org95ec158">保存邮件</h2>
+<div class="outline-text-2" id="text-org95ec158">
 <p>
 以下命令可以将邮件保存到其他文件:
 </p>
@@ -231,9 +231,9 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 
-<div id="outline-container-orgc6f9f8e" class="outline-2">
-<h2 id="orgc6f9f8e">回复邮件</h2>
-<div class="outline-text-2" id="text-orgc6f9f8e">
+<div id="outline-container-org684449d" class="outline-2">
+<h2 id="org684449d">回复邮件</h2>
+<div class="outline-text-2" id="text-org684449d">
 <p>
 除了 <code>C-x m</code> 之外,Rmail还提供了以下快捷键帮你发送邮件:
 </p>
@@ -257,9 +257,9 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 
-<div id="outline-container-orgc844462" class="outline-2">
-<h2 id="orgc844462">邮件标签</h2>
-<div class="outline-text-2" id="text-orgc844462">
+<div id="outline-container-orgb52eeff" class="outline-2">
+<h2 id="orgb52eeff">邮件标签</h2>
+<div class="outline-text-2" id="text-orgb52eeff">
 <p>
 你可以为邮件添加各式的标签并以此作为邮件分类的一种方法:
 </p>
@@ -273,9 +273,9 @@ Rmail提供了如下命令来删除邮件:
 </dl>
 </div>
 
-<div id="outline-container-org2327e96" class="outline-3">
-<h3 id="org2327e96">邮件属性</h3>
-<div class="outline-text-3" id="text-org2327e96">
+<div id="outline-container-orgae8aa4c" class="outline-3">
+<h3 id="orgae8aa4c">邮件属性</h3>
+<div class="outline-text-3" id="text-orgae8aa4c">
 <p>
 某些特定的标签有其特定的意义,这些标签被称之为属性,一般由Rmail自己维护:
 </p>
@@ -294,9 +294,9 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 
-<div id="outline-container-org55b8b01" class="outline-2">
-<h2 id="org55b8b01">邮件概览</h2>
-<div class="outline-text-2" id="text-org55b8b01">
+<div id="outline-container-org1044b35" class="outline-2">
+<h2 id="org1044b35">邮件概览</h2>
+<div class="outline-text-2" id="text-org1044b35">
 <p>
 你可以以概览的方式浏览所有的邮件,这时buffer中的每一行都代表一个邮件,并列出了该邮件的编号,日期,发送者,行数,标签以及标题.
 若觉得邮件的总行数显示了也没有意义,可以设置变量 <code>rmail-summary-line-count-flag</code> 为 <code>nil</code>. 这样在概览信息中就不会显示邮件的总行数了.
@@ -311,9 +311,9 @@ Rmail提供了如下命令来删除邮件:
 </p>
 </div>
 
-<div id="outline-container-orgab5c55f" class="outline-3">
-<h3 id="orgab5c55f">进入Summary buffer</h3>
-<div class="outline-text-3" id="text-orgab5c55f">
+<div id="outline-container-org381f8e8" class="outline-3">
+<h3 id="org381f8e8">进入Summary buffer</h3>
+<div class="outline-text-3" id="text-org381f8e8">
 <p>
 概览buffer中的信息会随着Rmail文件的改变而自动更新.
 </p>
@@ -329,9 +329,9 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 
-<div id="outline-container-orge33c307" class="outline-3">
-<h3 id="orge33c307">Summary buffer的操作</h3>
-<div class="outline-text-3" id="text-orge33c307">
+<div id="outline-container-org0c7691e" class="outline-3">
+<h3 id="org0c7691e">Summary buffer的操作</h3>
+<div class="outline-text-3" id="text-org0c7691e">
 <p>
 在概览buffer中,可以使用几乎所有的Rmail命令,这些命令会作用于光标所在行的邮件上. 例如
 </p>
@@ -363,77 +363,49 @@ Rmail提供了如下命令来删除邮件:
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2016-12-30</span>
-            <span title="last modification date" class="post-info">2017-01-01</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/emacs之怒">Emacs之怒</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2016-12-30</span>
+    <span title="last modification date" class="post-info">2017-01-01</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/emacs之怒">Emacs之怒</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2016/12/30/使用rmail收取邮件/";
-         var disqus_url = "https://lujun9972.github.io/blog/2016/12/30/使用rmail收取邮件/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2016/12/30/使用rmail收取邮件/";
+     var disqus_url = "https://lujun9972.github.io/blog/2016/12/30/使用rmail收取邮件/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

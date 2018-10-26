@@ -3,22 +3,24 @@
 <head>
   <title>使用anacron定期执行任务 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴,sysadmin" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf55d878">anacron与cron的不同点</a></li>
-<li><a href="#org5ce7747">/etc/anacrontab配置文件说明</a></li>
-<li><a href="#orga9aa18a">anacron常用的选项</a></li>
+<li><a href="#org1919f77">anacron与cron的不同点</a></li>
+<li><a href="#orgad82046">/etc/anacrontab配置文件说明</a></li>
+<li><a href="#org95161c9">anacron常用的选项</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf55d878" class="outline-2">
-<h2 id="orgf55d878">anacron与cron的不同点</h2>
-<div class="outline-text-2" id="text-orgf55d878">
+<div id="outline-container-org1919f77" class="outline-2">
+<h2 id="org1919f77">anacron与cron的不同点</h2>
+<div class="outline-text-2" id="text-org1919f77">
 <p>
 在网上可以可以看到很多文章都把anacron与cron来做比较，但实际上这两者之间的差距还是蛮大的。
 </p>
@@ -91,9 +91,9 @@
 </div>
 </div>
 
-<div id="outline-container-org5ce7747" class="outline-2">
-<h2 id="org5ce7747">/etc/anacrontab配置文件说明</h2>
-<div class="outline-text-2" id="text-org5ce7747">
+<div id="outline-container-orgad82046" class="outline-2">
+<h2 id="orgad82046">/etc/anacrontab配置文件说明</h2>
+<div class="outline-text-2" id="text-orgad82046">
 <p>
 一个 <code>/etc/anacrontab</code> 内容大致如下：
 </p>
@@ -103,22 +103,22 @@
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #2aa1ae; background-color: #292e34;"># /etc/anacrontab: configuration file for anacron</span>
+<pre class="src src-org"><span style="color: #b22222;"># /etc/anacrontab: configuration file for anacron</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;"># See anacron(8) and anacrontab(5) for details.</span>
+<span style="color: #b22222;"># See anacron(8) and anacrontab(5) for details.</span>
 
 SHELL=/bin/sh
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root
-<span style="color: #2aa1ae; background-color: #292e34;"># the maximal random delay added to the base delay of the jobs</span>
+<span style="color: #b22222;"># the maximal random delay added to the base delay of the jobs</span>
 RANDOM_DELAY=45
-<span style="color: #2aa1ae; background-color: #292e34;"># the jobs will be started during the following hours only</span>
+<span style="color: #b22222;"># the jobs will be started during the following hours only</span>
 START_HOURS_RANGE=3-22
 
 #period in days   delay in minutes   job-identifier   command
-1 5 cron.daily    nice run-parts /etc/cron.daily
-7 25  cron.weekly   nice run-parts /etc/cron.weekly
-@monthly 45 cron.monthly    nice run-parts /etc/cron.monthly
+1       5       cron.daily              nice run-parts /etc/cron.daily
+7       25      cron.weekly             nice run-parts /etc/cron.weekly
+@monthly 45     cron.monthly            nice run-parts /etc/cron.monthly
 </pre>
 </div>
 
@@ -158,9 +158,9 @@ START_HOURS_RANGE=3-22
 </div>
 </div>
 
-<div id="outline-container-orga9aa18a" class="outline-2">
-<h2 id="orga9aa18a">anacron常用的选项</h2>
-<div class="outline-text-2" id="text-orga9aa18a">
+<div id="outline-container-org95161c9" class="outline-2">
+<h2 id="org95161c9">anacron常用的选项</h2>
+<div class="outline-text-2" id="text-org95161c9">
 <p>
 anacron的常用选项有下面几个:
 </p>
@@ -179,77 +179,49 @@ anacron的常用选项有下面几个:
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-04-19</span>
-            <span title="last modification date" class="post-info">2018-04-19</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/sysadmin">sysadmin</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-04-19</span>
+    <span title="last modification date" class="post-info">2018-04-19</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/sysadmin">sysadmin</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/04/19/使用anacron定期执行任务/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/04/19/使用anacron定期执行任务/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/04/19/使用anacron定期执行任务/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/04/19/使用anacron定期执行任务/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

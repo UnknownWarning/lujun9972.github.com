@@ -3,22 +3,24 @@
 <head>
   <title>AwesomeWM中的client - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,29 +54,29 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4a16e23">client的常用操作</a>
+<li><a href="#org708899a">client的常用操作</a>
 <ul>
-<li><a href="#org46a4f30">获取当前的client</a></li>
-<li><a href="#orga23eac5">获取client列表</a>
+<li><a href="#orgdd4ba44">获取当前的client</a></li>
+<li><a href="#orgfff869c">获取client列表</a>
 <ul>
-<li><a href="#org155cfb0">获取所有的client列表</a></li>
-<li><a href="#org6ef1081">获取符合某个条件的client列表</a></li>
-<li><a href="#orgcaade2a">获取某个screen上的client列表</a></li>
+<li><a href="#org44d8fd2">获取所有的client列表</a></li>
+<li><a href="#orgfb3718f">获取符合某个条件的client列表</a></li>
+<li><a href="#orgafd5a9b">获取某个screen上的client列表</a></li>
 </ul>
 </li>
-<li><a href="#orgaab5e9b">获取窗口的位置与大小</a></li>
-<li><a href="#orgb2f0751">设置某个窗口的位置和大小</a></li>
-<li><a href="#orgf2f3c7f">raise</a></li>
-<li><a href="#orge70bfa7">lower</a></li>
-<li><a href="#org5b97311">run or raise</a></li>
-<li><a href="#orgd975301">给某个client设置鼠标操作</a></li>
-<li><a href="#org893a41b">给某个client设置快捷键</a></li>
-<li><a href="#orgd381139">关闭某个client</a></li>
-<li><a href="#orgf8ffb22">为某个client设置所属tag</a></li>
-<li><a href="#orgbd4d0e6">移动client到某个tag</a></li>
+<li><a href="#org562f68c">获取窗口的位置与大小</a></li>
+<li><a href="#org046f039">设置某个窗口的位置和大小</a></li>
+<li><a href="#org81f43ea">raise</a></li>
+<li><a href="#org07962e0">lower</a></li>
+<li><a href="#orgcc3c061">run or raise</a></li>
+<li><a href="#orgb808d19">给某个client设置鼠标操作</a></li>
+<li><a href="#orgc6cf5bd">给某个client设置快捷键</a></li>
+<li><a href="#org1b695a9">关闭某个client</a></li>
+<li><a href="#org8208fa9">为某个client设置所属tag</a></li>
+<li><a href="#orgdfde8e8">移动client到某个tag</a></li>
 </ul>
 </li>
-<li><a href="#org7bdc722">client中的signal处理</a></li>
+<li><a href="#org36ac71d">client中的signal处理</a></li>
 </ul>
 </div>
 </div>
@@ -150,54 +150,54 @@ Awesome WM 使用 client 类来指代 XClient 应用程序的一个窗口。
 需要说明的是，修改client对象的属性可能会对窗口本身产生影响，比如设置
 </p>
 <div class="org-src-container">
-<pre class="src src-lua">c.maximized=<span style="color: #a45bad;">true</span>
+<pre class="src src-lua">c.maximized=<span style="color: #008b8b;">true</span>
 </pre>
 </div>
 <p>
 会让该client最大化
 </p>
 
-<div id="outline-container-org4a16e23" class="outline-2">
-<h2 id="org4a16e23">client的常用操作</h2>
-<div class="outline-text-2" id="text-org4a16e23">
+<div id="outline-container-org708899a" class="outline-2">
+<h2 id="org708899a">client的常用操作</h2>
+<div class="outline-text-2" id="text-org708899a">
 </div>
-<div id="outline-container-org46a4f30" class="outline-3">
-<h3 id="org46a4f30">获取当前的client</h3>
-<div class="outline-text-3" id="text-org46a4f30">
+<div id="outline-container-orgdd4ba44" class="outline-3">
+<h3 id="orgdd4ba44">获取当前的client</h3>
+<div class="outline-text-3" id="text-orgdd4ba44">
 <p>
 client.focus对象总是代表当前获取焦点的窗口
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">c</span> = client.focus
-<span style="color: #4f97d7; font-weight: bold;">if</span> c <span style="color: #4f97d7; font-weight: bold;">then</span>
-  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">&#22788;&#29702;&#24403;&#21069;client</span>
-<span style="color: #4f97d7; font-weight: bold;">end</span>
+<pre class="src src-lua"><span style="color: #a020f0;">local</span> <span style="color: #a0522d;">c</span> = client.focus
+<span style="color: #a020f0;">if</span> c <span style="color: #a020f0;">then</span>
+  <span style="color: #b22222;">-- </span><span style="color: #b22222;">&#22788;&#29702;&#24403;&#21069;client</span>
+<span style="color: #a020f0;">end</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga23eac5" class="outline-3">
-<h3 id="orga23eac5">获取client列表</h3>
-<div class="outline-text-3" id="text-orga23eac5">
+<div id="outline-container-orgfff869c" class="outline-3">
+<h3 id="orgfff869c">获取client列表</h3>
+<div class="outline-text-3" id="text-orgfff869c">
 </div>
-<div id="outline-container-org155cfb0" class="outline-4">
-<h4 id="org155cfb0">获取所有的client列表</h4>
-<div class="outline-text-4" id="text-org155cfb0">
+<div id="outline-container-org44d8fd2" class="outline-4">
+<h4 id="org44d8fd2">获取所有的client列表</h4>
+<div class="outline-text-4" id="text-org44d8fd2">
 <p>
 client.get函数可以返回一个包含所有client对象的数组
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #7590db;">_</span>,<span style="color: #7590db;">c</span> <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">ipairs</span><span style="color: #4f97d7;">(</span>client.get<span style="color: #bc6ec5;">()</span><span style="color: #4f97d7;">)</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
-  <span style="color: #2aa1ae; background-color: #292e34;">--</span><span style="color: #2aa1ae; background-color: #292e34;">do something</span>
-<span style="color: #4f97d7; font-weight: bold;">end</span>
+<pre class="src src-lua"><span style="color: #a020f0;">for</span> <span style="color: #a0522d;">_</span>,<span style="color: #a0522d;">c</span> <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">ipairs</span>(client.get()) <span style="color: #a020f0;">do</span>
+  <span style="color: #b22222;">--</span><span style="color: #b22222;">do something</span>
+<span style="color: #a020f0;">end</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org6ef1081" class="outline-4">
-<h4 id="org6ef1081">获取符合某个条件的client列表</h4>
-<div class="outline-text-4" id="text-org6ef1081">
+<div id="outline-container-orgfb3718f" class="outline-4">
+<h4 id="orgfb3718f">获取符合某个条件的client列表</h4>
+<div class="outline-text-4" id="text-orgfb3718f">
 <p>
 awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client列表，其中
 </p>
@@ -212,21 +212,21 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 例如下面代码会取消所有 URxvt 应用窗口的最小化状态:
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">un-minimize all urxvt instances</span>
-<span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #bc6ec5; font-weight: bold;">urxvt</span> = <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #4f97d7;">(</span>c<span style="color: #4f97d7;">)</span>
-  <span style="color: #4f97d7; font-weight: bold;">return</span> awful.rules.match<span style="color: #4f97d7;">(</span>c, <span style="color: #bc6ec5;">{</span>class = <span style="color: #2d9574;">"URxvt"</span><span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">end</span>
+<pre class="src src-lua"><span style="color: #b22222;">-- </span><span style="color: #b22222;">un-minimize all urxvt instances</span>
+<span style="color: #a020f0;">local</span> <span style="color: #0000ff;">urxvt</span> = <span style="color: #a020f0;">function</span> (c)
+  <span style="color: #a020f0;">return</span> awful.rules.match(c, {class = <span style="color: #8b2252;">"URxvt"</span>})
+<span style="color: #a020f0;">end</span>
 
-<span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #7590db;">c</span> <span style="color: #4f97d7; font-weight: bold;">in</span> awful.client.iterate<span style="color: #4f97d7;">(</span>urxvt<span style="color: #4f97d7;">)</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
-  c.minimized = <span style="color: #a45bad;">false</span>
-<span style="color: #4f97d7; font-weight: bold;">end</span>
+<span style="color: #a020f0;">for</span> <span style="color: #a0522d;">c</span> <span style="color: #a020f0;">in</span> awful.client.iterate(urxvt) <span style="color: #a020f0;">do</span>
+  c.minimized = <span style="color: #008b8b;">false</span>
+<span style="color: #a020f0;">end</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcaade2a" class="outline-4">
-<h4 id="orgcaade2a">获取某个screen上的client列表</h4>
-<div class="outline-text-4" id="text-orgcaade2a">
+<div id="outline-container-orgafd5a9b" class="outline-4">
+<h4 id="orgafd5a9b">获取某个screen上的client列表</h4>
+<div class="outline-text-4" id="text-orgafd5a9b">
 <ul class="org-ul">
 <li>screen对象中的 <code>clients</code> 属性就是该screen上所有可见client的数组</li>
 <li>screen对象中的 <code>hidden_clients</code> 属性就是该screen上所有不可见client的数组</li>
@@ -237,18 +237,18 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-orgaab5e9b" class="outline-3">
-<h3 id="orgaab5e9b">获取窗口的位置与大小</h3>
-<div class="outline-text-3" id="text-orgaab5e9b">
+<div id="outline-container-org562f68c" class="outline-3">
+<h3 id="org562f68c">获取窗口的位置与大小</h3>
+<div class="outline-text-3" id="text-org562f68c">
 <p>
 <code>client:geometry()</code> 方法返回一个包含 <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> key 的table, 指示了窗口(不包括边框宽度)在屏幕上的偏移量和长度与宽度。
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #7590db;">c</span> = client.focus
-<span style="color: #4f97d7; font-weight: bold;">if</span> c <span style="color: #4f97d7; font-weight: bold;">then</span>
-  x,y,width,height = c:geometry<span style="color: #4f97d7;">()</span>
-  naughty.notify<span style="color: #4f97d7;">{</span>text=<span style="color: #4f97d7;">string</span>.<span style="color: #4f97d7;">format</span><span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"x=%s,y=%s,w=%s,h=%s"</span>,x,y,width,height<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">}</span>
-<span style="color: #4f97d7; font-weight: bold;">end</span>
+<pre class="src src-lua"><span style="color: #a020f0;">local</span> <span style="color: #a0522d;">c</span> = client.focus
+<span style="color: #a020f0;">if</span> c <span style="color: #a020f0;">then</span>
+  x,y,width,height = c:geometry()
+  naughty.notify{text=<span style="color: #483d8b;">string</span>.<span style="color: #483d8b;">format</span>(<span style="color: #8b2252;">"x=%s,y=%s,w=%s,h=%s"</span>,x,y,width,height)}
+<span style="color: #a020f0;">end</span>
 </pre>
 </div>
 
@@ -258,9 +258,9 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-orgb2f0751" class="outline-3">
-<h3 id="orgb2f0751">设置某个窗口的位置和大小</h3>
-<div class="outline-text-3" id="text-orgb2f0751">
+<div id="outline-container-org046f039" class="outline-3">
+<h3 id="org046f039">设置某个窗口的位置和大小</h3>
+<div class="outline-text-3" id="text-org046f039">
 <p>
 <code>client:geometry(geo)</code> 方法也能用来设置窗口的位置和大小。
 方法是先设置好一个包含 <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> key 的table,然后使用它作为参数传递给 <code>geometry</code> 方法
@@ -268,27 +268,27 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-orgf2f3c7f" class="outline-3">
-<h3 id="orgf2f3c7f">raise</h3>
-<div class="outline-text-3" id="text-orgf2f3c7f">
+<div id="outline-container-org81f43ea" class="outline-3">
+<h3 id="org81f43ea">raise</h3>
+<div class="outline-text-3" id="text-org81f43ea">
 <p>
 client::raise() 方法可以唤起指定client，让它处于其他client的最上方。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge70bfa7" class="outline-3">
-<h3 id="orge70bfa7">lower</h3>
-<div class="outline-text-3" id="text-orge70bfa7">
+<div id="outline-container-org07962e0" class="outline-3">
+<h3 id="org07962e0">lower</h3>
+<div class="outline-text-3" id="text-org07962e0">
 <p>
 client::lower() 方法让该client向下降一级
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5b97311" class="outline-3">
-<h3 id="org5b97311">run or raise</h3>
-<div class="outline-text-3" id="text-org5b97311">
+<div id="outline-container-orgcc3c061" class="outline-3">
+<h3 id="orgcc3c061">run or raise</h3>
+<div class="outline-text-3" id="text-orgcc3c061">
 <p>
 awful.client.run_or_raise(cmd,matcher,merge) 函数可以在当某个符合条件的client存在时切换到该client，否则通过执行命令的方式运行新应用。 其中:
 </p>
@@ -302,54 +302,54 @@ awful.client.run_or_raise(cmd,matcher,merge) 函数可以在当某个符合条�
 比如，下面操作当有URxvt窗口存在时，弹出该窗口，否则运行一个新 <code>urxvt</code> 应用:
 </p>
 <div class="org-src-container">
-<pre class="src src-lua"><span style="color: #4f97d7; font-weight: bold;">local</span> <span style="color: #bc6ec5; font-weight: bold;">matcher</span> = <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #4f97d7;">(</span>c<span style="color: #4f97d7;">)</span>
-  <span style="color: #4f97d7; font-weight: bold;">return</span> awful.rules.match<span style="color: #4f97d7;">(</span>c, <span style="color: #bc6ec5;">{</span>class = <span style="color: #2d9574;">'URxvt'</span><span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">end</span>
-awful.client.run_or_raise<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'urxvt'</span>, matcher<span style="color: #4f97d7;">)</span>
+<pre class="src src-lua"><span style="color: #a020f0;">local</span> <span style="color: #0000ff;">matcher</span> = <span style="color: #a020f0;">function</span> (c)
+  <span style="color: #a020f0;">return</span> awful.rules.match(c, {class = <span style="color: #8b2252;">'URxvt'</span>})
+<span style="color: #a020f0;">end</span>
+awful.client.run_or_raise(<span style="color: #8b2252;">'urxvt'</span>, matcher)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd975301" class="outline-3">
-<h3 id="orgd975301">给某个client设置鼠标操作</h3>
-<div class="outline-text-3" id="text-orgd975301">
+<div id="outline-container-orgb808d19" class="outline-3">
+<h3 id="orgb808d19">给某个client设置鼠标操作</h3>
+<div class="outline-text-3" id="text-orgb808d19">
 <p>
 client:buttons (buttons_array) 方法可以获取/设置某个client快捷键
 </p>
 </div>
 </div>
 
-<div id="outline-container-org893a41b" class="outline-3">
-<h3 id="org893a41b">给某个client设置快捷键</h3>
-<div class="outline-text-3" id="text-org893a41b">
+<div id="outline-container-orgc6cf5bd" class="outline-3">
+<h3 id="orgc6cf5bd">给某个client设置快捷键</h3>
+<div class="outline-text-3" id="text-orgc6cf5bd">
 <p>
 client::keys(keys_array) 方法可以获取/设置某个client的快捷键
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd381139" class="outline-3">
-<h3 id="orgd381139">关闭某个client</h3>
-<div class="outline-text-3" id="text-orgd381139">
+<div id="outline-container-org1b695a9" class="outline-3">
+<h3 id="org1b695a9">关闭某个client</h3>
+<div class="outline-text-3" id="text-org1b695a9">
 <p>
 client:kill() 关闭该client
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf8ffb22" class="outline-3">
-<h3 id="orgf8ffb22">为某个client设置所属tag</h3>
-<div class="outline-text-3" id="text-orgf8ffb22">
+<div id="outline-container-org8208fa9" class="outline-3">
+<h3 id="org8208fa9">为某个client设置所属tag</h3>
+<div class="outline-text-3" id="text-org8208fa9">
 <p>
 client:tags(tags_array) 方法获取/设置该client所属的tag
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbd4d0e6" class="outline-3">
-<h3 id="orgbd4d0e6">移动client到某个tag</h3>
-<div class="outline-text-3" id="text-orgbd4d0e6">
+<div id="outline-container-orgdfde8e8" class="outline-3">
+<h3 id="orgdfde8e8">移动client到某个tag</h3>
+<div class="outline-text-3" id="text-orgdfde8e8">
 <p>
 client:move_to_tag(targe) 将client移动到某个tag
 </p>
@@ -357,9 +357,9 @@ client:move_to_tag(targe) 将client移动到某个tag
 </div>
 </div>
 
-<div id="outline-container-org7bdc722" class="outline-2">
-<h2 id="org7bdc722">client中的signal处理</h2>
-<div class="outline-text-2" id="text-org7bdc722">
+<div id="outline-container-org36ac71d" class="outline-2">
+<h2 id="org36ac71d">client中的signal处理</h2>
+<div class="outline-text-2" id="text-org36ac71d">
 <ul class="org-ul">
 <li>当client对象中的某个属性发生改变时，会引发名为 <code>property::属性名</code> 的signal</li>
 
@@ -377,77 +377,49 @@ client:move_to_tag(targe) 将client移动到某个tag
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-06-10</span>
-            <span title="last modification date" class="post-info">2018-06-10</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-06-10</span>
+    <span title="last modification date" class="post-info">2018-06-10</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/06/10/awesomewm中的client/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/06/10/awesomewm中的client/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/06/10/awesomewm中的client/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/06/10/awesomewm中的client/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

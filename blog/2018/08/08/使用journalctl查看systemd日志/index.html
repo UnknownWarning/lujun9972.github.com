@@ -3,22 +3,24 @@
 <head>
   <title>使用journalctl查看systemd日志 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,19 +54,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2df39e9">systemd-journald.service</a>
+<li><a href="#orge81d2cb">systemd-journald.service</a>
 <ul>
-<li><a href="#org7748aa2">配置systemd-journald.service</a></li>
+<li><a href="#org76eca85">配置systemd-journald.service</a></li>
 </ul>
 </li>
-<li><a href="#org72614e9">journalctl常用方法</a>
+<li><a href="#orga9f2401">journalctl常用方法</a>
 <ul>
-<li><a href="#org89a5ca7">查询指定时间内的日志</a></li>
-<li><a href="#orgf299771">约束日志输出的行数</a></li>
-<li><a href="#orgde2cd17">指定日志级别</a></li>
-<li><a href="#orgd6137aa">根据日志元数据进行过滤</a></li>
-<li><a href="#org6c71ccd">根据正则表达式搜索的日志</a></li>
-<li><a href="#orgdbc51ad">其他参数</a></li>
+<li><a href="#org250d701">查询指定时间内的日志</a></li>
+<li><a href="#orgba7ac60">约束日志输出的行数</a></li>
+<li><a href="#org54e4a9c">指定日志级别</a></li>
+<li><a href="#org4ec939f">根据日志元数据进行过滤</a></li>
+<li><a href="#org98e2afc">根据正则表达式搜索的日志</a></li>
+<li><a href="#org50065e1">其他参数</a></li>
 </ul>
 </li>
 </ul>
@@ -76,9 +76,9 @@
 当启动service失败或者出现异常时，我们同行需要查看systemd的日志。 journalctl就是最常用的查看systemd日志的工具了。
 </p>
 
-<div id="outline-container-org2df39e9" class="outline-2">
-<h2 id="org2df39e9">systemd-journald.service</h2>
-<div class="outline-text-2" id="text-org2df39e9">
+<div id="outline-container-orge81d2cb" class="outline-2">
+<h2 id="orge81d2cb">systemd-journald.service</h2>
+<div class="outline-text-2" id="text-orge81d2cb">
 <p>
 systemd本身使用 <code>systemd-journald.service</code> 来提供日志服务.
 它默认以二进制的格式将日志文件存在 <code>/var/log/journal/</code> 目录中.
@@ -147,7 +147,7 @@ systemd之所以使用二进制来存储日志是因为systemd除了记录日志
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">journalctl --output=verbose --all |head -n <span style="color: #a45bad;">32</span>
+<pre class="src src-shell">journalctl --output=verbose --all |head -n 32
 </pre>
 </div>
 
@@ -193,9 +193,9 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </p>
 </div>
 
-<div id="outline-container-org7748aa2" class="outline-3">
-<h3 id="org7748aa2">配置systemd-journald.service</h3>
-<div class="outline-text-3" id="text-org7748aa2">
+<div id="outline-container-org76eca85" class="outline-3">
+<h3 id="org76eca85">配置systemd-journald.service</h3>
+<div class="outline-text-3" id="text-org76eca85">
 <p>
 <code>systemd-journald</code> 的配置文件为 <code>/etc/systemd/journald.conf</code> 中， 通过修改其中的配置信息可以影响其行为：
 </p>
@@ -205,61 +205,61 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">This file is part of systemd.</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">systemd is free software; you can redistribute it and/or modify it</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">under the terms of the GNU Lesser General Public License as published by</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">the Free Software Foundation; either version 2.1 of the License, or</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">(at your option) any later version.</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Entries in this file show the compile time defaults.</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">You can change settings by editing this file.</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Defaults can be restored by simply deleting this file.</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">See journald.conf(5) for details.</span>
+<pre class="src src-conf"><span style="color: #b22222;">#  </span><span style="color: #b22222;">This file is part of systemd.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">systemd is free software; you can redistribute it and/or modify it</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">under the terms of the GNU Lesser General Public License as published by</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">the Free Software Foundation; either version 2.1 of the License, or</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">(at your option) any later version.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Entries in this file show the compile time defaults.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">You can change settings by editing this file.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Defaults can be restored by simply deleting this file.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">See journald.conf(5) for details.</span>
 
-[<span style="color: #ce537a; font-weight: bold;">Journal</span>]
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Storage=auto</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Compress=yes</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Seal=yes</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">SplitMode=uid</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">SyncIntervalSec=5m</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">RateLimitIntervalSec=30s</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">RateLimitBurst=10000</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">SystemMaxUse=</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">SystemKeepFree=</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">SystemMaxFileSize=</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">SystemMaxFiles=100</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">RuntimeMaxUse=</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">RuntimeKeepFree=</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">RuntimeMaxFileSize=</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">RuntimeMaxFiles=100</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">MaxRetentionSec=</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">MaxFileSec=1month</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">ForwardToSyslog=no</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">ForwardToKMsg=no</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">ForwardToConsole=no</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">ForwardToWall=yes</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">TTYPath=/dev/console</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">MaxLevelStore=debug</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">MaxLevelSyslog=debug</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">MaxLevelKMsg=notice</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">MaxLevelConsole=info</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">MaxLevelWall=emerg</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">LineMax=48K</span>
+[<span style="color: #228b22;">Journal</span>]
+<span style="color: #b22222;">#</span><span style="color: #b22222;">Storage=auto</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">Compress=yes</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">Seal=yes</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">SplitMode=uid</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">SyncIntervalSec=5m</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">RateLimitIntervalSec=30s</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">RateLimitBurst=10000</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">SystemMaxUse=</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">SystemKeepFree=</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">SystemMaxFileSize=</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">SystemMaxFiles=100</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">RuntimeMaxUse=</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">RuntimeKeepFree=</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">RuntimeMaxFileSize=</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">RuntimeMaxFiles=100</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">MaxRetentionSec=</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">MaxFileSec=1month</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">ForwardToSyslog=no</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">ForwardToKMsg=no</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">ForwardToConsole=no</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">ForwardToWall=yes</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">TTYPath=/dev/console</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">MaxLevelStore=debug</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">MaxLevelSyslog=debug</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">MaxLevelKMsg=notice</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">MaxLevelConsole=info</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">MaxLevelWall=emerg</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">LineMax=48K</span>
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org72614e9" class="outline-2">
-<h2 id="org72614e9">journalctl常用方法</h2>
-<div class="outline-text-2" id="text-org72614e9">
+<div id="outline-container-orga9f2401" class="outline-2">
+<h2 id="orga9f2401">journalctl常用方法</h2>
+<div class="outline-text-2" id="text-orga9f2401">
 </div>
-<div id="outline-container-org89a5ca7" class="outline-3">
-<h3 id="org89a5ca7">查询指定时间内的日志</h3>
-<div class="outline-text-3" id="text-org89a5ca7">
+<div id="outline-container-org250d701" class="outline-3">
+<h3 id="org250d701">查询指定时间内的日志</h3>
+<div class="outline-text-3" id="text-org250d701">
 <p>
 当你直接运行 <code>journalctl</code> 时，会显示从第一次启动系统开始到现在的所有日志。
 </p>
@@ -290,7 +290,7 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 比如下面命令显示从 2018年8月1日开始的所有日志
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">journalctl --since <span style="color: #2d9574;">"2018-08-01 00:00:00"</span> |head
+<pre class="src src-shell">journalctl --since <span style="color: #8b2252;">"2018-08-01 00:00:00"</span> |head
 </pre>
 </div>
 
@@ -312,7 +312,7 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 下面命令显示从 2018年7月30日9:30开始到2018年8月1日凌晨结束的所有日志
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">journalctl --since <span style="color: #2d9574;">"2018-07-30 09:30:00"</span> --until <span style="color: #2d9574;">"2018-08-01 00:00:00"</span> |head
+<pre class="src src-shell">journalctl --since <span style="color: #8b2252;">"2018-07-30 09:30:00"</span> --until <span style="color: #8b2252;">"2018-08-01 00:00:00"</span> |head
 </pre>
 </div>
 
@@ -354,14 +354,14 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 </div>
 
-<div id="outline-container-orgf299771" class="outline-3">
-<h3 id="orgf299771">约束日志输出的行数</h3>
-<div class="outline-text-3" id="text-orgf299771">
+<div id="outline-container-orgba7ac60" class="outline-3">
+<h3 id="orgba7ac60">约束日志输出的行数</h3>
+<div class="outline-text-3" id="text-orgba7ac60">
 <p>
 若我们只是想查看日志中的最后几行，没有必要使用tail命令，通过 <code>--lines</code> 命令即可,比如上面那个命令可以写成
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">journalctl --boot --lines=<span style="color: #a45bad;">10</span>
+<pre class="src src-shell">journalctl --boot --lines=10
 </pre>
 </div>
 
@@ -383,9 +383,9 @@ Sat 2017-05-13 23:26:32.334011 HKT [s=b06763dfb5d9474bbf08a41aafa705db;i=3;b=3d8
 </div>
 
 
-<div id="outline-container-orgde2cd17" class="outline-3">
-<h3 id="orgde2cd17">指定日志级别</h3>
-<div class="outline-text-3" id="text-orgde2cd17">
+<div id="outline-container-org54e4a9c" class="outline-3">
+<h3 id="org54e4a9c">指定日志级别</h3>
+<div class="outline-text-3" id="text-org54e4a9c">
 <p>
 Linux的日志级别通常分成8个级别，从高到底分别为:
 </p>
@@ -462,20 +462,20 @@ Linux的日志级别通常分成8个级别，从高到底分别为:
 我们可以通过 <code>-p</code> 选项来指定想要查看的日志级别，比如
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">journalctl -p err --lines=<span style="color: #a45bad;">10</span>
+<pre class="src src-shell">journalctl -p err --lines=10
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd6137aa" class="outline-3">
-<h3 id="orgd6137aa">根据日志元数据进行过滤</h3>
-<div class="outline-text-3" id="text-orgd6137aa">
+<div id="outline-container-org4ec939f" class="outline-3">
+<h3 id="org4ec939f">根据日志元数据进行过滤</h3>
+<div class="outline-text-3" id="text-org4ec939f">
 <p>
 前面提到了，systemd-journald写入的日志中包含了大量的元数据，我们可以通过这些元数据对日志信息进行过滤。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">journalctl <span style="color: #4f97d7;">[</span>options<span style="color: #4f97d7;">]</span> <span style="color: #4f97d7;">[</span>MATCHES...<span style="color: #4f97d7;">]</span>
+<pre class="src src-shell">journalctl [options] [MATCHES...]
 </pre>
 </div>
 <p>
@@ -486,7 +486,7 @@ Linux的日志级别通常分成8个级别，从高到底分别为:
 比如，我们想查看本次启动后 <code>systemd-journald</code> 本身产生的日志，可以这么看
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">journalctl --boot <span style="color: #2d9574;">"_EXE=/usr/lib/systemd/systemd-journald"</span>
+<pre class="src src-shell">journalctl --boot <span style="color: #8b2252;">"_EXE=/usr/lib/systemd/systemd-journald"</span>
 </pre>
 </div>
 
@@ -522,14 +522,14 @@ Linux的日志级别通常分成8个级别，从高到底分别为:
 </div>
 
 
-<div id="outline-container-org6c71ccd" class="outline-3">
-<h3 id="org6c71ccd">根据正则表达式搜索的日志</h3>
-<div class="outline-text-3" id="text-org6c71ccd">
+<div id="outline-container-org98e2afc" class="outline-3">
+<h3 id="org98e2afc">根据正则表达式搜索的日志</h3>
+<div class="outline-text-3" id="text-org98e2afc">
 <p>
 通过 <code>--grep="REGEXP"</code> 可以过滤匹配正则表达式的日志内容,比如我想查看日志中所有与wifi相关的内容，那么可以
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">journalctl --boot --grep=<span style="color: #2d9574;">"wifi"</span>
+<pre class="src src-shell">journalctl --boot --grep=<span style="color: #8b2252;">"wifi"</span>
 </pre>
 </div>
 
@@ -571,7 +571,7 @@ Linux的日志级别通常分成8个级别，从高到底分别为:
 而若是搜索的内容中有一个大些字母,则搜索会变成大小写敏感的，这一点跟Emacs中的搜索很类似
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">journalctl --boot --grep=<span style="color: #2d9574;">"Wifi"</span>
+<pre class="src src-shell">journalctl --boot --grep=<span style="color: #8b2252;">"Wifi"</span>
 </pre>
 </div>
 
@@ -583,9 +583,9 @@ Linux的日志级别通常分成8个级别，从高到底分别为:
 </div>
 </div>
 
-<div id="outline-container-orgdbc51ad" class="outline-3">
-<h3 id="orgdbc51ad">其他参数</h3>
-<div class="outline-text-3" id="text-orgdbc51ad">
+<div id="outline-container-org50065e1" class="outline-3">
+<h3 id="org50065e1">其他参数</h3>
+<div class="outline-text-3" id="text-org50065e1">
 <p>
 除了上面提到的这些选项外，还有一些比较常用的选项，列举在此:
 </p>
@@ -602,77 +602,49 @@ Linux的日志级别通常分成8个级别，从高到底分别为:
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-08-08</span>
-            <span title="last modification date" class="post-info">2018-10-09</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-08-08</span>
+    <span title="last modification date" class="post-info">2018-10-09</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/08/08/使用journalctl查看systemd日志/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/08/08/使用journalctl查看systemd日志/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/08/08/使用journalctl查看systemd日志/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/08/08/使用journalctl查看systemd日志/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

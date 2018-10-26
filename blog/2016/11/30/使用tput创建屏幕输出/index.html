@@ -3,21 +3,23 @@
 <head>
   <title>使用tput创建屏幕输出 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -31,15 +33,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -53,21 +53,21 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd34a5fe">1. tput与terminfo</a></li>
-<li><a href="#orgc60fa71">2. tput常用法</a></li>
-<li><a href="#orgf9762ea">3. tput的使用</a>
+<li><a href="#org4bfb9e5">1. tput与terminfo</a></li>
+<li><a href="#org6d38078">2. tput常用法</a></li>
+<li><a href="#org4cf0bc5">3. tput的使用</a>
 <ul>
-<li><a href="#org8fce0d6">3.1. 设置终端属性</a></li>
-<li><a href="#org094d45d">3.2. 获取终端属性</a></li>
-<li><a href="#orgdd7a0be">3.3. 判断终端是否存在某项能力</a></li>
+<li><a href="#orgfee1002">3.1. 设置终端属性</a></li>
+<li><a href="#org3e2e35b">3.2. 获取终端属性</a></li>
+<li><a href="#org4c51d8d">3.3. 判断终端是否存在某项能力</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd34a5fe" class="outline-2">
-<h2 id="orgd34a5fe"><span class="section-number-2">1</span> tput与terminfo</h2>
+<div id="outline-container-org4bfb9e5" class="outline-2">
+<h2 id="org4bfb9e5"><span class="section-number-2">1</span> tput与terminfo</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 tput 命令将通过 terminfo 数据库对您的终端会话进行初始化和操作。通过使用 tput，您可以更改几项终端功能，如移动或更改光标、更改文本属性，以及清除终端屏幕的特定区域。
@@ -80,8 +80,8 @@ UNIX 中的几个常用程序都依赖 terminfo 数据库提供这些属性以�
 </div>
 </div>
 
-<div id="outline-container-orgc60fa71" class="outline-2">
-<h2 id="orgc60fa71"><span class="section-number-2">2</span> tput常用法</h2>
+<div id="outline-container-org6d38078" class="outline-2">
+<h2 id="org6d38078"><span class="section-number-2">2</span> tput常用法</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 tput默认通过$TERM的值来指示终端类型，但我们也可以通过 <code>-T $Type</code> 来指定终端类型。不过一般来说都没有这个必要。
@@ -101,8 +101,8 @@ tput默认通过$TERM的值来指示终端类型，但我们也可以通过 <cod
 </div>
 </div>
 
-<div id="outline-container-orgf9762ea" class="outline-2">
-<h2 id="orgf9762ea"><span class="section-number-2">3</span> tput的使用</h2>
+<div id="outline-container-org4cf0bc5" class="outline-2">
+<h2 id="org4cf0bc5"><span class="section-number-2">3</span> tput的使用</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 tput一般用于作三件事情: 设置终端属性,获取终端属性以及判断终端是否支持某项能力.
@@ -117,8 +117,8 @@ tput一般用于作三件事情: 设置终端属性,获取终端属性以及判�
 </p>
 </div>
 
-<div id="outline-container-org8fce0d6" class="outline-3">
-<h3 id="org8fce0d6"><span class="section-number-3">3.1</span> 设置终端属性</h3>
+<div id="outline-container-orgfee1002" class="outline-3">
+<h3 id="orgfee1002"><span class="section-number-3">3.1</span> 设置终端属性</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 tput主要是通过输出控制码字符串来实现一些特殊终端效果的. 
@@ -207,29 +207,29 @@ tput主要是通过输出控制码字符串来实现一些特殊终端效果的.
 下面是一个例子
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/bin/</span><span style="color: #4f97d7; font-weight: bold;">bash</span>
+<pre class="src src-sh"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/bin/</span><span style="color: #a020f0;">bash</span>
 
-<span style="color: #7590db;">BOLD</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">tput</span> bold<span style="color: #4f97d7;">)</span>
-<span style="color: #7590db;">REV</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">tput</span> rev<span style="color: #4f97d7;">)</span>
-<span style="color: #7590db;">NORMAL</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">tput</span> sgr0<span style="color: #4f97d7;">)</span>
-<span style="color: #7590db;">CURSOR_OFF</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">tput</span> civis<span style="color: #4f97d7;">)</span>
-<span style="color: #7590db;">CURSOR_ON</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">tput</span> cnorm<span style="color: #4f97d7;">)</span>
+<span style="color: #a0522d;">BOLD</span>=$(<span style="color: #ff00ff;">tput</span> bold)
+<span style="color: #a0522d;">REV</span>=$(<span style="color: #ff00ff;">tput</span> rev)
+<span style="color: #a0522d;">NORMAL</span>=$(<span style="color: #ff00ff;">tput</span> sgr0)
+<span style="color: #a0522d;">CURSOR_OFF</span>=$(<span style="color: #ff00ff;">tput</span> civis)
+<span style="color: #a0522d;">CURSOR_ON</span>=$(<span style="color: #ff00ff;">tput</span> cnorm)
 
 tput init
 
 tput clear
-<span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">CURSOR_OFF</span>
-tput cup <span style="color: #a45bad;">2</span> <span style="color: #a45bad;">15</span>
-<span style="color: #4f97d7;">echo</span> -e <span style="color: #2d9574;">"${BOLD}&#31895;&#20307;&#25928;&#26524;{NORMAL}\n"</span>
-<span style="color: #4f97d7;">echo</span>  <span style="color: #2d9574;">"${REV}&#21453;&#36716;&#25928;&#26524;${NORMAL}"</span>
-<span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">CURSOR_ON</span>
+<span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">CURSOR_OFF</span>
+tput cup 2 15
+<span style="color: #483d8b;">echo</span> -e <span style="color: #8b2252;">"${BOLD}&#31895;&#20307;&#25928;&#26524;{NORMAL}\n"</span>
+<span style="color: #483d8b;">echo</span>  <span style="color: #8b2252;">"${REV}&#21453;&#36716;&#25928;&#26524;${NORMAL}"</span>
+<span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">CURSOR_ON</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org094d45d" class="outline-3">
-<h3 id="org094d45d"><span class="section-number-3">3.2</span> 获取终端属性</h3>
+<div id="outline-container-org3e2e35b" class="outline-3">
+<h3 id="org3e2e35b"><span class="section-number-3">3.2</span> 获取终端属性</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 tput会输出一个数字,表示该属性的值.
@@ -245,19 +245,19 @@ tput会输出一个数字,表示该属性的值.
 下面是一个例子
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"The terminal is $(</span><span style="color: #fa8072;">tput</span><span style="color: #2d9574;"> cols) x $(</span><span style="color: #fa8072;">tput</span><span style="color: #2d9574;"> lines)"</span>
+<pre class="src src-sh"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"The terminal is $(</span><span style="color: #ff00ff;">tput</span><span style="color: #8b2252;"> cols) x $(</span><span style="color: #ff00ff;">tput</span><span style="color: #8b2252;"> lines)"</span>
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org">The terminal is  x 
+<pre class="src src-org">The terminal is 80 x 24
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgdd7a0be" class="outline-3">
-<h3 id="orgdd7a0be"><span class="section-number-3">3.3</span> 判断终端是否存在某项能力</h3>
+<div id="outline-container-org4c51d8d" class="outline-3">
+<h3 id="org4c51d8d"><span class="section-number-3">3.3</span> 判断终端是否存在某项能力</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 tput会通过返回值来表示是否具有这项能力(0表示true,1表示false).
@@ -272,11 +272,11 @@ tput会通过返回值来表示是否具有这项能力(0表示true,1表示false
 下面是一个例子:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #4f97d7; font-weight: bold;">if</span> tput hs;<span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"your terminal has a status lne"</span>
-<span style="color: #4f97d7; font-weight: bold;">else</span>
-    <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"your terminal has NO status line"</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
+<pre class="src src-sh"><span style="color: #a020f0;">if</span> tput hs;<span style="color: #a020f0;">then</span>
+    <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"your terminal has a status lne"</span>
+<span style="color: #a020f0;">else</span>
+    <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"your terminal has NO status line"</span>
+<span style="color: #a020f0;">fi</span>
 </pre>
 </div>
 
@@ -291,77 +291,49 @@ tput会通过返回值来表示是否具有这项能力(0表示true,1表示false
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2016-11-30</span>
-            <span title="last modification date" class="post-info">2016-12-01</span>
-            <span title="tags" class="post-info">:N/A:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2016-11-30</span>
+    <span title="last modification date" class="post-info">2016-12-01</span>
+    <span title="tags" class="post-info">N/A</span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2016/11/30/使用tput创建屏幕输出/";
-         var disqus_url = "https://lujun9972.github.io/blog/2016/11/30/使用tput创建屏幕输出/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2016/11/30/使用tput创建屏幕输出/";
+     var disqus_url = "https://lujun9972.github.io/blog/2016/11/30/使用tput创建屏幕输出/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

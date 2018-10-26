@@ -3,22 +3,24 @@
 <head>
   <title>如何编写bash completion script - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴,bash,completion" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,21 +54,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdc7e050">静态补全</a></li>
-<li><a href="#orgc8fdb53">动态补全</a>
+<li><a href="#orge09e777">静态补全</a></li>
+<li><a href="#orgb7da0d4">动态补全</a>
 <ul>
-<li><a href="#orgb576e80">compgen命令</a></li>
-<li><a href="#org8554d82">注册动态补全函数</a></li>
-<li><a href="#orgd61f38e">举个例子</a></li>
+<li><a href="#orgb771d34">compgen命令</a></li>
+<li><a href="#orgc650055">注册动态补全函数</a></li>
+<li><a href="#org25b807c">举个例子</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgdc7e050" class="outline-2">
-<h2 id="orgdc7e050">静态补全</h2>
-<div class="outline-text-2" id="text-orgdc7e050">
+<div id="outline-container-orge09e777" class="outline-2">
+<h2 id="orge09e777">静态补全</h2>
+<div class="outline-text-2" id="text-orge09e777">
 <p>
 创建静态补全很简单，只需要使用 <code>complete</code> 的 <code>-W</code> (wordlist) 选项为脚本注册补全的单词列表就行了。
 </p>
@@ -77,7 +77,7 @@
 比如，假设有一个 <code>myscript</code> 脚本，可以接参数 <code>him,her,me,you</code>, 那么我们可以执行：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">complete</span> -W <span style="color: #2d9574;">"him her me you"</span> myscript
+<pre class="src src-shell"><span style="color: #483d8b;">complete</span> -W <span style="color: #8b2252;">"him her me you"</span> myscript
 </pre>
 </div>
 
@@ -119,9 +119,9 @@ her  him
 </div>
 </div>
 
-<div id="outline-container-orgc8fdb53" class="outline-2">
-<h2 id="orgc8fdb53">动态补全</h2>
-<div class="outline-text-2" id="text-orgc8fdb53">
+<div id="outline-container-orgb7da0d4" class="outline-2">
+<h2 id="orgb7da0d4">动态补全</h2>
+<div class="outline-text-2" id="text-orgb7da0d4">
 <p>
 动态补全能够根据用户的环境动态的生成补全的内容。 当出发动态补全时，bash会在当前shell中执行一个补全函数，然后从变量 <code>COMPREPLY</code> 中读取补全的内容。
 </p>
@@ -136,14 +136,14 @@ her  him
 <dt>COMP_LINE</dt><dd>当前命令行的内容</dd>
 </dl>
 </div>
-<div id="outline-container-orgb576e80" class="outline-3">
-<h3 id="orgb576e80">compgen命令</h3>
-<div class="outline-text-3" id="text-orgb576e80">
+<div id="outline-container-orgb771d34" class="outline-3">
+<h3 id="orgb771d34">compgen命令</h3>
+<div class="outline-text-3" id="text-orgb771d34">
 <p>
 compgen是一款内置命令,它与 <code>complete</code> 命令类似，但可以根据已经输入的内容对补全内容进行过滤，比如
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">compgen</span> -W <span style="color: #2d9574;">"him her me you"</span> h
+<pre class="src src-shell"><span style="color: #483d8b;">compgen</span> -W <span style="color: #8b2252;">"him her me you"</span> h
 </pre>
 </div>
 
@@ -161,9 +161,9 @@ her
 </p>
 </div>
 </div>
-<div id="outline-container-org8554d82" class="outline-3">
-<h3 id="org8554d82">注册动态补全函数</h3>
-<div class="outline-text-3" id="text-org8554d82">
+<div id="outline-container-orgc650055" class="outline-3">
+<h3 id="orgc650055">注册动态补全函数</h3>
+<div class="outline-text-3" id="text-orgc650055">
 <p>
 要为命令注册动态补全函数，则需要使用 <code>completion</code> 的 <code>-F 函数</code> 参数:
 </p>
@@ -173,9 +173,9 @@ her
 </div>
 </div>
 </div>
-<div id="outline-container-orgd61f38e" class="outline-3">
-<h3 id="orgd61f38e">举个例子</h3>
-<div class="outline-text-3" id="text-orgd61f38e">
+<div id="outline-container-org25b807c" class="outline-3">
+<h3 id="org25b807c">举个例子</h3>
+<div class="outline-text-3" id="text-org25b807c">
 <p>
 比如，我想为 <code>myscript</code> 增加一个补全，这个补全的逻辑是:
 </p>
@@ -190,21 +190,21 @@ her
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#39318;&#20808;&#65292;&#23450;&#20041;&#19968;&#20010;&#34917;&#20840;&#20989;&#25968;</span>
-<span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">_myscript_completion</span><span style="color: #4f97d7;">()</span>
-<span style="color: #4f97d7;">{</span>
-    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> <span style="color: #2d9574;">"${COMP_CWORD}"</span> == <span style="color: #2d9574;">"1"</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#34917;&#20840;&#30340;&#26159;&#31532;&#19968;&#20010;&#21442;&#25968;&#65292;&#21017;&#21487;&#20197;&#26159; -f &#25110; -d</span>
-        <span style="color: #7590db;">COMPREPLY</span>=<span style="color: #bc6ec5;">(</span>$<span style="color: #2d9574;">(</span><span style="color: #fa8072;">compgen</span> -W <span style="color: #2d9574;">"-f -d"</span> $<span style="color: #67b11d;">{</span><span style="color: #7590db;">COMP_WORDS</span><span style="color: #b1951d;">[</span>$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">COMP_CWORD</span><span style="color: #4f97d7;">}</span><span style="color: #b1951d;">]</span><span style="color: #67b11d;">}</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-    <span style="color: #4f97d7; font-weight: bold;">elif</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> <span style="color: #2d9574;">"${COMP_WORDS[1]}"</span> == <span style="color: #2d9574;">"-f"</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-        <span style="color: #7590db;">COMPREPLY</span>=<span style="color: #bc6ec5;">(</span>$<span style="color: #2d9574;">(</span><span style="color: #fa8072;">compgen</span> -f $<span style="color: #67b11d;">{</span><span style="color: #7590db;">COMP_WORDS</span><span style="color: #b1951d;">[</span>$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">COMP_CWORD</span><span style="color: #4f97d7;">}</span><span style="color: #b1951d;">]</span><span style="color: #67b11d;">}</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-    <span style="color: #4f97d7; font-weight: bold;">elif</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> <span style="color: #2d9574;">"${COMP_WORDS[1]}"</span> == <span style="color: #2d9574;">"-d"</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-        <span style="color: #7590db;">COMPREPLY</span>=<span style="color: #bc6ec5;">(</span>$<span style="color: #2d9574;">(</span><span style="color: #fa8072;">compgen</span> -d $<span style="color: #67b11d;">{</span><span style="color: #7590db;">COMP_WORDS</span><span style="color: #b1951d;">[</span>$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">COMP_CWORD</span><span style="color: #4f97d7;">}</span><span style="color: #b1951d;">]</span><span style="color: #67b11d;">}</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-    <span style="color: #4f97d7; font-weight: bold;">fi</span>
-<span style="color: #4f97d7;">}</span>
+<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">&#39318;&#20808;&#65292;&#23450;&#20041;&#19968;&#20010;&#34917;&#20840;&#20989;&#25968;</span>
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">_myscript_completion</span>()
+{
+    <span style="color: #a020f0;">if</span> [[ <span style="color: #8b2252;">"${COMP_CWORD}"</span> == <span style="color: #8b2252;">"1"</span> ]];<span style="color: #a020f0;">then</span>
+        <span style="color: #b22222;"># </span><span style="color: #b22222;">&#33509;&#34917;&#20840;&#30340;&#26159;&#31532;&#19968;&#20010;&#21442;&#25968;&#65292;&#21017;&#21487;&#20197;&#26159; -f &#25110; -d</span>
+        <span style="color: #a0522d;">COMPREPLY</span>=($(<span style="color: #ff00ff;">compgen</span> -W <span style="color: #8b2252;">"-f -d"</span> ${<span style="color: #a0522d;">COMP_WORDS</span>[${<span style="color: #a0522d;">COMP_CWORD</span>}]}))
+    <span style="color: #a020f0;">elif</span> [[ <span style="color: #8b2252;">"${COMP_WORDS[1]}"</span> == <span style="color: #8b2252;">"-f"</span> ]];<span style="color: #a020f0;">then</span>
+        <span style="color: #a0522d;">COMPREPLY</span>=($(<span style="color: #ff00ff;">compgen</span> -f ${<span style="color: #a0522d;">COMP_WORDS</span>[${<span style="color: #a0522d;">COMP_CWORD</span>}]}))
+    <span style="color: #a020f0;">elif</span> [[ <span style="color: #8b2252;">"${COMP_WORDS[1]}"</span> == <span style="color: #8b2252;">"-d"</span> ]];<span style="color: #a020f0;">then</span>
+        <span style="color: #a0522d;">COMPREPLY</span>=($(<span style="color: #ff00ff;">compgen</span> -d ${<span style="color: #a0522d;">COMP_WORDS</span>[${<span style="color: #a0522d;">COMP_CWORD</span>}]}))
+    <span style="color: #a020f0;">fi</span>
+}
 
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#27880;&#20876;&#34917;&#20840;&#20989;&#25968;</span>
-<span style="color: #4f97d7;">complete</span> -F _myscript_completion myscript
+<span style="color: #b22222;"># </span><span style="color: #b22222;">&#27880;&#20876;&#34917;&#20840;&#20989;&#25968;</span>
+<span style="color: #483d8b;">complete</span> -F _myscript_completion myscript
 </pre>
 </div>
 </div>
@@ -214,77 +214,49 @@ her
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-03-13</span>
-            <span title="last modification date" class="post-info">2018-03-13</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/bash">bash</a> : <a href="https://lujun9972.github.io/tags/completion">completion</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-03-13</span>
+    <span title="last modification date" class="post-info">2018-03-13</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/bash">bash</a> : <a href="https://lujun9972.github.io/tags/completion">completion</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/03/13/如何编写bash-completion-script/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/03/13/如何编写bash-completion-script/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/03/13/如何编写bash-completion-script/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/03/13/如何编写bash-completion-script/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

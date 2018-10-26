@@ -3,21 +3,23 @@
 <head>
   <title>文件和目录 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="DarkSun" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -31,15 +33,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -53,76 +53,76 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgec84f30">1. stat,fstat和lstat函数</a></li>
-<li><a href="#org34da5eb">2. UNIX中的文件类型</a></li>
-<li><a href="#org2a7cafd">3. 关于文件的访问权限</a>
+<li><a href="#org0055314">1. stat,fstat和lstat函数</a></li>
+<li><a href="#org31c7a54">2. UNIX中的文件类型</a></li>
+<li><a href="#org421d849">3. 关于文件的访问权限</a>
 <ul>
-<li><a href="#org82dbd30">3.1. 用户ID与组ID</a>
+<li><a href="#org55012ea">3.1. 用户ID与组ID</a>
 <ul>
-<li><a href="#org0b99ed0">3.1.1. 与一个进程相关联的ID有:</a></li>
+<li><a href="#org9447f4a">3.1.1. 与一个进程相关联的ID有:</a></li>
 </ul>
 </li>
-<li><a href="#orgf20172a">3.2. 访问权限与测试宏</a></li>
-<li><a href="#org8e4d928">3.3. 关于访问权限的一些说明</a></li>
-<li><a href="#orgff94ba3">3.4. access函数:使用实际权限执行权限测试</a></li>
-<li><a href="#org7e6f13b">3.5. umask函数:为进程设置创建文件权限的屏蔽字</a></li>
-<li><a href="#orgd9286d3">3.6. chmod/fchmod函数:更改现有文件的访问权限</a></li>
-<li><a href="#org8dd7e7d">3.7. 关于粘住位的说明</a></li>
-<li><a href="#orgbb48f75">3.8. chown/fchown/lchown函数更改文件的用户ID和组DI</a></li>
+<li><a href="#org9fd4c46">3.2. 访问权限与测试宏</a></li>
+<li><a href="#org29274df">3.3. 关于访问权限的一些说明</a></li>
+<li><a href="#org28bb4ce">3.4. access函数:使用实际权限执行权限测试</a></li>
+<li><a href="#orgc00f144">3.5. umask函数:为进程设置创建文件权限的屏蔽字</a></li>
+<li><a href="#org5c5b64a">3.6. chmod/fchmod函数:更改现有文件的访问权限</a></li>
+<li><a href="#orgd4efde5">3.7. 关于粘住位的说明</a></li>
+<li><a href="#orge194071">3.8. chown/fchown/lchown函数更改文件的用户ID和组DI</a></li>
 </ul>
 </li>
-<li><a href="#org4e38340">4. 关于文件长度</a>
+<li><a href="#org026bb02">4. 关于文件长度</a>
 <ul>
-<li><a href="#org48feb25">4.1. 文件中的空洞</a></li>
-<li><a href="#orgfaa4b97">4.2. truncate函数:截断文件</a></li>
+<li><a href="#org09314bb">4.1. 文件中的空洞</a></li>
+<li><a href="#orgc7a2120">4.2. truncate函数:截断文件</a></li>
 </ul>
 </li>
-<li><a href="#org8d9522d">5. 关于文件操作</a>
+<li><a href="#org1b00323">5. 关于文件操作</a>
 <ul>
-<li><a href="#org4da7dec">5.1. link函数:创建指向现有文件的链接</a></li>
-<li><a href="#org315dff3">5.2. unlink函数:删除指向文件的链接</a></li>
-<li><a href="#orgbc29b7c">5.3. remove函数:删除一个对文件或目录的链接</a></li>
-<li><a href="#org3f1a955">5.4. remove函数:对文件进行改名</a></li>
+<li><a href="#org8a4ecbf">5.1. link函数:创建指向现有文件的链接</a></li>
+<li><a href="#org4dbe752">5.2. unlink函数:删除指向文件的链接</a></li>
+<li><a href="#org9945cf6">5.3. remove函数:删除一个对文件或目录的链接</a></li>
+<li><a href="#org90459e7">5.4. remove函数:对文件进行改名</a></li>
 </ul>
 </li>
-<li><a href="#orgf797eb7">6. 符号链接</a>
+<li><a href="#org37b80bb">6. 符号链接</a>
 <ul>
-<li><a href="#orgacfa581">6.1. symlink函数:创建符号链接</a></li>
-<li><a href="#orgb421309">6.2. readlink函数:读取符号链接本身</a></li>
+<li><a href="#org68ea446">6.1. symlink函数:创建符号链接</a></li>
+<li><a href="#org3dce70a">6.2. readlink函数:读取符号链接本身</a></li>
 </ul>
 </li>
-<li><a href="#org698c589">7. 文件的时间</a>
+<li><a href="#orgeed47f0">7. 文件的时间</a>
 <ul>
-<li><a href="#orgb4a118d">7.1. 三个时间属性的意义</a></li>
-<li><a href="#org00957be">7.2. utime函数:修改文件数据的访问时间和修改时间</a></li>
+<li><a href="#org4b32271">7.1. 三个时间属性的意义</a></li>
+<li><a href="#org9903b3e">7.2. utime函数:修改文件数据的访问时间和修改时间</a></li>
 </ul>
 </li>
-<li><a href="#org2e9fbe5">8. 目录操作</a>
+<li><a href="#org0c2d874">8. 目录操作</a>
 <ul>
-<li><a href="#org6529ee1">8.1. mkdir:创建目录</a></li>
-<li><a href="#org3c8c4b9">8.2. rmdir:删除目录</a></li>
-<li><a href="#orgffb2f8f">8.3. 读目录参数</a></li>
-<li><a href="#orgf4c39d2">8.4. chdir/fchdir:修改进程的当前工作目录</a></li>
-<li><a href="#orgf675628">8.5. getcwd:获取当前工作目录</a></li>
+<li><a href="#org32a7437">8.1. mkdir:创建目录</a></li>
+<li><a href="#orge726064">8.2. rmdir:删除目录</a></li>
+<li><a href="#org01b4bbc">8.3. 读目录参数</a></li>
+<li><a href="#orge0bb861">8.4. chdir/fchdir:修改进程的当前工作目录</a></li>
+<li><a href="#org96cc039">8.5. getcwd:获取当前工作目录</a></li>
 </ul>
 </li>
-<li><a href="#org75a14f9">9. 设备特殊文件</a></li>
+<li><a href="#org3de670d">9. 设备特殊文件</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgec84f30" class="outline-2">
-<h2 id="orgec84f30"><span class="section-number-2">1</span> stat,fstat和lstat函数</h2>
+<div id="outline-container-org0055314" class="outline-2">
+<h2 id="org0055314"><span class="section-number-2">1</span> stat,fstat和lstat函数</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 stat系列函数返回与文件相关的信息结构
 </p>
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/stat.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/stat.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">stat</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">stat</span>* <span style="color: #7590db;">buf</span><span style="color: #4f97d7;">)</span>;
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fstat</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">stat</span>* <span style="color: #7590db;">buf</span><span style="color: #4f97d7;">)</span>;
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">lstat</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">stat</span>* <span style="color: #7590db;">buf</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">stat</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">stat</span>* <span style="color: #a0522d;">buf</span>);
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fstat</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">stat</span>* <span style="color: #a0522d;">buf</span>);
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">lstat</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">stat</span>* <span style="color: #a0522d;">buf</span>);
 </pre>
 </div>
 
@@ -136,8 +136,8 @@ lstat在读取符号连接文件时,获取符号连接文件本身的属性.
 </div>
 </div>
 
-<div id="outline-container-org34da5eb" class="outline-2">
-<h2 id="org34da5eb"><span class="section-number-2">2</span> UNIX中的文件类型</h2>
+<div id="outline-container-org31c7a54" class="outline-2">
+<h2 id="org31c7a54"><span class="section-number-2">2</span> UNIX中的文件类型</h2>
 <div class="outline-text-2" id="text-2">
 <dl class="org-dl">
 <dt>普通文件</dt><dd>S_ISREG(st_mode)判断</dd>
@@ -153,16 +153,16 @@ lstat在读取符号连接文件时,获取符号连接文件本身的属性.
 </dl>
 </div>
 </div>
-<div id="outline-container-org2a7cafd" class="outline-2">
-<h2 id="org2a7cafd"><span class="section-number-2">3</span> 关于文件的访问权限</h2>
+<div id="outline-container-org421d849" class="outline-2">
+<h2 id="org421d849"><span class="section-number-2">3</span> 关于文件的访问权限</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org82dbd30" class="outline-3">
-<h3 id="org82dbd30"><span class="section-number-3">3.1</span> 用户ID与组ID</h3>
+<div id="outline-container-org55012ea" class="outline-3">
+<h3 id="org55012ea"><span class="section-number-3">3.1</span> 用户ID与组ID</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org0b99ed0" class="outline-4">
-<h4 id="org0b99ed0"><span class="section-number-4">3.1.1</span> 与一个进程相关联的ID有:</h4>
+<div id="outline-container-org9447f4a" class="outline-4">
+<h4 id="org9447f4a"><span class="section-number-4">3.1.1</span> 与一个进程相关联的ID有:</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -212,8 +212,8 @@ lstat在读取符号连接文件时,获取符号连接文件本身的属性.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf20172a" class="outline-3">
-<h3 id="orgf20172a"><span class="section-number-3">3.2</span> 访问权限与测试宏</h3>
+<div id="outline-container-org9fd4c46" class="outline-3">
+<h3 id="org9fd4c46"><span class="section-number-3">3.2</span> 访问权限与测试宏</h3>
 <div class="outline-text-3" id="text-3-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -278,8 +278,8 @@ lstat在读取符号连接文件时,获取符号连接文件本身的属性.
 </table>
 </div>
 </div>
-<div id="outline-container-org8e4d928" class="outline-3">
-<h3 id="org8e4d928"><span class="section-number-3">3.3</span> 关于访问权限的一些说明</h3>
+<div id="outline-container-org29274df" class="outline-3">
+<h3 id="org29274df"><span class="section-number-3">3.3</span> 关于访问权限的一些说明</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>目录的读权限允许我们获得在该目录中所有文件名的列表,但要访问其中的文件时,则需要有该目录的 <b>执行</b> 权限.</li>
@@ -291,15 +291,15 @@ lstat在读取符号连接文件时,获取符号连接文件本身的属性.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgff94ba3" class="outline-3">
-<h3 id="orgff94ba3"><span class="section-number-3">3.4</span> access函数:使用实际权限执行权限测试</h3>
+<div id="outline-container-org28bb4ce" class="outline-3">
+<h3 id="org28bb4ce"><span class="section-number-3">3.4</span> access函数:使用实际权限执行权限测试</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 默认情况下,进程使用有效用户ID/有效组ID来执行对文件的权限测试. 但也可以使用access函数来让进程根据 <b>实际用户/组权限</b> 进行测试:
 </p>
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">access</span> <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">mode</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">access</span> (<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">mode</span>)
 </pre>
 </div>
 
@@ -344,16 +344,16 @@ lstat在读取符号连接文件时,获取符号连接文件本身的属性.
 </table>
 </div>
 </div>
-<div id="outline-container-org7e6f13b" class="outline-3">
-<h3 id="org7e6f13b"><span class="section-number-3">3.5</span> umask函数:为进程设置创建文件权限的屏蔽字</h3>
+<div id="outline-container-orgc00f144" class="outline-3">
+<h3 id="orgc00f144"><span class="section-number-3">3.5</span> umask函数:为进程设置创建文件权限的屏蔽字</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 umask函数为进程设置文件模式创建屏蔽字,并返回以前的值
 </p>
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/stat.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/stat.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">mode_t</span> <span style="color: #bc6ec5; font-weight: bold;">umask</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">mode_t</span> <span style="color: #7590db;">cmask</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">mode_t</span> <span style="color: #0000ff;">umask</span>(<span style="color: #228b22;">mode_t</span> <span style="color: #a0522d;">cmask</span>);
 </pre>
 </div>
 <p>
@@ -369,15 +369,15 @@ umask函数为进程设置文件模式创建屏蔽字,并返回以前的值
 </p>
 </div>
 </div>
-<div id="outline-container-orgd9286d3" class="outline-3">
-<h3 id="orgd9286d3"><span class="section-number-3">3.6</span> chmod/fchmod函数:更改现有文件的访问权限</h3>
+<div id="outline-container-org5c5b64a" class="outline-3">
+<h3 id="org5c5b64a"><span class="section-number-3">3.6</span> chmod/fchmod函数:更改现有文件的访问权限</h3>
 <div class="outline-text-3" id="text-3-6">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/stat.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/stat.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">chmod</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #ce537a; font-weight: bold;">mode_t</span> <span style="color: #7590db;">mode</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">chmod</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #228b22;">mode_t</span> <span style="color: #a0522d;">mode</span>);
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fchmod</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #ce537a; font-weight: bold;">mode_t</span> <span style="color: #7590db;">mode</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fchmod</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #228b22;">mode_t</span> <span style="color: #a0522d;">mode</span>);
 </pre>
 </div>
 
@@ -471,8 +471,8 @@ chmod函数在指定文件上进程操作,而fchmod函数则对已打开的文�
 </p>
 </div>
 </div>
-<div id="outline-container-org8dd7e7d" class="outline-3">
-<h3 id="org8dd7e7d"><span class="section-number-3">3.7</span> 关于粘住位的说明</h3>
+<div id="outline-container-orgd4efde5" class="outline-3">
+<h3 id="orgd4efde5"><span class="section-number-3">3.7</span> 关于粘住位的说明</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 若对一个可执行文件设置了粘住位,则该程序第一次执行并结束后,其程序的指令部分仍然会保存在交换区中,由于交换区占用连续的磁盘空间,因此下次载入该程序会更快一些.
@@ -492,15 +492,15 @@ chmod函数在指定文件上进程操作,而fchmod函数则对已打开的文�
 </p>
 </div>
 </div>
-<div id="outline-container-orgbb48f75" class="outline-3">
-<h3 id="orgbb48f75"><span class="section-number-3">3.8</span> chown/fchown/lchown函数更改文件的用户ID和组DI</h3>
+<div id="outline-container-orge194071" class="outline-3">
+<h3 id="orge194071"><span class="section-number-3">3.8</span> chown/fchown/lchown函数更改文件的用户ID和组DI</h3>
 <div class="outline-text-3" id="text-3-8">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">chown</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #ce537a; font-weight: bold;">uid_t</span> <span style="color: #7590db;">owner</span>,<span style="color: #ce537a; font-weight: bold;">gid_t</span> <span style="color: #7590db;">group</span><span style="color: #4f97d7;">)</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">fchown</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #ce537a; font-weight: bold;">uid_t</span> <span style="color: #7590db;">owner</span>,<span style="color: #ce537a; font-weight: bold;">gid_t</span> <span style="color: #7590db;">group</span><span style="color: #4f97d7;">)</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">lchown</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #ce537a; font-weight: bold;">uid_t</span> <span style="color: #7590db;">owner</span>,<span style="color: #ce537a; font-weight: bold;">gid_t</span> <span style="color: #7590db;">group</span><span style="color: #4f97d7;">)</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">chown</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #228b22;">uid_t</span> <span style="color: #a0522d;">owner</span>,<span style="color: #228b22;">gid_t</span> <span style="color: #a0522d;">group</span>)
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fchown</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #228b22;">uid_t</span> <span style="color: #a0522d;">owner</span>,<span style="color: #228b22;">gid_t</span> <span style="color: #a0522d;">group</span>)
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">lchown</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #228b22;">uid_t</span> <span style="color: #a0522d;">owner</span>,<span style="color: #228b22;">gid_t</span> <span style="color: #a0522d;">group</span>)
 </pre>
 </div>
 
@@ -514,8 +514,8 @@ chmod函数在指定文件上进程操作,而fchmod函数则对已打开的文�
 </div>
 </div>
 </div>
-<div id="outline-container-org4e38340" class="outline-2">
-<h2 id="org4e38340"><span class="section-number-2">4</span> 关于文件长度</h2>
+<div id="outline-container-org026bb02" class="outline-2">
+<h2 id="org026bb02"><span class="section-number-2">4</span> 关于文件长度</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>对于普通文件,文件长度为文件内容的多少(包括文件中的空洞)</li>
@@ -523,8 +523,8 @@ chmod函数在指定文件上进程操作,而fchmod函数则对已打开的文�
 <li>对于符号链接,文件长度是链接所指向的 <b>文件名长度</b> (注意,因为符号链接文件长度总是由st_size表示,所以它并不包含通常C语言中用作字符串结尾的null字符)</li>
 </ul>
 </div>
-<div id="outline-container-org48feb25" class="outline-3">
-<h3 id="org48feb25"><span class="section-number-3">4.1</span> 文件中的空洞</h3>
+<div id="outline-container-org09314bb" class="outline-3">
+<h3 id="org09314bb"><span class="section-number-3">4.1</span> 文件中的空洞</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 空洞是由所设置的偏移量超过文件尾端,并写了数据后照成了. 
@@ -535,14 +535,14 @@ chmod函数在指定文件上进程操作,而fchmod函数则对已打开的文�
 </p>
 </div>
 </div>
-<div id="outline-container-orgfaa4b97" class="outline-3">
-<h3 id="orgfaa4b97"><span class="section-number-3">4.2</span> truncate函数:截断文件</h3>
+<div id="outline-container-orgc7a2120" class="outline-3">
+<h3 id="orgc7a2120"><span class="section-number-3">4.2</span> truncate函数:截断文件</h3>
 <div class="outline-text-3" id="text-4-2">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">truncate</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">len</span><span style="color: #4f97d7;">)</span>;
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">ftruncate</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span>,<span style="color: #ce537a; font-weight: bold;">off_t</span> <span style="color: #7590db;">len</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">truncate</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">len</span>);
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">ftruncate</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>,<span style="color: #228b22;">off_t</span> <span style="color: #a0522d;">len</span>);
 </pre>
 </div>
 
@@ -556,28 +556,28 @@ chmod函数在指定文件上进程操作,而fchmod函数则对已打开的文�
 </div>
 </div>
 </div>
-<div id="outline-container-org8d9522d" class="outline-2">
-<h2 id="org8d9522d"><span class="section-number-2">5</span> 关于文件操作</h2>
+<div id="outline-container-org1b00323" class="outline-2">
+<h2 id="org1b00323"><span class="section-number-2">5</span> 关于文件操作</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org4da7dec" class="outline-3">
-<h3 id="org4da7dec"><span class="section-number-3">5.1</span> link函数:创建指向现有文件的链接</h3>
+<div id="outline-container-org8a4ecbf" class="outline-3">
+<h3 id="org8a4ecbf"><span class="section-number-3">5.1</span> link函数:创建指向现有文件的链接</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">link</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">exist_path</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span> *<span style="color: #7590db;">new_path</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">link</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">exist_path</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">new_path</span>);
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org315dff3" class="outline-3">
-<h3 id="org315dff3"><span class="section-number-3">5.2</span> unlink函数:删除指向文件的链接</h3>
+<div id="outline-container-org4dbe752" class="outline-3">
+<h3 id="org4dbe752"><span class="section-number-3">5.2</span> unlink函数:删除指向文件的链接</h3>
 <div class="outline-text-3" id="text-5-2">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">unlink</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span><span style="color: #4f97d7;">)</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">unlink</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>)
 </pre>
 </div>
 
@@ -598,13 +598,13 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </p>
 </div>
 </div>
-<div id="outline-container-orgbc29b7c" class="outline-3">
-<h3 id="orgbc29b7c"><span class="section-number-3">5.3</span> remove函数:删除一个对文件或目录的链接</h3>
+<div id="outline-container-org9945cf6" class="outline-3">
+<h3 id="org9945cf6"><span class="section-number-3">5.3</span> remove函数:删除一个对文件或目录的链接</h3>
 <div class="outline-text-3" id="text-5-3">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">remove</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span><span style="color: #4f97d7;">)</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">remove</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>)
 </pre>
 </div>
 
@@ -617,13 +617,13 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </p>
 </div>
 </div>
-<div id="outline-container-org3f1a955" class="outline-3">
-<h3 id="org3f1a955"><span class="section-number-3">5.4</span> remove函数:对文件进行改名</h3>
+<div id="outline-container-org90459e7" class="outline-3">
+<h3 id="org90459e7"><span class="section-number-3">5.4</span> remove函数:对文件进行改名</h3>
 <div class="outline-text-3" id="text-5-4">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">rename</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">oldname</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">chaar</span>* <span style="color: #7590db;">newname</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">rename</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">oldname</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">chaar</span>* <span style="color: #a0522d;">newname</span>);
 </pre>
 </div>
 
@@ -636,21 +636,21 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </div>
 </div>
 </div>
-<div id="outline-container-orgf797eb7" class="outline-2">
-<h2 id="orgf797eb7"><span class="section-number-2">6</span> 符号链接</h2>
+<div id="outline-container-org37b80bb" class="outline-2">
+<h2 id="org37b80bb"><span class="section-number-2">6</span> 符号链接</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 用open打开文件时,如果传递给open函数的路径指定了一个符号链接,那么open跟随链接找到所指向的文件. 若符号链接所指向的文件并不存在,则open返回出错.
 </p>
 </div>
 
-<div id="outline-container-orgacfa581" class="outline-3">
-<h3 id="orgacfa581"><span class="section-number-3">6.1</span> symlink函数:创建符号链接</h3>
+<div id="outline-container-org68ea446" class="outline-3">
+<h3 id="org68ea446"><span class="section-number-3">6.1</span> symlink函数:创建符号链接</h3>
 <div class="outline-text-3" id="text-6-1">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">symlink</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">actual_path</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">sym_path</span><span style="color: #4f97d7;">)</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">symlink</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">actual_path</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">sym_path</span>)
 </pre>
 </div>
 
@@ -660,13 +660,13 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </div>
 </div>
 
-<div id="outline-container-orgb421309" class="outline-3">
-<h3 id="orgb421309"><span class="section-number-3">6.2</span> readlink函数:读取符号链接本身</h3>
+<div id="outline-container-org3dce70a" class="outline-3">
+<h3 id="org3dce70a"><span class="section-number-3">6.2</span> readlink函数:读取符号链接本身</h3>
 <div class="outline-text-3" id="text-6-2">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">readlink</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">pathname</span>,<span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">buf</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">bufsize</span><span style="color: #4f97d7;">)</span>
+<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">readlink</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">pathname</span>,<span style="color: #228b22;">char</span>* <span style="color: #a0522d;">buf</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">bufsize</span>)
 </pre>
 </div>
 <p>
@@ -676,12 +676,12 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </div>
 </div>
 
-<div id="outline-container-org698c589" class="outline-2">
-<h2 id="org698c589"><span class="section-number-2">7</span> 文件的时间</h2>
+<div id="outline-container-orgeed47f0" class="outline-2">
+<h2 id="orgeed47f0"><span class="section-number-2">7</span> 文件的时间</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgb4a118d" class="outline-3">
-<h3 id="orgb4a118d"><span class="section-number-3">7.1</span> 三个时间属性的意义</h3>
+<div id="outline-container-org4b32271" class="outline-3">
+<h3 id="org4b32271"><span class="section-number-3">7.1</span> 三个时间属性的意义</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 每个文件都保持有三个时间属性,它们的意义为:
@@ -736,18 +736,18 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </div>
 </div>
 
-<div id="outline-container-org00957be" class="outline-3">
-<h3 id="org00957be"><span class="section-number-3">7.2</span> utime函数:修改文件数据的访问时间和修改时间</h3>
+<div id="outline-container-org9903b3e" class="outline-3">
+<h3 id="org9903b3e"><span class="section-number-3">7.2</span> utime函数:修改文件数据的访问时间和修改时间</h3>
 <div class="outline-text-3" id="text-7-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">utime.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;utime.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">utime</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">utimbuf</span>* <span style="color: #7590db;">times</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">utime</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">utimbuf</span>* <span style="color: #a0522d;">times</span>);
 
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">utimbuf</span><span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">time_t</span> <span style="color: #7590db;">actime</span>;                <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">access time </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">time_t</span> <span style="color: #7590db;">modtime</span>;               <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">modification time </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">utimbuf</span>{
+  <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">actime</span>;                <span style="color: #b22222;">/* </span><span style="color: #b22222;">access time </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">modtime</span>;               <span style="color: #b22222;">/* </span><span style="color: #b22222;">modification time </span><span style="color: #b22222;">*/</span>
+}
 </pre>
 </div>
 <ul class="org-ul">
@@ -773,17 +773,17 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </div>
 </div>
 
-<div id="outline-container-org2e9fbe5" class="outline-2">
-<h2 id="org2e9fbe5"><span class="section-number-2">8</span> 目录操作</h2>
+<div id="outline-container-org0c2d874" class="outline-2">
+<h2 id="org0c2d874"><span class="section-number-2">8</span> 目录操作</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org6529ee1" class="outline-3">
-<h3 id="org6529ee1"><span class="section-number-3">8.1</span> mkdir:创建目录</h3>
+<div id="outline-container-org32a7437" class="outline-3">
+<h3 id="org32a7437"><span class="section-number-3">8.1</span> mkdir:创建目录</h3>
 <div class="outline-text-3" id="text-8-1">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/stat.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/stat.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">mkdir</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #ce537a; font-weight: bold;">mode_t</span> <span style="color: #7590db;">mode</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">mkdir</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #228b22;">mode_t</span> <span style="color: #a0522d;">mode</span>);
 </pre>
 </div>
 
@@ -797,13 +797,13 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </div>
 </div>
 
-<div id="outline-container-org3c8c4b9" class="outline-3">
-<h3 id="org3c8c4b9"><span class="section-number-3">8.2</span> rmdir:删除目录</h3>
+<div id="outline-container-orge726064" class="outline-3">
+<h3 id="orge726064"><span class="section-number-3">8.2</span> rmdir:删除目录</h3>
 <div class="outline-text-3" id="text-8-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">rmdir</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">rmdir</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>);
 </pre>
 </div>
 
@@ -813,23 +813,23 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </div>
 </div>
 
-<div id="outline-container-orgffb2f8f" class="outline-3">
-<h3 id="orgffb2f8f"><span class="section-number-3">8.3</span> 读目录参数</h3>
+<div id="outline-container-org01b4bbc" class="outline-3">
+<h3 id="org01b4bbc"><span class="section-number-3">8.3</span> 读目录参数</h3>
 <div class="outline-text-3" id="text-8-3">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">dirent.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;dirent.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">DIR</span> *<span style="color: #bc6ec5; font-weight: bold;">opendir</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">pathname</span><span style="color: #4f97d7;">)</span>;
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">dirent</span>* <span style="color: #bc6ec5; font-weight: bold;">readdir</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">DIR</span>* <span style="color: #7590db;">dp</span><span style="color: #4f97d7;">)</span>;
-<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">rewinddir</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">DIR</span>* <span style="color: #7590db;">dp</span><span style="color: #4f97d7;">)</span>;
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">closedir</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">DIR</span>* <span style="color: #7590db;">dp</span><span style="color: #4f97d7;">)</span>;
-<span style="color: #ce537a; font-weight: bold;">long</span> <span style="color: #bc6ec5; font-weight: bold;">telldir</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">DIR</span>* <span style="color: #7590db;">dp</span><span style="color: #4f97d7;">)</span>;
-<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">seekdir</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">DIR</span>* <span style="color: #7590db;">dp</span>,<span style="color: #ce537a; font-weight: bold;">long</span> <span style="color: #7590db;">loc</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">DIR</span> *<span style="color: #0000ff;">opendir</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">pathname</span>);
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">dirent</span>* <span style="color: #0000ff;">readdir</span>(<span style="color: #228b22;">DIR</span>* <span style="color: #a0522d;">dp</span>);
+<span style="color: #228b22;">void</span> <span style="color: #0000ff;">rewinddir</span>(<span style="color: #228b22;">DIR</span>* <span style="color: #a0522d;">dp</span>);
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">closedir</span>(<span style="color: #228b22;">DIR</span>* <span style="color: #a0522d;">dp</span>);
+<span style="color: #228b22;">long</span> <span style="color: #0000ff;">telldir</span>(<span style="color: #228b22;">DIR</span>* <span style="color: #a0522d;">dp</span>);
+<span style="color: #228b22;">void</span> <span style="color: #0000ff;">seekdir</span>(<span style="color: #228b22;">DIR</span>* <span style="color: #a0522d;">dp</span>,<span style="color: #228b22;">long</span> <span style="color: #a0522d;">loc</span>);
 
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">dirent</span><span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">ino_t</span> <span style="color: #7590db;">d_ino</span>;
-  <span style="color: #ce537a; font-weight: bold;">char</span> <span style="color: #7590db;">d_name</span><span style="color: #bc6ec5;">[</span>NAME_MAX + <span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">]</span>;
-<span style="color: #4f97d7;">}</span>
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">dirent</span>{
+  <span style="color: #228b22;">ino_t</span> <span style="color: #a0522d;">d_ino</span>;
+  <span style="color: #228b22;">char</span> <span style="color: #a0522d;">d_name</span>[NAME_MAX + 1];
+}
 </pre>
 </div>
 
@@ -839,35 +839,35 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </div>
 </div>
 
-<div id="outline-container-orgf4c39d2" class="outline-3">
-<h3 id="orgf4c39d2"><span class="section-number-3">8.4</span> chdir/fchdir:修改进程的当前工作目录</h3>
+<div id="outline-container-orge0bb861" class="outline-3">
+<h3 id="orge0bb861"><span class="section-number-3">8.4</span> chdir/fchdir:修改进程的当前工作目录</h3>
 <div class="outline-text-3" id="text-8-4">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">chdir</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">chdir</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>);
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">chdir</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">filedes</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">chdir</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>);
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf675628" class="outline-3">
-<h3 id="orgf675628"><span class="section-number-3">8.5</span> getcwd:获取当前工作目录</h3>
+<div id="outline-container-org96cc039" class="outline-3">
+<h3 id="org96cc039"><span class="section-number-3">8.5</span> getcwd:获取当前工作目录</h3>
 <div class="outline-text-3" id="text-8-5">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #bc6ec5; font-weight: bold;">getcwd</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">buf</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">size</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">char</span>* <span style="color: #0000ff;">getcwd</span>(<span style="color: #228b22;">char</span>* <span style="color: #a0522d;">buf</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">size</span>);
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org75a14f9" class="outline-2">
-<h2 id="org75a14f9"><span class="section-number-2">9</span> 设备特殊文件</h2>
+<div id="outline-container-org3de670d" class="outline-2">
+<h2 id="org3de670d"><span class="section-number-2">9</span> 设备特殊文件</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li>可以使用major和minor宏来获取dev_t中的主设备号和次设备号</li>
@@ -880,77 +880,49 @@ unlink的这种特性,可以用来创建临时文件: 进程创建临时文件�
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2015-05-14</span>
-            <span title="last modification date" class="post-info">2016-10-24</span>
-            <span title="tags" class="post-info">:N/A:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2015-05-14</span>
+    <span title="last modification date" class="post-info">2016-10-24</span>
+    <span title="tags" class="post-info">N/A</span>
+    <span title="author" class="post-info">DarkSun</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2015/05/14/文件和目录/";
-         var disqus_url = "https://lujun9972.github.io/blog/2015/05/14/文件和目录/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2015/05/14/文件和目录/";
+     var disqus_url = "https://lujun9972.github.io/blog/2015/05/14/文件和目录/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">DarkSun</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

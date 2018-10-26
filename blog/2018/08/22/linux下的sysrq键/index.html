@@ -3,22 +3,24 @@
 <head>
   <title>linux下的SysRq键 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,25 +54,25 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7f4cc83">启用SysRq</a>
+<li><a href="#orgc656728">启用SysRq</a>
 <ul>
-<li><a href="#orgda09049">对内核的要求</a></li>
-<li><a href="#org2cfa832">查看当前SysRq的值</a></li>
-<li><a href="#orgc993fb9">更改SysRq的值</a></li>
+<li><a href="#orgbc6f973">对内核的要求</a></li>
+<li><a href="#org347b636">查看当前SysRq的值</a></li>
+<li><a href="#org93974bd">更改SysRq的值</a></li>
 </ul>
 </li>
-<li><a href="#org11a7949">使用SysRq</a>
+<li><a href="#org7ce03d5">使用SysRq</a>
 <ul>
-<li><a href="#org15e2157">常见的几种功能键组合</a>
+<li><a href="#org009609d">常见的几种功能键组合</a>
 <ul>
-<li><a href="#orgc2fbe79">R-E-I-S-U-B:安全重启系统</a></li>
-<li><a href="#orge13b9c7">恢复系统挂起</a></li>
-<li><a href="#org206414c">获取系统信息</a></li>
+<li><a href="#orgf72b768">R-E-I-S-U-B:安全重启系统</a></li>
+<li><a href="#org3eaa23d">恢复系统挂起</a></li>
+<li><a href="#org751eb0f">获取系统信息</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8c08d4a">查看SysRq的输出信息</a></li>
+<li><a href="#org973e905">查看SysRq的输出信息</a></li>
 </ul>
 </div>
 </div>
@@ -81,13 +81,13 @@
 这套组合键提供了一系列在系统崩溃时常用到的功能，比如同步数据、杀进程、卸载文件系统，甚至系统重启.
 </p>
 
-<div id="outline-container-org7f4cc83" class="outline-2">
-<h2 id="org7f4cc83">启用SysRq</h2>
-<div class="outline-text-2" id="text-org7f4cc83">
+<div id="outline-container-orgc656728" class="outline-2">
+<h2 id="orgc656728">启用SysRq</h2>
+<div class="outline-text-2" id="text-orgc656728">
 </div>
-<div id="outline-container-orgda09049" class="outline-3">
-<h3 id="orgda09049">对内核的要求</h3>
-<div class="outline-text-3" id="text-orgda09049">
+<div id="outline-container-orgbc6f973" class="outline-3">
+<h3 id="orgbc6f973">对内核的要求</h3>
+<div class="outline-text-3" id="text-orgbc6f973">
 <p>
 启用 <code>SysRq</code> 的前提是在linux kernel编译时启用了 <code>CONFIG_MAGIC_SYSRQ</code> 选项.
 </p>
@@ -111,9 +111,9 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-org2cfa832" class="outline-3">
-<h3 id="org2cfa832">查看当前SysRq的值</h3>
-<div class="outline-text-3" id="text-org2cfa832">
+<div id="outline-container-org347b636" class="outline-3">
+<h3 id="org347b636">查看当前SysRq的值</h3>
+<div class="outline-text-3" id="text-org347b636">
 <p>
 我们可以通过查看 <code>/proc/sys/kernel/sysrq</code> 的值来判断Kernel会对哪些功能产生反应.
 </p>
@@ -217,21 +217,21 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-orgc993fb9" class="outline-3">
-<h3 id="orgc993fb9">更改SysRq的值</h3>
-<div class="outline-text-3" id="text-orgc993fb9">
+<div id="outline-container-org93974bd" class="outline-3">
+<h3 id="org93974bd">更改SysRq的值</h3>
+<div class="outline-text-3" id="text-org93974bd">
 <p>
 如果只是希望临时更改 <code>SysRq</code> 的值，那么很简单，只需要将新的值写入到 <code>/proc/sys/kernel/sysrq</code> 中去
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"1"</span> |sudo tee /proc/sys/kernel/sysrq
+<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"1"</span> |sudo tee /proc/sys/kernel/sysrq
 </pre>
 </div>
 <p>
 或者通过 <code>sysctl</code> 来进行设置
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sysctl -w kernel.sysrq=<span style="color: #a45bad;">1</span>
+<pre class="src src-shell">sysctl -w kernel.sysrq=1
 </pre>
 </div>
 
@@ -239,16 +239,16 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 如果需要每次启动时都自动修改SysRq的值，则需要修改配置文件
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"kernel.sysrq = 1"</span>|sudo tee -a /etc/sysctl.conf
+<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"kernel.sysrq = 1"</span>|sudo tee -a /etc/sysctl.conf
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org11a7949" class="outline-2">
-<h2 id="org11a7949">使用SysRq</h2>
-<div class="outline-text-2" id="text-org11a7949">
+<div id="outline-container-org7ce03d5" class="outline-2">
+<h2 id="org7ce03d5">使用SysRq</h2>
+<div class="outline-text-2" id="text-org7ce03d5">
 <p>
 使用SysRq有两种方式:
 </p>
@@ -261,7 +261,7 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 还有一种是直接通过 <code>/proc/sysrq-trigger</code> 接口来完成.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> &#8220; b &#8221; |sudo tee /proc/sysrq-trigger
+<pre class="src src-shell"><span style="color: #483d8b;">echo</span> &#8220; b &#8221; |sudo tee /proc/sysrq-trigger
 </pre>
 </div>
 
@@ -517,17 +517,17 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 
 
-<div id="outline-container-org15e2157" class="outline-3">
-<h3 id="org15e2157">常见的几种功能键组合</h3>
-<div class="outline-text-3" id="text-org15e2157">
+<div id="outline-container-org009609d" class="outline-3">
+<h3 id="org009609d">常见的几种功能键组合</h3>
+<div class="outline-text-3" id="text-org009609d">
 <p>
 下面列出几个常见的功能键组合:
 </p>
 </div>
 
-<div id="outline-container-orgc2fbe79" class="outline-4">
-<h4 id="orgc2fbe79">R-E-I-S-U-B:安全重启系统</h4>
-<div class="outline-text-4" id="text-orgc2fbe79">
+<div id="outline-container-orgf72b768" class="outline-4">
+<h4 id="orgf72b768">R-E-I-S-U-B:安全重启系统</h4>
+<div class="outline-text-4" id="text-orgf72b768">
 <p>
 这套组合键大致相当于reboot命令：
 </p>
@@ -548,9 +548,9 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-orge13b9c7" class="outline-4">
-<h4 id="orge13b9c7">恢复系统挂起</h4>
-<div class="outline-text-4" id="text-orge13b9c7">
+<div id="outline-container-org3eaa23d" class="outline-4">
+<h4 id="org3eaa23d">恢复系统挂起</h4>
+<div class="outline-text-4" id="text-org3eaa23d">
 <p>
 若仅仅是因为资源消耗过量引起系统挂起就重启系统显然是不好的，我们可以尝试通过回收一些资源的方式来回复系统挂起。
 </p>
@@ -572,9 +572,9 @@ SysRq中用来结束进程的command-key包括 E-I-K-F，其中:
 </p>
 </div>
 </div>
-<div id="outline-container-org206414c" class="outline-4">
-<h4 id="org206414c">获取系统信息</h4>
-<div class="outline-text-4" id="text-org206414c">
+<div id="outline-container-org751eb0f" class="outline-4">
+<h4 id="org751eb0f">获取系统信息</h4>
+<div class="outline-text-4" id="text-org751eb0f">
 <p>
 SysRq还提供了几个用于获取系统信息的commandkey，在恢复系统挂起前推荐执行这些commandkey，以记录下当前系统状态。
 </p>
@@ -592,9 +592,9 @@ SysRq还提供了几个用于获取系统信息的commandkey，在恢复系统�
 </div>
 </div>
 </div>
-<div id="outline-container-org8c08d4a" class="outline-2">
-<h2 id="org8c08d4a">查看SysRq的输出信息</h2>
-<div class="outline-text-2" id="text-org8c08d4a">
+<div id="outline-container-org973e905" class="outline-2">
+<h2 id="org973e905">查看SysRq的输出信息</h2>
+<div class="outline-text-2" id="text-org973e905">
 <p>
 从上面的列表中我们可以看到，使用SysRq能够输出大量的信息。这些信息，默认会输出到syslog中.
 同时，若设置的 <code>console_loglevel(0-9)</code> 大于 <code>default_message_loglevel</code> 则输出也会输出到本地控制台终端上去。
@@ -606,8 +606,8 @@ SysRq还提供了几个用于获取系统信息的commandkey，在恢复系统�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">" "</span>|sudo tee /proc/sysrq-trigger
-dmesg |tail -n <span style="color: #a45bad;">1</span>
+<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">" "</span>|sudo tee /proc/sysrq-trigger
+dmesg |tail -n 1
 </pre>
 </div>
 
@@ -622,77 +622,49 @@ dmesg |tail -n <span style="color: #a45bad;">1</span>
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-08-22</span>
-            <span title="last modification date" class="post-info">2018-08-22</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-08-22</span>
+    <span title="last modification date" class="post-info">2018-08-22</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/08/22/linux下的sysrq键/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/08/22/linux下的sysrq键/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/08/22/linux下的sysrq键/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/08/22/linux下的sysrq键/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

@@ -3,22 +3,24 @@
 <head>
   <title>使用nmap进行网络发现 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,27 +54,27 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb919123">扫描主机</a>
+<li><a href="#org3ede640">扫描主机</a>
 <ul>
-<li><a href="#org5eaf247">扫描单个主机</a></li>
-<li><a href="#orgd4c47a6">扫描多个主机</a></li>
-<li><a href="#org235778d">扫描一个范围的主机</a></li>
-<li><a href="#orgd1c3002">扫描一个子网</a></li>
-<li><a href="#org3033c60">从文件中读取要扫描的IP地址</a></li>
+<li><a href="#org386269f">扫描单个主机</a></li>
+<li><a href="#org5499c95">扫描多个主机</a></li>
+<li><a href="#orga33feb8">扫描一个范围的主机</a></li>
+<li><a href="#org79270da">扫描一个子网</a></li>
+<li><a href="#org60f6337">从文件中读取要扫描的IP地址</a></li>
 </ul>
 </li>
-<li><a href="#org48993bf">扫描端口</a>
+<li><a href="#orgcc99d21">扫描端口</a>
 <ul>
-<li><a href="#org92bb9b6">扫描单个端口</a></li>
-<li><a href="#orgcfea50d">也可以扫描一个范围的端口</a></li>
-<li><a href="#orgff7e8df">执行快速扫描</a></li>
-<li><a href="#org0c4aed6">设置扫描协议</a></li>
+<li><a href="#org88408a1">扫描单个端口</a></li>
+<li><a href="#org5ed1d12">也可以扫描一个范围的端口</a></li>
+<li><a href="#orgea97515">执行快速扫描</a></li>
+<li><a href="#orga02d50f">设置扫描协议</a></li>
 </ul>
 </li>
-<li><a href="#org1c7820f">Ping设备</a></li>
-<li><a href="#org4e32e52">扫描操作系统</a></li>
-<li><a href="#org8cb742b">扫描主机提供的服务</a></li>
-<li><a href="#org05079eb">输出结果到文件中</a></li>
+<li><a href="#org597da61">Ping设备</a></li>
+<li><a href="#org76b42b2">扫描操作系统</a></li>
+<li><a href="#org0a4415e">扫描主机提供的服务</a></li>
+<li><a href="#org21b81f8">输出结果到文件中</a></li>
 </ul>
 </div>
 </div>
@@ -86,18 +86,18 @@ nmap是一款网络发现工具，它可以扫描网络主机的开放端口并�
 摘自 <a href="https://linuxtechlab.com/beginners-reference-guide-nmap-command/">https://linuxtechlab.com/beginners-reference-guide-nmap-command/</a>
 </p>
 
-<div id="outline-container-orgb919123" class="outline-2">
-<h2 id="orgb919123">扫描主机</h2>
-<div class="outline-text-2" id="text-orgb919123">
+<div id="outline-container-org3ede640" class="outline-2">
+<h2 id="org3ede640">扫描主机</h2>
+<div class="outline-text-2" id="text-org3ede640">
 </div>
-<div id="outline-container-org5eaf247" class="outline-3">
-<h3 id="org5eaf247">扫描单个主机</h3>
-<div class="outline-text-3" id="text-org5eaf247">
+<div id="outline-container-org386269f" class="outline-3">
+<h3 id="org386269f">扫描单个主机</h3>
+<div class="outline-text-3" id="text-org386269f">
 <p>
 nmap最简单的用法莫过于直接用它来扫描某个主机了
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap <span style="color: #a45bad;">14.120.7.52</span>
+<pre class="src src-shell">nmap 14.120.7.52
 </pre>
 </div>
 
@@ -111,76 +111,76 @@ nmap最简单的用法莫过于直接用它来扫描某个主机了
 </div>
 </div>
 
-<div id="outline-container-orgd4c47a6" class="outline-3">
-<h3 id="orgd4c47a6">扫描多个主机</h3>
-<div class="outline-text-3" id="text-orgd4c47a6">
+<div id="outline-container-org5499c95" class="outline-3">
+<h3 id="org5499c95">扫描多个主机</h3>
+<div class="outline-text-3" id="text-org5499c95">
 <p>
 你也可以让nmap一次性扫描多个台主机
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap <span style="color: #a45bad;">14.120.7.52</span> <span style="color: #a45bad;">14.120.3.84</span>
+<pre class="src src-shell">nmap 14.120.7.52 14.120.3.84
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org235778d" class="outline-3">
-<h3 id="org235778d">扫描一个范围的主机</h3>
-<div class="outline-text-3" id="text-org235778d">
+<div id="outline-container-orga33feb8" class="outline-3">
+<h3 id="orga33feb8">扫描一个范围的主机</h3>
+<div class="outline-text-3" id="text-orga33feb8">
 <p>
 可以用 <code>-</code> 来指定一个主机范围
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap <span style="color: #a45bad;">14.120.7.52-70</span>
+<pre class="src src-shell">nmap 14.120.7.52-70
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd1c3002" class="outline-3">
-<h3 id="orgd1c3002">扫描一个子网</h3>
-<div class="outline-text-3" id="text-orgd1c3002">
+<div id="outline-container-org79270da" class="outline-3">
+<h3 id="org79270da">扫描一个子网</h3>
+<div class="outline-text-3" id="text-org79270da">
 <p>
 我们还能直接指定一个子网
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap <span style="color: #a45bad;">14.120.7.0/24</span>
+<pre class="src src-shell">nmap 14.120.7.0/24
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org3033c60" class="outline-3">
-<h3 id="org3033c60">从文件中读取要扫描的IP地址</h3>
-<div class="outline-text-3" id="text-org3033c60">
+<div id="outline-container-org60f6337" class="outline-3">
+<h3 id="org60f6337">从文件中读取要扫描的IP地址</h3>
+<div class="outline-text-3" id="text-org60f6337">
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #7590db;">file</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">mktemp</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"14.120.16.124"</span> &gt; $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
-<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"14.120.25.246"</span> &gt;&gt; $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
-nmap -iL $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell"><span style="color: #a0522d;">file</span>=$(<span style="color: #ff00ff;">mktemp</span>)
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"14.120.16.124"</span> &gt; ${<span style="color: #a0522d;">file</span>}
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"14.120.25.246"</span> &gt;&gt; ${<span style="color: #a0522d;">file</span>}
+nmap -iL ${<span style="color: #a0522d;">file</span>}
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org48993bf" class="outline-2">
-<h2 id="org48993bf">扫描端口</h2>
-<div class="outline-text-2" id="text-org48993bf">
+<div id="outline-container-orgcc99d21" class="outline-2">
+<h2 id="orgcc99d21">扫描端口</h2>
+<div class="outline-text-2" id="text-orgcc99d21">
 <p>
 通过 <code>-p</code> 参数可以指定扫描主机的哪些端口
 </p>
 </div>
-<div id="outline-container-org92bb9b6" class="outline-3">
-<h3 id="org92bb9b6">扫描单个端口</h3>
-<div class="outline-text-3" id="text-org92bb9b6">
+<div id="outline-container-org88408a1" class="outline-3">
+<h3 id="org88408a1">扫描单个端口</h3>
+<div class="outline-text-3" id="text-org88408a1">
 <div class="org-src-container">
-<pre class="src src-shell">nmap -p <span style="color: #a45bad;">22</span> <span style="color: #a45bad;">14.120.25.246</span>
+<pre class="src src-shell">nmap -p 22 14.120.25.246
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcfea50d" class="outline-3">
-<h3 id="orgcfea50d">也可以扫描一个范围的端口</h3>
-<div class="outline-text-3" id="text-orgcfea50d">
+<div id="outline-container-org5ed1d12" class="outline-3">
+<h3 id="org5ed1d12">也可以扫描一个范围的端口</h3>
+<div class="outline-text-3" id="text-org5ed1d12">
 <div class="org-src-container">
-<pre class="src src-shell">nmap -p <span style="color: #a45bad;">22-1024</span> <span style="color: #a45bad;">14.120.25.246</span>
+<pre class="src src-shell">nmap -p 22-1024 14.120.25.246
 </pre>
 </div>
 
@@ -188,17 +188,17 @@ nmap -iL $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">fi
 扫描范围时，也可以省略端口下限和上限
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">set</span> -x &amp;&amp; <span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span>
-nmap -p -2000 <span style="color: #a45bad;">14.120.25.246</span>
-nmap -p <span style="color: #a45bad;">2000-</span> <span style="color: #a45bad;">14.120.25.246</span>
-nmap -p - <span style="color: #a45bad;">14.120.25.246</span>
+<pre class="src src-shell"><span style="color: #483d8b;">set</span> -x &amp;&amp; <span style="color: #a020f0;">exec</span> 2&gt;&amp;1
+nmap -p -2000 14.120.25.246
+nmap -p 2000- 14.120.25.246
+nmap -p - 14.120.25.246
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgff7e8df" class="outline-3">
-<h3 id="orgff7e8df">执行快速扫描</h3>
-<div class="outline-text-3" id="text-orgff7e8df">
+<div id="outline-container-orgea97515" class="outline-3">
+<h3 id="orgea97515">执行快速扫描</h3>
+<div class="outline-text-3" id="text-orgea97515">
 <p>
 <code>-F</code> 参数执行快速扫描，所谓快速扫描会扫描最常用的100个端口
 </p>
@@ -208,9 +208,9 @@ nmap -p - <span style="color: #a45bad;">14.120.25.246</span>
 </div>
 </div>
 </div>
-<div id="outline-container-org0c4aed6" class="outline-3">
-<h3 id="org0c4aed6">设置扫描协议</h3>
-<div class="outline-text-3" id="text-org0c4aed6">
+<div id="outline-container-orga02d50f" class="outline-3">
+<h3 id="orga02d50f">设置扫描协议</h3>
+<div class="outline-text-3" id="text-orga02d50f">
 <p>
 通过 <code>-sT</code> 和 <code>-sU</code> 参数可以指定扫描TCP端口或是UDP端口.
 </p>
@@ -234,48 +234,48 @@ nmap -p - <span style="color: #a45bad;">14.120.25.246</span>
 </div>
 </div>
 
-<div id="outline-container-org1c7820f" class="outline-2">
-<h2 id="org1c7820f">Ping设备</h2>
-<div class="outline-text-2" id="text-org1c7820f">
+<div id="outline-container-org597da61" class="outline-2">
+<h2 id="org597da61">Ping设备</h2>
+<div class="outline-text-2" id="text-org597da61">
 <p>
 判断设备是否在线，可以使用 <code>sP</code> 参数来ping该设备
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap -sP <span style="color: #a45bad;">14.120.25.0/24</span>
+<pre class="src src-shell">nmap -sP 14.120.25.0/24
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4e32e52" class="outline-2">
-<h2 id="org4e32e52">扫描操作系统</h2>
-<div class="outline-text-2" id="text-org4e32e52">
+<div id="outline-container-org76b42b2" class="outline-2">
+<h2 id="org76b42b2">扫描操作系统</h2>
+<div class="outline-text-2" id="text-org76b42b2">
 <p>
 通过 <code>-O</code> 参数可以让nmap尝试猜测主机的操作系统
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo nmap -O <span style="color: #a45bad;">14.120.25.246</span>
+<pre class="src src-shell">sudo nmap -O 14.120.25.246
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8cb742b" class="outline-2">
-<h2 id="org8cb742b">扫描主机提供的服务</h2>
-<div class="outline-text-2" id="text-org8cb742b">
+<div id="outline-container-org0a4415e" class="outline-2">
+<h2 id="org0a4415e">扫描主机提供的服务</h2>
+<div class="outline-text-2" id="text-org0a4415e">
 <p>
 通过 <code>-A</code> 参数可以扫描主机操作系统和所启用的服务
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nmap -A <span style="color: #a45bad;">14.120.25.246</span>
+<pre class="src src-shell">nmap -A 14.120.25.246
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org05079eb" class="outline-2">
-<h2 id="org05079eb">输出结果到文件中</h2>
-<div class="outline-text-2" id="text-org05079eb">
+<div id="outline-container-org21b81f8" class="outline-2">
+<h2 id="org21b81f8">输出结果到文件中</h2>
+<div class="outline-text-2" id="text-org21b81f8">
 <p>
 可以通过 <code>-o</code> 选项来将扫描结果存入文件中，nmap允许将结果以多种格式的方式存储，最常见的有普通模式和XML模式
 </p>
@@ -284,7 +284,7 @@ nmap -p - <span style="color: #a45bad;">14.120.25.246</span>
 将结果以普通格式存入文件中:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">set</span> -x &amp;&amp; <span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span>
+<pre class="src src-shell"><span style="color: #483d8b;">set</span> -x &amp;&amp; <span style="color: #a020f0;">exec</span> 2&gt;&amp;1
 nmap -oN /tmp/output.txt localhost
 cat /tmp/output.txt
 </pre>
@@ -295,7 +295,7 @@ cat /tmp/output.txt
 将结果以XML格式存入文件中:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">set</span> -x &amp;&amp; <span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span>
+<pre class="src src-shell"><span style="color: #483d8b;">set</span> -x &amp;&amp; <span style="color: #a020f0;">exec</span> 2&gt;&amp;1
 nmap -oX /tmp/output.xml localhost
 cat /tmp/output.xml
 </pre>
@@ -306,77 +306,49 @@ cat /tmp/output.xml
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-09-12</span>
-            <span title="last modification date" class="post-info">2018-09-13</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-09-12</span>
+    <span title="last modification date" class="post-info">2018-09-13</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/09/12/使用nmap进行网络发现/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/09/12/使用nmap进行网络发现/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/09/12/使用nmap进行网络发现/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/09/12/使用nmap进行网络发现/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

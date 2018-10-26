@@ -3,22 +3,24 @@
 <head>
   <title>在archlinux安装配置VNC Server - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,27 +54,27 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgae710b9">安装TigerVNC</a></li>
-<li><a href="#orgfee6d19">启动VNC Server</a>
+<li><a href="#org6aa08c2">安装TigerVNC</a></li>
+<li><a href="#orgd640471">启动VNC Server</a>
 <ul>
-<li><a href="#org0f4c243">通过systemd自动启动VNC Server</a></li>
+<li><a href="#org3b49845">通过systemd自动启动VNC Server</a></li>
 </ul>
 </li>
-<li><a href="#orgf36c748">关闭VNC Server</a></li>
-<li><a href="#org8a82c62">配置VNC Server</a>
+<li><a href="#org5e40d3f">关闭VNC Server</a></li>
+<li><a href="#orgf8f0f42">配置VNC Server</a>
 <ul>
-<li><a href="#org9c048ff">VNC Server的启动脚本</a></li>
-<li><a href="#org677bb86">VNC Server的其他配置信息</a></li>
+<li><a href="#orgaecdffb">VNC Server的启动脚本</a></li>
+<li><a href="#orgfa1a94d">VNC Server的其他配置信息</a></li>
 </ul>
 </li>
-<li><a href="#org23a8901">登陆VNC Server</a></li>
+<li><a href="#org4930eea">登陆VNC Server</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgae710b9" class="outline-2">
-<h2 id="orgae710b9">安装TigerVNC</h2>
-<div class="outline-text-2" id="text-orgae710b9">
+<div id="outline-container-org6aa08c2" class="outline-2">
+<h2 id="org6aa08c2">安装TigerVNC</h2>
+<div class="outline-text-2" id="text-org6aa08c2">
 <div class="org-src-container">
 <pre class="src src-shell">sudo pacman -S tigervnc --noconfirm
 </pre>
@@ -82,9 +82,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgfee6d19" class="outline-2">
-<h2 id="orgfee6d19">启动VNC Server</h2>
-<div class="outline-text-2" id="text-orgfee6d19">
+<div id="outline-container-orgd640471" class="outline-2">
+<h2 id="orgd640471">启动VNC Server</h2>
+<div class="outline-text-2" id="text-orgd640471">
 <p>
 直接运行 <code>vncserver</code> 会初始化一个配置文件,再此期间会提示你输入并确认登陆SVN Server的密码
 </p>
@@ -144,9 +144,9 @@ Log file is /home/lujun9972/.vnc/T520:4.log
 </pre>
 </div>
 
-<div id="outline-container-org0f4c243" class="outline-3">
-<h3 id="org0f4c243">通过systemd自动启动VNC Server</h3>
-<div class="outline-text-3" id="text-org0f4c243">
+<div id="outline-container-org3b49845" class="outline-3">
+<h3 id="org3b49845">通过systemd自动启动VNC Server</h3>
+<div class="outline-text-3" id="text-org3b49845">
 <p>
 tigervnc安装后会有一个service模板单元，路径为 <code>/usr/lib/systemd/system/vncserver.service</code>,我们只需要通过它拷贝出一个实例，然后设置其中的 <code>USER</code> 参数即可
 </p>
@@ -156,7 +156,7 @@ tigervnc安装后会有一个service模板单元，路径为 <code>/usr/lib/syst
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">sudo cp /usr/lib/systemd/system/vncserver.service /etc/systemd/system/vncserver@:1.service
-sudo sed -i <span style="color: #2d9574;">"/^User=/ s/$/$USER/"</span> /etc/systemd/system/vncserver@:1.service
+sudo sed -i <span style="color: #8b2252;">"/^User=/ s/$/$USER/"</span> /etc/systemd/system/vncserver@:1.service
 </pre>
 </div>
 
@@ -173,9 +173,9 @@ sudo systemctl enable vncserver@:1.service
 </div>
 
 
-<div id="outline-container-orgf36c748" class="outline-2">
-<h2 id="orgf36c748">关闭VNC Server</h2>
-<div class="outline-text-2" id="text-orgf36c748">
+<div id="outline-container-org5e40d3f" class="outline-2">
+<h2 id="org5e40d3f">关闭VNC Server</h2>
+<div class="outline-text-2" id="text-org5e40d3f">
 <p>
 使用 <code>vncserver -kill :X</code> 可以关闭指定编号的VNC Server
 </p>
@@ -187,13 +187,13 @@ Killing Xvnc process ID 10148
 </div>
 </div>
 
-<div id="outline-container-org8a82c62" class="outline-2">
-<h2 id="org8a82c62">配置VNC Server</h2>
-<div class="outline-text-2" id="text-org8a82c62">
+<div id="outline-container-orgf8f0f42" class="outline-2">
+<h2 id="orgf8f0f42">配置VNC Server</h2>
+<div class="outline-text-2" id="text-orgf8f0f42">
 </div>
-<div id="outline-container-org9c048ff" class="outline-3">
-<h3 id="org9c048ff">VNC Server的启动脚本</h3>
-<div class="outline-text-3" id="text-org9c048ff">
+<div id="outline-container-orgaecdffb" class="outline-3">
+<h3 id="orgaecdffb">VNC Server的启动脚本</h3>
+<div class="outline-text-3" id="text-orgaecdffb">
 <p>
 VNC Server 在启动时会运行 <code>~/.vnc/xstartup</code> 来初始化图形环境.
 </p>
@@ -203,52 +203,52 @@ VNC Server 在启动时会运行 <code>~/.vnc/xstartup</code> 来初始化图形
 只需要将 <code>/etc/X11/xinit/xinitrc</code> 改成 <code>~/.xinitrc</code> 即可
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">unset</span> SESSION_MANAGER
-<span style="color: #4f97d7;">unset</span> DBUS_SESSION_BUS_ADDRESS
-<span style="color: #7590db;">OS</span>=<span style="color: #fa8072;">`uname -s`</span>
-<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> $<span style="color: #7590db;">OS</span> = <span style="color: #2d9574;">'Linux'</span> <span style="color: #4f97d7;">]</span>; <span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #4f97d7; font-weight: bold;">case</span> <span style="color: #2d9574;">"$WINDOWMANAGER"</span><span style="color: #4f97d7; font-weight: bold;"> in</span>
+<pre class="src src-shell"><span style="color: #483d8b;">unset</span> SESSION_MANAGER
+<span style="color: #483d8b;">unset</span> DBUS_SESSION_BUS_ADDRESS
+<span style="color: #a0522d;">OS</span>=<span style="color: #ff00ff;">`uname -s`</span>
+<span style="color: #a020f0;">if</span> [ $<span style="color: #a0522d;">OS</span> = <span style="color: #8b2252;">'Linux'</span> ]; <span style="color: #a020f0;">then</span>
+    <span style="color: #a020f0;">case</span> <span style="color: #8b2252;">"$WINDOWMANAGER"</span><span style="color: #a020f0;"> in</span>
         *gnome*)
-            <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -e /etc/SuSE-release <span style="color: #4f97d7;">]</span>; <span style="color: #4f97d7; font-weight: bold;">then</span>
-                <span style="color: #7590db;">PATH</span>=$<span style="color: #7590db;">PATH</span>:/opt/gnome/bin
-                <span style="color: #4f97d7;">export</span> PATH
-            <span style="color: #4f97d7; font-weight: bold;">fi</span>
+            <span style="color: #a020f0;">if</span> [ -e /etc/SuSE-release ]; <span style="color: #a020f0;">then</span>
+                <span style="color: #a0522d;">PATH</span>=$<span style="color: #a0522d;">PATH</span>:/opt/gnome/bin
+                <span style="color: #483d8b;">export</span> PATH
+            <span style="color: #a020f0;">fi</span>
             ;;
-    <span style="color: #4f97d7; font-weight: bold;">esac</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
-<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -x ~/.xinitrc <span style="color: #4f97d7;">]</span>; <span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #4f97d7; font-weight: bold;">exec</span> ~/.xinitrc
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
-<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -f ~/.xinitrc <span style="color: #4f97d7;">]</span>; <span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #4f97d7; font-weight: bold;">exec</span> sh ~/.xinitrc
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
+    <span style="color: #a020f0;">esac</span>
+<span style="color: #a020f0;">fi</span>
+<span style="color: #a020f0;">if</span> [ -x ~/.xinitrc ]; <span style="color: #a020f0;">then</span>
+    <span style="color: #a020f0;">exec</span> ~/.xinitrc
+<span style="color: #a020f0;">fi</span>
+<span style="color: #a020f0;">if</span> [ -f ~/.xinitrc ]; <span style="color: #a020f0;">then</span>
+    <span style="color: #a020f0;">exec</span> sh ~/.xinitrc
+<span style="color: #a020f0;">fi</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org677bb86" class="outline-3">
-<h3 id="org677bb86">VNC Server的其他配置信息</h3>
-<div class="outline-text-3" id="text-org677bb86">
+<div id="outline-container-orgfa1a94d" class="outline-3">
+<h3 id="orgfa1a94d">VNC Server的其他配置信息</h3>
+<div class="outline-text-3" id="text-orgfa1a94d">
 <p>
 <code>~/.vnc/config</code> 中则可以对VNC Server本身进行参数设置，比如我们可以配置一下分辨率
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">securitytypes=vncauth,tlsvnc</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">desktop=sandbox</span>
-<span style="color: #7590db;">geometry</span>=1920x1080
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">localhost</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">alwaysshared</span>
-<span style="color: #7590db;">dpi</span>=96
+<pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">securitytypes=vncauth,tlsvnc</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">desktop=sandbox</span>
+<span style="color: #a0522d;">geometry</span>=1920x1080
+<span style="color: #b22222;"># </span><span style="color: #b22222;">localhost</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">alwaysshared</span>
+<span style="color: #a0522d;">dpi</span>=96
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org23a8901" class="outline-2">
-<h2 id="org23a8901">登陆VNC Server</h2>
-<div class="outline-text-2" id="text-org23a8901">
+<div id="outline-container-org4930eea" class="outline-2">
+<h2 id="org4930eea">登陆VNC Server</h2>
+<div class="outline-text-2" id="text-org4930eea">
 <p>
 直接运行 <code>vncivew ${server}:${port}</code>,然后输入密码即可登陆VNC Server了
 </p>
@@ -263,7 +263,7 @@ VNC Server 在启动时会运行 <code>~/.vnc/xstartup</code> 来初始化图形
 不过VNC协议是没有加密的，可能被嗅探，因此推荐通过SSH tunnel进行封装
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ssh -L <span style="color: #a45bad;">5901:127.0.0.1:5901</span> -N -f -l $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">username</span><span style="color: #4f97d7;">}</span> $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">server</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">ssh -L 5901:127.0.0.1:5901 -N -f -l ${<span style="color: #a0522d;">username</span>} ${<span style="color: #a0522d;">server</span>}
 </pre>
 </div>
 
@@ -276,77 +276,49 @@ VNC Server 在启动时会运行 <code>~/.vnc/xstartup</code> 来初始化图形
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-09-20</span>
-            <span title="last modification date" class="post-info">2018-09-20</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-09-20</span>
+    <span title="last modification date" class="post-info">2018-09-20</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/09/20/在archlinux安装配置vnc-server/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/09/20/在archlinux安装配置vnc-server/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/09/20/在archlinux安装配置vnc-server/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/09/20/在archlinux安装配置vnc-server/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

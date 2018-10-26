@@ -3,22 +3,24 @@
 <head>
   <title>使用cryptsetup创建加密磁盘 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,24 +54,24 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org59a3f19">dm-crypt的特点</a></li>
-<li><a href="#org9d45973">使用cryptsetup创建加密磁盘</a>
+<li><a href="#org7631169">dm-crypt的特点</a></li>
+<li><a href="#orgb084b32">使用cryptsetup创建加密磁盘</a>
 <ul>
-<li><a href="#orgbdfbfe9">创建虚拟磁盘分区</a></li>
-<li><a href="#org0075f86">创建加密磁盘分区</a></li>
-<li><a href="#org72e11e3">打开密码盘</a></li>
-<li><a href="#orgf6c7fe3">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></a></li>
-<li><a href="#org7650728">查看加密盘状态</a></li>
-<li><a href="#org0bf4bd1">关闭加密盘</a></li>
+<li><a href="#org0cc47d9">创建虚拟磁盘分区</a></li>
+<li><a href="#org1c80254">创建加密磁盘分区</a></li>
+<li><a href="#org7133e63">打开密码盘</a></li>
+<li><a href="#org7e3f70e">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></a></li>
+<li><a href="#org09faa64">查看加密盘状态</a></li>
+<li><a href="#org0ef3e7e">关闭加密盘</a></li>
 </ul>
 </li>
-<li><a href="#orgc95e111">让加密盘使用keyfile认证</a>
+<li><a href="#org250e0c7">让加密盘使用keyfile认证</a>
 <ul>
-<li><a href="#org303e43c">创建随机文件作为keyfile</a></li>
-<li><a href="#org060028a">查看key slot</a></li>
-<li><a href="#org196cfd1">添加keyfile认证</a></li>
-<li><a href="#org54262a4">使用keyfile打开加密盘</a></li>
-<li><a href="#org8fb0657">删除keyslot</a></li>
+<li><a href="#orgb62b341">创建随机文件作为keyfile</a></li>
+<li><a href="#orgd5120b0">查看key slot</a></li>
+<li><a href="#org8126b33">添加keyfile认证</a></li>
+<li><a href="#org8657d5c">使用keyfile打开加密盘</a></li>
+<li><a href="#org1233e91">删除keyslot</a></li>
 </ul>
 </li>
 </ul>
@@ -81,9 +81,9 @@
 cryptsetup是linux下的一个分区加密工具，它通过调用内核中的"dm-crypt"来实现磁盘加密的功能。
 </p>
 
-<div id="outline-container-org59a3f19" class="outline-2">
-<h2 id="org59a3f19">dm-crypt的特点</h2>
-<div class="outline-text-2" id="text-org59a3f19">
+<div id="outline-container-org7631169" class="outline-2">
+<h2 id="org7631169">dm-crypt的特点</h2>
+<div class="outline-text-2" id="text-org7631169">
 <p>
 dm-crypt具有如下几个特点:
 </p>
@@ -120,19 +120,19 @@ dm-crypt是整合到linux内核中的，而它的命令行前端cryptsetup,在�
 </div>
 </div>
 
-<div id="outline-container-org9d45973" class="outline-2">
-<h2 id="org9d45973">使用cryptsetup创建加密磁盘</h2>
-<div class="outline-text-2" id="text-org9d45973">
+<div id="outline-container-orgb084b32" class="outline-2">
+<h2 id="orgb084b32">使用cryptsetup创建加密磁盘</h2>
+<div class="outline-text-2" id="text-orgb084b32">
 </div>
-<div id="outline-container-orgbdfbfe9" class="outline-3">
-<h3 id="orgbdfbfe9">创建虚拟磁盘分区</h3>
-<div class="outline-text-3" id="text-orgbdfbfe9">
+<div id="outline-container-org0cc47d9" class="outline-3">
+<h3 id="org0cc47d9">创建虚拟磁盘分区</h3>
+<div class="outline-text-3" id="text-org0cc47d9">
 <p>
 为了方便，我这里用 <code>dd</code> 命令创建一个文件来代替真实的磁盘分区(因为操作过程会清空整个磁盘分区的内容:()。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">dd <span style="color: #7590db;">if</span>=/dev/zero <span style="color: #7590db;">of</span>=/tmp/USB.img <span style="color: #7590db;">bs</span>=<span style="color: #a45bad;">1M</span> <span style="color: #7590db;">count</span>=<span style="color: #a45bad;">100</span>
+<pre class="src src-shell">dd <span style="color: #a0522d;">if</span>=/dev/zero <span style="color: #a0522d;">of</span>=/tmp/USB.img <span style="color: #a0522d;">bs</span>=1M <span style="color: #a0522d;">count</span>=100
 
 ls -l /tmp/USB.img
 </pre>
@@ -148,9 +148,9 @@ ls -l /tmp/USB.img
 </div>
 </div>
 
-<div id="outline-container-org0075f86" class="outline-3">
-<h3 id="org0075f86">创建加密磁盘分区</h3>
-<div class="outline-text-3" id="text-org0075f86">
+<div id="outline-container-org1c80254" class="outline-3">
+<h3 id="org1c80254">创建加密磁盘分区</h3>
+<div class="outline-text-3" id="text-org1c80254">
 <p>
 虽然说dm-crypt支持多种加密格式，但最常用的还是LUKS。
 </p>
@@ -159,7 +159,7 @@ ls -l /tmp/USB.img
 创建LUKS加密盘的命令为:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">cryptsetup <span style="color: #4f97d7;">[</span>&#20854;&#20182;&#21442;&#25968;<span style="color: #4f97d7;">]</span> luksFormat &#35774;&#22791;&#21517;
+<pre class="src src-shell">cryptsetup [&#20854;&#20182;&#21442;&#25968;] luksFormat &#35774;&#22791;&#21517;
 </pre>
 </div>
 
@@ -197,9 +197,9 @@ Are you sure? (Type uppercase yes): YES
 </div>
 
 
-<div id="outline-container-org72e11e3" class="outline-3">
-<h3 id="org72e11e3">打开密码盘</h3>
-<div class="outline-text-3" id="text-org72e11e3">
+<div id="outline-container-org7133e63" class="outline-3">
+<h3 id="org7133e63">打开密码盘</h3>
+<div class="outline-text-3" id="text-org7133e63">
 <p>
 cryptsetup可以打开前面提到的各种加密盘。
 </p>
@@ -241,9 +241,9 @@ cryptsetup可以打开前面提到的各种加密盘。
 </div>
 </div>
 
-<div id="outline-container-orgf6c7fe3" class="outline-3">
-<h3 id="orgf6c7fe3">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></h3>
-<div class="outline-text-3" id="text-orgf6c7fe3">
+<div id="outline-container-org7e3f70e" class="outline-3">
+<h3 id="org7e3f70e">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></h3>
+<div class="outline-text-3" id="text-org7e3f70e">
 <p>
 你可以像普通磁盘一样来操作 <code>/dev/mapper/USB</code>.
 </p>
@@ -263,7 +263,7 @@ ls -l /mnt/secret
 <pre class="src src-org">Creating filesystem with 100352 1k blocks and 25168 inodes
 Filesystem UUID: b1557874-a538-4ffa-9ce0-c17e8feb4b1c
 Superblock backups stored on blocks: 
-  8193, 24577, 40961, 57345, 73729
+        8193, 24577, 40961, 57345, 73729
 
 Allocating group tables:  0/13&#8;&#8;&#8;&#8;&#8;     &#8;&#8;&#8;&#8;&#8;done                            
 Writing inode tables:  0/13&#8;&#8;&#8;&#8;&#8;     &#8;&#8;&#8;&#8;&#8;done                            
@@ -276,9 +276,9 @@ Writing superblocks and filesystem accounting information:  0/13&#8;&#8;&#8;&#8;
 </div>
 </div>
 
-<div id="outline-container-org7650728" class="outline-3">
-<h3 id="org7650728">查看加密盘状态</h3>
-<div class="outline-text-3" id="text-org7650728">
+<div id="outline-container-org09faa64" class="outline-3">
+<h3 id="org09faa64">查看加密盘状态</h3>
+<div class="outline-text-3" id="text-org09faa64">
 <p>
 在打开加密盘后，可以查看该加密盘的状态，语法为
 </p>
@@ -315,9 +315,9 @@ Writing superblocks and filesystem accounting information:  0/13&#8;&#8;&#8;&#8;
 </div>
 </div>
 
-<div id="outline-container-org0bf4bd1" class="outline-3">
-<h3 id="org0bf4bd1">关闭加密盘</h3>
-<div class="outline-text-3" id="text-org0bf4bd1">
+<div id="outline-container-org0ef3e7e" class="outline-3">
+<h3 id="org0ef3e7e">关闭加密盘</h3>
+<div class="outline-text-3" id="text-org0ef3e7e">
 <p>
 操作完磁盘后，使用下面命令关闭加密盘
 </p>
@@ -337,22 +337,22 @@ sudo cryptsetup close USB
 </div>
 </div>
 </div>
-<div id="outline-container-orgc95e111" class="outline-2">
-<h2 id="orgc95e111">让加密盘使用keyfile认证</h2>
-<div class="outline-text-2" id="text-orgc95e111">
+<div id="outline-container-org250e0c7" class="outline-2">
+<h2 id="org250e0c7">让加密盘使用keyfile认证</h2>
+<div class="outline-text-2" id="text-org250e0c7">
 </div>
-<div id="outline-container-org303e43c" class="outline-3">
-<h3 id="org303e43c">创建随机文件作为keyfile</h3>
-<div class="outline-text-3" id="text-org303e43c">
+<div id="outline-container-orgb62b341" class="outline-3">
+<h3 id="orgb62b341">创建随机文件作为keyfile</h3>
+<div class="outline-text-3" id="text-orgb62b341">
 <div class="org-src-container">
-<pre class="src src-shell">dd <span style="color: #7590db;">if</span>=/dev/urandom <span style="color: #7590db;">of</span>=/tmp/keyfile <span style="color: #7590db;">bs</span>=<span style="color: #a45bad;">1K</span> <span style="color: #7590db;">count</span>=<span style="color: #a45bad;">64</span>
+<pre class="src src-shell">dd <span style="color: #a0522d;">if</span>=/dev/urandom <span style="color: #a0522d;">of</span>=/tmp/keyfile <span style="color: #a0522d;">bs</span>=1K <span style="color: #a0522d;">count</span>=64
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org060028a" class="outline-3">
-<h3 id="org060028a">查看key slot</h3>
-<div class="outline-text-3" id="text-org060028a">
+<div id="outline-container-orgd5120b0" class="outline-3">
+<h3 id="orgd5120b0">查看key slot</h3>
+<div class="outline-text-3" id="text-orgd5120b0">
 <p>
 LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一个解密的钥匙，使用任何一把钥匙都能打开这个LUKS加密盘。
 </p>
@@ -382,9 +382,9 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </p>
 </div>
 </div>
-<div id="outline-container-org196cfd1" class="outline-3">
-<h3 id="org196cfd1">添加keyfile认证</h3>
-<div class="outline-text-3" id="text-org196cfd1">
+<div id="outline-container-org8126b33" class="outline-3">
+<h3 id="org8126b33">添加keyfile认证</h3>
+<div class="outline-text-3" id="text-org8126b33">
 <p>
 使用下面命令为LUKS加密盘添加keyfile认证
 </p>
@@ -415,9 +415,9 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </p>
 </div>
 </div>
-<div id="outline-container-org54262a4" class="outline-3">
-<h3 id="org54262a4">使用keyfile打开加密盘</h3>
-<div class="outline-text-3" id="text-org54262a4">
+<div id="outline-container-org8657d5c" class="outline-3">
+<h3 id="org8657d5c">使用keyfile打开加密盘</h3>
+<div class="outline-text-3" id="text-org8657d5c">
 <p>
 使用keyfile打开加密盘的方式跟普通打开加密盘的方式类似，只是要多用一个 <code>--keyfile</code> 来指定keyfile的路径
 </p>
@@ -427,14 +427,14 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </div>
 </div>
 </div>
-<div id="outline-container-org8fb0657" class="outline-3">
-<h3 id="org8fb0657">删除keyslot</h3>
-<div class="outline-text-3" id="text-org8fb0657">
+<div id="outline-container-org1233e91" class="outline-3">
+<h3 id="org1233e91">删除keyslot</h3>
+<div class="outline-text-3" id="text-org1233e91">
 <p>
 使用下面命令可以删除加密盘的其中一个key slot
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">cryptsetup luksKillSlot /tmp/USB.img <span style="color: #a45bad;">0</span>
+<pre class="src src-shell">cryptsetup luksKillSlot /tmp/USB.img 0
 </pre>
 </div>
 
@@ -456,77 +456,49 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-04-12</span>
-            <span title="last modification date" class="post-info">2018-04-12</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-04-12</span>
+    <span title="last modification date" class="post-info">2018-04-12</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/04/12/使用cryptsetup创建加密磁盘/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/04/12/使用cryptsetup创建加密磁盘/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/04/12/使用cryptsetup创建加密磁盘/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/04/12/使用cryptsetup创建加密磁盘/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

@@ -3,22 +3,24 @@
 <head>
   <title>使用foremost恢复已删除文件 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴,recover" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,8 +54,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5f90871">安装foremost</a></li>
-<li><a href="#orgc79f108">使用foremost扫描文件</a></li>
+<li><a href="#orgb436214">安装foremost</a></li>
+<li><a href="#org152333a">使用foremost扫描文件</a></li>
 </ul>
 </div>
 </div>
@@ -71,9 +71,9 @@ foremost默认可以扫描出 <code>jpg</code>, <code>gif</code>, <code>png</cod
 但是通过配置它的配置文件(默认为 <code>/etc/foremost.conf</code>),你还可以为它增加新的支持类型。
 </p>
 
-<div id="outline-container-org5f90871" class="outline-2">
-<h2 id="org5f90871">安装foremost</h2>
-<div class="outline-text-2" id="text-org5f90871">
+<div id="outline-container-orgb436214" class="outline-2">
+<h2 id="orgb436214">安装foremost</h2>
+<div class="outline-text-2" id="text-orgb436214">
 <div class="org-src-container">
 <pre class="src src-shell">sudo pacman -S foremost
 </pre>
@@ -81,9 +81,9 @@ foremost默认可以扫描出 <code>jpg</code>, <code>gif</code>, <code>png</cod
 </div>
 </div>
 
-<div id="outline-container-orgc79f108" class="outline-2">
-<h2 id="orgc79f108">使用foremost扫描文件</h2>
-<div class="outline-text-2" id="text-orgc79f108">
+<div id="outline-container-org152333a" class="outline-2">
+<h2 id="org152333a">使用foremost扫描文件</h2>
+<div class="outline-text-2" id="text-org152333a">
 <p>
 最常用的方法就是
 </p>
@@ -136,7 +136,7 @@ foremost默认可以扫描出 <code>jpg</code>, <code>gif</code>, <code>png</cod
 与 <code>-q</code> 常连用的是 <code>-b number</code>, 它可以指定磁盘每个扇区的大小，默认是512个字节。但对于 <code>ext4</code> 文件系统来说，这个值一般是4096.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo formost -q -b <span style="color: #a45bad;">4096</span> -t png -i /dev/sda1 -T
+<pre class="src src-shell">sudo formost -q -b 4096 -t png -i /dev/sda1 -T
 </pre>
 </div>
 
@@ -144,7 +144,7 @@ foremost默认可以扫描出 <code>jpg</code>, <code>gif</code>, <code>png</cod
 具体文件系统的扇区大小是多少，可以通过 <code>dumpe2fs</code> 来查看
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo  dumpe2fs /dev/sda1 |grep <span style="color: #2d9574;">"Block size"</span> |cut -f2 -d <span style="color: #2d9574;">":"</span>
+<pre class="src src-shell">sudo  dumpe2fs /dev/sda1 |grep <span style="color: #8b2252;">"Block size"</span> |cut -f2 -d <span style="color: #8b2252;">":"</span>
 </pre>
 </div>
 
@@ -152,11 +152,11 @@ foremost默认可以扫描出 <code>jpg</code>, <code>gif</code>, <code>png</cod
 我们可以写一个脚本,将 <code>foremost</code> 和 <code>dumpe2fs</code> 结合起来实现快速扫描。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #7590db;">TYPE</span>=$<span style="color: #a45bad;">1</span>
-<span style="color: #7590db;">DIR</span>=$<span style="color: #a45bad;">2</span>
-<span style="color: #7590db;">fs</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">df</span>  $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">DIR</span><span style="color: #bc6ec5;">}</span>|tail -n <span style="color: #a45bad;">1</span> |cut -f <span style="color: #a45bad;">1</span> -d <span style="color: #2d9574;">" "</span><span style="color: #4f97d7;">)</span>
-<span style="color: #7590db;">block_size</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">sudo</span>  dumpe2fs $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">fs</span><span style="color: #bc6ec5;">}</span> |grep <span style="color: #2d9574;">"Block size"</span> |cut -f2 -d <span style="color: #2d9574;">":"</span><span style="color: #4f97d7;">)</span>
-foremost -t $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">TYPE</span><span style="color: #4f97d7;">}</span> -q -b $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">block_size</span><span style="color: #4f97d7;">}</span> -i $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">fs</span><span style="color: #4f97d7;">}</span> -T
+<pre class="src src-shell"><span style="color: #a0522d;">TYPE</span>=$<span style="color: #a0522d;">1</span>
+<span style="color: #a0522d;">DIR</span>=$<span style="color: #a0522d;">2</span>
+<span style="color: #a0522d;">fs</span>=$(<span style="color: #ff00ff;">df</span>  ${<span style="color: #a0522d;">DIR</span>}|tail -n 1 |cut -f 1 -d <span style="color: #8b2252;">" "</span>)
+<span style="color: #a0522d;">block_size</span>=$(<span style="color: #ff00ff;">sudo</span>  dumpe2fs ${<span style="color: #a0522d;">fs</span>} |grep <span style="color: #8b2252;">"Block size"</span> |cut -f2 -d <span style="color: #8b2252;">":"</span>)
+foremost -t ${<span style="color: #a0522d;">TYPE</span>} -q -b ${<span style="color: #a0522d;">block_size</span>} -i ${<span style="color: #a0522d;">fs</span>} -T
 </pre>
 </div>
 
@@ -185,77 +185,49 @@ foremost -t $<span style="color: #4f97d7;">{</span><span style="color: #7590db;"
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-03-08</span>
-            <span title="last modification date" class="post-info">2018-03-08</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/recover">recover</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-03-08</span>
+    <span title="last modification date" class="post-info">2018-03-08</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/recover">recover</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/03/08/使用foremost恢复已删除文件/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/03/08/使用foremost恢复已删除文件/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/03/08/使用foremost恢复已删除文件/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/03/08/使用foremost恢复已删除文件/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

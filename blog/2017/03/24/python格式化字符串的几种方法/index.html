@@ -3,22 +3,24 @@
 <head>
   <title>Python格式化字符串的几种方法 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="编程之旅,python,string" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,18 +54,18 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org972bc0b">%操作符(已经落伍了)</a></li>
-<li><a href="#org6d05c5c">使用字符串的format方法</a></li>
-<li><a href="#org9aec65d">模板字符串</a></li>
-<li><a href="#org7c69963">Formatted String Literals(Python3.6)</a></li>
-<li><a href="#orgd3a65a7">如何抉择?</a></li>
+<li><a href="#org4665d78">%操作符(已经落伍了)</a></li>
+<li><a href="#org6aadd9d">使用字符串的format方法</a></li>
+<li><a href="#org7c12b22">模板字符串</a></li>
+<li><a href="#org38e2a59">Formatted String Literals(Python3.6)</a></li>
+<li><a href="#orgf8982e1">如何抉择?</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org972bc0b" class="outline-2">
-<h2 id="org972bc0b">%操作符(已经落伍了)</h2>
-<div class="outline-text-2" id="text-org972bc0b">
+<div id="outline-container-org4665d78" class="outline-2">
+<h2 id="org4665d78">%操作符(已经落伍了)</h2>
+<div class="outline-text-2" id="text-org4665d78">
 <p>
 最原始的方式应该就是用 <code>%</code> 操作符了. 
 </p>
@@ -74,8 +74,8 @@
 <code>%</code> 操作符可以按位置替换格式化符的值:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #7590db;">name</span> = <span style="color: #2d9574;">"earth"</span>
-<span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #2d9574;">"hello %s"</span> % name
+<pre class="src src-python"><span style="color: #a0522d;">name</span> = <span style="color: #8b2252;">"earth"</span>
+<span style="color: #a020f0;">return</span> <span style="color: #8b2252;">"hello %s"</span> % name
 </pre>
 </div>
 
@@ -83,9 +83,9 @@
 若有超过一个的值要格式化则需要把这些值组成一个元组:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #7590db;">name</span> = <span style="color: #2d9574;">"earth"</span>
-<span style="color: #7590db;">age</span> = <span style="color: #a45bad;">4600000000</span>
-<span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #2d9574;">"%s is %d old"</span> % <span style="color: #4f97d7;">(</span>name,age<span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a0522d;">name</span> = <span style="color: #8b2252;">"earth"</span>
+<span style="color: #a0522d;">age</span> = 4600000000
+<span style="color: #a020f0;">return</span> <span style="color: #8b2252;">"%s is %d old"</span> % (name,age)
 </pre>
 </div>
 
@@ -93,8 +93,8 @@
 不过 <code>%</code> 也可以按名字进行替换,这个时候 <code>%</code> 后面应该接一个dict:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #7590db;">info</span> = <span style="color: #4f97d7;">{</span><span style="color: #2d9574;">"name"</span>: <span style="color: #2d9574;">"earth"</span>, <span style="color: #2d9574;">"age"</span>: <span style="color: #a45bad;">4600000000</span>, <span style="color: #2d9574;">"alias"</span>: <span style="color: #2d9574;">"Gaia"</span><span style="color: #4f97d7;">}</span>
-<span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #2d9574;">"%(name)s is %(age) old"</span> % info
+<pre class="src src-python"><span style="color: #a0522d;">info</span> = {<span style="color: #8b2252;">"name"</span>: <span style="color: #8b2252;">"earth"</span>, <span style="color: #8b2252;">"age"</span>: 4600000000, <span style="color: #8b2252;">"alias"</span>: <span style="color: #8b2252;">"Gaia"</span>}
+<span style="color: #a020f0;">return</span> <span style="color: #8b2252;">"%(name)s is %(age) old"</span> % info
 </pre>
 </div>
 
@@ -108,9 +108,9 @@ Python支持的格式化符可以在这里看到<a href="https://docs.python.org
 </div>
 </div>
 
-<div id="outline-container-org6d05c5c" class="outline-2">
-<h2 id="org6d05c5c">使用字符串的format方法</h2>
-<div class="outline-text-2" id="text-org6d05c5c">
+<div id="outline-container-org6aadd9d" class="outline-2">
+<h2 id="org6aadd9d">使用字符串的format方法</h2>
+<div class="outline-text-2" id="text-org6aadd9d">
 <p>
 字符串的format方法也支持按位置和按名字两种方式进行格式化:
 </p>
@@ -119,9 +119,9 @@ Python支持的格式化符可以在这里看到<a href="https://docs.python.org
 按位置进行格式化:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #7590db;">name</span> = <span style="color: #2d9574;">"earth"</span>
-<span style="color: #7590db;">age</span> = <span style="color: #a45bad;">4600000000</span>
-<span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #2d9574;">"{} is {:f} old"</span>.<span style="color: #4f97d7;">format</span><span style="color: #4f97d7;">(</span>name,age<span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a0522d;">name</span> = <span style="color: #8b2252;">"earth"</span>
+<span style="color: #a0522d;">age</span> = 4600000000
+<span style="color: #a020f0;">return</span> <span style="color: #8b2252;">"{} is {:f} old"</span>.<span style="color: #483d8b;">format</span>(name,age)
 </pre>
 </div>
 
@@ -133,10 +133,10 @@ Python支持的格式化符可以在这里看到<a href="https://docs.python.org
 按名字进行格式化:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #7590db;">name</span> = <span style="color: #2d9574;">"earth"</span>
-<span style="color: #7590db;">age</span> = <span style="color: #a45bad;">4600000000</span>
+<pre class="src src-python"><span style="color: #a0522d;">name</span> = <span style="color: #8b2252;">"earth"</span>
+<span style="color: #a0522d;">age</span> = 4600000000
 
-<span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #2d9574;">"{name} is {age:f} old"</span>.<span style="color: #4f97d7;">format</span><span style="color: #4f97d7;">(</span>age=age,name=name<span style="color: #4f97d7;">)</span>
+<span style="color: #a020f0;">return</span> <span style="color: #8b2252;">"{name} is {age:f} old"</span>.<span style="color: #483d8b;">format</span>(age=age,name=name)
 </pre>
 </div>
 
@@ -149,7 +149,7 @@ Python支持的格式化符可以在这里看到<a href="https://docs.python.org
 不仅如此,format的 <code>{}</code> 内还能有更复杂的东西:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #2d9574;">"{info[0]} is {info[1]} old"</span>.<span style="color: #4f97d7;">format</span><span style="color: #4f97d7;">(</span>info=<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"earth"</span>,<span style="color: #a45bad;">4600000000</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a020f0;">return</span> <span style="color: #8b2252;">"{info[0]} is {info[1]} old"</span>.<span style="color: #483d8b;">format</span>(info=(<span style="color: #8b2252;">"earth"</span>,4600000000))
 </pre>
 </div>
 
@@ -157,31 +157,31 @@ Python支持的格式化符可以在这里看到<a href="https://docs.python.org
 <b>然而,这可能带来安全方面的隐患:</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #7590db;">SECRET</span> = <span style="color: #2d9574;">'this-is-a-secret'</span>
-<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Error</span>:
-    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__init__</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span><span style="color: #4f97d7;">)</span>:
-        <span style="color: #4f97d7; font-weight: bold;">pass</span>
-<span style="color: #7590db;">err</span> = Error<span style="color: #4f97d7;">()</span>
-<span style="color: #7590db;">user_input</span> = <span style="color: #2d9574;">'{error.__init__.__globals__[SECRET]}'</span>
-<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>user_input.<span style="color: #4f97d7;">format</span><span style="color: #bc6ec5;">(</span>error=err<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a0522d;">SECRET</span> = <span style="color: #8b2252;">'this-is-a-secret'</span>
+<span style="color: #a020f0;">class</span> <span style="color: #228b22;">Error</span>:
+    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__init__</span>(<span style="color: #a020f0;">self</span>):
+        <span style="color: #a020f0;">pass</span>
+<span style="color: #a0522d;">err</span> = Error()
+<span style="color: #a0522d;">user_input</span> = <span style="color: #8b2252;">'{error.__init__.__globals__[SECRET]}'</span>
+<span style="color: #a020f0;">print</span>(user_input.<span style="color: #483d8b;">format</span>(error=err))
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org9aec65d" class="outline-2">
-<h2 id="org9aec65d">模板字符串</h2>
-<div class="outline-text-2" id="text-org9aec65d">
+<div id="outline-container-org7c12b22" class="outline-2">
+<h2 id="org7c12b22">模板字符串</h2>
+<div class="outline-text-2" id="text-org7c12b22">
 <p>
 Python的标准库中提供了一个 <code>Template</code> 类,可以进行简单的内容替换.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> string <span style="color: #4f97d7; font-weight: bold;">import</span> Template
-<span style="color: #7590db;">name</span> = <span style="color: #2d9574;">"earth"</span>
-<span style="color: #7590db;">age</span> = <span style="color: #a45bad;">4600000000</span>
-<span style="color: #7590db;">templ</span> = Template<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"$name is $age old"</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">return</span> templ.substitute<span style="color: #4f97d7;">(</span>name=name,age=<span style="color: #4f97d7;">float</span><span style="color: #bc6ec5;">(</span>age<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a020f0;">from</span> string <span style="color: #a020f0;">import</span> Template
+<span style="color: #a0522d;">name</span> = <span style="color: #8b2252;">"earth"</span>
+<span style="color: #a0522d;">age</span> = 4600000000
+<span style="color: #a0522d;">templ</span> = Template(<span style="color: #8b2252;">"$name is $age old"</span>)
+<span style="color: #a020f0;">return</span> templ.substitute(name=name,age=<span style="color: #483d8b;">float</span>(age))
 </pre>
 </div>
 
@@ -193,17 +193,17 @@ Python的标准库中提供了一个 <code>Template</code> 类,可以进行简�
 使用模板字符串的优点在于比较安全, 比如上面那个format方法的隐患, 改成用模板字符,则会报错
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> string <span style="color: #4f97d7; font-weight: bold;">import</span> Template
-<span style="color: #7590db;">SECRET</span> = <span style="color: #2d9574;">'this-is-a-secret'</span>
-<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Error</span>:
-    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__init__</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">self</span><span style="color: #4f97d7;">)</span>:
-        <span style="color: #4f97d7; font-weight: bold;">pass</span>
-<span style="color: #7590db;">err</span> = Error<span style="color: #4f97d7;">()</span>
-<span style="color: #7590db;">user_input</span> = <span style="color: #2d9574;">'${error.__init__.__globals__[SECRET]}'</span>
-<span style="color: #4f97d7; font-weight: bold;">try</span>:
-    Template<span style="color: #4f97d7;">(</span>user_input<span style="color: #4f97d7;">)</span>.substitute<span style="color: #4f97d7;">(</span>error=err<span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">except</span> <span style="color: #ce537a; font-weight: bold;">ValueError</span> <span style="color: #4f97d7; font-weight: bold;">as</span> e:
-    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>e<span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a020f0;">from</span> string <span style="color: #a020f0;">import</span> Template
+<span style="color: #a0522d;">SECRET</span> = <span style="color: #8b2252;">'this-is-a-secret'</span>
+<span style="color: #a020f0;">class</span> <span style="color: #228b22;">Error</span>:
+    <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">__init__</span>(<span style="color: #a020f0;">self</span>):
+        <span style="color: #a020f0;">pass</span>
+<span style="color: #a0522d;">err</span> = Error()
+<span style="color: #a0522d;">user_input</span> = <span style="color: #8b2252;">'${error.__init__.__globals__[SECRET]}'</span>
+<span style="color: #a020f0;">try</span>:
+    Template(user_input).substitute(error=err)
+<span style="color: #a020f0;">except</span> <span style="color: #228b22;">ValueError</span> <span style="color: #a020f0;">as</span> e:
+    <span style="color: #a020f0;">print</span>(e)
 </pre>
 </div>
 
@@ -213,16 +213,16 @@ Template的这个特性特别适用于格式化字符串是由外人提供的情
 </div>
 </div>
 
-<div id="outline-container-org7c69963" class="outline-2">
-<h2 id="org7c69963">Formatted String Literals(Python3.6)</h2>
-<div class="outline-text-2" id="text-org7c69963">
+<div id="outline-container-org38e2a59" class="outline-2">
+<h2 id="org38e2a59">Formatted String Literals(Python3.6)</h2>
+<div class="outline-text-2" id="text-org38e2a59">
 <p>
 这种格式化字符串的方法是由Python3.6新加入的. 它允许你在字符串内内嵌Python运算式:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #7590db;">a</span> = <span style="color: #a45bad;">11</span>
-<span style="color: #7590db;">b</span> = <span style="color: #a45bad;">2</span>
-<span style="color: #4f97d7; font-weight: bold;">return</span> f<span style="color: #2d9574;">'{a} + {b} = {a + b};{a} - {b} = {a - b}'</span>
+<pre class="src src-python"><span style="color: #a0522d;">a</span> = 11
+<span style="color: #a0522d;">b</span> = 2
+<span style="color: #a020f0;">return</span> f<span style="color: #8b2252;">'{a} + {b} = {a + b};{a} - {b} = {a - b}'</span>
 </pre>
 </div>
 
@@ -230,16 +230,16 @@ Template的这个特性特别适用于格式化字符串是由外人提供的情
 它也同时支持str.format()方法中的那些格式化符,且使用方法也一样:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #7590db;">num</span> = <span style="color: #a45bad;">222</span>
-<span style="color: #4f97d7; font-weight: bold;">return</span> f<span style="color: #2d9574;">'{num} &#30340;16&#36827;&#21046;&#34920;&#31034;&#26159; {num:#x}'</span>
+<pre class="src src-python"><span style="color: #a0522d;">num</span> = 222
+<span style="color: #a020f0;">return</span> f<span style="color: #8b2252;">'{num} &#30340;16&#36827;&#21046;&#34920;&#31034;&#26159; {num:#x}'</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd3a65a7" class="outline-2">
-<h2 id="orgd3a65a7">如何抉择?</h2>
-<div class="outline-text-2" id="text-orgd3a65a7">
+<div id="outline-container-orgf8982e1" class="outline-2">
+<h2 id="orgf8982e1">如何抉择?</h2>
+<div class="outline-text-2" id="text-orgf8982e1">
 <p>
 有这么多种方法格式化字符串,该如何抉择呢?
 </p>
@@ -259,77 +259,49 @@ Template的这个特性特别适用于格式化字符串是由外人提供的情
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2017-03-24</span>
-            <span title="last modification date" class="post-info">2018-03-01</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/编程之旅">编程之旅</a> : <a href="https://lujun9972.github.io/tags/python">python</a> : <a href="https://lujun9972.github.io/tags/string">string</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2017-03-24</span>
+    <span title="last modification date" class="post-info">2018-03-01</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/编程之旅">编程之旅</a> : <a href="https://lujun9972.github.io/tags/python">python</a> : <a href="https://lujun9972.github.io/tags/string">string</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2017/03/24/python格式化字符串的几种方法/";
-         var disqus_url = "https://lujun9972.github.io/blog/2017/03/24/python格式化字符串的几种方法/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2017/03/24/python格式化字符串的几种方法/";
+     var disqus_url = "https://lujun9972.github.io/blog/2017/03/24/python格式化字符串的几种方法/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

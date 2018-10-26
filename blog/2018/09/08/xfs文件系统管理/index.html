@@ -3,22 +3,24 @@
 <head>
   <title>xfs文件系统管理 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,44 +54,44 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org794c475">常用命令说明</a></li>
-<li><a href="#orgb2c40ad">创建XFS文件系统</a>
+<li><a href="#orgd08c6d2">常用命令说明</a></li>
+<li><a href="#org195821f">创建XFS文件系统</a>
 <ul>
-<li><a href="#org1969df0">设置block大小</a></li>
-<li><a href="#org0ab55ef">日志大小</a></li>
-<li><a href="#org246b25f">设置文件系统标签</a></li>
+<li><a href="#org52cd42e">设置block大小</a></li>
+<li><a href="#org3395c74">日志大小</a></li>
+<li><a href="#org3ea5c40">设置文件系统标签</a></li>
 </ul>
 </li>
-<li><a href="#orgac992b9">挂载XFS文件系统</a></li>
-<li><a href="#orge8546dd">调整XFS文件系统参数</a>
+<li><a href="#orgf41ecdd">挂载XFS文件系统</a></li>
+<li><a href="#org00dd79a">调整XFS文件系统参数</a>
 <ul>
-<li><a href="#org10fa25f">卷标管理</a>
+<li><a href="#org6efbac7">卷标管理</a>
 <ul>
-<li><a href="#org0137811">设置卷标</a></li>
-<li><a href="#orga5ea0c4">查看卷标</a></li>
+<li><a href="#org1c83dd3">设置卷标</a></li>
+<li><a href="#orga7a9af5">查看卷标</a></li>
 </ul>
 </li>
-<li><a href="#orge59b86e">UUID管理</a>
+<li><a href="#org11c4760">UUID管理</a>
 <ul>
-<li><a href="#orga47f8d8">查看指定设备的UUID</a></li>
-<li><a href="#org6263e6e">设置设备的UUID</a></li>
-<li><a href="#org44f993a">清除文件系统的UUID</a></li>
+<li><a href="#org04cea79">查看指定设备的UUID</a></li>
+<li><a href="#org4f6bb4c">设置设备的UUID</a></li>
+<li><a href="#org92952cd">清除文件系统的UUID</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org34561c0">扩展XFS文件系统的大小</a></li>
-<li><a href="#org6e2c670">暂停/恢复XFS文件系统</a>
+<li><a href="#orgcc8c686">扩展XFS文件系统的大小</a></li>
+<li><a href="#orgb23923e">暂停/恢复XFS文件系统</a>
 <ul>
-<li><a href="#orgd035b6b">暂停XFS文件系统</a></li>
-<li><a href="#orgf16c5d8">恢复XFS文件系统</a></li>
+<li><a href="#orge03f785">暂停XFS文件系统</a></li>
+<li><a href="#org9f6745d">恢复XFS文件系统</a></li>
 </ul>
 </li>
-<li><a href="#org7098512">修复XFS文件系统</a></li>
-<li><a href="#org96ab6a6">碎片管理</a>
+<li><a href="#org69a0f27">修复XFS文件系统</a></li>
+<li><a href="#orgd9bceb7">碎片管理</a>
 <ul>
-<li><a href="#org42b064c">查看碎片情况</a></li>
-<li><a href="#org91d1800">整理碎片</a></li>
+<li><a href="#orgb77ce50">查看碎片情况</a></li>
+<li><a href="#orgc8beb9c">整理碎片</a></li>
 </ul>
 </li>
 </ul>
@@ -101,9 +101,9 @@
 XFS文件系统管理常用命令记录
 </p>
 
-<div id="outline-container-org794c475" class="outline-2">
-<h2 id="org794c475">常用命令说明</h2>
-<div class="outline-text-2" id="text-org794c475">
+<div id="outline-container-orgd08c6d2" class="outline-2">
+<h2 id="orgd08c6d2">常用命令说明</h2>
+<div class="outline-text-2" id="text-orgd08c6d2">
 <dl class="org-dl">
 <dt>mkfs.xfs</dt><dd>创建xfs文件系统</dd>
 <dt>xfs_admin</dt><dd>调整XFS文件系统各种参数</dd>
@@ -121,14 +121,14 @@ XFS文件系统管理常用命令记录
 </div>
 </div>
 
-<div id="outline-container-orgb2c40ad" class="outline-2">
-<h2 id="orgb2c40ad">创建XFS文件系统</h2>
-<div class="outline-text-2" id="text-orgb2c40ad">
+<div id="outline-container-org195821f" class="outline-2">
+<h2 id="org195821f">创建XFS文件系统</h2>
+<div class="outline-text-2" id="text-org195821f">
 <p>
 使用 <code>mkfs.xfs</code> 可以将存储设备格式化为XFS格式
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">dd <span style="color: #7590db;">if</span>=/dev/zero <span style="color: #7590db;">of</span>=~/xfs.img <span style="color: #7590db;">bs</span>=<span style="color: #a45bad;">1M</span> <span style="color: #7590db;">count</span>=<span style="color: #a45bad;">4096</span>
+<pre class="src src-shell">dd <span style="color: #a0522d;">if</span>=/dev/zero <span style="color: #a0522d;">of</span>=~/xfs.img <span style="color: #a0522d;">bs</span>=1M <span style="color: #a0522d;">count</span>=4096
 mkfs.xfs ~/xfs.img
 </pre>
 </div>
@@ -151,7 +151,7 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 但若原存储已经被格式化过，则 <code>mkfs.xfs</code> 会拒绝再次格式化
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">mkfs.xfs ~/xfs.img <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span> ||<span style="color: #4f97d7; font-weight: bold;">exit</span> <span style="color: #a45bad;">0</span>
+<pre class="src src-shell">mkfs.xfs ~/xfs.img 2&gt;&amp;1 ||<span style="color: #a020f0;">exit</span> 0
 </pre>
 </div>
 
@@ -184,9 +184,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-org1969df0" class="outline-3">
-<h3 id="org1969df0">设置block大小</h3>
-<div class="outline-text-3" id="text-org1969df0">
+<div id="outline-container-org52cd42e" class="outline-3">
+<h3 id="org52cd42e">设置block大小</h3>
+<div class="outline-text-3" id="text-org52cd42e">
 <p>
 block是文件系统存储的最小单位，较大的block可以增加文件系统和单个文件的大小上限并加快大文件的读写速度，但是会浪费较多空间。而太小的block则相反。
 </p>
@@ -199,7 +199,7 @@ block是文件系统存储的最小单位，较大的block可以增加文件系�
 在格式化时使用 <code>-b size=block大小</code> 来指定区块大小
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">mkfs.xfs -f -b <span style="color: #7590db;">size</span>=<span style="color: #a45bad;">1k</span> ~/xfs.img
+<pre class="src src-shell">mkfs.xfs -f -b <span style="color: #a0522d;">size</span>=1k ~/xfs.img
 </pre>
 </div>
 
@@ -226,7 +226,7 @@ XFS允许目录使用比文件系统block更大的block,方法是使用 <code>-n
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">mkfs.xfs -f -b <span style="color: #7590db;">size</span>=<span style="color: #a45bad;">1k</span> -n <span style="color: #7590db;">size</span>=<span style="color: #a45bad;">4k</span> ~/xfs.img
+<pre class="src src-shell">mkfs.xfs -f -b <span style="color: #a0522d;">size</span>=1k -n <span style="color: #a0522d;">size</span>=4k ~/xfs.img
 </pre>
 </div>
 
@@ -246,9 +246,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-org0ab55ef" class="outline-3">
-<h3 id="org0ab55ef">日志大小</h3>
-<div class="outline-text-3" id="text-org0ab55ef">
+<div id="outline-container-org3395c74" class="outline-3">
+<h3 id="org3395c74">日志大小</h3>
+<div class="outline-text-3" id="text-org3395c74">
 <p>
 格式化XFS时，mkfs.xfs会根据文件系统的大小自动分配日志的大小。
 日志大小介于512KB到128MB之间，但可以通过 <code>-l size=日志大小</code> 来设置，其中日志的单位可以是:
@@ -266,7 +266,7 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-shell">mkfs.xfs -f -l <span style="color: #7590db;">size</span>=<span style="color: #a45bad;">64m</span> ~/xfs.img
+<pre class="src src-shell">mkfs.xfs -f -l <span style="color: #a0522d;">size</span>=64m ~/xfs.img
 </pre>
 </div>
 
@@ -286,9 +286,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-org246b25f" class="outline-3">
-<h3 id="org246b25f">设置文件系统标签</h3>
-<div class="outline-text-3" id="text-org246b25f">
+<div id="outline-container-org3ea5c40" class="outline-3">
+<h3 id="org3ea5c40">设置文件系统标签</h3>
+<div class="outline-text-3" id="text-org3ea5c40">
 <p>
 Label或者说Volume Name可以用来说明文件系统的用途，可以通过 <code>-L 标签</code> 来设置
 </p>
@@ -327,9 +327,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-orgac992b9" class="outline-2">
-<h2 id="orgac992b9">挂载XFS文件系统</h2>
-<div class="outline-text-2" id="text-orgac992b9">
+<div id="outline-container-orgf41ecdd" class="outline-2">
+<h2 id="orgf41ecdd">挂载XFS文件系统</h2>
+<div class="outline-text-2" id="text-orgf41ecdd">
 <p>
 在挂载时，可以使用一些性能增强的选项来发掘XFS文件系统的性能
 </p>
@@ -355,22 +355,22 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </dl>
 </div>
 </div>
-<div id="outline-container-orge8546dd" class="outline-2">
-<h2 id="orge8546dd">调整XFS文件系统参数</h2>
-<div class="outline-text-2" id="text-orge8546dd">
+<div id="outline-container-org00dd79a" class="outline-2">
+<h2 id="org00dd79a">调整XFS文件系统参数</h2>
+<div class="outline-text-2" id="text-org00dd79a">
 <p>
 使用 <code>xfs_admin</code> 来调整XFS文件系统参数
 </p>
 </div>
-<div id="outline-container-org10fa25f" class="outline-3">
-<h3 id="org10fa25f">卷标管理</h3>
-<div class="outline-text-3" id="text-org10fa25f">
+<div id="outline-container-org6efbac7" class="outline-3">
+<h3 id="org6efbac7">卷标管理</h3>
+<div class="outline-text-3" id="text-org6efbac7">
 </div>
-<div id="outline-container-org0137811" class="outline-4">
-<h4 id="org0137811">设置卷标</h4>
-<div class="outline-text-4" id="text-org0137811">
+<div id="outline-container-org1c83dd3" class="outline-4">
+<h4 id="org1c83dd3">设置卷标</h4>
+<div class="outline-text-4" id="text-org1c83dd3">
 <div class="org-src-container">
-<pre class="src src-shell">xfs_admin -L <span style="color: #2d9574;">"another_volume"</span> ~/xfs.img
+<pre class="src src-shell">xfs_admin -L <span style="color: #8b2252;">"another_volume"</span> ~/xfs.img
 </pre>
 </div>
 
@@ -383,9 +383,9 @@ new label = "another_volu"
 </div>
 </div>
 
-<div id="outline-container-orga5ea0c4" class="outline-4">
-<h4 id="orga5ea0c4">查看卷标</h4>
-<div class="outline-text-4" id="text-orga5ea0c4">
+<div id="outline-container-orga7a9af5" class="outline-4">
+<h4 id="orga7a9af5">查看卷标</h4>
+<div class="outline-text-4" id="text-orga7a9af5">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -l ~/xfs.img
 </pre>
@@ -399,18 +399,18 @@ new label = "another_volu"
 </div>
 </div>
 
-<div id="outline-container-orge59b86e" class="outline-3">
-<h3 id="orge59b86e">UUID管理</h3>
-<div class="outline-text-3" id="text-orge59b86e">
+<div id="outline-container-org11c4760" class="outline-3">
+<h3 id="org11c4760">UUID管理</h3>
+<div class="outline-text-3" id="text-org11c4760">
 <p>
 传统上Linux在/etc/fstab中直接使用设备名称指定要挂载的存储设备。
 然而设备名称会因为BIOS或硬件的改变而改变，引起混乱，因此现在Linux改用UUID来指定要挂载的存储设备。
 </p>
 </div>
 
-<div id="outline-container-orga47f8d8" class="outline-4">
-<h4 id="orga47f8d8">查看指定设备的UUID</h4>
-<div class="outline-text-4" id="text-orga47f8d8">
+<div id="outline-container-org04cea79" class="outline-4">
+<h4 id="org04cea79">查看指定设备的UUID</h4>
+<div class="outline-text-4" id="text-org04cea79">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -u ~/xfs.img
 </pre>
@@ -423,11 +423,11 @@ new label = "another_volu"
 </div>
 </div>
 
-<div id="outline-container-org6263e6e" class="outline-4">
-<h4 id="org6263e6e">设置设备的UUID</h4>
-<div class="outline-text-4" id="text-org6263e6e">
+<div id="outline-container-org4f6bb4c" class="outline-4">
+<h4 id="org4f6bb4c">设置设备的UUID</h4>
+<div class="outline-text-4" id="text-org4f6bb4c">
 <div class="org-src-container">
-<pre class="src src-shell">xfs_admin -U <span style="color: #a45bad;">12345678-9012-3456-7890-123456789012</span> ~/xfs.img
+<pre class="src src-shell">xfs_admin -U 12345678-9012-3456-7890-123456789012 ~/xfs.img
 </pre>
 </div>
 
@@ -455,9 +455,9 @@ new UUID = 9618fe39-638d-41b0-9863-5b3b8daa9801
 </div>
 </div>
 
-<div id="outline-container-org44f993a" class="outline-4">
-<h4 id="org44f993a">清除文件系统的UUID</h4>
-<div class="outline-text-4" id="text-org44f993a">
+<div id="outline-container-org92952cd" class="outline-4">
+<h4 id="org92952cd">清除文件系统的UUID</h4>
+<div class="outline-text-4" id="text-org92952cd">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -U nil ~/xfs.img
 </pre>
@@ -474,9 +474,9 @@ new UUID = 00000000-0000-0000-0000-000000000000
 </div>
 </div>
 
-<div id="outline-container-org34561c0" class="outline-2">
-<h2 id="org34561c0">扩展XFS文件系统的大小</h2>
-<div class="outline-text-2" id="text-org34561c0">
+<div id="outline-container-orgcc8c686" class="outline-2">
+<h2 id="orgcc8c686">扩展XFS文件系统的大小</h2>
+<div class="outline-text-2" id="text-orgcc8c686">
 <p>
 XFS文件系统只能扩大，不能减少大小
 </p>
@@ -485,7 +485,7 @@ XFS文件系统只能扩大，不能减少大小
 扩容指定容量
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo xfs_growfs -D <span style="color: #a45bad;">20G</span> /mnt
+<pre class="src src-shell">sudo xfs_growfs -D 20G /mnt
 </pre>
 </div>
 
@@ -499,17 +499,17 @@ XFS文件系统只能扩大，不能减少大小
 </div>
 </div>
 
-<div id="outline-container-org6e2c670" class="outline-2">
-<h2 id="org6e2c670">暂停/恢复XFS文件系统</h2>
-<div class="outline-text-2" id="text-org6e2c670">
+<div id="outline-container-orgb23923e" class="outline-2">
+<h2 id="orgb23923e">暂停/恢复XFS文件系统</h2>
+<div class="outline-text-2" id="text-orgb23923e">
 <p>
 xfs_freeze 命令可以停止对文件系统的访问并创建一个静态的磁盘镜像。
 </p>
 </div>
 
-<div id="outline-container-orgd035b6b" class="outline-3">
-<h3 id="orgd035b6b">暂停XFS文件系统</h3>
-<div class="outline-text-3" id="text-orgd035b6b">
+<div id="outline-container-orge03f785" class="outline-3">
+<h3 id="orge03f785">暂停XFS文件系统</h3>
+<div class="outline-text-3" id="text-orge03f785">
 <div class="org-src-container">
 <pre class="src src-shell">sudo xfs_freeze -f /mnt
 </pre>
@@ -521,9 +521,9 @@ xfs_freeze 命令可以停止对文件系统的访问并创建一个静态的磁
 </div>
 </div>
 
-<div id="outline-container-orgf16c5d8" class="outline-3">
-<h3 id="orgf16c5d8">恢复XFS文件系统</h3>
-<div class="outline-text-3" id="text-orgf16c5d8">
+<div id="outline-container-org9f6745d" class="outline-3">
+<h3 id="org9f6745d">恢复XFS文件系统</h3>
+<div class="outline-text-3" id="text-org9f6745d">
 <div class="org-src-container">
 <pre class="src src-shell">sudo xfs_freeze -u /mnt
 </pre>
@@ -532,9 +532,9 @@ xfs_freeze 命令可以停止对文件系统的访问并创建一个静态的磁
 </div>
 </div>
 
-<div id="outline-container-org7098512" class="outline-2">
-<h2 id="org7098512">修复XFS文件系统</h2>
-<div class="outline-text-2" id="text-org7098512">
+<div id="outline-container-org69a0f27" class="outline-2">
+<h2 id="org69a0f27">修复XFS文件系统</h2>
+<div class="outline-text-2" id="text-org69a0f27">
 <div class="org-src-container">
 <pre class="src src-shell">sudo umount /mnt
 xfs_repair ~lujun9972/xfs.img
@@ -543,13 +543,13 @@ xfs_repair ~lujun9972/xfs.img
 </div>
 </div>
 
-<div id="outline-container-org96ab6a6" class="outline-2">
-<h2 id="org96ab6a6">碎片管理</h2>
-<div class="outline-text-2" id="text-org96ab6a6">
+<div id="outline-container-orgd9bceb7" class="outline-2">
+<h2 id="orgd9bceb7">碎片管理</h2>
+<div class="outline-text-2" id="text-orgd9bceb7">
 </div>
-<div id="outline-container-org42b064c" class="outline-3">
-<h3 id="org42b064c">查看碎片情况</h3>
-<div class="outline-text-3" id="text-org42b064c">
+<div id="outline-container-orgb77ce50" class="outline-3">
+<h3 id="orgb77ce50">查看碎片情况</h3>
+<div class="outline-text-3" id="text-orgb77ce50">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_db -c frag -r ~/xfs.img
 </pre>
@@ -564,9 +564,9 @@ Files on this filesystem average -nan extents per file
 </div>
 </div>
 
-<div id="outline-container-org91d1800" class="outline-3">
-<h3 id="org91d1800">整理碎片</h3>
-<div class="outline-text-3" id="text-org91d1800">
+<div id="outline-container-orgc8beb9c" class="outline-3">
+<h3 id="orgc8beb9c">整理碎片</h3>
+<div class="outline-text-3" id="text-orgc8beb9c">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_fsr ~/xfs.img
 </pre>
@@ -578,77 +578,49 @@ Files on this filesystem average -nan extents per file
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-09-08</span>
-            <span title="last modification date" class="post-info">2018-09-09</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-09-08</span>
+    <span title="last modification date" class="post-info">2018-09-09</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/09/08/xfs文件系统管理/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/09/08/xfs文件系统管理/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/09/08/xfs文件系统管理/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/09/08/xfs文件系统管理/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

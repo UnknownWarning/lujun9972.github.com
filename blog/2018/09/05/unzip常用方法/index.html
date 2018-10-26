@@ -3,22 +3,24 @@
 <head>
   <title>unzip常用方法 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴,examples" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,23 +54,23 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org874398e">解压zip文件到当前目录</a></li>
-<li><a href="#orga147988">静默解压</a></li>
-<li><a href="#orged00a58">解压zip文件到指定目录</a></li>
-<li><a href="#orge8d177d">解压密码保护的zip文件</a></li>
-<li><a href="#orga21dc67">解压时排除某些文件不解压出来</a></li>
-<li><a href="#org76cad17">解压时直接覆盖已有文件</a></li>
-<li><a href="#org6da0d05">解压时跳过已有文件</a></li>
-<li><a href="#org1af2645">列出zip文件中的内容</a></li>
+<li><a href="#org765be1b">解压zip文件到当前目录</a></li>
+<li><a href="#org73b1a56">静默解压</a></li>
+<li><a href="#orge12fb38">解压zip文件到指定目录</a></li>
+<li><a href="#org6908c1f">解压密码保护的zip文件</a></li>
+<li><a href="#org6129abb">解压时排除某些文件不解压出来</a></li>
+<li><a href="#orgb930c40">解压时直接覆盖已有文件</a></li>
+<li><a href="#org77f3586">解压时跳过已有文件</a></li>
+<li><a href="#org318b0a6">列出zip文件中的内容</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org874398e" class="outline-2">
-<h2 id="org874398e">解压zip文件到当前目录</h2>
-<div class="outline-text-2" id="text-org874398e">
+<div id="outline-container-org765be1b" class="outline-2">
+<h2 id="org765be1b">解压zip文件到当前目录</h2>
+<div class="outline-text-2" id="text-org765be1b">
 <div class="org-src-container">
-<pre class="src src-shell">unzip $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">unzip ${<span style="color: #a0522d;">zip_file</span>}
 </pre>
 </div>
 
@@ -80,80 +80,80 @@ zip文件不包含linux所有者权限信息，因此所有解压出来的内容
 </div>
 </div>
 
-<div id="outline-container-orga147988" class="outline-2">
-<h2 id="orga147988">静默解压</h2>
-<div class="outline-text-2" id="text-orga147988">
+<div id="outline-container-org73b1a56" class="outline-2">
+<h2 id="org73b1a56">静默解压</h2>
+<div class="outline-text-2" id="text-org73b1a56">
 <p>
 默认解压时会列出解压出来的文件名称等信息，可以使用 <code>-q</code> 参数屏蔽这些信息
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">unzip -q $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">unzip -q ${<span style="color: #a0522d;">zip_file</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orged00a58" class="outline-2">
-<h2 id="orged00a58">解压zip文件到指定目录</h2>
-<div class="outline-text-2" id="text-orged00a58">
+<div id="outline-container-orge12fb38" class="outline-2">
+<h2 id="orge12fb38">解压zip文件到指定目录</h2>
+<div class="outline-text-2" id="text-orge12fb38">
 <div class="org-src-container">
-<pre class="src src-shell">unzip $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span> -d $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">directory</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">unzip ${<span style="color: #a0522d;">zip_file</span>} -d ${<span style="color: #a0522d;">directory</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge8d177d" class="outline-2">
-<h2 id="orge8d177d">解压密码保护的zip文件</h2>
-<div class="outline-text-2" id="text-orge8d177d">
+<div id="outline-container-org6908c1f" class="outline-2">
+<h2 id="org6908c1f">解压密码保护的zip文件</h2>
+<div class="outline-text-2" id="text-org6908c1f">
 <div class="org-src-container">
-<pre class="src src-shell">unzip -P $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">password</span><span style="color: #4f97d7;">}</span> $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">unzip -P ${<span style="color: #a0522d;">password</span>} ${<span style="color: #a0522d;">zip_file</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga21dc67" class="outline-2">
-<h2 id="orga21dc67">解压时排除某些文件不解压出来</h2>
-<div class="outline-text-2" id="text-orga21dc67">
+<div id="outline-container-org6129abb" class="outline-2">
+<h2 id="org6129abb">解压时排除某些文件不解压出来</h2>
+<div class="outline-text-2" id="text-org6129abb">
 <div class="org-src-container">
-<pre class="src src-shell">unzip $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span> -x $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">exclude_pattern</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">unzip ${<span style="color: #a0522d;">zip_file</span>} -x ${<span style="color: #a0522d;">exclude_pattern</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org76cad17" class="outline-2">
-<h2 id="org76cad17">解压时直接覆盖已有文件</h2>
-<div class="outline-text-2" id="text-org76cad17">
+<div id="outline-container-orgb930c40" class="outline-2">
+<h2 id="orgb930c40">解压时直接覆盖已有文件</h2>
+<div class="outline-text-2" id="text-orgb930c40">
 <p>
 当解压时，若当前目录或指定目录已经有了同名的文件，则unzip会询问你该如何操作。通过 <code>-o</code> 参数可以让unzip不做提示，直接覆盖已有文件
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">unzip -o $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">unzip -o ${<span style="color: #a0522d;">zip_file</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6da0d05" class="outline-2">
-<h2 id="org6da0d05">解压时跳过已有文件</h2>
-<div class="outline-text-2" id="text-org6da0d05">
+<div id="outline-container-org77f3586" class="outline-2">
+<h2 id="org77f3586">解压时跳过已有文件</h2>
+<div class="outline-text-2" id="text-org77f3586">
 <p>
 通过 <code>-n</code> 参数可以让unzip在遇到已有文件时，跳过
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">unzip -n $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">unzip -n ${<span style="color: #a0522d;">zip_file</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1af2645" class="outline-2">
-<h2 id="org1af2645">列出zip文件中的内容</h2>
-<div class="outline-text-2" id="text-org1af2645">
+<div id="outline-container-org318b0a6" class="outline-2">
+<h2 id="org318b0a6">列出zip文件中的内容</h2>
+<div class="outline-text-2" id="text-org318b0a6">
 <div class="org-src-container">
-<pre class="src src-shell">unzip -l $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">unzip -l ${<span style="color: #a0522d;">zip_file</span>}
 </pre>
 </div>
 </div>
@@ -162,77 +162,49 @@ zip文件不包含linux所有者权限信息，因此所有解压出来的内容
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-09-05</span>
-            <span title="last modification date" class="post-info">2018-09-05</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/examples">examples</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-09-05</span>
+    <span title="last modification date" class="post-info">2018-09-05</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/examples">examples</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/09/05/unzip常用方法/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/09/05/unzip常用方法/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/09/05/unzip常用方法/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/09/05/unzip常用方法/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

@@ -3,22 +3,24 @@
 <head>
   <title>体验libvirt虚拟机 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="../" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,30 +54,30 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3c5b327">安装虚拟化工具</a></li>
-<li><a href="#orgcb73910">创建虚拟机</a></li>
-<li><a href="#orge7afda5">管理虚拟机</a>
+<li><a href="#org5756f3e">安装虚拟化工具</a></li>
+<li><a href="#org73ea124">创建虚拟机</a></li>
+<li><a href="#org712f6a7">管理虚拟机</a>
 <ul>
-<li><a href="#orge37a7a6">显示所有的虚拟机列表</a></li>
-<li><a href="#orgbfb4705">启动已经创建好的虚拟机</a></li>
-<li><a href="#org0649c86">获取虚拟机的信息</a></li>
-<li><a href="#org6fa5aca">编辑虚拟机信息</a></li>
-<li><a href="#orgfb3a487">设置主机启动后是否自动启动虚拟机</a></li>
-<li><a href="#org5600b14">暂停虚拟机</a></li>
-<li><a href="#orgd3ff4db">回复暂停的虚拟机</a></li>
-<li><a href="#orgb76d292">关闭虚拟机</a></li>
-<li><a href="#orgf7c91aa">克隆虚拟机</a></li>
-<li><a href="#org250ce64">删除虚拟机</a></li>
+<li><a href="#orgde3cf15">显示所有的虚拟机列表</a></li>
+<li><a href="#orge862b31">启动已经创建好的虚拟机</a></li>
+<li><a href="#orga3092d2">获取虚拟机的信息</a></li>
+<li><a href="#org5b38b82">编辑虚拟机信息</a></li>
+<li><a href="#orga1950ce">设置主机启动后是否自动启动虚拟机</a></li>
+<li><a href="#orgf42db2c">暂停虚拟机</a></li>
+<li><a href="#orgff09cd5">回复暂停的虚拟机</a></li>
+<li><a href="#org421d90b">关闭虚拟机</a></li>
+<li><a href="#org83b4336">克隆虚拟机</a></li>
+<li><a href="#orgb2a9324">删除虚拟机</a></li>
 </ul>
 </li>
-<li><a href="#org462481b">常用虚拟化管理应用工具</a></li>
+<li><a href="#orgd9891ed">常用虚拟化管理应用工具</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3c5b327" class="outline-2">
-<h2 id="org3c5b327">安装虚拟化工具</h2>
-<div class="outline-text-2" id="text-org3c5b327">
+<div id="outline-container-org5756f3e" class="outline-2">
+<h2 id="org5756f3e">安装虚拟化工具</h2>
+<div class="outline-text-2" id="text-org5756f3e">
 <div class="org-src-container">
 <pre class="src src-shell">sudo pacman -S qemu virt-manager virt-viewer libvirt --noconfirm
 </pre>
@@ -87,20 +87,20 @@
 安装好后，将当前用户加入 <code>libvirt</code> 组中
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo gpasswd -a $<span style="color: #7590db;">USER</span> libvirt
+<pre class="src src-shell">sudo gpasswd -a $<span style="color: #a0522d;">USER</span> libvirt
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgcb73910" class="outline-2">
-<h2 id="orgcb73910">创建虚拟机</h2>
-<div class="outline-text-2" id="text-orgcb73910">
+<div id="outline-container-org73ea124" class="outline-2">
+<h2 id="org73ea124">创建虚拟机</h2>
+<div class="outline-text-2" id="text-org73ea124">
 <p>
 使用 <code>virt-install</code> 来创建虚拟机，例如
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">virt-install --name=arch --ram=<span style="color: #a45bad;">1024</span> --vcpus=<span style="color: #a45bad;">2</span> --cdrom=/home/lujun9972/Downloads/archlinux-2018.03.01-x86_64.iso --os-type=linux --os-variant=archlinux --disk <span style="color: #7590db;">path</span>=/home/lujun9972/arch.dsk,<span style="color: #7590db;">size</span>=<span style="color: #a45bad;">4</span>
+<pre class="src src-shell">virt-install --name=arch --ram=1024 --vcpus=2 --cdrom=/home/lujun9972/Downloads/archlinux-2018.03.01-x86_64.iso --os-type=linux --os-variant=archlinux --disk <span style="color: #a0522d;">path</span>=/home/lujun9972/arch.dsk,<span style="color: #a0522d;">size</span>=4
 </pre>
 </div>
 
@@ -124,17 +124,17 @@
 </div>
 </div>
 
-<div id="outline-container-orge7afda5" class="outline-2">
-<h2 id="orge7afda5">管理虚拟机</h2>
-<div class="outline-text-2" id="text-orge7afda5">
+<div id="outline-container-org712f6a7" class="outline-2">
+<h2 id="org712f6a7">管理虚拟机</h2>
+<div class="outline-text-2" id="text-org712f6a7">
 <p>
 一般通过 <code>virsh</code> 来管理虚拟机，常见的操作包括：
 </p>
 </div>
 
-<div id="outline-container-orge37a7a6" class="outline-3">
-<h3 id="orge37a7a6">显示所有的虚拟机列表</h3>
-<div class="outline-text-3" id="text-orge37a7a6">
+<div id="outline-container-orgde3cf15" class="outline-3">
+<h3 id="orgde3cf15">显示所有的虚拟机列表</h3>
+<div class="outline-text-3" id="text-orgde3cf15">
 <div class="org-src-container">
 <pre class="src src-shell">virsh list --all
 </pre>
@@ -150,21 +150,21 @@
 </div>
 </div>
 
-<div id="outline-container-orgbfb4705" class="outline-3">
-<h3 id="orgbfb4705">启动已经创建好的虚拟机</h3>
-<div class="outline-text-3" id="text-orgbfb4705">
+<div id="outline-container-orge862b31" class="outline-3">
+<h3 id="orge862b31">启动已经创建好的虚拟机</h3>
+<div class="outline-text-3" id="text-orge862b31">
 <div class="org-src-container">
-<pre class="src src-shell">virsh start $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">virsh start ${<span style="color: #a0522d;">name</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0649c86" class="outline-3">
-<h3 id="org0649c86">获取虚拟机的信息</h3>
-<div class="outline-text-3" id="text-org0649c86">
+<div id="outline-container-orga3092d2" class="outline-3">
+<h3 id="orga3092d2">获取虚拟机的信息</h3>
+<div class="outline-text-3" id="text-orga3092d2">
 <div class="org-src-container">
-<pre class="src src-shell">virsh dominfo $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">virsh dominfo ${<span style="color: #a0522d;">name</span>}
 </pre>
 </div>
 
@@ -190,21 +190,21 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </div>
 
 
-<div id="outline-container-org6fa5aca" class="outline-3">
-<h3 id="org6fa5aca">编辑虚拟机信息</h3>
-<div class="outline-text-3" id="text-org6fa5aca">
+<div id="outline-container-org5b38b82" class="outline-3">
+<h3 id="org5b38b82">编辑虚拟机信息</h3>
+<div class="outline-text-3" id="text-org5b38b82">
 <div class="org-src-container">
-<pre class="src src-shell">virsh edit $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">virsh edit ${<span style="color: #a0522d;">name</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgfb3a487" class="outline-3">
-<h3 id="orgfb3a487">设置主机启动后是否自动启动虚拟机</h3>
-<div class="outline-text-3" id="text-orgfb3a487">
+<div id="outline-container-orga1950ce" class="outline-3">
+<h3 id="orga1950ce">设置主机启动后是否自动启动虚拟机</h3>
+<div class="outline-text-3" id="text-orga1950ce">
 <div class="org-src-container">
-<pre class="src src-shell">virsh autostart $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">virsh autostart ${<span style="color: #a0522d;">name</span>}
 </pre>
 </div>
 
@@ -219,7 +219,7 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">virsh autostart --disable $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">virsh autostart --disable ${<span style="color: #a0522d;">name</span>}
 </pre>
 </div>
 
@@ -231,31 +231,31 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </div>
 </div>
 
-<div id="outline-container-org5600b14" class="outline-3">
-<h3 id="org5600b14">暂停虚拟机</h3>
-<div class="outline-text-3" id="text-org5600b14">
+<div id="outline-container-orgf42db2c" class="outline-3">
+<h3 id="orgf42db2c">暂停虚拟机</h3>
+<div class="outline-text-3" id="text-orgf42db2c">
 <div class="org-src-container">
-<pre class="src src-shell">virsh suspend $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">virsh suspend ${<span style="color: #a0522d;">name</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd3ff4db" class="outline-3">
-<h3 id="orgd3ff4db">回复暂停的虚拟机</h3>
-<div class="outline-text-3" id="text-orgd3ff4db">
+<div id="outline-container-orgff09cd5" class="outline-3">
+<h3 id="orgff09cd5">回复暂停的虚拟机</h3>
+<div class="outline-text-3" id="text-orgff09cd5">
 <div class="org-src-container">
-<pre class="src src-shell">virsh resume $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">virsh resume ${<span style="color: #a0522d;">name</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb76d292" class="outline-3">
-<h3 id="orgb76d292">关闭虚拟机</h3>
-<div class="outline-text-3" id="text-orgb76d292">
+<div id="outline-container-org421d90b" class="outline-3">
+<h3 id="org421d90b">关闭虚拟机</h3>
+<div class="outline-text-3" id="text-org421d90b">
 <div class="org-src-container">
-<pre class="src src-shell">virsh shutdown $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">virsh shutdown ${<span style="color: #a0522d;">name</span>}
 </pre>
 </div>
 
@@ -267,33 +267,33 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </div>
 </div>
 
-<div id="outline-container-orgf7c91aa" class="outline-3">
-<h3 id="orgf7c91aa">克隆虚拟机</h3>
-<div class="outline-text-3" id="text-orgf7c91aa">
+<div id="outline-container-org83b4336" class="outline-3">
+<h3 id="org83b4336">克隆虚拟机</h3>
+<div class="outline-text-3" id="text-org83b4336">
 <p>
 关闭虚拟机后就可以通过 <code>virt-clone</code> 来拷贝虚拟机了
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">virt-clone --original $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span> --auto-clone --name $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">new_name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">virt-clone --original ${<span style="color: #a0522d;">name</span>} --auto-clone --name ${<span style="color: #a0522d;">new_name</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org250ce64" class="outline-3">
-<h3 id="org250ce64">删除虚拟机</h3>
-<div class="outline-text-3" id="text-org250ce64">
+<div id="outline-container-orgb2a9324" class="outline-3">
+<h3 id="orgb2a9324">删除虚拟机</h3>
+<div class="outline-text-3" id="text-orgb2a9324">
 <div class="org-src-container">
-<pre class="src src-shell">virsh destroy $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
-virsh undefine $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">virsh destroy ${<span style="color: #a0522d;">name</span>}
+virsh undefine ${<span style="color: #a0522d;">name</span>}
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org462481b" class="outline-2">
-<h2 id="org462481b">常用虚拟化管理应用工具</h2>
-<div class="outline-text-2" id="text-org462481b">
+<div id="outline-container-orgd9891ed" class="outline-2">
+<h2 id="orgd9891ed">常用虚拟化管理应用工具</h2>
+<div class="outline-text-2" id="text-orgd9891ed">
 <dl class="org-dl">
 <dt>virt-manager</dt><dd>虚拟机图形化管理工具</dd>
 <dt>virt-install</dt><dd>虚拟机配给工具</dd>
@@ -308,77 +308,49 @@ virsh undefine $<span style="color: #4f97d7;">{</span><span style="color: #7590d
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-07-31</span>
-            <span title="last modification date" class="post-info">2018-09-12</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/..-">../</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-07-31</span>
+    <span title="last modification date" class="post-info">2018-09-12</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/..-">../</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/07/31/体验libvirt虚拟机/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/07/31/体验libvirt虚拟机/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/07/31/体验libvirt虚拟机/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/07/31/体验libvirt虚拟机/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

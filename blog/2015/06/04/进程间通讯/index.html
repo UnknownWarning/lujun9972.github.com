@@ -3,21 +3,23 @@
 <head>
   <title>进程间通讯 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="DarkSun" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -31,15 +33,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -53,66 +53,66 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5b68216">1. 管道</a>
+<li><a href="#org24ba135">1. 管道</a>
 <ul>
-<li><a href="#org1cf4910">1.1. 管道的局限性</a></li>
-<li><a href="#org0c09850">1.2. pipe函数创建管道</a></li>
-<li><a href="#org0538c38">1.3. 对管道的读写说明</a></li>
-<li><a href="#org3d16d3f">1.4. popen/pclose函数</a></li>
-<li><a href="#org24a5e98">1.5. 使用管道时的注意事项</a></li>
+<li><a href="#org4a9fb59">1.1. 管道的局限性</a></li>
+<li><a href="#org66caf82">1.2. pipe函数创建管道</a></li>
+<li><a href="#org960ab1d">1.3. 对管道的读写说明</a></li>
+<li><a href="#org92e5695">1.4. popen/pclose函数</a></li>
+<li><a href="#orgfd757cf">1.5. 使用管道时的注意事项</a></li>
 </ul>
 </li>
-<li><a href="#org39028e9">2. FIFO</a>
+<li><a href="#org33af76f">2. FIFO</a>
 <ul>
-<li><a href="#org2aaa6c2">2.1. FIFO的局限性</a></li>
-<li><a href="#org3c4d099">2.2. 创建FIFO</a></li>
-<li><a href="#orgea11967">2.3. 使用FIFO</a></li>
-<li><a href="#orgc1dab5a">2.4. 对FIFO的读写说明</a></li>
+<li><a href="#orgbd0352d">2.1. FIFO的局限性</a></li>
+<li><a href="#orgca5db8b">2.2. 创建FIFO</a></li>
+<li><a href="#org3ddab75">2.3. 使用FIFO</a></li>
+<li><a href="#org468abb7">2.4. 对FIFO的读写说明</a></li>
 </ul>
 </li>
-<li><a href="#org5558101">3. XSI IPC</a>
+<li><a href="#org129e5ba">3. XSI IPC</a>
 <ul>
-<li><a href="#org7f24a11">3.1. 共同特征</a>
+<li><a href="#orgdffb3d1">3.1. 共同特征</a>
 <ul>
-<li><a href="#orgda2335e">3.1.1. 标识符和键</a></li>
-<li><a href="#orgecb7a26">3.1.2. 权限结构</a></li>
-<li><a href="#orgcf70a6d">3.1.3. XSI IPC的优缺点:</a></li>
+<li><a href="#org3b31b57">3.1.1. 标识符和键</a></li>
+<li><a href="#org76e6ac9">3.1.2. 权限结构</a></li>
+<li><a href="#orgc9abc29">3.1.3. XSI IPC的优缺点:</a></li>
 </ul>
 </li>
-<li><a href="#org47e4a48">3.2. 消息队列(<b>不推荐使用</b>)</a>
+<li><a href="#org56326c5">3.2. 消息队列(<b>不推荐使用</b>)</a>
 <ul>
-<li><a href="#org63c05d8">3.2.1. 打开/创建新消息队列</a></li>
-<li><a href="#orgeff8f37">3.2.2. 操作消息队列</a></li>
-<li><a href="#org2629086">3.2.3. 收发消息</a></li>
+<li><a href="#org828d0e7">3.2.1. 打开/创建新消息队列</a></li>
+<li><a href="#orge204316">3.2.2. 操作消息队列</a></li>
+<li><a href="#orgf6cf7af">3.2.3. 收发消息</a></li>
 </ul>
 </li>
-<li><a href="#org31136ee">3.3. 信号量集合</a>
+<li><a href="#orgf999a52">3.3. 信号量集合</a>
 <ul>
-<li><a href="#orgc084aa7">3.3.1. 新建/获取信号量集合</a></li>
-<li><a href="#org6777e4d">3.3.2. 操作信号量</a></li>
+<li><a href="#orgf358a91">3.3.1. 新建/获取信号量集合</a></li>
+<li><a href="#orgab29970">3.3.2. 操作信号量</a></li>
 </ul>
 </li>
-<li><a href="#orgac82730">3.4. 共享存储器</a>
+<li><a href="#orgcde2496">3.4. 共享存储器</a>
 <ul>
-<li><a href="#orgd7e1ef0">3.4.1. 创建/获取共享存储</a></li>
-<li><a href="#org7101aab">3.4.2. 操作共享存储段</a></li>
-<li><a href="#orgc3e6de7">3.4.3. 使用共享内存</a></li>
+<li><a href="#org08f137c">3.4.1. 创建/获取共享存储</a></li>
+<li><a href="#org051fffa">3.4.2. 操作共享存储段</a></li>
+<li><a href="#org321d4fb">3.4.3. 使用共享内存</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgdb9da8a">4. </a></li>
+<li><a href="#orgb6c8def">4. </a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org5b68216" class="outline-2">
-<h2 id="org5b68216"><span class="section-number-2">1</span> 管道</h2>
+<div id="outline-container-org24ba135" class="outline-2">
+<h2 id="org24ba135"><span class="section-number-2">1</span> 管道</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org1cf4910" class="outline-3">
-<h3 id="org1cf4910"><span class="section-number-3">1.1</span> 管道的局限性</h3>
+<div id="outline-container-org4a9fb59" class="outline-3">
+<h3 id="org4a9fb59"><span class="section-number-3">1.1</span> 管道的局限性</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>管道只能保证是半双工的(即数据只能在一个方向流动),虽然有些系统提供了全双工管道</li>
@@ -121,14 +121,14 @@
 </div>
 </div>
 
-<div id="outline-container-org0c09850" class="outline-3">
-<h3 id="org0c09850"><span class="section-number-3">1.2</span> pipe函数创建管道</h3>
+<div id="outline-container-org66caf82" class="outline-3">
+<h3 id="org66caf82"><span class="section-number-3">1.2</span> pipe函数创建管道</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/*  </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;0,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">pipe</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span>* <span style="color: #7590db;">fd</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/*  </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;0,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">pipe</span>(<span style="color: #228b22;">int</span>* <span style="color: #a0522d;">fd</span>);
 </pre>
 </div>
 <p>
@@ -139,46 +139,46 @@
 单进程中的管道几乎没有任何用处,因为进程内部的数据交换根本不需要通过管道来进行. 通常调用pipe的进程会接着fork一个子进程,并在父进程和子进程两端分别关闭读或写的文件描述符,通过这种方式就能实现父子进程间的通讯了.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
-<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">fcntl.h</span><span style="color: #4f97d7;">&gt;</span>
-<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
-<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/wait.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;fcntl.h&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/wait.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #4f97d7;">()</span>
-<span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">fd</span><span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">2</span><span style="color: #bc6ec5;">]</span>;
-  pipe<span style="color: #bc6ec5;">(</span>fd<span style="color: #bc6ec5;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>()
+{
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>[2];
+  pipe(fd);
 
-  <span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">pid</span> = fork<span style="color: #bc6ec5;">()</span>;
-  <span style="color: #4f97d7; font-weight: bold;">if</span><span style="color: #bc6ec5;">(</span>pid &gt;<span style="color: #a45bad;">0</span><span style="color: #bc6ec5;">)</span>                    <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#29238;&#36827;&#31243; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-    <span style="color: #bc6ec5;">{</span>
-      printf<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"parent running\n"</span><span style="color: #2d9574;">)</span>;
-      fflush<span style="color: #2d9574;">(</span>stdout<span style="color: #2d9574;">)</span>;
-      close<span style="color: #2d9574;">(</span>fd<span style="color: #67b11d;">[</span><span style="color: #a45bad;">0</span><span style="color: #67b11d;">]</span><span style="color: #2d9574;">)</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20851;&#38381;&#35835;fd,&#29238;&#36827;&#31243;&#36127;&#36131;&#21457;&#36865;&#28040;&#24687; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-      write<span style="color: #2d9574;">(</span>fd<span style="color: #67b11d;">[</span><span style="color: #a45bad;">1</span><span style="color: #67b11d;">]</span>,<span style="color: #2d9574;">"this is a messae from parent\n"</span>,<span style="color: #a45bad;">255</span><span style="color: #2d9574;">)</span>;
-      close<span style="color: #2d9574;">(</span>fd<span style="color: #67b11d;">[</span><span style="color: #a45bad;">1</span><span style="color: #67b11d;">]</span><span style="color: #2d9574;">)</span>;
-      waitpid<span style="color: #2d9574;">(</span>pid,<span style="color: #a45bad;">NULL</span>,<span style="color: #a45bad;">0</span><span style="color: #2d9574;">)</span>;
-    <span style="color: #bc6ec5;">}</span>
-  <span style="color: #4f97d7; font-weight: bold;">else</span>
-    <span style="color: #bc6ec5;">{</span>
-      printf<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"child running\n"</span><span style="color: #2d9574;">)</span>;
-      fflush<span style="color: #2d9574;">(</span>stdout<span style="color: #2d9574;">)</span>;
-      close<span style="color: #2d9574;">(</span>fd<span style="color: #67b11d;">[</span><span style="color: #a45bad;">1</span><span style="color: #67b11d;">]</span><span style="color: #2d9574;">)</span>;
-      <span style="color: #4f97d7; font-weight: bold;">if</span><span style="color: #2d9574;">(</span>dup2<span style="color: #67b11d;">(</span>fd<span style="color: #b1951d;">[</span><span style="color: #a45bad;">0</span><span style="color: #b1951d;">]</span>,STDIN_FILENO<span style="color: #67b11d;">)</span> != STDIN_FILENO<span style="color: #2d9574;">)</span>
-        <span style="color: #2d9574;">{</span>
-          printf<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"dup2 error\n"</span><span style="color: #67b11d;">)</span>;
-          <span style="color: #4f97d7; font-weight: bold;">return</span> -<span style="color: #a45bad;">1</span>;
-        <span style="color: #2d9574;">}</span>
-      close<span style="color: #2d9574;">(</span>fd<span style="color: #67b11d;">[</span><span style="color: #a45bad;">0</span><span style="color: #67b11d;">]</span><span style="color: #2d9574;">)</span>;
-      <span style="color: #4f97d7; font-weight: bold;">if</span><span style="color: #2d9574;">(</span>execl<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"/bin/echo_from_stdin.sh"</span>,<span style="color: #2d9574;">"/bin/echo_from_stdin.sh"</span>,<span style="color: #b1951d;">(</span><span style="color: #ce537a; font-weight: bold;">char</span>*<span style="color: #b1951d;">)</span><span style="color: #a45bad;">0</span><span style="color: #67b11d;">)</span> &lt; <span style="color: #a45bad;">0</span><span style="color: #2d9574;">)</span>
-        <span style="color: #2d9574;">{</span>
-          printf<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"exec echo failed\n"</span><span style="color: #67b11d;">)</span>;
-        <span style="color: #2d9574;">}</span>
-      <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">char s[255+1]=""; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-      <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">printf("%s\n",gets(s)); </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-    <span style="color: #bc6ec5;">}</span>
-  <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">0</span>;
-<span style="color: #4f97d7;">}</span>
+  <span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">pid</span> = fork();
+  <span style="color: #a020f0;">if</span>(pid &gt;0)                    <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#29238;&#36827;&#31243; </span><span style="color: #b22222;">*/</span>
+    {
+      printf(<span style="color: #8b2252;">"parent running\n"</span>);
+      fflush(stdout);
+      close(fd[0]);             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20851;&#38381;&#35835;fd,&#29238;&#36827;&#31243;&#36127;&#36131;&#21457;&#36865;&#28040;&#24687; </span><span style="color: #b22222;">*/</span>
+      write(fd[1],<span style="color: #8b2252;">"this is a messae from parent\n"</span>,255);
+      close(fd[1]);
+      waitpid(pid,<span style="color: #008b8b;">NULL</span>,0);
+    }
+  <span style="color: #a020f0;">else</span>
+    {
+      printf(<span style="color: #8b2252;">"child running\n"</span>);
+      fflush(stdout);
+      close(fd[1]);
+      <span style="color: #a020f0;">if</span>(dup2(fd[0],STDIN_FILENO) != STDIN_FILENO)
+        {
+          printf(<span style="color: #8b2252;">"dup2 error\n"</span>);
+          <span style="color: #a020f0;">return</span> -1;
+        }
+      close(fd[0]);
+      <span style="color: #a020f0;">if</span>(execl(<span style="color: #8b2252;">"/bin/echo_from_stdin.sh"</span>,<span style="color: #8b2252;">"/bin/echo_from_stdin.sh"</span>,(<span style="color: #228b22;">char</span>*)0) &lt; 0)
+        {
+          printf(<span style="color: #8b2252;">"exec echo failed\n"</span>);
+        }
+      <span style="color: #b22222;">/* </span><span style="color: #b22222;">char s[255+1]=""; </span><span style="color: #b22222;">*/</span>
+      <span style="color: #b22222;">/* </span><span style="color: #b22222;">printf("%s\n",gets(s)); </span><span style="color: #b22222;">*/</span>
+    }
+  <span style="color: #a020f0;">return</span> 0;
+}
 </pre>
 </div>
 
@@ -193,8 +193,8 @@ this is a messae from parent
 </div>
 </div>
 
-<div id="outline-container-org0538c38" class="outline-3">
-<h3 id="org0538c38"><span class="section-number-3">1.3</span> 对管道的读写说明</h3>
+<div id="outline-container-org960ab1d" class="outline-3">
+<h3 id="org960ab1d"><span class="section-number-3">1.3</span> 对管道的读写说明</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>读取一个写端已关闭的管道时,在所有剩余数据被读取后,read返回0,</li>
@@ -204,21 +204,21 @@ this is a messae from parent
 </div>
 </div>
 
-<div id="outline-container-org3d16d3f" class="outline-3">
-<h3 id="org3d16d3f"><span class="section-number-3">1.4</span> popen/pclose函数</h3>
+<div id="outline-container-org92e5695" class="outline-3">
+<h3 id="org92e5695"><span class="section-number-3">1.4</span> popen/pclose函数</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 这两个函数用于进程用system运行外部命令,并创建管道与该外部命令子进程进行交流
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;type&#20026;"r",&#21017;&#36820;&#22238;&#36830;&#25509;&#21040;cmd&#26631;&#20934;&#36755;&#20986;&#30340;FILE* </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;type&#20026;"w",&#21017;&#36820;&#22238;&#36830;&#25509;&#21040;cmd&#26631;&#20934;&#36755;&#20837;&#30340;FILE* </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #bc6ec5; font-weight: bold;">popen</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">cmd</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">type</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;type&#20026;"r",&#21017;&#36820;&#22238;&#36830;&#25509;&#21040;cmd&#26631;&#20934;&#36755;&#20986;&#30340;FILE* </span><span style="color: #b22222;">*/</span>
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;type&#20026;"w",&#21017;&#36820;&#22238;&#36830;&#25509;&#21040;cmd&#26631;&#20934;&#36755;&#20837;&#30340;FILE* </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">FILE</span>* <span style="color: #0000ff;">popen</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">cmd</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">type</span>);
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20851;&#38381;&#26631;&#20934;IO&#30041;,&#31561;&#24453;popen&#20013;cmd&#36816;&#34892;&#32467;&#26463;,&#20877;&#36820;&#22238;&#20854;&#32456;&#27490;&#29366;&#24577;,&#20986;&#38169;&#21017;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">pclose</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20851;&#38381;&#26631;&#20934;IO&#30041;,&#31561;&#24453;popen&#20013;cmd&#36816;&#34892;&#32467;&#26463;,&#20877;&#36820;&#22238;&#20854;&#32456;&#27490;&#29366;&#24577;,&#20986;&#38169;&#21017;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">pclose</span>(<span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -228,26 +228,26 @@ this is a messae from parent
 上面pipe的例子可以改写为:
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
-<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">fcntl.h</span><span style="color: #4f97d7;">&gt;</span>
-<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
-<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/wait.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;fcntl.h&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/wait.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #4f97d7;">()</span>
-<span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">FILE</span>* <span style="color: #7590db;">fp</span> = popen<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"/bin/echo_from_stdin.sh"</span>,<span style="color: #2d9574;">"w"</span><span style="color: #bc6ec5;">)</span>;
-  fputs<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"message from parent\n"</span>,fp<span style="color: #bc6ec5;">)</span>;
-  pclose<span style="color: #bc6ec5;">(</span>fp<span style="color: #bc6ec5;">)</span>;
-  <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">0</span>;
-<span style="color: #4f97d7;">}</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>()
+{
+  <span style="color: #228b22;">FILE</span>* <span style="color: #a0522d;">fp</span> = popen(<span style="color: #8b2252;">"/bin/echo_from_stdin.sh"</span>,<span style="color: #8b2252;">"w"</span>);
+  fputs(<span style="color: #8b2252;">"message from parent\n"</span>,fp);
+  pclose(fp);
+  <span style="color: #a020f0;">return</span> 0;
+}
 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org24a5e98" class="outline-3">
-<h3 id="org24a5e98"><span class="section-number-3">1.5</span> 使用管道时的注意事项</h3>
+<div id="outline-container-orgfd757cf" class="outline-3">
+<h3 id="orgfd757cf"><span class="section-number-3">1.5</span> 使用管道时的注意事项</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 当用标准IO读写管道时,一定要注意 <b>标准IO的缓冲机制</b>. 缓冲很容易造成读写管道时的阻塞,甚至引起死锁.为此经常要用`setvbuf'函数更改缓冲类型.
@@ -259,8 +259,8 @@ this is a messae from parent
 </div>
 </div>
 </div>
-<div id="outline-container-org39028e9" class="outline-2">
-<h2 id="org39028e9"><span class="section-number-2">2</span> FIFO</h2>
+<div id="outline-container-org33af76f" class="outline-2">
+<h2 id="org33af76f"><span class="section-number-2">2</span> FIFO</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 FIFO又叫命名管道,它与pipe的不同在于:pipe只能由共同祖先进程创建,然后通过fork函数在多个子进程之间使用. 而通过FIFO,无共同祖先进程的进程也能交换数据.
@@ -270,8 +270,8 @@ FIFO又叫命名管道,它与pipe的不同在于:pipe只能由共同祖先进程
 FIFO也是一种文件类型,stat结构中的st_mode可以标明文件是否为FIFO类型. 可以用S_ISFIFO宏对此进行测试.
 </p>
 </div>
-<div id="outline-container-org2aaa6c2" class="outline-3">
-<h3 id="org2aaa6c2"><span class="section-number-3">2.1</span> FIFO的局限性</h3>
+<div id="outline-container-orgbd0352d" class="outline-3">
+<h3 id="orgbd0352d"><span class="section-number-3">2.1</span> FIFO的局限性</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 FIFO只能保证是半双工的.
@@ -279,24 +279,24 @@ FIFO只能保证是半双工的.
 </div>
 </div>
 
-<div id="outline-container-org3c4d099" class="outline-3">
-<h3 id="org3c4d099"><span class="section-number-3">2.2</span> 创建FIFO</h3>
+<div id="outline-container-orgca5db8b" class="outline-3">
+<h3 id="orgca5db8b"><span class="section-number-3">2.2</span> 创建FIFO</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 创建FIFO的类似于创建文件.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/stat.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/stat.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">mode&#21442;&#25968;&#35828;&#26126;&#19982;open&#20989;&#25968;&#30456;&#21516; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">mkfifo</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">fifo_path</span>,<span style="color: #ce537a; font-weight: bold;">mode_t</span> <span style="color: #7590db;">mode</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">mode&#21442;&#25968;&#35828;&#26126;&#19982;open&#20989;&#25968;&#30456;&#21516; </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">mkfifo</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">fifo_path</span>,<span style="color: #228b22;">mode_t</span> <span style="color: #a0522d;">mode</span>);
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgea11967" class="outline-3">
-<h3 id="orgea11967"><span class="section-number-3">2.3</span> 使用FIFO</h3>
+<div id="outline-container-org3ddab75" class="outline-3">
+<h3 id="org3ddab75"><span class="section-number-3">2.3</span> 使用FIFO</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 一旦用mkfifo创建了fifo,就可以使用open,close,read,write,unlink对其像处理文件一样使用FIFO.
@@ -312,8 +312,8 @@ FIFO只能保证是半双工的.
 </div>
 </div>
 
-<div id="outline-container-orgc1dab5a" class="outline-3">
-<h3 id="orgc1dab5a"><span class="section-number-3">2.4</span> 对FIFO的读写说明</h3>
+<div id="outline-container-org468abb7" class="outline-3">
+<h3 id="org468abb7"><span class="section-number-3">2.4</span> 对FIFO的读写说明</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li>若用write写一个尚无进程为读而打开的FIFO,则产生信号SIGPIPE</li>
@@ -324,19 +324,19 @@ FIFO只能保证是半双工的.
 </div>
 </div>
 
-<div id="outline-container-org5558101" class="outline-2">
-<h2 id="org5558101"><span class="section-number-2">3</span> XSI IPC</h2>
+<div id="outline-container-org129e5ba" class="outline-2">
+<h2 id="org129e5ba"><span class="section-number-2">3</span> XSI IPC</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 XSI IPC包括三种IPC:信息队列,信号量,共享存储器. 它们之间有许多相似之处.
 </p>
 </div>
-<div id="outline-container-org7f24a11" class="outline-3">
-<h3 id="org7f24a11"><span class="section-number-3">3.1</span> 共同特征</h3>
+<div id="outline-container-orgdffb3d1" class="outline-3">
+<h3 id="orgdffb3d1"><span class="section-number-3">3.1</span> 共同特征</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-orgda2335e" class="outline-4">
-<h4 id="orgda2335e"><span class="section-number-4">3.1.1</span> 标识符和键</h4>
+<div id="outline-container-org3b31b57" class="outline-4">
+<h4 id="org3b31b57"><span class="section-number-4">3.1.1</span> 标识符和键</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 每种XSI IPC结构中都有一个非负整数作为标识符. 但该标识符仅为IPC对象内部使用,其对外与一个键(key)相连.
@@ -356,9 +356,9 @@ XSI IPC包括三种IPC:信息队列,信号量,共享存储器. 它们之间有�
 通过函数`ftok'可以指定一个路径和一个id,并根据这个路径及id生成一个键值,多个进程间约定同一个路径和id以产生一个一致的IPC键,共享IPC结构.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/ipc.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/ipc.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">key_t</span> <span style="color: #bc6ec5; font-weight: bold;">fork</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">path</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">id</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">key_t</span> <span style="color: #0000ff;">fork</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">path</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">id</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -371,23 +371,23 @@ XSI IPC包括三种IPC:信息队列,信号量,共享存储器. 它们之间有�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgecb7a26" class="outline-4">
-<h4 id="orgecb7a26"><span class="section-number-4">3.1.2</span> 权限结构</h4>
+<div id="outline-container-org76e6ac9" class="outline-4">
+<h4 id="org76e6ac9"><span class="section-number-4">3.1.2</span> 权限结构</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
 XSI IPC为每个IPC结构都设置了一个ipc_perm结构, 该结构规定了权限和所有者. 它至少包括下列成员:
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/ipc.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/ipc.h&gt;</span>
 
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">ipc_perm</span><span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">uid_t</span> <span style="color: #7590db;">uid</span>;                    <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25152;&#26377;&#32773;&#30340;&#26377;&#25928;&#29992;&#25143;id </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">gid_t</span> <span style="color: #7590db;">gid</span>;                    <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25152;&#26377;&#32773;&#30340;&#26377;&#25928;&#32452;id </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">uid_t</span> <span style="color: #7590db;">cuid</span>;                   <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#21019;&#24314;&#32773;&#30340;&#26377;&#25928;&#29992;&#25143;id </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">git_t</span> <span style="color: #7590db;">cgid</span>;                   <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#21019;&#24314;&#32773;&#30340;&#26377;&#25928;&#32452;id </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">mode_t</span> <span style="color: #7590db;">mode</span>;                  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">access mode </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">ipc_perm</span>{
+  <span style="color: #228b22;">uid_t</span> <span style="color: #a0522d;">uid</span>;                    <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25152;&#26377;&#32773;&#30340;&#26377;&#25928;&#29992;&#25143;id </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">gid_t</span> <span style="color: #a0522d;">gid</span>;                    <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25152;&#26377;&#32773;&#30340;&#26377;&#25928;&#32452;id </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">uid_t</span> <span style="color: #a0522d;">cuid</span>;                   <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#21019;&#24314;&#32773;&#30340;&#26377;&#25928;&#29992;&#25143;id </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">git_t</span> <span style="color: #a0522d;">cgid</span>;                   <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#21019;&#24314;&#32773;&#30340;&#26377;&#25928;&#32452;id </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">mode_t</span> <span style="color: #a0522d;">mode</span>;                  <span style="color: #b22222;">/* </span><span style="color: #b22222;">access mode </span><span style="color: #b22222;">*/</span>
+  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #b22222;">*/</span>
+};
 </pre>
 </div>
 <ul class="org-ul">
@@ -395,8 +395,8 @@ XSI IPC为每个IPC结构都设置了一个ipc_perm结构, 该结构规定了权
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcf70a6d" class="outline-4">
-<h4 id="orgcf70a6d"><span class="section-number-4">3.1.3</span> XSI IPC的优缺点:</h4>
+<div id="outline-container-orgc9abc29" class="outline-4">
+<h4 id="orgc9abc29"><span class="section-number-4">3.1.3</span> XSI IPC的优缺点:</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <p>
 IPC的缺点有:
@@ -419,24 +419,24 @@ IPC的优点有:
 </div>
 </div>
 </div>
-<div id="outline-container-org47e4a48" class="outline-3">
-<h3 id="org47e4a48"><span class="section-number-3">3.2</span> 消息队列(<b>不推荐使用</b>)</h3>
+<div id="outline-container-org56326c5" class="outline-3">
+<h3 id="org56326c5"><span class="section-number-3">3.2</span> 消息队列(<b>不推荐使用</b>)</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 消息队列是消息的链接表,该链接表存放在内核中并由消息队列标识符标识.
 </p>
 </div>
-<div id="outline-container-org63c05d8" class="outline-4">
-<h4 id="org63c05d8"><span class="section-number-4">3.2.1</span> 打开/创建新消息队列</h4>
+<div id="outline-container-org828d0e7" class="outline-4">
+<h4 id="org828d0e7"><span class="section-number-4">3.2.1</span> 打开/创建新消息队列</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 msgget用于创建一个新队列或打开一个现存的队列.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/msg.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/msg.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#21017;&#36820;&#22238;&#28040;&#24687;&#38431;&#21015;&#30340;ID,&#20986;&#38169;&#21017;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">msgget</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">key_t</span> <span style="color: #7590db;">key</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flag</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#21017;&#36820;&#22238;&#28040;&#24687;&#38431;&#21015;&#30340;ID,&#20986;&#38169;&#21017;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">msgget</span>(<span style="color: #228b22;">key_t</span> <span style="color: #a0522d;">key</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flag</span>);
 </pre>
 </div>
 
@@ -444,32 +444,32 @@ msgget用于创建一个新队列或打开一个现存的队列.
 每个消息队列都有一个msgid_ds结构体与之关联,用于说明队列的当前状态
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">msqid_ds</span><span style="color: #4f97d7;">{</span>
-  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">ipc_perm</span> <span style="color: #7590db;">msg_perm</span>;     <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">ipc&#30340;&#26435;&#38480;&#35828;&#26126; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">msgqnum_t</span> <span style="color: #7590db;">msg_qnum</span>;           <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38431;&#21015;&#20013;&#30340;&#28040;&#24687;&#20010;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">msglen_t</span> <span style="color: #7590db;">msg_qbytes</span>;          <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38431;&#21015;&#20013;&#33021;&#23384;&#20648;&#30340;&#28040;&#24687;&#26368;&#22823;&#23481;&#37327; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">msg_lspid</span>;              <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#19968;&#27425;&#22312;&#35813;&#38431;&#21015;&#19978;&#35843;&#29992;msgsnd()&#30340;&#36827;&#31243;id </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">msg_lrpid</span>;              <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#19968;&#27425;&#22312;&#35813;&#38431;&#21015;&#19978;&#35843;&#29992;msgrcv()&#30340;&#36827;&#31243;id </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">time_t</span> <span style="color: #7590db;">msg_stime</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#19968;&#27425;&#22312;&#35813;&#38431;&#21015;&#19978;&#35843;&#29992;msgsnd()&#30340;&#26102;&#38388; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">time_t</span> <span style="color: #7590db;">msg_rtime</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#19968;&#27425;&#22312;&#35813;&#38431;&#21015;&#19978;&#35843;&#29992;msgrcv()&#30340;&#26102;&#38388; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">time_t</span> <span style="color: #7590db;">msg_ctime</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#19968;&#27425;&#22312;&#35813;&#38431;&#21015;&#21457;&#29983;&#21464;&#21270;&#30340;&#20107;&#20214; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20854;&#20182;&#32467;&#26500;&#25104;&#21592; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>
+<pre class="src src-C"><span style="color: #a020f0;">struct</span> <span style="color: #228b22;">msqid_ds</span>{
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">ipc_perm</span> <span style="color: #a0522d;">msg_perm</span>;     <span style="color: #b22222;">/* </span><span style="color: #b22222;">ipc&#30340;&#26435;&#38480;&#35828;&#26126; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">msgqnum_t</span> <span style="color: #a0522d;">msg_qnum</span>;           <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38431;&#21015;&#20013;&#30340;&#28040;&#24687;&#20010;&#25968; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">msglen_t</span> <span style="color: #a0522d;">msg_qbytes</span>;          <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38431;&#21015;&#20013;&#33021;&#23384;&#20648;&#30340;&#28040;&#24687;&#26368;&#22823;&#23481;&#37327; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">msg_lspid</span>;              <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#19968;&#27425;&#22312;&#35813;&#38431;&#21015;&#19978;&#35843;&#29992;msgsnd()&#30340;&#36827;&#31243;id </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">msg_lrpid</span>;              <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#19968;&#27425;&#22312;&#35813;&#38431;&#21015;&#19978;&#35843;&#29992;msgrcv()&#30340;&#36827;&#31243;id </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">msg_stime</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#19968;&#27425;&#22312;&#35813;&#38431;&#21015;&#19978;&#35843;&#29992;msgsnd()&#30340;&#26102;&#38388; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">msg_rtime</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#19968;&#27425;&#22312;&#35813;&#38431;&#21015;&#19978;&#35843;&#29992;msgrcv()&#30340;&#26102;&#38388; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">msg_ctime</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#19968;&#27425;&#22312;&#35813;&#38431;&#21015;&#21457;&#29983;&#21464;&#21270;&#30340;&#20107;&#20214; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20854;&#20182;&#32467;&#26500;&#25104;&#21592; </span><span style="color: #b22222;">*/</span>
+}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgeff8f37" class="outline-4">
-<h4 id="orgeff8f37"><span class="section-number-4">3.2.2</span> 操作消息队列</h4>
+<div id="outline-container-orge204316" class="outline-4">
+<h4 id="orge204316"><span class="section-number-4">3.2.2</span> 操作消息队列</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 msgctl函数对消息队列执行队中操作
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/msg.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/msg.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">msgctl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">queueid</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">cmd</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">msgid_ds</span>* <span style="color: #7590db;">buf</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">msgctl</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">queueid</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">cmd</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">msgid_ds</span>* <span style="color: #a0522d;">buf</span>);
 </pre>
 </div>
 <p>
@@ -522,25 +522,25 @@ IPC_STAT
 取此消息队列的msgid_ds结构,并放在buf所指向的结构中
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/msg.h</span><span style="color: #4f97d7;">&gt;</span>
-<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/ipc.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/msg.h&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/ipc.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">show_queue_ds</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">msqid_ds</span>* <span style="color: #7590db;">queue_ds</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7;">{</span>
-  printf<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"msg_qnum=%d\n"</span>,queue_ds-&gt;msg_qnum<span style="color: #bc6ec5;">)</span>;
-  printf<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"msg_qbytes=%d\n"</span>,queue_ds-&gt;msg_qbytes<span style="color: #bc6ec5;">)</span>;
-  printf<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"msg_lspid=%d\n"</span>,queue_ds-&gt;msg_lspid<span style="color: #bc6ec5;">)</span>;
-  printf<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"msg_lrpid=%d\n"</span>,queue_ds-&gt;msg_lrpid<span style="color: #bc6ec5;">)</span>;
+<span style="color: #228b22;">void</span> <span style="color: #0000ff;">show_queue_ds</span>(<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">msqid_ds</span>* <span style="color: #a0522d;">queue_ds</span>)
+{
+  printf(<span style="color: #8b2252;">"msg_qnum=%d\n"</span>,queue_ds-&gt;msg_qnum);
+  printf(<span style="color: #8b2252;">"msg_qbytes=%d\n"</span>,queue_ds-&gt;msg_qbytes);
+  printf(<span style="color: #8b2252;">"msg_lspid=%d\n"</span>,queue_ds-&gt;msg_lspid);
+  printf(<span style="color: #8b2252;">"msg_lrpid=%d\n"</span>,queue_ds-&gt;msg_lrpid);
 
-<span style="color: #4f97d7;">}</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">argc</span>, <span style="color: #ce537a; font-weight: bold;">char</span> *<span style="color: #7590db;">argv</span><span style="color: #bc6ec5;">[]</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">queueid</span> = msgget<span style="color: #bc6ec5;">(</span>IPC_PRIVATE,IPC_CREAT<span style="color: #bc6ec5;">)</span>;
-  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">msqid_ds</span> <span style="color: #7590db;">queue_ds</span>;
-  msgctl<span style="color: #bc6ec5;">(</span>queueid,IPC_STAT,&amp;queue_ds<span style="color: #bc6ec5;">)</span>;
-  show_queue_ds<span style="color: #bc6ec5;">(</span>&amp;queue_ds<span style="color: #bc6ec5;">)</span>;
-  <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">0</span>;
-<span style="color: #4f97d7;">}</span>
+}
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">argc</span>, <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">argv</span>[])
+{
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">queueid</span> = msgget(IPC_PRIVATE,IPC_CREAT);
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">msqid_ds</span> <span style="color: #a0522d;">queue_ds</span>;
+  msgctl(queueid,IPC_STAT,&amp;queue_ds);
+  show_queue_ds(&amp;queue_ds);
+  <span style="color: #a020f0;">return</span> 0;
+}
 
 </pre>
 </div>
@@ -555,23 +555,23 @@ msg_lrpid=192
 </div>
 </div>
 
-<div id="outline-container-org2629086" class="outline-4">
-<h4 id="org2629086"><span class="section-number-4">3.2.3</span> 收发消息</h4>
+<div id="outline-container-orgf6cf7af" class="outline-4">
+<h4 id="orgf6cf7af"><span class="section-number-4">3.2.3</span> 收发消息</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <p>
 msgsnd将新消息添加到队列尾端.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/msg.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/msg.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#21442;&#25968;flag&#21487;&#20197;&#20026;0&#25110;IPC_NOWAIT. </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">msgsnd</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">msqid</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">msgbuf</span>* <span style="color: #7590db;">ptr</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">nbytes</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flag</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#21442;&#25968;flag&#21487;&#20197;&#20026;0&#25110;IPC_NOWAIT. </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">msgsnd</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">msqid</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">msgbuf</span>* <span style="color: #a0522d;">ptr</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">nbytes</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flag</span>);
 
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">msgbuf</span>
-<span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">long</span> <span style="color: #7590db;">mtype</span>;                   <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#28040;&#24687;&#31867;&#22411; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">char</span> <span style="color: #7590db;">mtext</span><span style="color: #bc6ec5;">[</span>TEXTSIZE<span style="color: #bc6ec5;">]</span>;                <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20449;&#24687;&#25968;&#25454;,TEXTSIZE&#38656;&#35201;&#27604;msgsnd&#20013;&#30340;&#21442;&#25968;nbytes&#22823; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">msgbuf</span>
+{
+  <span style="color: #228b22;">long</span> <span style="color: #a0522d;">mtype</span>;                   <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#28040;&#24687;&#31867;&#22411; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">char</span> <span style="color: #a0522d;">mtext</span>[TEXTSIZE];                <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20449;&#24687;&#25968;&#25454;,TEXTSIZE&#38656;&#35201;&#27604;msgsnd&#20013;&#30340;&#21442;&#25968;nbytes&#22823; </span><span style="color: #b22222;">*/</span>
+}
 </pre>
 </div>
 <p>
@@ -583,10 +583,10 @@ msgsnd将新消息添加到队列尾端.
 msgrcv用于从队列中取消息.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/msg.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/msg.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;&#28040;&#24687;&#30340;&#25968;&#25454;&#37096;&#20998;&#30340;&#38271;&#24230;,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">msgrcv</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">msqid</span>,<span style="color: #ce537a; font-weight: bold;">msgbuf</span>* <span style="color: #7590db;">ptr</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">nbytes</span>,<span style="color: #ce537a; font-weight: bold;">log</span> <span style="color: #7590db;">type</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flag</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;&#28040;&#24687;&#30340;&#25968;&#25454;&#37096;&#20998;&#30340;&#38271;&#24230;,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">msgrcv</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">msqid</span>,<span style="color: #228b22;">msgbuf</span>* <span style="color: #a0522d;">ptr</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">nbytes</span>,<span style="color: #228b22;">log</span> <span style="color: #a0522d;">type</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flag</span>);
 </pre>
 </div>
 <p>
@@ -655,8 +655,8 @@ msgrcv用于从队列中取消息.
 </div>
 </div>
 </div>
-<div id="outline-container-org31136ee" class="outline-3">
-<h3 id="org31136ee"><span class="section-number-3">3.3</span> 信号量集合</h3>
+<div id="outline-container-orgf999a52" class="outline-3">
+<h3 id="orgf999a52"><span class="section-number-3">3.3</span> 信号量集合</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 信号量是一个计数器,用于标明多进程间共享资源的剩余数量.
@@ -666,24 +666,24 @@ msgrcv用于从队列中取消息.
 每个信号量集合由一个无名结构体表示
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">unsigned</span> <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #7590db;">semval</span>;        <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20449;&#21495;&#37327;&#30340;&#20540; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">sempid</span>;                 <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#19978;&#27425;&#25805;&#20316;&#35813;&#20449;&#21495;&#37327;&#30340;&#36827;&#31243;id </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">unsigned</span> <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #7590db;">semncnt</span>;       <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#31561;&#24453;semval&gt;curval&#30340;&#36827;&#31243;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">unsigned</span> <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #7590db;">semzcnt</span>;       <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#31561;&#24453;semval == 0&#30340;&#36827;&#31243;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#21487;&#33021;&#36824;&#26377;&#20854;&#20182;&#25104;&#21592; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<pre class="src src-C"><span style="color: #a020f0;">struct</span> {
+  <span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">short</span> <span style="color: #a0522d;">semval</span>;        <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20449;&#21495;&#37327;&#30340;&#20540; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">sempid</span>;                 <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#19978;&#27425;&#25805;&#20316;&#35813;&#20449;&#21495;&#37327;&#30340;&#36827;&#31243;id </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">short</span> <span style="color: #a0522d;">semncnt</span>;       <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#31561;&#24453;semval&gt;curval&#30340;&#36827;&#31243;&#25968; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">short</span> <span style="color: #a0522d;">semzcnt</span>;       <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#31561;&#24453;semval == 0&#30340;&#36827;&#31243;&#25968; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#21487;&#33021;&#36824;&#26377;&#20854;&#20182;&#25104;&#21592; </span><span style="color: #b22222;">*/</span>
+};
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgc084aa7" class="outline-4">
-<h4 id="orgc084aa7"><span class="section-number-4">3.3.1</span> 新建/获取信号量集合</h4>
+<div id="outline-container-orgf358a91" class="outline-4">
+<h4 id="orgf358a91"><span class="section-number-4">3.3.1</span> 新建/获取信号量集合</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/sem.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/sem.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">semget</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">key_t</span> <span style="color: #7590db;">key</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sem_num</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flag</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">semget</span>(<span style="color: #228b22;">key_t</span> <span style="color: #a0522d;">key</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sem_num</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flag</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -693,34 +693,34 @@ msgrcv用于从队列中取消息.
 </div>
 </div>
 
-<div id="outline-container-org6777e4d" class="outline-4">
-<h4 id="org6777e4d"><span class="section-number-4">3.3.2</span> 操作信号量</h4>
+<div id="outline-container-orgab29970" class="outline-4">
+<h4 id="orgab29970"><span class="section-number-4">3.3.2</span> 操作信号量</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <ul class="org-ul">
 <li><p>
 semctl函数
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/sem.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/sem.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#20540;&#30340;&#24847;&#20041;&#26681;&#25454;cmd&#30340;&#19981;&#21516;&#32780;&#19981;&#21516; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">semctl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">semid</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">semnum</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">cmd</span><span style="color: #4f97d7;">)</span>;
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">semctl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">semid</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">semnum</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">cmd</span>,<span style="color: #4f97d7; font-weight: bold;">union</span> <span style="color: #ce537a; font-weight: bold;">semun</span> <span style="color: #7590db;">arg</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#20540;&#30340;&#24847;&#20041;&#26681;&#25454;cmd&#30340;&#19981;&#21516;&#32780;&#19981;&#21516; </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">semctl</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">semid</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">semnum</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">cmd</span>);
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">semctl</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">semid</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">semnum</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">cmd</span>,<span style="color: #a020f0;">union</span> <span style="color: #228b22;">semun</span> <span style="color: #a0522d;">arg</span>);
 
-<span style="color: #4f97d7; font-weight: bold;">union</span> <span style="color: #ce537a; font-weight: bold;">semnum</span><span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">val</span>;                      <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">cmd&#20026;SETVAL&#26102; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">semid_ds</span>* <span style="color: #7590db;">buf</span>;         <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">cmd&#20026;IPC_STAT&#25110;IPC_SET&#26102; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">unsigned</span> <span style="color: #ce537a; font-weight: bold;">short</span>* <span style="color: #7590db;">array</span>;        <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">cmd&#20026;GETALL&#25110;SETALL&#26102; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<span style="color: #a020f0;">union</span> <span style="color: #228b22;">semnum</span>{
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">val</span>;                      <span style="color: #b22222;">/* </span><span style="color: #b22222;">cmd&#20026;SETVAL&#26102; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">semid_ds</span>* <span style="color: #a0522d;">buf</span>;         <span style="color: #b22222;">/* </span><span style="color: #b22222;">cmd&#20026;IPC_STAT&#25110;IPC_SET&#26102; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">short</span>* <span style="color: #a0522d;">array</span>;        <span style="color: #b22222;">/* </span><span style="color: #b22222;">cmd&#20026;GETALL&#25110;SETALL&#26102; </span><span style="color: #b22222;">*/</span>
+};
 
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">semid_ds</span>
-<span style="color: #4f97d7;">{</span>
-  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">ipc_perm</span> <span style="color: #7590db;">sem_perm</span>;   <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">ipc&#26435;&#38480; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">unsigned</span> <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #7590db;">sem_nsems</span>;   <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20449;&#21495;&#37327;&#38598;&#21512;&#20013;&#20449;&#21495;&#37327;&#30340;&#20010;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">time_t</span> <span style="color: #7590db;">sem_otime</span>;           <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#25191;&#34892;semop()&#30340;&#26102;&#38388; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">time_t</span> <span style="color: #7590db;">sem_ctime</span>;           <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#25913;&#21464;semid_ds&#32467;&#26500;&#20307;&#30340;&#26102;&#38388; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">semid_ds</span>
+{
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">ipc_perm</span> <span style="color: #a0522d;">sem_perm</span>;   <span style="color: #b22222;">/* </span><span style="color: #b22222;">ipc&#26435;&#38480; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">short</span> <span style="color: #a0522d;">sem_nsems</span>;   <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20449;&#21495;&#37327;&#38598;&#21512;&#20013;&#20449;&#21495;&#37327;&#30340;&#20010;&#25968; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">sem_otime</span>;           <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#25191;&#34892;semop()&#30340;&#26102;&#38388; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">sem_ctime</span>;           <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#25913;&#21464;semid_ds&#32467;&#26500;&#20307;&#30340;&#26102;&#38388; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #b22222;">*/</span>
+};
 </pre>
 </div>
 <p>
@@ -792,17 +792,17 @@ semop函数
 semop提供了操作信号量集合上各信号量值的原子操作
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/sem.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/sem.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;0,&#22833;&#36133;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">semop</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">semid</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sembuf</span> <span style="color: #7590db;">semop_array</span><span style="color: #bc6ec5;">[]</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">npos</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;0,&#22833;&#36133;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">semop</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">semid</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sembuf</span> <span style="color: #a0522d;">semop_array</span>[],<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">npos</span>);
 
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sembuf</span>
-<span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">unsigned</span> <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #7590db;">sem_num</span>;       <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25351;&#26126;&#25805;&#20316;&#30340;&#26159;&#20449;&#21495;&#37327;&#38598;&#21512;&#20013;&#30340;&#31532;&#20960;&#20010;&#20449;&#21495;&#37327; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #7590db;">sem_op</span>;                 <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26159;&#20309;&#31181;&#25805;&#20316;,&#21487;&#20197;&#20026;&#36127;&#25968;,0&#25110;&#27491;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">short</span> <span style="color: #7590db;">sem_flg</span>;                <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">IPC_NOWAIT,SEM_UNDO </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sembuf</span>
+{
+  <span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">short</span> <span style="color: #a0522d;">sem_num</span>;       <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25351;&#26126;&#25805;&#20316;&#30340;&#26159;&#20449;&#21495;&#37327;&#38598;&#21512;&#20013;&#30340;&#31532;&#20960;&#20010;&#20449;&#21495;&#37327; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">short</span> <span style="color: #a0522d;">sem_op</span>;                 <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26159;&#20309;&#31181;&#25805;&#20316;,&#21487;&#20197;&#20026;&#36127;&#25968;,0&#25110;&#27491;&#25968; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">short</span> <span style="color: #a0522d;">sem_flg</span>;                <span style="color: #b22222;">/* </span><span style="color: #b22222;">IPC_NOWAIT,SEM_UNDO </span><span style="color: #b22222;">*/</span>
+};
 </pre>
 </div></li>
 <li>参数npos指明了只按照semop_array中操作的数量.</li>
@@ -874,8 +874,8 @@ sem_flg的值说明
 </div>
 </div>
 
-<div id="outline-container-orgac82730" class="outline-3">
-<h3 id="orgac82730"><span class="section-number-3">3.4</span> 共享存储器</h3>
+<div id="outline-container-orgcde2496" class="outline-3">
+<h3 id="orgcde2496"><span class="section-number-3">3.4</span> 共享存储器</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 共享存储器运行多个进程共享同一块存储区,由于数据不需要在进程间复制,所以这是最快的一种IPC. 
@@ -889,29 +889,29 @@ sem_flg的值说明
 内核为每个共享存储段设置了一个shmid_ds结构
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">shmid_ds</span><span style="color: #4f97d7;">{</span>
-  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">ipc_perm</span> <span style="color: #7590db;">shm_perm</span>;     <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">IPC&#26435;&#38480;&#35828;&#26126; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">shm_segsz</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20849;&#20139;&#23384;&#20648;&#30340;&#22823;&#23567; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">shm_lpid</span>;               <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#25191;&#34892;shmop()&#30340;&#36827;&#31243;ID </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">pid_t</span> <span style="color: #7590db;">shm_cpid</span>;               <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#21019;&#24314;&#35813;&#20849;&#20139;&#23384;&#20648;&#30340;&#36827;&#31243;ID </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">shmatt_t</span> <span style="color: #7590db;">shm_nattch</span>;          <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#24403;&#21069;attach&#21040;&#35813;&#20849;&#20139;&#20869;&#23384;&#30340;&#25968;&#37327; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">time_t</span> <span style="color: #7590db;">shm_atime</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#19968;&#27425;attach&#30340;&#26102;&#38388; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">time_t</span> <span style="color: #7590db;">shm_dtime</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#19968;&#27425;detach&#30340;&#26102;&#38388; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">time_t</span> <span style="color: #7590db;">shm_ctime</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#26368;&#21518;&#19968;&#27425;&#26356;&#25913;shmid_ds&#32467;&#26500;&#30340;&#26102;&#38388; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>
+<pre class="src src-C"><span style="color: #a020f0;">struct</span> <span style="color: #228b22;">shmid_ds</span>{
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">ipc_perm</span> <span style="color: #a0522d;">shm_perm</span>;     <span style="color: #b22222;">/* </span><span style="color: #b22222;">IPC&#26435;&#38480;&#35828;&#26126; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">shm_segsz</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20849;&#20139;&#23384;&#20648;&#30340;&#22823;&#23567; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">shm_lpid</span>;               <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#25191;&#34892;shmop()&#30340;&#36827;&#31243;ID </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">shm_cpid</span>;               <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#21019;&#24314;&#35813;&#20849;&#20139;&#23384;&#20648;&#30340;&#36827;&#31243;ID </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">shmatt_t</span> <span style="color: #a0522d;">shm_nattch</span>;          <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#24403;&#21069;attach&#21040;&#35813;&#20849;&#20139;&#20869;&#23384;&#30340;&#25968;&#37327; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">shm_atime</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#19968;&#27425;attach&#30340;&#26102;&#38388; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">shm_dtime</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#19968;&#27425;detach&#30340;&#26102;&#38388; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">shm_ctime</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#26368;&#21518;&#19968;&#27425;&#26356;&#25913;shmid_ds&#32467;&#26500;&#30340;&#26102;&#38388; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #b22222;">*/</span>
+}
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgd7e1ef0" class="outline-4">
-<h4 id="orgd7e1ef0"><span class="section-number-4">3.4.1</span> 创建/获取共享存储</h4>
+<div id="outline-container-org08f137c" class="outline-4">
+<h4 id="org08f137c"><span class="section-number-4">3.4.1</span> 创建/获取共享存储</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/shm.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/shm.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;&#20849;&#20139;&#23384;&#20648;ID,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">shmget</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">key_t</span> <span style="color: #7590db;">key</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">size</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flag</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;&#20849;&#20139;&#23384;&#20648;ID,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">shmget</span>(<span style="color: #228b22;">key_t</span> <span style="color: #a0522d;">key</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">size</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flag</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -922,13 +922,13 @@ sem_flg的值说明
 </div>
 </div>
 
-<div id="outline-container-org7101aab" class="outline-4">
-<h4 id="org7101aab"><span class="section-number-4">3.4.2</span> 操作共享存储段</h4>
+<div id="outline-container-org051fffa" class="outline-4">
+<h4 id="org051fffa"><span class="section-number-4">3.4.2</span> 操作共享存储段</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/shm.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/shm.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">shmctl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">shmid</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">cmd</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">shmid_ds</span>* <span style="color: #7590db;">buf</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">shmctl</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">shmid</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">cmd</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">shmid_ds</span>* <span style="color: #a0522d;">buf</span>);
 </pre>
 </div>
 <p>
@@ -978,18 +978,18 @@ cmd参数说明:
 </div>
 </div>
 
-<div id="outline-container-orgc3e6de7" class="outline-4">
-<h4 id="orgc3e6de7"><span class="section-number-4">3.4.3</span> 使用共享内存</h4>
+<div id="outline-container-org321d4fb" class="outline-4">
+<h4 id="org321d4fb"><span class="section-number-4">3.4.3</span> 使用共享内存</h4>
 <div class="outline-text-4" id="text-3-4-3">
 <ul class="org-ul">
 <li><p>
 attach共享内存
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/shm.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/shm.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#21017;&#36820;&#22238;&#25351;&#21521;&#20849;&#20139;&#23384;&#20648;&#30340;&#25351;&#38024;,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #bc6ec5; font-weight: bold;">shmat</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">shmid</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">addr</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flag</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#21017;&#36820;&#22238;&#25351;&#21521;&#20849;&#20139;&#23384;&#20648;&#30340;&#25351;&#38024;,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">void</span>* <span style="color: #0000ff;">shmat</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">shmid</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">addr</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flag</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -1007,9 +1007,9 @@ detach共享内存
 进程对共享存储段的操作结束后,调用shmdt脱节该段. 若成功,则shmdt会将shmid_ds结构体重的shm_nattach计数器减少1
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/shm.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/shm.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">shmdt</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">addr</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">shmdt</span>(<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">addr</span>);
 </pre>
 </div></li>
 </ul>
@@ -1017,84 +1017,56 @@ detach共享内存
 </div>
 </div>
 </div>
-<div id="outline-container-orgdb9da8a" class="outline-2">
-<h2 id="orgdb9da8a"><span class="section-number-2">4</span> </h2>
+<div id="outline-container-orgb6c8def" class="outline-2">
+<h2 id="orgb6c8def"><span class="section-number-2">4</span> </h2>
 </div>
 
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2015-06-04</span>
-            <span title="last modification date" class="post-info">2016-10-24</span>
-            <span title="tags" class="post-info">:N/A:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2015-06-04</span>
+    <span title="last modification date" class="post-info">2016-10-24</span>
+    <span title="tags" class="post-info">N/A</span>
+    <span title="author" class="post-info">DarkSun</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2015/06/04/进程间通讯/";
-         var disqus_url = "https://lujun9972.github.io/blog/2015/06/04/进程间通讯/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2015/06/04/进程间通讯/";
+     var disqus_url = "https://lujun9972.github.io/blog/2015/06/04/进程间通讯/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">DarkSun</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

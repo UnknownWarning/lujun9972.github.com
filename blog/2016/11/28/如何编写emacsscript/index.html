@@ -3,21 +3,23 @@
 <head>
   <title>如何编写EmacsScript - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -31,15 +33,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -53,12 +53,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1d18eaf">1. &#x2013;script选项</a></li>
-<li><a href="#org4280c58">2. 处理命令行参数</a></li>
-<li><a href="#org3e40cb3">3. EmacsScript的执行顺序</a></li>
-<li><a href="#org28c71fd">4. 标准输出,标准错误与标准输入</a></li>
-<li><a href="#orgbebb9f9">5. 获取外部命令的运行结果</a></li>
-<li><a href="#org23c3a73">6. 加速EmacsScript的启动过程</a></li>
+<li><a href="#org571d7ac">1. &#x2013;script选项</a></li>
+<li><a href="#org1b93c91">2. 处理命令行参数</a></li>
+<li><a href="#org10d7e58">3. EmacsScript的执行顺序</a></li>
+<li><a href="#org81e188c">4. 标准输出,标准错误与标准输入</a></li>
+<li><a href="#orgb09cc23">5. 获取外部命令的运行结果</a></li>
+<li><a href="#org26b0200">6. 加速EmacsScript的启动过程</a></li>
 </ul>
 </div>
 </div>
@@ -70,8 +70,8 @@ Emacs作为一款文本编辑器已经为大家所熟知,但是可能比较少�
 注意: EmacsScript的坑超级多,强烈推荐阅读这篇文章:<a href="http://www.lunaryorn.com/posts/emacs-script-pitfalls.html">emacs-script-pitfalls</a> (这里是它的中文版<a href="https://github.com/lujun9972/emacs-document/blob/master/elisp-common/emacs-script%E4%B8%AD%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91.org">emacs-script中的那些坑</a>)
 </p>
 
-<div id="outline-container-org1d18eaf" class="outline-2">
-<h2 id="org1d18eaf"><span class="section-number-2">1</span> &#x2013;script选项</h2>
+<div id="outline-container-org571d7ac" class="outline-2">
+<h2 id="org571d7ac"><span class="section-number-2">1</span> &#x2013;script选项</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Emacs提供了一个 <code>--script</code> 选项可以让Emacs运行在batch模式下,并运行指定文件中的elisp代码. 
@@ -85,8 +85,8 @@ Emacs提供了一个 <code>--script</code> 选项可以让Emacs运行在batch模
 Emacs为了遵循shell script的shebang标准,特意将第一行内容中的的 <code>#!</code> 当成注释符号来处理,因此你的EmacsScript一般会是这样的:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/usr/bin/</span><span style="color: #4f97d7; font-weight: bold;">emacs</span><span style="color: #2aa1ae; background-color: #292e34;"> --script</span>
-<span style="color: #4f97d7;">(</span>message <span style="color: #2d9574;">"Hello world"</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-sh"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/usr/bin/</span><span style="color: #a020f0;">emacs</span><span style="color: #b22222;"> --script</span>
+(message <span style="color: #8b2252;">"Hello world"</span>)
 </pre>
 </div>
 
@@ -95,15 +95,15 @@ Emacs为了遵循shell script的shebang标准,特意将第一行内容中的的 
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#!/bin/sh
-<span style="color: #2d9574;">":"</span><span style="color: #2aa1ae; background-color: #292e34;">; </span><span style="color: #2aa1ae; background-color: #292e34;">exec emacs --quick --script "$0" -- "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
-<span style="color: #4f97d7;">(</span>message <span style="color: #2d9574;">"Hello world"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #8b2252;">":"</span><span style="color: #b22222;">; </span><span style="color: #b22222;">exec emacs --quick --script "$0" -- "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
+(message <span style="color: #8b2252;">"Hello world"</span>)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4280c58" class="outline-2">
-<h2 id="org4280c58"><span class="section-number-2">2</span> 处理命令行参数</h2>
+<div id="outline-container-org1b93c91" class="outline-2">
+<h2 id="org1b93c91"><span class="section-number-2">2</span> 处理命令行参数</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 注意:对于EmacsScript来说,参数与选项是截然不同的两个东西. 而且选项不能放在参数最后,否则Emacs会提示"emacs: Option '-f' requires an argument"
@@ -127,8 +127,8 @@ command-line-args-left
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#!/bin/sh
-<span style="color: #2d9574;">":"</span><span style="color: #2aa1ae; background-color: #292e34;">; </span><span style="color: #2aa1ae; background-color: #292e34;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
-<span style="color: #4f97d7;">(</span>princ <span style="color: #bc6ec5;">(</span>format <span style="color: #2d9574;">"command-line-args-left=%s"</span> command-line-args-left<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #8b2252;">":"</span><span style="color: #b22222;">; </span><span style="color: #b22222;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
+(princ (format <span style="color: #8b2252;">"command-line-args-left=%s"</span> command-line-args-left))
 </pre>
 </div>
 
@@ -141,7 +141,7 @@ command-line-args-left
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org">
+<pre class="src src-org">command-line-args-left=(a b c)
 </pre>
 </div></li>
 
@@ -158,9 +158,9 @@ command-line-args
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#!/bin/sh
-<span style="color: #2d9574;">":"</span><span style="color: #2aa1ae; background-color: #292e34;">; </span><span style="color: #2aa1ae; background-color: #292e34;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
-<span style="color: #4f97d7;">(</span>princ <span style="color: #bc6ec5;">(</span>format <span style="color: #2d9574;">"command-line-args=%s\n"</span> command-line-args<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7;">(</span>princ <span style="color: #bc6ec5;">(</span>format <span style="color: #2d9574;">"$0=%s"</span> <span style="color: #2d9574;">(</span>nth <span style="color: #a45bad;">2</span> command-line-args<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #8b2252;">":"</span><span style="color: #b22222;">; </span><span style="color: #b22222;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
+(princ (format <span style="color: #8b2252;">"command-line-args=%s\n"</span> command-line-args))
+(princ (format <span style="color: #8b2252;">"$0=%s"</span> (nth 2 command-line-args)))
 </pre>
 </div>
 
@@ -173,7 +173,8 @@ command-line-args
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org">
+<pre class="src src-org">command-line-args=(emacs -scriptload /tmp/test2.el a b c)
+$0=/tmp/test2.el
 </pre>
 </div>
 
@@ -209,13 +210,13 @@ Emacs在执行完EmacsScript中的语句之后,会检查 <code>command-line-args
 
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#!/bin/sh
-<span style="color: #2d9574;">":"</span><span style="color: #2aa1ae; background-color: #292e34;">; </span><span style="color: #2aa1ae; background-color: #292e34;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
-<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">print-option-value</span> <span style="color: #bc6ec5;">(</span>option<span style="color: #bc6ec5;">)</span>
-  <span style="color: #bc6ec5;">(</span>princ <span style="color: #2d9574;">(</span>format <span style="color: #2d9574;">"command-line-args-left=%s\n"</span> command-line-args-left<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-  <span style="color: #bc6ec5;">(</span>princ <span style="color: #2d9574;">(</span>format <span style="color: #2d9574;">"value of %s is %s\n"</span> option <span style="color: #67b11d;">(</span>car command-line-args-left<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">pop</span> command-line-args-left<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #8b2252;">":"</span><span style="color: #b22222;">; </span><span style="color: #b22222;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
+(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">print-option-value</span> (option)
+  (princ (format <span style="color: #8b2252;">"command-line-args-left=%s\n"</span> command-line-args-left))
+  (princ (format <span style="color: #8b2252;">"value of %s is %s\n"</span> option (car command-line-args-left)))
+  (<span style="color: #a020f0;">pop</span> command-line-args-left))
 
-<span style="color: #4f97d7;">(</span>add-to-list 'command-switch-alist '<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"-f"</span> . print-option-value<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+(add-to-list 'command-switch-alist '(<span style="color: #8b2252;">"-f"</span> . print-option-value))
 
 </pre>
 </div>
@@ -229,7 +230,8 @@ Emacs在执行完EmacsScript中的语句之后,会检查 <code>command-line-args
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org">
+<pre class="src src-org">command-line-args-left=(filename b c)
+value of -f is filename
 </pre>
 </div></li>
 
@@ -263,12 +265,12 @@ command-line-functions
 
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#!/bin/sh
-<span style="color: #2d9574;">":"</span><span style="color: #2aa1ae; background-color: #292e34;">; </span><span style="color: #2aa1ae; background-color: #292e34;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
-<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">print-option</span> <span style="color: #bc6ec5;">()</span>
-  <span style="color: #bc6ec5;">(</span>princ <span style="color: #2d9574;">(</span>format <span style="color: #2d9574;">"command-line-args-left=%s\n"</span> command-line-args-left<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-  <span style="color: #bc6ec5;">(</span>princ <span style="color: #2d9574;">(</span>format <span style="color: #2d9574;">"option is %s\n"</span> argi<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #8b2252;">":"</span><span style="color: #b22222;">; </span><span style="color: #b22222;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
+(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">print-option</span> ()
+  (princ (format <span style="color: #8b2252;">"command-line-args-left=%s\n"</span> command-line-args-left))
+  (princ (format <span style="color: #8b2252;">"option is %s\n"</span> argi)))
 
-<span style="color: #4f97d7;">(</span>add-to-list 'command-line-functions  #'print-option<span style="color: #4f97d7;">)</span>
+(add-to-list 'command-line-functions  #'print-option)
 </pre>
 </div>
 
@@ -281,7 +283,14 @@ command-line-functions
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org">
+<pre class="src src-org">command-line-args-left=(-p filename b)
+option is a
+command-line-args-left=(filename b)
+option is -p
+command-line-args-left=(b)
+option is filename
+command-line-args-left=nil
+option is b
 </pre>
 </div>
 
@@ -295,14 +304,14 @@ command-line-functions
 
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#!/bin/sh
-<span style="color: #2d9574;">":"</span><span style="color: #2aa1ae; background-color: #292e34;">; </span><span style="color: #2aa1ae; background-color: #292e34;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
-<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">print-option</span> <span style="color: #bc6ec5;">()</span>
-  <span style="color: #bc6ec5;">(</span>princ <span style="color: #2d9574;">(</span>format <span style="color: #2d9574;">"option is %s\n"</span> argi<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7;">(</span>add-to-list 'command-line-functions  #'print-option<span style="color: #4f97d7;">)</span>
+<span style="color: #8b2252;">":"</span><span style="color: #b22222;">; </span><span style="color: #b22222;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
+(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">print-option</span> ()
+  (princ (format <span style="color: #8b2252;">"option is %s\n"</span> argi)))
+(add-to-list 'command-line-functions  #'print-option)
 
-<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">print-option-value</span> <span style="color: #bc6ec5;">(</span>option<span style="color: #bc6ec5;">)</span>
-  <span style="color: #bc6ec5;">(</span>princ <span style="color: #2d9574;">(</span>format <span style="color: #2d9574;">"value of option %s is %s\n"</span> option <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">pop</span> command-line-args-left<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7;">(</span>add-to-list 'command-switch-alist '<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"-f"</span> . print-option-value<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">print-option-value</span> (option)
+  (princ (format <span style="color: #8b2252;">"value of option %s is %s\n"</span> option (<span style="color: #a020f0;">pop</span> command-line-args-left))))
+(add-to-list 'command-switch-alist '(<span style="color: #8b2252;">"-f"</span> . print-option-value))
 </pre>
 </div>
 
@@ -315,15 +324,21 @@ command-line-functions
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org">
+<pre class="src src-org">command-line-args-left=(-f f -p p)
+option is a
+value of option -f is f
+command-line-args-left=(p)
+option is -p
+command-line-args-left=nil
+option is p
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3e40cb3" class="outline-2">
-<h2 id="org3e40cb3"><span class="section-number-2">3</span> EmacsScript的执行顺序</h2>
+<div id="outline-container-org10d7e58" class="outline-2">
+<h2 id="org10d7e58"><span class="section-number-2">3</span> EmacsScript的执行顺序</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 从上面命令行参数的说明中,大致可以推断出EmacsScript的执行顺序为:
@@ -337,8 +352,8 @@ command-line-functions
 </div>
 </div>
 
-<div id="outline-container-org28c71fd" class="outline-2">
-<h2 id="org28c71fd"><span class="section-number-2">4</span> 标准输出,标准错误与标准输入</h2>
+<div id="outline-container-org81e188c" class="outline-2">
+<h2 id="org81e188c"><span class="section-number-2">4</span> 标准输出,标准错误与标准输入</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 在interactive模式下编写EmacsLisp函数时,我们习惯于用 <code>message</code> 函数来输出内容,然而在batch模式下,我们就不能再用 <code>message</code> 来输出内容了,因为 <code>message</code> 实际上会把内容输出到stderr上.
@@ -358,8 +373,8 @@ command-line-functions
 </div>
 </div>
 
-<div id="outline-container-orgbebb9f9" class="outline-2">
-<h2 id="orgbebb9f9"><span class="section-number-2">5</span> 获取外部命令的运行结果</h2>
+<div id="outline-container-orgb09cc23" class="outline-2">
+<h2 id="orgb09cc23"><span class="section-number-2">5</span> 获取外部命令的运行结果</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 在shell编程中,可以使用 <code>$()</code> 来捕获命令的运行结果, EmacsScript不支持这种语法,但可以通过函数 <code>shell-command-to-string</code> 来代替. 比如
@@ -370,9 +385,9 @@ command-line-functions
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#!/bin/sh
-<span style="color: #2d9574;">":"</span><span style="color: #2aa1ae; background-color: #292e34;">; </span><span style="color: #2aa1ae; background-color: #292e34;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
-<span style="color: #4f97d7;">(</span>princ <span style="color: #2d9574;">"&#25429;&#33719;ls&#30340;&#20869;&#23481;:\n"</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7;">(</span>princ <span style="color: #bc6ec5;">(</span>shell-command-to-string <span style="color: #2d9574;">"ls -l"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #8b2252;">":"</span><span style="color: #b22222;">; </span><span style="color: #b22222;">exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-</span>
+(princ <span style="color: #8b2252;">"&#25429;&#33719;ls&#30340;&#20869;&#23481;:\n"</span>)
+(princ (shell-command-to-string <span style="color: #8b2252;">"ls -l"</span>))
 </pre>
 </div>
 
@@ -385,7 +400,16 @@ command-line-functions
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org">
+<pre class="src src-org">&#25429;&#33719;ls&#30340;&#20869;&#23481;:
+&#24635;&#29992;&#37327; 60
+-rw-rw-r-- 1 lujun9972 lujun9972  9213 11&#26376; 22 22:29 Emacs&#26597;&#30475;&#26085;&#24535;&#24120;&#29992;&#21629;&#20196;.org
+-rw-rw-r-- 1 lujun9972 lujun9972 10881 11&#26376; 22 22:29 Emacs&#20013;&#37027;&#20123;&#19981;&#24120;&#29992;&#30340;&#34892;&#25805;&#20316;&#21629;&#20196;.org
+-rw-rw-r-- 1 lujun9972 lujun9972  5507 11&#26376; 22 22:29 Emacs&#20316;&#20026;&#22270;&#29255;&#27983;&#35272;&#22120;.org
+-rw-rw-r-- 1 lujun9972 lujun9972  3226 11&#26376; 22 22:29 tramp&#30340;&#19968;&#33324;&#29992;&#27861;.org
+-rw-rw-r-- 1 lujun9972 lujun9972  2522 11&#26376; 22 22:29 &#21028;&#26029;Emacs&#26159;&#21542;&#22312;&#22270;&#24418;&#29615;&#22659;&#20013;&#30340;&#27491;&#30830;&#26041;&#27861;.org
+-rw-rw-r-- 1 lujun9972 lujun9972  9725 11&#26376; 28 20:41 &#22914;&#20309;&#32534;&#20889;EmacsScript.org
+-rw-rw-r-- 1 lujun9972 lujun9972  1524 11&#26376; 22 22:29 &#20351;&#29992;Emacs ediff&#20316;&#20026;git diff&#24037;&#20855;.org
+-rw-rw-r-- 1 lujun9972 lujun9972  1791 11&#26376; 22 22:29 &#20351;&#29992;Emacs ediff&#20316;&#20026;git merge&#24037;&#20855;.org
 </pre>
 </div>
 
@@ -395,8 +419,8 @@ command-line-functions
 </div>
 </div>
 
-<div id="outline-container-org23c3a73" class="outline-2">
-<h2 id="org23c3a73"><span class="section-number-2">6</span> 加速EmacsScript的启动过程</h2>
+<div id="outline-container-org26b0200" class="outline-2">
+<h2 id="org26b0200"><span class="section-number-2">6</span> 加速EmacsScript的启动过程</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 <code>--script</code> 选项会阻止Emacs启动时加载用户的初始化文件,但是依然会加载global site初始化文件.
@@ -411,77 +435,49 @@ command-line-functions
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2016-11-28</span>
-            <span title="last modification date" class="post-info">2017-01-09</span>
-            <span title="tags" class="post-info">:N/A:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2016-11-28</span>
+    <span title="last modification date" class="post-info">2017-01-09</span>
+    <span title="tags" class="post-info">N/A</span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2016/11/28/如何编写emacsscript/";
-         var disqus_url = "https://lujun9972.github.io/blog/2016/11/28/如何编写emacsscript/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2016/11/28/如何编写emacsscript/";
+     var disqus_url = "https://lujun9972.github.io/blog/2016/11/28/如何编写emacsscript/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

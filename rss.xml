@@ -4,16 +4,37 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>五, 26 10月 2018 18:36:05 HKT</pubDate>
-    <lastBuildDate>五, 26 10月 2018 18:36:05 HKT</lastBuildDate>
+    <pubDate>五, 26 10月 2018 22:21:12 CST</pubDate>
+    <lastBuildDate>五, 26 10月 2018 22:21:12 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>org-babel-detangle将配置文件中的改动写回org文件</title>
+<link>https://lujun9972.github.io/blog/2018/10/26/org-babel-detangle将配置文件中的改动写回org文件/</link>
+<description>No Description</description>
+<pubDate>2018-10-26</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/26/org-babel-detangle将配置文件中的改动写回org文件/</guid>
+</item>
+<item>
+<title>org-batch-agenda:让你在命令行中输出org-agenda</title>
+<link>https://lujun9972.github.io/blog/2018/10/26/org-batch-agenda-让你在命令行中输出org-agenda/</link>
+<description>No Description</description>
+<pubDate>2018-10-26</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/26/org-batch-agenda-让你在命令行中输出org-agenda/</guid>
+</item>
 <item>
 <title>tload:字符界面上的图形化系统负载监控工具</title>
 <link>https://lujun9972.github.io/blog/2018/10/26/tload-字符界面上的图形化系统负载监控工具/</link>
 <description>No Description</description>
 <pubDate>2018-10-26</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/10/26/tload-字符界面上的图形化系统负载监控工具/</guid>
+</item>
+<item>
+<title>命令的执行环境</title>
+<link>https://lujun9972.github.io/blog/2018/10/05/命令的执行环境/</link>
+<description>No Description</description>
+<pubDate>2018-10-26</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/05/命令的执行环境/</guid>
 </item>
 <item>
 <title>org-agenda的好帮手:org-agenda-skip-function</title>
@@ -56,27 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-10-19</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/10/19/org-mode函数中的pom是什么意思/</guid>
-</item>
-<item>
-<title>使用org-get-scheduled-time获取schedule time时的注意事项</title>
-<link>https://lujun9972.github.io/blog/2018/10/19/使用org-get-scheduled-time获取schedule-time时的注意事项/</link>
-<description>No Description</description>
-<pubDate>2018-10-19</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/19/使用org-get-scheduled-time获取schedule-time时的注意事项/</guid>
-</item>
-<item>
-<title>在Archlinux上进行时钟同步</title>
-<link>https://lujun9972.github.io/blog/2018/10/16/在archlinux上进行时钟同步/</link>
-<description>No Description</description>
-<pubDate>2018-10-16</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/16/在archlinux上进行时钟同步/</guid>
-</item>
-<item>
-<title>Emacs帮你进行英文阅读</title>
-<link>https://lujun9972.github.io/blog/2018/07/06/emacs帮你进行英文阅读/</link>
-<description>No Description</description>
-<pubDate>2018-10-15</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/07/06/emacs帮你进行英文阅读/</guid>
 </item>
 </channel>
 </rss>

@@ -3,22 +3,24 @@
 <head>
   <title>使用partclone备份磁盘分区 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴,backup" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,9 +54,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4a5e8e7">安装partclone</a></li>
-<li><a href="#org89d15e5">备份磁盘分区</a></li>
-<li><a href="#orgba65b20">从备份还原</a></li>
+<li><a href="#org52d9f39">安装partclone</a></li>
+<li><a href="#orgb5801f4">备份磁盘分区</a></li>
+<li><a href="#orgf2196df">从备份还原</a></li>
 </ul>
 </div>
 </div>
@@ -81,9 +81,9 @@ partclone 跟 <code>dd</code> 类似，也是一款 <code>block level</code> 的
 对于不支持的文件系统， <code>partclone</code> 也提供了 <code>partclone.dd</code> 来备份。
 </p>
 
-<div id="outline-container-org4a5e8e7" class="outline-2">
-<h2 id="org4a5e8e7">安装partclone</h2>
-<div class="outline-text-2" id="text-org4a5e8e7">
+<div id="outline-container-org52d9f39" class="outline-2">
+<h2 id="org52d9f39">安装partclone</h2>
+<div class="outline-text-2" id="text-org52d9f39">
 <p>
 archlinux上可以直接使用pacman来安装：
 </p>
@@ -94,9 +94,9 @@ archlinux上可以直接使用pacman来安装：
 </div>
 </div>
 
-<div id="outline-container-org89d15e5" class="outline-2">
-<h2 id="org89d15e5">备份磁盘分区</h2>
-<div class="outline-text-2" id="text-org89d15e5">
+<div id="outline-container-orgb5801f4" class="outline-2">
+<h2 id="orgb5801f4">备份磁盘分区</h2>
+<div class="outline-text-2" id="text-orgb5801f4">
 <p>
 在备份磁盘分区之前，请先确保被备份的分区需要先卸载。不过如果你是用的 <code>lvm</code> ，那么可以创建一个逻辑卷的 live snapshot,因此可以不受此限制。
 </p>
@@ -136,7 +136,7 @@ archlinux上可以直接使用pacman来安装：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">sudo bash -c <span style="color: #2d9574;">"partclone.ext4 -c -s /dev/sdb1 |gzip -c -9 &gt;/mnt/orangepilite.pcl.gz"</span>
+<pre class="src src-shell">sudo bash -c <span style="color: #8b2252;">"partclone.ext4 -c -s /dev/sdb1 |gzip -c -9 &gt;/mnt/orangepilite.pcl.gz"</span>
 </pre>
 </div>
 
@@ -164,9 +164,9 @@ archlinux上可以直接使用pacman来安装：
 </div>
 </div>
 
-<div id="outline-container-orgba65b20" class="outline-2">
-<h2 id="orgba65b20">从备份还原</h2>
-<div class="outline-text-2" id="text-orgba65b20">
+<div id="outline-container-orgf2196df" class="outline-2">
+<h2 id="orgf2196df">从备份还原</h2>
+<div class="outline-text-2" id="text-orgf2196df">
 <p>
 从备份还原很简单
 </p>
@@ -183,7 +183,7 @@ archlinux上可以直接使用pacman来安装：
 若备份的是压缩过的文件，则只需要运行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo bash -c <span style="color: #2d9574;">"gzip -c -d /mnt/orangepilite.pcl.gz | partclone.ext4 -r -o /dev/sdb1"</span>
+<pre class="src src-shell">sudo bash -c <span style="color: #8b2252;">"gzip -c -d /mnt/orangepilite.pcl.gz | partclone.ext4 -r -o /dev/sdb1"</span>
 </pre>
 </div>
 </div>
@@ -192,77 +192,49 @@ archlinux上可以直接使用pacman来安装：
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-03-08</span>
-            <span title="last modification date" class="post-info">2018-03-08</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/backup">backup</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-03-08</span>
+    <span title="last modification date" class="post-info">2018-03-08</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/backup">backup</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/03/08/使用partclone备份磁盘分区/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/03/08/使用partclone备份磁盘分区/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/03/08/使用partclone备份磁盘分区/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/03/08/使用partclone备份磁盘分区/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

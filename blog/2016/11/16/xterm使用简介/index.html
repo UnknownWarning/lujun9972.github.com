@@ -3,21 +3,23 @@
 <head>
   <title>xterm使用简介 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="Administrator" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -31,15 +33,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -53,36 +53,36 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf5fc157">1. 配置</a>
+<li><a href="#orgfe620fb">1. 配置</a>
 <ul>
-<li><a href="#org9775737">1.1. 让Alt键发送Escape character</a></li>
-<li><a href="#org0842b85">1.2. 正确显示中文</a></li>
-<li><a href="#orgc3e205e">1.3. 滚动栏</a></li>
-<li><a href="#orgdb88bb3">1.4. log文件</a></li>
-<li><a href="#orga3f3db5">1.5. 其他配置</a>
+<li><a href="#orgf0f21bd">1.1. 让Alt键发送Escape character</a></li>
+<li><a href="#orgab55d3c">1.2. 正确显示中文</a></li>
+<li><a href="#orgec3a7cb">1.3. 滚动栏</a></li>
+<li><a href="#orgf393644">1.4. log文件</a></li>
+<li><a href="#org9535aa5">1.5. 其他配置</a>
 <ul>
-<li><a href="#org99e1fac">1.5.1. Enable bell urgency</a></li>
-<li><a href="#org2b4e0e3">1.5.2. Use color in place of bold and italics</a></li>
-<li><a href="#orgd210354">1.5.3. Adjust line spacing</a></li>
-<li><a href="#orge705399">1.5.4. Remove black border</a></li>
+<li><a href="#orgd76f952">1.5.1. Enable bell urgency</a></li>
+<li><a href="#org1395946">1.5.2. Use color in place of bold and italics</a></li>
+<li><a href="#orga94bd2e">1.5.3. Adjust line spacing</a></li>
+<li><a href="#orgc16cb9c">1.5.4. Remove black border</a></li>
 </ul>
 </li>
-<li><a href="#org9db2e9d">1.6. 保存当前XTerm的配置</a></li>
+<li><a href="#org80dcce6">1.6. 保存当前XTerm的配置</a></li>
 </ul>
 </li>
-<li><a href="#orgcd321ff">2. 复制与粘贴</a></li>
-<li><a href="#orge23a7a8">3. xterm菜单</a>
+<li><a href="#orge7981ba">2. 复制与粘贴</a></li>
+<li><a href="#org8a1cefe">3. xterm菜单</a>
 <ul>
-<li><a href="#org111b028">3.1. Main Options菜单</a></li>
-<li><a href="#orgbf1727a">3.2. VT Options菜单</a></li>
-<li><a href="#org10cada8">3.3. VT Fonts菜单</a></li>
-<li><a href="#orgd5b7b38">3.4. Tek options菜单</a></li>
+<li><a href="#orge1f6b37">3.1. Main Options菜单</a></li>
+<li><a href="#orge986e37">3.2. VT Options菜单</a></li>
+<li><a href="#org58f7bec">3.3. VT Fonts菜单</a></li>
+<li><a href="#org7116b95">3.4. Tek options菜单</a></li>
 </ul>
 </li>
-<li><a href="#org9af4940">4. xterm其他参数说明</a>
+<li><a href="#org424c8f6">4. xterm其他参数说明</a>
 <ul>
-<li><a href="#org9fc4604">4.1. -ls选项</a></li>
-<li><a href="#orgc8ffdfa">4.2. -xrm选项</a></li>
+<li><a href="#orgbb4d56f">4.1. -ls选项</a></li>
+<li><a href="#orgb946b03">4.2. -xrm选项</a></li>
 </ul>
 </li>
 </ul>
@@ -92,12 +92,12 @@
 配置xterm其实挺折腾的,没什么特殊要求的话,用urxvt代替吧.
 </p>
 
-<div id="outline-container-orgf5fc157" class="outline-2">
-<h2 id="orgf5fc157"><span class="section-number-2">1</span> 配置</h2>
+<div id="outline-container-orgfe620fb" class="outline-2">
+<h2 id="orgfe620fb"><span class="section-number-2">1</span> 配置</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org9775737" class="outline-3">
-<h3 id="org9775737"><span class="section-number-3">1.1</span> 让Alt键发送Escape character</h3>
+<div id="outline-container-orgf0f21bd" class="outline-3">
+<h3 id="orgf0f21bd"><span class="section-number-3">1.1</span> 让Alt键发送Escape character</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 默认xterm中的Alt键是发送八位输入符(eight bit input characters)的,
@@ -108,15 +108,15 @@
 要让xterm中的Alt表现的跟其他终端一样,需要在 <code>.Xdefaults</code> 中添加如下配置:
 </p>
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">XTerm*metaSendsEscape</span>:  true
-<span style="color: #7590db;">XTerm*eightBitInput</span>:    false
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">XTerm*metaSendsEscape</span>:  true
+<span style="color: #a0522d;">XTerm*eightBitInput</span>:    false
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0842b85" class="outline-3">
-<h3 id="org0842b85"><span class="section-number-3">1.2</span> 正确显示中文</h3>
+<div id="outline-container-orgab55d3c" class="outline-3">
+<h3 id="orgab55d3c"><span class="section-number-3">1.2</span> 正确显示中文</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 fonts can be specified from the command line, with the options -fn for bitmap font names and -fa for Xft names
@@ -130,7 +130,7 @@ fonts can be specified from the command line, with the options -fn for bitmap fo
 或者在 <code>.Xdefaults</code> 文件中加入
 </p>
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">XTerm*Font</span>:       7x13
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">XTerm*Font</span>:       7x13
 </pre>
 </div>
 
@@ -151,9 +151,9 @@ fonts can be specified from the command line, with the options -fn for bitmap fo
 下面的配置,让xterm使用DejaVu Sans Mono显示英文,用WenQuanYiDejaVu Sans Mono显示中文.
 </p>
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">xterm*faceName</span>: DejaVu Sans Mono:style=Book:antialias=false:size=10
-<span style="color: #7590db;">xterm*faceNameDoublesize</span>: WenQuanYi Micro Hei Mono:size=10
-<span style="color: #7590db;">xterm*faceSize</span>: 8
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">xterm*faceName</span>: DejaVu Sans Mono:style=Book:antialias=false:size=10
+<span style="color: #a0522d;">xterm*faceNameDoublesize</span>: WenQuanYi Micro Hei Mono:size=10
+<span style="color: #a0522d;">xterm*faceSize</span>: 8
 </pre>
 </div>
 
@@ -161,16 +161,16 @@ fonts can be specified from the command line, with the options -fn for bitmap fo
 最后,我们指定xterm将标题与内容看成UTF-8编码
 </p>
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">XTerm*locale</span>: zh_CN.UTF-8
-<span style="color: #7590db;">xterm*utf8</span>: true
-<span style="color: #7590db;">xterm*utf8Title</span>: true
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">XTerm*locale</span>: zh_CN.UTF-8
+<span style="color: #a0522d;">xterm*utf8</span>: true
+<span style="color: #a0522d;">xterm*utf8Title</span>: true
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc3e205e" class="outline-3">
-<h3 id="orgc3e205e"><span class="section-number-3">1.3</span> 滚动栏</h3>
+<div id="outline-container-orgec3a7cb" class="outline-3">
+<h3 id="orgec3a7cb"><span class="section-number-3">1.3</span> 滚动栏</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 使用 <code>-sb</code> 选项可以让xterm显示出滚动条.
@@ -180,7 +180,7 @@ fonts can be specified from the command line, with the options -fn for bitmap fo
 或者在 <code>.Xdefaults</code> 文件中加入
 </p>
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">XTerm*scrollBar</span>:  true
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">XTerm*scrollBar</span>:  true
 </pre>
 </div>
 
@@ -189,7 +189,7 @@ fonts can be specified from the command line, with the options -fn for bitmap fo
 或者在 <code>.Xdefaults</code> 文件中加入
 </p>
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">XTerm*rightScrollBar</span>:  true
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">XTerm*rightScrollBar</span>:  true
 </pre>
 </div>
 
@@ -237,14 +237,14 @@ xterm中的滚动方式跟其他程序中用滚动条拉动滚动的方式是不
 </p>
 
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">XTerm*saveLines</span>:  4096
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">XTerm*saveLines</span>:  4096
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgdb88bb3" class="outline-3">
-<h3 id="orgdb88bb3"><span class="section-number-3">1.4</span> log文件</h3>
+<div id="outline-container-orgf393644" class="outline-3">
+<h3 id="orgf393644"><span class="section-number-3">1.4</span> log文件</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 若xterm在编译时开启了logging功能,则可以使用 <code>-l</code> 选项让xterm记录下在xterm中的所有操作.
@@ -258,68 +258,68 @@ xterm中的滚动方式跟其他程序中用滚动条拉动滚动的方式是不
 不过你也可以通过选项 <code>-lf</code> 来指定日志文件的名称. 或者通过配置 <code>LogFile</code> 资源也可以指定日志文件名称.
 </p>
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">xterm*LogFile</span>:  <span style="color: #2d9574;">"/tmp/xterm.log"</span>
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">xterm*LogFile</span>:  <span style="color: #8b2252;">"/tmp/xterm.log"</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga3f3db5" class="outline-3">
-<h3 id="orga3f3db5"><span class="section-number-3">1.5</span> 其他配置</h3>
+<div id="outline-container-org9535aa5" class="outline-3">
+<h3 id="org9535aa5"><span class="section-number-3">1.5</span> 其他配置</h3>
 <div class="outline-text-3" id="text-1-5">
 </div>
-<div id="outline-container-org99e1fac" class="outline-4">
-<h4 id="org99e1fac"><span class="section-number-4">1.5.1</span> Enable bell urgency</h4>
+<div id="outline-container-orgd76f952" class="outline-4">
+<h4 id="orgd76f952"><span class="section-number-4">1.5.1</span> Enable bell urgency</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">xterm*bellIsUrgent</span>: true
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">xterm*bellIsUrgent</span>: true
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org2b4e0e3" class="outline-4">
-<h4 id="org2b4e0e3"><span class="section-number-4">1.5.2</span> Use color in place of bold and italics</h4>
+<div id="outline-container-org1395946" class="outline-4">
+<h4 id="org1395946"><span class="section-number-4">1.5.2</span> Use color in place of bold and italics</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <p>
 当字体太小时,粗体和斜体字就变得很难阅读了. 可以用不同的颜色来代替粗体与斜体的展示
 </p>
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #2aa1ae; background-color: #292e34;">! </span><span style="color: #2aa1ae; background-color: #292e34;">Forbid bold font faces; bold type is light blue.</span>
-<span style="color: #7590db;">XTerm*colorBDMode</span>: true
-<span style="color: #7590db;">XTerm*colorBD</span>: rgb:82/a4/d3
-<span style="color: #2aa1ae; background-color: #292e34;">! </span><span style="color: #2aa1ae; background-color: #292e34;">Do not underscore text, underlined text is white.</span>
-<span style="color: #7590db;">XTerm*colorULMode</span>: true
-<span style="color: #7590db;">XTerm*colorUL</span>: rgb:e4/e4/e4
+<pre class="src src-conf-xdefaults"><span style="color: #b22222;">! </span><span style="color: #b22222;">Forbid bold font faces; bold type is light blue.</span>
+<span style="color: #a0522d;">XTerm*colorBDMode</span>: true
+<span style="color: #a0522d;">XTerm*colorBD</span>: rgb:82/a4/d3
+<span style="color: #b22222;">! </span><span style="color: #b22222;">Do not underscore text, underlined text is white.</span>
+<span style="color: #a0522d;">XTerm*colorULMode</span>: true
+<span style="color: #a0522d;">XTerm*colorUL</span>: rgb:e4/e4/e4
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd210354" class="outline-4">
-<h4 id="orgd210354"><span class="section-number-4">1.5.3</span> Adjust line spacing</h4>
+<div id="outline-container-orga94bd2e" class="outline-4">
+<h4 id="orga94bd2e"><span class="section-number-4">1.5.3</span> Adjust line spacing</h4>
 <div class="outline-text-4" id="text-1-5-3">
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">XTerm*scaleHeight</span>: 1.01
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">XTerm*scaleHeight</span>: 1.01
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orge705399" class="outline-4">
-<h4 id="orge705399"><span class="section-number-4">1.5.4</span> Remove black border</h4>
+<div id="outline-container-orgc16cb9c" class="outline-4">
+<h4 id="orgc16cb9c"><span class="section-number-4">1.5.4</span> Remove black border</h4>
 <div class="outline-text-4" id="text-1-5-4">
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">xterm*borderWidth</span>: 0
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">xterm*borderWidth</span>: 0
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org9db2e9d" class="outline-3">
-<h3 id="org9db2e9d"><span class="section-number-3">1.6</span> 保存当前XTerm的配置</h3>
+<div id="outline-container-org80dcce6" class="outline-3">
+<h3 id="org80dcce6"><span class="section-number-3">1.6</span> 保存当前XTerm的配置</h3>
 </div>
 </div>
 
-<div id="outline-container-orgcd321ff" class="outline-2">
-<h2 id="orgcd321ff"><span class="section-number-2">2</span> 复制与粘贴</h2>
+<div id="outline-container-orge7981ba" class="outline-2">
+<h2 id="orge7981ba"><span class="section-number-2">2</span> 复制与粘贴</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 只要按下鼠标并拖拽鼠标选中要复制的内容就完成复制操作了.
@@ -343,8 +343,8 @@ xterm中的滚动方式跟其他程序中用滚动条拉动滚动的方式是不
 </div>
 </div>
 
-<div id="outline-container-orge23a7a8" class="outline-2">
-<h2 id="orge23a7a8"><span class="section-number-2">3</span> xterm菜单</h2>
+<div id="outline-container-org8a1cefe" class="outline-2">
+<h2 id="org8a1cefe"><span class="section-number-2">3</span> xterm菜单</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 按住Ctrl,再分别单击鼠标左键,中建和右键,会分别弹出 <code>Main Options</code>, <code>VT Options</code>, <code>VT Fonts</code> 菜单.
@@ -355,8 +355,8 @@ xterm中的滚动方式跟其他程序中用滚动条拉动滚动的方式是不
 </p>
 </div>
 
-<div id="outline-container-org111b028" class="outline-3">
-<h3 id="org111b028"><span class="section-number-3">3.1</span> Main Options菜单</h3>
+<div id="outline-container-orge1f6b37" class="outline-3">
+<h3 id="orge1f6b37"><span class="section-number-3">3.1</span> Main Options菜单</h3>
 <div class="outline-text-3" id="text-3-1">
 <dl class="org-dl">
 <dt>Secure Keyboard</dt><dd>attempts to ensure only the xterm window, and no other application, receives your keystrokes. The display changes to reverse video when it is invoked. If the display is not in reverse video, the Secure Keyboard mode is not in effect. Please read the "SECURITY" section of the xterm man page for this option's limitations.</dd>
@@ -372,8 +372,8 @@ xterm中的滚动方式跟其他程序中用滚动条拉动滚动的方式是不
 </div>
 </div>
 
-<div id="outline-container-orgbf1727a" class="outline-3">
-<h3 id="orgbf1727a"><span class="section-number-3">3.2</span> VT Options菜单</h3>
+<div id="outline-container-orge986e37" class="outline-3">
+<h3 id="orge986e37"><span class="section-number-3">3.2</span> VT Options菜单</h3>
 <div class="outline-text-3" id="text-3-2">
 <dl class="org-dl">
 <dt>Select to Clipboard</dt><dd>Normally, selected text is stored in PRIMARY, to be pasted with Shift+Insert or by using the middle mouse button. By toggling this option to on, selected text will use CLIPBOARD, allowing you to paste the text selected in an xterm window into a GUI application using Ctrl+v. The corresponding XTerm resource is selectToClipboard.</dd>
@@ -385,8 +385,8 @@ xterm中的滚动方式跟其他程序中用滚动条拉动滚动的方式是不
 </div>
 </div>
 
-<div id="outline-container-org10cada8" class="outline-3">
-<h3 id="org10cada8"><span class="section-number-3">3.3</span> VT Fonts菜单</h3>
+<div id="outline-container-org58f7bec" class="outline-3">
+<h3 id="org58f7bec"><span class="section-number-3">3.3</span> VT Fonts菜单</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>When using XLFD fonts, the first seven menu items will change the font face and the font size used in the current xterm window. If you are using an Xft font, only the font size will change, the font face will not change with the different selections,</li>
@@ -396,8 +396,8 @@ xterm中的滚动方式跟其他程序中用滚动条拉动滚动的方式是不
 </div>
 </div>
 
-<div id="outline-container-orgd5b7b38" class="outline-3">
-<h3 id="orgd5b7b38"><span class="section-number-3">3.4</span> Tek options菜单</h3>
+<div id="outline-container-org7116b95" class="outline-3">
+<h3 id="org7116b95"><span class="section-number-3">3.4</span> Tek options菜单</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 The first section's options allow you to change the Tek window font size. 
@@ -411,12 +411,12 @@ The second set of options are used to move the focus between the Tek emulation w
 </div>
 
 
-<div id="outline-container-org9af4940" class="outline-2">
-<h2 id="org9af4940"><span class="section-number-2">4</span> xterm其他参数说明</h2>
+<div id="outline-container-org424c8f6" class="outline-2">
+<h2 id="org424c8f6"><span class="section-number-2">4</span> xterm其他参数说明</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org9fc4604" class="outline-3">
-<h3 id="org9fc4604"><span class="section-number-3">4.1</span> -ls选项</h3>
+<div id="outline-container-orgbb4d56f" class="outline-3">
+<h3 id="orgbb4d56f"><span class="section-number-3">4.1</span> -ls选项</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 ls是login shell的意思,若带此选项运行xterm,则xterm会加载你的~/.bash_profile(bash shell),或者你的~/.login文件(c shell)
@@ -424,8 +424,8 @@ ls是login shell的意思,若带此选项运行xterm,则xterm会加载你的~/.b
 </div>
 </div>
 
-<div id="outline-container-orgc8ffdfa" class="outline-3">
-<h3 id="orgc8ffdfa"><span class="section-number-3">4.2</span> -xrm选项</h3>
+<div id="outline-container-orgb946b03" class="outline-3">
+<h3 id="orgb946b03"><span class="section-number-3">4.2</span> -xrm选项</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 大多数一般的资源均能被命令行选项明确地设定，例如你可以用 <code>-bg colour</code> 设定窗口背景颜色.但无论如何,有一些资源并没有符合的选项.
@@ -437,7 +437,7 @@ ls是login shell的意思,若带此选项运行xterm,则xterm会加载你的~/.b
 要注意:在同一命令行你可以使用数次 <code>-xrm</code>,但每一次只能包含一个资源规范, 例如:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">xterm -xrm <span style="color: #2d9574;">"*background:yellow"</span> -xrm <span style="color: #2d9574;">"*foreground:red"</span>
+<pre class="src src-sh">xterm -xrm <span style="color: #8b2252;">"*background:yellow"</span> -xrm <span style="color: #8b2252;">"*foreground:red"</span>
 </pre>
 </div>
 <p>
@@ -450,77 +450,49 @@ ls是login shell的意思,若带此选项运行xterm,则xterm会加载你的~/.b
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2016-11-16</span>
-            <span title="last modification date" class="post-info">2016-12-15</span>
-            <span title="tags" class="post-info">:N/A:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">Administrator</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2016-11-16</span>
+    <span title="last modification date" class="post-info">2016-12-15</span>
+    <span title="tags" class="post-info">N/A</span>
+    <span title="author" class="post-info">Administrator</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2016/11/16/xterm使用简介/";
-         var disqus_url = "https://lujun9972.github.io/blog/2016/11/16/xterm使用简介/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2016/11/16/xterm使用简介/";
+     var disqus_url = "https://lujun9972.github.io/blog/2016/11/16/xterm使用简介/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">Administrator</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">Administrator</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

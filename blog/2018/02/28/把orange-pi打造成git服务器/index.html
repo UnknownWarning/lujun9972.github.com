@@ -3,22 +3,24 @@
 <head>
   <title>把Orange Pi打造成git服务器 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴,OrangePi,git,gogs" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,10 +54,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3a63e8a">安装golang</a></li>
-<li><a href="#org1782b7f">安装git</a></li>
-<li><a href="#org3bfd971">安装Gogs</a></li>
-<li><a href="#org07b0d00">自动运行Gogs服务器</a></li>
+<li><a href="#org61402fd">安装golang</a></li>
+<li><a href="#org112884b">安装git</a></li>
+<li><a href="#orgedae9dc">安装Gogs</a></li>
+<li><a href="#org6bdde73">自动运行Gogs服务器</a></li>
 </ul>
 </div>
 </div>
@@ -65,9 +65,9 @@
 目前主流的开源git服务器有 <code>gitlab</code> 和 <code>gogs</code> ，考虑到 <code>gogs</code> 相对轻量级，而OrangePi的性能普遍不高，因此这里选择 <code>gogs</code>
 </p>
 
-<div id="outline-container-org3a63e8a" class="outline-2">
-<h2 id="org3a63e8a">安装golang</h2>
-<div class="outline-text-2" id="text-org3a63e8a">
+<div id="outline-container-org61402fd" class="outline-2">
+<h2 id="org61402fd">安装golang</h2>
+<div class="outline-text-2" id="text-org61402fd">
 <p>
 gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此我们直接用 <code>apt</code> 安装
 </p>
@@ -78,9 +78,9 @@ gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此
 </div>
 </div>
 
-<div id="outline-container-org1782b7f" class="outline-2">
-<h2 id="org1782b7f">安装git</h2>
-<div class="outline-text-2" id="text-org1782b7f">
+<div id="outline-container-org112884b" class="outline-2">
+<h2 id="org112884b">安装git</h2>
+<div class="outline-text-2" id="text-org112884b">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install git
 </pre>
@@ -90,7 +90,7 @@ gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此
 然后创建 <code>git</code> 用户
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo adduser --disabled-login --gecos <span style="color: #2d9574;">'Gogs'</span> git
+<pre class="src src-shell">sudo adduser --disabled-login --gecos <span style="color: #8b2252;">'Gogs'</span> git
 </pre>
 </div>
 
@@ -99,24 +99,24 @@ gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">sudo su - git
-<span style="color: #4f97d7;">cd</span> ~
-<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">'export GOPATH=$HOME/go'</span> &gt;&gt; $<span style="color: #7590db;">HOME</span>/.bashrc
-<span style="color: #4f97d7;">source</span> $<span style="color: #7590db;">HOME</span>/.bashrc
+<span style="color: #483d8b;">cd</span> ~
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">'export GOPATH=$HOME/go'</span> &gt;&gt; $<span style="color: #a0522d;">HOME</span>/.bashrc
+<span style="color: #483d8b;">source</span> $<span style="color: #a0522d;">HOME</span>/.bashrc
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3bfd971" class="outline-2">
-<h2 id="org3bfd971">安装Gogs</h2>
-<div class="outline-text-2" id="text-org3bfd971">
+<div id="outline-container-orgedae9dc" class="outline-2">
+<h2 id="orgedae9dc">安装Gogs</h2>
+<div class="outline-text-2" id="text-orgedae9dc">
 <p>
 由于我们只是自己使用，需求很低，因此让Gogs直接使用SQLite3数据库
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">go get -u -tags <span style="color: #2d9574;">"sqlite"</span> github.com/gogits/gogs <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#27880;&#24847;&#65292;&#36825;&#19968;&#27493;&#35201;&#30340;&#26102;&#38388;&#36229;&#32423;&#38271;</span>
-<span style="color: #4f97d7;">cd</span> $<span style="color: #7590db;">GOPATH</span>/src/github.com/gogits/gogs
-go build -tags <span style="color: #2d9574;">"sqlite"</span>
+<pre class="src src-shell">go get -u -tags <span style="color: #8b2252;">"sqlite"</span> github.com/gogits/gogs <span style="color: #b22222;"># </span><span style="color: #b22222;">&#27880;&#24847;&#65292;&#36825;&#19968;&#27493;&#35201;&#30340;&#26102;&#38388;&#36229;&#32423;&#38271;</span>
+<span style="color: #483d8b;">cd</span> $<span style="color: #a0522d;">GOPATH</span>/src/github.com/gogits/gogs
+go build -tags <span style="color: #8b2252;">"sqlite"</span>
 </pre>
 </div>
 
@@ -148,9 +148,9 @@ git@orangepipc2:~/go/src/github.com/gogits/gogs$ ./gogs web
 </div>
 </div>
 
-<div id="outline-container-org07b0d00" class="outline-2">
-<h2 id="org07b0d00">自动运行Gogs服务器</h2>
-<div class="outline-text-2" id="text-org07b0d00">
+<div id="outline-container-org6bdde73" class="outline-2">
+<h2 id="org6bdde73">自动运行Gogs服务器</h2>
+<div class="outline-text-2" id="text-org6bdde73">
 <p>
 Gogs提供了一个默认的service文件供我们使用： <code>~/go/src/github.com/gogits/gogs/scripts/systemd/gogs.service</code>
 </p>
@@ -170,8 +170,8 @@ cp /home/git/go/src/github.com/gogits/gogs/scripts/systemd/gogs.service /etc/sys
 然后创建一个软连接
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">cd</span> ~/go/src/github.com/gogits/gogs
-ln -s $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">pwd</span><span style="color: #4f97d7;">)</span> /home/git/gogs
+<pre class="src src-shell"><span style="color: #483d8b;">cd</span> ~/go/src/github.com/gogits/gogs
+ln -s $(<span style="color: #ff00ff;">pwd</span>) /home/git/gogs
 </pre>
 </div>
 
@@ -197,77 +197,49 @@ systemctl enable gogs
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-02-28</span>
-            <span title="last modification date" class="post-info">2018-03-01</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/orangepi">OrangePi</a> : <a href="https://lujun9972.github.io/tags/git">git</a> : <a href="https://lujun9972.github.io/tags/gogs">gogs</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-02-28</span>
+    <span title="last modification date" class="post-info">2018-03-01</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/orangepi">OrangePi</a> : <a href="https://lujun9972.github.io/tags/git">git</a> : <a href="https://lujun9972.github.io/tags/gogs">gogs</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/02/28/把orange-pi打造成git服务器/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/02/28/把orange-pi打造成git服务器/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/02/28/把orange-pi打造成git服务器/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/02/28/把orange-pi打造成git服务器/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

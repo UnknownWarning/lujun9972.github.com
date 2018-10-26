@@ -3,22 +3,24 @@
 <head>
   <title>我的linux终端工具 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,47 +54,47 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org04a69c2">增加中文支持:fbterm + fcitx-fbterm</a></li>
-<li><a href="#org78d02e7">收发邮件:Emacs(GNUS)</a>
+<li><a href="#org747ed83">增加中文支持:fbterm + fcitx-fbterm</a></li>
+<li><a href="#org46f6348">收发邮件:Emacs(GNUS)</a>
 <ul>
-<li><a href="#orgd7a3174">其他选择</a></li>
+<li><a href="#org7b5e3e6">其他选择</a></li>
 </ul>
 </li>
-<li><a href="#orgd483446">浏览网页:Emacs(EWW) + w3m</a>
+<li><a href="#org578837d">浏览网页:Emacs(EWW) + w3m</a>
 <ul>
-<li><a href="#orgbbe874f">其他选择</a></li>
+<li><a href="#org1c04412">其他选择</a></li>
 </ul>
 </li>
-<li><a href="#orge8bec8c">文本编辑:Emacs</a>
+<li><a href="#org817ecdc">文本编辑:Emacs</a>
 <ul>
-<li><a href="#orge9fe201">其他选择</a></li>
+<li><a href="#org7916bc3">其他选择</a></li>
 </ul>
 </li>
-<li><a href="#orgd20efa0">讲稿展示:Emacs(Org)</a>
+<li><a href="#org2e17a27">讲稿展示:Emacs(Org)</a>
 <ul>
-<li><a href="#org835febf">其他选择</a></li>
+<li><a href="#org5f9b9f5">其他选择</a></li>
 </ul>
 </li>
-<li><a href="#orgfd082aa">简单的电子表格功能:Emacs(SES)</a></li>
-<li><a href="#org07838d4">阅读word</a></li>
-<li><a href="#orgb65196c">看视频:mplayer</a></li>
-<li><a href="#orgef3bfc4">听音乐:Emacs(EMMS + Wangyi-music)</a>
+<li><a href="#org3d24b6f">简单的电子表格功能:Emacs(SES)</a></li>
+<li><a href="#org4189352">阅读word</a></li>
+<li><a href="#orgba460b2">看视频:mplayer</a></li>
+<li><a href="#org6f5b5c2">听音乐:Emacs(EMMS + Wangyi-music)</a>
 <ul>
-<li><a href="#orgb7adf08">其他选择</a></li>
+<li><a href="#orgc449039">其他选择</a></li>
 </ul>
 </li>
-<li><a href="#orgf3efce4">看图片/pdf:fbi + fbpdf</a></li>
-<li><a href="#org9a12e03">截图:fbgrab</a></li>
-<li><a href="#org278ee96">聊天:Emacs(ERC)</a></li>
-<li><a href="#org51a9d67">文件管理:Emacs(Dired)</a></li>
-<li><a href="#org514d386">GTD:Emacs(ORG)</a>
+<li><a href="#orged4458e">看图片/pdf:fbi + fbpdf</a></li>
+<li><a href="#org4f83446">截图:fbgrab</a></li>
+<li><a href="#org37a133e">聊天:Emacs(ERC)</a></li>
+<li><a href="#org15b2622">文件管理:Emacs(Dired)</a></li>
+<li><a href="#org7583b8e">GTD:Emacs(ORG)</a>
 <ul>
-<li><a href="#org1fc6113">其他选择</a></li>
+<li><a href="#org8bd8f28">其他选择</a></li>
 </ul>
 </li>
-<li><a href="#org9750656">阅读RSS:Emacs(elfeed)</a></li>
-<li><a href="#orge54f955">听播客:Emacs(podcaster)</a></li>
-<li><a href="#org9f2e255">翻墙:shadowsocks + proxychains</a></li>
+<li><a href="#org7cebee7">阅读RSS:Emacs(elfeed)</a></li>
+<li><a href="#org7d992cf">听播客:Emacs(podcaster)</a></li>
+<li><a href="#org38468b1">翻墙:shadowsocks + proxychains</a></li>
 </ul>
 </div>
 </div>
@@ -102,18 +102,18 @@
 家里有一台老旧的X41笔记本,跑不动X,所以就干脆让它保持在字符终端下了. 不过虽然处于纯文本的环境中,能做的事情倒也不少. 下面就来简单列一下我在linux终端中所用的那些工具.
 </p>
 
-<div id="outline-container-org04a69c2" class="outline-2">
-<h2 id="org04a69c2">增加中文支持:fbterm + fcitx-fbterm</h2>
-<div class="outline-text-2" id="text-org04a69c2">
+<div id="outline-container-org747ed83" class="outline-2">
+<h2 id="org747ed83">增加中文支持:fbterm + fcitx-fbterm</h2>
+<div class="outline-text-2" id="text-org747ed83">
 <p>
 linux默认情况下的终端是不能正常显示中文的,而启动<a href="https://wiki.archlinux.org/index.php/Fbterm_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">fbterm</a>后就能正确显示中文了.
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">pacman --noconfirm -S fbterm libx86
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#24819;&#20351;&#29992;&#38750;&#26681;&#29992;&#25143;&#36816;&#34892;fbterm&#65292;&#38656;&#35201;&#25226;&#29992;&#25143;&#21152;&#20837;video&#32452;</span>
-gpasswd -a $<span style="color: #7590db;">YOUR_USERNAME</span> video
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#24819;&#38750;&#26681;&#29992;&#25143;&#21487;&#20351;&#29992;&#38190;&#30424;&#24555;&#25463;&#26041;&#24335;&#65292;&#38656;&#35201;&#65306;</span>
-sudo setcap <span style="color: #2d9574;">'cap_sys_tty_config+ep'</span> /usr/bin/fbterm
+<span style="color: #b22222;"># </span><span style="color: #b22222;">&#33509;&#24819;&#20351;&#29992;&#38750;&#26681;&#29992;&#25143;&#36816;&#34892;fbterm&#65292;&#38656;&#35201;&#25226;&#29992;&#25143;&#21152;&#20837;video&#32452;</span>
+gpasswd -a $<span style="color: #a0522d;">YOUR_USERNAME</span> video
+<span style="color: #b22222;"># </span><span style="color: #b22222;">&#33509;&#24819;&#38750;&#26681;&#29992;&#25143;&#21487;&#20351;&#29992;&#38190;&#30424;&#24555;&#25463;&#26041;&#24335;&#65292;&#38656;&#35201;&#65306;</span>
+sudo setcap <span style="color: #8b2252;">'cap_sys_tty_config+ep'</span> /usr/bin/fbterm
 </pre>
 </div>
 
@@ -145,9 +145,9 @@ sudo setcap <span style="color: #2d9574;">'cap_sys_tty_config+ep'</span> /usr/bi
 </div>
 </div>
 
-<div id="outline-container-org78d02e7" class="outline-2">
-<h2 id="org78d02e7">收发邮件:Emacs(GNUS)</h2>
-<div class="outline-text-2" id="text-org78d02e7">
+<div id="outline-container-org46f6348" class="outline-2">
+<h2 id="org46f6348">收发邮件:Emacs(GNUS)</h2>
+<div class="outline-text-2" id="text-org46f6348">
 <p>
 <a href="http://lujun9972.github.io/blog/2016/12/30/%E4%BD%BF%E7%94%A8rmail%E6%94%B6%E5%8F%96%E9%82%AE%E4%BB%B6/">GNUS </a>是Emacs中的一款重量级的邮件管理插件,它不仅仅能收发邮件,还能访问邮件组,只不过访问邮件组的人少了吧.
 </p>
@@ -159,9 +159,9 @@ sudo setcap <span style="color: #2d9574;">'cap_sys_tty_config+ep'</span> /usr/bi
 </div>
 </div>
 
-<div id="outline-container-orgd7a3174" class="outline-3">
-<h3 id="orgd7a3174">其他选择</h3>
-<div class="outline-text-3" id="text-orgd7a3174">
+<div id="outline-container-org7b5e3e6" class="outline-3">
+<h3 id="org7b5e3e6">其他选择</h3>
+<div class="outline-text-3" id="text-org7b5e3e6">
 <ul class="org-ul">
 <li>Emacs + <a href="http://lujun9972.github.io/blog/2016/12/29/%E4%BD%BF%E7%94%A8emacs%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/">smtpmail</a> + <a href="http://lujun9972.github.io/blog/2016/12/30/%E4%BD%BF%E7%94%A8rmail%E6%94%B6%E5%8F%96%E9%82%AE%E4%BB%B6/">Rmail(需要movemail的支持)</a></li>
 <li>mutt</li>
@@ -172,9 +172,9 @@ sudo setcap <span style="color: #2d9574;">'cap_sys_tty_config+ep'</span> /usr/bi
 </div>
 </div>
 
-<div id="outline-container-orgd483446" class="outline-2">
-<h2 id="orgd483446">浏览网页:Emacs(EWW) + w3m</h2>
-<div class="outline-text-2" id="text-orgd483446">
+<div id="outline-container-org578837d" class="outline-2">
+<h2 id="org578837d">浏览网页:Emacs(EWW) + w3m</h2>
+<div class="outline-text-2" id="text-org578837d">
 <p>
 Emacs24.4版本开始其实已经自带了一款 <a href="http://emacser.com/emacs-eww.htm">EWW</a> 的插件可以作为浏览器来用了
 </p>
@@ -203,9 +203,9 @@ Emacs24.4版本开始其实已经自带了一款 <a href="http://emacser.com/ema
 </p>
 </div>
 
-<div id="outline-container-orgbbe874f" class="outline-3">
-<h3 id="orgbbe874f">其他选择</h3>
-<div class="outline-text-3" id="text-orgbbe874f">
+<div id="outline-container-org1c04412" class="outline-3">
+<h3 id="org1c04412">其他选择</h3>
+<div class="outline-text-3" id="text-org1c04412">
 <ul class="org-ul">
 <li>Emacs + emacs-w3m(需要w3m的支持)</li>
 <li>lynx</li>
@@ -214,17 +214,17 @@ Emacs24.4版本开始其实已经自带了一款 <a href="http://emacser.com/ema
 </div>
 </div>
 </div>
-<div id="outline-container-orge8bec8c" class="outline-2">
-<h2 id="orge8bec8c">文本编辑:Emacs</h2>
-<div class="outline-text-2" id="text-orge8bec8c">
+<div id="outline-container-org817ecdc" class="outline-2">
+<h2 id="org817ecdc">文本编辑:Emacs</h2>
+<div class="outline-text-2" id="text-org817ecdc">
 <p>
 这还需要解释吗????
 </p>
 </div>
 
-<div id="outline-container-orge9fe201" class="outline-3">
-<h3 id="orge9fe201">其他选择</h3>
-<div class="outline-text-3" id="text-orge9fe201">
+<div id="outline-container-org7916bc3" class="outline-3">
+<h3 id="org7916bc3">其他选择</h3>
+<div class="outline-text-3" id="text-org7916bc3">
 <ul class="org-ul">
 <li>vim</li>
 </ul>
@@ -232,18 +232,18 @@ Emacs24.4版本开始其实已经自带了一款 <a href="http://emacser.com/ema
 </div>
 </div>
 
-<div id="outline-container-orgd20efa0" class="outline-2">
-<h2 id="orgd20efa0">讲稿展示:Emacs(Org)</h2>
-<div class="outline-text-2" id="text-orgd20efa0">
+<div id="outline-container-org2e17a27" class="outline-2">
+<h2 id="org2e17a27">讲稿展示:Emacs(Org)</h2>
+<div class="outline-text-2" id="text-org2e17a27">
 <p>
 Org-mode本身就是一个很好的大纲编辑mode. 通过对Org进行一些定制,就能用Org来进行讲稿展示了.
 具体的方法请参见:<a href="https://github.com/lujun9972/emacs-document/blob/master/emacs-common/%E7%94%A8Emacs%E4%BD%9C%E5%B1%95%E7%A4%BA.org">用Emacs做展示</a>
 </p>
 </div>
 
-<div id="outline-container-org835febf" class="outline-3">
-<h3 id="org835febf">其他选择</h3>
-<div class="outline-text-3" id="text-org835febf">
+<div id="outline-container-org5f9b9f5" class="outline-3">
+<h3 id="org5f9b9f5">其他选择</h3>
+<div class="outline-text-3" id="text-org5f9b9f5">
 <ul class="org-ul">
 <li>tpp</li>
 </ul>
@@ -251,9 +251,9 @@ Org-mode本身就是一个很好的大纲编辑mode. 通过对Org进行一些定
 </div>
 </div>
 
-<div id="outline-container-orgfd082aa" class="outline-2">
-<h2 id="orgfd082aa">简单的电子表格功能:Emacs(SES)</h2>
-<div class="outline-text-2" id="text-orgfd082aa">
+<div id="outline-container-org3d24b6f" class="outline-2">
+<h2 id="org3d24b6f">简单的电子表格功能:Emacs(SES)</h2>
+<div class="outline-text-2" id="text-org3d24b6f">
 <p>
 SES是一款简易的电子表格插件,它也支持公式计算,只不过它的公式其实一个Lisp表达式.
 </p>
@@ -266,17 +266,17 @@ SES是一款简易的电子表格插件,它也支持公式计算,只不过它的
 </div>
 </div>
 
-<div id="outline-container-org07838d4" class="outline-2">
-<h2 id="org07838d4">阅读word</h2>
-<div class="outline-text-2" id="text-org07838d4">
+<div id="outline-container-org4189352" class="outline-2">
+<h2 id="org4189352">阅读word</h2>
+<div class="outline-text-2" id="text-org4189352">
 <p>
 antiword,可以在终端环境下阅读msword文档,不过要注意的是, <b>它只支持doc文件而不支持docx文件</b>
 </p>
 </div>
 </div>
-<div id="outline-container-orgb65196c" class="outline-2">
-<h2 id="orgb65196c">看视频:mplayer</h2>
-<div class="outline-text-2" id="text-orgb65196c">
+<div id="outline-container-orgba460b2" class="outline-2">
+<h2 id="orgba460b2">看视频:mplayer</h2>
+<div class="outline-text-2" id="text-orgba460b2">
 <p>
 安装mplayer
 </p>
@@ -289,7 +289,7 @@ antiword,可以在终端环境下阅读msword文档,不过要注意的是, <b>�
 mplayer支持在终端环境下播放影片,但是需要指明输出驱动:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">mplayer -vo fbdev2 $<span style="color: #7590db;">MEDIA_FILE</span>
+<pre class="src src-sh">mplayer -vo fbdev2 $<span style="color: #a0522d;">MEDIA_FILE</span>
 </pre>
 </div>
 
@@ -328,9 +328,9 @@ mplayer在播放时支持以下快捷键:
 </p>
 </div>
 </div>
-<div id="outline-container-orgef3bfc4" class="outline-2">
-<h2 id="orgef3bfc4">听音乐:Emacs(EMMS + Wangyi-music)</h2>
-<div class="outline-text-2" id="text-orgef3bfc4">
+<div id="outline-container-org6f5b5c2" class="outline-2">
+<h2 id="org6f5b5c2">听音乐:Emacs(EMMS + Wangyi-music)</h2>
+<div class="outline-text-2" id="text-org6f5b5c2">
 <p>
 <a href="https://www.gnu.org/software/emms/">EMMS</a> 全称Emacs Multimedia System,它能将Emacs打造成一款多媒体平台. 不过它本身并不负责对多媒体文件的播放,而是调用外部程序来实现的.
 </p>
@@ -352,9 +352,9 @@ Wangyi-music则是一款Emacs的网易云音乐的客户端插件.
 </div>
 </div>
 
-<div id="outline-container-orgb7adf08" class="outline-3">
-<h3 id="orgb7adf08">其他选择</h3>
-<div class="outline-text-3" id="text-orgb7adf08">
+<div id="outline-container-orgc449039" class="outline-3">
+<h3 id="orgc449039">其他选择</h3>
+<div class="outline-text-3" id="text-orgc449039">
 <ul class="org-ul">
 <li>mpg123</li>
 <li>musicbox</li>
@@ -362,9 +362,9 @@ Wangyi-music则是一款Emacs的网易云音乐的客户端插件.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf3efce4" class="outline-2">
-<h2 id="orgf3efce4">看图片/pdf:fbi + fbpdf</h2>
-<div class="outline-text-2" id="text-orgf3efce4">
+<div id="outline-container-orged4458e" class="outline-2">
+<h2 id="orged4458e">看图片/pdf:fbi + fbpdf</h2>
+<div class="outline-text-2" id="text-orged4458e">
 <p>
 fbi与fbpdf都是作为fbida的一部分来安装的.
 </p>
@@ -389,15 +389,15 @@ fbpdf则可以让你在终端下查看pdf
 </div>
 </div>
 
-<div id="outline-container-org9a12e03" class="outline-2">
-<h2 id="org9a12e03">截图:fbgrab</h2>
-<div class="outline-text-2" id="text-org9a12e03">
+<div id="outline-container-org4f83446" class="outline-2">
+<h2 id="org4f83446">截图:fbgrab</h2>
+<div class="outline-text-2" id="text-org4f83446">
 <p>
 fbgrab会抓取frambuffer device中的屏幕内容并转存为png文件. 事实上这篇博客中的截图很多都是用它来截取的.
 它的使用方法也很简单:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">fbgrab <span style="color: #4f97d7;">[</span>options<span style="color: #4f97d7;">]</span> filename
+<pre class="src src-shell">fbgrab [options] filename
 </pre>
 </div>
 
@@ -413,9 +413,9 @@ fbgrab会抓取frambuffer device中的屏幕内容并转存为png文件. 事实�
 </div>
 </div>
 
-<div id="outline-container-org278ee96" class="outline-2">
-<h2 id="org278ee96">聊天:Emacs(ERC)</h2>
-<div class="outline-text-2" id="text-org278ee96">
+<div id="outline-container-org37a133e" class="outline-2">
+<h2 id="org37a133e">聊天:Emacs(ERC)</h2>
+<div class="outline-text-2" id="text-org37a133e">
 <p>
 <a href="https://www.emacswiki.org/emacs/ERC">ERC</a>, 全称 <code>emacs irc client</code>,是一款基于Emacs的irc客户端.
 </p>
@@ -427,9 +427,9 @@ fbgrab会抓取frambuffer device中的屏幕内容并转存为png文件. 事实�
 </div>
 </div>
 </div>
-<div id="outline-container-org51a9d67" class="outline-2">
-<h2 id="org51a9d67">文件管理:Emacs(Dired)</h2>
-<div class="outline-text-2" id="text-org51a9d67">
+<div id="outline-container-org15b2622" class="outline-2">
+<h2 id="org15b2622">文件管理:Emacs(Dired)</h2>
+<div class="outline-text-2" id="text-org15b2622">
 <p>
 还用说什么呢,用过Emacs的人基本都知道的...
 <img src="https://lujun9972.github.io/assets/blog/2017/04/19/我的linux终端工具/Dired.png" alt="Dired.png" />
@@ -437,25 +437,25 @@ fbgrab会抓取frambuffer device中的屏幕内容并转存为png文件. 事实�
 </p>
 </div>
 </div>
-<div id="outline-container-org514d386" class="outline-2">
-<h2 id="org514d386">GTD:Emacs(ORG)</h2>
-<div class="outline-text-2" id="text-org514d386">
+<div id="outline-container-org7583b8e" class="outline-2">
+<h2 id="org7583b8e">GTD:Emacs(ORG)</h2>
+<div class="outline-text-2" id="text-org7583b8e">
 <p>
 我觉得也没什么好说的...
 </p>
 </div>
-<div id="outline-container-org1fc6113" class="outline-3">
-<h3 id="org1fc6113">其他选择</h3>
-<div class="outline-text-3" id="text-org1fc6113">
+<div id="outline-container-org8bd8f28" class="outline-3">
+<h3 id="org8bd8f28">其他选择</h3>
+<div class="outline-text-3" id="text-org8bd8f28">
 <ul class="org-ul">
 <li>calcurse</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org9750656" class="outline-2">
-<h2 id="org9750656">阅读RSS:Emacs(elfeed)</h2>
-<div class="outline-text-2" id="text-org9750656">
+<div id="outline-container-org7cebee7" class="outline-2">
+<h2 id="org7cebee7">阅读RSS:Emacs(elfeed)</h2>
+<div class="outline-text-2" id="text-org7cebee7">
 <p>
 <a href="https://github.com/skeeto/elfeed">elfeed</a> 是一款很不错的feed阅览插件,通过elfeed-org插件还能用org来管理feed
 <img src="https://lujun9972.github.io/assets/blog/2017/04/19/我的linux终端工具/elfeed.png" alt="elfeed.png" />
@@ -463,9 +463,9 @@ fbgrab会抓取frambuffer device中的屏幕内容并转存为png文件. 事实�
 </div>
 </div>
 
-<div id="outline-container-orge54f955" class="outline-2">
-<h2 id="orge54f955">听播客:Emacs(podcaster)</h2>
-<div class="outline-text-2" id="text-orge54f955">
+<div id="outline-container-org7d992cf" class="outline-2">
+<h2 id="org7d992cf">听播客:Emacs(podcaster)</h2>
+<div class="outline-text-2" id="text-org7d992cf">
 <p>
 <a href="https://github.com/lujun9972/podcaster">podcaster</a> 是我自己编写的一个Emacs插件,可以实现在线听播客,当然它也需要借助外部程序来播放声音.
 </p>
@@ -478,9 +478,9 @@ fbgrab会抓取frambuffer device中的屏幕内容并转存为png文件. 事实�
 </div>
 </div>
 
-<div id="outline-container-org9f2e255" class="outline-2">
-<h2 id="org9f2e255">翻墙:shadowsocks + proxychains</h2>
-<div class="outline-text-2" id="text-org9f2e255">
+<div id="outline-container-org38468b1" class="outline-2">
+<h2 id="org38468b1">翻墙:shadowsocks + proxychains</h2>
+<div class="outline-text-2" id="text-org38468b1">
 <p>
 shadowsocks这么有名的翻墙软件就不用多说了. 不过它只能提供socks代理. 而w3m又只支持http代理...
 </p>
@@ -493,8 +493,8 @@ shadowsocks这么有名的翻墙软件就不用多说了. 不过它只能提供s
 要翻墙时只需要
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sslock -c /etc/shadowsocks/example.json &amp; <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21551;&#21160;shadowsocks&#23458;&#25143;&#31471;,&#24320;&#21551;&#20195;&#29702;</span>
-proxychains w3m http://www.google.com     <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#24378;&#21046;TCPIP&#38142;&#25509;&#36208;&#20195;&#29702;</span>
+<pre class="src src-shell">sslock -c /etc/shadowsocks/example.json &amp; <span style="color: #b22222;"># </span><span style="color: #b22222;">&#21551;&#21160;shadowsocks&#23458;&#25143;&#31471;,&#24320;&#21551;&#20195;&#29702;</span>
+proxychains w3m http://www.google.com     <span style="color: #b22222;"># </span><span style="color: #b22222;">&#24378;&#21046;TCPIP&#38142;&#25509;&#36208;&#20195;&#29702;</span>
 </pre>
 </div>
 
@@ -509,77 +509,49 @@ proxychains w3m http://www.google.com     <span style="color: #2aa1ae; backgroun
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2017-04-19</span>
-            <span title="last modification date" class="post-info">2017-06-12</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2017-04-19</span>
+    <span title="last modification date" class="post-info">2017-06-12</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2017/04/19/我的linux终端工具/";
-         var disqus_url = "https://lujun9972.github.io/blog/2017/04/19/我的linux终端工具/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2017/04/19/我的linux终端工具/";
+     var disqus_url = "https://lujun9972.github.io/blog/2017/04/19/我的linux终端工具/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

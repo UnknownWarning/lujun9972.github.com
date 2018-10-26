@@ -3,21 +3,23 @@
 <head>
   <title>init-life-internet-sx - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="DarkSun" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -31,15 +33,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -53,38 +53,38 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga677a8b">1. 安装Stack Exchange for Emacs</a></li>
-<li><a href="#org8aa4d47">2. 使用</a>
+<li><a href="#org656c0b1">1. 安装Stack Exchange for Emacs</a></li>
+<li><a href="#orgf194cf7">2. 使用</a>
 <ul>
-<li><a href="#org8ed9e55">2.1. 授权</a></li>
-<li><a href="#orgbc725e1">2.2. 查看问题</a></li>
-<li><a href="#orgcd1e489">2.3. sx-question-list-mode</a></li>
+<li><a href="#org8ecc6aa">2.1. 授权</a></li>
+<li><a href="#org39b4434">2.2. 查看问题</a></li>
+<li><a href="#orgc478afd">2.3. sx-question-list-mode</a></li>
 </ul>
 </li>
-<li><a href="#org6bbf2ae">3. provide feature</a></li>
+<li><a href="#org25762b4">3. provide feature</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga677a8b" class="outline-2">
-<h2 id="orga677a8b"><span class="section-number-2">1</span> 安装Stack Exchange for Emacs</h2>
+<div id="outline-container-org656c0b1" class="outline-2">
+<h2 id="org656c0b1"><span class="section-number-2">1</span> 安装Stack Exchange for Emacs</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 SX使得可以在Emacs中直接访问StackExchange系列网站
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>package-install-new 'sx<span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp">(package-install-new 'sx)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8aa4d47" class="outline-2">
-<h2 id="org8aa4d47"><span class="section-number-2">2</span> 使用</h2>
+<div id="outline-container-orgf194cf7" class="outline-2">
+<h2 id="orgf194cf7"><span class="section-number-2">2</span> 使用</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org8ed9e55" class="outline-3">
-<h3 id="org8ed9e55"><span class="section-number-3">2.1</span> 授权</h3>
+<div id="outline-container-org8ecc6aa" class="outline-3">
+<h3 id="org8ecc6aa"><span class="section-number-3">2.1</span> 授权</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 若要开放提问,回答,评论,投票功能,则需要使用`sx-authenticate'命令先对SX进行授权.
@@ -96,8 +96,8 @@ SX使得可以在Emacs中直接访问StackExchange系列网站
 </div>
 </div>
 
-<div id="outline-container-orgbc725e1" class="outline-3">
-<h3 id="orgbc725e1"><span class="section-number-3">2.2</span> 查看问题</h3>
+<div id="outline-container-org39b4434" class="outline-3">
+<h3 id="org39b4434"><span class="section-number-3">2.2</span> 查看问题</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 使用`sx-tab-xxx'系列命令来查看问题. 这些命令的功能相当于你点击官方网站上的xxx tab. 
@@ -116,8 +116,8 @@ SX使得可以在Emacs中直接访问StackExchange系列网站
 </div>
 </div>
 
-<div id="outline-container-orgcd1e489" class="outline-3">
-<h3 id="orgcd1e489"><span class="section-number-3">2.3</span> sx-question-list-mode</h3>
+<div id="outline-container-orgc478afd" class="outline-3">
+<h3 id="orgc478afd"><span class="section-number-3">2.3</span> sx-question-list-mode</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 `sx-tab-xxx'系列命令会列出一系列的问题,并进入`sx-question-list-mode'. 在这里可以进行以下操作:
@@ -142,11 +142,11 @@ SX使得可以在Emacs中直接访问StackExchange系列网站
 </div>
 </div>
 </div>
-<div id="outline-container-org6bbf2ae" class="outline-2">
-<h2 id="org6bbf2ae"><span class="section-number-2">3</span> provide feature</h2>
+<div id="outline-container-org25762b4" class="outline-2">
+<h2 id="org25762b4"><span class="section-number-2">3</span> provide feature</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">provide</span> '<span style="color: #a45bad;">init-life-internet-sx</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">provide</span> '<span style="color: #008b8b;">init-life-internet-sx</span>)
 </pre>
 </div>
 </div>
@@ -155,77 +155,49 @@ SX使得可以在Emacs中直接访问StackExchange系列网站
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2015-05-02</span>
-            <span title="last modification date" class="post-info">2018-04-29</span>
-            <span title="tags" class="post-info">:N/A:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2015-05-02</span>
+    <span title="last modification date" class="post-info">2018-04-29</span>
+    <span title="tags" class="post-info">N/A</span>
+    <span title="author" class="post-info">DarkSun</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2015/05/02/init-life-internet-sx/";
-         var disqus_url = "https://lujun9972.github.io/blog/2015/05/02/init-life-internet-sx/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2015/05/02/init-life-internet-sx/";
+     var disqus_url = "https://lujun9972.github.io/blog/2015/05/02/init-life-internet-sx/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">DarkSun</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

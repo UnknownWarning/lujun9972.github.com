@@ -3,22 +3,24 @@
 <head>
   <title>一个显示中文格言的fortune文件 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,11 +54,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3c949fa">使用方法</a></li>
-<li><a href="#orgbab9027">实现</a>
+<li><a href="#orge58cb3a">使用方法</a></li>
+<li><a href="#orge0a2b56">实现</a>
 <ul>
-<li><a href="#org68c040d">数据来源</a></li>
-<li><a href="#orga413ce0">fortune文件格式</a></li>
+<li><a href="#org70f22eb">数据来源</a></li>
+<li><a href="#org9132950">fortune文件格式</a></li>
 </ul>
 </li>
 </ul>
@@ -72,9 +72,9 @@
 fortune文件可以从这里下载:<a href="https://raw.githubusercontent.com/lujun9972/proverb-fortune/master/proverbs">proverbs</a>
 </p>
 
-<div id="outline-container-org3c949fa" class="outline-2">
-<h2 id="org3c949fa">使用方法</h2>
-<div class="outline-text-2" id="text-org3c949fa">
+<div id="outline-container-orge58cb3a" class="outline-2">
+<h2 id="orge58cb3a">使用方法</h2>
+<div class="outline-text-2" id="text-orge58cb3a">
 <ol class="org-ol">
 <li><p>
 要让fortune能够使用该fortune文件,还需要先用 <code>strfile</code> 来产生一个索引文件 <code>proverbs.dat</code>
@@ -108,13 +108,13 @@ fortune文件可以从这里下载:<a href="https://raw.githubusercontent.com/lu
 </div>
 
 
-<div id="outline-container-orgbab9027" class="outline-2">
-<h2 id="orgbab9027">实现</h2>
-<div class="outline-text-2" id="text-orgbab9027">
+<div id="outline-container-orge0a2b56" class="outline-2">
+<h2 id="orge0a2b56">实现</h2>
+<div class="outline-text-2" id="text-orge0a2b56">
 </div>
-<div id="outline-container-org68c040d" class="outline-3">
-<h3 id="org68c040d">数据来源</h3>
-<div class="outline-text-3" id="text-org68c040d">
+<div id="outline-container-org70f22eb" class="outline-3">
+<h3 id="org70f22eb">数据来源</h3>
+<div class="outline-text-3" id="text-org70f22eb">
 <p>
 为了搜索格言,我先尝试在baidu上搜索了一下"格言",结果发现baidu除了显示出相关网页链接之外,还显示了一个小窗口里面列出了大量的格言:
 </p>
@@ -155,27 +155,27 @@ URL中的 <code>%E6%A0%BC%E8%A8%80</code> 就是格言的转义结果.
 分析出接口地址,再从JSON结果中抓取相应的值就很容易了:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">request_proverb</span><span style="color: #4f97d7;">(</span>start,number<span style="color: #4f97d7;">)</span>:
-    <span style="color: #2aa1ae;">'''&#20174;&#30334;&#24230;&#37027;&#33719;&#21462;&#26684;&#35328;&#20449;&#24687;,START&#20026;&#36215;&#22987;&#26465;&#25968;,NUMBER&#20026;&#33719;&#21462;&#26684;&#35328;&#26465;&#25968;,&#19981;&#33021;&#36229;&#36807;50'''</span>
-    <span style="color: #7590db;">url</span> = <span style="color: #2d9574;">"https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php"</span>
-    <span style="color: #7590db;">params</span> = <span style="color: #4f97d7;">{</span><span style="color: #2d9574;">"from_mid"</span>:<span style="color: #a45bad;">1</span>,
-              <span style="color: #2d9574;">"format"</span>:<span style="color: #2d9574;">"json"</span>,
-              <span style="color: #2d9574;">"ie"</span>:<span style="color: #2d9574;">"utf-8"</span>,
-              <span style="color: #2d9574;">"oe"</span>:<span style="color: #2d9574;">"utf-8"</span>,
-              <span style="color: #2d9574;">"subtitle"</span>:<span style="color: #2d9574;">"&#26684;&#35328;"</span>,
-              <span style="color: #2d9574;">"query"</span>:<span style="color: #2d9574;">"&#26684;&#35328;"</span>,
-              <span style="color: #2d9574;">"rn"</span>:number,
-              <span style="color: #2d9574;">"pn"</span>:start,
-              <span style="color: #2d9574;">"resource_id"</span> : <span style="color: #a45bad;">6844</span><span style="color: #4f97d7;">}</span>
-    <span style="color: #7590db;">response</span> = requests.get<span style="color: #4f97d7;">(</span>url,params=params<span style="color: #4f97d7;">)</span>
-    <span style="color: #7590db;">response</span> = json.loads<span style="color: #4f97d7;">(</span>response.text<span style="color: #4f97d7;">)</span>
-    <span style="color: #7590db;">status</span> = response.get<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'status'</span><span style="color: #4f97d7;">)</span>
-    <span style="color: #4f97d7; font-weight: bold;">if</span> status != <span style="color: #2d9574;">"0"</span>:
-        <span style="color: #4f97d7; font-weight: bold;">raise</span> <span style="color: #ce537a; font-weight: bold;">Exception</span><span style="color: #4f97d7;">()</span>
-    <span style="color: #7590db;">data</span> = response.get<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'data'</span><span style="color: #4f97d7;">)[</span><span style="color: #a45bad;">0</span><span style="color: #4f97d7;">]</span>
-    <span style="color: #7590db;">resNum</span> = data.get<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'resNum'</span><span style="color: #4f97d7;">)</span>
-    <span style="color: #7590db;">proverbs</span> = data.get<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'disp_data'</span><span style="color: #4f97d7;">)</span>
-    <span style="color: #4f97d7; font-weight: bold;">return</span> proverbs
+<pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">request_proverb</span>(start,number):
+    <span style="color: #8b2252;">'''&#20174;&#30334;&#24230;&#37027;&#33719;&#21462;&#26684;&#35328;&#20449;&#24687;,START&#20026;&#36215;&#22987;&#26465;&#25968;,NUMBER&#20026;&#33719;&#21462;&#26684;&#35328;&#26465;&#25968;,&#19981;&#33021;&#36229;&#36807;50'''</span>
+    <span style="color: #a0522d;">url</span> = <span style="color: #8b2252;">"https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php"</span>
+    <span style="color: #a0522d;">params</span> = {<span style="color: #8b2252;">"from_mid"</span>:1,
+              <span style="color: #8b2252;">"format"</span>:<span style="color: #8b2252;">"json"</span>,
+              <span style="color: #8b2252;">"ie"</span>:<span style="color: #8b2252;">"utf-8"</span>,
+              <span style="color: #8b2252;">"oe"</span>:<span style="color: #8b2252;">"utf-8"</span>,
+              <span style="color: #8b2252;">"subtitle"</span>:<span style="color: #8b2252;">"&#26684;&#35328;"</span>,
+              <span style="color: #8b2252;">"query"</span>:<span style="color: #8b2252;">"&#26684;&#35328;"</span>,
+              <span style="color: #8b2252;">"rn"</span>:number,
+              <span style="color: #8b2252;">"pn"</span>:start,
+              <span style="color: #8b2252;">"resource_id"</span> : 6844}
+    <span style="color: #a0522d;">response</span> = requests.get(url,params=params)
+    <span style="color: #a0522d;">response</span> = json.loads(response.text)
+    <span style="color: #a0522d;">status</span> = response.get(<span style="color: #8b2252;">'status'</span>)
+    <span style="color: #a020f0;">if</span> status != <span style="color: #8b2252;">"0"</span>:
+        <span style="color: #a020f0;">raise</span> <span style="color: #228b22;">Exception</span>()
+    <span style="color: #a0522d;">data</span> = response.get(<span style="color: #8b2252;">'data'</span>)[0]
+    <span style="color: #a0522d;">resNum</span> = data.get(<span style="color: #8b2252;">'resNum'</span>)
+    <span style="color: #a0522d;">proverbs</span> = data.get(<span style="color: #8b2252;">'disp_data'</span>)
+    <span style="color: #a020f0;">return</span> proverbs
 </pre>
 </div>
 
@@ -183,7 +183,7 @@ URL中的 <code>%E6%A0%BC%E8%A8%80</code> 就是格言的转义结果.
 其中,每个格言信息都是一个如下所示的字典:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7;">{</span><span style="color: #2aa1ae;">'StdStg'</span>: <span style="color: #a45bad;">6844</span>, <span style="color: #2aa1ae;">'StdStl'</span>: <span style="color: #a45bad;">8</span>, <span style="color: #2aa1ae;">'_update_time'</span>: <span style="color: #2aa1ae;">'1475048807'</span>, <span style="color: #2aa1ae;">'loc'</span>: <span style="color: #2aa1ae;">'http://www.baidu.com/geyan/c880b7476531e5cbf050dce6da74578c'</span>, <span style="color: #2aa1ae;">'lastmod'</span>: <span style="color: #2aa1ae;">'2014-06-26'</span>, <span style="color: #2aa1ae;">'changefreq'</span>: <span style="color: #2aa1ae;">'always'</span>, <span style="color: #2aa1ae;">'priority'</span>: <span style="color: #2aa1ae;">'1.0'</span>, <span style="color: #2aa1ae;">'type'</span>: <span style="color: #2aa1ae;">'&#26684;&#35328;'</span>, <span style="color: #2aa1ae;">'brief0'</span>: <span style="color: #2aa1ae;">'&#30495;&#29702;,&#30495;&#35867;'</span>, <span style="color: #2aa1ae;">'term0'</span>: <span style="color: #2aa1ae;">'&#27431;&#25991;'</span>, <span style="color: #2aa1ae;">'term'</span>: <span style="color: #2aa1ae;">'&#27431;&#25991;'</span>, <span style="color: #2aa1ae;">'ename'</span>: <span style="color: #2aa1ae;">'&#30495;&#29702;&#24799;&#19968;&#21487;&#38752;&#30340;&#26631;&#20934;&#23601;&#26159;&#27704;&#36828;&#33258;&#30456;&#31526;&#21512;&#12290;'</span>, <span style="color: #2aa1ae;">'stat0'</span>: <span style="color: #2aa1ae;">'&#30495;&#29702;'</span>, <span style="color: #2aa1ae;">'statctl'</span>: <span style="color: #2aa1ae;">'stat0'</span>, <span style="color: #2aa1ae;">'statlst'</span>: <span style="color: #2aa1ae;">'&#31867;&#21035;'</span>, <span style="color: #2aa1ae;">'author'</span>: <span style="color: #2aa1ae;">'&#27431;&#25991;'</span>, <span style="color: #2aa1ae;">'pv'</span>: <span style="color: #2aa1ae;">'59'</span>, <span style="color: #2aa1ae;">'SiteId'</span>: <span style="color: #a45bad;">2003651</span>, <span style="color: #2aa1ae;">'_version'</span>: <span style="color: #a45bad;">5</span>, <span style="color: #2aa1ae;">'_select_time'</span>: <span style="color: #a45bad;">1475048794</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-python">{<span style="color: #8b2252;">'StdStg'</span>: 6844, <span style="color: #8b2252;">'StdStl'</span>: 8, <span style="color: #8b2252;">'_update_time'</span>: <span style="color: #8b2252;">'1475048807'</span>, <span style="color: #8b2252;">'loc'</span>: <span style="color: #8b2252;">'http://www.baidu.com/geyan/c880b7476531e5cbf050dce6da74578c'</span>, <span style="color: #8b2252;">'lastmod'</span>: <span style="color: #8b2252;">'2014-06-26'</span>, <span style="color: #8b2252;">'changefreq'</span>: <span style="color: #8b2252;">'always'</span>, <span style="color: #8b2252;">'priority'</span>: <span style="color: #8b2252;">'1.0'</span>, <span style="color: #8b2252;">'type'</span>: <span style="color: #8b2252;">'&#26684;&#35328;'</span>, <span style="color: #8b2252;">'brief0'</span>: <span style="color: #8b2252;">'&#30495;&#29702;,&#30495;&#35867;'</span>, <span style="color: #8b2252;">'term0'</span>: <span style="color: #8b2252;">'&#27431;&#25991;'</span>, <span style="color: #8b2252;">'term'</span>: <span style="color: #8b2252;">'&#27431;&#25991;'</span>, <span style="color: #8b2252;">'ename'</span>: <span style="color: #8b2252;">'&#30495;&#29702;&#24799;&#19968;&#21487;&#38752;&#30340;&#26631;&#20934;&#23601;&#26159;&#27704;&#36828;&#33258;&#30456;&#31526;&#21512;&#12290;'</span>, <span style="color: #8b2252;">'stat0'</span>: <span style="color: #8b2252;">'&#30495;&#29702;'</span>, <span style="color: #8b2252;">'statctl'</span>: <span style="color: #8b2252;">'stat0'</span>, <span style="color: #8b2252;">'statlst'</span>: <span style="color: #8b2252;">'&#31867;&#21035;'</span>, <span style="color: #8b2252;">'author'</span>: <span style="color: #8b2252;">'&#27431;&#25991;'</span>, <span style="color: #8b2252;">'pv'</span>: <span style="color: #8b2252;">'59'</span>, <span style="color: #8b2252;">'SiteId'</span>: 2003651, <span style="color: #8b2252;">'_version'</span>: 5, <span style="color: #8b2252;">'_select_time'</span>: 1475048794}
 </pre>
 </div>
 
@@ -193,9 +193,9 @@ URL中的 <code>%E6%A0%BC%E8%A8%80</code> 就是格言的转义结果.
 </div>
 </div>
 
-<div id="outline-container-orga413ce0" class="outline-3">
-<h3 id="orga413ce0">fortune文件格式</h3>
-<div class="outline-text-3" id="text-orga413ce0">
+<div id="outline-container-org9132950" class="outline-3">
+<h3 id="org9132950">fortune文件格式</h3>
+<div class="outline-text-3" id="text-org9132950">
 <p>
 fortune文件格式蛮简单的,只需要用 <b>只包含%的行</b> 将各格言内容分开就行了. 
 </p>
@@ -215,10 +215,10 @@ fortune文件格式蛮简单的,只需要用 <b>只包含%的行</b> 将各格�
 使用字符串的 <code>format</code> 方法可以很容易的控制生成的格言格式
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">proverb_to_fortune_item</span><span style="color: #4f97d7;">(</span>proverb<span style="color: #4f97d7;">)</span>:
-    <span style="color: #7590db;">author</span> = proverb.get<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'author'</span>,<span style="color: #2d9574;">''</span><span style="color: #4f97d7;">)</span>
-    <span style="color: #7590db;">ename</span> = proverb.get<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'ename'</span>,<span style="color: #2d9574;">''</span><span style="color: #4f97d7;">)</span>
-    <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #2d9574;">"{ename}\n\t-{author}\n"</span>.<span style="color: #4f97d7;">format</span><span style="color: #4f97d7;">(</span>ename=ename,author=author<span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">proverb_to_fortune_item</span>(proverb):
+    <span style="color: #a0522d;">author</span> = proverb.get(<span style="color: #8b2252;">'author'</span>,<span style="color: #8b2252;">''</span>)
+    <span style="color: #a0522d;">ename</span> = proverb.get(<span style="color: #8b2252;">'ename'</span>,<span style="color: #8b2252;">''</span>)
+    <span style="color: #a020f0;">return</span> <span style="color: #8b2252;">"{ename}\n\t-{author}\n"</span>.<span style="color: #483d8b;">format</span>(ename=ename,author=author)
 </pre>
 </div>
 
@@ -226,10 +226,10 @@ fortune文件格式蛮简单的,只需要用 <b>只包含%的行</b> 将各格�
 最后再用 <code>"%\n"</code> 作为分隔符将每条格言拼接起来就完成了
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">proverbs_to_fortune_file</span><span style="color: #4f97d7;">(</span>proverbs,fortune_file<span style="color: #4f97d7;">)</span>:
-    <span style="color: #4f97d7; font-weight: bold;">with</span> <span style="color: #4f97d7;">open</span><span style="color: #4f97d7;">(</span>fortune_file,mode=<span style="color: #2d9574;">"a"</span><span style="color: #4f97d7;">)</span> <span style="color: #4f97d7; font-weight: bold;">as</span> f:
-        <span style="color: #7590db;">fortune_items</span> = <span style="color: #4f97d7;">[</span>proverb_to_fortune_item<span style="color: #bc6ec5;">(</span>proverb<span style="color: #bc6ec5;">)</span> <span style="color: #4f97d7; font-weight: bold;">for</span> proverb <span style="color: #4f97d7; font-weight: bold;">in</span> proverbs<span style="color: #4f97d7;">]</span>
-        f.write<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'%\n'</span>.join<span style="color: #bc6ec5;">(</span>fortune_items<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">proverbs_to_fortune_file</span>(proverbs,fortune_file):
+    <span style="color: #a020f0;">with</span> <span style="color: #483d8b;">open</span>(fortune_file,mode=<span style="color: #8b2252;">"a"</span>) <span style="color: #a020f0;">as</span> f:
+        <span style="color: #a0522d;">fortune_items</span> = [proverb_to_fortune_item(proverb) <span style="color: #a020f0;">for</span> proverb <span style="color: #a020f0;">in</span> proverbs]
+        f.write(<span style="color: #8b2252;">'%\n'</span>.join(fortune_items))
 </pre>
 </div>
 </div>
@@ -239,77 +239,49 @@ fortune文件格式蛮简单的,只需要用 <b>只包含%的行</b> 将各格�
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2017-02-28</span>
-            <span title="last modification date" class="post-info">2017-02-28</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2017-02-28</span>
+    <span title="last modification date" class="post-info">2017-02-28</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2017/02/28/一个显示中文格言的fortune文件/";
-         var disqus_url = "https://lujun9972.github.io/blog/2017/02/28/一个显示中文格言的fortune文件/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2017/02/28/一个显示中文格言的fortune文件/";
+     var disqus_url = "https://lujun9972.github.io/blog/2017/02/28/一个显示中文格言的fortune文件/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

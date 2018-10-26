@@ -3,22 +3,24 @@
 <head>
   <title>Emacs文件管理神器--dired常用操作说明 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="Emacs之怒" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,39 +54,39 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcb6592e">进入Dired</a></li>
-<li><a href="#org722c13d">常用操作</a>
+<li><a href="#org857ab67">进入Dired</a></li>
+<li><a href="#orga04b955">常用操作</a>
 <ul>
-<li><a href="#org5aa7884">导航操作</a></li>
-<li><a href="#orgc6b081b">选择文件</a></li>
-<li><a href="#org53d850d">操作文件/目录</a></li>
+<li><a href="#org1179a30">导航操作</a></li>
+<li><a href="#org96b01e8">选择文件</a></li>
+<li><a href="#orgdcf99b2">操作文件/目录</a></li>
 </ul>
 </li>
-<li><a href="#orge6dd0ee">书签</a></li>
-<li><a href="#org8d3426b">访问打包文件</a></li>
-<li><a href="#orgcfc689b">批量改名与wired</a>
+<li><a href="#org44fb0d3">书签</a></li>
+<li><a href="#org391e1a9">访问打包文件</a></li>
+<li><a href="#org1ac8ad1">批量改名与wired</a>
 <ul>
-<li><a href="#org935c6e3">wdired</a></li>
+<li><a href="#orga86784b">wdired</a></li>
 </ul>
 </li>
-<li><a href="#orgf75dfaa">文件夹的比较</a></li>
-<li><a href="#org8808989">打开文件</a></li>
-<li><a href="#org8f6c4b7">dired-x插件</a></li>
-<li><a href="#orgd588d60">其他高级用法</a>
+<li><a href="#org7121c23">文件夹的比较</a></li>
+<li><a href="#orgf721e2c">打开文件</a></li>
+<li><a href="#org2d9fdc9">dired-x插件</a></li>
+<li><a href="#org19a6061">其他高级用法</a>
 <ul>
-<li><a href="#org277793d">排序</a></li>
-<li><a href="#org4a645b7">过滤</a></li>
-<li><a href="#orgce17ff8">分色</a></li>
-<li><a href="#org008adc4">跨目录操作</a></li>
+<li><a href="#org60841fa">排序</a></li>
+<li><a href="#org0bf4347">过滤</a></li>
+<li><a href="#org2225be1">分色</a></li>
+<li><a href="#org1cfaf26">跨目录操作</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgcb6592e" class="outline-2">
-<h2 id="orgcb6592e"><a id="6vzd1ad1vfh0"></a>进入Dired</h2>
-<div class="outline-text-2" id="text-orgcb6592e">
+<div id="outline-container-org857ab67" class="outline-2">
+<h2 id="org857ab67"><a id="6vzd1ad1vfh0"></a>进入Dired</h2>
+<div class="outline-text-2" id="text-org857ab67">
 <p>
 有几种方式都能够进入Dired:
 </p>
@@ -134,13 +134,13 @@ dired允许进入远程服务器上的目录,只要输入的路径符合tramp规
 </div>
 </div>
 
-<div id="outline-container-org722c13d" class="outline-2">
-<h2 id="org722c13d">常用操作</h2>
-<div class="outline-text-2" id="text-org722c13d">
+<div id="outline-container-orga04b955" class="outline-2">
+<h2 id="orga04b955">常用操作</h2>
+<div class="outline-text-2" id="text-orga04b955">
 </div>
-<div id="outline-container-org5aa7884" class="outline-3">
-<h3 id="org5aa7884">导航操作</h3>
-<div class="outline-text-3" id="text-org5aa7884">
+<div id="outline-container-org1179a30" class="outline-3">
+<h3 id="org1179a30">导航操作</h3>
+<div class="outline-text-3" id="text-org1179a30">
 <p>
 在dired buffer中可以用 <code>n</code>, <code>p</code>, <code>C-n</code>, <code>C-p</code>, <code>&lt;down&gt;</code>, <code>&lt;up&gt;</code> 将光标在各文件/目录间跳转.
 </p>
@@ -163,9 +163,9 @@ dired允许进入远程服务器上的目录,只要输入的路径符合tramp规
 </div>
 </div>
 
-<div id="outline-container-orgc6b081b" class="outline-3">
-<h3 id="orgc6b081b">选择文件</h3>
-<div class="outline-text-3" id="text-orgc6b081b">
+<div id="outline-container-org96b01e8" class="outline-3">
+<h3 id="org96b01e8">选择文件</h3>
+<div class="outline-text-3" id="text-org96b01e8">
 <p>
 在dired中,若你需要一次性操作操作文件或者目录,那么你往往需要先mark那些文件/目录,然后再按下对应的操作快捷键对这些文件进行操作.
 </p>
@@ -192,9 +192,9 @@ dired允许进入远程服务器上的目录,只要输入的路径符合tramp规
 </div>
 </div>
 
-<div id="outline-container-org53d850d" class="outline-3">
-<h3 id="org53d850d">操作文件/目录</h3>
-<div class="outline-text-3" id="text-org53d850d">
+<div id="outline-container-orgdcf99b2" class="outline-3">
+<h3 id="orgdcf99b2">操作文件/目录</h3>
+<div class="outline-text-3" id="text-orgdcf99b2">
 <p>
 <b>由于在dired中的操作并不严格区分文件和目录,因此下面统一用文件代替</b>
 </p>
@@ -279,9 +279,9 @@ dired还允许你调用外部命令来操作文件,这提供了莫大的灵活�
 </div>
 
 
-<div id="outline-container-orge6dd0ee" class="outline-2">
-<h2 id="orge6dd0ee">书签</h2>
-<div class="outline-text-2" id="text-orge6dd0ee">
+<div id="outline-container-org44fb0d3" class="outline-2">
+<h2 id="org44fb0d3">书签</h2>
+<div class="outline-text-2" id="text-org44fb0d3">
 <p>
 Emacs还允许你将常用的目录加入书签中,这样你可以很方便的跳回这些目录中.
 </p>
@@ -308,9 +308,9 @@ Emacs的书签当然不仅仅这么简单,要了解更多Emacs书签推荐阅读
 </div>
 </div>
 
-<div id="outline-container-org8d3426b" class="outline-2">
-<h2 id="org8d3426b">访问打包文件</h2>
-<div class="outline-text-2" id="text-org8d3426b">
+<div id="outline-container-org391e1a9" class="outline-2">
+<h2 id="org391e1a9">访问打包文件</h2>
+<div class="outline-text-2" id="text-org391e1a9">
 <p>
 需要说明的是,dired插件本身并不对tar包或者zip包这类打包文件进行特殊处理. 
 </p>
@@ -342,9 +342,9 @@ Emacs的书签当然不仅仅这么简单,要了解更多Emacs书签推荐阅读
 </div>
 
 
-<div id="outline-container-orgcfc689b" class="outline-2">
-<h2 id="orgcfc689b">批量改名与wired</h2>
-<div class="outline-text-2" id="text-orgcfc689b">
+<div id="outline-container-org1ac8ad1" class="outline-2">
+<h2 id="org1ac8ad1">批量改名与wired</h2>
+<div class="outline-text-2" id="text-org1ac8ad1">
 <p>
 如果只是进行文件名的大小写转换,那么dired提供了两个命令专门来实现这一行为:
 </p>
@@ -384,9 +384,9 @@ Emacs的书签当然不仅仅这么简单,要了解更多Emacs书签推荐阅读
 </p>
 </div>
 
-<div id="outline-container-org935c6e3" class="outline-3">
-<h3 id="org935c6e3">wdired</h3>
-<div class="outline-text-3" id="text-org935c6e3">
+<div id="outline-container-orga86784b" class="outline-3">
+<h3 id="orga86784b">wdired</h3>
+<div class="outline-text-3" id="text-orga86784b">
 <p>
 wdierd允许你通过编辑dired buffer的方式来操作文件.
 </p>
@@ -409,9 +409,9 @@ wdierd允许你通过编辑dired buffer的方式来操作文件.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf75dfaa" class="outline-2">
-<h2 id="orgf75dfaa">文件夹的比较</h2>
-<div class="outline-text-2" id="text-orgf75dfaa">
+<div id="outline-container-org7121c23" class="outline-2">
+<h2 id="org7121c23">文件夹的比较</h2>
+<div class="outline-text-2" id="text-org7121c23">
 <p>
 使用命令 <code>M-x dired-compare-directories</code> 可以将当前目录与其他目录进行比较并标记出目录间不同的那些文件.
 </p>
@@ -427,9 +427,9 @@ wdierd允许你通过编辑dired buffer的方式来操作文件.
 </div>
 </div>
 
-<div id="outline-container-org8808989" class="outline-2">
-<h2 id="org8808989">打开文件</h2>
-<div class="outline-text-2" id="text-org8808989">
+<div id="outline-container-orgf721e2c" class="outline-2">
+<h2 id="orgf721e2c">打开文件</h2>
+<div class="outline-text-2" id="text-orgf721e2c">
 <p>
 dired提供了多种方式打开文件:
 </p>
@@ -458,9 +458,9 @@ Xah大神专门针对用外部程序打开文件写过一篇博文,有兴趣的�
 </div>
 </div>
 
-<div id="outline-container-org8f6c4b7" class="outline-2">
-<h2 id="org8f6c4b7">dired-x插件</h2>
-<div class="outline-text-2" id="text-org8f6c4b7">
+<div id="outline-container-org2d9fdc9" class="outline-2">
+<h2 id="org2d9fdc9">dired-x插件</h2>
+<div class="outline-text-2" id="text-org2d9fdc9">
 <p>
 dired-x为dired增加了很多方便的功能,比较常用的有:
 </p>
@@ -484,13 +484,13 @@ dired-x为dired增加了很多方便的功能,比较常用的有:
 </p>
 </div>
 </div>
-<div id="outline-container-orgd588d60" class="outline-2">
-<h2 id="orgd588d60">其他高级用法</h2>
-<div class="outline-text-2" id="text-orgd588d60">
+<div id="outline-container-org19a6061" class="outline-2">
+<h2 id="org19a6061">其他高级用法</h2>
+<div class="outline-text-2" id="text-org19a6061">
 </div>
-<div id="outline-container-org277793d" class="outline-3">
-<h3 id="org277793d">排序</h3>
-<div class="outline-text-3" id="text-org277793d">
+<div id="outline-container-org60841fa" class="outline-3">
+<h3 id="org60841fa">排序</h3>
+<div class="outline-text-3" id="text-org60841fa">
 <p>
 细心的同学应该会注意到dired buffer中的内容其实就是 <code>ls -l</code> 产生的结果.
 </p>
@@ -513,9 +513,9 @@ dired-x为dired增加了很多方便的功能,比较常用的有:
 </div>
 </div>
 
-<div id="outline-container-org4a645b7" class="outline-3">
-<h3 id="org4a645b7">过滤</h3>
-<div class="outline-text-3" id="text-org4a645b7">
+<div id="outline-container-org0bf4347" class="outline-3">
+<h3 id="org0bf4347">过滤</h3>
+<div class="outline-text-3" id="text-org0bf4347">
 <p>
 若需要过滤掉一些不关心的文件(比如.svn,.git文件夹等),可以先mark那些要隐藏的文件(可以使用正则表达式一次mark一批文件),然后按下 <code>k</code> 隐藏掉这些文件.
 </p>
@@ -538,9 +538,9 @@ dired-x为dired增加了很多方便的功能,比较常用的有:
 </div>
 </div>
 
-<div id="outline-container-orgce17ff8" class="outline-3">
-<h3 id="orgce17ff8"><a id="1h8ayed1vfh0"></a>分色</h3>
-<div class="outline-text-3" id="text-orgce17ff8">
+<div id="outline-container-org2225be1" class="outline-3">
+<h3 id="org2225be1"><a id="1h8ayed1vfh0"></a>分色</h3>
+<div class="outline-text-3" id="text-org2225be1">
 <p>
 分色是指让不同类型的文件用不同颜色标注出来. 
 </p>
@@ -563,9 +563,9 @@ dired-x为dired增加了很多方便的功能,比较常用的有:
 当然你也可以通过 <code>dired-mode-hook</code> 让这一分色过程自动化:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>add-hook 'dired-mode-hook
-          <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">lambda</span> <span style="color: #2d9574;">()</span>
-            <span style="color: #2d9574;">(</span>highlight-lines-matching-regexp <span style="color: #2d9574;">"</span><span style="color: #dc752f; background-color: #292b2e;">\</span><span style="color: #2d9574;">.org$"</span> 'hi-yellow<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp">(add-hook 'dired-mode-hook
+          (<span style="color: #a020f0;">lambda</span> ()
+            (highlight-lines-matching-regexp <span style="color: #8b2252;">"</span><span style="color: #ff0000; font-weight: bold;">\</span><span style="color: #8b2252;">.org$"</span> 'hi-yellow)))
 </pre>
 </div>
 <p>
@@ -579,9 +579,9 @@ dired-x为dired增加了很多方便的功能,比较常用的有:
 </div>
 </div>
 </div>
-<div id="outline-container-org008adc4" class="outline-3">
-<h3 id="org008adc4">跨目录操作</h3>
-<div class="outline-text-3" id="text-org008adc4">
+<div id="outline-container-org1cfaf26" class="outline-3">
+<h3 id="org1cfaf26">跨目录操作</h3>
+<div class="outline-text-3" id="text-org1cfaf26">
 <p>
 若同时想对多个目录下的文件进行操作该怎么办呢?
 </p>
@@ -703,77 +703,49 @@ dired-x为dired增加了很多方便的功能,比较常用的有:
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2016-12-10</span>
-            <span title="last modification date" class="post-info">2016-12-10</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/emacs之怒">Emacs之怒</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2016-12-10</span>
+    <span title="last modification date" class="post-info">2016-12-10</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/emacs之怒">Emacs之怒</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2016/12/10/emacs文件管理神器--dired常用操作说明/";
-         var disqus_url = "https://lujun9972.github.io/blog/2016/12/10/emacs文件管理神器--dired常用操作说明/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2016/12/10/emacs文件管理神器--dired常用操作说明/";
+     var disqus_url = "https://lujun9972.github.io/blog/2016/12/10/emacs文件管理神器--dired常用操作说明/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

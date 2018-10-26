@@ -3,21 +3,23 @@
 <head>
   <title>网络IPC - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="DarkSun" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -31,15 +33,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -53,69 +53,69 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc78f999">1. 套接字描述符</a>
+<li><a href="#org3fc2f5a">1. 套接字描述符</a>
 <ul>
-<li><a href="#org8aab3f0">1.1. 创建套接字</a></li>
-<li><a href="#org0d80a99">1.2. 使用文件描述符函数操作套接字描述符</a></li>
-<li><a href="#orgd20b059">1.3. shutdown函数</a></li>
+<li><a href="#org0a84730">1.1. 创建套接字</a></li>
+<li><a href="#orgc9ef154">1.2. 使用文件描述符函数操作套接字描述符</a></li>
+<li><a href="#org8f1e1aa">1.3. shutdown函数</a></li>
 </ul>
 </li>
-<li><a href="#orgd742b9f">2. 寻址</a>
+<li><a href="#org7a8a4e0">2. 寻址</a>
 <ul>
-<li><a href="#org68d878e">2.1. 处理器字节序与网络字节序的转换函数</a></li>
-<li><a href="#org4b2c3e1">2.2. 地址格式</a></li>
-<li><a href="#org990a8f9">2.3. 地址格式转换</a></li>
-<li><a href="#org1a7bba7">2.4. 地址映射</a>
+<li><a href="#org563922c">2.1. 处理器字节序与网络字节序的转换函数</a></li>
+<li><a href="#org3807864">2.2. 地址格式</a></li>
+<li><a href="#org26c5584">2.3. 地址格式转换</a></li>
+<li><a href="#orgd280ac7">2.4. 地址映射</a>
 <ul>
-<li><a href="#org073a98f">2.4.1. getaddrinfo</a></li>
-<li><a href="#org197f62c">2.4.2. gai_strerror</a></li>
-<li><a href="#org898645e">2.4.3. getnameinfo</a></li>
+<li><a href="#orga49dbd4">2.4.1. getaddrinfo</a></li>
+<li><a href="#org96c5038">2.4.2. gai_strerror</a></li>
+<li><a href="#orgdb5e583">2.4.3. getnameinfo</a></li>
 </ul>
 </li>
-<li><a href="#orgc16c150">2.5. 将套接字与地址关联</a>
+<li><a href="#orgd1bf382">2.5. 将套接字与地址关联</a>
 <ul>
-<li><a href="#orgaa4dbbb">2.5.1. 用bind函数来关联地址和套接字</a></li>
-<li><a href="#org9b6b8a5">2.5.2. getsockname函数来发现绑定到套接字上的地址</a></li>
-<li><a href="#org2115618">2.5.3. getperrname函数查找对方的地址</a></li>
+<li><a href="#org5f4ed63">2.5.1. 用bind函数来关联地址和套接字</a></li>
+<li><a href="#orge6a450f">2.5.2. getsockname函数来发现绑定到套接字上的地址</a></li>
+<li><a href="#orga17d25d">2.5.3. getperrname函数查找对方的地址</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgde6e4b9">3. 建立连接</a>
+<li><a href="#org0164fb3">3. 建立连接</a>
 <ul>
-<li><a href="#org128c2d0">3.1. 客户端建立连接</a></li>
-<li><a href="#org6eff450">3.2. 服务端建立连接</a></li>
+<li><a href="#org1890898">3.1. 客户端建立连接</a></li>
+<li><a href="#org67db389">3.2. 服务端建立连接</a></li>
 </ul>
 </li>
-<li><a href="#orgfc86439">4. 数据传输</a>
+<li><a href="#orgf8d993b">4. 数据传输</a>
 <ul>
-<li><a href="#orgbb646d5">4.1. send和recv</a></li>
-<li><a href="#org8e59643">4.2. sendto和recvfrom</a></li>
-<li><a href="#orgdbf52dc">4.3. sendmsg和recvmsg</a></li>
+<li><a href="#org3c848c1">4.1. send和recv</a></li>
+<li><a href="#org6ae484a">4.2. sendto和recvfrom</a></li>
+<li><a href="#orgfaebc5e">4.3. sendmsg和recvmsg</a></li>
 </ul>
 </li>
-<li><a href="#orgb9ddc62">5. 套接字选项</a>
+<li><a href="#org725b9a5">5. 套接字选项</a>
 <ul>
-<li><a href="#org1979d99">5.1. setsockopt函数设置套接字选项</a></li>
+<li><a href="#orge1a2be3">5.1. setsockopt函数设置套接字选项</a></li>
 </ul>
 </li>
-<li><a href="#org2b91d6a">6. 带外数据</a></li>
+<li><a href="#orgfd9fbd3">6. 带外数据</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc78f999" class="outline-2">
-<h2 id="orgc78f999"><span class="section-number-2">1</span> 套接字描述符</h2>
+<div id="outline-container-org3fc2f5a" class="outline-2">
+<h2 id="org3fc2f5a"><span class="section-number-2">1</span> 套接字描述符</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org8aab3f0" class="outline-3">
-<h3 id="org8aab3f0"><span class="section-number-3">1.1</span> 创建套接字</h3>
+<div id="outline-container-org0a84730" class="outline-3">
+<h3 id="org0a84730"><span class="section-number-3">1.1</span> 创建套接字</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;&#22871;&#25509;&#23383;&#25551;&#36848;&#31526;,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">socket</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">domain</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">type</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">protocol</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;&#22871;&#25509;&#23383;&#25551;&#36848;&#31526;,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">socket</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">domain</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">type</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">protocol</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -225,8 +225,8 @@ AF_INET域+SOCK_DGRAM套接字类型的默认协议是UDP
 </ul>
 </div>
 </div>
-<div id="outline-container-org0d80a99" class="outline-3">
-<h3 id="org0d80a99"><span class="section-number-3">1.2</span> 使用文件描述符函数操作套接字描述符</h3>
+<div id="outline-container-orgc9ef154" class="outline-3">
+<h3 id="orgc9ef154"><span class="section-number-3">1.2</span> 使用文件描述符函数操作套接字描述符</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 虽然套接字描述符本质上是一个文件描述符,但不是所有参数为文件描述符的函数都可以接受套接字描述符.
@@ -339,16 +339,16 @@ AF_INET域+SOCK_DGRAM套接字类型的默认协议是UDP
 </table>
 </div>
 </div>
-<div id="outline-container-orgd20b059" class="outline-3">
-<h3 id="orgd20b059"><span class="section-number-3">1.3</span> shutdown函数</h3>
+<div id="outline-container-org8f1e1aa" class="outline-3">
+<h3 id="org8f1e1aa"><span class="section-number-3">1.3</span> shutdown函数</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 可以使用函数shutdown来禁止套接字上的输入/输出
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">shutdown</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">how</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">shutdown</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">how</span>);
 </pre>
 </div>
 <p>
@@ -370,39 +370,39 @@ shutdown与close的区别在于:
 </div>
 </div>
 </div>
-<div id="outline-container-orgd742b9f" class="outline-2">
-<h2 id="orgd742b9f"><span class="section-number-2">2</span> 寻址</h2>
+<div id="outline-container-org7a8a4e0" class="outline-2">
+<h2 id="org7a8a4e0"><span class="section-number-2">2</span> 寻址</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 TCP/IP协议栈规定了采用大端字节序,而处理器字节序分大端和小端两种,因此应用程序需要在处理器的字节序与网络字节序之间进行转换.
 </p>
 </div>
 
-<div id="outline-container-org68d878e" class="outline-3">
-<h3 id="org68d878e"><span class="section-number-3">2.1</span> 处理器字节序与网络字节序的转换函数</h3>
+<div id="outline-container-org563922c" class="outline-3">
+<h3 id="org563922c"><span class="section-number-3">2.1</span> 处理器字节序与网络字节序的转换函数</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">arpa/inet.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;arpa/inet.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#20197;&#32593;&#32476;&#23383;&#33410;&#24207;&#34920;&#31034;&#30340;32&#20301;&#25972;&#22411;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">uint32_t</span> <span style="color: #bc6ec5; font-weight: bold;">htonl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">uint32_t</span> <span style="color: #7590db;">hostint32</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#20197;&#32593;&#32476;&#23383;&#33410;&#24207;&#34920;&#31034;&#30340;32&#20301;&#25972;&#22411;&#25968; </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">uint32_t</span> <span style="color: #0000ff;">htonl</span>(<span style="color: #228b22;">uint32_t</span> <span style="color: #a0522d;">hostint32</span>);
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#20197;&#32593;&#32476;&#23383;&#33410;&#24207;&#34920;&#31034;&#30340;16&#20301;&#25972;&#22411;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">uint16_t</span> <span style="color: #bc6ec5; font-weight: bold;">htons</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">uint16_t</span> <span style="color: #7590db;">hostint16</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#20197;&#32593;&#32476;&#23383;&#33410;&#24207;&#34920;&#31034;&#30340;16&#20301;&#25972;&#22411;&#25968; </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">uint16_t</span> <span style="color: #0000ff;">htons</span>(<span style="color: #228b22;">uint16_t</span> <span style="color: #a0522d;">hostint16</span>);
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#20197;&#20027;&#26426;&#23383;&#33410;&#24207;&#34920;&#31034;&#30340;32&#20301;&#25972;&#22411;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">uint32_t</span> <span style="color: #bc6ec5; font-weight: bold;">ntohl</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">uint32_t</span> <span style="color: #7590db;">netint32</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#20197;&#20027;&#26426;&#23383;&#33410;&#24207;&#34920;&#31034;&#30340;32&#20301;&#25972;&#22411;&#25968; </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">uint32_t</span> <span style="color: #0000ff;">ntohl</span>(<span style="color: #228b22;">uint32_t</span> <span style="color: #a0522d;">netint32</span>);
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#20197;&#20027;&#26426;&#23383;&#33410;&#24207;&#34920;&#31034;&#30340;16&#20301;&#25972;&#22411;&#25968; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">uint16_t</span> <span style="color: #bc6ec5; font-weight: bold;">ntohs</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">uint16_t</span> <span style="color: #7590db;">netint16</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#36820;&#22238;&#20197;&#20027;&#26426;&#23383;&#33410;&#24207;&#34920;&#31034;&#30340;16&#20301;&#25972;&#22411;&#25968; </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">uint16_t</span> <span style="color: #0000ff;">ntohs</span>(<span style="color: #228b22;">uint16_t</span> <span style="color: #a0522d;">netint16</span>);
 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4b2c3e1" class="outline-3">
-<h3 id="org4b2c3e1"><span class="section-number-3">2.2</span> 地址格式</h3>
+<div id="outline-container-org3807864" class="outline-3">
+<h3 id="org3807864"><span class="section-number-3">2.2</span> 地址格式</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 一个地址用于标识一个特定通讯域的套接字端点,因此地址格式与特定的通讯域相关.
@@ -412,11 +412,11 @@ TCP/IP协议栈规定了采用大端字节序,而处理器字节序分大端和�
 为了使不同格式地址能够传入到套接字函数,地址会被 <b>强制转换为一个通用的地址结构sockaddr</b>:
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr</span><span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">sa_family_t</span> <span style="color: #7590db;">sa_family</span>;        <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">address&#30340;&#21327;&#35758;&#31181;&#31867; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">char</span> <span style="color: #7590db;">sa_data</span><span style="color: #bc6ec5;">[]</span>;               <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#22823;&#23567;&#21487;&#21464;&#30340;&#22320;&#22336; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>
+<pre class="src src-C"><span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr</span>{
+  <span style="color: #228b22;">sa_family_t</span> <span style="color: #a0522d;">sa_family</span>;        <span style="color: #b22222;">/* </span><span style="color: #b22222;">address&#30340;&#21327;&#35758;&#31181;&#31867; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">char</span> <span style="color: #a0522d;">sa_data</span>[];               <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#22823;&#23567;&#21487;&#21464;&#30340;&#22320;&#22336; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #b22222;">*/</span>
+}
 </pre>
 </div>
 
@@ -424,17 +424,17 @@ TCP/IP协议栈规定了采用大端字节序,而处理器字节序分大端和�
 因特网地址定义在&lt;netinet/in.h&gt;头文件中. 在IPv4因特网域(AF_INET)中,套接字的地址用结构sockaddr_in表示:
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr_in</span>
-<span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">sa_family_t</span> <span style="color: #7590db;">sin_family</span>;       <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#22320;&#22336;family </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">in_port_t</span> <span style="color: #7590db;">sin_port</span>;           <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#31471;&#21475;&#21495;,&#23454;&#38469;&#19968;&#33324;&#20026;uint16_t </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">in_addr</span> <span style="color: #7590db;">sin_addr</span>;      <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">IPv4&#22320;&#22336; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<pre class="src src-C"><span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr_in</span>
+{
+  <span style="color: #228b22;">sa_family_t</span> <span style="color: #a0522d;">sin_family</span>;       <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#22320;&#22336;family </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">in_port_t</span> <span style="color: #a0522d;">sin_port</span>;           <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#31471;&#21475;&#21495;,&#23454;&#38469;&#19968;&#33324;&#20026;uint16_t </span><span style="color: #b22222;">*/</span>
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">in_addr</span> <span style="color: #a0522d;">sin_addr</span>;      <span style="color: #b22222;">/* </span><span style="color: #b22222;">IPv4&#22320;&#22336; </span><span style="color: #b22222;">*/</span>
+};
 
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">in_addr</span>
-<span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">in_addr_t</span> <span style="color: #7590db;">s_addr</span>;             <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">IPv4&#22320;&#22336;,&#23454;&#38469;&#19968;&#33324;&#20026;uint32_t </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">in_addr</span>
+{
+  <span style="color: #228b22;">in_addr_t</span> <span style="color: #a0522d;">s_addr</span>;             <span style="color: #b22222;">/* </span><span style="color: #b22222;">IPv4&#22320;&#22336;,&#23454;&#38469;&#19968;&#33324;&#20026;uint32_t </span><span style="color: #b22222;">*/</span>
+};
 </pre>
 </div>
 
@@ -442,33 +442,33 @@ TCP/IP协议栈规定了采用大端字节序,而处理器字节序分大端和�
 IPv6则用结构sockaddr_in6表示:
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr_in6</span><span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">sa_family_t</span> <span style="color: #7590db;">sin6_family</span>;      <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#22320;&#22336;family </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">in_port_t</span> <span style="color: #7590db;">sin6_port</span>;          <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#31471;&#21475;&#21495; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">uint32_t</span> <span style="color: #7590db;">sin6_flowinfo</span>;       <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">traffic class and flow info </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">in6_addr</span> <span style="color: #7590db;">sin6_addr</span>;    <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">IPv6&#22320;&#22336; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">uint32_t</span> <span style="color: #7590db;">sin6_scope_id</span>;       <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">set of interfaces for scope </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<pre class="src src-C"><span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr_in6</span>{
+  <span style="color: #228b22;">sa_family_t</span> <span style="color: #a0522d;">sin6_family</span>;      <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#22320;&#22336;family </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">in_port_t</span> <span style="color: #a0522d;">sin6_port</span>;          <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#31471;&#21475;&#21495; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">uint32_t</span> <span style="color: #a0522d;">sin6_flowinfo</span>;       <span style="color: #b22222;">/* </span><span style="color: #b22222;">traffic class and flow info </span><span style="color: #b22222;">*/</span>
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">in6_addr</span> <span style="color: #a0522d;">sin6_addr</span>;    <span style="color: #b22222;">/* </span><span style="color: #b22222;">IPv6&#22320;&#22336; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">uint32_t</span> <span style="color: #a0522d;">sin6_scope_id</span>;       <span style="color: #b22222;">/* </span><span style="color: #b22222;">set of interfaces for scope </span><span style="color: #b22222;">*/</span>
+};
 
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">in6_addr</span><span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">uint8_t</span> <span style="color: #7590db;">sa_addr</span><span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">16</span><span style="color: #bc6ec5;">]</span>;          <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">IPv6&#22320;&#22336; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">in6_addr</span>{
+  <span style="color: #228b22;">uint8_t</span> <span style="color: #a0522d;">sa_addr</span>[16];          <span style="color: #b22222;">/* </span><span style="color: #b22222;">IPv6&#22320;&#22336; </span><span style="color: #b22222;">*/</span>
+};
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org990a8f9" class="outline-3">
-<h3 id="org990a8f9"><span class="section-number-3">2.3</span> 地址格式转换</h3>
+<div id="outline-container-org26c5584" class="outline-3">
+<h3 id="org26c5584"><span class="section-number-3">2.3</span> 地址格式转换</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 通过inet_ntop能把IPv4和IPv6的地址转换为人能理解的字符串格式
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">arpa/inet.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;arpa/inet.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;&#22320;&#22336;&#23383;&#31526;&#20018;&#25351;&#38024;. &#26684;&#24335;&#26080;&#25928;&#36820;&#22238;0. &#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #bc6ec5; font-weight: bold;">inet_ntop</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">domain</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">addr</span>,<span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">str</span>,<span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">size</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;&#22320;&#22336;&#23383;&#31526;&#20018;&#25351;&#38024;. &#26684;&#24335;&#26080;&#25928;&#36820;&#22238;0. &#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #0000ff;">inet_ntop</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">domain</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">addr</span>,<span style="color: #228b22;">char</span>* <span style="color: #a0522d;">str</span>,<span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">size</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -480,51 +480,51 @@ IPv6则用结构sockaddr_in6表示:
 通过inet_pton能把人理解的字符串格式转换成网络字节序的二进制格式.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">arpa/inet.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;arpa/inet.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#25104;&#21151;,&#36820;&#22238;1;&#26684;&#24335;&#26080;&#25928;&#36820;&#22238;0;&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">inet_pton</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">domian</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">str</span>,<span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">addr</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;&#25104;&#21151;,&#36820;&#22238;1;&#26684;&#24335;&#26080;&#25928;&#36820;&#22238;0;&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">inet_pton</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">domian</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">str</span>,<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">addr</span>);
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1a7bba7" class="outline-3">
-<h3 id="org1a7bba7"><span class="section-number-3">2.4</span> 地址映射</h3>
+<div id="outline-container-orgd280ac7" class="outline-3">
+<h3 id="orgd280ac7"><span class="section-number-3">2.4</span> 地址映射</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 POSIX.1定义了若干新函数,用于将一个主机名和服务器名映射到一个地址或者反之.
 </p>
 </div>
-<div id="outline-container-org073a98f" class="outline-4">
-<h4 id="org073a98f"><span class="section-number-4">2.4.1</span> getaddrinfo</h4>
+<div id="outline-container-orga49dbd4" class="outline-4">
+<h4 id="orga49dbd4"><span class="section-number-4">2.4.1</span> getaddrinfo</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <p>
 getaddrinfo函数允许将一个主机名和服务名映射到一个地址
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
-<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">netdb.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;netdb.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">getaddrinfo</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">host</span>,
-                <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">service</span>,
-                <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">addrinfo</span>* <span style="color: #7590db;">hint</span>,
-                <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">addrinfo</span>** <span style="color: #7590db;">res</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">getaddrinfo</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">host</span>,
+                <span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">service</span>,
+                <span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">addrinfo</span>* <span style="color: #a0522d;">hint</span>,
+                <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">addrinfo</span>** <span style="color: #a0522d;">res</span>);
 
-<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">freeaddrinfo</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">addrinfo</span>* <span style="color: #7590db;">ai</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">void</span> <span style="color: #0000ff;">freeaddrinfo</span>(<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">addrinfo</span>* <span style="color: #a0522d;">ai</span>);
 
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">addrinfo</span>
-<span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">ai_flags</span>;                 <span style="color: #2aa1ae; background-color: #292e34;">/*  */</span>
-  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">ai_family</span>;                <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#22320;&#22336;&#26063;,&#22914;AF_INET,AF_INET6,AF_UNIX...</span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">ai_socktype</span>;              <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">socket&#31867;&#22411;,&#22914;SOCK_STREAM,SOCK_DGRAM,SOCK_SEQPACKET,SOCK_RAW </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">ai_protocol</span>;              <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#21327;&#35758;,&#22914;IPPROTO_TCP,IPPROTO_UDP,IPPROTO_RAW </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">ai_addrlen</span>;         <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#22320;&#22336;&#30340;&#23383;&#33410;&#38271;&#24230; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr</span>* <span style="color: #7590db;">ai_addr</span>;     <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#22320;&#22336; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">ai_canonname</span>;           <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20027;&#26426;&#30340;canonical name </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">addrinfo</span>* <span style="color: #7590db;">ai_next</span>;     <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#21015;&#34920;&#20013;&#30340;&#19979;&#19968;&#20010;addrinfo&#20803;&#32032; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">addrinfo</span>
+{
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">ai_flags</span>;                 <span style="color: #b22222;">/*  */</span>
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">ai_family</span>;                <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#22320;&#22336;&#26063;,&#22914;AF_INET,AF_INET6,AF_UNIX...</span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">ai_socktype</span>;              <span style="color: #b22222;">/* </span><span style="color: #b22222;">socket&#31867;&#22411;,&#22914;SOCK_STREAM,SOCK_DGRAM,SOCK_SEQPACKET,SOCK_RAW </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">ai_protocol</span>;              <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#21327;&#35758;,&#22914;IPPROTO_TCP,IPPROTO_UDP,IPPROTO_RAW </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">ai_addrlen</span>;         <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#22320;&#22336;&#30340;&#23383;&#33410;&#38271;&#24230; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr</span>* <span style="color: #a0522d;">ai_addr</span>;     <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#22320;&#22336; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">ai_canonname</span>;           <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20027;&#26426;&#30340;canonical name </span><span style="color: #b22222;">*/</span>
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">addrinfo</span>* <span style="color: #a0522d;">ai_next</span>;     <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#21015;&#34920;&#20013;&#30340;&#19979;&#19968;&#20010;addrinfo&#20803;&#32032; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #b22222;">*/</span>
+};
 </pre>
 </div>
 <ul class="org-ul">
@@ -589,32 +589,32 @@ ai_flags字段中的标志意义为:
 </ul>
 </div>
 </div>
-<div id="outline-container-org197f62c" class="outline-4">
-<h4 id="org197f62c"><span class="section-number-4">2.4.2</span> gai_strerror</h4>
+<div id="outline-container-org96c5038" class="outline-4">
+<h4 id="org96c5038"><span class="section-number-4">2.4.2</span> gai_strerror</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <p>
 <b>如果getaddrinfo失败,不能使用perror或strerror来生成错误信息,而需要用gai_strerror将返回值转换成错误信息</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #bc6ec5; font-weight: bold;">gai_strerror</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">error</span><span style="color: #4f97d7;">)</span>;
+<pre class="src src-C"><span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span>* <span style="color: #0000ff;">gai_strerror</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">error</span>);
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org898645e" class="outline-4">
-<h4 id="org898645e"><span class="section-number-4">2.4.3</span> getnameinfo</h4>
+<div id="outline-container-orgdb5e583" class="outline-4">
+<h4 id="orgdb5e583"><span class="section-number-4">2.4.3</span> getnameinfo</h4>
 <div class="outline-text-4" id="text-2-4-3">
 <p>
 getnameinfo函数将一个地址转换成一个主机名和服务名
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
-<span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">netdb.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;netdb.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">getnameinfo</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr</span>* <span style="color: #7590db;">addr</span>, <span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">alen</span>,
-                <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">host</span>, <span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">hostlen</span>,
-                <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">service</span>,<span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">servlen</span>,
-                <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flags</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">getnameinfo</span>(<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr</span>* <span style="color: #a0522d;">addr</span>, <span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">alen</span>,
+                <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">host</span>, <span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">hostlen</span>,
+                <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">service</span>,<span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">servlen</span>,
+                <span style="color: #228b22;">int</span> <span style="color: #a0522d;">flags</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -671,17 +671,17 @@ flags参数提供了一些控制翻译的方式
 </div>
 </div>
 </div>
-<div id="outline-container-orgc16c150" class="outline-3">
-<h3 id="orgc16c150"><span class="section-number-3">2.5</span> 将套接字与地址关联</h3>
+<div id="outline-container-orgd1bf382" class="outline-3">
+<h3 id="orgd1bf382"><span class="section-number-3">2.5</span> 将套接字与地址关联</h3>
 <div class="outline-text-3" id="text-2-5">
 </div>
-<div id="outline-container-orgaa4dbbb" class="outline-4">
-<h4 id="orgaa4dbbb"><span class="section-number-4">2.5.1</span> 用bind函数来关联地址和套接字</h4>
+<div id="outline-container-org5f4ed63" class="outline-4">
+<h4 id="org5f4ed63"><span class="section-number-4">2.5.1</span> 用bind函数来关联地址和套接字</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">bind</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr</span>* <span style="color: #7590db;">addr</span>,<span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">len</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">bind</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr</span>* <span style="color: #a0522d;">addr</span>,<span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">len</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -692,13 +692,13 @@ flags参数提供了一些控制翻译的方式
 </ul>
 </div>
 </div>
-<div id="outline-container-org9b6b8a5" class="outline-4">
-<h4 id="org9b6b8a5"><span class="section-number-4">2.5.2</span> getsockname函数来发现绑定到套接字上的地址</h4>
+<div id="outline-container-orge6a450f" class="outline-4">
+<h4 id="orge6a450f"><span class="section-number-4">2.5.2</span> getsockname函数来发现绑定到套接字上的地址</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">getsockname</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr</span>* <span style="color: #7590db;">addr</span>, <span style="color: #ce537a; font-weight: bold;">socklen_t</span>* <span style="color: #7590db;">alenp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">getsockname</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr</span>* <span style="color: #a0522d;">addr</span>, <span style="color: #228b22;">socklen_t</span>* <span style="color: #a0522d;">alenp</span>);
 </pre>
 </div>
 <p>
@@ -706,13 +706,13 @@ flags参数提供了一些控制翻译的方式
 </p>
 </div>
 </div>
-<div id="outline-container-org2115618" class="outline-4">
-<h4 id="org2115618"><span class="section-number-4">2.5.3</span> getperrname函数查找对方的地址</h4>
+<div id="outline-container-orga17d25d" class="outline-4">
+<h4 id="orga17d25d"><span class="section-number-4">2.5.3</span> getperrname函数查找对方的地址</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">getpeername</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr</span>* <span style="color: #7590db;">addr</span>,<span style="color: #ce537a; font-weight: bold;">socklen_t</span>* <span style="color: #7590db;">alenp</span><span style="color: #4f97d7;">)</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">getpeername</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr</span>* <span style="color: #a0522d;">addr</span>,<span style="color: #228b22;">socklen_t</span>* <span style="color: #a0522d;">alenp</span>)
 </pre>
 </div>
 <p>
@@ -722,20 +722,20 @@ flags参数提供了一些控制翻译的方式
 </div>
 </div>
 </div>
-<div id="outline-container-orgde6e4b9" class="outline-2">
-<h2 id="orgde6e4b9"><span class="section-number-2">3</span> 建立连接</h2>
+<div id="outline-container-org0164fb3" class="outline-2">
+<h2 id="org0164fb3"><span class="section-number-2">3</span> 建立连接</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org128c2d0" class="outline-3">
-<h3 id="org128c2d0"><span class="section-number-3">3.1</span> 客户端建立连接</h3>
+<div id="outline-container-org1890898" class="outline-3">
+<h3 id="org1890898"><span class="section-number-3">3.1</span> 客户端建立连接</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 在客户端上使用connect函数来建立与服务端之间的连接
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">connect</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr</span>* <span style="color: #7590db;">addr</span>,<span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">len</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">connect</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr</span>* <span style="color: #a0522d;">addr</span>,<span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">len</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -746,17 +746,17 @@ flags参数提供了一些控制翻译的方式
 </div>
 </div>
 
-<div id="outline-container-org6eff450" class="outline-3">
-<h3 id="org6eff450"><span class="section-number-3">3.2</span> 服务端建立连接</h3>
+<div id="outline-container-org67db389" class="outline-3">
+<h3 id="org67db389"><span class="section-number-3">3.2</span> 服务端建立连接</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 在服务端调用listen函数监听端口
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;0,&#19981;&#25104;&#21151;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">listen</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">backlog</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;0,&#19981;&#25104;&#21151;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">listen</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">backlog</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -771,10 +771,10 @@ flags参数提供了一些控制翻译的方式
 服务端使用accept函数获取连接请求并建立连接
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#25104;&#21151;&#21017;&#36820;&#22238;&#26032;&#30340;&#24050;&#24314;&#31435;&#36830;&#25509;&#30340;&#22871;&#25509;&#23383;&#25551;&#36848;&#31526; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">accept</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr</span>* <span style="color: #7590db;">addr</span>,<span style="color: #ce537a; font-weight: bold;">socklen_t</span>* <span style="color: #7590db;">len</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;&#25104;&#21151;&#21017;&#36820;&#22238;&#26032;&#30340;&#24050;&#24314;&#31435;&#36830;&#25509;&#30340;&#22871;&#25509;&#23383;&#25551;&#36848;&#31526; </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">accept</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr</span>* <span style="color: #a0522d;">addr</span>,<span style="color: #228b22;">socklen_t</span>* <span style="color: #a0522d;">len</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -787,24 +787,24 @@ flags参数提供了一些控制翻译的方式
 </div>
 </div>
 
-<div id="outline-container-orgfc86439" class="outline-2">
-<h2 id="orgfc86439"><span class="section-number-2">4</span> 数据传输</h2>
+<div id="outline-container-orgf8d993b" class="outline-2">
+<h2 id="orgf8d993b"><span class="section-number-2">4</span> 数据传输</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 除了read和write外,还有三对为数据传递而设计的套接字函数
 </p>
 </div>
 
-<div id="outline-container-orgbb646d5" class="outline-3">
-<h3 id="orgbb646d5"><span class="section-number-3">4.1</span> send和recv</h3>
+<div id="outline-container-org3c848c1" class="outline-3">
+<h3 id="org3c848c1"><span class="section-number-3">4.1</span> send和recv</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 send和write很类似,但可以指定标志来改变传输数据的方式
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">send</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">buf</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">nbytes</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flags</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">send</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">buf</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">nbytes</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flags</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -877,9 +877,9 @@ flag参数说明
 recv函数与read类似,但recv可以指定标志来控制如何接受数据.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">recv</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">buf</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">nbytes</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flags</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">recv</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">buf</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">nbytes</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flags</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -946,18 +946,18 @@ recv函数与read类似,但recv可以指定标志来控制如何接受数据.
 </div>
 </div>
 
-<div id="outline-container-org8e59643" class="outline-3">
-<h3 id="org8e59643"><span class="section-number-3">4.2</span> sendto和recvfrom</h3>
+<div id="outline-container-org6ae484a" class="outline-3">
+<h3 id="org6ae484a"><span class="section-number-3">4.2</span> sendto和recvfrom</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 sendto和send很类似,区别在于sendto可以在无连接的套接字上指定一个目标地址.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#25104;&#21151;&#36820;&#22238;&#21457;&#36865;&#30340;&#23383;&#33410;&#25968;,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">sendto</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">buf</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">nbytes</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flags</span>,
-               <span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr</span>* <span style="color: #7590db;">destaddr</span>,<span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">destlen</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#33509;&#25104;&#21151;&#36820;&#22238;&#21457;&#36865;&#30340;&#23383;&#33410;&#25968;,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">sendto</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">buf</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">nbytes</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flags</span>,
+               <span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr</span>* <span style="color: #a0522d;">destaddr</span>,<span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">destlen</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -968,10 +968,10 @@ sendto和send很类似,区别在于sendto可以在无连接的套接字上指定
 recvfrom也可以在无连接的套接字上指定一个目标地址
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">recvfrom</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">buf</span>,<span style="color: #ce537a; font-weight: bold;">size_t</span> <span style="color: #7590db;">len</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flags</span>,
-                 <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">sockaddr</span>* <span style="color: #7590db;">addr</span>,<span style="color: #ce537a; font-weight: bold;">socklen_t</span>* <span style="color: #7590db;">addrlen</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">recvfrom</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">buf</span>,<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">len</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flags</span>,
+                 <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sockaddr</span>* <span style="color: #a0522d;">addr</span>,<span style="color: #228b22;">socklen_t</span>* <span style="color: #a0522d;">addrlen</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -980,29 +980,29 @@ recvfrom也可以在无连接的套接字上指定一个目标地址
 </div>
 </div>
 
-<div id="outline-container-orgdbf52dc" class="outline-3">
-<h3 id="orgdbf52dc"><span class="section-number-3">4.3</span> sendmsg和recvmsg</h3>
+<div id="outline-container-orgfaebc5e" class="outline-3">
+<h3 id="orgfaebc5e"><span class="section-number-3">4.3</span> sendmsg和recvmsg</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 调用msghdr结构的sendmsg可以指定多重缓冲区传输数据,这和writev函数很类似
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;&#21457;&#36865;&#30340;&#23383;&#33410;&#25968;,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">sendmsg</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">msghdr</span>* <span style="color: #7590db;">msg</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flags</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;&#21457;&#36865;&#30340;&#23383;&#33410;&#25968;,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">sendmsg</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">msghdr</span>* <span style="color: #a0522d;">msg</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flags</span>);
 
-<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">msghd</span>
-<span style="color: #4f97d7;">{</span>
-  <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">msg_name</span>;               <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">optional address </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">msg_namelen</span>;        <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">address size in bytes </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">iovec</span>* <span style="color: #7590db;">msg_iov</span>;        <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">array of IO buffer </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">msg_iovlen</span>;               <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">number of elements in array </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">msg_control</span>;            <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38468;&#21152;&#25968;&#25454; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">msg_controllen</span>;     <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#38468;&#21152;&#25968;&#25454;&#30340;&#23383;&#33410;&#38271;&#24230; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">msg_flags</span>;                <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">flags for received message </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #4f97d7;">}</span>;
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">msghd</span>
+{
+  <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">msg_name</span>;               <span style="color: #b22222;">/* </span><span style="color: #b22222;">optional address </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">msg_namelen</span>;        <span style="color: #b22222;">/* </span><span style="color: #b22222;">address size in bytes </span><span style="color: #b22222;">*/</span>
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">iovec</span>* <span style="color: #a0522d;">msg_iov</span>;        <span style="color: #b22222;">/* </span><span style="color: #b22222;">array of IO buffer </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">msg_iovlen</span>;               <span style="color: #b22222;">/* </span><span style="color: #b22222;">number of elements in array </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">msg_control</span>;            <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38468;&#21152;&#25968;&#25454; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">msg_controllen</span>;     <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#38468;&#21152;&#25968;&#25454;&#30340;&#23383;&#33410;&#38271;&#24230; </span><span style="color: #b22222;">*/</span>
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">msg_flags</span>;                <span style="color: #b22222;">/* </span><span style="color: #b22222;">flags for received message </span><span style="color: #b22222;">*/</span>
+  <span style="color: #b22222;">/* </span><span style="color: #b22222;">&#20854;&#20182;&#25104;&#21592; </span><span style="color: #b22222;">*/</span>
+};
 </pre>
 </div>
 
@@ -1011,9 +1011,9 @@ recvfrom也可以在无连接的套接字上指定一个目标地址
 recvmsg类似readv,可以将接收到的数据送入多个缓冲区.
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">ssize_t</span> <span style="color: #bc6ec5; font-weight: bold;">recvmsg</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #4f97d7; font-weight: bold;">struct</span> <span style="color: #ce537a; font-weight: bold;">msghdr</span>* <span style="color: #7590db;">msg</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">flags</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">recvmsg</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">msghdr</span>* <span style="color: #a0522d;">msg</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">flags</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -1066,22 +1066,22 @@ recvmsg类似readv,可以将接收到的数据送入多个缓冲区.
 </div>
 </div>
 
-<div id="outline-container-orgb9ddc62" class="outline-2">
-<h2 id="orgb9ddc62"><span class="section-number-2">5</span> 套接字选项</h2>
+<div id="outline-container-org725b9a5" class="outline-2">
+<h2 id="org725b9a5"><span class="section-number-2">5</span> 套接字选项</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 套接字选项可以控制套接字行为,
 </p>
 </div>
 
-<div id="outline-container-org1979d99" class="outline-3">
-<h3 id="org1979d99"><span class="section-number-3">5.1</span> setsockopt函数设置套接字选项</h3>
+<div id="outline-container-orge1a2be3" class="outline-3">
+<h3 id="orge1a2be3"><span class="section-number-3">5.1</span> setsockopt函数设置套接字选项</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#25104;&#21151;&#36820;&#22238;0,&#22833;&#36133;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">setsockopt</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">level</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">option</span>,<span style="color: #4f97d7; font-weight: bold;">const</span> <span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">val</span>,<span style="color: #ce537a; font-weight: bold;">socklen_t</span> <span style="color: #7590db;">len</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#25104;&#21151;&#36820;&#22238;0,&#22833;&#36133;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">setsockopt</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">level</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">option</span>,<span style="color: #a020f0;">const</span> <span style="color: #228b22;">void</span>* <span style="color: #a0522d;">val</span>,<span style="color: #228b22;">socklen_t</span> <span style="color: #a0522d;">len</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -1245,9 +1245,9 @@ recvmsg类似readv,可以将接收到的数据送入多个缓冲区.
 可以使用getsockopt函数来查看选项的当前值
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">getsockopt</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">level</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">option</span>,<span style="color: #ce537a; font-weight: bold;">void</span>* <span style="color: #7590db;">val</span>,<span style="color: #ce537a; font-weight: bold;">socklen_t</span>* <span style="color: #7590db;">lenp</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">getsockopt</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">level</span>,<span style="color: #228b22;">int</span> <span style="color: #a0522d;">option</span>,<span style="color: #228b22;">void</span>* <span style="color: #a0522d;">val</span>,<span style="color: #228b22;">socklen_t</span>* <span style="color: #a0522d;">lenp</span>);
 </pre>
 </div>
 <ul class="org-ul">
@@ -1257,8 +1257,8 @@ recvmsg类似readv,可以将接收到的数据送入多个缓冲区.
 </div>
 </div>
 
-<div id="outline-container-org2b91d6a" class="outline-2">
-<h2 id="org2b91d6a"><span class="section-number-2">6</span> 带外数据</h2>
+<div id="outline-container-orgfd9fbd3" class="outline-2">
+<h2 id="orgfd9fbd3"><span class="section-number-2">6</span> 带外数据</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 带外数据是一些通讯协议所支持的可选功能,它具有比普通数据更高优先级的数据传输. 因此带外数据也被成为紧急数据.
@@ -1288,10 +1288,10 @@ TCP支持一个字节的带外数据,但UDP不支持.
 使用函数sockatmark可以判断将要读取的下一个字节是否为带外数据
 </p>
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;sys/socket.h&gt;</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">&#23558;&#35201;&#35835;&#21462;&#24102;&#22806;&#25968;&#25454;&#36820;&#22238;1,&#21542;&#21017;&#36820;&#22238;0,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #2aa1ae; background-color: #292e34;">*/</span>
-<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">sockatmark</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sockfd</span><span style="color: #4f97d7;">)</span>;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">&#23558;&#35201;&#35835;&#21462;&#24102;&#22806;&#25968;&#25454;&#36820;&#22238;1,&#21542;&#21017;&#36820;&#22238;0,&#20986;&#38169;&#36820;&#22238;-1 </span><span style="color: #b22222;">*/</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">sockatmark</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sockfd</span>);
 </pre>
 </div>
 </div>
@@ -1300,77 +1300,49 @@ TCP支持一个字节的带外数据,但UDP不支持.
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2015-06-08</span>
-            <span title="last modification date" class="post-info">2016-10-24</span>
-            <span title="tags" class="post-info">:N/A:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2015-06-08</span>
+    <span title="last modification date" class="post-info">2016-10-24</span>
+    <span title="tags" class="post-info">N/A</span>
+    <span title="author" class="post-info">DarkSun</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2015/06/08/网络ipc/";
-         var disqus_url = "https://lujun9972.github.io/blog/2015/06/08/网络ipc/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2015/06/08/网络ipc/";
+     var disqus_url = "https://lujun9972.github.io/blog/2015/06/08/网络ipc/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">DarkSun</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">DarkSun</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

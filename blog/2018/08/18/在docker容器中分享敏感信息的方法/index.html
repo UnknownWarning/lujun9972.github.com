@@ -3,22 +3,24 @@
 <head>
   <title>在docker容器中分享敏感信息的方法 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴,docker" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,19 +54,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc024d80">直接将敏感信息保存到镜像中</a></li>
-<li><a href="#org01b23e3">通过环境变量传递敏感信息</a></li>
-<li><a href="#orgd0146b3">将敏感信息以文件的形式存储到卷中</a></li>
-<li><a href="#org7a2d150">使用第三方键值存储应用</a></li>
+<li><a href="#org14315c1">直接将敏感信息保存到镜像中</a></li>
+<li><a href="#orga69696f">通过环境变量传递敏感信息</a></li>
+<li><a href="#org2fe3650">将敏感信息以文件的形式存储到卷中</a></li>
+<li><a href="#org773e5fb">使用第三方键值存储应用</a></li>
 </ul>
 </div>
 </div>
 <p>
 摘自《Docker开发指南》9.7节"分享秘密信息"
 </p>
-<div id="outline-container-orgc024d80" class="outline-2">
-<h2 id="orgc024d80">直接将敏感信息保存到镜像中</h2>
-<div class="outline-text-2" id="text-orgc024d80">
+<div id="outline-container-org14315c1" class="outline-2">
+<h2 id="org14315c1">直接将敏感信息保存到镜像中</h2>
+<div class="outline-text-2" id="text-org14315c1">
 <p>
 这是最简单的方法，但这意味着任何能够获取镜像的人都能看到敏感信息，而且它还无法被删除，一直都会存在于上层镜像中。
 </p>
@@ -77,14 +77,14 @@
 </div>
 </div>
 
-<div id="outline-container-org01b23e3" class="outline-2">
-<h2 id="org01b23e3">通过环境变量传递敏感信息</h2>
-<div class="outline-text-2" id="text-org01b23e3">
+<div id="outline-container-orga69696f" class="outline-2">
+<h2 id="orga69696f">通过环境变量传递敏感信息</h2>
+<div class="outline-text-2" id="text-orga69696f">
 <p>
 这是 “<a href="http://12factor.net">十二要素应用宣言</a>” 推荐的方法，使用起来也很简单，只需要把敏感信息作为参数传递给docker run即可
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">docker run -d -e <span style="color: #7590db;">API_TOKEN</span>=xxxxxxxxxxxx image
+<pre class="src src-shell">docker run -d -e <span style="color: #a0522d;">API_TOKEN</span>=xxxxxxxxxxxx image
 </pre>
 </div>
 
@@ -99,9 +99,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd0146b3" class="outline-2">
-<h2 id="orgd0146b3">将敏感信息以文件的形式存储到卷中</h2>
-<div class="outline-text-2" id="text-orgd0146b3">
+<div id="outline-container-org2fe3650" class="outline-2">
+<h2 id="org2fe3650">将敏感信息以文件的形式存储到卷中</h2>
+<div class="outline-text-2" id="text-org2fe3650">
 <div class="org-src-container">
 <pre class="src src-shell">docker run -d -v /secret-file:/secret-file:ro image
 </pre>
@@ -114,9 +114,9 @@
 </div>
 </div>
 
-<div id="outline-container-org7a2d150" class="outline-2">
-<h2 id="org7a2d150">使用第三方键值存储应用</h2>
-<div class="outline-text-2" id="text-org7a2d150">
+<div id="outline-container-org773e5fb" class="outline-2">
+<h2 id="org773e5fb">使用第三方键值存储应用</h2>
+<div class="outline-text-2" id="text-org773e5fb">
 <p>
 第三方键值存储容器可以对容器进行身份验证，还可以实现灵活管理敏感信息，是目前来说最好的解决方案.
 </p>
@@ -130,77 +130,49 @@
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-08-18</span>
-            <span title="last modification date" class="post-info">2018-08-18</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/docker">docker</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-08-18</span>
+    <span title="last modification date" class="post-info">2018-08-18</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/docker">docker</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/08/18/在docker容器中分享敏感信息的方法/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/08/18/在docker容器中分享敏感信息的方法/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/08/18/在docker容器中分享敏感信息的方法/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/08/18/在docker容器中分享敏感信息的方法/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

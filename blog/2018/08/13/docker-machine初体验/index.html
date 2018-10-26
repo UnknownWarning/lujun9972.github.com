@@ -3,22 +3,24 @@
 <head>
   <title>docker-machine初体验 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴,docker" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf937ab2">在本地创建带Docker的虚拟机</a></li>
-<li><a href="#orgd07e568">在远程主机上安装Docker</a></li>
-<li><a href="#org0ab2592">管理Docker Machine</a>
+<li><a href="#orgec15392">在本地创建带Docker的虚拟机</a></li>
+<li><a href="#org05c04c6">在远程主机上安装Docker</a></li>
+<li><a href="#org878bd2a">管理Docker Machine</a>
 <ul>
-<li><a href="#orgcdbd63b">查看被管主机信息</a></li>
-<li><a href="#org51462d8">升级被管主机</a></li>
-<li><a href="#orge9a6255">停止被管主机</a></li>
-<li><a href="#org0994822">启动被管主机</a></li>
-<li><a href="#orgf451007">删除被管主机</a></li>
-<li><a href="#org403dde5">管理远程Docker</a></li>
+<li><a href="#orgf5953fc">查看被管主机信息</a></li>
+<li><a href="#orgb9f692b">升级被管主机</a></li>
+<li><a href="#org1aea02c">停止被管主机</a></li>
+<li><a href="#orgf198591">启动被管主机</a></li>
+<li><a href="#org7440e00">删除被管主机</a></li>
+<li><a href="#orgebfc429">管理远程Docker</a></li>
 </ul>
 </li>
 </ul>
@@ -83,9 +83,9 @@ amazonec2        digitalocean     generic          hyperv           rackspace   
 azure            exoscale         google           openstack        softlayer        vmwarefusion     vmwarevsphere
 </pre>
 
-<div id="outline-container-orgf937ab2" class="outline-2">
-<h2 id="orgf937ab2">在本地创建带Docker的虚拟机</h2>
-<div class="outline-text-2" id="text-orgf937ab2">
+<div id="outline-container-orgec15392" class="outline-2">
+<h2 id="orgec15392">在本地创建带Docker的虚拟机</h2>
+<div class="outline-text-2" id="text-orgec15392">
 <p>
 通过 <code>docker-machine create</code> 命令可以创建主机并安装虚拟机，比如下面命令会创建三个使用VirtualBox驱动的主机并且在每台主机上安装好Docker
 </p>
@@ -184,9 +184,9 @@ To see how to connect your Docker Client to the Docker Engine running on this vi
 </div>
 </div>
 
-<div id="outline-container-orgd07e568" class="outline-2">
-<h2 id="orgd07e568">在远程主机上安装Docker</h2>
-<div class="outline-text-2" id="text-orgd07e568">
+<div id="outline-container-org05c04c6" class="outline-2">
+<h2 id="org05c04c6">在远程主机上安装Docker</h2>
+<div class="outline-text-2" id="text-org05c04c6">
 <p>
 若远程主机是在Docker Machine支持的云服务商的，那么可以直接通过对应的驱动来帮助安装Docker，方法跟上面很类似。
 </p>
@@ -204,9 +204,9 @@ To see how to connect your Docker Client to the Docker Engine running on this vi
 在目标主机创建一个无需输入密码即可sudo操作的用户
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo adduser $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">user</span><span style="color: #4f97d7;">}</span>
-sudo usermod -a -G sudo wheel $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">user</span><span style="color: #4f97d7;">}</span>
-<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"${user} ALL=(ALL:ALL) NOPASSWD: ALL"</span> &gt;&gt;/etc/sudoers
+<pre class="src src-shell">sudo adduser ${<span style="color: #a0522d;">user</span>}
+sudo usermod -a -G sudo wheel ${<span style="color: #a0522d;">user</span>}
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"${user} ALL=(ALL:ALL) NOPASSWD: ALL"</span> &gt;&gt;/etc/sudoers
 </pre>
 </div></li>
 
@@ -214,7 +214,7 @@ sudo usermod -a -G sudo wheel $<span style="color: #4f97d7;">{</span><span style
 在目标主机上添加密钥认证，使得登陆远程主机不同输入密码
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ssh-copy-id $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">user</span><span style="color: #4f97d7;">}</span>@$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">remote_host</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">ssh-copy-id ${<span style="color: #a0522d;">user</span>}@${<span style="color: #a0522d;">remote_host</span>}
 </pre>
 </div></li>
 </ol>
@@ -224,11 +224,11 @@ sudo usermod -a -G sudo wheel $<span style="color: #4f97d7;">{</span><span style
 准备工作完成后，我们可以在本地主机上运行下面命令
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">docker-machine create -d generic <span style="color: #2d9574;">\</span>
-    --generic-ip-address=xxx.xxx.xxx.xxx <span style="color: #2d9574;">\</span>
-    --generic-ssh-user=$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">user</span><span style="color: #4f97d7;">}</span> <span style="color: #2d9574;">\</span>
-    --generic-ssh-key ~/.ssh/id_rsa <span style="color: #2d9574;">\</span>
-    $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">docker-machine create -d generic <span style="color: #8b2252;">\</span>
+    --generic-ip-address=xxx.xxx.xxx.xxx <span style="color: #8b2252;">\</span>
+    --generic-ssh-user=${<span style="color: #a0522d;">user</span>} <span style="color: #8b2252;">\</span>
+    --generic-ssh-key ~/.ssh/id_rsa <span style="color: #8b2252;">\</span>
+    ${<span style="color: #a0522d;">name</span>}
 </pre>
 </div>
 
@@ -238,13 +238,13 @@ sudo usermod -a -G sudo wheel $<span style="color: #4f97d7;">{</span><span style
 </div>
 </div>
 
-<div id="outline-container-org0ab2592" class="outline-2">
-<h2 id="org0ab2592">管理Docker Machine</h2>
-<div class="outline-text-2" id="text-org0ab2592">
+<div id="outline-container-org878bd2a" class="outline-2">
+<h2 id="org878bd2a">管理Docker Machine</h2>
+<div class="outline-text-2" id="text-org878bd2a">
 </div>
-<div id="outline-container-orgcdbd63b" class="outline-3">
-<h3 id="orgcdbd63b">查看被管主机信息</h3>
-<div class="outline-text-3" id="text-orgcdbd63b">
+<div id="outline-container-orgf5953fc" class="outline-3">
+<h3 id="orgf5953fc">查看被管主机信息</h3>
+<div class="outline-text-3" id="text-orgf5953fc">
 <p>
 Docker Machine可以用来列出、检查和升级被管主机，我们可以通过 <code>ls</code> 子命令来获得被管理的机器列表
 </p>
@@ -271,7 +271,7 @@ ACTIVE这一列若带星号，则表示这台机器是活跃的，也就是任�
 类似于 <code>docker</code>, 我们也可以使用 <code>inspect</code> 子命令来查看某台主机的配置
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">docker-machine inspect --format <span style="color: #2d9574;">"{{.Driver.IPAddress}}"</span> host2
+<pre class="src src-shell">docker-machine inspect --format <span style="color: #8b2252;">"{{.Driver.IPAddress}}"</span> host2
 </pre>
 </div>
 
@@ -296,9 +296,9 @@ ACTIVE这一列若带星号，则表示这台机器是活跃的，也就是任�
 </div>
 
 
-<div id="outline-container-org51462d8" class="outline-3">
-<h3 id="org51462d8">升级被管主机</h3>
-<div class="outline-text-3" id="text-org51462d8">
+<div id="outline-container-orgb9f692b" class="outline-3">
+<h3 id="orgb9f692b">升级被管主机</h3>
+<div class="outline-text-3" id="text-orgb9f692b">
 <div class="org-src-container">
 <pre class="src src-shell">docker-machine upgrade host1
 </pre>
@@ -320,9 +320,9 @@ Restarting docker...
 </div>
 </div>
 
-<div id="outline-container-orge9a6255" class="outline-3">
-<h3 id="orge9a6255">停止被管主机</h3>
-<div class="outline-text-3" id="text-orge9a6255">
+<div id="outline-container-org1aea02c" class="outline-3">
+<h3 id="org1aea02c">停止被管主机</h3>
+<div class="outline-text-3" id="text-org1aea02c">
 <p>
 使用 <code>stop</code> 子命令来停止被管主机
 </p>
@@ -343,9 +343,9 @@ Machine "host2" was stopped.
 </div>
 </div>
 
-<div id="outline-container-org0994822" class="outline-3">
-<h3 id="org0994822">启动被管主机</h3>
-<div class="outline-text-3" id="text-org0994822">
+<div id="outline-container-orgf198591" class="outline-3">
+<h3 id="orgf198591">启动被管主机</h3>
+<div class="outline-text-3" id="text-orgf198591">
 <p>
 使用 <code>start</code> 子命令来启动被停止的主机
 </p>
@@ -367,9 +367,9 @@ Started machines may have new IP addresses. You may need to re-run the `docker-m
 </div>
 </div>
 
-<div id="outline-container-orgf451007" class="outline-3">
-<h3 id="orgf451007">删除被管主机</h3>
-<div class="outline-text-3" id="text-orgf451007">
+<div id="outline-container-org7440e00" class="outline-3">
+<h3 id="org7440e00">删除被管主机</h3>
+<div class="outline-text-3" id="text-org7440e00">
 <p>
 使用 <code>rm</code> 子命令来删除被管主机
 </p>
@@ -415,9 +415,9 @@ host3虚拟机被干掉了。
 </div>
 </div>
 
-<div id="outline-container-org403dde5" class="outline-3">
-<h3 id="org403dde5">管理远程Docker</h3>
-<div class="outline-text-3" id="text-org403dde5">
+<div id="outline-container-orgebfc429" class="outline-3">
+<h3 id="orgebfc429">管理远程Docker</h3>
+<div class="outline-text-3" id="text-orgebfc429">
 <p>
 我们只需要更改更改环境变量就能让Docker客户端连接上远程主机上的Docker Daemon来进行操作。
 </p>
@@ -436,8 +436,8 @@ Docker Machine提供了一个 <code>env</code> 子命令来告诉你输入哪些
 export DOCKER_HOST="tcp://192.168.99.100:2376"
 export DOCKER_CERT_PATH="<span style="font-style: italic;">/home/lujun9972/</span>.docker/machine/machines/host1"
 export DOCKER_MACHINE_NAME="host1"
-<span style="color: #2aa1ae; background-color: #292e34;"># Run this command to configure your shell: </span>
-<span style="color: #2aa1ae; background-color: #292e34;"># eval $(docker-machine env host1)</span>
+<span style="color: #b22222;"># Run this command to configure your shell: </span>
+<span style="color: #b22222;"># eval $(docker-machine env host1)</span>
 </pre>
 </div>
 
@@ -446,18 +446,18 @@ export DOCKER_MACHINE_NAME="host1"
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#28608;&#27963;host1&#21069;"</span>
-<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"check docker machines"</span>
+<pre class="src src-shell"><span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"&#28608;&#27963;host1&#21069;"</span>
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"check docker machines"</span>
 docker-machine ls
-<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"check docker images"</span>
-docker images |head -n <span style="color: #a45bad;">5</span>
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"check docker images"</span>
+docker images |head -n 5
 
-<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#28608;&#27963;host1&#21518;"</span>
-<span style="color: #4f97d7;">eval</span> $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">docker-machine</span> env host1<span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"check docker machines"</span>
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"&#28608;&#27963;host1&#21518;"</span>
+<span style="color: #483d8b;">eval</span> $(<span style="color: #ff00ff;">docker-machine</span> env host1)
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"check docker machines"</span>
 docker-machine ls
-<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"check docker images"</span>
-docker images |head -n <span style="color: #a45bad;">5</span>
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"check docker images"</span>
+docker images |head -n 5
 </pre>
 </div>
 
@@ -500,77 +500,49 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-08-13</span>
-            <span title="last modification date" class="post-info">2018-08-18</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/docker">docker</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-08-13</span>
+    <span title="last modification date" class="post-info">2018-08-18</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/docker">docker</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/08/13/docker-machine初体验/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/08/13/docker-machine初体验/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/08/13/docker-machine初体验/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/08/13/docker-machine初体验/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

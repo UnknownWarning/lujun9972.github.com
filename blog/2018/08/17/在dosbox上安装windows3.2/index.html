@@ -3,22 +3,24 @@
 <head>
   <title>在DosBox上安装windows3.2 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,44 +54,44 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgafd7c24">安装DOS6.22</a>
+<li><a href="#org07073ee">安装DOS6.22</a>
 <ul>
-<li><a href="#org1cb2df5">下载DOS启动镜像</a></li>
-<li><a href="#org6183326">创建一个磁盘镜像作为C盘</a>
+<li><a href="#org6b0fcc9">下载DOS启动镜像</a></li>
+<li><a href="#org42c0a15">创建一个磁盘镜像作为C盘</a>
 <ul>
-<li><a href="#org9d4e04f">创建镜像文件</a></li>
-<li><a href="#org343dcaf">打开 <code>~/.dosbox/dosbox-0.74.conf</code> 在 <code>[autoexec]</code> 节下添加如下内容</a></li>
+<li><a href="#org5705b5d">创建镜像文件</a></li>
+<li><a href="#org27c5697">打开 <code>~/.dosbox/dosbox-0.74.conf</code> 在 <code>[autoexec]</code> 节下添加如下内容</a></li>
 </ul>
 </li>
-<li><a href="#org08d029d">安装dos6.22</a>
+<li><a href="#orga617905">安装dos6.22</a>
 <ul>
-<li><a href="#org5779a7f">启动dosbox，开始安装dos6.22</a></li>
-<li><a href="#org5a65f8e">更改配置，从硬盘镜像引导系统</a></li>
+<li><a href="#orge8bc0b5">启动dosbox，开始安装dos6.22</a></li>
+<li><a href="#orgac7ae7a">更改配置，从硬盘镜像引导系统</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org0257aa7">安装Windows3.2</a>
+<li><a href="#orgf76a78f">安装Windows3.2</a>
 <ul>
-<li><a href="#org02cf99c">下载Windows3.2安装文件</a></li>
-<li><a href="#org574a281">挂载 DOSBOX 的硬盘镜像文件，将 windows 安装文件拷贝进去</a></li>
-<li><a href="#org0a02c7f">安装Windows3.2</a></li>
-<li><a href="#orgbe3c1a9">设置启动DOSBOX自动启动windows</a></li>
-<li><a href="#org8652898">安装显卡驱动</a></li>
-<li><a href="#org71daecb">设置声音</a></li>
+<li><a href="#org5831056">下载Windows3.2安装文件</a></li>
+<li><a href="#org46cc07d">挂载 DOSBOX 的硬盘镜像文件，将 windows 安装文件拷贝进去</a></li>
+<li><a href="#org56252ec">安装Windows3.2</a></li>
+<li><a href="#orgd8889a9">设置启动DOSBOX自动启动windows</a></li>
+<li><a href="#org2a6bb55">安装显卡驱动</a></li>
+<li><a href="#org1fa3da4">设置声音</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgafd7c24" class="outline-2">
-<h2 id="orgafd7c24">安装DOS6.22</h2>
-<div class="outline-text-2" id="text-orgafd7c24">
+<div id="outline-container-org07073ee" class="outline-2">
+<h2 id="org07073ee">安装DOS6.22</h2>
+<div class="outline-text-2" id="text-org07073ee">
 </div>
-<div id="outline-container-org1cb2df5" class="outline-3">
-<h3 id="org1cb2df5">下载DOS启动镜像</h3>
-<div class="outline-text-3" id="text-org1cb2df5">
+<div id="outline-container-org6b0fcc9" class="outline-3">
+<h3 id="org6b0fcc9">下载DOS启动镜像</h3>
+<div class="outline-text-3" id="text-org6b0fcc9">
 <p>
 下载并解压DOS安装的软盘镜像
 </p>
@@ -117,7 +117,7 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">cd</span> dos622
+<pre class="src src-shell"><span style="color: #483d8b;">cd</span> dos622
 ls
 </pre>
 </div>
@@ -131,34 +131,34 @@ dos3.img
 </div>
 </div>
 </div>
-<div id="outline-container-org6183326" class="outline-3">
-<h3 id="org6183326">创建一个磁盘镜像作为C盘</h3>
-<div class="outline-text-3" id="text-org6183326">
+<div id="outline-container-org42c0a15" class="outline-3">
+<h3 id="org42c0a15">创建一个磁盘镜像作为C盘</h3>
+<div class="outline-text-3" id="text-org42c0a15">
 <p>
 我们将会将这个磁盘镜像挂载为C盘，并在上面安装操作系统
 </p>
 </div>
 
-<div id="outline-container-org9d4e04f" class="outline-4">
-<h4 id="org9d4e04f">创建镜像文件</h4>
-<div class="outline-text-4" id="text-org9d4e04f">
+<div id="outline-container-org5705b5d" class="outline-4">
+<h4 id="org5705b5d">创建镜像文件</h4>
+<div class="outline-text-4" id="text-org5705b5d">
 <p>
 这个磁盘文件不需要太大，256M已经算是很大了:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">dd <span style="color: #7590db;">if</span>=/dev/zero <span style="color: #7590db;">of</span>=~/Dosbox/Windows3.2.img <span style="color: #7590db;">bs</span>=<span style="color: #a45bad;">1M</span> <span style="color: #7590db;">count</span>=<span style="color: #a45bad;">256</span> 
+<pre class="src src-shell">dd <span style="color: #a0522d;">if</span>=/dev/zero <span style="color: #a0522d;">of</span>=~/Dosbox/Windows3.2.img <span style="color: #a0522d;">bs</span>=1M <span style="color: #a0522d;">count</span>=256 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org343dcaf" class="outline-4">
-<h4 id="org343dcaf">打开 <code>~/.dosbox/dosbox-0.74.conf</code> 在 <code>[autoexec]</code> 节下添加如下内容</h4>
-<div class="outline-text-4" id="text-org343dcaf">
+<div id="outline-container-org27c5697" class="outline-4">
+<h4 id="org27c5697">打开 <code>~/.dosbox/dosbox-0.74.conf</code> 在 <code>[autoexec]</code> 节下添加如下内容</h4>
+<div class="outline-text-4" id="text-org27c5697">
 <div class="org-src-container">
-<pre class="src src-conf">mount Y: ~/Downloads/dos622 <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">&#23558;dos&#23433;&#35013;&#30446;&#24405;&#25346;&#36733;&#25104;Y&#30424;</span>
-Y:                                        <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">&#23558;&#24403;&#21069;&#30446;&#24405;&#20999;&#25442;&#21040;Y&#30424;</span>
-imgmount 2 <span style="color: #2d9574;">"~/Dosbox/Windows3.2.img"</span> -size 512,63,16,520 -t hdd -fs none
+<pre class="src src-conf">mount Y: ~/Downloads/dos622 <span style="color: #b22222;">#</span><span style="color: #b22222;">&#23558;dos&#23433;&#35013;&#30446;&#24405;&#25346;&#36733;&#25104;Y&#30424;</span>
+Y:                                        <span style="color: #b22222;">#</span><span style="color: #b22222;">&#23558;&#24403;&#21069;&#30446;&#24405;&#20999;&#25442;&#21040;Y&#30424;</span>
+imgmount 2 <span style="color: #8b2252;">"~/Dosbox/Windows3.2.img"</span> -size 512,63,16,520 -t hdd -fs none
 boot dos1.img dos2.img dos3.img -l a
 </pre>
 </div>
@@ -253,13 +253,13 @@ BOOT [diskimg1.img diskimg2.img .. diskimgN.img] [-l driveletter]
 </div>
 </div>
 
-<div id="outline-container-org08d029d" class="outline-3">
-<h3 id="org08d029d">安装dos6.22</h3>
-<div class="outline-text-3" id="text-org08d029d">
+<div id="outline-container-orga617905" class="outline-3">
+<h3 id="orga617905">安装dos6.22</h3>
+<div class="outline-text-3" id="text-orga617905">
 </div>
-<div id="outline-container-org5779a7f" class="outline-4">
-<h4 id="org5779a7f">启动dosbox，开始安装dos6.22</h4>
-<div class="outline-text-4" id="text-org5779a7f">
+<div id="outline-container-orge8bc0b5" class="outline-4">
+<h4 id="orge8bc0b5">启动dosbox，开始安装dos6.22</h4>
+<div class="outline-text-4" id="text-orge8bc0b5">
 <div class="org-src-container">
 <pre class="src src-shell">dosbox
 </pre>
@@ -287,9 +287,9 @@ BOOT [diskimg1.img diskimg2.img .. diskimgN.img] [-l driveletter]
 </div>
 </div>
 
-<div id="outline-container-org5a65f8e" class="outline-4">
-<h4 id="org5a65f8e">更改配置，从硬盘镜像引导系统</h4>
-<div class="outline-text-4" id="text-org5a65f8e">
+<div id="outline-container-orgac7ae7a" class="outline-4">
+<h4 id="orgac7ae7a">更改配置，从硬盘镜像引导系统</h4>
+<div class="outline-text-4" id="text-orgac7ae7a">
 <p>
 更改DOSBOX的配置文件，将 <code>[autoexec]</code> 中的配置修改为
 </p>
@@ -301,19 +301,19 @@ boot -l c
 </div>
 </div>
 </div>
-<div id="outline-container-org0257aa7" class="outline-2">
-<h2 id="org0257aa7">安装Windows3.2</h2>
-<div class="outline-text-2" id="text-org0257aa7">
+<div id="outline-container-orgf76a78f" class="outline-2">
+<h2 id="orgf76a78f">安装Windows3.2</h2>
+<div class="outline-text-2" id="text-orgf76a78f">
 </div>
-<div id="outline-container-org02cf99c" class="outline-3">
-<h3 id="org02cf99c">下载Windows3.2安装文件</h3>
-<div class="outline-text-3" id="text-org02cf99c">
+<div id="outline-container-org5831056" class="outline-3">
+<h3 id="org5831056">下载Windows3.2安装文件</h3>
+<div class="outline-text-3" id="text-org5831056">
 <ol class="org-ol">
 <li><p>
 我们可以从 <a href="https://www.jb51.net/softs/127428.html">这里</a> 下载Windows3.2的安装文件:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">wget <span style="color: #2d9574;">"http://sf.jb51.net:81/201312/tools/windows3.2(jb51.net).rar"</span> -O ~/Downloads/windows3.2/windows3.2.rar
+<pre class="src src-shell">wget <span style="color: #8b2252;">"http://sf.jb51.net:81/201312/tools/windows3.2(jb51.net).rar"</span> -O ~/Downloads/windows3.2/windows3.2.rar
 </pre>
 </div></li>
 
@@ -322,7 +322,7 @@ boot -l c
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">cd</span> ~/Downloads/windows3.2
+<pre class="src src-shell"><span style="color: #483d8b;">cd</span> ~/Downloads/windows3.2
 rar x -c- -idq windows3.2.rar
 </pre>
 </div>
@@ -360,9 +360,9 @@ windows3.2.rar
 </div>
 </div>
 
-<div id="outline-container-org574a281" class="outline-3">
-<h3 id="org574a281">挂载 DOSBOX 的硬盘镜像文件，将 windows 安装文件拷贝进去</h3>
-<div class="outline-text-3" id="text-org574a281">
+<div id="outline-container-org46cc07d" class="outline-3">
+<h3 id="org46cc07d">挂载 DOSBOX 的硬盘镜像文件，将 windows 安装文件拷贝进去</h3>
+<div class="outline-text-3" id="text-org46cc07d">
 <ol class="org-ol">
 <li><p>
 创建一个loop设备用来表示DOSBOX的硬盘镜像文件
@@ -385,7 +385,7 @@ windows3.2.rar
 挂载loop设备
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo mount -t vfat -o <span style="color: #7590db;">uid</span>=<span style="color: #a45bad;">1000</span> /dev/loop1p1 /mnt
+<pre class="src src-shell">sudo mount -t vfat -o <span style="color: #a0522d;">uid</span>=1000 /dev/loop1p1 /mnt
 </pre>
 </div></li>
 
@@ -395,9 +395,9 @@ windows3.2.rar
 
 <div class="org-src-container">
 <pre class="src src-shell">mkdir -p /mnt/wininst
-<span style="color: #4f97d7; font-weight: bold;">for</span> n<span style="color: #4f97d7; font-weight: bold;"> in</span> DISK*;<span style="color: #4f97d7; font-weight: bold;">do</span>
-    cp $<span style="color: #7590db;">n</span>/* /mnt/wininst
-<span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #a020f0;">for</span> n<span style="color: #a020f0;"> in</span> DISK*;<span style="color: #a020f0;">do</span>
+    cp $<span style="color: #a0522d;">n</span>/* /mnt/wininst
+<span style="color: #a020f0;">done</span>
 </pre>
 </div>
 
@@ -418,9 +418,9 @@ sudo losetup -d /dev/loop1
 </div>
 </div>
 
-<div id="outline-container-org0a02c7f" class="outline-3">
-<h3 id="org0a02c7f">安装Windows3.2</h3>
-<div class="outline-text-3" id="text-org0a02c7f">
+<div id="outline-container-org56252ec" class="outline-3">
+<h3 id="org56252ec">安装Windows3.2</h3>
+<div class="outline-text-3" id="text-org56252ec">
 <ol class="org-ol">
 <li><p>
 启动dosbox
@@ -470,9 +470,9 @@ setup
 </div>
 
 
-<div id="outline-container-orgbe3c1a9" class="outline-3">
-<h3 id="orgbe3c1a9">设置启动DOSBOX自动启动windows</h3>
-<div class="outline-text-3" id="text-orgbe3c1a9">
+<div id="outline-container-orgd8889a9" class="outline-3">
+<h3 id="orgd8889a9">设置启动DOSBOX自动启动windows</h3>
+<div class="outline-text-3" id="text-orgd8889a9">
 <p>
 只需要在 <code>c:\autoexec.bat</code> 最后添加 <code>win</code> 就行了
 </p>
@@ -485,9 +485,9 @@ setup
 </div>
 </div>
 
-<div id="outline-container-org8652898" class="outline-3">
-<h3 id="org8652898">安装显卡驱动</h3>
-<div class="outline-text-3" id="text-org8652898">
+<div id="outline-container-org2a6bb55" class="outline-3">
+<h3 id="org2a6bb55">安装显卡驱动</h3>
+<div class="outline-text-3" id="text-org2a6bb55">
 <ol class="org-ol">
 <li><p>
 挂载DOSBOX硬盘镜像文件
@@ -503,7 +503,7 @@ setup
 </div>
 
 <div class="org-src-container">
-<pre class="src src-shell">sudo mount -t vfat -o <span style="color: #7590db;">uid</span>=<span style="color: #a45bad;">1000</span> /dev/loop0p1 /mnt
+<pre class="src src-shell">sudo mount -t vfat -o <span style="color: #a0522d;">uid</span>=1000 /dev/loop0p1 /mnt
 </pre>
 </div></li>
 
@@ -519,7 +519,7 @@ setup
 解压S3驱动
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7;">cd</span> /mnt
+<pre class="src src-shell"><span style="color: #483d8b;">cd</span> /mnt
 unzip S3DRIVERS.ZIP -d S3DRIVERS
 </pre>
 </div>
@@ -582,7 +582,7 @@ unzip S3DRIVERS.ZIP -d S3DRIVERS
 </p>
 
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #7590db;">machine</span>=svga_s3
+<pre class="src src-conf"><span style="color: #a0522d;">machine</span>=svga_s3
 </pre>
 </div></li>
 
@@ -591,7 +591,7 @@ unzip S3DRIVERS.ZIP -d S3DRIVERS
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">dosbox
-<span style="color: #4f97d7;">cd</span> c:\widows
+<span style="color: #483d8b;">cd</span> c:\widows
 setup
 </pre>
 </div>
@@ -617,9 +617,9 @@ setup
 </div>
 </div>
 
-<div id="outline-container-org71daecb" class="outline-3">
-<h3 id="org71daecb">设置声音</h3>
-<div class="outline-text-3" id="text-org71daecb">
+<div id="outline-container-org1fa3da4" class="outline-3">
+<h3 id="org1fa3da4">设置声音</h3>
+<div class="outline-text-3" id="text-org1fa3da4">
 <p>
 DOSBOX模拟了一个 Sound Blaster 接口，但是在Windows上需要经过设置才能通过它来发出声音。
 </p>
@@ -656,77 +656,49 @@ DOSBOX模拟了一个 Sound Blaster 接口，但是在Windows上需要经过设�
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-08-17</span>
-            <span title="last modification date" class="post-info">2018-09-12</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-08-17</span>
+    <span title="last modification date" class="post-info">2018-09-12</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/08/17/在dosbox上安装windows3.2/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/08/17/在dosbox上安装windows3.2/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/08/17/在dosbox上安装windows3.2/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/08/17/在dosbox上安装windows3.2/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

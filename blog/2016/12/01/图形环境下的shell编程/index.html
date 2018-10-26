@@ -3,22 +3,24 @@
 <head>
   <title>图形环境下的shell编程 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="编程之旅,shell" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,19 +54,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9c905a5">select</a></li>
-<li><a href="#orga3720e8">dialog</a></li>
-<li><a href="#orgbb1c2a3">tput</a></li>
-<li><a href="#org079c0e4">notify-send</a></li>
-<li><a href="#org8b97ba5">kdialog</a></li>
-<li><a href="#orgcb06832">zenity</a></li>
+<li><a href="#org01e6626">select</a></li>
+<li><a href="#orga54ae91">dialog</a></li>
+<li><a href="#org962c3e6">tput</a></li>
+<li><a href="#org63b3a1b">notify-send</a></li>
+<li><a href="#org328fcff">kdialog</a></li>
+<li><a href="#org2058a11">zenity</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9c905a5" class="outline-2">
-<h2 id="org9c905a5">select</h2>
-<div class="outline-text-2" id="text-org9c905a5">
+<div id="outline-container-org01e6626" class="outline-2">
+<h2 id="org01e6626">select</h2>
+<div class="outline-text-2" id="text-org01e6626">
 <p>
 select命令可以创建很简单的菜单,然后获取输入的答案.
 </p>
@@ -75,10 +75,10 @@ select命令可以创建很简单的菜单,然后获取输入的答案.
 select命令的格式为:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #4f97d7; font-weight: bold;">select</span> variable<span style="color: #4f97d7; font-weight: bold;"> in</span> list
-<span style="color: #4f97d7; font-weight: bold;">do</span>
+<pre class="src src-sh"><span style="color: #a020f0;">select</span> variable<span style="color: #a020f0;"> in</span> list
+<span style="color: #a020f0;">do</span>
     commands
-<span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #a020f0;">done</span>
 </pre>
 </div>
 
@@ -90,20 +90,20 @@ select命令的格式为:
 例如我们可以创建一个简单的文件选择脚本:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> $<span style="color: #7590db;">#</span> -eq <span style="color: #a45bad;">0</span> <span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #7590db;">file</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">pwd</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">else</span>
-    <span style="color: #7590db;">file</span>=$<span style="color: #a45bad;">1</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
+<pre class="src src-sh"><span style="color: #a020f0;">if</span> [ $<span style="color: #a0522d;">#</span> -eq 0 ];<span style="color: #a020f0;">then</span>
+    <span style="color: #a0522d;">file</span>=$(<span style="color: #ff00ff;">pwd</span>)
+<span style="color: #a020f0;">else</span>
+    <span style="color: #a0522d;">file</span>=$<span style="color: #a0522d;">1</span>
+<span style="color: #a020f0;">fi</span>
 
-<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -d $<span style="color: #7590db;">file</span> <span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #4f97d7; font-weight: bold;">select</span> f<span style="color: #4f97d7; font-weight: bold;"> in</span> $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">ls</span> $<span style="color: #7590db;">file</span><span style="color: #4f97d7;">)</span>
-    <span style="color: #4f97d7; font-weight: bold;">do</span>
-        <span style="color: #4f97d7; font-weight: bold;">exec</span> $<span style="color: #a45bad;">0</span> $<span style="color: #7590db;">file</span>/$<span style="color: #7590db;">f</span>
-    <span style="color: #4f97d7; font-weight: bold;">done</span>
-<span style="color: #4f97d7; font-weight: bold;">else</span>
-    <span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">file</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
+<span style="color: #a020f0;">if</span> [ -d $<span style="color: #a0522d;">file</span> ];<span style="color: #a020f0;">then</span>
+    <span style="color: #a020f0;">select</span> f<span style="color: #a020f0;"> in</span> $(<span style="color: #ff00ff;">ls</span> $<span style="color: #a0522d;">file</span>)
+    <span style="color: #a020f0;">do</span>
+        <span style="color: #a020f0;">exec</span> $<span style="color: #a0522d;">0</span> $<span style="color: #a0522d;">file</span>/$<span style="color: #a0522d;">f</span>
+    <span style="color: #a020f0;">done</span>
+<span style="color: #a020f0;">else</span>
+    <span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">file</span>
+<span style="color: #a020f0;">fi</span>
 </pre>
 </div>
 
@@ -135,9 +135,9 @@ bin/autoload/git-pull.sh
 </div>
 </div>
 
-<div id="outline-container-orga3720e8" class="outline-2">
-<h2 id="orga3720e8"><a id="3s8563e1pfh0"></a>dialog</h2>
-<div class="outline-text-2" id="text-orga3720e8">
+<div id="outline-container-orga54ae91" class="outline-2">
+<h2 id="orga54ae91"><a id="3s8563e1pfh0"></a>dialog</h2>
+<div class="outline-text-2" id="text-orga54ae91">
 <p>
 dialog能够使用ANSI转义控制字符从文本环境创建标准的窗口对话框.
 </p>
@@ -146,19 +146,19 @@ dialog能够使用ANSI转义控制字符从文本环境创建标准的窗口对�
 下面是用用dialog来重写的file_selector.sh
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> $<span style="color: #7590db;">#</span> -eq <span style="color: #a45bad;">0</span> <span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #7590db;">file</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">pwd</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">else</span>
-    <span style="color: #7590db;">file</span>=$<span style="color: #a45bad;">1</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
+<pre class="src src-sh"><span style="color: #a020f0;">if</span> [ $<span style="color: #a0522d;">#</span> -eq 0 ];<span style="color: #a020f0;">then</span>
+    <span style="color: #a0522d;">file</span>=$(<span style="color: #ff00ff;">pwd</span>)
+<span style="color: #a020f0;">else</span>
+    <span style="color: #a0522d;">file</span>=$<span style="color: #a0522d;">1</span>
+<span style="color: #a020f0;">fi</span>
 
-<span style="color: #7590db;">file</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">dialog</span> --title <span style="color: #2d9574;">"file selector"</span> --stdout --fselect $<span style="color: #7590db;">file</span> <span style="color: #a45bad;">10</span> <span style="color: #a45bad;">50</span><span style="color: #4f97d7;">)</span>
+<span style="color: #a0522d;">file</span>=$(<span style="color: #ff00ff;">dialog</span> --title <span style="color: #8b2252;">"file selector"</span> --stdout --fselect $<span style="color: #a0522d;">file</span> 10 50)
 
-<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -d $<span style="color: #7590db;">file</span> <span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #4f97d7; font-weight: bold;">exec</span> $<span style="color: #a45bad;">0</span> $<span style="color: #7590db;">file</span>
-<span style="color: #4f97d7; font-weight: bold;">else</span>
-    <span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">file</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
+<span style="color: #a020f0;">if</span> [ -d $<span style="color: #a0522d;">file</span> ];<span style="color: #a020f0;">then</span>
+    <span style="color: #a020f0;">exec</span> $<span style="color: #a0522d;">0</span> $<span style="color: #a0522d;">file</span>
+<span style="color: #a020f0;">else</span>
+    <span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">file</span>
+<span style="color: #a020f0;">fi</span>
 </pre>
 </div>
 
@@ -169,9 +169,9 @@ dialog能够使用ANSI转义控制字符从文本环境创建标准的窗口对�
 </div>
 </div>
 </div>
-<div id="outline-container-orgbb1c2a3" class="outline-2">
-<h2 id="orgbb1c2a3"><a id="s5zczzp0pfh0"></a>tput</h2>
-<div class="outline-text-2" id="text-orgbb1c2a3">
+<div id="outline-container-org962c3e6" class="outline-2">
+<h2 id="org962c3e6"><a id="s5zczzp0pfh0"></a>tput</h2>
+<div class="outline-text-2" id="text-org962c3e6">
 <p>
 tput 命令将通过 terminfo 数据库对您的终端会话进行初始化和操作.
 </p>
@@ -185,22 +185,22 @@ tput 命令将通过 terminfo 数据库对您的终端会话进行初始化和�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/bin/</span><span style="color: #4f97d7; font-weight: bold;">bash</span>
+<pre class="src src-sh"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/bin/</span><span style="color: #a020f0;">bash</span>
 
-<span style="color: #7590db;">BOLD</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">tput</span> bold<span style="color: #4f97d7;">)</span>
-<span style="color: #7590db;">REV</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">tput</span> rev<span style="color: #4f97d7;">)</span>
-<span style="color: #7590db;">NORMAL</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">tput</span> sgr0<span style="color: #4f97d7;">)</span>
-<span style="color: #7590db;">CURSOR_OFF</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">tput</span> civis<span style="color: #4f97d7;">)</span>
-<span style="color: #7590db;">CURSOR_ON</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">tput</span> cnorm<span style="color: #4f97d7;">)</span>
+<span style="color: #a0522d;">BOLD</span>=$(<span style="color: #ff00ff;">tput</span> bold)
+<span style="color: #a0522d;">REV</span>=$(<span style="color: #ff00ff;">tput</span> rev)
+<span style="color: #a0522d;">NORMAL</span>=$(<span style="color: #ff00ff;">tput</span> sgr0)
+<span style="color: #a0522d;">CURSOR_OFF</span>=$(<span style="color: #ff00ff;">tput</span> civis)
+<span style="color: #a0522d;">CURSOR_ON</span>=$(<span style="color: #ff00ff;">tput</span> cnorm)
 
 tput init
 
 tput clear
-<span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">CURSOR_OFF</span>
-tput cup <span style="color: #a45bad;">2</span> <span style="color: #a45bad;">15</span>
-<span style="color: #4f97d7;">echo</span>  <span style="color: #2d9574;">"${BOLD}&#31895;&#20307;&#25928;&#26524;{NORMAL}\n"</span>
-<span style="color: #4f97d7;">echo</span>  <span style="color: #2d9574;">"${REV}&#21453;&#36716;&#25928;&#26524;${NORMAL}"</span>
-<span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">CURSOR_ON</span>
+<span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">CURSOR_OFF</span>
+tput cup 2 15
+<span style="color: #483d8b;">echo</span>  <span style="color: #8b2252;">"${BOLD}&#31895;&#20307;&#25928;&#26524;{NORMAL}\n"</span>
+<span style="color: #483d8b;">echo</span>  <span style="color: #8b2252;">"${REV}&#21453;&#36716;&#25928;&#26524;${NORMAL}"</span>
+<span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">CURSOR_ON</span>
 </pre>
 </div>
 
@@ -212,9 +212,9 @@ tput cup <span style="color: #a45bad;">2</span> <span style="color: #a45bad;">15
 </div>
 </div>
 
-<div id="outline-container-org079c0e4" class="outline-2">
-<h2 id="org079c0e4"><a id="twj005e1pfh0"></a>notify-send</h2>
-<div class="outline-text-2" id="text-org079c0e4">
+<div id="outline-container-org63b3a1b" class="outline-2">
+<h2 id="org63b3a1b"><a id="twj005e1pfh0"></a>notify-send</h2>
+<div class="outline-text-2" id="text-org63b3a1b">
 <p>
 notify-send让你通过通知进程发送一个桌面通知给用户.
 </p>
@@ -223,31 +223,31 @@ notify-send让你通过通知进程发送一个桌面通知给用户.
 例如下面是一个检测网络的脚本.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/bin/</span><span style="color: #4f97d7; font-weight: bold;">bash</span>
-<span style="color: #7590db;">target</span>=<span style="color: #2d9574;">"www.baidu.com"</span>
-<span style="color: #7590db;">port</span>=<span style="color: #a45bad;">80</span>
-<span style="color: #7590db;">interval</span>=<span style="color: #a45bad;">60</span>                     <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#31186;</span>
+<pre class="src src-sh"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/bin/</span><span style="color: #a020f0;">bash</span>
+<span style="color: #a0522d;">target</span>=<span style="color: #8b2252;">"www.baidu.com"</span>
+<span style="color: #a0522d;">port</span>=80
+<span style="color: #a0522d;">interval</span>=60                     <span style="color: #b22222;"># </span><span style="color: #b22222;">&#31186;</span>
 
-<span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">live_p</span><span style="color: #4f97d7;">()</span>
-<span style="color: #4f97d7;">{</span>
-    <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">remote</span>=$<span style="color: #a45bad;">1</span>
-    <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">port</span>=$<span style="color: #a45bad;">2</span>
-    <span style="color: #4f97d7; font-weight: bold;">if</span> timeout <span style="color: #a45bad;">5</span> echo &gt;/dev/tcp/$<span style="color: #7590db;">remote</span>/$<span style="color: #7590db;">port</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-        <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#32593;&#32476;&#36890;&#20102;!"</span>
-    <span style="color: #4f97d7; font-weight: bold;">else</span>
-        <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#32593;&#32476;&#19981;&#36890;&#20102;!"</span>
-    <span style="color: #4f97d7; font-weight: bold;">fi</span>
-<span style="color: #4f97d7;">}</span>
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">live_p</span>()
+{
+    <span style="color: #483d8b;">local</span> <span style="color: #a0522d;">remote</span>=$<span style="color: #a0522d;">1</span>
+    <span style="color: #483d8b;">local</span> <span style="color: #a0522d;">port</span>=$<span style="color: #a0522d;">2</span>
+    <span style="color: #a020f0;">if</span> timeout 5 echo &gt;/dev/tcp/$<span style="color: #a0522d;">remote</span>/$<span style="color: #a0522d;">port</span>;<span style="color: #a020f0;">then</span>
+        <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"&#32593;&#32476;&#36890;&#20102;!"</span>
+    <span style="color: #a020f0;">else</span>
+        <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"&#32593;&#32476;&#19981;&#36890;&#20102;!"</span>
+    <span style="color: #a020f0;">fi</span>
+}
 
-<span style="color: #4f97d7; font-weight: bold;">while</span> :
-<span style="color: #4f97d7; font-weight: bold;">do</span>
-    <span style="color: #7590db;">current_state</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">live_p</span> $<span style="color: #7590db;">target</span> $<span style="color: #7590db;">port</span><span style="color: #4f97d7;">)</span>
-    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> <span style="color: #2d9574;">"$current_state"</span> != <span style="color: #2d9574;">"$old_state"</span> <span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-        notify-send $<span style="color: #7590db;">current_state</span>
-    <span style="color: #4f97d7; font-weight: bold;">fi</span>
-    <span style="color: #7590db;">old_state</span>=$<span style="color: #7590db;">current_state</span>;
-    sleep $<span style="color: #7590db;">interval</span>
-<span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #a020f0;">while</span> :
+<span style="color: #a020f0;">do</span>
+    <span style="color: #a0522d;">current_state</span>=$(<span style="color: #ff00ff;">live_p</span> $<span style="color: #a0522d;">target</span> $<span style="color: #a0522d;">port</span>)
+    <span style="color: #a020f0;">if</span> [ <span style="color: #8b2252;">"$current_state"</span> != <span style="color: #8b2252;">"$old_state"</span> ];<span style="color: #a020f0;">then</span>
+        notify-send $<span style="color: #a0522d;">current_state</span>
+    <span style="color: #a020f0;">fi</span>
+    <span style="color: #a0522d;">old_state</span>=$<span style="color: #a0522d;">current_state</span>;
+    sleep $<span style="color: #a0522d;">interval</span>
+<span style="color: #a020f0;">done</span>
 </pre>
 </div>
 
@@ -263,9 +263,9 @@ notify-send让你通过通知进程发送一个桌面通知给用户.
 </div>
 </div>
 </div>
-<div id="outline-container-org8b97ba5" class="outline-2">
-<h2 id="org8b97ba5"><a id="hqk5b0e1pfh0"></a>kdialog</h2>
-<div class="outline-text-2" id="text-org8b97ba5">
+<div id="outline-container-org328fcff" class="outline-2">
+<h2 id="org328fcff"><a id="hqk5b0e1pfh0"></a>kdialog</h2>
+<div class="outline-text-2" id="text-org328fcff">
 <p>
 kdialog为KDE桌面提供了类似dialog式的标准窗口. 其生成的窗口能和其他KDE窗口很好的融合.
 </p>
@@ -278,17 +278,17 @@ kdialog为KDE桌面提供了类似dialog式的标准窗口. 其生成的窗口�
 kdialog的file_selector.sh可以是这样的
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> $<span style="color: #7590db;">#</span> -eq <span style="color: #a45bad;">0</span> <span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #7590db;">file</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">pwd</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">else</span>
-    <span style="color: #7590db;">file</span>=$<span style="color: #a45bad;">1</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
+<pre class="src src-sh"><span style="color: #a020f0;">if</span> [ $<span style="color: #a0522d;">#</span> -eq 0 ];<span style="color: #a020f0;">then</span>
+    <span style="color: #a0522d;">file</span>=$(<span style="color: #ff00ff;">pwd</span>)
+<span style="color: #a020f0;">else</span>
+    <span style="color: #a0522d;">file</span>=$<span style="color: #a0522d;">1</span>
+<span style="color: #a020f0;">fi</span>
 
 
-<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -d $<span style="color: #7590db;">file</span> <span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #7590db;">file</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">kdialog</span>  --getopenfilename $<span style="color: #7590db;">file</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
-<span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">file</span>
+<span style="color: #a020f0;">if</span> [ -d $<span style="color: #a0522d;">file</span> ];<span style="color: #a020f0;">then</span>
+    <span style="color: #a0522d;">file</span>=$(<span style="color: #ff00ff;">kdialog</span>  --getopenfilename $<span style="color: #a0522d;">file</span>)
+<span style="color: #a020f0;">fi</span>
+<span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">file</span>
 
 </pre>
 </div>
@@ -299,9 +299,9 @@ kdialog的file_selector.sh可以是这样的
 </div>
 </div>
 </div>
-<div id="outline-container-orgcb06832" class="outline-2">
-<h2 id="orgcb06832"><a id="684al1e1pfh0"></a>zenity</h2>
-<div class="outline-text-2" id="text-orgcb06832">
+<div id="outline-container-org2058a11" class="outline-2">
+<h2 id="org2058a11"><a id="684al1e1pfh0"></a>zenity</h2>
+<div class="outline-text-2" id="text-org2058a11">
 <p>
 <a href="https://help.gnome.org/users/zenity/stable/">zenity </a>是gnome版的dialog. 它针对不同的对话框选项有不同的参数:
 </p>
@@ -444,18 +444,18 @@ GTK+ 选项
 zennity版本的file_selector.sh是这样的
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> $<span style="color: #7590db;">#</span> -eq <span style="color: #a45bad;">0</span> <span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #7590db;">file</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">pwd</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">else</span>
-    <span style="color: #7590db;">file</span>=$<span style="color: #a45bad;">1</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
+<pre class="src src-sh"><span style="color: #a020f0;">if</span> [ $<span style="color: #a0522d;">#</span> -eq 0 ];<span style="color: #a020f0;">then</span>
+    <span style="color: #a0522d;">file</span>=$(<span style="color: #ff00ff;">pwd</span>)
+<span style="color: #a020f0;">else</span>
+    <span style="color: #a0522d;">file</span>=$<span style="color: #a0522d;">1</span>
+<span style="color: #a020f0;">fi</span>
 
 
-<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -d $<span style="color: #7590db;">file</span> <span style="color: #4f97d7;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #4f97d7;">cd</span> $<span style="color: #7590db;">file</span>
-    <span style="color: #7590db;">file</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">zenity</span>  --file-selection<span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
-<span style="color: #4f97d7;">echo</span> $<span style="color: #7590db;">file</span>
+<span style="color: #a020f0;">if</span> [ -d $<span style="color: #a0522d;">file</span> ];<span style="color: #a020f0;">then</span>
+    <span style="color: #483d8b;">cd</span> $<span style="color: #a0522d;">file</span>
+    <span style="color: #a0522d;">file</span>=$(<span style="color: #ff00ff;">zenity</span>  --file-selection)
+<span style="color: #a020f0;">fi</span>
+<span style="color: #483d8b;">echo</span> $<span style="color: #a0522d;">file</span>
 </pre>
 </div>
 
@@ -470,77 +470,49 @@ zennity版本的file_selector.sh是这样的
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2016-12-01</span>
-            <span title="last modification date" class="post-info">2018-03-01</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/编程之旅">编程之旅</a> : <a href="https://lujun9972.github.io/tags/shell">shell</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2016-12-01</span>
+    <span title="last modification date" class="post-info">2018-03-01</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/编程之旅">编程之旅</a> : <a href="https://lujun9972.github.io/tags/shell">shell</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2016/12/01/图形环境下的shell编程/";
-         var disqus_url = "https://lujun9972.github.io/blog/2016/12/01/图形环境下的shell编程/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2016/12/01/图形环境下的shell编程/";
+     var disqus_url = "https://lujun9972.github.io/blog/2016/12/01/图形环境下的shell编程/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

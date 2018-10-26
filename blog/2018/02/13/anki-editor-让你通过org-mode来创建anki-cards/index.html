@@ -3,22 +3,24 @@
 <head>
   <title>anki-editor:让你通过Org-mode来创建Anki cards - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="Emacs之怒" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,13 +54,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org65c6e98">准备工作</a></li>
-<li><a href="#org2da9f21">使用</a>
+<li><a href="#orgac556e6">准备工作</a></li>
+<li><a href="#org066dcc3">使用</a>
 <ul>
-<li><a href="#org3af05fc">新建一个org文件</a></li>
-<li><a href="#org9e082ae">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</a></li>
-<li><a href="#orgcea2522">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</a></li>
-<li><a href="#org9e63e82">运行 <code>M-x anki-editor-submit</code> 提交</a></li>
+<li><a href="#orgae5ffe8">新建一个org文件</a></li>
+<li><a href="#org3ec08c2">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</a></li>
+<li><a href="#orga3ca25d">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</a></li>
+<li><a href="#org7208eef">运行 <code>M-x anki-editor-submit</code> 提交</a></li>
 </ul>
 </li>
 </ul>
@@ -82,9 +82,9 @@
 它的原理是利用org-mode的html export backend将org转换成html,然后通过Anki的anki-connect插件生成新的Anki Card。
 </p>
 
-<div id="outline-container-org65c6e98" class="outline-2">
-<h2 id="org65c6e98">准备工作</h2>
-<div class="outline-text-2" id="text-org65c6e98">
+<div id="outline-container-orgac556e6" class="outline-2">
+<h2 id="orgac556e6">准备工作</h2>
+<div class="outline-text-2" id="text-orgac556e6">
 <p>
 根据说明，该插件需要 <code>curl</code> 和 <a href="https://github.com/FooSoft/anki-connect#installation">anki-connect</a> 的支持
 </p>
@@ -113,8 +113,8 @@
 anki-editor已经纳入<a href="http://melpa.org/">MELPA</a>中，可以通过 <code>use-package</code> 自动安装
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">use-package</span> <span style="color: #a45bad;">anki-editor</span>
-  <span style="color: #4f97d7;">:ensure</span> t<span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">use-package</span> <span style="color: #008b8b;">anki-editor</span>
+  <span style="color: #483d8b;">:ensure</span> t)
 </pre>
 </div>
 
@@ -128,17 +128,17 @@ dotspacemacs-additional-packages '(request json-mode all-the-icons-dired edit-in
 </div>
 </div>
 
-<div id="outline-container-org2da9f21" class="outline-2">
-<h2 id="org2da9f21">使用</h2>
-<div class="outline-text-2" id="text-org2da9f21">
+<div id="outline-container-org066dcc3" class="outline-2">
+<h2 id="org066dcc3">使用</h2>
+<div class="outline-text-2" id="text-org066dcc3">
 <p>
 在使用anki-editorn之前, <b>你需要先打开anki</b>,因为它需要与anki中的anki-connect通讯，获取deck和note的信息。
 </p>
 </div>
 
-<div id="outline-container-org3af05fc" class="outline-3">
-<h3 id="org3af05fc">新建一个org文件</h3>
-<div class="outline-text-3" id="text-org3af05fc">
+<div id="outline-container-orgae5ffe8" class="outline-3">
+<h3 id="orgae5ffe8">新建一个org文件</h3>
+<div class="outline-text-3" id="text-orgae5ffe8">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-02.png" alt="screenshot-02.png" />
@@ -147,9 +147,9 @@ dotspacemacs-additional-packages '(request json-mode all-the-icons-dired edit-in
 </div>
 </div>
 
-<div id="outline-container-org9e082ae" class="outline-3">
-<h3 id="org9e082ae">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</h3>
-<div class="outline-text-3" id="text-org9e082ae">
+<div id="outline-container-org3ec08c2" class="outline-3">
+<h3 id="org3ec08c2">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</h3>
+<div class="outline-text-3" id="text-org3ec08c2">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-05.png" alt="screenshot-05.png" />
@@ -180,9 +180,9 @@ dotspacemacs-additional-packages '(request json-mode all-the-icons-dired edit-in
 </div>
 </div>
 
-<div id="outline-container-orgcea2522" class="outline-3">
-<h3 id="orgcea2522">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</h3>
-<div class="outline-text-3" id="text-orgcea2522">
+<div id="outline-container-orga3ca25d" class="outline-3">
+<h3 id="orga3ca25d">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</h3>
+<div class="outline-text-3" id="text-orga3ca25d">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-07.png" alt="screenshot-07.png" />
@@ -219,9 +219,9 @@ anki-editor会根据note类型中定义的域，自动插结构，每个域都�
 </div>
 </div>
 
-<div id="outline-container-org9e63e82" class="outline-3">
-<h3 id="org9e63e82">运行 <code>M-x anki-editor-submit</code> 提交</h3>
-<div class="outline-text-3" id="text-org9e63e82">
+<div id="outline-container-org7208eef" class="outline-3">
+<h3 id="org7208eef">运行 <code>M-x anki-editor-submit</code> 提交</h3>
+<div class="outline-text-3" id="text-org7208eef">
 <p>
 就能看到Anki上新生成的card了
 <img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-11.png" alt="screenshot-11.png" />
@@ -243,77 +243,49 @@ anki-editor会根据note类型中定义的域，自动插结构，每个域都�
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-02-13</span>
-            <span title="last modification date" class="post-info">2018-02-14</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/emacs之怒">Emacs之怒</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-02-13</span>
+    <span title="last modification date" class="post-info">2018-02-14</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/emacs之怒">Emacs之怒</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

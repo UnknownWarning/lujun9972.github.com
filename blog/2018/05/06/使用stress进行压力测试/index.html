@@ -3,22 +3,24 @@
 <head>
   <title>使用stress进行压力测试 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,14 +54,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1866a4c">安装stress</a></li>
-<li><a href="#orgbb8a650">使用stress</a>
+<li><a href="#orgcebdeb6">安装stress</a></li>
+<li><a href="#org821b92b">使用stress</a>
 <ul>
-<li><a href="#org67a6183">对CPU进行压力测试</a></li>
-<li><a href="#org2576c12">对内存进行压力测试</a></li>
-<li><a href="#orgf0145db">对磁盘进行压力测试</a></li>
-<li><a href="#orge1f7366">同时对多项指标进行压力测试</a></li>
-<li><a href="#org892e97b">设置超时时间</a></li>
+<li><a href="#orgcd60244">对CPU进行压力测试</a></li>
+<li><a href="#orga003ae5">对内存进行压力测试</a></li>
+<li><a href="#org437d176">对磁盘进行压力测试</a></li>
+<li><a href="#org039c737">同时对多项指标进行压力测试</a></li>
+<li><a href="#org813a4b7">设置超时时间</a></li>
 </ul>
 </li>
 </ul>
@@ -71,9 +71,9 @@
 stress,顾名思义是一款压力测试工具。你可以用它来对系统CPU，内存，以及磁盘IO生成负载。
 </p>
 
-<div id="outline-container-org1866a4c" class="outline-2">
-<h2 id="org1866a4c">安装stress</h2>
-<div class="outline-text-2" id="text-org1866a4c">
+<div id="outline-container-orgcebdeb6" class="outline-2">
+<h2 id="orgcebdeb6">安装stress</h2>
+<div class="outline-text-2" id="text-orgcebdeb6">
 <p>
 几乎所有主流的linux发行版的软件仓库中都收录有stress，可以直接使用包管理起来安装
 </p>
@@ -85,9 +85,9 @@ stress,顾名思义是一款压力测试工具。你可以用它来对系统CPU�
 </div>
 
 
-<div id="outline-container-orgbb8a650" class="outline-2">
-<h2 id="orgbb8a650">使用stress</h2>
-<div class="outline-text-2" id="text-orgbb8a650">
+<div id="outline-container-org821b92b" class="outline-2">
+<h2 id="org821b92b">使用stress</h2>
+<div class="outline-text-2" id="text-org821b92b">
 <p>
 直接运行 <code>stress</code> 就会列出关于 stress 的简单说明
 </p>
@@ -124,9 +124,9 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 </div>
 </div>
 
-<div id="outline-container-org67a6183" class="outline-3">
-<h3 id="org67a6183">对CPU进行压力测试</h3>
-<div class="outline-text-3" id="text-org67a6183">
+<div id="outline-container-orgcd60244" class="outline-3">
+<h3 id="orgcd60244">对CPU进行压力测试</h3>
+<div class="outline-text-3" id="text-orgcd60244">
 <p>
 使用 <code>stress -c N</code> 会让stress生成N个工作进程进行开方运算，以此对CPU产生负载。
 </p>
@@ -135,7 +135,7 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 比如你的CPU有四个核，那么可以运行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">stress -c <span style="color: #a45bad;">4</span>
+<pre class="src src-shell">stress -c 4
 </pre>
 </div>
 
@@ -162,14 +162,14 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 </div>
 </div>
 
-<div id="outline-container-org2576c12" class="outline-3">
-<h3 id="org2576c12">对内存进行压力测试</h3>
-<div class="outline-text-3" id="text-org2576c12">
+<div id="outline-container-orga003ae5" class="outline-3">
+<h3 id="orga003ae5">对内存进行压力测试</h3>
+<div class="outline-text-3" id="text-orga003ae5">
 <p>
 类似的，使用 <code>stress -m N</code> 会让stress生成N个工作进程来占用内存。每个进程默认占用256M内存，但可以通过 <code>--vm-bytes</code> 来进行设置。 例如
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">stress -m <span style="color: #a45bad;">3</span> --vm-bytes <span style="color: #a45bad;">300M</span>
+<pre class="src src-shell">stress -m 3 --vm-bytes 300M
 </pre>
 </div>
 <p>
@@ -195,9 +195,9 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 </div>
 </div>
 
-<div id="outline-container-orgf0145db" class="outline-3">
-<h3 id="orgf0145db">对磁盘进行压力测试</h3>
-<div class="outline-text-3" id="text-orgf0145db">
+<div id="outline-container-org437d176" class="outline-3">
+<h3 id="org437d176">对磁盘进行压力测试</h3>
+<div class="outline-text-3" id="text-org437d176">
 <p>
 对磁盘压力测试有两个参数：
 </p>
@@ -212,7 +212,7 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">stress -i <span style="color: #a45bad;">2</span> -d <span style="color: #a45bad;">4</span> --hdd-bytes <span style="color: #a45bad;">512M</span>
+<pre class="src src-shell">stress -i 2 -d 4 --hdd-bytes 512M
 </pre>
 </div>
 
@@ -234,14 +234,14 @@ Note: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size).
 </div>
 </div>
 
-<div id="outline-container-orge1f7366" class="outline-3">
-<h3 id="orge1f7366">同时对多项指标进行压力测试</h3>
-<div class="outline-text-3" id="text-orge1f7366">
+<div id="outline-container-org039c737" class="outline-3">
+<h3 id="org039c737">同时对多项指标进行压力测试</h3>
+<div class="outline-text-3" id="text-org039c737">
 <p>
 stress支持同时对多个指标进行压力测试，只需要把上面的参数组合起来就行
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">stress -c <span style="color: #a45bad;">4</span> -m <span style="color: #a45bad;">2</span> -d <span style="color: #a45bad;">1</span>
+<pre class="src src-shell">stress -c 4 -m 2 -d 1
 </pre>
 </div>
 
@@ -271,9 +271,9 @@ stress支持同时对多个指标进行压力测试，只需要把上面的参�
 </div>
 </div>
 
-<div id="outline-container-org892e97b" class="outline-3">
-<h3 id="org892e97b">设置超时时间</h3>
-<div class="outline-text-3" id="text-org892e97b">
+<div id="outline-container-org813a4b7" class="outline-3">
+<h3 id="org813a4b7">设置超时时间</h3>
+<div class="outline-text-3" id="text-org813a4b7">
 <p>
 通过 <code>-t TIMEOUT</code> 可以让stress只运行一段时间后自动退出。这一般在写脚本的时候会用到。
 </p>
@@ -283,7 +283,7 @@ stress支持同时对多个指标进行压力测试，只需要把上面的参�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">stress -c <span style="color: #a45bad;">4</span> -m <span style="color: #a45bad;">2</span> -d <span style="color: #a45bad;">1</span> -t <span style="color: #a45bad;">10s</span>
+<pre class="src src-shell">stress -c 4 -m 2 -d 1 -t 10s
 </pre>
 </div>
 
@@ -299,77 +299,49 @@ stress: info: [19302] successful run completed in 11s
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-05-06</span>
-            <span title="last modification date" class="post-info">2018-07-27</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-05-06</span>
+    <span title="last modification date" class="post-info">2018-07-27</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/05/06/使用stress进行压力测试/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/05/06/使用stress进行压力测试/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/05/06/使用stress进行压力测试/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/05/06/使用stress进行压力测试/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

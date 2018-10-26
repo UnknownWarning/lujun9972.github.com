@@ -3,22 +3,24 @@
 <head>
   <title>在OrangePi上运行DOS程序 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴,OrangePi,DOS" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,13 +54,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga0fa08b">下载FreeDOS安装文件</a></li>
-<li><a href="#org41191c8">安装QEMU</a></li>
-<li><a href="#org2fd7b77">创建硬盘镜像</a></li>
-<li><a href="#org00dd7fa">启动虚拟机安装FreeDOS</a></li>
-<li><a href="#orgd2dee5a">与外部系统交换文件</a></li>
-<li><a href="#org71c6724">为什么不用VirtualBox？</a></li>
-<li><a href="#org882ac26">为什么不用DOSBOX？</a></li>
+<li><a href="#orgb2a618f">下载FreeDOS安装文件</a></li>
+<li><a href="#org14ec952">安装QEMU</a></li>
+<li><a href="#org1d37f4a">创建硬盘镜像</a></li>
+<li><a href="#orgcf97da8">启动虚拟机安装FreeDOS</a></li>
+<li><a href="#orgf5eff47">与外部系统交换文件</a></li>
+<li><a href="#org8c923b3">为什么不用VirtualBox？</a></li>
+<li><a href="#org6db7583">为什么不用DOSBOX？</a></li>
 </ul>
 </div>
 </div>
@@ -72,9 +72,9 @@
 通过QEMU可以在OrangePi上创建一个轻量的虚拟机，并通过在其上面安装<a href="http://www.freedos.org/">FreeDOS</a>来达到支持运行DOS程序的目的。
 </p>
 
-<div id="outline-container-orga0fa08b" class="outline-2">
-<h2 id="orga0fa08b">下载FreeDOS安装文件</h2>
-<div class="outline-text-2" id="text-orga0fa08b">
+<div id="outline-container-orgb2a618f" class="outline-2">
+<h2 id="orgb2a618f">下载FreeDOS安装文件</h2>
+<div class="outline-text-2" id="text-orgb2a618f">
 <p>
 FreeDOS是一个完全免费的与MS-DOS兼容的操作系统，你可以通过它来运行DOS游戏和那些老旧的DOS软件。
 </p>
@@ -89,9 +89,9 @@ FreeDOS提供CD-ROM镜像下载：你可以从<a href="http://www.freedos.org/do
 </div>
 </div>
 
-<div id="outline-container-org41191c8" class="outline-2">
-<h2 id="org41191c8">安装QEMU</h2>
-<div class="outline-text-2" id="text-org41191c8">
+<div id="outline-container-org14ec952" class="outline-2">
+<h2 id="org14ec952">安装QEMU</h2>
+<div class="outline-text-2" id="text-org14ec952">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install qemu -y
 </pre>
@@ -111,9 +111,9 @@ FreeDOS提供CD-ROM镜像下载：你可以从<a href="http://www.freedos.org/do
 </div>
 </div>
 
-<div id="outline-container-org2fd7b77" class="outline-2">
-<h2 id="org2fd7b77">创建硬盘镜像</h2>
-<div class="outline-text-2" id="text-org2fd7b77">
+<div id="outline-container-org1d37f4a" class="outline-2">
+<h2 id="org1d37f4a">创建硬盘镜像</h2>
+<div class="outline-text-2" id="text-org1d37f4a">
 <p>
 硬盘镜像是一个文件,用来存储虚拟机硬盘上的内容。
 </p>
@@ -131,7 +131,7 @@ QEMU 中使用 qemu-img命令来创建硬盘镜像
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">qemu-img create -f qcow2 dos.img <span style="color: #a45bad;">300M</span>
+<pre class="src src-shell">qemu-img create -f qcow2 dos.img 300M
 </pre>
 </div>
 
@@ -153,9 +153,9 @@ QEMU 中使用 qemu-img命令来创建硬盘镜像
 </div>
 </div>
 
-<div id="outline-container-org00dd7fa" class="outline-2">
-<h2 id="org00dd7fa">启动虚拟机安装FreeDOS</h2>
-<div class="outline-text-2" id="text-org00dd7fa">
+<div id="outline-container-orgcf97da8" class="outline-2">
+<h2 id="orgcf97da8">启动虚拟机安装FreeDOS</h2>
+<div class="outline-text-2" id="text-orgcf97da8">
 <p>
 跟VirtuaBox，VMWare等虚拟软件不同，QEMU没有提供一个图形化的管理界面来创建虚拟机，你需要通过命令来构建出虚拟机的每个组建。
 </p>
@@ -165,7 +165,7 @@ QEMU使用 <code>qemu-system-*</code> 程序来启动虚拟机，这里的 <code
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">qemu-system-i386 -m <span style="color: #a45bad;">16</span> -k en-us -rtc <span style="color: #7590db;">base</span>=localtime -soundhw sb16,adlib,pcspk -device cirrus-vga -hda dos.img -cdrom FD12CD.iso -boot <span style="color: #7590db;">order</span>=d
+<pre class="src src-shell">qemu-system-i386 -m 16 -k en-us -rtc <span style="color: #a0522d;">base</span>=localtime -soundhw sb16,adlib,pcspk -device cirrus-vga -hda dos.img -cdrom FD12CD.iso -boot <span style="color: #a0522d;">order</span>=d
 </pre>
 </div>
 
@@ -246,7 +246,7 @@ QEMU使用 <code>qemu-system-*</code> 程序来启动虚拟机，这里的 <code
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">qemu-system-i386 -m <span style="color: #a45bad;">16</span> -k en-us -rtc <span style="color: #7590db;">base</span>=localtime -soundhw sb16,adlib,pcspk -device cirrus-vga -hda dos.img -cdrom FD12CD.iso -boot <span style="color: #7590db;">order</span>=c
+<pre class="src src-shell">qemu-system-i386 -m 16 -k en-us -rtc <span style="color: #a0522d;">base</span>=localtime -soundhw sb16,adlib,pcspk -device cirrus-vga -hda dos.img -cdrom FD12CD.iso -boot <span style="color: #a0522d;">order</span>=c
 </pre>
 </div>
 
@@ -279,9 +279,9 @@ FeeDOS包含很多游戏和应用，可以通过 <code>FDIMPLES</code> 来安装
 </div>
 </div>
 </div>
-<div id="outline-container-orgd2dee5a" class="outline-2">
-<h2 id="orgd2dee5a">与外部系统交换文件</h2>
-<div class="outline-text-2" id="text-orgd2dee5a">
+<div id="outline-container-orgf5eff47" class="outline-2">
+<h2 id="orgf5eff47">与外部系统交换文件</h2>
+<div class="outline-text-2" id="text-orgf5eff47">
 <p>
 使用 <code>-drive</code> 选项可以很方便地把外部系统的一个目录挂载成虚拟机中的一块磁盘。
 </p>
@@ -291,23 +291,23 @@ FeeDOS包含很多游戏和应用，可以通过 <code>FDIMPLES</code> 来安装
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">qemu-system-i386 -m <span style="color: #a45bad;">16</span> -k en-us -rtc <span style="color: #7590db;">base</span>=localtime -soundhw sb16,adlib,pcspk -device cirrus-vga -hda dos.img -drive <span style="color: #7590db;">file</span>=fat:rw:dosfiles/ -boot <span style="color: #7590db;">order</span>=c
+<pre class="src src-shell">qemu-system-i386 -m 16 -k en-us -rtc <span style="color: #a0522d;">base</span>=localtime -soundhw sb16,adlib,pcspk -device cirrus-vga -hda dos.img -drive <span style="color: #a0522d;">file</span>=fat:rw:dosfiles/ -boot <span style="color: #a0522d;">order</span>=c
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org71c6724" class="outline-2">
-<h2 id="org71c6724">为什么不用VirtualBox？</h2>
-<div class="outline-text-2" id="text-org71c6724">
+<div id="outline-container-org8c923b3" class="outline-2">
+<h2 id="org8c923b3">为什么不用VirtualBox？</h2>
+<div class="outline-text-2" id="text-org8c923b3">
 <p>
 因为Armbian上根本就没有VirtualBox啊～～
 </p>
 </div>
 </div>
 
-<div id="outline-container-org882ac26" class="outline-2">
-<h2 id="org882ac26">为什么不用DOSBOX？</h2>
-<div class="outline-text-2" id="text-org882ac26">
+<div id="outline-container-org6db7583" class="outline-2">
+<h2 id="org6db7583">为什么不用DOSBOX？</h2>
+<div class="outline-text-2" id="text-org6db7583">
 <p>
 如果你只是想玩DOS游戏的话，那么DOSBOX会是个不错的选择。但是它对DOS应用程序的支持就没那么好了。
 </p>
@@ -321,77 +321,49 @@ FeeDOS包含很多游戏和应用，可以通过 <code>FDIMPLES</code> 来安装
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-03-30</span>
-            <span title="last modification date" class="post-info">2018-04-05</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/orangepi">OrangePi</a> : <a href="https://lujun9972.github.io/tags/dos">DOS</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-03-30</span>
+    <span title="last modification date" class="post-info">2018-04-05</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/orangepi">OrangePi</a> : <a href="https://lujun9972.github.io/tags/dos">DOS</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/03/30/在orangepi上运行dos程序/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/03/30/在orangepi上运行dos程序/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/03/30/在orangepi上运行dos程序/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/03/30/在orangepi上运行dos程序/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

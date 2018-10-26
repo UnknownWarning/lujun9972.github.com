@@ -3,22 +3,24 @@
 <head>
   <title>Tmux常用操作说明 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,29 +54,29 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5be78e5">Session</a>
+<li><a href="#org76d4059">Session</a>
 <ul>
-<li><a href="#org8f6dec1">未指定名称的Tmux session</a></li>
-<li><a href="#org746da29">创建指定名称的Tmux session</a></li>
-<li><a href="#org6e05a2a">从Tmux Session中分离</a></li>
-<li><a href="#orgd573b5a">查看现有哪些Tmux Session</a></li>
-<li><a href="#org66a362e">重新接入Tmux Session</a></li>
+<li><a href="#org8c9a004">未指定名称的Tmux session</a></li>
+<li><a href="#org68d7431">创建指定名称的Tmux session</a></li>
+<li><a href="#org401673e">从Tmux Session中分离</a></li>
+<li><a href="#org678daf6">查看现有哪些Tmux Session</a></li>
+<li><a href="#org33ef53a">重新接入Tmux Session</a></li>
 </ul>
 </li>
-<li><a href="#org1eb0454">Tmux Windows</a></li>
-<li><a href="#org65fa4ab">Tmux Panes</a></li>
-<li><a href="#orgbdf110e">配置Tmux</a></li>
+<li><a href="#org497a5e6">Tmux Windows</a></li>
+<li><a href="#org82c6108">Tmux Panes</a></li>
+<li><a href="#org62f8942">配置Tmux</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5be78e5" class="outline-2">
-<h2 id="org5be78e5">Session</h2>
-<div class="outline-text-2" id="text-org5be78e5">
+<div id="outline-container-org76d4059" class="outline-2">
+<h2 id="org76d4059">Session</h2>
+<div class="outline-text-2" id="text-org76d4059">
 </div>
-<div id="outline-container-org8f6dec1" class="outline-3">
-<h3 id="org8f6dec1">未指定名称的Tmux session</h3>
-<div class="outline-text-3" id="text-org8f6dec1">
+<div id="outline-container-org8c9a004" class="outline-3">
+<h3 id="org8c9a004">未指定名称的Tmux session</h3>
+<div class="outline-text-3" id="text-org8c9a004">
 <p>
 直接运行 <code>tmux</code> 会产生一个Tmux Session
 </p>
@@ -90,18 +90,18 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org746da29" class="outline-3">
-<h3 id="org746da29">创建指定名称的Tmux session</h3>
-<div class="outline-text-3" id="text-org746da29">
+<div id="outline-container-org68d7431" class="outline-3">
+<h3 id="org68d7431">创建指定名称的Tmux session</h3>
+<div class="outline-text-3" id="text-org68d7431">
 <div class="org-src-container">
-<pre class="src src-shell">tmux new -s $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">session_name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">tmux new -s ${<span style="color: #a0522d;">session_name</span>}
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org6e05a2a" class="outline-3">
-<h3 id="org6e05a2a">从Tmux Session中分离</h3>
-<div class="outline-text-3" id="text-org6e05a2a">
+<div id="outline-container-org401673e" class="outline-3">
+<h3 id="org401673e">从Tmux Session中分离</h3>
+<div class="outline-text-3" id="text-org401673e">
 <p>
 在Tmux Session中输入 <code>Ctrl+b d</code> 就能从Tmux Session中分离，并回到原shell。
 </p>
@@ -111,9 +111,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-orgd573b5a" class="outline-3">
-<h3 id="orgd573b5a">查看现有哪些Tmux Session</h3>
-<div class="outline-text-3" id="text-orgd573b5a">
+<div id="outline-container-org678daf6" class="outline-3">
+<h3 id="org678daf6">查看现有哪些Tmux Session</h3>
+<div class="outline-text-3" id="text-org678daf6">
 <p>
 要获取现在正在运行的session有哪些，可以运行下列命令:
 </p>
@@ -129,22 +129,22 @@ session1: 1 windows (created Thu Sep 20 16:40:40 2018) [122x13]
 </div>
 </div>
 </div>
-<div id="outline-container-org66a362e" class="outline-3">
-<h3 id="org66a362e">重新接入Tmux Session</h3>
-<div class="outline-text-3" id="text-org66a362e">
+<div id="outline-container-org33ef53a" class="outline-3">
+<h3 id="org33ef53a">重新接入Tmux Session</h3>
+<div class="outline-text-3" id="text-org33ef53a">
 <p>
 要重新接入指定名称的Tmux Session，可以运行:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">tmux attach-session -t $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">session_name</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">tmux attach-session -t ${<span style="color: #a0522d;">session_name</span>}
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org1eb0454" class="outline-2">
-<h2 id="org1eb0454">Tmux Windows</h2>
-<div class="outline-text-2" id="text-org1eb0454">
+<div id="outline-container-org497a5e6" class="outline-2">
+<h2 id="org497a5e6">Tmux Windows</h2>
+<div class="outline-text-2" id="text-org497a5e6">
 <p>
 一个Tmux Session中可以包括多个Windows，这些Windows的列表显示在屏幕底部的状态栏中
 <img src="https://lujun9972.github.io/assets/blog/2018/09/20/tmux常用操作说明/Tmux-60.png" alt="Tmux-60.png" />
@@ -197,9 +197,9 @@ session1: 1 windows (created Thu Sep 20 16:40:40 2018) [122x13]
 </div>
 </div>
 
-<div id="outline-container-org65fa4ab" class="outline-2">
-<h2 id="org65fa4ab">Tmux Panes</h2>
-<div class="outline-text-2" id="text-org65fa4ab">
+<div id="outline-container-org82c6108" class="outline-2">
+<h2 id="org82c6108">Tmux Panes</h2>
+<div class="outline-text-2" id="text-org82c6108">
 <p>
 类似的，一个Tmux Window可以包含多个Pane,一个Window刚创建时，只包含一个覆盖全Window的pane。
 <img src="https://lujun9972.github.io/assets/blog/2018/09/20/tmux常用操作说明/Tmux-61.png" alt="Tmux-61.png" />
@@ -253,9 +253,9 @@ session1: 1 windows (created Thu Sep 20 16:40:40 2018) [122x13]
 </div>
 </div>
 
-<div id="outline-container-orgbdf110e" class="outline-2">
-<h2 id="orgbdf110e">配置Tmux</h2>
-<div class="outline-text-2" id="text-orgbdf110e">
+<div id="outline-container-org62f8942" class="outline-2">
+<h2 id="org62f8942">配置Tmux</h2>
+<div class="outline-text-2" id="text-org62f8942">
 <p>
 Tmux的配置信息在 <code>~/.tmux.conf</code> 中
 </p>
@@ -269,18 +269,18 @@ Tmux的配置信息在 <code>~/.tmux.conf</code> 中
 </p>
 
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#22914;&#26524;&#20351;&#29992;&#30340;&#26159; 256 &#33394;&#30340;&#32456;&#31471;&#65292;&#24517;&#39035;&#22312; tmux &#30340;&#37197;&#32622;&#25991;&#20214; tmux.conf &#20013;&#23558;&#32456;&#31471;&#35774;&#32622;&#20026; tmux &#25110; tmux-256color</span>
-set -g default-terminal <span style="color: #2d9574;">"tmux-256color"</span>
+<pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">&#22914;&#26524;&#20351;&#29992;&#30340;&#26159; 256 &#33394;&#30340;&#32456;&#31471;&#65292;&#24517;&#39035;&#22312; tmux &#30340;&#37197;&#32622;&#25991;&#20214; tmux.conf &#20013;&#23558;&#32456;&#31471;&#35774;&#32622;&#20026; tmux &#25110; tmux-256color</span>
+set -g default-terminal <span style="color: #8b2252;">"tmux-256color"</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#35774;&#32622;&#26368;&#22810;&#22238;&#28378;&#30340;&#34892;&#25968;</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">&#35774;&#32622;&#26368;&#22810;&#22238;&#28378;&#30340;&#34892;&#25968;</span>
 set -g history-limit 10000
 
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21551;&#21160;non-login shell</span>
-set -g default-command <span style="color: #2d9574;">"${SHELL}"</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">&#21551;&#21160;non-login shell</span>
+set -g default-command <span style="color: #8b2252;">"${SHELL}"</span>
 
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#26631;&#39064;&#26639;&#33258;&#21160;&#26356;&#25913;</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">&#26631;&#39064;&#26639;&#33258;&#21160;&#26356;&#25913;</span>
 set -g set-titles on
-set -g set-titles-string <span style="color: #2d9574;">"#T"</span>
+set -g set-titles-string <span style="color: #8b2252;">"#T"</span>
 </pre>
 </div>
 </div>
@@ -289,77 +289,49 @@ set -g set-titles-string <span style="color: #2d9574;">"#T"</span>
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-09-20</span>
-            <span title="last modification date" class="post-info">2018-09-20</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-09-20</span>
+    <span title="last modification date" class="post-info">2018-09-20</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/09/20/tmux常用操作说明/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/09/20/tmux常用操作说明/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/09/20/tmux常用操作说明/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/09/20/tmux常用操作说明/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

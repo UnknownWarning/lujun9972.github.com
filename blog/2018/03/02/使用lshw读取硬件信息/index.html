@@ -3,22 +3,24 @@
 <head>
   <title>使用lshw读取硬件信息 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴,hardware" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,14 +54,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf3f4e2a">安装lshw</a></li>
-<li><a href="#org3073c48">使用lshw</a>
+<li><a href="#org6244dbd">安装lshw</a></li>
+<li><a href="#org533619e">使用lshw</a>
 <ul>
-<li><a href="#orgf5a3644">列出硬件信息</a></li>
-<li><a href="#org64d86df">让lshw现实SCSI，USB，IDE和PCI设备的信息</a></li>
-<li><a href="#org9c39a96">指定lshw输出信息的格式</a></li>
-<li><a href="#orgc33108e">让lshw显示出敏感信息</a></li>
-<li><a href="#org2efe392">获取帮助</a></li>
+<li><a href="#orgbac9330">列出硬件信息</a></li>
+<li><a href="#org1a94afd">让lshw现实SCSI，USB，IDE和PCI设备的信息</a></li>
+<li><a href="#org45707ad">指定lshw输出信息的格式</a></li>
+<li><a href="#orgc064e21">让lshw显示出敏感信息</a></li>
+<li><a href="#orgcbfffcc">获取帮助</a></li>
 </ul>
 </li>
 </ul>
@@ -71,9 +71,9 @@
 lshw是一个读取硬件信息的命令行工具。
 </p>
 
-<div id="outline-container-orgf3f4e2a" class="outline-2">
-<h2 id="orgf3f4e2a">安装lshw</h2>
-<div class="outline-text-2" id="text-orgf3f4e2a">
+<div id="outline-container-org6244dbd" class="outline-2">
+<h2 id="org6244dbd">安装lshw</h2>
+<div class="outline-text-2" id="text-org6244dbd">
 <p>
 archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </p>
@@ -84,17 +84,17 @@ archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </div>
 </div>
 
-<div id="outline-container-org3073c48" class="outline-2">
-<h2 id="org3073c48">使用lshw</h2>
-<div class="outline-text-2" id="text-org3073c48">
+<div id="outline-container-org533619e" class="outline-2">
+<h2 id="org533619e">使用lshw</h2>
+<div class="outline-text-2" id="text-org533619e">
 <p>
 注意： <b>由于lshw需要读取硬件信息，因此需要使用root权限</b>
 </p>
 </div>
 
-<div id="outline-container-orgf5a3644" class="outline-3">
-<h3 id="orgf5a3644">列出硬件信息</h3>
-<div class="outline-text-3" id="text-orgf5a3644">
+<div id="outline-container-orgbac9330" class="outline-3">
+<h3 id="orgbac9330">列出硬件信息</h3>
+<div class="outline-text-3" id="text-orgbac9330">
 <p>
 直接运行lshw就能列出本机上的硬件信息了：
 </p>
@@ -638,9 +638,9 @@ archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </div>
 </div>
 
-<div id="outline-container-org64d86df" class="outline-3">
-<h3 id="org64d86df">让lshw现实SCSI，USB，IDE和PCI设备的信息</h3>
-<div class="outline-text-3" id="text-org64d86df">
+<div id="outline-container-org1a94afd" class="outline-3">
+<h3 id="org1a94afd">让lshw现实SCSI，USB，IDE和PCI设备的信息</h3>
+<div class="outline-text-3" id="text-org1a94afd">
 <p>
 通过 <code>-businfo</code> 可以获取主线信息
 </p>
@@ -654,7 +654,7 @@ archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </p>
 <div class="org-src-container">
 <pre class="src src-org">Bus info          Device       Class       Description
-<span style="color: #4f97d7;">======================================================</span>
+<span style="color: #7f7f7f;">======================================================</span>
                                system      F31
                                bus         F31
                                memory      102KiB BIOS
@@ -710,15 +710,15 @@ usb@2:1           wlp0s29f7u1  network     Wireless interface
 </div>
 </div>
 
-<div id="outline-container-org9c39a96" class="outline-3">
-<h3 id="org9c39a96">指定lshw输出信息的格式</h3>
-<div class="outline-text-3" id="text-org9c39a96">
+<div id="outline-container-org45707ad" class="outline-3">
+<h3 id="org45707ad">指定lshw输出信息的格式</h3>
+<div class="outline-text-3" id="text-org45707ad">
 <p>
 lshw可以将信息以html，xml或json的格式进行输出：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">lshw -html</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">lshw -xml</span>
+<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">lshw -html</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">lshw -xml</span>
 lshw -json
 </pre>
 </div>
@@ -1913,9 +1913,9 @@ lshw -json
 </div>
 </div>
 
-<div id="outline-container-orgc33108e" class="outline-3">
-<h3 id="orgc33108e">让lshw显示出敏感信息</h3>
-<div class="outline-text-3" id="text-orgc33108e">
+<div id="outline-container-orgc064e21" class="outline-3">
+<h3 id="orgc064e21">让lshw显示出敏感信息</h3>
+<div class="outline-text-3" id="text-orgc064e21">
 <p>
 默认情况下，lshw会隐藏IP地址、serial number之类的敏感信息，若你希望把这类信息也显示出来，则可以执行
 </p>
@@ -1926,9 +1926,9 @@ lshw -json
 </div>
 </div>
 
-<div id="outline-container-org2efe392" class="outline-3">
-<h3 id="org2efe392">获取帮助</h3>
-<div class="outline-text-3" id="text-org2efe392">
+<div id="outline-container-orgcbfffcc" class="outline-3">
+<h3 id="orgcbfffcc">获取帮助</h3>
+<div class="outline-text-3" id="text-orgcbfffcc">
 <div class="org-src-container">
 <pre class="src src-shell">lshw -help
 </pre>
@@ -1943,25 +1943,25 @@ lshw -json
 usage: lshw [-format] [-options ...]
        lshw -version
 
-  -version        print program version (unknown)
+        -version        print program version (unknown)
 
 format can be
-  -html           output hardware tree as HTML
-  -xml            output hardware tree as XML
-  -short          output hardware paths
-  -businfo        output bus information
-  -X              use graphical interface
+        -html           output hardware tree as HTML
+        -xml            output hardware tree as XML
+        -short          output hardware paths
+        -businfo        output bus information
+        -X              use graphical interface
 
 options can be
-  -class CLASS    only show a certain class of hardware
-  -C CLASS        same as '-class CLASS'
-  -c CLASS        same as '-class CLASS'
-  -disable TEST   disable a test (like pci, isapnp, cpuid, etc. )
-  -enable TEST    enable a test (like pci, isapnp, cpuid, etc. )
-  -quiet          don't display status
-  -sanitize       sanitize output (remove sensitive information like serial numbers, etc.)
-  -numeric        output numeric IDs (for PCI, USB, etc.)
-  -notime         exclude volatile attributes (timestamps) from output
+        -class CLASS    only show a certain class of hardware
+        -C CLASS        same as '-class CLASS'
+        -c CLASS        same as '-class CLASS'
+        -disable TEST   disable a test (like pci, isapnp, cpuid, etc. )
+        -enable TEST    enable a test (like pci, isapnp, cpuid, etc. )
+        -quiet          don't display status
+        -sanitize       sanitize output (remove sensitive information like serial numbers, etc.)
+        -numeric        output numeric IDs (for PCI, USB, etc.)
+        -notime         exclude volatile attributes (timestamps) from output
 
 </pre>
 </div>
@@ -1972,77 +1972,49 @@ options can be
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-03-02</span>
-            <span title="last modification date" class="post-info">2018-03-12</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/hardware">hardware</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-03-02</span>
+    <span title="last modification date" class="post-info">2018-03-12</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a> : <a href="https://lujun9972.github.io/tags/hardware">hardware</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/03/02/使用lshw读取硬件信息/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/03/02/使用lshw读取硬件信息/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/03/02/使用lshw读取硬件信息/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/03/02/使用lshw读取硬件信息/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

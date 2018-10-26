@@ -3,22 +3,24 @@
 <head>
   <title>为urxvt设置背景图片 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,25 +54,25 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1a2cebb">确保urxvt支持background images</a></li>
-<li><a href="#orgef0622f">为urxvt设置背景图片</a>
+<li><a href="#org2486d09">确保urxvt支持background images</a></li>
+<li><a href="#org2ba188e">为urxvt设置背景图片</a>
 <ul>
-<li><a href="#orgf03242e">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</a></li>
-<li><a href="#orgf6f092f">通过配置.Xdefaults</a></li>
+<li><a href="#orgcfa0c09">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</a></li>
+<li><a href="#orgb8a1a4b">通过配置.Xdefaults</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1a2cebb" class="outline-2">
-<h2 id="org1a2cebb">确保urxvt支持background images</h2>
-<div class="outline-text-2" id="text-org1a2cebb">
+<div id="outline-container-org2486d09" class="outline-2">
+<h2 id="org2486d09">确保urxvt支持background images</h2>
+<div class="outline-text-2" id="text-org2486d09">
 <p>
 要让urxvt设置桌面背景，首先需要确保urxvt编译时启用了 <code>pixbuf</code> 功能，可以通过下面命令来确认urxvt是否支持pixbuf
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">urxvt -help <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span> |grep ^options |grep pixbuf
+<pre class="src src-shell">urxvt -help 2&gt;&amp;1 |grep ^options |grep pixbuf
 </pre>
 </div>
 
@@ -93,22 +93,22 @@ archlinux的默认urxvt是不支持background images的，你需要安装aur中�
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">git clone https://github.com/exg/rxvt-unicode
-<span style="color: #4f97d7;">cd</span> rxvt-unicode
+<span style="color: #483d8b;">cd</span> rxvt-unicode
 ./configure --enable-256-color --enable-pixbuf 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgef0622f" class="outline-2">
-<h2 id="orgef0622f">为urxvt设置背景图片</h2>
-<div class="outline-text-2" id="text-orgef0622f">
+<div id="outline-container-org2ba188e" class="outline-2">
+<h2 id="org2ba188e">为urxvt设置背景图片</h2>
+<div class="outline-text-2" id="text-org2ba188e">
 </div>
-<div id="outline-container-orgf03242e" class="outline-3">
-<h3 id="orgf03242e">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</h3>
-<div class="outline-text-3" id="text-orgf03242e">
+<div id="outline-container-orgcfa0c09" class="outline-3">
+<h3 id="orgcfa0c09">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</h3>
+<div class="outline-text-3" id="text-orgcfa0c09">
 <div class="org-src-container">
-<pre class="src src-shell">urxvt -pixmap file<span style="color: #4f97d7;">[</span>;oplist<span style="color: #4f97d7;">]</span>
+<pre class="src src-shell">urxvt -pixmap file[;oplist]
 </pre>
 </div>
 <p>
@@ -140,23 +140,23 @@ urxvt本身也预设了许多背景图片的设置方式:
 这种方法比较灵活，比如我们可以定义一个alias，让urxvt执行时自动从 <code>~/Pictures/wallpaper</code> 中随机挑选一张图片作为背景图片
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">if</span>   urxvt -help <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span> |grep ^options |grep pixbuf &gt;/dev/null;<span style="color: #4f97d7; font-weight: bold;">then</span>
-    <span style="color: #4f97d7;">alias</span> <span style="color: #7590db;">urxvt</span>=<span style="color: #2d9574;">'urxvt -pixmap $(</span><span style="color: #fa8072;">find</span><span style="color: #2d9574;"> ~/Pictures/wallpaper -type f|shuf|head -n 1)'</span>
-<span style="color: #4f97d7; font-weight: bold;">fi</span>
+<pre class="src src-shell"><span style="color: #a020f0;">if</span>   urxvt -help 2&gt;&amp;1 |grep ^options |grep pixbuf &gt;/dev/null;<span style="color: #a020f0;">then</span>
+    <span style="color: #483d8b;">alias</span> <span style="color: #a0522d;">urxvt</span>=<span style="color: #8b2252;">'urxvt -pixmap $(</span><span style="color: #ff00ff;">find</span><span style="color: #8b2252;"> ~/Pictures/wallpaper -type f|shuf|head -n 1)'</span>
+<span style="color: #a020f0;">fi</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf6f092f" class="outline-3">
-<h3 id="orgf6f092f">通过配置.Xdefaults</h3>
-<div class="outline-text-3" id="text-orgf6f092f">
+<div id="outline-container-orgb8a1a4b" class="outline-3">
+<h3 id="orgb8a1a4b">通过配置.Xdefaults</h3>
+<div class="outline-text-3" id="text-orgb8a1a4b">
 <p>
 第二种方法是通过设置Xresource中的 <code>backgroundPixmap</code> 来实现,比如
 </p>
 <div class="org-src-container">
-<pre class="src src-conf-xdefaults"><span style="color: #7590db;">URxvt*backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png;style=tiled
-<span style="color: #7590db;">URxvt.backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png
-<span style="color: #7590db;">URxvt.backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png;+0+0:tile
+<pre class="src src-conf-xdefaults"><span style="color: #a0522d;">URxvt*backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png;style=tiled
+<span style="color: #a0522d;">URxvt.backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png
+<span style="color: #a0522d;">URxvt.backgroundPixmap</span>: /home/lujun9972/Pictures/wallpaper/1.png;+0+0:tile
 </pre>
 </div>
 
@@ -170,77 +170,49 @@ urxvt本身也预设了许多背景图片的设置方式:
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-09-04</span>
-            <span title="last modification date" class="post-info">2018-09-04</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-09-04</span>
+    <span title="last modification date" class="post-info">2018-09-04</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/09/04/为urxvt设置背景图片/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/09/04/为urxvt设置背景图片/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/09/04/为urxvt设置背景图片/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/09/04/为urxvt设置背景图片/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

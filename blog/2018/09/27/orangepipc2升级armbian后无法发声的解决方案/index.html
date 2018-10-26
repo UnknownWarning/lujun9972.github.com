@@ -3,22 +3,24 @@
 <head>
   <title>OrangePiPC2升级Armbian后无法发声的解决方案 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="异闻录" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgccdebb7">症状</a></li>
-<li><a href="#orgbd32664">排查过程</a></li>
-<li><a href="#orga2d67b1">另一种解决方法</a></li>
+<li><a href="#org5566f51">症状</a></li>
+<li><a href="#org8a7358f">排查过程</a></li>
+<li><a href="#org3c6c42d">另一种解决方法</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgccdebb7" class="outline-2">
-<h2 id="orgccdebb7">症状</h2>
-<div class="outline-text-2" id="text-orgccdebb7">
+<div id="outline-container-org5566f51" class="outline-2">
+<h2 id="org5566f51">症状</h2>
+<div class="outline-text-2" id="text-org5566f51">
 <p>
 某一次在对OrangePiPC2进行系统升级后，提示内核已更新，需要进行重启。
 </p>
@@ -74,9 +74,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgbd32664" class="outline-2">
-<h2 id="orgbd32664">排查过程</h2>
-<div class="outline-text-2" id="text-orgbd32664">
+<div id="outline-container-org8a7358f" class="outline-2">
+<h2 id="org8a7358f">排查过程</h2>
+<div class="outline-text-2" id="text-org8a7358f">
 <ol class="org-ol">
 <li><p>
 怀疑是不是音量被调成0了，因此运行 <code>alsamixer</code>,发现提示 <code>This sound device does not have any controls.</code>
@@ -84,7 +84,7 @@
 
 
 <div class="figure">
-<p><img src="./images/screenshot-01.png" alt="screenshot-01.png" />
+<p><img src="https://lujun9972.github.io/assets/blog/2018/09/27/orangepipc2升级armbian后无法发声的解决方案/screenshot-01.png" alt="screenshot-01.png" />
 </p>
 </div></li>
 
@@ -94,7 +94,7 @@
 
 
 <div class="figure">
-<p><img src="./images/screenshot-02.png" alt="screenshot-02.png" />
+<p><img src="https://lujun9972.github.io/assets/blog/2018/09/27/orangepipc2升级armbian后无法发声的解决方案/screenshot-02.png" alt="screenshot-02.png" />
 </p>
 </div></li>
 
@@ -104,7 +104,7 @@
 
 
 <div class="figure">
-<p><img src="./images/screenshot-03.png" alt="screenshot-03.png" />
+<p><img src="https://lujun9972.github.io/assets/blog/2018/09/27/orangepipc2升级armbian后无法发声的解决方案/screenshot-03.png" alt="screenshot-03.png" />
 </p>
 </div></li>
 
@@ -119,8 +119,8 @@
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">cat /proc/asound/cards
-<span style="color: #4f97d7;">echo</span> &#25110;&#32773;
-aplay -l | awk -F <span style="color: #2d9574;">\:</span> <span style="color: #2d9574;">'/,/{print $2}'</span> | awk <span style="color: #2d9574;">'{print $1}'</span> | uniq
+<span style="color: #483d8b;">echo</span> &#25110;&#32773;
+aplay -l | awk -F <span style="color: #8b2252;">\:</span> <span style="color: #8b2252;">'/,/{print $2}'</span> | awk <span style="color: #8b2252;">'{print $1}'</span> | uniq
 </pre>
 </div>
 
@@ -139,12 +139,12 @@ Codec
 可以看到我想要的默认声卡名为 <code>Codec</code>,其编号为1,那么创建文件 <code>/etc/asound.conf</code> 填入下面内容
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #ce537a; font-weight: bold;">pcm.!default</span> {
+<pre class="src src-conf"><span style="color: #228b22;">pcm.!default</span> {
     type hw
     card 1
 }
 
-<span style="color: #ce537a; font-weight: bold;">ctl.!default</span> {
+<span style="color: #228b22;">ctl.!default</span> {
     type hw           
     card 1
 }
@@ -159,9 +159,9 @@ Codec
 </div>
 </div>
 
-<div id="outline-container-orga2d67b1" class="outline-2">
-<h2 id="orga2d67b1">另一种解决方法</h2>
-<div class="outline-text-2" id="text-orga2d67b1">
+<div id="outline-container-org3c6c42d" class="outline-2">
+<h2 id="org3c6c42d">另一种解决方法</h2>
+<div class="outline-text-2" id="text-org3c6c42d">
 <p>
 其实还有另一种解决方法就是控制声卡module的载入顺序，让 <code>H3 Audio Codec</code> 声卡成为第一顺位的声卡就行了. 方法如下:
 </p>
@@ -199,8 +199,8 @@ snd_timer              32768  1 snd_pcm
 创建 <code>/etc/modprobe.d/alsa-base.conf</code> 文件，填入下面内容
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #7590db;">options snd_soc_hdmi_codec index</span>=-1
-<span style="color: #7590db;">options snd_soc_simple_card index</span>=-2
+<pre class="src src-conf"><span style="color: #a0522d;">options snd_soc_hdmi_codec index</span>=-1
+<span style="color: #a0522d;">options snd_soc_simple_card index</span>=-2
 </pre>
 </div></li>
 </ol>
@@ -210,77 +210,49 @@ snd_timer              32768  1 snd_pcm
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-09-27</span>
-            <span title="last modification date" class="post-info">2018-09-27</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/异闻录">异闻录</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-09-27</span>
+    <span title="last modification date" class="post-info">2018-09-27</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/异闻录">异闻录</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/09/27/orangepipc2升级armbian后无法发声的解决方案/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/09/27/orangepipc2升级armbian后无法发声的解决方案/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/09/27/orangepipc2升级armbian后无法发声的解决方案/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/09/27/orangepipc2升级armbian后无法发声的解决方案/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

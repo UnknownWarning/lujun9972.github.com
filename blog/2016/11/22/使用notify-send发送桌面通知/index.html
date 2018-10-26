@@ -3,22 +3,24 @@
 <head>
   <title>使用notify-send发送桌面通知 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,31 +54,31 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org98e0bc0">常用的选项</a>
+<li><a href="#org89aebbe">常用的选项</a>
 <ul>
-<li><a href="#org93aa25f">-t --expire-time=TIME</a></li>
-<li><a href="#orgcd34512">-u --urgency=LEVEL</a></li>
-<li><a href="#org8e03a39">-i --icon=ICON[,ICON...]</a>
+<li><a href="#org4af8729">-t --expire-time=TIME</a></li>
+<li><a href="#orgcb4febb">-u --urgency=LEVEL</a></li>
+<li><a href="#org74bedaf">-i --icon=ICON[,ICON...]</a>
 <ul>
-<li><a href="#orgc1dde93">Standard Action Icons</a></li>
-<li><a href="#org4094108">Standard Animation Icons</a></li>
-<li><a href="#orgdec7955">Standard Application Icons</a></li>
-<li><a href="#org5fe28e4">Standard Category Icons</a></li>
-<li><a href="#org49228a2">Standard Device Icons</a></li>
-<li><a href="#org71a7c0a">Standard Emblem Icons</a></li>
-<li><a href="#orgbca7fad">Standard Emotion Icons</a></li>
-<li><a href="#org5f6231d">Standard International Icons</a></li>
-<li><a href="#org786afe5">Standard MIME Type Icons</a></li>
-<li><a href="#orgbc137f4">Standard Place Icons</a></li>
-<li><a href="#org170c1f5">Standard Status Icons</a></li>
+<li><a href="#org64ea02d">Standard Action Icons</a></li>
+<li><a href="#org747c06a">Standard Animation Icons</a></li>
+<li><a href="#org4d2dd23">Standard Application Icons</a></li>
+<li><a href="#org7f0e6cf">Standard Category Icons</a></li>
+<li><a href="#org9bfe9ad">Standard Device Icons</a></li>
+<li><a href="#org50878c9">Standard Emblem Icons</a></li>
+<li><a href="#orga65f6a2">Standard Emotion Icons</a></li>
+<li><a href="#org5264dff">Standard International Icons</a></li>
+<li><a href="#orge954a71">Standard MIME Type Icons</a></li>
+<li><a href="#org443f65d">Standard Place Icons</a></li>
+<li><a href="#org9a4158e">Standard Status Icons</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org41a26a5">不常用的选项</a>
+<li><a href="#orga894536">不常用的选项</a>
 <ul>
-<li><a href="#org5798dc2">-c --category=TYPE[,TYPE...]</a></li>
-<li><a href="#orgc68f4d9">-h --hint=TYPE:NAME:VALUE</a></li>
+<li><a href="#org21d30b5">-c --category=TYPE[,TYPE...]</a></li>
+<li><a href="#org59086b7">-h --hint=TYPE:NAME:VALUE</a></li>
 </ul>
 </li>
 </ul>
@@ -88,7 +88,7 @@
 通过notify-send是一个可以让你发送桌面通知的命令. 它的语法非常简单:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">notify-send <span style="color: #4f97d7;">[</span>&#20854;&#20182;&#36873;&#39033;...<span style="color: #4f97d7;">]</span> &#26631;&#39064; <span style="color: #4f97d7;">[</span>&#20869;&#23481;<span style="color: #4f97d7;">]</span>
+<pre class="src src-sh">notify-send [&#20854;&#20182;&#36873;&#39033;...] &#26631;&#39064; [&#20869;&#23481;]
 </pre>
 </div>
 
@@ -138,17 +138,17 @@
 </tbody>
 </table>
 
-<div id="outline-container-org98e0bc0" class="outline-2">
-<h2 id="org98e0bc0">常用的选项</h2>
-<div class="outline-text-2" id="text-org98e0bc0">
+<div id="outline-container-org89aebbe" class="outline-2">
+<h2 id="org89aebbe">常用的选项</h2>
+<div class="outline-text-2" id="text-org89aebbe">
 <p>
 notify-send的常用的几个选项有这么几个:
 </p>
 </div>
 
-<div id="outline-container-org93aa25f" class="outline-3">
-<h3 id="org93aa25f">-t --expire-time=TIME</h3>
-<div class="outline-text-3" id="text-org93aa25f">
+<div id="outline-container-org4af8729" class="outline-3">
+<h3 id="org4af8729">-t --expire-time=TIME</h3>
+<div class="outline-text-3" id="text-org4af8729">
 <p>
 指定通知显示多长时间后消失,单位是毫秒. (Ubuntu的Notify OSD以及GNOME Shell会忽略该参数)
 </p>
@@ -163,9 +163,9 @@ notify-send的常用的几个选项有这么几个:
 </div>
 </div>
 
-<div id="outline-container-orgcd34512" class="outline-3">
-<h3 id="orgcd34512">-u --urgency=LEVEL</h3>
-<div class="outline-text-3" id="text-orgcd34512">
+<div id="outline-container-orgcb4febb" class="outline-3">
+<h3 id="orgcb4febb">-u --urgency=LEVEL</h3>
+<div class="outline-text-3" id="text-orgcb4febb">
 <p>
 指定通知的级别,只能是 <code>low</code>, <code>normal</code>, <code>critical</code> 这三个值中的一个.
 </p>
@@ -178,13 +178,13 @@ notify-send的常用的几个选项有这么几个:
 例如在我的机器上运行
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/bin/</span><span style="color: #4f97d7; font-weight: bold;">bash</span>
+<pre class="src src-sh"><span style="color: #b22222;">#</span><span style="color: #b22222;">!/bin/</span><span style="color: #a020f0;">bash</span>
 
 notify-send ignore
-<span style="color: #4f97d7; font-weight: bold;">for</span> level<span style="color: #4f97d7; font-weight: bold;"> in</span> low normal critical
-<span style="color: #4f97d7; font-weight: bold;">do</span>
-    notify-send -u $<span style="color: #7590db;">level</span> $<span style="color: #7590db;">level</span>
-<span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #a020f0;">for</span> level<span style="color: #a020f0;"> in</span> low normal critical
+<span style="color: #a020f0;">do</span>
+    notify-send -u $<span style="color: #a0522d;">level</span> $<span style="color: #a0522d;">level</span>
+<span style="color: #a020f0;">done</span>
 </pre>
 </div>
 <p>
@@ -197,9 +197,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org8e03a39" class="outline-3">
-<h3 id="org8e03a39">-i --icon=ICON[,ICON...]</h3>
-<div class="outline-text-3" id="text-org8e03a39">
+<div id="outline-container-org74bedaf" class="outline-3">
+<h3 id="org74bedaf">-i --icon=ICON[,ICON...]</h3>
+<div class="outline-text-3" id="text-org74bedaf">
 <p>
 指定显示通知的图标. 其中ICON既可以是一个指向图标文件的路径,也可以是标准图标的名称.
 </p>
@@ -209,9 +209,9 @@ notify-send ignore
 </p>
 </div>
 
-<div id="outline-container-orgc1dde93" class="outline-4">
-<h4 id="orgc1dde93">Standard Action Icons</h4>
-<div class="outline-text-4" id="text-orgc1dde93">
+<div id="outline-container-org64ea02d" class="outline-4">
+<h4 id="org64ea02d">Standard Action Icons</h4>
+<div class="outline-text-4" id="text-org64ea02d">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -742,9 +742,9 @@ notify-send ignore
 </div>
 
 
-<div id="outline-container-org4094108" class="outline-4">
-<h4 id="org4094108">Standard Animation Icons</h4>
-<div class="outline-text-4" id="text-org4094108">
+<div id="outline-container-org747c06a" class="outline-4">
+<h4 id="org747c06a">Standard Animation Icons</h4>
+<div class="outline-text-4" id="text-org747c06a">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -769,9 +769,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-orgdec7955" class="outline-4">
-<h4 id="orgdec7955">Standard Application Icons</h4>
-<div class="outline-text-4" id="text-orgdec7955">
+<div id="outline-container-org4d2dd23" class="outline-4">
+<h4 id="org4d2dd23">Standard Application Icons</h4>
+<div class="outline-text-4" id="text-org4d2dd23">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -886,9 +886,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org5fe28e4" class="outline-4">
-<h4 id="org5fe28e4">Standard Category Icons</h4>
-<div class="outline-text-4" id="text-org5fe28e4">
+<div id="outline-container-org7f0e6cf" class="outline-4">
+<h4 id="org7f0e6cf">Standard Category Icons</h4>
+<div class="outline-text-4" id="text-org7f0e6cf">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1003,9 +1003,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org49228a2" class="outline-4">
-<h4 id="org49228a2">Standard Device Icons</h4>
-<div class="outline-text-4" id="text-org49228a2">
+<div id="outline-container-org9bfe9ad" class="outline-4">
+<h4 id="org9bfe9ad">Standard Device Icons</h4>
+<div class="outline-text-4" id="text-org9bfe9ad">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1160,9 +1160,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org71a7c0a" class="outline-4">
-<h4 id="org71a7c0a">Standard Emblem Icons</h4>
-<div class="outline-text-4" id="text-org71a7c0a">
+<div id="outline-container-org50878c9" class="outline-4">
+<h4 id="org50878c9">Standard Emblem Icons</h4>
+<div class="outline-text-4" id="text-org50878c9">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1247,9 +1247,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-orgbca7fad" class="outline-4">
-<h4 id="orgbca7fad">Standard Emotion Icons</h4>
-<div class="outline-text-4" id="text-orgbca7fad">
+<div id="outline-container-orga65f6a2" class="outline-4">
+<h4 id="orga65f6a2">Standard Emotion Icons</h4>
+<div class="outline-text-4" id="text-orga65f6a2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1374,9 +1374,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org5f6231d" class="outline-4">
-<h4 id="org5f6231d">Standard International Icons</h4>
-<div class="outline-text-4" id="text-org5f6231d">
+<div id="outline-container-org5264dff" class="outline-4">
+<h4 id="org5264dff">Standard International Icons</h4>
+<div class="outline-text-4" id="text-org5264dff">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1401,9 +1401,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org786afe5" class="outline-4">
-<h4 id="org786afe5">Standard MIME Type Icons</h4>
-<div class="outline-text-4" id="text-org786afe5">
+<div id="outline-container-orge954a71" class="outline-4">
+<h4 id="orge954a71">Standard MIME Type Icons</h4>
+<div class="outline-text-4" id="text-orge954a71">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1498,9 +1498,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-orgbc137f4" class="outline-4">
-<h4 id="orgbc137f4">Standard Place Icons</h4>
-<div class="outline-text-4" id="text-orgbc137f4">
+<div id="outline-container-org443f65d" class="outline-4">
+<h4 id="org443f65d">Standard Place Icons</h4>
+<div class="outline-text-4" id="text-org443f65d">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1565,9 +1565,9 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org170c1f5" class="outline-4">
-<h4 id="org170c1f5">Standard Status Icons</h4>
-<div class="outline-text-4" id="text-org170c1f5">
+<div id="outline-container-org9a4158e" class="outline-4">
+<h4 id="org9a4158e">Standard Status Icons</h4>
+<div class="outline-text-4" id="text-org9a4158e">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1884,13 +1884,13 @@ notify-send ignore
 </div>
 </div>
 
-<div id="outline-container-org41a26a5" class="outline-2">
-<h2 id="org41a26a5">不常用的选项</h2>
-<div class="outline-text-2" id="text-org41a26a5">
+<div id="outline-container-orga894536" class="outline-2">
+<h2 id="orga894536">不常用的选项</h2>
+<div class="outline-text-2" id="text-orga894536">
 </div>
-<div id="outline-container-org5798dc2" class="outline-3">
-<h3 id="org5798dc2">-c --category=TYPE[,TYPE...]</h3>
-<div class="outline-text-3" id="text-org5798dc2">
+<div id="outline-container-org21d30b5" class="outline-3">
+<h3 id="org21d30b5">-c --category=TYPE[,TYPE...]</h3>
+<div class="outline-text-3" id="text-org21d30b5">
 <p>
 指定通知的类别. 
 </p>
@@ -2021,9 +2021,9 @@ notification标准定义了如下几种类别:
 </table>
 </div>
 </div>
-<div id="outline-container-orgc68f4d9" class="outline-3">
-<h3 id="orgc68f4d9">-h --hint=TYPE:NAME:VALUE</h3>
-<div class="outline-text-3" id="text-orgc68f4d9">
+<div id="outline-container-org59086b7" class="outline-3">
+<h3 id="org59086b7">-h --hint=TYPE:NAME:VALUE</h3>
+<div class="outline-text-3" id="text-org59086b7">
 <p>
 指定传递给notification server的额外数据,其中TYPE只能是int,double,string以及byte中的一个.
 </p>
@@ -2097,77 +2097,49 @@ notification标准定义了如下几种hint:
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2016-11-22</span>
-            <span title="last modification date" class="post-info">2016-11-22</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2016-11-22</span>
+    <span title="last modification date" class="post-info">2016-11-22</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2016/11/22/使用notify-send发送桌面通知/";
-         var disqus_url = "https://lujun9972.github.io/blog/2016/11/22/使用notify-send发送桌面通知/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2016/11/22/使用notify-send发送桌面通知/";
+     var disqus_url = "https://lujun9972.github.io/blog/2016/11/22/使用notify-send发送桌面通知/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

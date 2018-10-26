@@ -3,22 +3,24 @@
 <head>
   <title>linux定时休眠 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,13 +54,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org849db45">休眠的类型</a></li>
-<li><a href="#orga5399e4">suspend 休眠</a></li>
-<li><a href="#org62961b1">Hibernation 休眠</a></li>
-<li><a href="#orgcd854eb">hybrid 休眠</a></li>
-<li><a href="#org70cf920">Sleep Hooks</a></li>
-<li><a href="#orgc349ab6">定时执行休眠</a></li>
-<li><a href="#orge6dc811">定时唤醒休眠的linux</a></li>
+<li><a href="#org6a900c6">休眠的类型</a></li>
+<li><a href="#orga7582f3">suspend 休眠</a></li>
+<li><a href="#org4273dce">Hibernation 休眠</a></li>
+<li><a href="#org5f0e5f1">hybrid 休眠</a></li>
+<li><a href="#org6cf09ec">Sleep Hooks</a></li>
+<li><a href="#org424eb83">定时执行休眠</a></li>
+<li><a href="#orgbf2f6b1">定时唤醒休眠的linux</a></li>
 </ul>
 </div>
 </div>
@@ -68,9 +68,9 @@
 最近公司规定晚上走人后必须关闭电脑，但是像我们这样的人，经常会忘记了关闭电脑，而且关闭电脑之后再恢复工作环境也是件挺麻烦的事情，无奈之下只能折腾一下，让linux定时休眠了。
 </p>
 
-<div id="outline-container-org849db45" class="outline-2">
-<h2 id="org849db45">休眠的类型</h2>
-<div class="outline-text-2" id="text-org849db45">
+<div id="outline-container-org6a900c6" class="outline-2">
+<h2 id="org6a900c6">休眠的类型</h2>
+<div class="outline-text-2" id="text-org6a900c6">
 <p>
 目前大概由三种类型的休眠:
 </p>
@@ -87,9 +87,9 @@
 </div>
 </div>
 
-<div id="outline-container-orga5399e4" class="outline-2">
-<h2 id="orga5399e4">suspend 休眠</h2>
-<div class="outline-text-2" id="text-orga5399e4">
+<div id="outline-container-orga7582f3" class="outline-2">
+<h2 id="orga7582f3">suspend 休眠</h2>
+<div class="outline-text-2" id="text-orga7582f3">
 <p>
 进入 suspend 特别简单，无需额外的配置,在 systemd 系统上直接执行 <code>systemctl suspend</code> 就行了。
 </p>
@@ -102,34 +102,34 @@
 它的实际动作由 <code>systemd-suspend.service</code> 所定义, 在 archlinux 上，它长成这样子的:
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">SPDX-License-Identifier: LGPL-2.1+</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">This file is part of systemd.</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">systemd is free software; you can redistribute it and/or modify it</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">under the terms of the GNU Lesser General Public License as published by</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">the Free Software Foundation; either version 2.1 of the License, or</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">(at your option) any later version.</span>
+<pre class="src src-conf"><span style="color: #b22222;">#  </span><span style="color: #b22222;">SPDX-License-Identifier: LGPL-2.1+</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">This file is part of systemd.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">systemd is free software; you can redistribute it and/or modify it</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">under the terms of the GNU Lesser General Public License as published by</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">the Free Software Foundation; either version 2.1 of the License, or</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">(at your option) any later version.</span>
 
-[<span style="color: #ce537a; font-weight: bold;">Unit</span>]
-<span style="color: #7590db;">Description</span>=Suspend
-<span style="color: #7590db;">Documentation</span>=man:systemd-suspend.service(8)
-<span style="color: #7590db;">DefaultDependencies</span>=no
-<span style="color: #7590db;">Requires</span>=sleep.target
-<span style="color: #7590db;">After</span>=sleep.target
+[<span style="color: #228b22;">Unit</span>]
+<span style="color: #a0522d;">Description</span>=Suspend
+<span style="color: #a0522d;">Documentation</span>=man:systemd-suspend.service(8)
+<span style="color: #a0522d;">DefaultDependencies</span>=no
+<span style="color: #a0522d;">Requires</span>=sleep.target
+<span style="color: #a0522d;">After</span>=sleep.target
 
-[<span style="color: #ce537a; font-weight: bold;">Service</span>]
-<span style="color: #7590db;">Type</span>=oneshot
-<span style="color: #7590db;">ExecStart</span>=/usr/lib/systemd/systemd-sleep suspend
+[<span style="color: #228b22;">Service</span>]
+<span style="color: #a0522d;">Type</span>=oneshot
+<span style="color: #a0522d;">ExecStart</span>=/usr/lib/systemd/systemd-sleep suspend
 </pre>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-org62961b1" class="outline-2">
-<h2 id="org62961b1">Hibernation 休眠</h2>
-<div class="outline-text-2" id="text-org62961b1">
+<div id="outline-container-org4273dce" class="outline-2">
+<h2 id="org4273dce">Hibernation 休眠</h2>
+<div class="outline-text-2" id="text-org4273dce">
 <p>
 由于 hibernation 休眠要求将内存中的内容写入到交换空间中，因此你至少要有一个空间大于内存的交换分区或者交换文件。
 (其实若交换空间不够内存大也不是一定就无法进行hibernation休眠，可以尝试运行 <code>echo 0 |sudo tee /sys/power/image_size</code>, 这会让系统在写入交换空间时尽可能的进行压缩，但这种方法也无法保证一定能够休眠成功)
@@ -139,12 +139,12 @@
 若之前没有创建交换分区，那么可以临时创建一个交换文件来用。比如下面命令创建一个5G的交换文件
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo dd <span style="color: #7590db;">if</span>=/dev/zero <span style="color: #7590db;">of</span>=/swapfile <span style="color: #7590db;">bs</span>=<span style="color: #a45bad;">10240</span> <span style="color: #7590db;">count</span>=<span style="color: #a45bad;">524288</span>
+<pre class="src src-shell">sudo dd <span style="color: #a0522d;">if</span>=/dev/zero <span style="color: #a0522d;">of</span>=/swapfile <span style="color: #a0522d;">bs</span>=10240 <span style="color: #a0522d;">count</span>=524288
 sudo mkswap /swapfile
-sudo chmod <span style="color: #a45bad;">0600</span> /swapfile
+sudo chmod 0600 /swapfile
 sudo swapon /swapfile
 sudo cp /etc/fstab /etc/fstab.bak
-<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"/swapfile swap swap default 0 0"</span> |tee -a /etc/fstab
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"/swapfile swap swap default 0 0"</span> |tee -a /etc/fstab
 </pre>
 </div>
 
@@ -188,7 +188,7 @@ no label, UUID=d0f0c682-e1fa-416f-8fe2-b554b8ca363a
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">sudo sed -i <span style="color: #2d9574;">'/GRUB_CMDLINE_LINUX_DEFAULT/ s!"$! resume=/dev/sda2"!'</span> /etc/default/grub
+<pre class="src src-shell">sudo sed -i <span style="color: #8b2252;">'/GRUB_CMDLINE_LINUX_DEFAULT/ s!"$! resume=/dev/sda2"!'</span> /etc/default/grub
 </pre>
 </div></li>
 </ol></li>
@@ -240,7 +240,7 @@ File size of /swapfile is 5368709120 (1310720 blocks of 4096 bytes)
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">sudo sed -i <span style="color: #2d9574;">'/GRUB_CMDLINE_LINUX_DEFAULT/ s!"$! resume=/dev/sda3 resume_offset=4653056"!'</span> /etc/default/grub
+<pre class="src src-shell">sudo sed -i <span style="color: #8b2252;">'/GRUB_CMDLINE_LINUX_DEFAULT/ s!"$! resume=/dev/sda3 resume_offset=4653056"!'</span> /etc/default/grub
 </pre>
 </div></li>
 </ol></li>
@@ -264,7 +264,7 @@ File size of /swapfile is 5368709120 (1310720 blocks of 4096 bytes)
 修改 <code>/etc/mkinitcpio.conf</code> 文件，在 <code>HOOKS</code> 中添加 <code>resume</code>
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo sed -i <span style="color: #2d9574;">'/^HOOKS=/ s/)/ resume)/'</span> /etc/mkinitcpio.conf 
+<pre class="src src-shell">sudo sed -i <span style="color: #8b2252;">'/^HOOKS=/ s/)/ resume)/'</span> /etc/mkinitcpio.conf 
 </pre>
 </div>
 
@@ -318,33 +318,33 @@ File size of /swapfile is 5368709120 (1310720 blocks of 4096 bytes)
 类似的，它的实际动作由 <code>systemd-hibernte.service</code> 所定义, 在 archlinux 上，它长成这样子的:
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">SPDX-License-Identifier: LGPL-2.1+</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">This file is part of systemd.</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">systemd is free software; you can redistribute it and/or modify it</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">under the terms of the GNU Lesser General Public License as published by</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">the Free Software Foundation; either version 2.1 of the License, or</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">(at your option) any later version.</span>
+<pre class="src src-conf"><span style="color: #b22222;">#  </span><span style="color: #b22222;">SPDX-License-Identifier: LGPL-2.1+</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">This file is part of systemd.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">systemd is free software; you can redistribute it and/or modify it</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">under the terms of the GNU Lesser General Public License as published by</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">the Free Software Foundation; either version 2.1 of the License, or</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">(at your option) any later version.</span>
 
-[<span style="color: #ce537a; font-weight: bold;">Unit</span>]
-<span style="color: #7590db;">Description</span>=Hibernate
-<span style="color: #7590db;">Documentation</span>=man:systemd-suspend.service(8)
-<span style="color: #7590db;">DefaultDependencies</span>=no
-<span style="color: #7590db;">Requires</span>=sleep.target
-<span style="color: #7590db;">After</span>=sleep.target
+[<span style="color: #228b22;">Unit</span>]
+<span style="color: #a0522d;">Description</span>=Hibernate
+<span style="color: #a0522d;">Documentation</span>=man:systemd-suspend.service(8)
+<span style="color: #a0522d;">DefaultDependencies</span>=no
+<span style="color: #a0522d;">Requires</span>=sleep.target
+<span style="color: #a0522d;">After</span>=sleep.target
 
-[<span style="color: #ce537a; font-weight: bold;">Service</span>]
-<span style="color: #7590db;">Type</span>=oneshot
-<span style="color: #7590db;">ExecStart</span>=/usr/lib/systemd/systemd-sleep hibernate
+[<span style="color: #228b22;">Service</span>]
+<span style="color: #a0522d;">Type</span>=oneshot
+<span style="color: #a0522d;">ExecStart</span>=/usr/lib/systemd/systemd-sleep hibernate
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgcd854eb" class="outline-2">
-<h2 id="orgcd854eb">hybrid 休眠</h2>
-<div class="outline-text-2" id="text-orgcd854eb">
+<div id="outline-container-org5f0e5f1" class="outline-2">
+<h2 id="org5f0e5f1">hybrid 休眠</h2>
+<div class="outline-text-2" id="text-org5f0e5f1">
 <p>
 在配置好 hibernate 休眠后，也就能正常进行 hybrid 休眠了，方法是执行
 </p>
@@ -357,33 +357,33 @@ File size of /swapfile is 5368709120 (1310720 blocks of 4096 bytes)
 类似的，它的实际动作由 <code>systemd-hybrid-sleep.service</code> 所定义, 在 archlinux 上，它长成这样子的:
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">SPDX-License-Identifier: LGPL-2.1+</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">This file is part of systemd.</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">systemd is free software; you can redistribute it and/or modify it</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">under the terms of the GNU Lesser General Public License as published by</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">the Free Software Foundation; either version 2.1 of the License, or</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#  </span><span style="color: #2aa1ae; background-color: #292e34;">(at your option) any later version.</span>
+<pre class="src src-conf"><span style="color: #b22222;">#  </span><span style="color: #b22222;">SPDX-License-Identifier: LGPL-2.1+</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">This file is part of systemd.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">systemd is free software; you can redistribute it and/or modify it</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">under the terms of the GNU Lesser General Public License as published by</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">the Free Software Foundation; either version 2.1 of the License, or</span>
+<span style="color: #b22222;">#  </span><span style="color: #b22222;">(at your option) any later version.</span>
 
-[<span style="color: #ce537a; font-weight: bold;">Unit</span>]
-<span style="color: #7590db;">Description</span>=Hybrid Suspend+Hibernate
-<span style="color: #7590db;">Documentation</span>=man:systemd-suspend.service(8)
-<span style="color: #7590db;">DefaultDependencies</span>=no
-<span style="color: #7590db;">Requires</span>=sleep.target
-<span style="color: #7590db;">After</span>=sleep.target
+[<span style="color: #228b22;">Unit</span>]
+<span style="color: #a0522d;">Description</span>=Hybrid Suspend+Hibernate
+<span style="color: #a0522d;">Documentation</span>=man:systemd-suspend.service(8)
+<span style="color: #a0522d;">DefaultDependencies</span>=no
+<span style="color: #a0522d;">Requires</span>=sleep.target
+<span style="color: #a0522d;">After</span>=sleep.target
 
-[<span style="color: #ce537a; font-weight: bold;">Service</span>]
-<span style="color: #7590db;">Type</span>=oneshot
-<span style="color: #7590db;">ExecStart</span>=/usr/lib/systemd/systemd-sleep hybrid-sleep
+[<span style="color: #228b22;">Service</span>]
+<span style="color: #a0522d;">Type</span>=oneshot
+<span style="color: #a0522d;">ExecStart</span>=/usr/lib/systemd/systemd-sleep hybrid-sleep
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org70cf920" class="outline-2">
-<h2 id="org70cf920">Sleep Hooks</h2>
-<div class="outline-text-2" id="text-org70cf920">
+<div id="outline-container-org6cf09ec" class="outline-2">
+<h2 id="org6cf09ec">Sleep Hooks</h2>
+<div class="outline-text-2" id="text-org6cf09ec">
 <p>
 从上面的service文件中可以看出，不管是哪种类型的系统休眠，其内部实际调用的都是 <a href="https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8">systemd-sleep</a>.
 </p>
@@ -460,7 +460,7 @@ SEE ALSO
 
 NOTES
         1. Inhibitor interface
-           <span style="color: #2aa1ae; text-decoration: underline;"><a href="https://www.freedesktop.org/wiki/Software/systemd/inhibit">https://www.freedesktop.org/wiki/Software/systemd/inhibit</a></span>
+           <span style="color: #3a5fcd; text-decoration: underline;"><a href="https://www.freedesktop.org/wiki/Software/systemd/inhibit">https://www.freedesktop.org/wiki/Software/systemd/inhibit</a></span>
 
 systemd 238                                         SYSTEMD-SUSPEND.SERVICE(8)
 </pre>
@@ -480,9 +480,9 @@ systemd 238                                         SYSTEMD-SUSPEND.SERVICE(8)
 </div>
 </div>
 
-<div id="outline-container-orgc349ab6" class="outline-2">
-<h2 id="orgc349ab6">定时执行休眠</h2>
-<div class="outline-text-2" id="text-orgc349ab6">
+<div id="outline-container-org424eb83" class="outline-2">
+<h2 id="org424eb83">定时执行休眠</h2>
+<div class="outline-text-2" id="text-org424eb83">
 <p>
 systemd 系统中的定时任务是由timer来实现的，而每个timer都与一个service相对应。 
 </p>
@@ -495,24 +495,24 @@ systemd 系统中的定时任务是由timer来实现的，而每个timer都与�
 下面是一个timer的例子，每天21:30分开始自动hibernate休眠
 </p>
 <div class="org-src-container">
-<pre class="src src-conf">[<span style="color: #ce537a; font-weight: bold;">Unit</span>]
-<span style="color: #7590db;">Description</span>=Hibernate every 21:30:00
+<pre class="src src-conf">[<span style="color: #228b22;">Unit</span>]
+<span style="color: #a0522d;">Description</span>=Hibernate every 21:30:00
 
-[<span style="color: #ce537a; font-weight: bold;">Timer</span>]
-<span style="color: #7590db;">OnCalendar</span>=*-*-* 21:30:00
-<span style="color: #7590db;">Persistent</span>=true
-<span style="color: #7590db;">Unit</span>=systemd-hibernate.service
+[<span style="color: #228b22;">Timer</span>]
+<span style="color: #a0522d;">OnCalendar</span>=*-*-* 21:30:00
+<span style="color: #a0522d;">Persistent</span>=true
+<span style="color: #a0522d;">Unit</span>=systemd-hibernate.service
 
-[<span style="color: #ce537a; font-weight: bold;">Install</span>]
-<span style="color: #7590db;">WantedBy</span>=timers.target
+[<span style="color: #228b22;">Install</span>]
+<span style="color: #a0522d;">WantedBy</span>=timers.target
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge6dc811" class="outline-2">
-<h2 id="orge6dc811">定时唤醒休眠的linux</h2>
-<div class="outline-text-2" id="text-orge6dc811">
+<div id="outline-container-orgbf2f6b1" class="outline-2">
+<h2 id="orgbf2f6b1">定时唤醒休眠的linux</h2>
+<div class="outline-text-2" id="text-orgbf2f6b1">
 <p>
 使用 rtcwake 可以在给定的时间唤醒处于休眠状态的电脑
 </p>
@@ -521,9 +521,9 @@ systemd 系统中的定时任务是由timer来实现的，而每个timer都与�
 其主要用法为:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo rtcwake -m $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">mode</span><span style="color: #4f97d7;">}</span> -t $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">time_t</span><span style="color: #4f97d7;">}</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#25110;&#32773;</span>
-sudo rtcwake -m $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">mode</span><span style="color: #4f97d7;">}</span> -s $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">seconds</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell">sudo rtcwake -m ${<span style="color: #a0522d;">mode</span>} -t ${<span style="color: #a0522d;">time_t</span>}
+<span style="color: #b22222;"># </span><span style="color: #b22222;">&#25110;&#32773;</span>
+sudo rtcwake -m ${<span style="color: #a0522d;">mode</span>} -s ${<span style="color: #a0522d;">seconds</span>}
 </pre>
 </div>
 
@@ -542,7 +542,7 @@ sudo rtcwake -m $<span style="color: #4f97d7;">{</span><span style="color: #7590
 参数 time_t 为从 <code>1970-01-01, 00:00 UTC</code> 开始到现在的秒数，可以通过 <code>date</code> 命令来将时间字符串转换成这个秒数，比如
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo rtcwake -m disk -t $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">date</span> -d <span style="color: #a45bad;">08:30</span> +%s<span style="color: #4f97d7;">)</span>
+<pre class="src src-shell">sudo rtcwake -m disk -t $(<span style="color: #ff00ff;">date</span> -d 08:30 +%s)
 </pre>
 </div>
 <p>
@@ -558,77 +558,49 @@ sudo rtcwake -m $<span style="color: #4f97d7;">{</span><span style="color: #7590
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-06-21</span>
-            <span title="last modification date" class="post-info">2018-06-22</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-06-21</span>
+    <span title="last modification date" class="post-info">2018-06-22</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/06/21/linux定时休眠/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/06/21/linux定时休眠/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/06/21/linux定时休眠/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/06/21/linux定时休眠/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>

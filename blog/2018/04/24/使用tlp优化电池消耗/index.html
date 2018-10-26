@@ -3,22 +3,24 @@
 <head>
   <title>使用tlp优化电池消耗 - 暗无天日</title>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="author" content="lujun9972" />
   <meta name="keywords" content="linux和它的小伙伴" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
-   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
-   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
    #disqus_thread a {color: #00ffff;}
   </style>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/comment.css" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
-  <body><div class="container">
+  <body class="container">
 <div>
   <header class="masthead">
     <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
@@ -32,15 +34,13 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/years/">Years</a></li>
-        <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
         <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
         <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+        <li><a href="">GitHub</a></li>
         <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.google.com/search">
+    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
       <input type="text" class="field" name="q" id="s" placeholder="Search">
       <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
@@ -54,19 +54,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9256ece">安装TLP</a></li>
-<li><a href="#org12b864b">启动TLP服务</a></li>
-<li><a href="#org39e55b1">使用TLP</a>
+<li><a href="#org0a81085">安装TLP</a></li>
+<li><a href="#orgb928286">启动TLP服务</a></li>
+<li><a href="#org35fadb8">使用TLP</a>
 <ul>
-<li><a href="#orgfeacd1d">tlp: 应用笔记本的节能设置。</a></li>
-<li><a href="#org8d08efd">tlp-stat: 显示当前的节能设置</a></li>
-<li><a href="#org2488b4e">wifi: 手动启动/关闭wifi</a></li>
-<li><a href="#org4dd558a">bluetooth: 手动启动/关闭蓝牙</a></li>
-<li><a href="#orgc7b72e5">wwan: 手动启动/关闭wwan(3G/4G)设备</a></li>
+<li><a href="#orga89d837">tlp: 应用笔记本的节能设置。</a></li>
+<li><a href="#orgbaa54c5">tlp-stat: 显示当前的节能设置</a></li>
+<li><a href="#orge3e5d9e">wifi: 手动启动/关闭wifi</a></li>
+<li><a href="#org7c5c69f">bluetooth: 手动启动/关闭蓝牙</a></li>
+<li><a href="#orgd8af7db">wwan: 手动启动/关闭wwan(3G/4G)设备</a></li>
 </ul>
 </li>
-<li><a href="#org1b5f89e">配置TLP</a></li>
-<li><a href="#orga230627">TLPUI</a></li>
+<li><a href="#org00bce6b">配置TLP</a></li>
+<li><a href="#org5f75493">TLPUI</a></li>
 </ul>
 </div>
 </div>
@@ -75,9 +75,9 @@ TLP是一款linux上的基于文本界面的高级电源管理工具。TLP默认
 此外TLP也具有很高的可配置性，能够让你充分的配置以满足特殊需求。
 </p>
 
-<div id="outline-container-org9256ece" class="outline-2">
-<h2 id="org9256ece">安装TLP</h2>
-<div class="outline-text-2" id="text-org9256ece">
+<div id="outline-container-org0a81085" class="outline-2">
+<h2 id="org0a81085">安装TLP</h2>
+<div class="outline-text-2" id="text-org0a81085">
 <p>
 在archlinux上通过下面命令来安装：
 </p>
@@ -96,15 +96,15 @@ TLP是一款linux上的基于文本界面的高级电源管理工具。TLP默认
 </div>
 </div>
 
-<div id="outline-container-org12b864b" class="outline-2">
-<h2 id="org12b864b">启动TLP服务</h2>
-<div class="outline-text-2" id="text-org12b864b">
+<div id="outline-container-orgb928286" class="outline-2">
+<h2 id="orgb928286">启动TLP服务</h2>
+<div class="outline-text-2" id="text-orgb928286">
 <p>
 TLP默认会启动 <code>NetworkManager.service</code>,然而我使用的是 <code>netctl</code> 来管理网络，因此还需要修改一下 <code>tlp.service</code>
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">sudo cp /usr/lib/systemd/system/tlp.service /etc/systemd/system/
-sudo sed -i <span style="color: #2d9574;">'/Wants/ s/NetworkManager.service//'</span> /etc/systemd/system/tlp.service
+sudo sed -i <span style="color: #8b2252;">'/Wants/ s/NetworkManager.service//'</span> /etc/systemd/system/tlp.service
 </pre>
 </div>
 
@@ -171,17 +171,17 @@ Power source   = AC
 </div>
 </div>
 
-<div id="outline-container-org39e55b1" class="outline-2">
-<h2 id="org39e55b1">使用TLP</h2>
-<div class="outline-text-2" id="text-org39e55b1">
+<div id="outline-container-org35fadb8" class="outline-2">
+<h2 id="org35fadb8">使用TLP</h2>
+<div class="outline-text-2" id="text-org35fadb8">
 <p>
 TLP中最常用的命令有这么几个：
 </p>
 </div>
 
-<div id="outline-container-orgfeacd1d" class="outline-3">
-<h3 id="orgfeacd1d">tlp: 应用笔记本的节能设置。</h3>
-<div class="outline-text-3" id="text-orgfeacd1d">
+<div id="outline-container-orga89d837" class="outline-3">
+<h3 id="orga89d837">tlp: 应用笔记本的节能设置。</h3>
+<div class="outline-text-3" id="text-orga89d837">
 <dl class="org-dl">
 <dt>sudo tlp start</dt><dd>根据实际情况是使用交流电还是电池，来应用对应的节能设置</dd>
 <dt>sudo tlp ac</dt><dd>强制切换到交流电对应的节能设置</dd>
@@ -189,9 +189,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-org8d08efd" class="outline-3">
-<h3 id="org8d08efd">tlp-stat: 显示当前的节能设置</h3>
-<div class="outline-text-3" id="text-org8d08efd">
+<div id="outline-container-orgbaa54c5" class="outline-3">
+<h3 id="orgbaa54c5">tlp-stat: 显示当前的节能设置</h3>
+<div class="outline-text-3" id="text-orgbaa54c5">
 <dl class="org-dl">
 <dt>sudo tlp-stat -b</dt><dd>显示电池的相关信息</dd>
 <dt>tlp-stat -c</dt><dd>显示tlp当前的配置信息</dd>
@@ -205,9 +205,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-org2488b4e" class="outline-3">
-<h3 id="org2488b4e">wifi: 手动启动/关闭wifi</h3>
-<div class="outline-text-3" id="text-org2488b4e">
+<div id="outline-container-orge3e5d9e" class="outline-3">
+<h3 id="orge3e5d9e">wifi: 手动启动/关闭wifi</h3>
+<div class="outline-text-3" id="text-orge3e5d9e">
 <dl class="org-dl">
 <dt>sudo wifi on</dt><dd>手动启动wifi</dd>
 <dt>sudo wifi off</dt><dd>手动关闭wifi</dd>
@@ -215,9 +215,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-org4dd558a" class="outline-3">
-<h3 id="org4dd558a">bluetooth: 手动启动/关闭蓝牙</h3>
-<div class="outline-text-3" id="text-org4dd558a">
+<div id="outline-container-org7c5c69f" class="outline-3">
+<h3 id="org7c5c69f">bluetooth: 手动启动/关闭蓝牙</h3>
+<div class="outline-text-3" id="text-org7c5c69f">
 <dl class="org-dl">
 <dt>sudo bluetooth on</dt><dd>手动启动蓝牙</dd>
 <dt>sudo bluetooth off</dt><dd>手动关闭蓝牙</dd>
@@ -225,9 +225,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-orgc7b72e5" class="outline-3">
-<h3 id="orgc7b72e5">wwan: 手动启动/关闭wwan(3G/4G)设备</h3>
-<div class="outline-text-3" id="text-orgc7b72e5">
+<div id="outline-container-orgd8af7db" class="outline-3">
+<h3 id="orgd8af7db">wwan: 手动启动/关闭wwan(3G/4G)设备</h3>
+<div class="outline-text-3" id="text-orgd8af7db">
 <dl class="org-dl">
 <dt>sudo wwan on</dt><dd>手动启动wwlan设备</dd>
 <dt>sudo wwan off</dt><dd>手动关闭wwlan设备</dd>
@@ -236,17 +236,17 @@ TLP中最常用的命令有这么几个：
 </div>
 </div>
 </div>
-<div id="outline-container-org1b5f89e" class="outline-2">
-<h2 id="org1b5f89e">配置TLP</h2>
-<div class="outline-text-2" id="text-org1b5f89e">
+<div id="outline-container-org00bce6b" class="outline-2">
+<h2 id="org00bce6b">配置TLP</h2>
+<div class="outline-text-2" id="text-org00bce6b">
 <p>
 TLP的配置文件放在 <code>/etc/default/tlp</code> 中，详细的配置方法请参见<a href="http://linrunner.de/en/tlp/docs/tlp-configuration.html">官网上的说明</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orga230627" class="outline-2">
-<h2 id="orga230627">TLPUI</h2>
-<div class="outline-text-2" id="text-orga230627">
+<div id="outline-container-org5f75493" class="outline-2">
+<h2 id="org5f75493">TLPUI</h2>
+<div class="outline-text-2" id="text-org5f75493">
 <p>
 TLP本身并不自带图形化用户界面，但是有一个第三方的GTK GUI界面可以使用，名叫 TLPUI
 </p>
@@ -269,77 +269,49 @@ archlinux的aur仓库中就有这个应用,可以通过下面这个命令来安�
 </div>
 </div>
 <div>
-        <div class="post-meta">
-            <span title="post date" class="post-info">2018-04-24</span>
-            <span title="last modification date" class="post-info">2018-09-12</span>
-            <span title="tags" class="post-info">:<a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a>:</span>
-            <span title="author" class="post-info"><a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a></span>
-        </div>
-    <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
-        <section>
-            <h1>Comments</h1>
-            <div id="comment-wrap">
-                    <a class="disqus_label">使用 Disqus 评论</a>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-04-24</span>
+    <span title="last modification date" class="post-info">2018-09-12</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
     </ul>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-         //var disqus_developer = 1;
-         var preempt_signal=false;
-         var disqus_identifier = "/blog/2018/04/24/使用tlp优化电池消耗/";
-         var disqus_url = "https://lujun9972.github.io/blog/2018/04/24/使用tlp优化电池消耗/";
-         var disqus_shortname = 'lujun9972';
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-         (function() {
-             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             $('#disqus_thread').css('display','none');
-         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script>
-     /* comments */
-     var ego_disqus_thread=$('#disqus_thread');
-     var ego_ds_label=$('.ds-thread');
-     $('.disqus_label').click(function(){
-         ego_disqus_thread.show();
-         ego_ds_label.hide();
-     });
-     $('.ds-label').click(function(){
-         ego_disqus_thread.hide();
-         ego_ds_label.show();
-     });
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/04/24/使用tlp优化电池消耗/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/04/24/使用tlp优化电池消耗/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
     </script>
-        </section>
-    <script src="https://lujun9972.github.io/media/js/main.js"></script>
-        <script>
-         var _hmt = _hmt || [];
-         (function() {
-             var hm = document.createElement("script");
-             hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-         })();
-        </script>
-    <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
-            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
     </div>
-            </div>
-            <script type="text/javascript"
-                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
-            </script>
-            <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-            </script>
-</div>
 
-  </div></body>
+  </body>
 </html>
