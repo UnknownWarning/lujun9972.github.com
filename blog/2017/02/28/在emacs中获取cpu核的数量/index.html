@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,10 +56,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbe28b4a">在linux/cygwin下获取CPU核的数量</a></li>
-<li><a href="#orgb47b27f">在Windows下获取CPU核的数量</a></li>
-<li><a href="#orgf992bbb">在BSD/OSX下获取CPU核的数量</a></li>
-<li><a href="#org1828685">综合起来</a></li>
+<li><a href="#orgcc7b930">在linux/cygwin下获取CPU核的数量</a></li>
+<li><a href="#org2f88875">在Windows下获取CPU核的数量</a></li>
+<li><a href="#org900d539">在BSD/OSX下获取CPU核的数量</a></li>
+<li><a href="#org890e642">综合起来</a></li>
 </ul>
 </div>
 </div>
@@ -65,9 +67,9 @@
 从 <a href="http://nullprogram.com/blog/2015/10/14/">Counting Processor Cores in Emacs</a> 这里看到的,记录一下
 </p>
 
-<div id="outline-container-orgbe28b4a" class="outline-2">
-<h2 id="orgbe28b4a">在linux/cygwin下获取CPU核的数量</h2>
-<div class="outline-text-2" id="text-orgbe28b4a">
+<div id="outline-container-orgcc7b930" class="outline-2">
+<h2 id="orgcc7b930">在linux/cygwin下获取CPU核的数量</h2>
+<div class="outline-text-2" id="text-orgcc7b930">
 <p>
 linux/cygwin提供了 <code>/proc</code> 虚拟文件系统可以获取系统信息,具体来说,在 <code>/proc/cpuinfo</code> 中会列出所有CPU核的信息
 </p>
@@ -81,9 +83,9 @@ linux/cygwin提供了 <code>/proc</code> 虚拟文件系统可以获取系统信
 </div>
 </div>
 
-<div id="outline-container-orgb47b27f" class="outline-2">
-<h2 id="orgb47b27f">在Windows下获取CPU核的数量</h2>
-<div class="outline-text-2" id="text-orgb47b27f">
+<div id="outline-container-org2f88875" class="outline-2">
+<h2 id="org2f88875">在Windows下获取CPU核的数量</h2>
+<div class="outline-text-2" id="text-org2f88875">
 <p>
 Windows提供了一个名为 <code>NUMBER_OF_PROCESSORS</code> 的环境变量,里面存的就是核的数量
 </p>
@@ -96,9 +98,9 @@ Windows提供了一个名为 <code>NUMBER_OF_PROCESSORS</code> 的环境变量,�
 </div>
 </div>
 
-<div id="outline-container-orgf992bbb" class="outline-2">
-<h2 id="orgf992bbb">在BSD/OSX下获取CPU核的数量</h2>
-<div class="outline-text-2" id="text-orgf992bbb">
+<div id="outline-container-org900d539" class="outline-2">
+<h2 id="org900d539">在BSD/OSX下获取CPU核的数量</h2>
+<div class="outline-text-2" id="text-org900d539">
 <p>
 需要调用 <code>sysctl</code> 来获取
 </p>
@@ -112,9 +114,9 @@ Windows提供了一个名为 <code>NUMBER_OF_PROCESSORS</code> 的环境变量,�
 </div>
 </div>
 
-<div id="outline-container-org1828685" class="outline-2">
-<h2 id="org1828685">综合起来</h2>
-<div class="outline-text-2" id="text-org1828685">
+<div id="outline-container-org890e642" class="outline-2">
+<h2 id="org890e642">综合起来</h2>
+<div class="outline-text-2" id="text-org890e642">
 <p>
 通过变量 <code>system-type</code> 可以获得操作系统的类型,不同操作系统调用不同的方法来获取CPU核的数量
 </p>

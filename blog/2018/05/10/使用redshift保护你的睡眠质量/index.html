@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,9 +56,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1e599c4">安装</a></li>
-<li><a href="#orge90cc29">使用</a></li>
-<li><a href="#org648aaac">配置</a></li>
+<li><a href="#orgffa9a5f">安装</a></li>
+<li><a href="#orgcb3ca3c">使用</a></li>
+<li><a href="#org106fc7f">配置</a></li>
 </ul>
 </div>
 </div>
@@ -68,9 +70,9 @@ redshift是一款根据太阳位置(根据你所在的经纬度以及时间来�
 由于有证据表明，显示器发出的蓝光会抑制褪黑素的释放,从而影响夜晚的睡眠质量，因此redshift会在判断太阳下山后调低显示器的色温，从而减少光线中蓝光所占的计量。
 </p>
 
-<div id="outline-container-org1e599c4" class="outline-2">
-<h2 id="org1e599c4">安装</h2>
-<div class="outline-text-2" id="text-org1e599c4">
+<div id="outline-container-orgffa9a5f" class="outline-2">
+<h2 id="orgffa9a5f">安装</h2>
+<div class="outline-text-2" id="text-orgffa9a5f">
 <p>
 redshift在大多数linux发行版的仓库中都有，在archlinux下可以通过 <code>pacman</code> 来安装
 </p>
@@ -81,9 +83,9 @@ redshift在大多数linux发行版的仓库中都有，在archlinux下可以通�
 </div>
 </div>
 
-<div id="outline-container-orge90cc29" class="outline-2">
-<h2 id="orge90cc29">使用</h2>
-<div class="outline-text-2" id="text-orge90cc29">
+<div id="outline-container-orgcb3ca3c" class="outline-2">
+<h2 id="orgcb3ca3c">使用</h2>
+<div class="outline-text-2" id="text-orgcb3ca3c">
 <p>
 最简单的使用方法就是直接运行 <code>redshift</code>, 它会通过 <code>geoclue2</code> 服务自动获取你的经纬度从而判断当前时间是夜晚还是白天，从而调整色温。
 </p>
@@ -188,9 +190,9 @@ redshift在大多数linux发行版的仓库中都有，在archlinux下可以通�
 </div>
 </div>
 
-<div id="outline-container-org648aaac" class="outline-2">
-<h2 id="org648aaac">配置</h2>
-<div class="outline-text-2" id="text-org648aaac">
+<div id="outline-container-org106fc7f" class="outline-2">
+<h2 id="org106fc7f">配置</h2>
+<div class="outline-text-2" id="text-org106fc7f">
 <p>
 <code>redshift</code> 默认并不会创建配置文件，需要你手工在 <code>~/.config/</code> 中创建一个名为 <code>redshift.conf</code> 的文件，文件格式为标准的 <code>INI</code> 格式。
 </p>

@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,10 +56,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga31b3b8">安装golang</a></li>
-<li><a href="#org42d3689">安装git</a></li>
-<li><a href="#orga5edc02">安装Gogs</a></li>
-<li><a href="#org4261b85">自动运行Gogs服务器</a></li>
+<li><a href="#org6efe385">安装golang</a></li>
+<li><a href="#org03320bf">安装git</a></li>
+<li><a href="#orga20dda6">安装Gogs</a></li>
+<li><a href="#orgdb74038">自动运行Gogs服务器</a></li>
 </ul>
 </div>
 </div>
@@ -65,9 +67,9 @@
 目前主流的开源git服务器有 <code>gitlab</code> 和 <code>gogs</code> ，考虑到 <code>gogs</code> 相对轻量级，而OrangePi的性能普遍不高，因此这里选择 <code>gogs</code>
 </p>
 
-<div id="outline-container-orga31b3b8" class="outline-2">
-<h2 id="orga31b3b8">安装golang</h2>
-<div class="outline-text-2" id="text-orga31b3b8">
+<div id="outline-container-org6efe385" class="outline-2">
+<h2 id="org6efe385">安装golang</h2>
+<div class="outline-text-2" id="text-org6efe385">
 <p>
 gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此我们直接用 <code>apt</code> 安装
 </p>
@@ -78,9 +80,9 @@ gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此
 </div>
 </div>
 
-<div id="outline-container-org42d3689" class="outline-2">
-<h2 id="org42d3689">安装git</h2>
-<div class="outline-text-2" id="text-org42d3689">
+<div id="outline-container-org03320bf" class="outline-2">
+<h2 id="org03320bf">安装git</h2>
+<div class="outline-text-2" id="text-org03320bf">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install git
 </pre>
@@ -107,9 +109,9 @@ gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此
 </div>
 </div>
 
-<div id="outline-container-orga5edc02" class="outline-2">
-<h2 id="orga5edc02">安装Gogs</h2>
-<div class="outline-text-2" id="text-orga5edc02">
+<div id="outline-container-orga20dda6" class="outline-2">
+<h2 id="orga20dda6">安装Gogs</h2>
+<div class="outline-text-2" id="text-orga20dda6">
 <p>
 由于我们只是自己使用，需求很低，因此让Gogs直接使用SQLite3数据库
 </p>
@@ -148,9 +150,9 @@ git@orangepipc2:~/go/src/github.com/gogits/gogs$ ./gogs web
 </div>
 </div>
 
-<div id="outline-container-org4261b85" class="outline-2">
-<h2 id="org4261b85">自动运行Gogs服务器</h2>
-<div class="outline-text-2" id="text-org4261b85">
+<div id="outline-container-orgdb74038" class="outline-2">
+<h2 id="orgdb74038">自动运行Gogs服务器</h2>
+<div class="outline-text-2" id="text-orgdb74038">
 <p>
 Gogs提供了一个默认的service文件供我们使用： <code>~/go/src/github.com/gogits/gogs/scripts/systemd/gogs.service</code>
 </p>

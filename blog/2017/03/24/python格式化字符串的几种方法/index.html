@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,18 +56,18 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6c73e82">%操作符(已经落伍了)</a></li>
-<li><a href="#orga30da2e">使用字符串的format方法</a></li>
-<li><a href="#org7c1d4f6">模板字符串</a></li>
-<li><a href="#orgf669cd8">Formatted String Literals(Python3.6)</a></li>
-<li><a href="#orgff29d51">如何抉择?</a></li>
+<li><a href="#orge454ad8">%操作符(已经落伍了)</a></li>
+<li><a href="#org3186481">使用字符串的format方法</a></li>
+<li><a href="#orgdb18106">模板字符串</a></li>
+<li><a href="#orgd35e930">Formatted String Literals(Python3.6)</a></li>
+<li><a href="#org21d5285">如何抉择?</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6c73e82" class="outline-2">
-<h2 id="org6c73e82">%操作符(已经落伍了)</h2>
-<div class="outline-text-2" id="text-org6c73e82">
+<div id="outline-container-orge454ad8" class="outline-2">
+<h2 id="orge454ad8">%操作符(已经落伍了)</h2>
+<div class="outline-text-2" id="text-orge454ad8">
 <p>
 最原始的方式应该就是用 <code>%</code> 操作符了. 
 </p>
@@ -108,9 +110,9 @@ Python支持的格式化符可以在这里看到<a href="https://docs.python.org
 </div>
 </div>
 
-<div id="outline-container-orga30da2e" class="outline-2">
-<h2 id="orga30da2e">使用字符串的format方法</h2>
-<div class="outline-text-2" id="text-orga30da2e">
+<div id="outline-container-org3186481" class="outline-2">
+<h2 id="org3186481">使用字符串的format方法</h2>
+<div class="outline-text-2" id="text-org3186481">
 <p>
 字符串的format方法也支持按位置和按名字两种方式进行格式化:
 </p>
@@ -169,9 +171,9 @@ Python支持的格式化符可以在这里看到<a href="https://docs.python.org
 </div>
 </div>
 
-<div id="outline-container-org7c1d4f6" class="outline-2">
-<h2 id="org7c1d4f6">模板字符串</h2>
-<div class="outline-text-2" id="text-org7c1d4f6">
+<div id="outline-container-orgdb18106" class="outline-2">
+<h2 id="orgdb18106">模板字符串</h2>
+<div class="outline-text-2" id="text-orgdb18106">
 <p>
 Python的标准库中提供了一个 <code>Template</code> 类,可以进行简单的内容替换.
 </p>
@@ -213,9 +215,9 @@ Template的这个特性特别适用于格式化字符串是由外人提供的情
 </div>
 </div>
 
-<div id="outline-container-orgf669cd8" class="outline-2">
-<h2 id="orgf669cd8">Formatted String Literals(Python3.6)</h2>
-<div class="outline-text-2" id="text-orgf669cd8">
+<div id="outline-container-orgd35e930" class="outline-2">
+<h2 id="orgd35e930">Formatted String Literals(Python3.6)</h2>
+<div class="outline-text-2" id="text-orgd35e930">
 <p>
 这种格式化字符串的方法是由Python3.6新加入的. 它允许你在字符串内内嵌Python运算式:
 </p>
@@ -237,9 +239,9 @@ Template的这个特性特别适用于格式化字符串是由外人提供的情
 </div>
 </div>
 
-<div id="outline-container-orgff29d51" class="outline-2">
-<h2 id="orgff29d51">如何抉择?</h2>
-<div class="outline-text-2" id="text-orgff29d51">
+<div id="outline-container-org21d5285" class="outline-2">
+<h2 id="org21d5285">如何抉择?</h2>
+<div class="outline-text-2" id="text-org21d5285">
 <p>
 有这么多种方法格式化字符串,该如何抉择呢?
 </p>

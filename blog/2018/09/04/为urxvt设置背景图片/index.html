@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,20 +56,20 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org99b26f7">确保urxvt支持background images</a></li>
-<li><a href="#orga51e020">为urxvt设置背景图片</a>
+<li><a href="#orgb3308c2">确保urxvt支持background images</a></li>
+<li><a href="#orge3ad02b">为urxvt设置背景图片</a>
 <ul>
-<li><a href="#orgf9cb75d">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</a></li>
-<li><a href="#org911dcfa">通过配置.Xdefaults</a></li>
+<li><a href="#org952a8d8">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</a></li>
+<li><a href="#orgb3467be">通过配置.Xdefaults</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org99b26f7" class="outline-2">
-<h2 id="org99b26f7">确保urxvt支持background images</h2>
-<div class="outline-text-2" id="text-org99b26f7">
+<div id="outline-container-orgb3308c2" class="outline-2">
+<h2 id="orgb3308c2">确保urxvt支持background images</h2>
+<div class="outline-text-2" id="text-orgb3308c2">
 <p>
 要让urxvt设置桌面背景，首先需要确保urxvt编译时启用了 <code>pixbuf</code> 功能，可以通过下面命令来确认urxvt是否支持pixbuf
 </p>
@@ -100,13 +102,13 @@ archlinux的默认urxvt是不支持background images的，你需要安装aur中�
 </div>
 </div>
 
-<div id="outline-container-orga51e020" class="outline-2">
-<h2 id="orga51e020">为urxvt设置背景图片</h2>
-<div class="outline-text-2" id="text-orga51e020">
+<div id="outline-container-orge3ad02b" class="outline-2">
+<h2 id="orge3ad02b">为urxvt设置背景图片</h2>
+<div class="outline-text-2" id="text-orge3ad02b">
 </div>
-<div id="outline-container-orgf9cb75d" class="outline-3">
-<h3 id="orgf9cb75d">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</h3>
-<div class="outline-text-3" id="text-orgf9cb75d">
+<div id="outline-container-org952a8d8" class="outline-3">
+<h3 id="org952a8d8">通过 urxvt 的 <code>-pixmap</code> 选项来设置背景图片</h3>
+<div class="outline-text-3" id="text-org952a8d8">
 <div class="org-src-container">
 <pre class="src src-shell">urxvt -pixmap file<span style="color: #4f97d7;">[</span>;oplist<span style="color: #4f97d7;">]</span>
 </pre>
@@ -147,9 +149,9 @@ urxvt本身也预设了许多背景图片的设置方式:
 </div>
 </div>
 </div>
-<div id="outline-container-org911dcfa" class="outline-3">
-<h3 id="org911dcfa">通过配置.Xdefaults</h3>
-<div class="outline-text-3" id="text-org911dcfa">
+<div id="outline-container-orgb3467be" class="outline-3">
+<h3 id="orgb3467be">通过配置.Xdefaults</h3>
+<div class="outline-text-3" id="text-orgb3467be">
 <p>
 第二种方法是通过设置Xresource中的 <code>backgroundPixmap</code> 来实现,比如
 </p>

@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,27 +56,27 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7955fc3">定位命令</a></li>
-<li><a href="#org45b343c">格式重排</a></li>
-<li><a href="#org4dfe1e7">注释</a></li>
-<li><a href="#orgcb50791">自动补全命令</a></li>
-<li><a href="#org598a5a5">浏览程序大纲(hs-minor-mode)</a></li>
-<li><a href="#orgbaa1279">其他工具</a>
+<li><a href="#org30563e4">定位命令</a></li>
+<li><a href="#org629e6f9">格式重排</a></li>
+<li><a href="#org67c14fc">注释</a></li>
+<li><a href="#orgbfa48e1">自动补全命令</a></li>
+<li><a href="#org1611e61">浏览程序大纲(hs-minor-mode)</a></li>
+<li><a href="#org2981e7a">其他工具</a>
 <ul>
-<li><a href="#org4bb8dd1">imenu菜单</a></li>
-<li><a href="#orgab46200">which-func-mode</a></li>
-<li><a href="#org1bfd5e0">show-paren-mode</a></li>
-<li><a href="#org7be453d">electric-pair-mode</a></li>
-<li><a href="#org0b32430">electric-layout-mode</a></li>
+<li><a href="#org3d4c02b">imenu菜单</a></li>
+<li><a href="#orgd193261">which-func-mode</a></li>
+<li><a href="#orgf70c932">show-paren-mode</a></li>
+<li><a href="#org860da9a">electric-pair-mode</a></li>
+<li><a href="#org9772650">electric-layout-mode</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7955fc3" class="outline-2">
-<h2 id="org7955fc3">定位命令</h2>
-<div class="outline-text-2" id="text-org7955fc3">
+<div id="outline-container-org30563e4" class="outline-2">
+<h2 id="org30563e4">定位命令</h2>
+<div class="outline-text-2" id="text-org30563e4">
 <p>
 Emacs提供了很多快速定位的命令,这些命令可以帮助我们快速定位到想编辑的地方. 
 我们可以使用M-a直接定位到程序行的开头,使用M-e直接定位到程序行的结尾部分.
@@ -153,9 +155,9 @@ Emacs提供了很多快速定位的命令,这些命令可以帮助我们快速�
 </div>
 </div>
 
-<div id="outline-container-org45b343c" class="outline-2">
-<h2 id="org45b343c">格式重排</h2>
-<div class="outline-text-2" id="text-org45b343c">
+<div id="outline-container-org629e6f9" class="outline-2">
+<h2 id="org629e6f9">格式重排</h2>
+<div class="outline-text-2" id="text-org629e6f9">
 <p>
 最常使用的格式重排命令是TAB,在编辑中按下TAB键,Emacs会自动对正在编辑的行进行重排.
 若想同时对多行进行格式重排,则可以用鼠标选中要缩进的代码块,然后按下TAB键,则Emacs对所有选中行进行重排.
@@ -189,9 +191,9 @@ Emacs提供了很多快速定位的命令,这些命令可以帮助我们快速�
 </div>
 </div>
 
-<div id="outline-container-org4dfe1e7" class="outline-2">
-<h2 id="org4dfe1e7">注释</h2>
-<div class="outline-text-2" id="text-org4dfe1e7">
+<div id="outline-container-org67c14fc" class="outline-2">
+<h2 id="org67c14fc">注释</h2>
+<div class="outline-text-2" id="text-org67c14fc">
 <p>
 Emacs中可以使用M-;来完成各种注释的操作.
 如果你想在编辑一行语句的后面添加上注释,可以按下M-; ,Emacs就会在该行语句后面自动添加上行注释符号,并将光标移动到待输入注释的地方.
@@ -227,9 +229,9 @@ Emacs中可以使用M-;来完成各种注释的操作.
 </table>
 </div>
 </div>
-<div id="outline-container-orgcb50791" class="outline-2">
-<h2 id="orgcb50791">自动补全命令</h2>
-<div class="outline-text-2" id="text-orgcb50791">
+<div id="outline-container-orgbfa48e1" class="outline-2">
+<h2 id="orgbfa48e1">自动补全命令</h2>
+<div class="outline-text-2" id="text-orgbfa48e1">
 <p>
 Emacs中常用的补全命令有两个.
 一个是M-/,这个命令会将光标前的单词作为前缀,然后扫描当前buffer中所有以该前缀开头的单词作为补全的候选单词,供我们选择.
@@ -275,9 +277,9 @@ Emacs中常用的补全命令有两个.
 </div>
 </div>
 
-<div id="outline-container-org598a5a5" class="outline-2">
-<h2 id="org598a5a5">浏览程序大纲(hs-minor-mode)</h2>
-<div class="outline-text-2" id="text-org598a5a5">
+<div id="outline-container-org1611e61" class="outline-2">
+<h2 id="org1611e61">浏览程序大纲(hs-minor-mode)</h2>
+<div class="outline-text-2" id="text-org1611e61">
 <p>
 Emacs提供了一种称为hs-minor-mode的模式,开启该模式之后可以使我们选择性的隐藏程序的一部分.
 开启hs-minor-mode的方法是执行M-x hs-minor-mode
@@ -324,45 +326,45 @@ Emacs提供了一种称为hs-minor-mode的模式,开启该模式之后可以使�
 </div>
 </div>
 
-<div id="outline-container-orgbaa1279" class="outline-2">
-<h2 id="orgbaa1279">其他工具</h2>
-<div class="outline-text-2" id="text-orgbaa1279">
+<div id="outline-container-org2981e7a" class="outline-2">
+<h2 id="org2981e7a">其他工具</h2>
+<div class="outline-text-2" id="text-org2981e7a">
 </div>
-<div id="outline-container-org4bb8dd1" class="outline-3">
-<h3 id="org4bb8dd1">imenu菜单</h3>
-<div class="outline-text-3" id="text-org4bb8dd1">
+<div id="outline-container-org3d4c02b" class="outline-3">
+<h3 id="org3d4c02b">imenu菜单</h3>
+<div class="outline-text-3" id="text-org3d4c02b">
 <p>
 通过执行M-x imenu-add-menubar-index可以在Emacs的菜单栏上增加一个Index菜单,通过该Index菜单可以快速定位到指定的函数,变量,宏的位置
 </p>
 </div>
 </div>
-<div id="outline-container-orgab46200" class="outline-3">
-<h3 id="orgab46200">which-func-mode</h3>
-<div class="outline-text-3" id="text-orgab46200">
+<div id="outline-container-orgd193261" class="outline-3">
+<h3 id="orgd193261">which-func-mode</h3>
+<div class="outline-text-3" id="text-orgd193261">
 <p>
 通过执行M-x which-func-mode可以开启which-func-mode,开启该模式之后,光标所在的函数名会显示在mode-line上
 </p>
 </div>
 </div>
-<div id="outline-container-org1bfd5e0" class="outline-3">
-<h3 id="org1bfd5e0">show-paren-mode</h3>
-<div class="outline-text-3" id="text-org1bfd5e0">
+<div id="outline-container-orgf70c932" class="outline-3">
+<h3 id="orgf70c932">show-paren-mode</h3>
+<div class="outline-text-3" id="text-orgf70c932">
 <p>
 通过M-x show-paren-mode开启show-paren-mode后,如果光标处于开括号前或者闭括号后时,则该括号会被高亮显示
 </p>
 </div>
 </div>
-<div id="outline-container-org7be453d" class="outline-3">
-<h3 id="org7be453d">electric-pair-mode</h3>
-<div class="outline-text-3" id="text-org7be453d">
+<div id="outline-container-org860da9a" class="outline-3">
+<h3 id="org860da9a">electric-pair-mode</h3>
+<div class="outline-text-3" id="text-org860da9a">
 <p>
 通过M-x electric-pair-mode开启electric-pair-mode后,若插入一个开括号,则Emacs自动补全一个闭括号,并将光标放在括号内等待输入
 </p>
 </div>
 </div>
-<div id="outline-container-org0b32430" class="outline-3">
-<h3 id="org0b32430">electric-layout-mode</h3>
-<div class="outline-text-3" id="text-org0b32430">
+<div id="outline-container-org9772650" class="outline-3">
+<h3 id="org9772650">electric-layout-mode</h3>
+<div class="outline-text-3" id="text-org9772650">
 <p>
 通过M-x electric-layout-mode开启electric-layout-mode后,若插入指定的表示一行语句结尾的字符时,Emacs自动帮我们回车换行.
 </p>

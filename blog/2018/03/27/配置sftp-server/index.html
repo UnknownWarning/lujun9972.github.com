@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,22 +56,22 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org70c8851">安装</a></li>
-<li><a href="#org3d587ba">配置</a>
+<li><a href="#orgc25c6c7">安装</a></li>
+<li><a href="#org375b5b6">配置</a>
 <ul>
-<li><a href="#org7125997">创建SFTP服务的根目录</a></li>
-<li><a href="#org922aa9b">创建SFTP用户和用户组</a></li>
-<li><a href="#orgbbf76db">配置sshd</a></li>
-<li><a href="#org4e5ee53">重启sshd</a></li>
+<li><a href="#orgb78c036">创建SFTP服务的根目录</a></li>
+<li><a href="#orgf463220">创建SFTP用户和用户组</a></li>
+<li><a href="#orgb8d8e5f">配置sshd</a></li>
+<li><a href="#org4458c6b">重启sshd</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org70c8851" class="outline-2">
-<h2 id="org70c8851">安装</h2>
-<div class="outline-text-2" id="text-org70c8851">
+<div id="outline-container-orgc25c6c7" class="outline-2">
+<h2 id="orgc25c6c7">安装</h2>
+<div class="outline-text-2" id="text-orgc25c6c7">
 <p>
 SFTP是sshd的一部分，无需独立安装
 </p>
@@ -81,13 +83,13 @@ SFTP是sshd的一部分，无需独立安装
 </div>
 
 
-<div id="outline-container-org3d587ba" class="outline-2">
-<h2 id="org3d587ba">配置</h2>
-<div class="outline-text-2" id="text-org3d587ba">
+<div id="outline-container-org375b5b6" class="outline-2">
+<h2 id="org375b5b6">配置</h2>
+<div class="outline-text-2" id="text-org375b5b6">
 </div>
-<div id="outline-container-org7125997" class="outline-3">
-<h3 id="org7125997">创建SFTP服务的根目录</h3>
-<div class="outline-text-3" id="text-org7125997">
+<div id="outline-container-orgb78c036" class="outline-3">
+<h3 id="orgb78c036">创建SFTP服务的根目录</h3>
+<div class="outline-text-3" id="text-orgb78c036">
 <p>
 这里我们先创建一个 <code>/data</code> 目录作为SFTP服务的根目录,所有SFTP用户的操作不能脱离该根目录范围。
 </p>
@@ -99,9 +101,9 @@ sudo chmod <span style="color: #a45bad;">771</span> /data
 </div>
 </div>
 
-<div id="outline-container-org922aa9b" class="outline-3">
-<h3 id="org922aa9b">创建SFTP用户和用户组</h3>
-<div class="outline-text-3" id="text-org922aa9b">
+<div id="outline-container-orgf463220" class="outline-3">
+<h3 id="orgf463220">创建SFTP用户和用户组</h3>
+<div class="outline-text-3" id="text-orgf463220">
 <p>
 首先创建一个 <code>sftpusers</code> 用户组
 </p>
@@ -132,9 +134,9 @@ sudo chmod <span style="color: #a45bad;">771</span> /data
 </div>
 </div>
 
-<div id="outline-container-orgbbf76db" class="outline-3">
-<h3 id="orgbbf76db">配置sshd</h3>
-<div class="outline-text-3" id="text-orgbbf76db">
+<div id="outline-container-orgb8d8e5f" class="outline-3">
+<h3 id="orgb8d8e5f">配置sshd</h3>
+<div class="outline-text-3" id="text-orgb8d8e5f">
 <p>
 将下面内容添加到 <code>/etc/ssh/sshd_config</code> 中
 </p>
@@ -149,9 +151,9 @@ sudo chmod <span style="color: #a45bad;">771</span> /data
 </div>
 </div>
 
-<div id="outline-container-org4e5ee53" class="outline-3">
-<h3 id="org4e5ee53">重启sshd</h3>
-<div class="outline-text-3" id="text-org4e5ee53">
+<div id="outline-container-org4458c6b" class="outline-3">
+<h3 id="org4458c6b">重启sshd</h3>
+<div class="outline-text-3" id="text-org4458c6b">
 <div class="org-src-container">
 <pre class="src src-shell">sudo systemctl restart sshd
 </pre>

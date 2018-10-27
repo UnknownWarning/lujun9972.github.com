@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,16 +56,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8259436">kernel module存放在哪里</a></li>
-<li><a href="#org69a193a">如何加载module</a></li>
-<li><a href="#org9c2511a">卸载module</a></li>
+<li><a href="#org80a32de">kernel module存放在哪里</a></li>
+<li><a href="#org9c8c8ec">如何加载module</a></li>
+<li><a href="#orgb871e9a">卸载module</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8259436" class="outline-2">
-<h2 id="org8259436">kernel module存放在哪里</h2>
-<div class="outline-text-2" id="text-org8259436">
+<div id="outline-container-org80a32de" class="outline-2">
+<h2 id="org80a32de">kernel module存放在哪里</h2>
+<div class="outline-text-2" id="text-org80a32de">
 <p>
 linux自带了很多kernel module文件, 这些文件一般以 <code>.ko</code> 或 <code>.ko.xz</code> 文件结尾,存放在 <code>/lib/module/$(uname -r)</code> 目录中。
 </p>
@@ -125,9 +127,9 @@ linux当然不可能将所有的module都加载进kernel，要查看目前加载
 </div>
 </div>
 
-<div id="outline-container-org69a193a" class="outline-2">
-<h2 id="org69a193a">如何加载module</h2>
-<div class="outline-text-2" id="text-org69a193a">
+<div id="outline-container-org9c8c8ec" class="outline-2">
+<h2 id="org9c8c8ec">如何加载module</h2>
+<div class="outline-text-2" id="text-org9c8c8ec">
 <p>
 加载module特别简单，只需要使用 <code>modprobe module名</code> 就行了。
 </p>
@@ -146,9 +148,9 @@ linux当然不可能将所有的module都加载进kernel，要查看目前加载
 </div>
 </div>
 
-<div id="outline-container-org9c2511a" class="outline-2">
-<h2 id="org9c2511a">卸载module</h2>
-<div class="outline-text-2" id="text-org9c2511a">
+<div id="outline-container-orgb871e9a" class="outline-2">
+<h2 id="orgb871e9a">卸载module</h2>
+<div class="outline-text-2" id="text-orgb871e9a">
 <p>
 卸载module也很简单，只需要使用 <code>rmmod module名</code> 就行了。
 </p>

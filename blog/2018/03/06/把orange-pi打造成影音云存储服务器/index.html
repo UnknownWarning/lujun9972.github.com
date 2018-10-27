@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,11 +56,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc12c0fd">安装MiniDLNA</a></li>
-<li><a href="#org29eddaf">配置 /etc/minidlna.conf</a></li>
-<li><a href="#orgd7e2be1">重启MiniDLNA</a></li>
-<li><a href="#orgfa6e666">使用MiniDLNA</a></li>
-<li><a href="#orgc972a2b">使用Docker简化安装</a></li>
+<li><a href="#org0a19b02">安装MiniDLNA</a></li>
+<li><a href="#org29a7c3d">配置 /etc/minidlna.conf</a></li>
+<li><a href="#orge7c1614">重启MiniDLNA</a></li>
+<li><a href="#org288f96c">使用MiniDLNA</a></li>
+<li><a href="#orgd0735d7">使用Docker简化安装</a></li>
 </ul>
 </div>
 </div>
@@ -66,9 +68,9 @@
 运用MiniDLNA这款软件，可以把Orange Pi变成一个家庭影音云存储设备，从而将电影、音乐分享给局域网中其他用户。
 </p>
 
-<div id="outline-container-orgc12c0fd" class="outline-2">
-<h2 id="orgc12c0fd">安装MiniDLNA</h2>
-<div class="outline-text-2" id="text-orgc12c0fd">
+<div id="outline-container-org0a19b02" class="outline-2">
+<h2 id="org0a19b02">安装MiniDLNA</h2>
+<div class="outline-text-2" id="text-org0a19b02">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install -y minidlna
 </pre>
@@ -76,9 +78,9 @@
 </div>
 </div>
 
-<div id="outline-container-org29eddaf" class="outline-2">
-<h2 id="org29eddaf">配置 /etc/minidlna.conf</h2>
-<div class="outline-text-2" id="text-org29eddaf">
+<div id="outline-container-org29a7c3d" class="outline-2">
+<h2 id="org29a7c3d">配置 /etc/minidlna.conf</h2>
+<div class="outline-text-2" id="text-org29a7c3d">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#23186;&#20307;&#25991;&#20214;&#30446;&#24405;</span>
 <span style="color: #7590db;">media_dir</span>=/media/usb0
@@ -95,9 +97,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd7e2be1" class="outline-2">
-<h2 id="orgd7e2be1">重启MiniDLNA</h2>
-<div class="outline-text-2" id="text-orgd7e2be1">
+<div id="outline-container-orge7c1614" class="outline-2">
+<h2 id="orge7c1614">重启MiniDLNA</h2>
+<div class="outline-text-2" id="text-orge7c1614">
 <div class="org-src-container">
 <pre class="src src-shell">sudo systemctl restart minidlna
 </pre>
@@ -105,9 +107,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgfa6e666" class="outline-2">
-<h2 id="orgfa6e666">使用MiniDLNA</h2>
-<div class="outline-text-2" id="text-orgfa6e666">
+<div id="outline-container-org288f96c" class="outline-2">
+<h2 id="org288f96c">使用MiniDLNA</h2>
+<div class="outline-text-2" id="text-org288f96c">
 <p>
 在Pad上查看UPNP/DLNA Media Servers就能看到一个名为 <code>orangepipc2:minidlna</code> 的服务器了。
 </p>
@@ -121,9 +123,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-orgc972a2b" class="outline-2">
-<h2 id="orgc972a2b">使用Docker简化安装</h2>
-<div class="outline-text-2" id="text-orgc972a2b">
+<div id="outline-container-orgd0735d7" class="outline-2">
+<h2 id="orgd0735d7">使用Docker简化安装</h2>
+<div class="outline-text-2" id="text-orgd0735d7">
 <p>
 如果你觉得上面操作太麻烦，那么可以直接使用Docker帮你搞定。
 </p>

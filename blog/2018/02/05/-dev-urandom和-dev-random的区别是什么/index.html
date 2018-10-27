@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,13 +56,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3fe219e">熵</a>
+<li><a href="#org68af50b">熵</a>
 <ul>
-<li><a href="#orga532869">如何查看系统中的熵</a></li>
-<li><a href="#orgfec2947">如何快速生成熵</a></li>
+<li><a href="#orge6101cb">如何查看系统中的熵</a></li>
+<li><a href="#orga187d3f">如何快速生成熵</a></li>
 </ul>
 </li>
-<li><a href="#org841adc5">/dev/random 与 /dev/urandom 的区别</a></li>
+<li><a href="#org62870ec">/dev/random 与 /dev/urandom 的区别</a></li>
 </ul>
 </div>
 </div>
@@ -71,9 +73,9 @@ linux中提供了 <code>/dev/urandom</code> 和 <code>/dev/random</code> 两个�
 <p>
 要回答这个问题，先需要了解熵这个概念。
 </p>
-<div id="outline-container-org3fe219e" class="outline-2">
-<h2 id="org3fe219e">熵</h2>
-<div class="outline-text-2" id="text-org3fe219e">
+<div id="outline-container-org68af50b" class="outline-2">
+<h2 id="org68af50b">熵</h2>
+<div class="outline-text-2" id="text-org68af50b">
 <p>
 linux是根据系统的熵池来产生随机数的。熵池就是系统当前的环境噪音,环境噪音的来源很多，键盘的输入、鼠标的移动、内存的使用、文件的使用量、进程数量等等。
 </p>
@@ -83,9 +85,9 @@ linux是根据系统的熵池来产生随机数的。熵池就是系统当前的
 </p>
 </div>
 
-<div id="outline-container-orga532869" class="outline-3">
-<h3 id="orga532869">如何查看系统中的熵</h3>
-<div class="outline-text-3" id="text-orga532869">
+<div id="outline-container-orge6101cb" class="outline-3">
+<h3 id="orge6101cb">如何查看系统中的熵</h3>
+<div class="outline-text-3" id="text-orge6101cb">
 <p>
 通过下面命令可以查看系统熵池的容量:
 </p>
@@ -136,9 +138,9 @@ linux是根据系统的熵池来产生随机数的。熵池就是系统当前的
 </div>
 </div>
 
-<div id="outline-container-orgfec2947" class="outline-3">
-<h3 id="orgfec2947">如何快速生成熵</h3>
-<div class="outline-text-3" id="text-orgfec2947">
+<div id="outline-container-orga187d3f" class="outline-3">
+<h3 id="orga187d3f">如何快速生成熵</h3>
+<div class="outline-text-3" id="text-orga187d3f">
 <p>
 通过开启 <code>haveged</code> 服务可以快速产生熵。若 <code>entropy_avail</code> 的值小于1000,则建议安装 <code>haveged</code>,否则加密程序会阻塞直到系统有足够的熵后才继续运行。
 </p>
@@ -160,9 +162,9 @@ systemctl start haveged
 </div>
 </div>
 
-<div id="outline-container-org841adc5" class="outline-2">
-<h2 id="org841adc5">/dev/random 与 /dev/urandom 的区别</h2>
-<div class="outline-text-2" id="text-org841adc5">
+<div id="outline-container-org62870ec" class="outline-2">
+<h2 id="org62870ec">/dev/random 与 /dev/urandom 的区别</h2>
+<div class="outline-text-2" id="text-org62870ec">
 <p>
 <code>/dev/random</code> 是真随机数生成器，它会消耗熵值来产生随机数，同时在熵耗尽的情况下会阻塞，直到有新的熵生成. 
 </p>

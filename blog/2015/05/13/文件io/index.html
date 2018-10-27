@@ -33,15 +33,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -53,135 +55,135 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org717ddb6">1. 基本文件IO操作函数</a>
+<li><a href="#orga30c358">1. 基本文件IO操作函数</a>
 <ul>
-<li><a href="#orgdca12fe">1.1. open函数</a></li>
-<li><a href="#org47c908d">1.2. create函数</a></li>
-<li><a href="#org2c737fc">1.3. close函数</a></li>
-<li><a href="#orge26d200">1.4. lseek函数</a></li>
-<li><a href="#org70ce290">1.5. read函数</a></li>
-<li><a href="#orgc83eda2">1.6. write函数</a></li>
+<li><a href="#orgd5d477c">1.1. open函数</a></li>
+<li><a href="#orge84034d">1.2. create函数</a></li>
+<li><a href="#org415409f">1.3. close函数</a></li>
+<li><a href="#org68d9bbb">1.4. lseek函数</a></li>
+<li><a href="#org914d380">1.5. read函数</a></li>
+<li><a href="#org1f10583">1.6. write函数</a></li>
 </ul>
 </li>
-<li><a href="#org69d8c3a">2. 文件共享</a>
+<li><a href="#org691df4a">2. 文件共享</a>
 <ul>
-<li><a href="#org3b490c8">2.1. 内核是如何表示打开的文件的?</a></li>
-<li><a href="#org552ac37">2.2. 当多个进程打开同一个文件时,发生了什么?</a></li>
-<li><a href="#org929b8c6">2.3. 多个进程打开同一个文件带来的影响是什么?</a></li>
-<li><a href="#org0a2a68c">2.4. dup和dup2函数</a></li>
+<li><a href="#orgaa8df6f">2.1. 内核是如何表示打开的文件的?</a></li>
+<li><a href="#org31c6a3c">2.2. 当多个进程打开同一个文件时,发生了什么?</a></li>
+<li><a href="#orgdfc5125">2.3. 多个进程打开同一个文件带来的影响是什么?</a></li>
+<li><a href="#orga8e5135">2.4. dup和dup2函数</a></li>
 </ul>
 </li>
-<li><a href="#orgcccb31f">3. sync,fsync和fdatasync</a></li>
-<li><a href="#org8afc555">4. fcntl函数</a></li>
-<li><a href="#orgb91162d">5. ioctl函数</a></li>
-<li><a href="#orge0a7c83">6. /dev/fd</a>
+<li><a href="#org6c47cad">3. sync,fsync和fdatasync</a></li>
+<li><a href="#org96c06b7">4. fcntl函数</a></li>
+<li><a href="#orge90d4e0">5. ioctl函数</a></li>
+<li><a href="#org4fe2d89">6. /dev/fd</a>
 <ul>
-<li><a href="#orge95b1c4">6.1. 参数filedes</a></li>
-<li><a href="#org9a36592">6.2. 参数cmd</a></li>
+<li><a href="#org3c67e2c">6.1. 参数filedes</a></li>
+<li><a href="#orga8464f6">6.2. 参数cmd</a></li>
 </ul>
 </li>
-<li><a href="#org581a25c">7. 非阻塞IO</a>
+<li><a href="#orgb7d777a">7. 非阻塞IO</a>
 <ul>
-<li><a href="#orgc5d6915">7.1. 指定非阻塞IO的方法</a></li>
+<li><a href="#orgb596754">7.1. 指定非阻塞IO的方法</a></li>
 </ul>
 </li>
-<li><a href="#orgc1b47f2">8. 记录锁</a>
+<li><a href="#org0762fee">8. 记录锁</a>
 <ul>
-<li><a href="#org128ba56">8.1. fcntl记录锁</a>
+<li><a href="#org50804c5">8.1. fcntl记录锁</a>
 <ul>
-<li><a href="#org17bdb40">8.1.1. cmd操作说明</a></li>
-<li><a href="#org951dd6e">8.1.2. flock结构说明</a></li>
+<li><a href="#org56f733f">8.1.1. cmd操作说明</a></li>
+<li><a href="#orga94e9bf">8.1.2. flock结构说明</a></li>
 </ul>
 </li>
-<li><a href="#orgf86a26c">8.2. 关于锁的释放与继承</a>
+<li><a href="#orgd964e2c">8.2. 关于锁的释放与继承</a>
 <ul>
-<li><a href="#org25c7d3d">8.2.1. 锁的释放</a></li>
-<li><a href="#org284dec6">8.2.2. 锁的继承</a></li>
+<li><a href="#org6bca8de">8.2.1. 锁的释放</a></li>
+<li><a href="#orgcbecc3e">8.2.2. 锁的继承</a></li>
 </ul>
 </li>
-<li><a href="#org5a15ef3">8.3. 建议性锁和强制性锁</a></li>
-<li><a href="#org51a8de9">8.4. flock文件锁</a></li>
+<li><a href="#orgcb8cb7c">8.3. 建议性锁和强制性锁</a></li>
+<li><a href="#orgc1850ad">8.4. flock文件锁</a></li>
 </ul>
 </li>
-<li><a href="#orgab7baf2">9. IO多路转换</a>
+<li><a href="#orgf4e499c">9. IO多路转换</a>
 <ul>
-<li><a href="#org7ffb900">9.1. select</a>
+<li><a href="#org08f00e4">9.1. select</a>
 <ul>
-<li><a href="#orgcca30bc">9.1.1. 时间参数tvptr意义说明:</a></li>
-<li><a href="#orgdc9bd28">9.1.2. fd_set数据类型说明</a></li>
-<li><a href="#orga35c75a">9.1.3. fd_set*三个参数说明</a></li>
-<li><a href="#org375c7e1">9.1.4. 参数maxfdp说明</a></li>
+<li><a href="#org23d28e3">9.1.1. 时间参数tvptr意义说明:</a></li>
+<li><a href="#org08c89c7">9.1.2. fd_set数据类型说明</a></li>
+<li><a href="#org0084e59">9.1.3. fd_set*三个参数说明</a></li>
+<li><a href="#org3359d6d">9.1.4. 参数maxfdp说明</a></li>
 </ul>
 </li>
-<li><a href="#orge18565b">9.2. pselect</a>
+<li><a href="#org897923f">9.2. pselect</a>
 <ul>
-<li><a href="#org8044a58">9.2.1. pselect与select的不同之处</a></li>
+<li><a href="#orgd21a14b">9.2.1. pselect与select的不同之处</a></li>
 </ul>
 </li>
-<li><a href="#orgd347c61">9.3. 函数poll</a>
+<li><a href="#org2c3560f">9.3. 函数poll</a>
 <ul>
-<li><a href="#orgdcf1676">9.3.1. poll中的事件说明</a></li>
-<li><a href="#org286a13e">9.3.2. timeout说明</a></li>
+<li><a href="#orge466912">9.3.1. poll中的事件说明</a></li>
+<li><a href="#org74dc841">9.3.2. timeout说明</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org4015a96">10. POSIX异步IO</a>
+<li><a href="#org04ae43c">10. POSIX异步IO</a>
 <ul>
-<li><a href="#orgce8951e">10.1. 异步读写操作</a></li>
-<li><a href="#org39c041b">10.2. 强制同步</a></li>
-<li><a href="#org8f36661">10.3. 获取异步读,写,同步操作的完成状态</a></li>
-<li><a href="#orge668fe6">10.4. 异步操作管理</a></li>
+<li><a href="#org3b0fe8f">10.1. 异步读写操作</a></li>
+<li><a href="#org0bbb95c">10.2. 强制同步</a></li>
+<li><a href="#org2ccf40f">10.3. 获取异步读,写,同步操作的完成状态</a></li>
+<li><a href="#orgc7d14db">10.4. 异步操作管理</a></li>
 </ul>
 </li>
-<li><a href="#orgbb0ae61">11. 散布读(scatter read)和聚集写(gather write)</a></li>
-<li><a href="#org57922f3">12. 存储映射IO</a>
+<li><a href="#org0e1d418">11. 散布读(scatter read)和聚集写(gather write)</a></li>
+<li><a href="#org14ead43">12. 存储映射IO</a>
 <ul>
-<li><a href="#orga043f43">12.1. 将文件映射到缓冲区</a></li>
-<li><a href="#orgc178555">12.2. 更改映射权限</a></li>
-<li><a href="#org08e013c">12.3. 写回修改到源文件</a>
+<li><a href="#org6bd3ad9">12.1. 将文件映射到缓冲区</a></li>
+<li><a href="#orgdd30a08">12.2. 更改映射权限</a></li>
+<li><a href="#orge0f766b">12.3. 写回修改到源文件</a>
 <ul>
-<li><a href="#org14b007f">12.3.1. flags参数说明</a></li>
+<li><a href="#orgd677b17">12.3.1. flags参数说明</a></li>
 </ul>
 </li>
-<li><a href="#org514b1b1">12.4. 解除映射</a></li>
-<li><a href="#org002498f">12.5. 相关信号</a></li>
-<li><a href="#org4a2c948">12.6. 关于子进程的共享问题</a></li>
+<li><a href="#org16e7e7e">12.4. 解除映射</a></li>
+<li><a href="#org883646e">12.5. 相关信号</a></li>
+<li><a href="#org9d63f4c">12.6. 关于子进程的共享问题</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org717ddb6" class="outline-2">
-<h2 id="org717ddb6"><span class="section-number-2">1</span> 基本文件IO操作函数</h2>
+<div id="outline-container-orga30c358" class="outline-2">
+<h2 id="orga30c358"><span class="section-number-2">1</span> 基本文件IO操作函数</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgdca12fe" class="outline-3">
-<h3 id="orgdca12fe"><span class="section-number-3">1.1</span> open函数</h3>
+<div id="outline-container-orgd5d477c" class="outline-3">
+<h3 id="orgd5d477c"><span class="section-number-3">1.1</span> open函数</h3>
 </div>
-<div id="outline-container-org47c908d" class="outline-3">
-<h3 id="org47c908d"><span class="section-number-3">1.2</span> create函数</h3>
+<div id="outline-container-orge84034d" class="outline-3">
+<h3 id="orge84034d"><span class="section-number-3">1.2</span> create函数</h3>
 </div>
-<div id="outline-container-org2c737fc" class="outline-3">
-<h3 id="org2c737fc"><span class="section-number-3">1.3</span> close函数</h3>
+<div id="outline-container-org415409f" class="outline-3">
+<h3 id="org415409f"><span class="section-number-3">1.3</span> close函数</h3>
 </div>
-<div id="outline-container-orge26d200" class="outline-3">
-<h3 id="orge26d200"><span class="section-number-3">1.4</span> lseek函数</h3>
+<div id="outline-container-org68d9bbb" class="outline-3">
+<h3 id="org68d9bbb"><span class="section-number-3">1.4</span> lseek函数</h3>
 </div>
-<div id="outline-container-org70ce290" class="outline-3">
-<h3 id="org70ce290"><span class="section-number-3">1.5</span> read函数</h3>
+<div id="outline-container-org914d380" class="outline-3">
+<h3 id="org914d380"><span class="section-number-3">1.5</span> read函数</h3>
 </div>
-<div id="outline-container-orgc83eda2" class="outline-3">
-<h3 id="orgc83eda2"><span class="section-number-3">1.6</span> write函数</h3>
+<div id="outline-container-org1f10583" class="outline-3">
+<h3 id="org1f10583"><span class="section-number-3">1.6</span> write函数</h3>
 </div>
 </div>
-<div id="outline-container-org69d8c3a" class="outline-2">
-<h2 id="org69d8c3a"><span class="section-number-2">2</span> 文件共享</h2>
+<div id="outline-container-org691df4a" class="outline-2">
+<h2 id="org691df4a"><span class="section-number-2">2</span> 文件共享</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org3b490c8" class="outline-3">
-<h3 id="org3b490c8"><span class="section-number-3">2.1</span> 内核是如何表示打开的文件的?</h3>
+<div id="outline-container-orgaa8df6f" class="outline-3">
+<h3 id="orgaa8df6f"><span class="section-number-3">2.1</span> 内核是如何表示打开的文件的?</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 内核使用三种数据结构表示打开的文件,它们之间的关系决定了在文件共享方面一个进程对另一个进程可能产生的影响.
@@ -220,8 +222,8 @@ v节点包含了文件类型和对此文件进行各种操作的函数的指针.
 </div>
 </div>
 
-<div id="outline-container-org552ac37" class="outline-3">
-<h3 id="org552ac37"><span class="section-number-3">2.2</span> 当多个进程打开同一个文件时,发生了什么?</h3>
+<div id="outline-container-org31c6a3c" class="outline-3">
+<h3 id="org31c6a3c"><span class="section-number-3">2.2</span> 当多个进程打开同一个文件时,发生了什么?</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 一般来说,多个进程打开同一个文件时,会分别在不同的文件描述符上打开该文件. 不同的文件描述符指向不同的文件表项. 但不同的文件表项指向了同一个v节点.
@@ -237,8 +239,8 @@ v节点包含了文件类型和对此文件进行各种操作的函数的指针.
 </div>
 </div>
 
-<div id="outline-container-org929b8c6" class="outline-3">
-<h3 id="org929b8c6"><span class="section-number-3">2.3</span> 多个进程打开同一个文件带来的影响是什么?</h3>
+<div id="outline-container-orgdfc5125" class="outline-3">
+<h3 id="orgdfc5125"><span class="section-number-3">2.3</span> 多个进程打开同一个文件带来的影响是什么?</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 多个进程读取同一个文件时,由于各个进程都由自己的文件表项,也就有自己的当前文件偏移符,因此多个进程读取同一个文件时很正常.
@@ -268,8 +270,8 @@ XSI扩展还定义了pread和pwrite函数用于将定位搜索和执行IO统一�
 </div>
 </div>
 
-<div id="outline-container-org0a2a68c" class="outline-3">
-<h3 id="org0a2a68c"><span class="section-number-3">2.4</span> dup和dup2函数</h3>
+<div id="outline-container-orga8e5135" class="outline-3">
+<h3 id="orga8e5135"><span class="section-number-3">2.4</span> dup和dup2函数</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 可以用dup和dup2函数来复制一个现存的文件描述符,复制出来的文件描述符与原文件描述符共享同一个文件表项,即它们共享同一个文件标志状态及文件偏移量:
@@ -304,8 +306,8 @@ close<span style="color: #4f97d7;">(</span>filedes2<span style="color: #4f97d7;"
 </div>
 </div>
 
-<div id="outline-container-orgcccb31f" class="outline-2">
-<h2 id="orgcccb31f"><span class="section-number-2">3</span> sync,fsync和fdatasync</h2>
+<div id="outline-container-org6c47cad" class="outline-2">
+<h2 id="org6c47cad"><span class="section-number-2">3</span> sync,fsync和fdatasync</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 传统UNIX实现在内核中设置了缓冲区,当数据写入文件时,内核现将数据复制到一个缓冲区中,而不立即将其排入输出队列.
@@ -330,8 +332,8 @@ UNIX系统提供了sync,fsync和fdatasync三个函数用于通知内核将数据
 </div>
 </div>
 
-<div id="outline-container-org8afc555" class="outline-2">
-<h2 id="org8afc555"><span class="section-number-2">4</span> fcntl函数</h2>
+<div id="outline-container-org96c06b7" class="outline-2">
+<h2 id="org96c06b7"><span class="section-number-2">4</span> fcntl函数</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 fcntl函数可以改变已打开的文件属性,该函数常用于修改由shell代为打开的文件描述符的属性.
@@ -368,8 +370,8 @@ fcntl函数可以改变已打开的文件属性,该函数常用于修改由shell
 </div>
 </div>
 
-<div id="outline-container-orgb91162d" class="outline-2">
-<h2 id="orgb91162d"><span class="section-number-2">5</span> ioctl函数</h2>
+<div id="outline-container-orge90d4e0" class="outline-2">
+<h2 id="orge90d4e0"><span class="section-number-2">5</span> ioctl函数</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 每个驱动程序都定义了它自己的专门的一组ioctl命令,而系统提供一个统一的ioctl函数来调用这些专门的命令.
@@ -385,8 +387,8 @@ fcntl函数可以改变已打开的文件属性,该函数常用于修改由shell
 </div>
 </div>
 
-<div id="outline-container-orge0a7c83" class="outline-2">
-<h2 id="orge0a7c83"><span class="section-number-2">6</span> /dev/fd</h2>
+<div id="outline-container-org4fe2d89" class="outline-2">
+<h2 id="org4fe2d89"><span class="section-number-2">6</span> /dev/fd</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 新UNIX系统一般都提供了名为/dev/fd的目录,其中包含0,1,2等文件. 打开文件/dev/fd/n等效于复制描述符n.
@@ -403,8 +405,8 @@ fd = dup<span style="color: #4f97d7;">(</span>n<span style="color: #4f97d7;">)</
 <code>=====</code>
 </p>
 </div>
-<div id="outline-container-orge95b1c4" class="outline-3">
-<h3 id="orge95b1c4"><span class="section-number-3">6.1</span> 参数filedes</h3>
+<div id="outline-container-org3c67e2c" class="outline-3">
+<h3 id="org3c67e2c"><span class="section-number-3">6.1</span> 参数filedes</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 filedes参数为待设置的文件描述符
@@ -412,8 +414,8 @@ filedes参数为待设置的文件描述符
 </div>
 </div>
 
-<div id="outline-container-org9a36592" class="outline-3">
-<h3 id="org9a36592"><span class="section-number-3">6.2</span> 参数cmd</h3>
+<div id="outline-container-orga8464f6" class="outline-3">
+<h3 id="orga8464f6"><span class="section-number-3">6.2</span> 参数cmd</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 cmd参数表示欲操作的指令
@@ -471,16 +473,16 @@ cmd参数表示欲操作的指令
 </div>
 </div>
 </div>
-<div id="outline-container-org581a25c" class="outline-2">
-<h2 id="org581a25c"><span class="section-number-2">7</span> 非阻塞IO</h2>
+<div id="outline-container-orgb7d777a" class="outline-2">
+<h2 id="orgb7d777a"><span class="section-number-2">7</span> 非阻塞IO</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 非阻塞IO使得我们在调用open,read和write这样的IO操作时,若操作不能完成,则直接返回错误提示,而不是阻塞.
 </p>
 </div>
 
-<div id="outline-container-orgc5d6915" class="outline-3">
-<h3 id="orgc5d6915"><span class="section-number-3">7.1</span> 指定非阻塞IO的方法</h3>
+<div id="outline-container-orgb596754" class="outline-3">
+<h3 id="orgb596754"><span class="section-number-3">7.1</span> 指定非阻塞IO的方法</h3>
 <div class="outline-text-3" id="text-7-1">
 <ul class="org-ul">
 <li>调用open获得描述符时,指定`O_NONBLOCK'标志</li>
@@ -490,16 +492,16 @@ cmd参数表示欲操作的指令
 </div>
 </div>
 
-<div id="outline-container-orgc1b47f2" class="outline-2">
-<h2 id="orgc1b47f2"><span class="section-number-2">8</span> 记录锁</h2>
+<div id="outline-container-org0762fee" class="outline-2">
+<h2 id="org0762fee"><span class="section-number-2">8</span> 记录锁</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 所谓记录锁,更合适的术语应该叫`字节范围锁'. 它的功能是,当进程读取或修改文件的 <b>某个部分时</b>,阻止其他进程修改 <b>同一文件区域</b>.
 </p>
 </div>
 
-<div id="outline-container-org128ba56" class="outline-3">
-<h3 id="org128ba56"><span class="section-number-3">8.1</span> fcntl记录锁</h3>
+<div id="outline-container-org50804c5" class="outline-3">
+<h3 id="org50804c5"><span class="section-number-3">8.1</span> fcntl记录锁</h3>
 <div class="outline-text-3" id="text-8-1">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">fcntl.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -535,8 +537,8 @@ fcntl的锁分读锁和写所,其规则类似线程的rwlock,但它只能影响�
 若又对150位字节加锁,则系统又合并相邻的三个加锁区为一个区
 </p>
 </div>
-<div id="outline-container-org17bdb40" class="outline-4">
-<h4 id="org17bdb40"><span class="section-number-4">8.1.1</span> cmd操作说明</h4>
+<div id="outline-container-org56f733f" class="outline-4">
+<h4 id="org56f733f"><span class="section-number-4">8.1.1</span> cmd操作说明</h4>
 <div class="outline-text-4" id="text-8-1-1">
 <p>
 fcntl中与记录锁相关的cmd操作是`F_GETLK',`F_SETLK',`F_SETLKW'. 且第三个参数为flock类型的指针
@@ -585,8 +587,8 @@ F_SETLKW
 </p>
 </div>
 </div>
-<div id="outline-container-org951dd6e" class="outline-4">
-<h4 id="org951dd6e"><span class="section-number-4">8.1.2</span> flock结构说明</h4>
+<div id="outline-container-orga94e9bf" class="outline-4">
+<h4 id="orga94e9bf"><span class="section-number-4">8.1.2</span> flock结构说明</h4>
 <div class="outline-text-4" id="text-8-1-2">
 <ul class="org-ul">
 <li>flock结构中的l_type标明了锁的类型</li>
@@ -602,12 +604,12 @@ F_SETLKW
 </div>
 </div>
 </div>
-<div id="outline-container-orgf86a26c" class="outline-3">
-<h3 id="orgf86a26c"><span class="section-number-3">8.2</span> 关于锁的释放与继承</h3>
+<div id="outline-container-orgd964e2c" class="outline-3">
+<h3 id="orgd964e2c"><span class="section-number-3">8.2</span> 关于锁的释放与继承</h3>
 <div class="outline-text-3" id="text-8-2">
 </div>
-<div id="outline-container-org25c7d3d" class="outline-4">
-<h4 id="org25c7d3d"><span class="section-number-4">8.2.1</span> 锁的释放</h4>
+<div id="outline-container-org6bca8de" class="outline-4">
+<h4 id="org6bca8de"><span class="section-number-4">8.2.1</span> 锁的释放</h4>
 <div class="outline-text-4" id="text-8-2-1">
 <ul class="org-ul">
 <li>当进程终止时,该进程所建立的锁全部释放</li>
@@ -629,8 +631,8 @@ fd2 = open<span style="color: #4f97d7;">(</span>pathname,...<span style="color: 
 </ul>
 </div>
 </div>
-<div id="outline-container-org284dec6" class="outline-4">
-<h4 id="org284dec6"><span class="section-number-4">8.2.2</span> 锁的继承</h4>
+<div id="outline-container-orgcbecc3e" class="outline-4">
+<h4 id="orgcbecc3e"><span class="section-number-4">8.2.2</span> 锁的继承</h4>
 <div class="outline-text-4" id="text-8-2-2">
 <ul class="org-ul">
 <li><p>
@@ -656,8 +658,8 @@ fork产生的子进程不继承父进程所设置的锁.
 </div>
 </div>
 </div>
-<div id="outline-container-org5a15ef3" class="outline-3">
-<h3 id="org5a15ef3"><span class="section-number-3">8.3</span> 建议性锁和强制性锁</h3>
+<div id="outline-container-orgcb8cb7c" class="outline-3">
+<h3 id="orgcb8cb7c"><span class="section-number-3">8.3</span> 建议性锁和强制性锁</h3>
 <div class="outline-text-3" id="text-8-3">
 <p>
 一个文件加锁时是使用建议性锁还是强制性锁,是由文件本身的权限决定的. 若文件打开了其设置组ID位并关闭了组的执行位,则表示文件开启的是强制性锁机制(之所以这样设计是因为当组执行位关闭时,设置组ID位不再有意义).
@@ -672,8 +674,8 @@ fork产生的子进程不继承父进程所设置的锁.
 </p>
 </div>
 </div>
-<div id="outline-container-org51a8de9" class="outline-3">
-<h3 id="org51a8de9"><span class="section-number-3">8.4</span> flock文件锁</h3>
+<div id="outline-container-orgc1850ad" class="outline-3">
+<h3 id="orgc1850ad"><span class="section-number-3">8.4</span> flock文件锁</h3>
 <div class="outline-text-3" id="text-8-4">
 <p>
 flock只能对锁定整个文件而无法锁定某个区域
@@ -700,8 +702,8 @@ flock只能对锁定整个文件而无法锁定某个区域
 </div>
 </div>
 </div>
-<div id="outline-container-orgab7baf2" class="outline-2">
-<h2 id="orgab7baf2"><span class="section-number-2">9</span> IO多路转换</h2>
+<div id="outline-container-orgf4e499c" class="outline-2">
+<h2 id="orgf4e499c"><span class="section-number-2">9</span> IO多路转换</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 IO多路转换需要先构造一张描述符的列表,然后调用一个函数,该函数直到这些描述符中的一个已经准备好IO时,才返回.
@@ -711,8 +713,8 @@ IO多路转换需要先构造一张描述符的列表,然后调用一个函数,�
 poll,pselect和select这三个函数使得我们能够执行IO多路转换,并返回哪些描述符已经准备好进行IO了.
 </p>
 </div>
-<div id="outline-container-org7ffb900" class="outline-3">
-<h3 id="org7ffb900"><span class="section-number-3">9.1</span> select</h3>
+<div id="outline-container-org08f00e4" class="outline-3">
+<h3 id="org08f00e4"><span class="section-number-3">9.1</span> select</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 传给select的参数告诉内核:
@@ -740,8 +742,8 @@ select返回时的到的消息包括:
 </pre>
 </div>
 </div>
-<div id="outline-container-orgcca30bc" class="outline-4">
-<h4 id="orgcca30bc"><span class="section-number-4">9.1.1</span> 时间参数tvptr意义说明:</h4>
+<div id="outline-container-org23d28e3" class="outline-4">
+<h4 id="org23d28e3"><span class="section-number-4">9.1.1</span> 时间参数tvptr意义说明:</h4>
 <div class="outline-text-4" id="text-9-1-1">
 <p>
 select函数等待tvptr时间,若时间内有描述符准备好则返回准备好描述符的数量. 若超时则返回0.
@@ -760,8 +762,8 @@ tvptr == NULL表示无限等待.
 </p>
 </div>
 </div>
-<div id="outline-container-orgdc9bd28" class="outline-4">
-<h4 id="orgdc9bd28"><span class="section-number-4">9.1.2</span> fd_set数据类型说明</h4>
+<div id="outline-container-org08c89c7" class="outline-4">
+<h4 id="org08c89c7"><span class="section-number-4">9.1.2</span> fd_set数据类型说明</h4>
 <div class="outline-text-4" id="text-9-1-2">
 <p>
 使用fd_set数据类型,唯一可进行的处理就是同类型之间的变量进行赋值,或者使用一下四个函数修改数据值
@@ -784,8 +786,8 @@ tvptr == NULL表示无限等待.
 </div>
 </div>
 </div>
-<div id="outline-container-orga35c75a" class="outline-4">
-<h4 id="orga35c75a"><span class="section-number-4">9.1.3</span> fd_set*三个参数说明</h4>
+<div id="outline-container-org0084e59" class="outline-4">
+<h4 id="org0084e59"><span class="section-number-4">9.1.3</span> fd_set*三个参数说明</h4>
 <div class="outline-text-4" id="text-9-1-3">
 <p>
 select函数会修改各fd_set值,使得他们只保留准备好的fd.
@@ -804,8 +806,8 @@ fd_set*的参数值可以为NULL,表表示不关心响应条件
 </p>
 </div>
 </div>
-<div id="outline-container-org375c7e1" class="outline-4">
-<h4 id="org375c7e1"><span class="section-number-4">9.1.4</span> 参数maxfdp说明</h4>
+<div id="outline-container-org3359d6d" class="outline-4">
+<h4 id="org3359d6d"><span class="section-number-4">9.1.4</span> 参数maxfdp说明</h4>
 <div class="outline-text-4" id="text-9-1-4">
 <p>
 该参数一般为三个fd_set中最大fd的值+1(加1的原因在于描述符编号从0开始). 它的意义在于提供給select函数一个搜索fd的范围. 使得内核不用搜索fd_Set中数百个无用的fd.
@@ -817,8 +819,8 @@ fd_set*的参数值可以为NULL,表表示不关心响应条件
 </div>
 </div>
 </div>
-<div id="outline-container-orge18565b" class="outline-3">
-<h3 id="orge18565b"><span class="section-number-3">9.2</span> pselect</h3>
+<div id="outline-container-org897923f" class="outline-3">
+<h3 id="org897923f"><span class="section-number-3">9.2</span> pselect</h3>
 <div class="outline-text-3" id="text-9-2">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/select.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -835,8 +837,8 @@ fd_set*的参数值可以为NULL,表表示不关心响应条件
 </div>
 </div>
 
-<div id="outline-container-org8044a58" class="outline-4">
-<h4 id="org8044a58"><span class="section-number-4">9.2.1</span> pselect与select的不同之处</h4>
+<div id="outline-container-orgd21a14b" class="outline-4">
+<h4 id="orgd21a14b"><span class="section-number-4">9.2.1</span> pselect与select的不同之处</h4>
 <div class="outline-text-4" id="text-9-2-1">
 <ul class="org-ul">
 <li>select用timeval结构指定超时,而pselect用timespec结构指定超时. timespec能提供更精确的超时时间</li>
@@ -849,8 +851,8 @@ fd_set*的参数值可以为NULL,表表示不关心响应条件
 </div>
 </div>
 
-<div id="outline-container-orgd347c61" class="outline-3">
-<h3 id="orgd347c61"><span class="section-number-3">9.3</span> 函数poll</h3>
+<div id="outline-container-org2c3560f" class="outline-3">
+<h3 id="org2c3560f"><span class="section-number-3">9.3</span> 函数poll</h3>
 <div class="outline-text-3" id="text-9-3">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">poll.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -877,8 +879,8 @@ poll是构造一个pollfd结构的数组. 每个pollfd结构体指定了一个�
 </div>
 </div>
 
-<div id="outline-container-orgdcf1676" class="outline-4">
-<h4 id="orgdcf1676"><span class="section-number-4">9.3.1</span> poll中的事件说明</h4>
+<div id="outline-container-orge466912" class="outline-4">
+<h4 id="orge466912"><span class="section-number-4">9.3.1</span> poll中的事件说明</h4>
 <div class="outline-text-4" id="text-9-3-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -977,8 +979,8 @@ poll是构造一个pollfd结构的数组. 每个pollfd结构体指定了一个�
 </div>
 </div>
 
-<div id="outline-container-org286a13e" class="outline-4">
-<h4 id="org286a13e"><span class="section-number-4">9.3.2</span> timeout说明</h4>
+<div id="outline-container-org74dc841" class="outline-4">
+<h4 id="org74dc841"><span class="section-number-4">9.3.2</span> timeout说明</h4>
 <div class="outline-text-4" id="text-9-3-2">
 <ul class="org-ul">
 <li>timeout == -1表示一直等待</li>
@@ -990,8 +992,8 @@ poll是构造一个pollfd结构的数组. 每个pollfd结构体指定了一个�
 </div>
 </div>
 
-<div id="outline-container-org4015a96" class="outline-2">
-<h2 id="org4015a96"><span class="section-number-2">10</span> POSIX异步IO</h2>
+<div id="outline-container-org04ae43c" class="outline-2">
+<h2 id="org04ae43c"><span class="section-number-2">10</span> POSIX异步IO</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 执行IO操作时,如果还有其他事务需要处理而不想被IO操作阻塞,就可以使用异步IO.
@@ -1073,8 +1075,8 @@ sigev_notify_attribute字段表示调用通知函数线程的属性,为NULL,则�
 </ul>
 </div>
 
-<div id="outline-container-orgce8951e" class="outline-3">
-<h3 id="orgce8951e"><span class="section-number-3">10.1</span> 异步读写操作</h3>
+<div id="outline-container-org3b0fe8f" class="outline-3">
+<h3 id="org3b0fe8f"><span class="section-number-3">10.1</span> 异步读写操作</h3>
 <div class="outline-text-3" id="text-10-1">
 <p>
 在进行异步IO之前需要先初始化AIO控制块,然后调用aio_read函数进行异步读操作,或调用aio_write函数来进行异步写操作
@@ -1126,8 +1128,8 @@ lio_listio函数既能以同步的方式来使用,也能以异步的方式来使
 </div>
 
 
-<div id="outline-container-org39c041b" class="outline-3">
-<h3 id="org39c041b"><span class="section-number-3">10.2</span> 强制同步</h3>
+<div id="outline-container-org0bbb95c" class="outline-3">
+<h3 id="org0bbb95c"><span class="section-number-3">10.2</span> 强制同步</h3>
 <div class="outline-text-3" id="text-10-2">
 <p>
 要强制等待中的异步操作立即同步到存储中,可以设立一个AIO控制块,并调用aio_fsync函数
@@ -1152,8 +1154,8 @@ AIO控制块中的aio_fildes字段指明了其异步写操作被同步的文件.
 </div>
 </div>
 
-<div id="outline-container-org8f36661" class="outline-3">
-<h3 id="org8f36661"><span class="section-number-3">10.3</span> 获取异步读,写,同步操作的完成状态</h3>
+<div id="outline-container-org2ccf40f" class="outline-3">
+<h3 id="org2ccf40f"><span class="section-number-3">10.3</span> 获取异步读,写,同步操作的完成状态</h3>
 <div class="outline-text-3" id="text-10-3">
 <p>
 为了获取一个异步读,写或同步操作的完成状态,需要调用aio_error函数
@@ -1192,8 +1194,8 @@ AIO控制块中的aio_fildes字段指明了其异步写操作被同步的文件.
 </div>
 </div>
 
-<div id="outline-container-orge668fe6" class="outline-3">
-<h3 id="orge668fe6"><span class="section-number-3">10.4</span> 异步操作管理</h3>
+<div id="outline-container-orgc7d14db" class="outline-3">
+<h3 id="orgc7d14db"><span class="section-number-3">10.4</span> 异步操作管理</h3>
 <div class="outline-text-3" id="text-10-4">
 <p>
 若完成要操作的事务后,还有异步操作未完成,可以调用aio_suspend函数来 <b>阻塞进程</b>.直到操作完成
@@ -1235,8 +1237,8 @@ AIO控制块中的aio_fildes字段指明了其异步写操作被同步的文件.
 </div>
 </div>
 
-<div id="outline-container-orgbb0ae61" class="outline-2">
-<h2 id="orgbb0ae61"><span class="section-number-2">11</span> 散布读(scatter read)和聚集写(gather write)</h2>
+<div id="outline-container-org0e1d418" class="outline-2">
+<h2 id="org0e1d418"><span class="section-number-2">11</span> 散布读(scatter read)和聚集写(gather write)</h2>
 <div class="outline-text-2" id="text-11">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/uio.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -1264,16 +1266,16 @@ AIO控制块中的aio_fildes字段指明了其异步写操作被同步的文件.
 </div>
 </div>
 
-<div id="outline-container-org57922f3" class="outline-2">
-<h2 id="org57922f3"><span class="section-number-2">12</span> 存储映射IO</h2>
+<div id="outline-container-org14ead43" class="outline-2">
+<h2 id="org14ead43"><span class="section-number-2">12</span> 存储映射IO</h2>
 <div class="outline-text-2" id="text-12">
 <p>
 存储映射IO能将一个磁盘文件映射到内存的一个缓冲区中,这样从缓冲区中读取数据就相当于读文件中的相应字节. 将数据存入缓冲区时,相应字节就自动写入文件. 这样就可以在不使用read和write的情况下执行IO
 </p>
 </div>
 
-<div id="outline-container-orga043f43" class="outline-3">
-<h3 id="orga043f43"><span class="section-number-3">12.1</span> 将文件映射到缓冲区</h3>
+<div id="outline-container-org6bd3ad9" class="outline-3">
+<h3 id="org6bd3ad9"><span class="section-number-3">12.1</span> 将文件映射到缓冲区</h3>
 <div class="outline-text-3" id="text-12-1">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/mman.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -1368,8 +1370,8 @@ MAP_PRIVATE
 </div>
 </div>
 
-<div id="outline-container-orgc178555" class="outline-3">
-<h3 id="orgc178555"><span class="section-number-3">12.2</span> 更改映射权限</h3>
+<div id="outline-container-orgdd30a08" class="outline-3">
+<h3 id="orgdd30a08"><span class="section-number-3">12.2</span> 更改映射权限</h3>
 <div class="outline-text-3" id="text-12-2">
 <p>
 调用mprotect函数可以更改一个现有映射的权限
@@ -1387,8 +1389,8 @@ MAP_PRIVATE
 </div>
 </div>
 
-<div id="outline-container-org08e013c" class="outline-3">
-<h3 id="org08e013c"><span class="section-number-3">12.3</span> 写回修改到源文件</h3>
+<div id="outline-container-orge0f766b" class="outline-3">
+<h3 id="orge0f766b"><span class="section-number-3">12.3</span> 写回修改到源文件</h3>
 <div class="outline-text-3" id="text-12-3">
 <p>
 如果缓冲区是通过MAP_SHARED标志打开的,则对缓冲区的修改并不会立即写回文件中,具体的时间由系统决定. 
@@ -1406,8 +1408,8 @@ MAP_PRIVATE
 </div>
 </div>
 
-<div id="outline-container-org14b007f" class="outline-4">
-<h4 id="org14b007f"><span class="section-number-4">12.3.1</span> flags参数说明</h4>
+<div id="outline-container-orgd677b17" class="outline-4">
+<h4 id="orgd677b17"><span class="section-number-4">12.3.1</span> flags参数说明</h4>
 <div class="outline-text-4" id="text-12-3-1">
 <ul class="org-ul">
 <li><p>
@@ -1438,8 +1440,8 @@ MS_INVALIDATE asks to invalidate other mappings of the same file (so that they c
 </div>
 </div>
 
-<div id="outline-container-org514b1b1" class="outline-3">
-<h3 id="org514b1b1"><span class="section-number-3">12.4</span> 解除映射</h3>
+<div id="outline-container-org16e7e7e" class="outline-3">
+<h3 id="org16e7e7e"><span class="section-number-3">12.4</span> 解除映射</h3>
 <div class="outline-text-3" id="text-12-4">
 <p>
 当进程终止时,会自动解除存储映射区的映射,或者直接调用munmap函数也可以解除映射区. 
@@ -1457,8 +1459,8 @@ MS_INVALIDATE asks to invalidate other mappings of the same file (so that they c
 </div>
 </div>
 
-<div id="outline-container-org002498f" class="outline-3">
-<h3 id="org002498f"><span class="section-number-3">12.5</span> 相关信号</h3>
+<div id="outline-container-org883646e" class="outline-3">
+<h3 id="org883646e"><span class="section-number-3">12.5</span> 相关信号</h3>
 <div class="outline-text-3" id="text-12-5">
 <p>
 与映射区相关的信号有SIGSEGV和SIGBUS.
@@ -1474,8 +1476,8 @@ SIGSEGV信用通常用于表明进程试图访问不可用的存储区,或尝试
 </div>
 </div>
 
-<div id="outline-container-org4a2c948" class="outline-3">
-<h3 id="org4a2c948"><span class="section-number-3">12.6</span> 关于子进程的共享问题</h3>
+<div id="outline-container-org9d63f4c" class="outline-3">
+<h3 id="org9d63f4c"><span class="section-number-3">12.6</span> 关于子进程的共享问题</h3>
 <div class="outline-text-3" id="text-12-6">
 <p>
 子进程能通过fork继承存储映射区,但exec后则存储映射区被重置

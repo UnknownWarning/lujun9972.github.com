@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,16 +56,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfeeb788">了解内存分配机制(共享映射与请求分页)</a></li>
-<li><a href="#org7a034e3">了解内存释放机制</a></li>
+<li><a href="#orgccad167">了解内存分配机制(共享映射与请求分页)</a></li>
+<li><a href="#orgcb7d98f">了解内存释放机制</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orgfeeb788" class="outline-2">
-<h2 id="orgfeeb788">了解内存分配机制(共享映射与请求分页)</h2>
-<div class="outline-text-2" id="text-orgfeeb788">
+<div id="outline-container-orgccad167" class="outline-2">
+<h2 id="orgccad167">了解内存分配机制(共享映射与请求分页)</h2>
+<div class="outline-text-2" id="text-orgccad167">
 <p>
 通过 <code>pmap</code> 命令，可以获取用户进程逻辑地址空间中映射的内存信息：
 </p>
@@ -126,9 +128,9 @@
 </div>
 </div>
 
-<div id="outline-container-org7a034e3" class="outline-2">
-<h2 id="org7a034e3">了解内存释放机制</h2>
-<div class="outline-text-2" id="text-org7a034e3">
+<div id="outline-container-orgcb7d98f" class="outline-2">
+<h2 id="orgcb7d98f">了解内存释放机制</h2>
+<div class="outline-text-2" id="text-orgcb7d98f">
 <p>
 当其他进程需要新的物理内存时，就涉及到如何将尚有数据残余的物理内存释放或换出来的问题了。
 </p>

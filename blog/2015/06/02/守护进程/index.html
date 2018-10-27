@@ -33,15 +33,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -53,15 +55,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge707c03">1. 守护进程的特点</a></li>
-<li><a href="#orgc8c33df">2. 编写守护进程的基本规则</a></li>
-<li><a href="#org8d058f9">3. 编写守护进程的惯例</a></li>
+<li><a href="#org4fff1a8">1. 守护进程的特点</a></li>
+<li><a href="#orgb22df07">2. 编写守护进程的基本规则</a></li>
+<li><a href="#org00d2cff">3. 编写守护进程的惯例</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge707c03" class="outline-2">
-<h2 id="orge707c03"><span class="section-number-2">1</span> 守护进程的特点</h2>
+<div id="outline-container-org4fff1a8" class="outline-2">
+<h2 id="org4fff1a8"><span class="section-number-2">1</span> 守护进程的特点</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><b>大多数</b> 守护进程以超级用户特权运行</li>
@@ -72,8 +74,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgc8c33df" class="outline-2">
-<h2 id="orgc8c33df"><span class="section-number-2">2</span> 编写守护进程的基本规则</h2>
+<div id="outline-container-orgb22df07" class="outline-2">
+<h2 id="orgb22df07"><span class="section-number-2">2</span> 编写守护进程的基本规则</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 编写守护进程需要遵循一些基本规则,以防止产生并不需要的交互作用.
@@ -132,8 +134,8 @@
 </div>
 </div>
 
-<div id="outline-container-org8d058f9" class="outline-2">
-<h2 id="org8d058f9"><span class="section-number-2">3</span> 编写守护进程的惯例</h2>
+<div id="outline-container-org00d2cff" class="outline-2">
+<h2 id="org00d2cff"><span class="section-number-2">3</span> 编写守护进程的惯例</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>若守护进程使用锁文件(<b>可以保证只有一个守护进程副本运行</b>),那么该文件通常存放在`/var/run'目录下,且名称通常为`守护进程或服务名称.pid'. 例如cron守护进程额锁文件为`/var/run/crond.pid'</li>

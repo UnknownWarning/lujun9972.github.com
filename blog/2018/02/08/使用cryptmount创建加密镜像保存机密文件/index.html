@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,12 +56,12 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbcdde5c">安装cryptmount</a></li>
-<li><a href="#org05b4c90">配置cryptmount</a></li>
-<li><a href="#org5da19ed">创建镜像文件</a></li>
-<li><a href="#orgb410b22">创建密钥文件</a></li>
-<li><a href="#org1cd057d">格式化镜像文件</a></li>
-<li><a href="#org7b675c2">挂载和卸载加密镜像</a></li>
+<li><a href="#org7685280">安装cryptmount</a></li>
+<li><a href="#orgb056846">配置cryptmount</a></li>
+<li><a href="#orgf88650b">创建镜像文件</a></li>
+<li><a href="#org09610ef">创建密钥文件</a></li>
+<li><a href="#org7979ced">格式化镜像文件</a></li>
+<li><a href="#orgbf262d0">挂载和卸载加密镜像</a></li>
 </ul>
 </div>
 </div>
@@ -67,9 +69,9 @@
 cryptmount是一个创建、挂载和卸载加密镜像的工具，你可以用它来创建一个加密镜像并挂载到文件系统中，然后将机密文件存入其中，再卸载这个镜像，这样就能做到神不知、鬼不觉地保存机密文件了。
 </p>
 
-<div id="outline-container-orgbcdde5c" class="outline-2">
-<h2 id="orgbcdde5c">安装cryptmount</h2>
-<div class="outline-text-2" id="text-orgbcdde5c">
+<div id="outline-container-org7685280" class="outline-2">
+<h2 id="org7685280">安装cryptmount</h2>
+<div class="outline-text-2" id="text-org7685280">
 <p>
 cryptmount是archlinux中的aur仓库中，因此可以通过下面命令来安装
 </p>
@@ -92,9 +94,9 @@ cryptmount是archlinux中的aur仓库中，因此可以通过下面命令来安�
 </div>
 </div>
 
-<div id="outline-container-org05b4c90" class="outline-2">
-<h2 id="org05b4c90">配置cryptmount</h2>
-<div class="outline-text-2" id="text-org05b4c90">
+<div id="outline-container-orgb056846" class="outline-2">
+<h2 id="orgb056846">配置cryptmount</h2>
+<div class="outline-text-2" id="text-orgb056846">
 <p>
 使用root修改 <code>/etc/cryptmount/cmtab</code>,加入下面内容
 </p>
@@ -117,9 +119,9 @@ SecureImage {                               #配置项名称
 </div>
 </div>
 
-<div id="outline-container-org5da19ed" class="outline-2">
-<h2 id="org5da19ed">创建镜像文件</h2>
-<div class="outline-text-2" id="text-org5da19ed">
+<div id="outline-container-orgf88650b" class="outline-2">
+<h2 id="orgf88650b">创建镜像文件</h2>
+<div class="outline-text-2" id="text-orgf88650b">
 <p>
 使用 <code>dd</code> 创建一个镜像文件:
 </p>
@@ -138,9 +140,9 @@ SecureImage {                               #配置项名称
 </div>
 </div>
 
-<div id="outline-container-orgb410b22" class="outline-2">
-<h2 id="orgb410b22">创建密钥文件</h2>
-<div class="outline-text-2" id="text-orgb410b22">
+<div id="outline-container-org09610ef" class="outline-2">
+<h2 id="org09610ef">创建密钥文件</h2>
+<div class="outline-text-2" id="text-org09610ef">
 <div class="org-src-container">
 <pre class="src src-shell">sudo cryptmount --generate-key <span style="color: #a45bad;">32</span> SecureImage
 </pre>
@@ -160,9 +162,9 @@ cryptmount就根据 <code>cmtab</code> 中cmtab的 <code>keyfile</code> 生成�
 </div>
 </div>
 
-<div id="outline-container-org1cd057d" class="outline-2">
-<h2 id="org1cd057d">格式化镜像文件</h2>
-<div class="outline-text-2" id="text-org1cd057d">
+<div id="outline-container-org7979ced" class="outline-2">
+<h2 id="org7979ced">格式化镜像文件</h2>
+<div class="outline-text-2" id="text-org7979ced">
 <p>
 首先根据镜像文件来创建设备文件，运行:
 </p>
@@ -193,9 +195,9 @@ cryptmount就根据 <code>cmtab</code> 中cmtab的 <code>keyfile</code> 生成�
 </div>
 </div>
 
-<div id="outline-container-org7b675c2" class="outline-2">
-<h2 id="org7b675c2">挂载和卸载加密镜像</h2>
-<div class="outline-text-2" id="text-org7b675c2">
+<div id="outline-container-orgbf262d0" class="outline-2">
+<h2 id="orgbf262d0">挂载和卸载加密镜像</h2>
+<div class="outline-text-2" id="text-orgbf262d0">
 <p>
 首先当然是创建挂载点了:
 </p>

@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,9 +56,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9e9fa7b">安装Kgotobed</a></li>
-<li><a href="#org7a370fe">使用Kgotobed</a></li>
-<li><a href="#org4bf72c0">删除kgotobed</a></li>
+<li><a href="#org9ff02a3">安装Kgotobed</a></li>
+<li><a href="#org80a6c32">使用Kgotobed</a></li>
+<li><a href="#org0c1d1c2">删除kgotobed</a></li>
 </ul>
 </div>
 </div>
@@ -64,9 +66,9 @@
 Kgotobed是一个很变态的Kernel Module。它会强制linux在特定时间关闭，而你却毫无办法(即使你是root用户)
 </p>
 
-<div id="outline-container-org9e9fa7b" class="outline-2">
-<h2 id="org9e9fa7b">安装Kgotobed</h2>
-<div class="outline-text-2" id="text-org9e9fa7b">
+<div id="outline-container-org9ff02a3" class="outline-2">
+<h2 id="org9ff02a3">安装Kgotobed</h2>
+<div class="outline-text-2" id="text-org9ff02a3">
 <p>
 在archlinux上要安装 <code>kgotobed</code>,首先需要安装 <code>dkms</code> 和 <code>linux</code> 这两个包
 </p>
@@ -150,9 +152,9 @@ systemctl start kgotobed.service
 </div>
 </div>
 
-<div id="outline-container-org7a370fe" class="outline-2">
-<h2 id="org7a370fe">使用Kgotobed</h2>
-<div class="outline-text-2" id="text-org7a370fe">
+<div id="outline-container-org80a6c32" class="outline-2">
+<h2 id="org80a6c32">使用Kgotobed</h2>
+<div class="outline-text-2" id="text-org80a6c32">
 <p>
 直接运行 <code>gotobed</code> 就能看到设置的强行关机的时间：
 </p>
@@ -212,9 +214,9 @@ Current bedtime is 2018-04-13 02:00:00
 </pre>
 </div>
 </div>
-<div id="outline-container-org4bf72c0" class="outline-2">
-<h2 id="org4bf72c0">删除kgotobed</h2>
-<div class="outline-text-2" id="text-org4bf72c0">
+<div id="outline-container-org0c1d1c2" class="outline-2">
+<h2 id="org0c1d1c2">删除kgotobed</h2>
+<div class="outline-text-2" id="text-org0c1d1c2">
 <p>
 要逃脱强制关机的命运，几乎唯一的办法就是卸载kgotobed了，执行 <code>make uninstall</code> 卸载
 </p>

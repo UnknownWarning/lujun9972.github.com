@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,19 +56,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org089ae7b">安装TLP</a></li>
-<li><a href="#org15f86cc">启动TLP服务</a></li>
-<li><a href="#org41706bb">使用TLP</a>
+<li><a href="#orgffee06c">安装TLP</a></li>
+<li><a href="#org92029a5">启动TLP服务</a></li>
+<li><a href="#orgaf56a01">使用TLP</a>
 <ul>
-<li><a href="#org3f20ffc">tlp: 应用笔记本的节能设置。</a></li>
-<li><a href="#orga7dc4c1">tlp-stat: 显示当前的节能设置</a></li>
-<li><a href="#org682126c">wifi: 手动启动/关闭wifi</a></li>
-<li><a href="#org74f6736">bluetooth: 手动启动/关闭蓝牙</a></li>
-<li><a href="#org9a71525">wwan: 手动启动/关闭wwan(3G/4G)设备</a></li>
+<li><a href="#org73886b3">tlp: 应用笔记本的节能设置。</a></li>
+<li><a href="#org5f581d4">tlp-stat: 显示当前的节能设置</a></li>
+<li><a href="#orga9d64ac">wifi: 手动启动/关闭wifi</a></li>
+<li><a href="#orgd0c5170">bluetooth: 手动启动/关闭蓝牙</a></li>
+<li><a href="#org9ae9f09">wwan: 手动启动/关闭wwan(3G/4G)设备</a></li>
 </ul>
 </li>
-<li><a href="#org02b6d3a">配置TLP</a></li>
-<li><a href="#org87aae49">TLPUI</a></li>
+<li><a href="#org30c935d">配置TLP</a></li>
+<li><a href="#orgeb526fb">TLPUI</a></li>
 </ul>
 </div>
 </div>
@@ -75,9 +77,9 @@ TLP是一款linux上的基于文本界面的高级电源管理工具。TLP默认
 此外TLP也具有很高的可配置性，能够让你充分的配置以满足特殊需求。
 </p>
 
-<div id="outline-container-org089ae7b" class="outline-2">
-<h2 id="org089ae7b">安装TLP</h2>
-<div class="outline-text-2" id="text-org089ae7b">
+<div id="outline-container-orgffee06c" class="outline-2">
+<h2 id="orgffee06c">安装TLP</h2>
+<div class="outline-text-2" id="text-orgffee06c">
 <p>
 在archlinux上通过下面命令来安装：
 </p>
@@ -96,9 +98,9 @@ TLP是一款linux上的基于文本界面的高级电源管理工具。TLP默认
 </div>
 </div>
 
-<div id="outline-container-org15f86cc" class="outline-2">
-<h2 id="org15f86cc">启动TLP服务</h2>
-<div class="outline-text-2" id="text-org15f86cc">
+<div id="outline-container-org92029a5" class="outline-2">
+<h2 id="org92029a5">启动TLP服务</h2>
+<div class="outline-text-2" id="text-org92029a5">
 <p>
 TLP默认会启动 <code>NetworkManager.service</code>,然而我使用的是 <code>netctl</code> 来管理网络，因此还需要修改一下 <code>tlp.service</code>
 </p>
@@ -171,17 +173,17 @@ Power source   = AC
 </div>
 </div>
 
-<div id="outline-container-org41706bb" class="outline-2">
-<h2 id="org41706bb">使用TLP</h2>
-<div class="outline-text-2" id="text-org41706bb">
+<div id="outline-container-orgaf56a01" class="outline-2">
+<h2 id="orgaf56a01">使用TLP</h2>
+<div class="outline-text-2" id="text-orgaf56a01">
 <p>
 TLP中最常用的命令有这么几个：
 </p>
 </div>
 
-<div id="outline-container-org3f20ffc" class="outline-3">
-<h3 id="org3f20ffc">tlp: 应用笔记本的节能设置。</h3>
-<div class="outline-text-3" id="text-org3f20ffc">
+<div id="outline-container-org73886b3" class="outline-3">
+<h3 id="org73886b3">tlp: 应用笔记本的节能设置。</h3>
+<div class="outline-text-3" id="text-org73886b3">
 <dl class="org-dl">
 <dt>sudo tlp start</dt><dd>根据实际情况是使用交流电还是电池，来应用对应的节能设置</dd>
 <dt>sudo tlp ac</dt><dd>强制切换到交流电对应的节能设置</dd>
@@ -189,9 +191,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-orga7dc4c1" class="outline-3">
-<h3 id="orga7dc4c1">tlp-stat: 显示当前的节能设置</h3>
-<div class="outline-text-3" id="text-orga7dc4c1">
+<div id="outline-container-org5f581d4" class="outline-3">
+<h3 id="org5f581d4">tlp-stat: 显示当前的节能设置</h3>
+<div class="outline-text-3" id="text-org5f581d4">
 <dl class="org-dl">
 <dt>sudo tlp-stat -b</dt><dd>显示电池的相关信息</dd>
 <dt>tlp-stat -c</dt><dd>显示tlp当前的配置信息</dd>
@@ -205,9 +207,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-org682126c" class="outline-3">
-<h3 id="org682126c">wifi: 手动启动/关闭wifi</h3>
-<div class="outline-text-3" id="text-org682126c">
+<div id="outline-container-orga9d64ac" class="outline-3">
+<h3 id="orga9d64ac">wifi: 手动启动/关闭wifi</h3>
+<div class="outline-text-3" id="text-orga9d64ac">
 <dl class="org-dl">
 <dt>sudo wifi on</dt><dd>手动启动wifi</dd>
 <dt>sudo wifi off</dt><dd>手动关闭wifi</dd>
@@ -215,9 +217,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-org74f6736" class="outline-3">
-<h3 id="org74f6736">bluetooth: 手动启动/关闭蓝牙</h3>
-<div class="outline-text-3" id="text-org74f6736">
+<div id="outline-container-orgd0c5170" class="outline-3">
+<h3 id="orgd0c5170">bluetooth: 手动启动/关闭蓝牙</h3>
+<div class="outline-text-3" id="text-orgd0c5170">
 <dl class="org-dl">
 <dt>sudo bluetooth on</dt><dd>手动启动蓝牙</dd>
 <dt>sudo bluetooth off</dt><dd>手动关闭蓝牙</dd>
@@ -225,9 +227,9 @@ TLP中最常用的命令有这么几个：
 </dl>
 </div>
 </div>
-<div id="outline-container-org9a71525" class="outline-3">
-<h3 id="org9a71525">wwan: 手动启动/关闭wwan(3G/4G)设备</h3>
-<div class="outline-text-3" id="text-org9a71525">
+<div id="outline-container-org9ae9f09" class="outline-3">
+<h3 id="org9ae9f09">wwan: 手动启动/关闭wwan(3G/4G)设备</h3>
+<div class="outline-text-3" id="text-org9ae9f09">
 <dl class="org-dl">
 <dt>sudo wwan on</dt><dd>手动启动wwlan设备</dd>
 <dt>sudo wwan off</dt><dd>手动关闭wwlan设备</dd>
@@ -236,17 +238,17 @@ TLP中最常用的命令有这么几个：
 </div>
 </div>
 </div>
-<div id="outline-container-org02b6d3a" class="outline-2">
-<h2 id="org02b6d3a">配置TLP</h2>
-<div class="outline-text-2" id="text-org02b6d3a">
+<div id="outline-container-org30c935d" class="outline-2">
+<h2 id="org30c935d">配置TLP</h2>
+<div class="outline-text-2" id="text-org30c935d">
 <p>
 TLP的配置文件放在 <code>/etc/default/tlp</code> 中，详细的配置方法请参见<a href="http://linrunner.de/en/tlp/docs/tlp-configuration.html">官网上的说明</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org87aae49" class="outline-2">
-<h2 id="org87aae49">TLPUI</h2>
-<div class="outline-text-2" id="text-org87aae49">
+<div id="outline-container-orgeb526fb" class="outline-2">
+<h2 id="orgeb526fb">TLPUI</h2>
+<div class="outline-text-2" id="text-orgeb526fb">
 <p>
 TLP本身并不自带图形化用户界面，但是有一个第三方的GTK GUI界面可以使用，名叫 TLPUI
 </p>

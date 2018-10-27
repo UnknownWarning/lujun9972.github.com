@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,15 +56,15 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc5b87b4">安装lynis</a></li>
-<li><a href="#orgf6627fc">使用lynis进行主机扫描</a>
+<li><a href="#org4c4f103">安装lynis</a></li>
+<li><a href="#org4fbc56b">使用lynis进行主机扫描</a>
 <ul>
-<li><a href="#org38c978c">查看详细说明</a></li>
-<li><a href="#orge113cee">查看日志文件</a></li>
+<li><a href="#orgb953414">查看详细说明</a></li>
+<li><a href="#orgd868772">查看日志文件</a></li>
 </ul>
 </li>
-<li><a href="#org031b755">检查更新</a></li>
-<li><a href="#orgb19b203">自定义lynis安全审计策略</a></li>
+<li><a href="#orgf790fb7">检查更新</a></li>
+<li><a href="#org3ca6567">自定义lynis安全审计策略</a></li>
 </ul>
 </div>
 </div>
@@ -70,9 +72,9 @@
 lynis 是一款运行在 Unix/Linux 平台上的基于主机的、开源的安全审计软件。
 </p>
 
-<div id="outline-container-orgc5b87b4" class="outline-2">
-<h2 id="orgc5b87b4">安装lynis</h2>
-<div class="outline-text-2" id="text-orgc5b87b4">
+<div id="outline-container-org4c4f103" class="outline-2">
+<h2 id="org4c4f103">安装lynis</h2>
+<div class="outline-text-2" id="text-org4c4f103">
 <p>
 在 archlinux 上可以直接通过 pacman 来安装
 </p>
@@ -106,9 +108,9 @@ Net Upgrade Size:      0.00 MiB
 </div>
 </div>
 
-<div id="outline-container-orgf6627fc" class="outline-2">
-<h2 id="orgf6627fc">使用lynis进行主机扫描</h2>
-<div class="outline-text-2" id="text-orgf6627fc">
+<div id="outline-container-org4fbc56b" class="outline-2">
+<h2 id="org4fbc56b">使用lynis进行主机扫描</h2>
+<div class="outline-text-2" id="text-org4fbc56b">
 <p>
 首先让我们不带任何参数运行 lynis, 这会列出 lynis 支持的那些参数
 </p>
@@ -394,9 +396,9 @@ webservers
 </pre>
 </div>
 </div>
-<div id="outline-container-org38c978c" class="outline-3">
-<h3 id="org38c978c">查看详细说明</h3>
-<div class="outline-text-3" id="text-org38c978c">
+<div id="outline-container-orgb953414" class="outline-3">
+<h3 id="orgb953414">查看详细说明</h3>
+<div class="outline-text-3" id="text-orgb953414">
 <p>
 在查看审计结果时,你可以通过 <code>show details</code> 参数来获取关于某条警告/建议的详细说明。其对应的命令形式为:
 </p>
@@ -436,9 +438,9 @@ webservers
 </div>
 
 
-<div id="outline-container-orge113cee" class="outline-3">
-<h3 id="orge113cee">查看日志文件</h3>
-<div class="outline-text-3" id="text-orge113cee">
+<div id="outline-container-orgd868772" class="outline-3">
+<h3 id="orgd868772">查看日志文件</h3>
+<div class="outline-text-3" id="text-orgd868772">
 <p>
 lynis在审计完成后会将详细的信息记录在 <code>/var/log/lynis.log</code> 中.
 </p>
@@ -476,9 +478,9 @@ lynis在审计完成后会将详细的信息记录在 <code>/var/log/lynis.log</
 </div>
 </div>
 
-<div id="outline-container-org031b755" class="outline-2">
-<h2 id="org031b755">检查更新</h2>
-<div class="outline-text-2" id="text-org031b755">
+<div id="outline-container-orgf790fb7" class="outline-2">
+<h2 id="orgf790fb7">检查更新</h2>
+<div class="outline-text-2" id="text-orgf790fb7">
 <p>
 审计软件需要随时进行更新从而得到最新的建议和信息，我们可以使用 <code>update info</code> 参数来检查更新:
 </p>
@@ -504,9 +506,9 @@ lynis在审计完成后会将详细的信息记录在 <code>/var/log/lynis.log</
 </div>
 </div>
 
-<div id="outline-container-orgb19b203" class="outline-2">
-<h2 id="orgb19b203">自定义lynis安全审计策略</h2>
-<div class="outline-text-2" id="text-orgb19b203">
+<div id="outline-container-org3ca6567" class="outline-2">
+<h2 id="org3ca6567">自定义lynis安全审计策略</h2>
+<div class="outline-text-2" id="text-org3ca6567">
 <p>
 lynis的配置信息以 <code>.prf</code> 文件的格式保存在 <code>/etc/lynis</code> 目录中。
 其中，默认lynis自带一个名为 <code>default.prf</code> 的默认配置文件。

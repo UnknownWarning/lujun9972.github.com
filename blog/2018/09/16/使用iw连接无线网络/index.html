@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,24 +56,24 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6028e01">查看无线网络接口</a></li>
-<li><a href="#orgd300978">启动无线接口</a></li>
-<li><a href="#org468981a">获取SSID</a></li>
-<li><a href="#org01b729b">连接无线路由</a>
+<li><a href="#orgd036f6d">查看无线网络接口</a></li>
+<li><a href="#orgbb666fe">启动无线接口</a></li>
+<li><a href="#org825b0cc">获取SSID</a></li>
+<li><a href="#org89934ac">连接无线路由</a>
 <ul>
-<li><a href="#orgca37a41">连接无密码的无线路由</a></li>
-<li><a href="#org45a1483">连接使用WEP加密的无线路由</a></li>
-<li><a href="#org9d27c4b">连接WPA加密的无线路由</a></li>
+<li><a href="#orga80c843">连接无密码的无线路由</a></li>
+<li><a href="#org219fa6f">连接使用WEP加密的无线路由</a></li>
+<li><a href="#org4034c05">连接WPA加密的无线路由</a></li>
 </ul>
 </li>
-<li><a href="#org84f36ee">断开连接</a></li>
+<li><a href="#org17e7e74">断开连接</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6028e01" class="outline-2">
-<h2 id="org6028e01">查看无线网络接口</h2>
-<div class="outline-text-2" id="text-org6028e01">
+<div id="outline-container-orgd036f6d" class="outline-2">
+<h2 id="orgd036f6d">查看无线网络接口</h2>
+<div class="outline-text-2" id="text-orgd036f6d">
 <div class="org-src-container">
 <pre class="src src-shell">iw dev
 </pre>
@@ -96,9 +98,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd300978" class="outline-2">
-<h2 id="orgd300978">启动无线接口</h2>
-<div class="outline-text-2" id="text-orgd300978">
+<div id="outline-container-orgbb666fe" class="outline-2">
+<h2 id="orgbb666fe">启动无线接口</h2>
+<div class="outline-text-2" id="text-orgbb666fe">
 <div class="org-src-container">
 <pre class="src src-shell">sudo ip link set wlp3s0 up
 </pre>
@@ -106,9 +108,9 @@
 </div>
 </div>
 
-<div id="outline-container-org468981a" class="outline-2">
-<h2 id="org468981a">获取SSID</h2>
-<div class="outline-text-2" id="text-org468981a">
+<div id="outline-container-org825b0cc" class="outline-2">
+<h2 id="org825b0cc">获取SSID</h2>
+<div class="outline-text-2" id="text-org825b0cc">
 <div class="org-src-container">
 <pre class="src src-shell">sudo iw wlp3s0 scan |grep SSID
 </pre>
@@ -137,17 +139,17 @@ SSID: CMCC-j667
 </div>
 </div>
 
-<div id="outline-container-org01b729b" class="outline-2">
-<h2 id="org01b729b">连接无线路由</h2>
-<div class="outline-text-2" id="text-org01b729b">
+<div id="outline-container-org89934ac" class="outline-2">
+<h2 id="org89934ac">连接无线路由</h2>
+<div class="outline-text-2" id="text-org89934ac">
 <p>
 这里假设我们想要连接MyHomeCloud
 </p>
 </div>
 
-<div id="outline-container-orgca37a41" class="outline-3">
-<h3 id="orgca37a41">连接无密码的无线路由</h3>
-<div class="outline-text-3" id="text-orgca37a41">
+<div id="outline-container-orga80c843" class="outline-3">
+<h3 id="orga80c843">连接无密码的无线路由</h3>
+<div class="outline-text-3" id="text-orga80c843">
 <div class="org-src-container">
 <pre class="src src-shell">sudo iw wlp3s0 connect -w MyHomeCloud
 </pre>
@@ -155,9 +157,9 @@ SSID: CMCC-j667
 </div>
 </div>
 
-<div id="outline-container-org45a1483" class="outline-3">
-<h3 id="org45a1483">连接使用WEP加密的无线路由</h3>
-<div class="outline-text-3" id="text-org45a1483">
+<div id="outline-container-org219fa6f" class="outline-3">
+<h3 id="org219fa6f">连接使用WEP加密的无线路由</h3>
+<div class="outline-text-3" id="text-org219fa6f">
 <p>
 这里假设WEP密码是1234567890
 </p>
@@ -168,9 +170,9 @@ SSID: CMCC-j667
 </div>
 </div>
 
-<div id="outline-container-org9d27c4b" class="outline-3">
-<h3 id="org9d27c4b">连接WPA加密的无线路由</h3>
-<div class="outline-text-3" id="text-org9d27c4b">
+<div id="outline-container-org4034c05" class="outline-3">
+<h3 id="org4034c05">连接WPA加密的无线路由</h3>
+<div class="outline-text-3" id="text-org4034c05">
 <p>
 可惜iw只能处理WEP加密，要连接WPA需要 <code>wpasupplicant</code>
 </p>
@@ -207,9 +209,9 @@ sudo dhclient wlp3s0
 </div>
 </div>
 
-<div id="outline-container-org84f36ee" class="outline-2">
-<h2 id="org84f36ee">断开连接</h2>
-<div class="outline-text-2" id="text-org84f36ee">
+<div id="outline-container-org17e7e74" class="outline-2">
+<h2 id="org17e7e74">断开连接</h2>
+<div class="outline-text-2" id="text-org17e7e74">
 <div class="org-src-container">
 <pre class="src src-shell">iw wlp3s0 disconnect
 </pre>

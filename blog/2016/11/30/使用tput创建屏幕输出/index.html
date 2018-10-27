@@ -33,15 +33,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -53,21 +55,21 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5581ff6">1. tput与terminfo</a></li>
-<li><a href="#org96923a2">2. tput常用法</a></li>
-<li><a href="#orge0868bb">3. tput的使用</a>
+<li><a href="#org525c5d5">1. tput与terminfo</a></li>
+<li><a href="#orgcfc1744">2. tput常用法</a></li>
+<li><a href="#orgc82d93b">3. tput的使用</a>
 <ul>
-<li><a href="#orgdb2b01f">3.1. 设置终端属性</a></li>
-<li><a href="#orgffb2ffe">3.2. 获取终端属性</a></li>
-<li><a href="#org8a06c2c">3.3. 判断终端是否存在某项能力</a></li>
+<li><a href="#orgb9aabce">3.1. 设置终端属性</a></li>
+<li><a href="#org98d9917">3.2. 获取终端属性</a></li>
+<li><a href="#orga3a8dff">3.3. 判断终端是否存在某项能力</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5581ff6" class="outline-2">
-<h2 id="org5581ff6"><span class="section-number-2">1</span> tput与terminfo</h2>
+<div id="outline-container-org525c5d5" class="outline-2">
+<h2 id="org525c5d5"><span class="section-number-2">1</span> tput与terminfo</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 tput 命令将通过 terminfo 数据库对您的终端会话进行初始化和操作。通过使用 tput，您可以更改几项终端功能，如移动或更改光标、更改文本属性，以及清除终端屏幕的特定区域。
@@ -80,8 +82,8 @@ UNIX 中的几个常用程序都依赖 terminfo 数据库提供这些属性以�
 </div>
 </div>
 
-<div id="outline-container-org96923a2" class="outline-2">
-<h2 id="org96923a2"><span class="section-number-2">2</span> tput常用法</h2>
+<div id="outline-container-orgcfc1744" class="outline-2">
+<h2 id="orgcfc1744"><span class="section-number-2">2</span> tput常用法</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 tput默认通过$TERM的值来指示终端类型，但我们也可以通过 <code>-T $Type</code> 来指定终端类型。不过一般来说都没有这个必要。
@@ -101,8 +103,8 @@ tput默认通过$TERM的值来指示终端类型，但我们也可以通过 <cod
 </div>
 </div>
 
-<div id="outline-container-orge0868bb" class="outline-2">
-<h2 id="orge0868bb"><span class="section-number-2">3</span> tput的使用</h2>
+<div id="outline-container-orgc82d93b" class="outline-2">
+<h2 id="orgc82d93b"><span class="section-number-2">3</span> tput的使用</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 tput一般用于作三件事情: 设置终端属性,获取终端属性以及判断终端是否支持某项能力.
@@ -117,8 +119,8 @@ tput一般用于作三件事情: 设置终端属性,获取终端属性以及判�
 </p>
 </div>
 
-<div id="outline-container-orgdb2b01f" class="outline-3">
-<h3 id="orgdb2b01f"><span class="section-number-3">3.1</span> 设置终端属性</h3>
+<div id="outline-container-orgb9aabce" class="outline-3">
+<h3 id="orgb9aabce"><span class="section-number-3">3.1</span> 设置终端属性</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 tput主要是通过输出控制码字符串来实现一些特殊终端效果的. 
@@ -228,8 +230,8 @@ tput cup <span style="color: #a45bad;">2</span> <span style="color: #a45bad;">15
 </div>
 </div>
 
-<div id="outline-container-orgffb2ffe" class="outline-3">
-<h3 id="orgffb2ffe"><span class="section-number-3">3.2</span> 获取终端属性</h3>
+<div id="outline-container-org98d9917" class="outline-3">
+<h3 id="org98d9917"><span class="section-number-3">3.2</span> 获取终端属性</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 tput会输出一个数字,表示该属性的值.
@@ -256,8 +258,8 @@ tput会输出一个数字,表示该属性的值.
 </div>
 </div>
 
-<div id="outline-container-org8a06c2c" class="outline-3">
-<h3 id="org8a06c2c"><span class="section-number-3">3.3</span> 判断终端是否存在某项能力</h3>
+<div id="outline-container-orga3a8dff" class="outline-3">
+<h3 id="orga3a8dff"><span class="section-number-3">3.3</span> 判断终端是否存在某项能力</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 tput会通过返回值来表示是否具有这项能力(0表示true,1表示false).

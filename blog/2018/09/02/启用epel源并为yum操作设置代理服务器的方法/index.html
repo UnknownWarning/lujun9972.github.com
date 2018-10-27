@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,20 +56,20 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf7d41f3">配置EPEL源</a></li>
-<li><a href="#org672b2f9">为yum操作设定代理服务器</a>
+<li><a href="#orgaad0e91">配置EPEL源</a></li>
+<li><a href="#orgd2160da">为yum操作设定代理服务器</a>
 <ul>
-<li><a href="#orgf82cd8e">使用全局代理</a></li>
-<li><a href="#orgd7a4189">为某个用户配置代理</a></li>
+<li><a href="#orge0b80de">使用全局代理</a></li>
+<li><a href="#orge3445e3">为某个用户配置代理</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf7d41f3" class="outline-2">
-<h2 id="orgf7d41f3">配置EPEL源</h2>
-<div class="outline-text-2" id="text-orgf7d41f3">
+<div id="outline-container-orgaad0e91" class="outline-2">
+<h2 id="orgaad0e91">配置EPEL源</h2>
+<div class="outline-text-2" id="text-orgaad0e91">
 <p>
 EPEL是Fedora社区打造的为RHEL及衍生发行版提供高质量软件包的项目。
 </p>
@@ -98,13 +100,13 @@ EPEL是Fedora社区打造的为RHEL及衍生发行版提供高质量软件包的
 </div>
 </div>
 
-<div id="outline-container-org672b2f9" class="outline-2">
-<h2 id="org672b2f9">为yum操作设定代理服务器</h2>
-<div class="outline-text-2" id="text-org672b2f9">
+<div id="outline-container-orgd2160da" class="outline-2">
+<h2 id="orgd2160da">为yum操作设定代理服务器</h2>
+<div class="outline-text-2" id="text-orgd2160da">
 </div>
-<div id="outline-container-orgf82cd8e" class="outline-3">
-<h3 id="orgf82cd8e">使用全局代理</h3>
-<div class="outline-text-3" id="text-orgf82cd8e">
+<div id="outline-container-orge0b80de" class="outline-3">
+<h3 id="orge0b80de">使用全局代理</h3>
+<div class="outline-text-3" id="text-orge0b80de">
 <p>
 要为所有yum操作设置代理服务期，可以在 <code>/etc/yum.conf</code> 中设置代理服务器信息
 </p>
@@ -117,9 +119,9 @@ EPEL是Fedora社区打造的为RHEL及衍生发行版提供高质量软件包的
 </div>
 </div>
 
-<div id="outline-container-orgd7a4189" class="outline-3">
-<h3 id="orgd7a4189">为某个用户配置代理</h3>
-<div class="outline-text-3" id="text-orgd7a4189">
+<div id="outline-container-orge3445e3" class="outline-3">
+<h3 id="orge3445e3">为某个用户配置代理</h3>
+<div class="outline-text-3" id="text-orge3445e3">
 <p>
 为单个用户设置yumd代理，只需要设置过 <code>http_proxy</code> 或 <code>https_proxy</code> 这两个环境变量即可
 </p>

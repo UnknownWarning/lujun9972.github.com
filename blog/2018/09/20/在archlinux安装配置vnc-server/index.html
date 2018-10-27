@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,27 +56,27 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9eae658">安装TigerVNC</a></li>
-<li><a href="#orga60de76">启动VNC Server</a>
+<li><a href="#org76c3c86">安装TigerVNC</a></li>
+<li><a href="#orga9d4364">启动VNC Server</a>
 <ul>
-<li><a href="#org855b519">通过systemd自动启动VNC Server</a></li>
+<li><a href="#org9606cb8">通过systemd自动启动VNC Server</a></li>
 </ul>
 </li>
-<li><a href="#org525fd2d">关闭VNC Server</a></li>
-<li><a href="#org3fe94a7">配置VNC Server</a>
+<li><a href="#org0fbd612">关闭VNC Server</a></li>
+<li><a href="#org922aff6">配置VNC Server</a>
 <ul>
-<li><a href="#org5ec3853">VNC Server的启动脚本</a></li>
-<li><a href="#org874f8e1">VNC Server的其他配置信息</a></li>
+<li><a href="#org20d9854">VNC Server的启动脚本</a></li>
+<li><a href="#orge03c00c">VNC Server的其他配置信息</a></li>
 </ul>
 </li>
-<li><a href="#org1620040">登陆VNC Server</a></li>
+<li><a href="#orgde98c01">登陆VNC Server</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9eae658" class="outline-2">
-<h2 id="org9eae658">安装TigerVNC</h2>
-<div class="outline-text-2" id="text-org9eae658">
+<div id="outline-container-org76c3c86" class="outline-2">
+<h2 id="org76c3c86">安装TigerVNC</h2>
+<div class="outline-text-2" id="text-org76c3c86">
 <div class="org-src-container">
 <pre class="src src-shell">sudo pacman -S tigervnc --noconfirm
 </pre>
@@ -82,9 +84,9 @@
 </div>
 </div>
 
-<div id="outline-container-orga60de76" class="outline-2">
-<h2 id="orga60de76">启动VNC Server</h2>
-<div class="outline-text-2" id="text-orga60de76">
+<div id="outline-container-orga9d4364" class="outline-2">
+<h2 id="orga9d4364">启动VNC Server</h2>
+<div class="outline-text-2" id="text-orga9d4364">
 <p>
 直接运行 <code>vncserver</code> 会初始化一个配置文件,再此期间会提示你输入并确认登陆SVN Server的密码
 </p>
@@ -144,9 +146,9 @@ Log file is /home/lujun9972/.vnc/T520:4.log
 </pre>
 </div>
 
-<div id="outline-container-org855b519" class="outline-3">
-<h3 id="org855b519">通过systemd自动启动VNC Server</h3>
-<div class="outline-text-3" id="text-org855b519">
+<div id="outline-container-org9606cb8" class="outline-3">
+<h3 id="org9606cb8">通过systemd自动启动VNC Server</h3>
+<div class="outline-text-3" id="text-org9606cb8">
 <p>
 tigervnc安装后会有一个service模板单元，路径为 <code>/usr/lib/systemd/system/vncserver.service</code>,我们只需要通过它拷贝出一个实例，然后设置其中的 <code>USER</code> 参数即可
 </p>
@@ -173,9 +175,9 @@ sudo systemctl enable vncserver@:1.service
 </div>
 
 
-<div id="outline-container-org525fd2d" class="outline-2">
-<h2 id="org525fd2d">关闭VNC Server</h2>
-<div class="outline-text-2" id="text-org525fd2d">
+<div id="outline-container-org0fbd612" class="outline-2">
+<h2 id="org0fbd612">关闭VNC Server</h2>
+<div class="outline-text-2" id="text-org0fbd612">
 <p>
 使用 <code>vncserver -kill :X</code> 可以关闭指定编号的VNC Server
 </p>
@@ -187,13 +189,13 @@ Killing Xvnc process ID 10148
 </div>
 </div>
 
-<div id="outline-container-org3fe94a7" class="outline-2">
-<h2 id="org3fe94a7">配置VNC Server</h2>
-<div class="outline-text-2" id="text-org3fe94a7">
+<div id="outline-container-org922aff6" class="outline-2">
+<h2 id="org922aff6">配置VNC Server</h2>
+<div class="outline-text-2" id="text-org922aff6">
 </div>
-<div id="outline-container-org5ec3853" class="outline-3">
-<h3 id="org5ec3853">VNC Server的启动脚本</h3>
-<div class="outline-text-3" id="text-org5ec3853">
+<div id="outline-container-org20d9854" class="outline-3">
+<h3 id="org20d9854">VNC Server的启动脚本</h3>
+<div class="outline-text-3" id="text-org20d9854">
 <p>
 VNC Server 在启动时会运行 <code>~/.vnc/xstartup</code> 来初始化图形环境.
 </p>
@@ -227,9 +229,9 @@ VNC Server 在启动时会运行 <code>~/.vnc/xstartup</code> 来初始化图形
 </div>
 </div>
 
-<div id="outline-container-org874f8e1" class="outline-3">
-<h3 id="org874f8e1">VNC Server的其他配置信息</h3>
-<div class="outline-text-3" id="text-org874f8e1">
+<div id="outline-container-orge03c00c" class="outline-3">
+<h3 id="orge03c00c">VNC Server的其他配置信息</h3>
+<div class="outline-text-3" id="text-orge03c00c">
 <p>
 <code>~/.vnc/config</code> 中则可以对VNC Server本身进行参数设置，比如我们可以配置一下分辨率
 </p>
@@ -246,9 +248,9 @@ VNC Server 在启动时会运行 <code>~/.vnc/xstartup</code> 来初始化图形
 </div>
 </div>
 
-<div id="outline-container-org1620040" class="outline-2">
-<h2 id="org1620040">登陆VNC Server</h2>
-<div class="outline-text-2" id="text-org1620040">
+<div id="outline-container-orgde98c01" class="outline-2">
+<h2 id="orgde98c01">登陆VNC Server</h2>
+<div class="outline-text-2" id="text-orgde98c01">
 <p>
 直接运行 <code>vncivew ${server}:${port}</code>,然后输入密码即可登陆VNC Server了
 </p>

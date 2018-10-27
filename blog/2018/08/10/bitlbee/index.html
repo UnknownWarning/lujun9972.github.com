@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,20 +56,20 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd87c4a2">安装bitlbee</a></li>
-<li><a href="#org1c38b6f">创建 Bitlbee 账户</a>
+<li><a href="#org94551b3">安装bitlbee</a></li>
+<li><a href="#org434fa48">创建 Bitlbee 账户</a>
 <ul>
-<li><a href="#org7c2d6e0">1. 为当前用户设置密码</a></li>
-<li><a href="#org0f96916">2. 管理绑定的IM账户</a>
+<li><a href="#org014e3f4">1. 为当前用户设置密码</a></li>
+<li><a href="#org64ce7d4">2. 管理绑定的IM账户</a>
 <ul>
-<li><a href="#org31b532b">查看已经添加了的IM账号</a></li>
-<li><a href="#orgf057cd1">删除IM账号</a></li>
-<li><a href="#org1e82c52">安装slack支持</a></li>
+<li><a href="#org1b64ca2">查看已经添加了的IM账号</a></li>
+<li><a href="#org8f4e520">删除IM账号</a></li>
+<li><a href="#org31137d7">安装slack支持</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgeff2519">使用Bitlbee进行聊天</a></li>
+<li><a href="#orgcbf9641">使用Bitlbee进行聊天</a></li>
 </ul>
 </div>
 </div>
@@ -75,9 +77,9 @@
 The program that makes IM possible within IRC is an IM-to-IRC gateway called Bitlbee (www.bitlbee.org). Basically, Bitlbee sets up an IRC server on your local machine that you can connect to like any other IRC server you might already use. Once you connect to the server, you can join the #bitlbee channel and authenticate with the bot inside. Then, you can configure Bitlbee with your Jabber, MSN, Yahoo or Oscar (AIM/ICQ) accounts. Once you are set up, when your friends are on-line, they join the channel, and when you talk to them or private-message them inside the IRC channel, it translates it to an instant message. 
 </p>
 
-<div id="outline-container-orgd87c4a2" class="outline-2">
-<h2 id="orgd87c4a2">安装bitlbee</h2>
-<div class="outline-text-2" id="text-orgd87c4a2">
+<div id="outline-container-org94551b3" class="outline-2">
+<h2 id="org94551b3">安装bitlbee</h2>
+<div class="outline-text-2" id="text-org94551b3">
 <p>
 bitlbee在常见linux发行版中都有被纳入包仓库中，因此安装起来很简单。在archlinux上可以直接使用pacman来安装
 </p>
@@ -102,9 +104,9 @@ bitlbee在常见linux发行版中都有被纳入包仓库中，因此安装起�
 </div>
 </div>
 
-<div id="outline-container-org1c38b6f" class="outline-2">
-<h2 id="org1c38b6f">创建 Bitlbee 账户</h2>
-<div class="outline-text-2" id="text-org1c38b6f">
+<div id="outline-container-org434fa48" class="outline-2">
+<h2 id="org434fa48">创建 Bitlbee 账户</h2>
+<div class="outline-text-2" id="text-org434fa48">
 <p>
 启动bitlbee后，它会在本地启动一个IRC server。使用IRC客户端登陆 <code>localhost:6667</code>, 后会自动 <code>/join &amp;bitlbee</code> 频道。
 </p>
@@ -130,9 +132,9 @@ bitlbee在常见linux发行版中都有被纳入包仓库中，因此安装起�
 </p>
 </div>
 
-<div id="outline-container-org7c2d6e0" class="outline-3">
-<h3 id="org7c2d6e0">1. 为当前用户设置密码</h3>
-<div class="outline-text-3" id="text-org7c2d6e0">
+<div id="outline-container-org014e3f4" class="outline-3">
+<h3 id="org014e3f4">1. 为当前用户设置密码</h3>
+<div class="outline-text-3" id="text-org014e3f4">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/08/10/bitlbee/bitlbee-03.png" alt="bitlbee-03.png" />
@@ -154,9 +156,9 @@ bitlbee在常见linux发行版中都有被纳入包仓库中，因此安装起�
 </div>
 </div>
 
-<div id="outline-container-org0f96916" class="outline-3">
-<h3 id="org0f96916">2. 管理绑定的IM账户</h3>
-<div class="outline-text-3" id="text-org0f96916">
+<div id="outline-container-org64ce7d4" class="outline-3">
+<h3 id="org64ce7d4">2. 管理绑定的IM账户</h3>
+<div class="outline-text-3" id="text-org64ce7d4">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/08/10/bitlbee/bitlbee-04.png" alt="bitlbee-04.png" />
@@ -206,9 +208,9 @@ Bitlbee登陆IM账号后会自动下载联系人信息，将在线的联系人�
 </p>
 </div>
 
-<div id="outline-container-org31b532b" class="outline-4">
-<h4 id="org31b532b">查看已经添加了的IM账号</h4>
-<div class="outline-text-4" id="text-org31b532b">
+<div id="outline-container-org1b64ca2" class="outline-4">
+<h4 id="org1b64ca2">查看已经添加了的IM账号</h4>
+<div class="outline-text-4" id="text-org1b64ca2">
 <p>
 可以输入 <code>account list</code> 来查看已经添加了哪些IM账号
 </p>
@@ -221,9 +223,9 @@ Bitlbee登陆IM账号后会自动下载联系人信息，将在线的联系人�
 </div>
 </div>
 
-<div id="outline-container-orgf057cd1" class="outline-4">
-<h4 id="orgf057cd1">删除IM账号</h4>
-<div class="outline-text-4" id="text-orgf057cd1">
+<div id="outline-container-org8f4e520" class="outline-4">
+<h4 id="org8f4e520">删除IM账号</h4>
+<div class="outline-text-4" id="text-org8f4e520">
 <p>
 若不想再通过 Bitlbee 登陆某个IM账号，可以使用 <code>account IM账号 del</code> 来删除之
 </p>
@@ -236,9 +238,9 @@ Bitlbee登陆IM账号后会自动下载联系人信息，将在线的联系人�
 </div>
 </div>
 
-<div id="outline-container-org1e82c52" class="outline-4">
-<h4 id="org1e82c52">安装slack支持</h4>
-<div class="outline-text-4" id="text-org1e82c52">
+<div id="outline-container-org31137d7" class="outline-4">
+<h4 id="org31137d7">安装slack支持</h4>
+<div class="outline-text-4" id="text-org31137d7">
 <p>
 注意：要安装slack支持，必须使用启用了 <code>libpurple</code> 的Bitlbee。
 </p>
@@ -330,9 +332,9 @@ chat add slack emacs-general
 </div>
 </div>
 
-<div id="outline-container-orgeff2519" class="outline-2">
-<h2 id="orgeff2519">使用Bitlbee进行聊天</h2>
-<div class="outline-text-2" id="text-orgeff2519">
+<div id="outline-container-orgcbf9641" class="outline-2">
+<h2 id="orgcbf9641">使用Bitlbee进行聊天</h2>
+<div class="outline-text-2" id="text-orgcbf9641">
 <p>
 使用Bitlbee进行聊天的方法跟使用IRC一样，只需要按照 <code>昵称:消息</code> 的格式来会话即可，Bitlbee会弹出一个独立的聊天窗口
 </p>

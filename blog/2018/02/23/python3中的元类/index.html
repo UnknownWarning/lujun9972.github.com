@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,23 +56,23 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcfc15c9">元类(metaclass)</a></li>
-<li><a href="#org4c2de25">Metaclass的工作原理</a>
+<li><a href="#org0c49fa2">元类(metaclass)</a></li>
+<li><a href="#org0f6107b">Metaclass的工作原理</a>
 <ul>
-<li><a href="#org1cefe9c">查看对象的类型</a></li>
-<li><a href="#org4460049">查看类的类型</a></li>
-<li><a href="#orgfdde6b1">type的类型又是什么呢</a></li>
-<li><a href="#org913911e">元类中的那些特殊方法</a></li>
+<li><a href="#org90c1604">查看对象的类型</a></li>
+<li><a href="#orgb4f8b0f">查看类的类型</a></li>
+<li><a href="#org8592d11">type的类型又是什么呢</a></li>
+<li><a href="#org10c61e6">元类中的那些特殊方法</a></li>
 </ul>
 </li>
-<li><a href="#orgd12ea7f">class语法的实质是什么</a></li>
+<li><a href="#org60554f9">class语法的实质是什么</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgcfc15c9" class="outline-2">
-<h2 id="orgcfc15c9">元类(metaclass)</h2>
-<div class="outline-text-2" id="text-orgcfc15c9">
+<div id="outline-container-org0c49fa2" class="outline-2">
+<h2 id="org0c49fa2">元类(metaclass)</h2>
+<div class="outline-text-2" id="text-org0c49fa2">
 <p>
 Python元编程依赖于一种特别的类，叫做元类(metaclass). 根据 <a href="https://en.wikipedia.org/wiki/Metaclass">Wikipedia</a> 的说法: "面向对象中的元类就是实例为类的类"
 </p>
@@ -124,17 +126,17 @@ greeter.hello<span style="color: #4f97d7;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org4c2de25" class="outline-2">
-<h2 id="org4c2de25">Metaclass的工作原理</h2>
-<div class="outline-text-2" id="text-org4c2de25">
+<div id="outline-container-org0f6107b" class="outline-2">
+<h2 id="org0f6107b">Metaclass的工作原理</h2>
+<div class="outline-text-2" id="text-org0f6107b">
 <p>
 在了解Metaclass的工作原理之前先需要了解Python中的类型(type).
 </p>
 </div>
 
-<div id="outline-container-org1cefe9c" class="outline-3">
-<h3 id="org1cefe9c">查看对象的类型</h3>
-<div class="outline-text-3" id="text-org1cefe9c">
+<div id="outline-container-org90c1604" class="outline-3">
+<h3 id="org90c1604">查看对象的类型</h3>
+<div class="outline-text-3" id="text-org90c1604">
 <p>
 我们可以使用 <code>type(object)</code> 来查看 <code>object</code> 的类型
 </p>
@@ -154,9 +156,9 @@ greeter.hello<span style="color: #4f97d7;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org4460049" class="outline-3">
-<h3 id="org4460049">查看类的类型</h3>
-<div class="outline-text-3" id="text-org4460049">
+<div id="outline-container-orgb4f8b0f" class="outline-3">
+<h3 id="orgb4f8b0f">查看类的类型</h3>
+<div class="outline-text-3" id="text-orgb4f8b0f">
 <p>
 上面可以看出变量 <code>obj</code> 的类型(type)为 <code>str</code> 类(class),那么 <code>str</code> 类本身的类型又是什么呢？让我们来看一下
 </p>
@@ -179,9 +181,9 @@ greeter.hello<span style="color: #4f97d7;">()</span>
 </div>
 </div>
 
-<div id="outline-container-orgfdde6b1" class="outline-3">
-<h3 id="orgfdde6b1">type的类型又是什么呢</h3>
-<div class="outline-text-3" id="text-orgfdde6b1">
+<div id="outline-container-org8592d11" class="outline-3">
+<h3 id="org8592d11">type的类型又是什么呢</h3>
+<div class="outline-text-3" id="text-org8592d11">
 <p>
 那么你一定很好奇， <code>type</code> 的类似又是什么呢？让我们来看一下
 </p>
@@ -208,9 +210,9 @@ greeter.hello<span style="color: #4f97d7;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org913911e" class="outline-3">
-<h3 id="org913911e">元类中的那些特殊方法</h3>
-<div class="outline-text-3" id="text-org913911e">
+<div id="outline-container-org10c61e6" class="outline-3">
+<h3 id="org10c61e6">元类中的那些特殊方法</h3>
+<div class="outline-text-3" id="text-org10c61e6">
 <p>
 <code>type</code> 类，作为Python中所有类（包括type本身）的默认元类，定义了一些特殊方法，可供自定义的元类覆盖，以完成特定的行为。
 </p>
@@ -266,9 +268,9 @@ __call__() from NewMeta () {}
 </div>
 
 
-<div id="outline-container-orgd12ea7f" class="outline-2">
-<h2 id="orgd12ea7f">class语法的实质是什么</h2>
-<div class="outline-text-2" id="text-orgd12ea7f">
+<div id="outline-container-org60554f9" class="outline-2">
+<h2 id="org60554f9">class语法的实质是什么</h2>
+<div class="outline-text-2" id="text-org60554f9">
 <p>
 要了解class语法的实质，首先要明白，python中的类其实也就是对象，只不过这个对象具有创建其他对象的能力而已。
 </p>

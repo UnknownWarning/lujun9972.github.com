@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,11 +56,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga857bf7">1000进制还是1024进制？这是个问题</a></li>
-<li><a href="#org8e6b024">一次进行多个转换</a></li>
-<li><a href="#orgda46448">指定数字的单位</a></li>
-<li><a href="#org8441f0a">指定输出的格式</a></li>
-<li><a href="#orgc4f5e96">与其他命令整合</a></li>
+<li><a href="#org0f38b90">1000进制还是1024进制？这是个问题</a></li>
+<li><a href="#orge843f5c">一次进行多个转换</a></li>
+<li><a href="#org62b7a1b">指定数字的单位</a></li>
+<li><a href="#org6eafc6f">指定输出的格式</a></li>
+<li><a href="#orga8117b4">与其他命令整合</a></li>
 </ul>
 </div>
 </div>
@@ -101,9 +103,9 @@ tmpfs           373M  8.0K  373M    1% /run/user/1000
 答案是，还真有，这就是 <code>numfmt</code>. 而且 <code>numfmt</code> 是coreutils的一部分，无需另行安装，真是良心。
 </p>
 
-<div id="outline-container-orga857bf7" class="outline-2">
-<h2 id="orga857bf7">1000进制还是1024进制？这是个问题</h2>
-<div class="outline-text-2" id="text-orga857bf7">
+<div id="outline-container-org0f38b90" class="outline-2">
+<h2 id="org0f38b90">1000进制还是1024进制？这是个问题</h2>
+<div class="outline-text-2" id="text-org0f38b90">
 <p>
 使用 <code>numfmt</code> 支持两种转换标准，一种是 1K=1000,1M=1000K...的:
 </p>
@@ -242,9 +244,9 @@ tmpfs           373M  8.0K  373M    1% /run/user/1000
 </div>
 
 
-<div id="outline-container-org8e6b024" class="outline-2">
-<h2 id="org8e6b024">一次进行多个转换</h2>
-<div class="outline-text-2" id="text-org8e6b024">
+<div id="outline-container-orge843f5c" class="outline-2">
+<h2 id="orge843f5c">一次进行多个转换</h2>
+<div class="outline-text-2" id="text-orge843f5c">
 <p>
 <code>numfmt</code> 能够一次性进行多个转换，只需要在后面罗列数字或者易读格式就行了。
 </p>
@@ -278,9 +280,9 @@ tmpfs           373M  8.0K  373M    1% /run/user/1000
 </div>
 </div>
 
-<div id="outline-container-orgda46448" class="outline-2">
-<h2 id="orgda46448">指定数字的单位</h2>
-<div class="outline-text-2" id="text-orgda46448">
+<div id="outline-container-org62b7a1b" class="outline-2">
+<h2 id="org62b7a1b">指定数字的单位</h2>
+<div class="outline-text-2" id="text-org62b7a1b">
 <p>
 使用 <code>--from-unit</code> 可以指定输入数字的单位,比如：
 </p>
@@ -317,9 +319,9 @@ tmpfs           373M  8.0K  373M    1% /run/user/1000
 </div>
 </div>
 
-<div id="outline-container-org8441f0a" class="outline-2">
-<h2 id="org8441f0a">指定输出的格式</h2>
-<div class="outline-text-2" id="text-org8441f0a">
+<div id="outline-container-org6eafc6f" class="outline-2">
+<h2 id="org6eafc6f">指定输出的格式</h2>
+<div class="outline-text-2" id="text-org6eafc6f">
 <p>
 使用 <code>--format</code> 可以指定输出的格式，其格式语法类似于C语言中 <code>printf</code> 的格式说明，但仅限于格式化一个浮点数。比如：
 </p>
@@ -360,9 +362,9 @@ tmpfs           373M  8.0K  373M    1% /run/user/1000
 </div>
 </div>
 
-<div id="outline-container-orgc4f5e96" class="outline-2">
-<h2 id="orgc4f5e96">与其他命令整合</h2>
-<div class="outline-text-2" id="text-orgc4f5e96">
+<div id="outline-container-orga8117b4" class="outline-2">
+<h2 id="orga8117b4">与其他命令整合</h2>
+<div class="outline-text-2" id="text-orga8117b4">
 <p>
 当 <code>numfmt</code> 没有指定数字或易读格式来转换时，它会从stdin中读取要转换的内容
 </p>

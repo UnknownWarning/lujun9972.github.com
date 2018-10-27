@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,29 +56,29 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6f9344f">Session</a>
+<li><a href="#org5e35a11">Session</a>
 <ul>
-<li><a href="#orgbff7563">未指定名称的Tmux session</a></li>
-<li><a href="#org9d73e3b">创建指定名称的Tmux session</a></li>
-<li><a href="#orge25742b">从Tmux Session中分离</a></li>
-<li><a href="#org82e83d0">查看现有哪些Tmux Session</a></li>
-<li><a href="#org1df0462">重新接入Tmux Session</a></li>
+<li><a href="#orgde43e3b">未指定名称的Tmux session</a></li>
+<li><a href="#orgf7810df">创建指定名称的Tmux session</a></li>
+<li><a href="#org245155a">从Tmux Session中分离</a></li>
+<li><a href="#org9356411">查看现有哪些Tmux Session</a></li>
+<li><a href="#org579ee26">重新接入Tmux Session</a></li>
 </ul>
 </li>
-<li><a href="#org5d15b92">Tmux Windows</a></li>
-<li><a href="#org5e48c83">Tmux Panes</a></li>
-<li><a href="#org9441541">配置Tmux</a></li>
+<li><a href="#org3fa7ec9">Tmux Windows</a></li>
+<li><a href="#org0fd1040">Tmux Panes</a></li>
+<li><a href="#orga9b6b29">配置Tmux</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6f9344f" class="outline-2">
-<h2 id="org6f9344f">Session</h2>
-<div class="outline-text-2" id="text-org6f9344f">
+<div id="outline-container-org5e35a11" class="outline-2">
+<h2 id="org5e35a11">Session</h2>
+<div class="outline-text-2" id="text-org5e35a11">
 </div>
-<div id="outline-container-orgbff7563" class="outline-3">
-<h3 id="orgbff7563">未指定名称的Tmux session</h3>
-<div class="outline-text-3" id="text-orgbff7563">
+<div id="outline-container-orgde43e3b" class="outline-3">
+<h3 id="orgde43e3b">未指定名称的Tmux session</h3>
+<div class="outline-text-3" id="text-orgde43e3b">
 <p>
 直接运行 <code>tmux</code> 会产生一个Tmux Session
 </p>
@@ -90,18 +92,18 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org9d73e3b" class="outline-3">
-<h3 id="org9d73e3b">创建指定名称的Tmux session</h3>
-<div class="outline-text-3" id="text-org9d73e3b">
+<div id="outline-container-orgf7810df" class="outline-3">
+<h3 id="orgf7810df">创建指定名称的Tmux session</h3>
+<div class="outline-text-3" id="text-orgf7810df">
 <div class="org-src-container">
 <pre class="src src-shell">tmux new -s $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">session_name</span><span style="color: #4f97d7;">}</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orge25742b" class="outline-3">
-<h3 id="orge25742b">从Tmux Session中分离</h3>
-<div class="outline-text-3" id="text-orge25742b">
+<div id="outline-container-org245155a" class="outline-3">
+<h3 id="org245155a">从Tmux Session中分离</h3>
+<div class="outline-text-3" id="text-org245155a">
 <p>
 在Tmux Session中输入 <code>Ctrl+b d</code> 就能从Tmux Session中分离，并回到原shell。
 </p>
@@ -111,9 +113,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org82e83d0" class="outline-3">
-<h3 id="org82e83d0">查看现有哪些Tmux Session</h3>
-<div class="outline-text-3" id="text-org82e83d0">
+<div id="outline-container-org9356411" class="outline-3">
+<h3 id="org9356411">查看现有哪些Tmux Session</h3>
+<div class="outline-text-3" id="text-org9356411">
 <p>
 要获取现在正在运行的session有哪些，可以运行下列命令:
 </p>
@@ -129,9 +131,9 @@ session1: 1 windows (created Thu Sep 20 16:40:40 2018) [122x13]
 </div>
 </div>
 </div>
-<div id="outline-container-org1df0462" class="outline-3">
-<h3 id="org1df0462">重新接入Tmux Session</h3>
-<div class="outline-text-3" id="text-org1df0462">
+<div id="outline-container-org579ee26" class="outline-3">
+<h3 id="org579ee26">重新接入Tmux Session</h3>
+<div class="outline-text-3" id="text-org579ee26">
 <p>
 要重新接入指定名称的Tmux Session，可以运行:
 </p>
@@ -142,9 +144,9 @@ session1: 1 windows (created Thu Sep 20 16:40:40 2018) [122x13]
 </div>
 </div>
 </div>
-<div id="outline-container-org5d15b92" class="outline-2">
-<h2 id="org5d15b92">Tmux Windows</h2>
-<div class="outline-text-2" id="text-org5d15b92">
+<div id="outline-container-org3fa7ec9" class="outline-2">
+<h2 id="org3fa7ec9">Tmux Windows</h2>
+<div class="outline-text-2" id="text-org3fa7ec9">
 <p>
 一个Tmux Session中可以包括多个Windows，这些Windows的列表显示在屏幕底部的状态栏中
 <img src="https://lujun9972.github.io/assets/blog/2018/09/20/tmux常用操作说明/Tmux-60.png" alt="Tmux-60.png" />
@@ -197,9 +199,9 @@ session1: 1 windows (created Thu Sep 20 16:40:40 2018) [122x13]
 </div>
 </div>
 
-<div id="outline-container-org5e48c83" class="outline-2">
-<h2 id="org5e48c83">Tmux Panes</h2>
-<div class="outline-text-2" id="text-org5e48c83">
+<div id="outline-container-org0fd1040" class="outline-2">
+<h2 id="org0fd1040">Tmux Panes</h2>
+<div class="outline-text-2" id="text-org0fd1040">
 <p>
 类似的，一个Tmux Window可以包含多个Pane,一个Window刚创建时，只包含一个覆盖全Window的pane。
 <img src="https://lujun9972.github.io/assets/blog/2018/09/20/tmux常用操作说明/Tmux-61.png" alt="Tmux-61.png" />
@@ -253,9 +255,9 @@ session1: 1 windows (created Thu Sep 20 16:40:40 2018) [122x13]
 </div>
 </div>
 
-<div id="outline-container-org9441541" class="outline-2">
-<h2 id="org9441541">配置Tmux</h2>
-<div class="outline-text-2" id="text-org9441541">
+<div id="outline-container-orga9b6b29" class="outline-2">
+<h2 id="orga9b6b29">配置Tmux</h2>
+<div class="outline-text-2" id="text-orga9b6b29">
 <p>
 Tmux的配置信息在 <code>~/.tmux.conf</code> 中
 </p>

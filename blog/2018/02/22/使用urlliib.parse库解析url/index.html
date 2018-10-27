@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,10 +56,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org144e139">解析url</a></li>
-<li><a href="#org9309065">组建URL</a></li>
-<li><a href="#orgcd47868">相对路径转换绝对路径</a></li>
-<li><a href="#orgbd7caaf">查询参数的构造和解析</a></li>
+<li><a href="#org204cf48">解析url</a></li>
+<li><a href="#orgd26915b">组建URL</a></li>
+<li><a href="#org5af27a6">相对路径转换绝对路径</a></li>
+<li><a href="#org1acfaa9">查询参数的构造和解析</a></li>
 </ul>
 </div>
 </div>
@@ -65,9 +67,9 @@
 python中的urllib.parse module提供了很多解析和组建URL的函数。
 </p>
 
-<div id="outline-container-org144e139" class="outline-2">
-<h2 id="org144e139">解析url</h2>
-<div class="outline-text-2" id="text-org144e139">
+<div id="outline-container-org204cf48" class="outline-2">
+<h2 id="org204cf48">解析url</h2>
+<div class="outline-text-2" id="text-org204cf48">
 <p>
 <code>urlparse()</code> 函数可以将url解析成 <code>ParseResult</code> 对象. 对象中包含了六个元素,分别为：
 </p>
@@ -218,9 +220,9 @@ fragment: fragment
 </div>
 </div>
 
-<div id="outline-container-org9309065" class="outline-2">
-<h2 id="org9309065">组建URL</h2>
-<div class="outline-text-2" id="text-org9309065">
+<div id="outline-container-orgd26915b" class="outline-2">
+<h2 id="orgd26915b">组建URL</h2>
+<div class="outline-text-2" id="text-orgd26915b">
 <p>
 ParsedResult对象和SplitResult对象都有一个 <code>geturl()</code> 方法，可以返回一个完整的URL字符串
 </p>
@@ -259,9 +261,9 @@ ParsedResult对象和SplitResult对象都有一个 <code>geturl()</code> 方法�
 </div>
 </div>
 
-<div id="outline-container-orgcd47868" class="outline-2">
-<h2 id="orgcd47868">相对路径转换绝对路径</h2>
-<div class="outline-text-2" id="text-orgcd47868">
+<div id="outline-container-org5af27a6" class="outline-2">
+<h2 id="org5af27a6">相对路径转换绝对路径</h2>
+<div class="outline-text-2" id="text-org5af27a6">
 <p>
 除此之外，urllib.parse 还提供了一个 <code>urljoin()</code> 函数，来将相对路径转换成绝对路径的URL
 </p>
@@ -288,9 +290,9 @@ ParsedResult对象和SplitResult对象都有一个 <code>geturl()</code> 方法�
 </div>
 </div>
 
-<div id="outline-container-orgbd7caaf" class="outline-2">
-<h2 id="orgbd7caaf">查询参数的构造和解析</h2>
-<div class="outline-text-2" id="text-orgbd7caaf">
+<div id="outline-container-org1acfaa9" class="outline-2">
+<h2 id="org1acfaa9">查询参数的构造和解析</h2>
+<div class="outline-text-2" id="text-org1acfaa9">
 <p>
 使用 <code>urlencode()</code> 函数可以将一个dict转换成合法的查询参数:
 </p>

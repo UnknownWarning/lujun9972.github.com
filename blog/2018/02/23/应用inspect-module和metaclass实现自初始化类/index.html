@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,9 +56,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgde69bf4">inspect module</a></li>
-<li><a href="#orgb0e3085">通过元类改造类的初始化函数，使之自动根据初始化函数中的函数名称进行初始化</a></li>
-<li><a href="#org5ba57f7">使用自初始化类</a></li>
+<li><a href="#orgee53bdc">inspect module</a></li>
+<li><a href="#org2b281c3">通过元类改造类的初始化函数，使之自动根据初始化函数中的函数名称进行初始化</a></li>
+<li><a href="#org1fcc1d5">使用自初始化类</a></li>
 </ul>
 </div>
 </div>
@@ -92,9 +94,9 @@
 首先让我们来看一下 <code>inspect module</code> 。
 </p>
 
-<div id="outline-container-orgde69bf4" class="outline-2">
-<h2 id="orgde69bf4">inspect module</h2>
-<div class="outline-text-2" id="text-orgde69bf4">
+<div id="outline-container-orgee53bdc" class="outline-2">
+<h2 id="orgee53bdc">inspect module</h2>
+<div class="outline-text-2" id="text-orgee53bdc">
 <p>
 <code>inspect</code> module 中有一个 <code>getargspec</code> 函数，可以获取一个函数中的参数名称和默认值。
 </p>
@@ -116,9 +118,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgb0e3085" class="outline-2">
-<h2 id="orgb0e3085">通过元类改造类的初始化函数，使之自动根据初始化函数中的函数名称进行初始化</h2>
-<div class="outline-text-2" id="text-orgb0e3085">
+<div id="outline-container-org2b281c3" class="outline-2">
+<h2 id="org2b281c3">通过元类改造类的初始化函数，使之自动根据初始化函数中的函数名称进行初始化</h2>
+<div class="outline-text-2" id="text-org2b281c3">
 <p>
 我么首先定义一个元类 <code>AutoInit</code> ：
 </p>
@@ -157,9 +159,9 @@
 </div>
 </div>
 
-<div id="outline-container-org5ba57f7" class="outline-2">
-<h2 id="org5ba57f7">使用自初始化类</h2>
-<div class="outline-text-2" id="text-org5ba57f7">
+<div id="outline-container-org1fcc1d5" class="outline-2">
+<h2 id="org1fcc1d5">使用自初始化类</h2>
+<div class="outline-text-2" id="text-org1fcc1d5">
 <p>
 这样一来，之前的Person类可以简化为
 </p>

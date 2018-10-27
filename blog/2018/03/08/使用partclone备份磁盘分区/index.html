@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,9 +56,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6e68445">安装partclone</a></li>
-<li><a href="#org633ed63">备份磁盘分区</a></li>
-<li><a href="#orgc081ccd">从备份还原</a></li>
+<li><a href="#orgb47adf6">安装partclone</a></li>
+<li><a href="#orgde9cea1">备份磁盘分区</a></li>
+<li><a href="#orgfe42c66">从备份还原</a></li>
 </ul>
 </div>
 </div>
@@ -81,9 +83,9 @@ partclone 跟 <code>dd</code> 类似，也是一款 <code>block level</code> 的
 对于不支持的文件系统， <code>partclone</code> 也提供了 <code>partclone.dd</code> 来备份。
 </p>
 
-<div id="outline-container-org6e68445" class="outline-2">
-<h2 id="org6e68445">安装partclone</h2>
-<div class="outline-text-2" id="text-org6e68445">
+<div id="outline-container-orgb47adf6" class="outline-2">
+<h2 id="orgb47adf6">安装partclone</h2>
+<div class="outline-text-2" id="text-orgb47adf6">
 <p>
 archlinux上可以直接使用pacman来安装：
 </p>
@@ -94,9 +96,9 @@ archlinux上可以直接使用pacman来安装：
 </div>
 </div>
 
-<div id="outline-container-org633ed63" class="outline-2">
-<h2 id="org633ed63">备份磁盘分区</h2>
-<div class="outline-text-2" id="text-org633ed63">
+<div id="outline-container-orgde9cea1" class="outline-2">
+<h2 id="orgde9cea1">备份磁盘分区</h2>
+<div class="outline-text-2" id="text-orgde9cea1">
 <p>
 在备份磁盘分区之前，请先确保被备份的分区需要先卸载。不过如果你是用的 <code>lvm</code> ，那么可以创建一个逻辑卷的 live snapshot,因此可以不受此限制。
 </p>
@@ -164,9 +166,9 @@ archlinux上可以直接使用pacman来安装：
 </div>
 </div>
 
-<div id="outline-container-orgc081ccd" class="outline-2">
-<h2 id="orgc081ccd">从备份还原</h2>
-<div class="outline-text-2" id="text-orgc081ccd">
+<div id="outline-container-orgfe42c66" class="outline-2">
+<h2 id="orgfe42c66">从备份还原</h2>
+<div class="outline-text-2" id="text-orgfe42c66">
 <p>
 从备份还原很简单
 </p>

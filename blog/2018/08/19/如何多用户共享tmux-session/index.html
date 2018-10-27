@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,8 +56,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5ff2871">多个用户使用同一个操作系统帐号</a></li>
-<li><a href="#orgd95f103">多个用户使用不同的操作系统帐号</a></li>
+<li><a href="#org84722ad">多个用户使用同一个操作系统帐号</a></li>
+<li><a href="#org17f0c24">多个用户使用不同的操作系统帐号</a></li>
 </ul>
 </div>
 </div>
@@ -82,9 +84,9 @@ tmux server管理着多个session，而一个session可以被多个tmux client�
 这两者的区别主要在Socket文件的权限问题
 </p>
 
-<div id="outline-container-org5ff2871" class="outline-2">
-<h2 id="org5ff2871">多个用户使用同一个操作系统帐号</h2>
-<div class="outline-text-2" id="text-org5ff2871">
+<div id="outline-container-org84722ad" class="outline-2">
+<h2 id="org84722ad">多个用户使用同一个操作系统帐号</h2>
+<div class="outline-text-2" id="text-org84722ad">
 <p>
 在多个用户使用同一个操作系统帐号时，不存在用户访问Socket文件的权限问题，因此操作起来特别简单,只需要多个用户指定同一个tmux session名字就行了
 </p>
@@ -108,9 +110,9 @@ tmux server管理着多个session，而一个session可以被多个tmux client�
 </div>
 </div>
 
-<div id="outline-container-orgd95f103" class="outline-2">
-<h2 id="orgd95f103">多个用户使用不同的操作系统帐号</h2>
-<div class="outline-text-2" id="text-orgd95f103">
+<div id="outline-container-org17f0c24" class="outline-2">
+<h2 id="org17f0c24">多个用户使用不同的操作系统帐号</h2>
+<div class="outline-text-2" id="text-org17f0c24">
 <p>
 当多个用户使用不同帐号登录操作系统时，就存在访问Socket文件的权限问题了。
 </p>

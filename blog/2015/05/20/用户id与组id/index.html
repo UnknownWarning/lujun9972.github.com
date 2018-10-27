@@ -33,15 +33,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -53,21 +55,21 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgff18901">1. 实际ID,有效ID与保存的设置ID</a></li>
-<li><a href="#orgab5665c">2. 更改用户/组ID函数</a>
+<li><a href="#orgc5608b8">1. 实际ID,有效ID与保存的设置ID</a></li>
+<li><a href="#org15fec23">2. 更改用户/组ID函数</a>
 <ul>
-<li><a href="#orgb761ea7">2.1. 关于设置用户ID的规则说明</a></li>
-<li><a href="#orga5dfc0e">2.2. 关于设置组ID的规则说明</a></li>
+<li><a href="#org7ae1dc4">2.1. 关于设置用户ID的规则说明</a></li>
+<li><a href="#org2f83b00">2.2. 关于设置组ID的规则说明</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgff18901" class="outline-2">
-<h2 id="orgff18901"><span class="section-number-2">1</span> 实际ID,有效ID与保存的设置ID</h2>
+<div id="outline-container-orgc5608b8" class="outline-2">
+<h2 id="orgc5608b8"><span class="section-number-2">1</span> 实际ID,有效ID与保存的设置ID</h2>
 </div>
-<div id="outline-container-orgab5665c" class="outline-2">
-<h2 id="orgab5665c"><span class="section-number-2">2</span> 更改用户/组ID函数</h2>
+<div id="outline-container-org15fec23" class="outline-2">
+<h2 id="org15fec23"><span class="section-number-2">2</span> 更改用户/组ID函数</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -91,8 +93,8 @@
 <li>若上面条件都不满足,则将errno设置为EPERM,并返回-1</li>
 </ol>
 </div>
-<div id="outline-container-orgb761ea7" class="outline-3">
-<h3 id="orgb761ea7"><span class="section-number-3">2.1</span> 关于设置用户ID的规则说明</h3>
+<div id="outline-container-org7ae1dc4" class="outline-3">
+<h3 id="org7ae1dc4"><span class="section-number-3">2.1</span> 关于设置用户ID的规则说明</h3>
 <div class="outline-text-3" id="text-2-1">
 <ol class="org-ol">
 <li>只有超级用户进程可以更改实际用户ID</li>
@@ -103,8 +105,8 @@
 </ol>
 </div>
 </div>
-<div id="outline-container-orga5dfc0e" class="outline-3">
-<h3 id="orga5dfc0e"><span class="section-number-3">2.2</span> 关于设置组ID的规则说明</h3>
+<div id="outline-container-org2f83b00" class="outline-3">
+<h3 id="org2f83b00"><span class="section-number-3">2.2</span> 关于设置组ID的规则说明</h3>
 <div class="outline-text-3" id="text-2-2">
 <ol class="org-ol">
 <li>组ID的规则类似用户ID的规则</li>

@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,8 +56,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7de3a8d">PreferredAuthentications=password</a></li>
-<li><a href="#org8cd33f4">PublicAuthentication=no</a></li>
+<li><a href="#org9439707">PreferredAuthentications=password</a></li>
+<li><a href="#orga22e786">PublicAuthentication=no</a></li>
 </ul>
 </div>
 </div>
@@ -71,9 +73,9 @@
 </pre>
 </div>
 
-<div id="outline-container-org7de3a8d" class="outline-2">
-<h2 id="org7de3a8d">PreferredAuthentications=password</h2>
-<div class="outline-text-2" id="text-org7de3a8d">
+<div id="outline-container-org9439707" class="outline-2">
+<h2 id="org9439707">PreferredAuthentications=password</h2>
+<div class="outline-text-2" id="text-org9439707">
 <p>
 ssh client登陆服务器时，默认会依次尝试 <code>GSSAPI-based认证</code>, <code>host-based认证</code>, <code>public key认证</code>, <code>challenge response认证</code>, <code>password认证</code> 这几种认证方式.
 </p>
@@ -84,9 +86,9 @@ ssh client登陆服务器时，默认会依次尝试 <code>GSSAPI-based认证</c
 </div>
 </div>
 
-<div id="outline-container-org8cd33f4" class="outline-2">
-<h2 id="org8cd33f4">PublicAuthentication=no</h2>
-<div class="outline-text-2" id="text-org8cd33f4">
+<div id="outline-container-orga22e786" class="outline-2">
+<h2 id="orga22e786">PublicAuthentication=no</h2>
+<div class="outline-text-2" id="text-orga22e786">
 <p>
 表示关闭公钥认证方式. 这样就能保证当服务端不支持密码认证时,也不会使用公钥认证.
 </p>

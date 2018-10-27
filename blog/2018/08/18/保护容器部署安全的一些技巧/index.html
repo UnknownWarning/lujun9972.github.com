@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,27 +56,27 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6b46ac3">设置容器内运行用户或开启USER NAMESPACE</a></li>
-<li><a href="#org4569713">限制容器联网</a></li>
-<li><a href="#org4977e8a">删除容器中的setuid和setgid文件</a></li>
-<li><a href="#org331a4b6">限制内存使用</a></li>
-<li><a href="#orgec76041">限制CPU使用</a></li>
-<li><a href="#org99b585f">限制IO</a></li>
-<li><a href="#orgb13f167">限制重启次数</a></li>
-<li><a href="#org594672a">设置文件系统只读</a></li>
-<li><a href="#org0a7a669">限制内核能力</a></li>
-<li><a href="#org4341fdd">应用资源限制</a>
+<li><a href="#orgc08e22e">设置容器内运行用户或开启USER NAMESPACE</a></li>
+<li><a href="#org99a3a31">限制容器联网</a></li>
+<li><a href="#org6d1edbb">删除容器中的setuid和setgid文件</a></li>
+<li><a href="#orge7a5560">限制内存使用</a></li>
+<li><a href="#org635dd20">限制CPU使用</a></li>
+<li><a href="#org91d4757">限制IO</a></li>
+<li><a href="#org3b5ae16">限制重启次数</a></li>
+<li><a href="#orgc6a4954">设置文件系统只读</a></li>
+<li><a href="#org360b462">限制内核能力</a></li>
+<li><a href="#org78bae7a">应用资源限制</a>
 <ul>
-<li><a href="#orgf0ac74e">cpu</a></li>
-<li><a href="#orgec4a53e">nofile</a></li>
-<li><a href="#org62df831">nproc</a></li>
+<li><a href="#org9a08603">cpu</a></li>
+<li><a href="#org257601f">nofile</a></li>
+<li><a href="#orge0f3b0a">nproc</a></li>
 </ul>
 </li>
-<li><a href="#orgd9eebb5">启用Linux安全模块(LSM)</a></li>
-<li><a href="#orgf6526b5">审核容器和镜像</a></li>
-<li><a href="#orgbfd5ac2">为Docker Daemon开启TLS加密传输</a></li>
-<li><a href="#org1a99382">注意那些未隔离的内核资源</a></li>
-<li><a href="#orgedc96e8"></a></li>
+<li><a href="#org3e481e3">启用Linux安全模块(LSM)</a></li>
+<li><a href="#orgdaa7b3d">审核容器和镜像</a></li>
+<li><a href="#org7259b44">为Docker Daemon开启TLS加密传输</a></li>
+<li><a href="#org189ea1f">注意那些未隔离的内核资源</a></li>
+<li><a href="#orga2d29a2"></a></li>
 </ul>
 </div>
 </div>
@@ -82,9 +84,9 @@
 摘录自 《Docker开发指南》 13.7 "安全建议"
 </p>
 
-<div id="outline-container-org6b46ac3" class="outline-2">
-<h2 id="org6b46ac3">设置容器内运行用户或开启USER NAMESPACE</h2>
-<div class="outline-text-2" id="text-org6b46ac3">
+<div id="outline-container-orgc08e22e" class="outline-2">
+<h2 id="orgc08e22e">设置容器内运行用户或开启USER NAMESPACE</h2>
+<div class="outline-text-2" id="text-orgc08e22e">
 <p>
 永远不要以root用户的身份在容器内运行正式的应用，否则一旦攻击者攻破了应用就能获取容器的全部访问权限。
 </p>
@@ -100,9 +102,9 @@
 </div>
 
 
-<div id="outline-container-org4569713" class="outline-2">
-<h2 id="org4569713">限制容器联网</h2>
-<div class="outline-text-2" id="text-org4569713">
+<div id="outline-container-org99a3a31" class="outline-2">
+<h2 id="org99a3a31">限制容器联网</h2>
+<div class="outline-text-2" id="text-org99a3a31">
 <p>
 容器应该仅仅打开必须的端口，且只对所需的容器开放。
 </p>
@@ -121,9 +123,9 @@
 </div>
 </div>
 
-<div id="outline-container-org4977e8a" class="outline-2">
-<h2 id="org4977e8a">删除容器中的setuid和setgid文件</h2>
-<div class="outline-text-2" id="text-org4977e8a">
+<div id="outline-container-org6d1edbb" class="outline-2">
+<h2 id="org6d1edbb">删除容器中的setuid和setgid文件</h2>
+<div class="outline-text-2" id="text-org6d1edbb">
 <p>
 这类文件一般只在构建镜像时有用，但却极易被利用来发动提权攻击。
 </p>
@@ -137,17 +139,17 @@ RUN find / -perm /6000 -type f -exec chmod a-s {} \;||true
 </div>
 </div>
 
-<div id="outline-container-org331a4b6" class="outline-2">
-<h2 id="org331a4b6">限制内存使用</h2>
-<div class="outline-text-2" id="text-org331a4b6">
+<div id="outline-container-orge7a5560" class="outline-2">
+<h2 id="orge7a5560">限制内存使用</h2>
+<div class="outline-text-2" id="text-orge7a5560">
 <p>
 限制容器内存使用可以防止DoS攻击和应用程序的内存泄漏。
 </p>
 </div>
 </div>
-<div id="outline-container-orgec76041" class="outline-2">
-<h2 id="orgec76041">限制CPU使用</h2>
-<div class="outline-text-2" id="text-orgec76041">
+<div id="outline-container-org635dd20" class="outline-2">
+<h2 id="org635dd20">限制CPU使用</h2>
+<div class="outline-text-2" id="text-org635dd20">
 <p>
 若不限制容器的CPU使用率，则攻击者可以通过一个容器将主机CPU完全占用，从而导致系统被DoS攻击瘫痪。
 </p>
@@ -173,9 +175,9 @@ CPU的限制参数包括如下：
 </div>
 </div>
 </div>
-<div id="outline-container-org99b585f" class="outline-2">
-<h2 id="org99b585f">限制IO</h2>
-<div class="outline-text-2" id="text-org99b585f">
+<div id="outline-container-org91d4757" class="outline-2">
+<h2 id="org91d4757">限制IO</h2>
+<div class="outline-text-2" id="text-org91d4757">
 <div class="org-src-container">
 <pre class="src src-shell">docker help run |grep -E <span style="color: #2d9574;">'jbps|IO'</span>
 </pre>
@@ -183,9 +185,9 @@ CPU的限制参数包括如下：
 </div>
 </div>
 
-<div id="outline-container-orgb13f167" class="outline-2">
-<h2 id="orgb13f167">限制重启次数</h2>
-<div class="outline-text-2" id="text-orgb13f167">
+<div id="outline-container-org3b5ae16" class="outline-2">
+<h2 id="org3b5ae16">限制重启次数</h2>
+<div class="outline-text-2" id="text-org3b5ae16">
 <p>
 若系统不断崩溃又不断重启，将会造成大量系统时间和资源浪费。
 </p>
@@ -213,9 +215,9 @@ CPU的限制参数包括如下：
 </div>
 </div>
 
-<div id="outline-container-org594672a" class="outline-2">
-<h2 id="org594672a">设置文件系统只读</h2>
-<div class="outline-text-2" id="text-org594672a">
+<div id="outline-container-orgc6a4954" class="outline-2">
+<h2 id="orgc6a4954">设置文件系统只读</h2>
+<div class="outline-text-2" id="text-orgc6a4954">
 <p>
 阻止攻击者对容器内文件系统的写入可以抵御系统的攻击。
 </p>
@@ -248,9 +250,9 @@ CPU的限制参数包括如下：
 </div>
 </div>
 
-<div id="outline-container-org0a7a669" class="outline-2">
-<h2 id="org0a7a669">限制内核能力</h2>
-<div class="outline-text-2" id="text-org0a7a669">
+<div id="outline-container-org360b462" class="outline-2">
+<h2 id="org360b462">限制内核能力</h2>
+<div class="outline-text-2" id="text-org360b462">
 <p>
 我们可以通过 <code>docker run</code> 的 <code>--cap-add</code> 和 <code>--cap-drop</code> 参数来控制容器允许使用的内核能力。
 </p>
@@ -269,9 +271,9 @@ CPU的限制参数包括如下：
 </div>
 </div>
 
-<div id="outline-container-org4341fdd" class="outline-2">
-<h2 id="org4341fdd">应用资源限制</h2>
-<div class="outline-text-2" id="text-org4341fdd">
+<div id="outline-container-org78bae7a" class="outline-2">
+<h2 id="org78bae7a">应用资源限制</h2>
+<div class="outline-text-2" id="text-org78bae7a">
 <p>
 Linux内核定义了一些用于进程的资源限制，可以限制进程允许fork的子进程数，或者允许打开的文件描述符数量等。
 </p>
@@ -287,9 +289,9 @@ Linux内核定义了一些用于进程的资源限制，可以限制进程允许
 </p>
 </div>
 
-<div id="outline-container-orgf0ac74e" class="outline-3">
-<h3 id="orgf0ac74e">cpu</h3>
-<div class="outline-text-3" id="text-orgf0ac74e">
+<div id="outline-container-org9a08603" class="outline-3">
+<h3 id="org9a08603">cpu</h3>
+<div class="outline-text-3" id="text-org9a08603">
 <p>
 把CPU时间限制为给定参数，以秒为单位。
 </p>
@@ -304,9 +306,9 @@ Linux内核定义了一些用于进程的资源限制，可以限制进程允许
 </div>
 </div>
 
-<div id="outline-container-orgec4a53e" class="outline-3">
-<h3 id="orgec4a53e">nofile</h3>
-<div class="outline-text-3" id="text-orgec4a53e">
+<div id="outline-container-org257601f" class="outline-3">
+<h3 id="org257601f">nofile</h3>
+<div class="outline-text-3" id="text-org257601f">
 <p>
 制定容器中能够同时打开的最多文件描述符数量
 </p>
@@ -321,9 +323,9 @@ Linux内核定义了一些用于进程的资源限制，可以限制进程允许
 </div>
 </div>
 
-<div id="outline-container-org62df831" class="outline-3">
-<h3 id="org62df831">nproc</h3>
-<div class="outline-text-3" id="text-org62df831">
+<div id="outline-container-orge0f3b0a" class="outline-3">
+<h3 id="orge0f3b0a">nproc</h3>
+<div class="outline-text-3" id="text-orge0f3b0a">
 <p>
 指定运行容器的用户能够创建进程的最大数量。
 </p>
@@ -339,9 +341,9 @@ Linux内核定义了一些用于进程的资源限制，可以限制进程允许
 </div>
 </div>
 
-<div id="outline-container-orgd9eebb5" class="outline-2">
-<h2 id="orgd9eebb5">启用Linux安全模块(LSM)</h2>
-<div class="outline-text-2" id="text-orgd9eebb5">
+<div id="outline-container-org3e481e3" class="outline-2">
+<h2 id="org3e481e3">启用Linux安全模块(LSM)</h2>
+<div class="outline-text-2" id="text-org3e481e3">
 <p>
 最常见的Linux安全模块包括AppArmor和SELinux。
 </p>
@@ -352,9 +354,9 @@ Linux内核定义了一些用于进程的资源限制，可以限制进程允许
 </div>
 </div>
 
-<div id="outline-container-orgf6526b5" class="outline-2">
-<h2 id="orgf6526b5">审核容器和镜像</h2>
-<div class="outline-text-2" id="text-orgf6526b5">
+<div id="outline-container-orgdaa7b3d" class="outline-2">
+<h2 id="orgdaa7b3d">审核容器和镜像</h2>
+<div class="outline-text-2" id="text-orgdaa7b3d">
 <ul class="org-ul">
 <li>定期检查正在运行的容器，确保使用的镜像是最新的，而且这些镜像所使用的如那件也是最新的，没有安全隐患的。</li>
 
@@ -364,9 +366,9 @@ Linux内核定义了一些用于进程的资源限制，可以限制进程允许
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbfd5ac2" class="outline-2">
-<h2 id="orgbfd5ac2">为Docker Daemon开启TLS加密传输</h2>
-<div class="outline-text-2" id="text-orgbfd5ac2">
+<div id="outline-container-org7259b44" class="outline-2">
+<h2 id="org7259b44">为Docker Daemon开启TLS加密传输</h2>
+<div class="outline-text-2" id="text-org7259b44">
 <p>
 若Docker Daemon通过TCP方式与外界通讯，则可能传输内容会被截获，为此Docker Daemon提供了4个参数来开启TLS加密传输
 </p>
@@ -400,16 +402,16 @@ Linux内核定义了一些用于进程的资源限制，可以限制进程允许
 </div>
 </div>
 </div>
-<div id="outline-container-org1a99382" class="outline-2">
-<h2 id="org1a99382">注意那些未隔离的内核资源</h2>
-<div class="outline-text-2" id="text-org1a99382">
+<div id="outline-container-org189ea1f" class="outline-2">
+<h2 id="org189ea1f">注意那些未隔离的内核资源</h2>
+<div class="outline-text-2" id="text-org189ea1f">
 <p>
 目前namespace在隔离上并不完善，还有许多未隔离的内核资源可能会影响到容器安全，比如 <code>procfs</code>, <code>syslog</code> 等
 </p>
 </div>
 </div>
-<div id="outline-container-orgedc96e8" class="outline-2">
-<h2 id="orgedc96e8"></h2>
+<div id="outline-container-orga2d29a2" class="outline-2">
+<h2 id="orga2d29a2"></h2>
 </div>
 
 </div>

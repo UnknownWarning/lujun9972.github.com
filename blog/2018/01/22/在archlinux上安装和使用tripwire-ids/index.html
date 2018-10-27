@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,37 +56,37 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9098838">Tripwire是什么</a></li>
-<li><a href="#org3f28d56">安装Tripwire</a></li>
-<li><a href="#org94bdc5a">配置Tripwire</a>
+<li><a href="#orgbae3b80">Tripwire是什么</a></li>
+<li><a href="#orgaddcb32">安装Tripwire</a></li>
+<li><a href="#org30f936d">配置Tripwire</a>
 <ul>
-<li><a href="#org3d8e3df">创建keyfile</a></li>
-<li><a href="#orgc84977f">生成配置文件</a></li>
+<li><a href="#org9bd5bdc">创建keyfile</a></li>
+<li><a href="#org9550abb">生成配置文件</a></li>
 </ul>
 </li>
-<li><a href="#orged0b9ec">生成并查看检查报告</a>
+<li><a href="#org33e1c38">生成并查看检查报告</a>
 <ul>
-<li><a href="#org25b743c">初始化数据库</a></li>
-<li><a href="#orgec302f4">生成检查报告</a></li>
-<li><a href="#orgb237448">查看检查报告</a></li>
+<li><a href="#orga342730">初始化数据库</a></li>
+<li><a href="#org452c754">生成检查报告</a></li>
+<li><a href="#org44e37e3">查看检查报告</a></li>
 </ul>
 </li>
-<li><a href="#orge965851">如何获取帮助</a></li>
+<li><a href="#org598f2d1">如何获取帮助</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9098838" class="outline-2">
-<h2 id="org9098838">Tripwire是什么</h2>
-<div class="outline-text-2" id="text-org9098838">
+<div id="outline-container-orgbae3b80" class="outline-2">
+<h2 id="orgbae3b80">Tripwire是什么</h2>
+<div class="outline-text-2" id="text-orgbae3b80">
 <p>
 Tripwire是一款入侵检测软件，它通过为每个要监控的文件产生数字签名的方式来检测文件是否被篡改。
 </p>
 </div>
 </div>
-<div id="outline-container-org3f28d56" class="outline-2">
-<h2 id="org3f28d56">安装Tripwire</h2>
-<div class="outline-text-2" id="text-org3f28d56">
+<div id="outline-container-orgaddcb32" class="outline-2">
+<h2 id="orgaddcb32">安装Tripwire</h2>
+<div class="outline-text-2" id="text-orgaddcb32">
 <p>
 Tripwire在AUR中，可以通过 <code>yaourt</code> 来安装
 </p>
@@ -107,13 +109,13 @@ Tripwire在AUR中，可以通过 <code>yaourt</code> 来安装
 </div>
 
 
-<div id="outline-container-org94bdc5a" class="outline-2">
-<h2 id="org94bdc5a">配置Tripwire</h2>
-<div class="outline-text-2" id="text-org94bdc5a">
+<div id="outline-container-org30f936d" class="outline-2">
+<h2 id="org30f936d">配置Tripwire</h2>
+<div class="outline-text-2" id="text-org30f936d">
 </div>
-<div id="outline-container-org3d8e3df" class="outline-3">
-<h3 id="org3d8e3df">创建keyfile</h3>
-<div class="outline-text-3" id="text-org3d8e3df">
+<div id="outline-container-org9bd5bdc" class="outline-3">
+<h3 id="org9bd5bdc">创建keyfile</h3>
+<div class="outline-text-3" id="text-org9bd5bdc">
 <p>
 安装完之后，还需要用 <code>twadmin</code> 生成 <code>site-keyfile</code> 和 <code>local-keyfile</code>
 </p>
@@ -146,9 +148,9 @@ Generating key (this may take several minutes)...Key generation complete.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc84977f" class="outline-3">
-<h3 id="orgc84977f">生成配置文件</h3>
-<div class="outline-text-3" id="text-orgc84977f">
+<div id="outline-container-org9550abb" class="outline-3">
+<h3 id="org9550abb">生成配置文件</h3>
+<div class="outline-text-3" id="text-org9550abb">
 <p>
 Tripwire在安装时会在 <code>/etc/tripwire/</code> 目录中生成两个文件 <code>twcfg.txt</code> 和 <code>twpol.txt</code>,为tripwire默认的配置文件和策略文件的模板,我们直接使用它的默认模板
 </p>
@@ -202,13 +204,13 @@ sudo cp tw.sitekey /etc/tripwire/site.key
 </div>
 </div>
 </div>
-<div id="outline-container-orged0b9ec" class="outline-2">
-<h2 id="orged0b9ec">生成并查看检查报告</h2>
-<div class="outline-text-2" id="text-orged0b9ec">
+<div id="outline-container-org33e1c38" class="outline-2">
+<h2 id="org33e1c38">生成并查看检查报告</h2>
+<div class="outline-text-2" id="text-org33e1c38">
 </div>
-<div id="outline-container-org25b743c" class="outline-3">
-<h3 id="org25b743c">初始化数据库</h3>
-<div class="outline-text-3" id="text-org25b743c">
+<div id="outline-container-orga342730" class="outline-3">
+<h3 id="orga342730">初始化数据库</h3>
+<div class="outline-text-3" id="text-orga342730">
 <p>
 第一次运行tripwire时需要先初始化数据库
 </p>
@@ -233,9 +235,9 @@ Generating the database...
 </pre>
 </div>
 </div>
-<div id="outline-container-orgec302f4" class="outline-3">
-<h3 id="orgec302f4">生成检查报告</h3>
-<div class="outline-text-3" id="text-orgec302f4">
+<div id="outline-container-org452c754" class="outline-3">
+<h3 id="org452c754">生成检查报告</h3>
+<div class="outline-text-3" id="text-org452c754">
 <p>
 运行 <code>tripwire --check</code> 会就会生成检查报告了，检查报告存放的地址参见配置文件中 <code>REPORTFILE</code> 定义的位置，默认为 <code>/var/lib/tripwire/report/$(HOSTNAME)-$(DATE).twr</code>
 </p>
@@ -245,9 +247,9 @@ Generating the database...
 </div>
 </div>
 </div>
-<div id="outline-container-orgb237448" class="outline-3">
-<h3 id="orgb237448">查看检查报告</h3>
-<div class="outline-text-3" id="text-orgb237448">
+<div id="outline-container-org44e37e3" class="outline-3">
+<h3 id="org44e37e3">查看检查报告</h3>
+<div class="outline-text-3" id="text-org44e37e3">
 <p>
 tripwire生成的 <code>.twr</code> 文件是二进制的，无法直接查看，需要使用 <code>twprint</code> 来转换成可阅读的文本格式
 </p>
@@ -265,9 +267,9 @@ view /tmp/report.txt
 </div>
 </div>
 
-<div id="outline-container-orge965851" class="outline-2">
-<h2 id="orge965851">如何获取帮助</h2>
-<div class="outline-text-2" id="text-orge965851">
+<div id="outline-container-org598f2d1" class="outline-2">
+<h2 id="org598f2d1">如何获取帮助</h2>
+<div class="outline-text-2" id="text-org598f2d1">
 <p>
 可以通过 <code>man twintro</code> 来查看关于 <code>tripwire</code> 的介绍。
 </p>

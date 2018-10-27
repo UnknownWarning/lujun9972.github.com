@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,24 +56,24 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org844a7aa">安装必要的软件</a>
+<li><a href="#orga10d0d1">安装必要的软件</a>
 <ul>
-<li><a href="#org18094cd">安装mysql(mariadb)</a></li>
-<li><a href="#orgfccc1d9">安装java</a></li>
-<li><a href="#org11beb92">安装killall（stop脚本中会用到）</a></li>
-<li><a href="#org435d5d6">安装32位支持</a></li>
+<li><a href="#org7651a2e">安装mysql(mariadb)</a></li>
+<li><a href="#org204e32e">安装java</a></li>
+<li><a href="#orgb8e697e">安装killall（stop脚本中会用到）</a></li>
+<li><a href="#org621d33e">安装32位支持</a></li>
 </ul>
 </li>
-<li><a href="#orgfcbbcd8">下载搭建服务器所需的文件</a></li>
-<li><a href="#org47b1c4d">还原数据库内容</a>
+<li><a href="#org4c1c6f5">下载搭建服务器所需的文件</a></li>
+<li><a href="#org9669dae">还原数据库内容</a>
 <ul>
-<li><a href="#orgd093fa3">启动mariadb服务</a></li>
-<li><a href="#org4285b0d">设置root用户密码为root</a></li>
-<li><a href="#org0e9a30a">还原zmwm数据库内容以及存储过程</a></li>
+<li><a href="#orge68817e">启动mariadb服务</a></li>
+<li><a href="#org4e8bd1e">设置root用户密码为root</a></li>
+<li><a href="#org0eda3e3">还原zmwm数据库内容以及存储过程</a></li>
 </ul>
 </li>
-<li><a href="#orged75987">拷贝其他文件</a></li>
-<li><a href="#org06da5bc">配置客户端中的IP</a></li>
+<li><a href="#orgbc2f7db">拷贝其他文件</a></li>
+<li><a href="#org0d9ae95">配置客户端中的IP</a></li>
 </ul>
 </div>
 </div>
@@ -87,40 +89,40 @@
 于是折腾了一下，把它移植到了centos中（挂在华为云中）
 </p>
 
-<div id="outline-container-org844a7aa" class="outline-2">
-<h2 id="org844a7aa">安装必要的软件</h2>
-<div class="outline-text-2" id="text-org844a7aa">
+<div id="outline-container-orga10d0d1" class="outline-2">
+<h2 id="orga10d0d1">安装必要的软件</h2>
+<div class="outline-text-2" id="text-orga10d0d1">
 </div>
-<div id="outline-container-org18094cd" class="outline-3">
-<h3 id="org18094cd">安装mysql(mariadb)</h3>
-<div class="outline-text-3" id="text-org18094cd">
+<div id="outline-container-org7651a2e" class="outline-3">
+<h3 id="org7651a2e">安装mysql(mariadb)</h3>
+<div class="outline-text-3" id="text-org7651a2e">
 <div class="org-src-container">
 <pre class="src src-shell">yum install mariadb mariadb-server
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfccc1d9" class="outline-3">
-<h3 id="orgfccc1d9">安装java</h3>
-<div class="outline-text-3" id="text-orgfccc1d9">
+<div id="outline-container-org204e32e" class="outline-3">
+<h3 id="org204e32e">安装java</h3>
+<div class="outline-text-3" id="text-org204e32e">
 <div class="org-src-container">
 <pre class="src src-shell">yum install  java-1.8.0-openjdk
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org11beb92" class="outline-3">
-<h3 id="org11beb92">安装killall（stop脚本中会用到）</h3>
-<div class="outline-text-3" id="text-org11beb92">
+<div id="outline-container-orgb8e697e" class="outline-3">
+<h3 id="orgb8e697e">安装killall（stop脚本中会用到）</h3>
+<div class="outline-text-3" id="text-orgb8e697e">
 <div class="org-src-container">
 <pre class="src src-shell">yum install psmisc
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org435d5d6" class="outline-3">
-<h3 id="org435d5d6">安装32位支持</h3>
-<div class="outline-text-3" id="text-org435d5d6">
+<div id="outline-container-org621d33e" class="outline-3">
+<h3 id="org621d33e">安装32位支持</h3>
+<div class="outline-text-3" id="text-org621d33e">
 <div class="org-src-container">
 <pre class="src src-shell">yum install glibc.i686
 yum install libxml2.so.2
@@ -131,22 +133,22 @@ yum install libstdc++.so.5
 </div>
 </div>
 
-<div id="outline-container-orgfcbbcd8" class="outline-2">
-<h2 id="orgfcbbcd8">下载搭建服务器所需的文件</h2>
-<div class="outline-text-2" id="text-orgfcbbcd8">
+<div id="outline-container-org4c1c6f5" class="outline-2">
+<h2 id="org4c1c6f5">下载搭建服务器所需的文件</h2>
+<div class="outline-text-2" id="text-org4c1c6f5">
 <p>
 链接: <a href="https://pan.baidu.com/s/1i5eMLu9">https://pan.baidu.com/s/1i5eMLu9</a> 密码: f8ha
 </p>
 </div>
 </div>
 
-<div id="outline-container-org47b1c4d" class="outline-2">
-<h2 id="org47b1c4d">还原数据库内容</h2>
-<div class="outline-text-2" id="text-org47b1c4d">
+<div id="outline-container-org9669dae" class="outline-2">
+<h2 id="org9669dae">还原数据库内容</h2>
+<div class="outline-text-2" id="text-org9669dae">
 </div>
-<div id="outline-container-orgd093fa3" class="outline-3">
-<h3 id="orgd093fa3">启动mariadb服务</h3>
-<div class="outline-text-3" id="text-orgd093fa3">
+<div id="outline-container-orge68817e" class="outline-3">
+<h3 id="orge68817e">启动mariadb服务</h3>
+<div class="outline-text-3" id="text-orge68817e">
 <div class="org-src-container">
 <pre class="src src-shell">systemctl start mariadb
 systemctl enable mariadb
@@ -155,9 +157,9 @@ systemctl enable mariadb
 </div>
 </div>
 
-<div id="outline-container-org4285b0d" class="outline-3">
-<h3 id="org4285b0d">设置root用户密码为root</h3>
-<div class="outline-text-3" id="text-org4285b0d">
+<div id="outline-container-org4e8bd1e" class="outline-3">
+<h3 id="org4e8bd1e">设置root用户密码为root</h3>
+<div class="outline-text-3" id="text-org4e8bd1e">
 <p>
 刚安装好mariadb并无需密码就能登陆root
 </p>
@@ -178,9 +180,9 @@ flush <span style="color: #4f97d7; font-weight: bold;">privileges</span>;
 </div>
 </div>
 
-<div id="outline-container-org0e9a30a" class="outline-3">
-<h3 id="org0e9a30a">还原zmwm数据库内容以及存储过程</h3>
-<div class="outline-text-3" id="text-org0e9a30a">
+<div id="outline-container-org0eda3e3" class="outline-3">
+<h3 id="org0eda3e3">还原zmwm数据库内容以及存储过程</h3>
+<div class="outline-text-3" id="text-org0eda3e3">
 <p>
 先在mysql中创建空的zmwm库
 </p>
@@ -205,9 +207,9 @@ mysql -uroot -proot zmwm &lt;zmwm_table.sql
 </div>
 </div>
 
-<div id="outline-container-orged75987" class="outline-2">
-<h2 id="orged75987">拷贝其他文件</h2>
-<div class="outline-text-2" id="text-orged75987">
+<div id="outline-container-orgbc2f7db" class="outline-2">
+<h2 id="orgbc2f7db">拷贝其他文件</h2>
+<div class="outline-text-2" id="text-orgbc2f7db">
 <p>
 将下类内容添加到 <code>/etc/hosts</code> 中
 </p>
@@ -263,9 +265,9 @@ tar -zxvf wulin_pwserver.tar.gz
 </div>
 </div>
 
-<div id="outline-container-org06da5bc" class="outline-2">
-<h2 id="org06da5bc">配置客户端中的IP</h2>
-<div class="outline-text-2" id="text-org06da5bc">
+<div id="outline-container-org0d9ae95" class="outline-2">
+<h2 id="org0d9ae95">配置客户端中的IP</h2>
+<div class="outline-text-2" id="text-org0d9ae95">
 <p>
 从这里下载客户端
 链接: <a href="https://pan.baidu.com/s/1c8NhiY">https://pan.baidu.com/s/1c8NhiY</a> 密码: z5i2

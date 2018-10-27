@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,13 +56,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org97e1f7d">准备工作</a></li>
-<li><a href="#org2adb4fe">使用</a>
+<li><a href="#orgc59ac30">准备工作</a></li>
+<li><a href="#orga0b1f78">使用</a>
 <ul>
-<li><a href="#org19fbda0">新建一个org文件</a></li>
-<li><a href="#org8ba0120">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</a></li>
-<li><a href="#org4106274">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</a></li>
-<li><a href="#orga1c2137">运行 <code>M-x anki-editor-submit</code> 提交</a></li>
+<li><a href="#org5047885">新建一个org文件</a></li>
+<li><a href="#org7d7f6e2">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</a></li>
+<li><a href="#orgb83ffad">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</a></li>
+<li><a href="#org2d2ed6a">运行 <code>M-x anki-editor-submit</code> 提交</a></li>
 </ul>
 </li>
 </ul>
@@ -82,9 +84,9 @@
 它的原理是利用org-mode的html export backend将org转换成html,然后通过Anki的anki-connect插件生成新的Anki Card。
 </p>
 
-<div id="outline-container-org97e1f7d" class="outline-2">
-<h2 id="org97e1f7d">准备工作</h2>
-<div class="outline-text-2" id="text-org97e1f7d">
+<div id="outline-container-orgc59ac30" class="outline-2">
+<h2 id="orgc59ac30">准备工作</h2>
+<div class="outline-text-2" id="text-orgc59ac30">
 <p>
 根据说明，该插件需要 <code>curl</code> 和 <a href="https://github.com/FooSoft/anki-connect#installation">anki-connect</a> 的支持
 </p>
@@ -128,17 +130,17 @@ dotspacemacs-additional-packages '(request json-mode all-the-icons-dired edit-in
 </div>
 </div>
 
-<div id="outline-container-org2adb4fe" class="outline-2">
-<h2 id="org2adb4fe">使用</h2>
-<div class="outline-text-2" id="text-org2adb4fe">
+<div id="outline-container-orga0b1f78" class="outline-2">
+<h2 id="orga0b1f78">使用</h2>
+<div class="outline-text-2" id="text-orga0b1f78">
 <p>
 在使用anki-editorn之前, <b>你需要先打开anki</b>,因为它需要与anki中的anki-connect通讯，获取deck和note的信息。
 </p>
 </div>
 
-<div id="outline-container-org19fbda0" class="outline-3">
-<h3 id="org19fbda0">新建一个org文件</h3>
-<div class="outline-text-3" id="text-org19fbda0">
+<div id="outline-container-org5047885" class="outline-3">
+<h3 id="org5047885">新建一个org文件</h3>
+<div class="outline-text-3" id="text-org5047885">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-02.png" alt="screenshot-02.png" />
@@ -147,9 +149,9 @@ dotspacemacs-additional-packages '(request json-mode all-the-icons-dired edit-in
 </div>
 </div>
 
-<div id="outline-container-org8ba0120" class="outline-3">
-<h3 id="org8ba0120">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</h3>
-<div class="outline-text-3" id="text-org8ba0120">
+<div id="outline-container-org7d7f6e2" class="outline-3">
+<h3 id="org7d7f6e2">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</h3>
+<div class="outline-text-3" id="text-org7d7f6e2">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-05.png" alt="screenshot-05.png" />
@@ -180,9 +182,9 @@ dotspacemacs-additional-packages '(request json-mode all-the-icons-dired edit-in
 </div>
 </div>
 
-<div id="outline-container-org4106274" class="outline-3">
-<h3 id="org4106274">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</h3>
-<div class="outline-text-3" id="text-org4106274">
+<div id="outline-container-orgb83ffad" class="outline-3">
+<h3 id="orgb83ffad">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</h3>
+<div class="outline-text-3" id="text-orgb83ffad">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-07.png" alt="screenshot-07.png" />
@@ -219,9 +221,9 @@ anki-editor会根据note类型中定义的域，自动插结构，每个域都�
 </div>
 </div>
 
-<div id="outline-container-orga1c2137" class="outline-3">
-<h3 id="orga1c2137">运行 <code>M-x anki-editor-submit</code> 提交</h3>
-<div class="outline-text-3" id="text-orga1c2137">
+<div id="outline-container-org2d2ed6a" class="outline-3">
+<h3 id="org2d2ed6a">运行 <code>M-x anki-editor-submit</code> 提交</h3>
+<div class="outline-text-3" id="text-org2d2ed6a">
 <p>
 就能看到Anki上新生成的card了
 <img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-11.png" alt="screenshot-11.png" />

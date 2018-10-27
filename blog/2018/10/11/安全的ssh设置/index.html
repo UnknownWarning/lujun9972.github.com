@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,14 +56,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org76deb96">确定 sshd_config 的权限</a></li>
-<li><a href="#orgf16bbd5">修改ssh服务端口</a></li>
-<li><a href="#orgca562ff">只启用SSH Protocol 2</a></li>
-<li><a href="#org4ceb86a">不允许空密码登陆</a></li>
-<li><a href="#orgeeab9b4">不允许root登陆</a></li>
-<li><a href="#org7085beb">限制只能登陆特定用户</a></li>
-<li><a href="#org02d0a82">修改未登陆的超时时间</a></li>
-<li><a href="#org6c7c23c">设置会话空闲一段时间后自动退出</a></li>
+<li><a href="#orgf86d86a">确定 sshd_config 的权限</a></li>
+<li><a href="#org1331be5">修改ssh服务端口</a></li>
+<li><a href="#org628ad32">只启用SSH Protocol 2</a></li>
+<li><a href="#orgeae04d2">不允许空密码登陆</a></li>
+<li><a href="#orgfa3f206">不允许root登陆</a></li>
+<li><a href="#org9b0068b">限制只能登陆特定用户</a></li>
+<li><a href="#org130c9e1">修改未登陆的超时时间</a></li>
+<li><a href="#org86ed121">设置会话空闲一段时间后自动退出</a></li>
 </ul>
 </div>
 </div>
@@ -99,9 +101,9 @@
 迫于无奈，只好对SSH服务进行加固处理。目前找到的加固方法有下面几个:
 </p>
 
-<div id="outline-container-org76deb96" class="outline-2">
-<h2 id="org76deb96">确定 sshd_config 的权限</h2>
-<div class="outline-text-2" id="text-org76deb96">
+<div id="outline-container-orgf86d86a" class="outline-2">
+<h2 id="orgf86d86a">确定 sshd_config 的权限</h2>
+<div class="outline-text-2" id="text-orgf86d86a">
 <p>
 确定 <code>sshd_config</code> 只有root才能读写，其他用户不能进行任何操作
 </p>
@@ -112,9 +114,9 @@ sudo chmod og-rwx /etc/ssh/sshd_config
 </div>
 </div>
 </div>
-<div id="outline-container-orgf16bbd5" class="outline-2">
-<h2 id="orgf16bbd5">修改ssh服务端口</h2>
-<div class="outline-text-2" id="text-orgf16bbd5">
+<div id="outline-container-org1331be5" class="outline-2">
+<h2 id="org1331be5">修改ssh服务端口</h2>
+<div class="outline-text-2" id="text-org1331be5">
 <p>
 这一步的效果很显著，只从改了ssh服务端口后，就在没有看到任何登陆失败的提示了
 </p>
@@ -124,9 +126,9 @@ sudo chmod og-rwx /etc/ssh/sshd_config
 </div>
 </div>
 </div>
-<div id="outline-container-orgca562ff" class="outline-2">
-<h2 id="orgca562ff">只启用SSH Protocol 2</h2>
-<div class="outline-text-2" id="text-orgca562ff">
+<div id="outline-container-org628ad32" class="outline-2">
+<h2 id="org628ad32">只启用SSH Protocol 2</h2>
+<div class="outline-text-2" id="text-org628ad32">
 <p>
 Protocol 1的安全性相对要差一些
 </p>
@@ -136,18 +138,18 @@ Protocol 1的安全性相对要差一些
 </div>
 </div>
 </div>
-<div id="outline-container-org4ceb86a" class="outline-2">
-<h2 id="org4ceb86a">不允许空密码登陆</h2>
-<div class="outline-text-2" id="text-org4ceb86a">
+<div id="outline-container-orgeae04d2" class="outline-2">
+<h2 id="orgeae04d2">不允许空密码登陆</h2>
+<div class="outline-text-2" id="text-orgeae04d2">
 <div class="org-src-container">
 <pre class="src src-conf">PermitEmptyPasswords no
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgeeab9b4" class="outline-2">
-<h2 id="orgeeab9b4">不允许root登陆</h2>
-<div class="outline-text-2" id="text-orgeeab9b4">
+<div id="outline-container-orgfa3f206" class="outline-2">
+<h2 id="orgfa3f206">不允许root登陆</h2>
+<div class="outline-text-2" id="text-orgfa3f206">
 <p>
 从上面对 <code>lastb</code> 的结果分析可以得知， <code>root</code> 是被实验最多的用户，没有之一。
 </p>
@@ -172,9 +174,9 @@ Protocol 1的安全性相对要差一些
 </p>
 </div>
 </div>
-<div id="outline-container-org7085beb" class="outline-2">
-<h2 id="org7085beb">限制只能登陆特定用户</h2>
-<div class="outline-text-2" id="text-org7085beb">
+<div id="outline-container-org9b0068b" class="outline-2">
+<h2 id="org9b0068b">限制只能登陆特定用户</h2>
+<div class="outline-text-2" id="text-org9b0068b">
 <p>
 我们可以使用 <code>DenyUsers</code>, <code>AllowUsers</code>, <code>DenyGroups</code> 和 <code>AllowGroups</code> 关键字来限定允许登陆的用户。
 </p>
@@ -191,9 +193,9 @@ DenyGroups developers qa
 </div>
 </div>
 </div>
-<div id="outline-container-org02d0a82" class="outline-2">
-<h2 id="org02d0a82">修改未登陆的超时时间</h2>
-<div class="outline-text-2" id="text-org02d0a82">
+<div id="outline-container-org130c9e1" class="outline-2">
+<h2 id="org130c9e1">修改未登陆的超时时间</h2>
+<div class="outline-text-2" id="text-org130c9e1">
 <p>
 用户未登陆成功的情况下，默认120秒后会登出。这个时间可以缩短，比如60.
 </p>
@@ -206,9 +208,9 @@ DenyGroups developers qa
 </p>
 </div>
 </div>
-<div id="outline-container-org6c7c23c" class="outline-2">
-<h2 id="org6c7c23c">设置会话空闲一段时间后自动退出</h2>
-<div class="outline-text-2" id="text-org6c7c23c">
+<div id="outline-container-org86ed121" class="outline-2">
+<h2 id="org86ed121">设置会话空闲一段时间后自动退出</h2>
+<div class="outline-text-2" id="text-org86ed121">
 <p>
 设置空间一段时间自动退出有两种方法，
 </p>

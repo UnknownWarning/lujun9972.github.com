@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,32 +56,32 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org646eb9b">前置准备工具</a></li>
-<li><a href="#org985e7c2">配置构建环境</a></li>
-<li><a href="#org6b0f18f">构建交叉编译器</a>
+<li><a href="#orga5133c1">前置准备工具</a></li>
+<li><a href="#org15040ac">配置构建环境</a></li>
+<li><a href="#org2dc47c7">构建交叉编译器</a>
 <ul>
-<li><a href="#org9214f6d">设置好编译相关的变量</a></li>
-<li><a href="#orgfc4f6aa">安装kernel headers</a></li>
-<li><a href="#org4964671">安装Binutils</a></li>
-<li><a href="#org2475f96">静态编译的gcc</a></li>
-<li><a href="#org0af8a1a">编译Glibc</a></li>
-<li><a href="#orgc0184d1">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</a></li>
+<li><a href="#orgf0bd527">设置好编译相关的变量</a></li>
+<li><a href="#org220a77f">安装kernel headers</a></li>
+<li><a href="#orgd640fa2">安装Binutils</a></li>
+<li><a href="#orgaf6c9d1">静态编译的gcc</a></li>
+<li><a href="#orgc39cedb">编译Glibc</a></li>
+<li><a href="#orgdc01370">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</a></li>
 </ul>
 </li>
-<li><a href="#org148b4bc">构建Target Image</a>
+<li><a href="#org5ad5813">构建Target Image</a>
 <ul>
-<li><a href="#org792c02d">构建BusyBox</a></li>
-<li><a href="#orgc080ab8">构建linux kernel</a></li>
-<li><a href="#org079f905">Bootscripts</a></li>
+<li><a href="#orge81a0c2">构建BusyBox</a></li>
+<li><a href="#org134364d">构建linux kernel</a></li>
+<li><a href="#orgd34591e">Bootscripts</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org646eb9b" class="outline-2">
-<h2 id="org646eb9b">前置准备工具</h2>
-<div class="outline-text-2" id="text-org646eb9b">
+<div id="outline-container-orga5133c1" class="outline-2">
+<h2 id="orga5133c1">前置准备工具</h2>
+<div class="outline-text-2" id="text-orga5133c1">
 <p>
 在host主机上需要安装有 GCC,make,ncurses,perl以及grub-install
 </p>
@@ -104,9 +106,9 @@
 </div>
 
 
-<div id="outline-container-org985e7c2" class="outline-2">
-<h2 id="org985e7c2">配置构建环境</h2>
-<div class="outline-text-2" id="text-org985e7c2">
+<div id="outline-container-org15040ac" class="outline-2">
+<h2 id="org15040ac">配置构建环境</h2>
+<div class="outline-text-2" id="text-org15040ac">
 <ol class="org-ol">
 <li><p>
 启用bash hash功能
@@ -389,13 +391,13 @@ chmod -v <span style="color: #a45bad;">664</span> $<span style="color: #4f97d7;"
 </div>
 
 
-<div id="outline-container-org6b0f18f" class="outline-2">
-<h2 id="org6b0f18f">构建交叉编译器</h2>
-<div class="outline-text-2" id="text-org6b0f18f">
+<div id="outline-container-org2dc47c7" class="outline-2">
+<h2 id="org2dc47c7">构建交叉编译器</h2>
+<div class="outline-text-2" id="text-org2dc47c7">
 </div>
-<div id="outline-container-org9214f6d" class="outline-3">
-<h3 id="org9214f6d">设置好编译相关的变量</h3>
-<div class="outline-text-3" id="text-org9214f6d">
+<div id="outline-container-orgf0bd527" class="outline-3">
+<h3 id="orgf0bd527">设置好编译相关的变量</h3>
+<div class="outline-text-3" id="text-orgf0bd527">
 <p>
 清空host上预设的 C/C++ 编译标志
 </p>
@@ -419,9 +421,9 @@ chmod -v <span style="color: #a45bad;">664</span> $<span style="color: #4f97d7;"
 </div>
 </div>
 
-<div id="outline-container-orgfc4f6aa" class="outline-3">
-<h3 id="orgfc4f6aa">安装kernel headers</h3>
-<div class="outline-text-3" id="text-orgfc4f6aa">
+<div id="outline-container-org220a77f" class="outline-3">
+<h3 id="org220a77f">安装kernel headers</h3>
+<div class="outline-text-3" id="text-org220a77f">
 <p>
 从<a href="https://www.kernel.org/">kernel.org</a>下载内核源码
 </p>
@@ -452,9 +454,9 @@ cp -rv dest/include/* $<span style="color: #4f97d7;">{</span><span style="color:
 </div>
 </div>
 
-<div id="outline-container-org4964671" class="outline-3">
-<h3 id="org4964671">安装Binutils</h3>
-<div class="outline-text-3" id="text-org4964671">
+<div id="outline-container-orgd640fa2" class="outline-3">
+<h3 id="orgd640fa2">安装Binutils</h3>
+<div class="outline-text-3" id="text-orgd640fa2">
 <p>
 下载bintuils源代码
 </p>
@@ -487,9 +489,9 @@ cp -v include/libiberty.h $<span style="color: #4f97d7;">{</span><span style="co
 </div>
 </div>
 
-<div id="outline-container-org2475f96" class="outline-3">
-<h3 id="org2475f96">静态编译的gcc</h3>
-<div class="outline-text-3" id="text-org2475f96">
+<div id="outline-container-orgaf6c9d1" class="outline-3">
+<h3 id="orgaf6c9d1">静态编译的gcc</h3>
+<div class="outline-text-3" id="text-orgaf6c9d1">
 <p>
 下载 gcc，gmp，mpfr，mpc
 </p>
@@ -548,9 +550,9 @@ ln -vs libgcc.a $<span style="color: #4f97d7;">(</span>$<span style="color: #bc6
 </div>
 </div>
 
-<div id="outline-container-org0af8a1a" class="outline-3">
-<h3 id="org0af8a1a">编译Glibc</h3>
-<div class="outline-text-3" id="text-org0af8a1a">
+<div id="outline-container-orgc39cedb" class="outline-3">
+<h3 id="orgc39cedb">编译Glibc</h3>
+<div class="outline-text-3" id="text-orgc39cedb">
 <p>
 下载glibc
 </p>
@@ -594,9 +596,9 @@ make &amp;&amp; make <span style="color: #7590db;">install_root</span>=$<span st
 </div>
 </div>
 
-<div id="outline-container-orgc0184d1" class="outline-3">
-<h3 id="orgc0184d1">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</h3>
-<div class="outline-text-3" id="text-orgc0184d1">
+<div id="outline-container-orgdc01370" class="outline-3">
+<h3 id="orgdc01370">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</h3>
+<div class="outline-text-3" id="text-orgdc01370">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #4f97d7;">cd</span> ..
 mkdir gcc-build
@@ -619,13 +621,13 @@ cp -v $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">LJOS<
 </div>
 </div>
 
-<div id="outline-container-org148b4bc" class="outline-2">
-<h2 id="org148b4bc">构建Target Image</h2>
-<div class="outline-text-2" id="text-org148b4bc">
+<div id="outline-container-org5ad5813" class="outline-2">
+<h2 id="org5ad5813">构建Target Image</h2>
+<div class="outline-text-2" id="text-org5ad5813">
 </div>
-<div id="outline-container-org792c02d" class="outline-3">
-<h3 id="org792c02d">构建BusyBox</h3>
-<div class="outline-text-3" id="text-org792c02d">
+<div id="outline-container-orge81a0c2" class="outline-3">
+<h3 id="orge81a0c2">构建BusyBox</h3>
+<div class="outline-text-3" id="text-orge81a0c2">
 <p>
 下载 BusyBox
 </p>
@@ -671,9 +673,9 @@ chmod <span style="color: #a45bad;">755</span> $<span style="color: #4f97d7;">{<
 </div>
 </div>
 
-<div id="outline-container-orgc080ab8" class="outline-3">
-<h3 id="orgc080ab8">构建linux kernel</h3>
-<div class="outline-text-3" id="text-orgc080ab8">
+<div id="outline-container-org134364d" class="outline-3">
+<h3 id="org134364d">构建linux kernel</h3>
+<div class="outline-text-3" id="text-org134364d">
 <p>
 生成默认的x86-64的配置文件
 </p>
@@ -731,8 +733,8 @@ cp -v .config $<span style="color: #4f97d7;">{</span><span style="color: #7590db
 </div>
 </div>
 
-<div id="outline-container-org079f905" class="outline-3">
-<h3 id="org079f905">Bootscripts</h3>
+<div id="outline-container-orgd34591e" class="outline-3">
+<h3 id="orgd34591e">Bootscripts</h3>
 </div>
 </div>
 

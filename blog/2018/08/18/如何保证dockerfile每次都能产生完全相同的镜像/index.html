@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,9 +56,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org308f1c9">FROM指令中使用标签或摘要以保证每次下载的镜像完全相同</a></li>
-<li><a href="#org4b4b6b0">使用包管理器安装软件时指定版本号</a></li>
-<li><a href="#orgfdf7599">验证任何从互联网上下载的软件和数据</a></li>
+<li><a href="#org51ae594">FROM指令中使用标签或摘要以保证每次下载的镜像完全相同</a></li>
+<li><a href="#org3773aae">使用包管理器安装软件时指定版本号</a></li>
+<li><a href="#org491aa13">验证任何从互联网上下载的软件和数据</a></li>
 </ul>
 </div>
 </div>
@@ -64,9 +66,9 @@
 摘录自 《Docker开发指南》 13.6.3 "可复制及可信任的Dockerfile"
 </p>
 
-<div id="outline-container-org308f1c9" class="outline-2">
-<h2 id="org308f1c9">FROM指令中使用标签或摘要以保证每次下载的镜像完全相同</h2>
-<div class="outline-text-2" id="text-org308f1c9">
+<div id="outline-container-org51ae594" class="outline-2">
+<h2 id="org51ae594">FROM指令中使用标签或摘要以保证每次下载的镜像完全相同</h2>
+<div class="outline-text-2" id="text-org51ae594">
 <p>
 若FROM指令不带标签，则Docker默认下载 <code>latest</code> 标签的镜像，而该镜像很容易随着时间的变化而变化。
 </p>
@@ -81,9 +83,9 @@
 </div>
 </div>
 
-<div id="outline-container-org4b4b6b0" class="outline-2">
-<h2 id="org4b4b6b0">使用包管理器安装软件时指定版本号</h2>
-<div class="outline-text-2" id="text-org4b4b6b0">
+<div id="outline-container-org3773aae" class="outline-2">
+<h2 id="org3773aae">使用包管理器安装软件时指定版本号</h2>
+<div class="outline-text-2" id="text-org3773aae">
 <p>
 跟上一条类似，使用包管理器安装软件默认安装的是最新版的软件，但有可能随着时间的推移而发生改变。
 </p>
@@ -105,9 +107,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgfdf7599" class="outline-2">
-<h2 id="orgfdf7599">验证任何从互联网上下载的软件和数据</h2>
-<div class="outline-text-2" id="text-orgfdf7599">
+<div id="outline-container-org491aa13" class="outline-2">
+<h2 id="org491aa13">验证任何从互联网上下载的软件和数据</h2>
+<div class="outline-text-2" id="text-org491aa13">
 <p>
 若没有对下载数据进行验证的话，那么数据意外损坏或被恶意篡改将无法被发现。
 </p>

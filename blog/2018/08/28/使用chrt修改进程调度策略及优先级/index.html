@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,21 +56,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2f32bd3">Linux内核调度策略</a></li>
-<li><a href="#orga1429db">使用chrt查看/修改进程调度策略</a>
+<li><a href="#org33594fc">Linux内核调度策略</a></li>
+<li><a href="#orgde6dd10">使用chrt查看/修改进程调度策略</a>
 <ul>
-<li><a href="#org8801a71">查看进程的调度策略及优先级</a></li>
-<li><a href="#orge2efc68">查看每种策略的有效优先级范围</a></li>
-<li><a href="#orgda53e9d">设置进程的调度策略</a></li>
+<li><a href="#orgf5ffe6a">查看进程的调度策略及优先级</a></li>
+<li><a href="#org44592e5">查看每种策略的有效优先级范围</a></li>
+<li><a href="#org8511e64">设置进程的调度策略</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2f32bd3" class="outline-2">
-<h2 id="org2f32bd3">Linux内核调度策略</h2>
-<div class="outline-text-2" id="text-org2f32bd3">
+<div id="outline-container-org33594fc" class="outline-2">
+<h2 id="org33594fc">Linux内核调度策略</h2>
+<div class="outline-text-2" id="text-org33594fc">
 <p>
 linux内核有五种调度方法：
 </p>
@@ -126,13 +128,13 @@ SCHED_IDLE策略则是只有在没有其他进程可运行的状态下才才会�
 </div>
 </div>
 
-<div id="outline-container-orga1429db" class="outline-2">
-<h2 id="orga1429db">使用chrt查看/修改进程调度策略</h2>
-<div class="outline-text-2" id="text-orga1429db">
+<div id="outline-container-orgde6dd10" class="outline-2">
+<h2 id="orgde6dd10">使用chrt查看/修改进程调度策略</h2>
+<div class="outline-text-2" id="text-orgde6dd10">
 </div>
-<div id="outline-container-org8801a71" class="outline-3">
-<h3 id="org8801a71">查看进程的调度策略及优先级</h3>
-<div class="outline-text-3" id="text-org8801a71">
+<div id="outline-container-orgf5ffe6a" class="outline-3">
+<h3 id="orgf5ffe6a">查看进程的调度策略及优先级</h3>
+<div class="outline-text-3" id="text-orgf5ffe6a">
 <div class="org-src-container">
 <pre class="src src-shell">chrt -p $<span style="color: #7590db;">pid</span>
 </pre>
@@ -154,9 +156,9 @@ pid 1032 &#30340;&#24403;&#21069;&#35843;&#24230;&#20248;&#20808;&#32423;&#65306
 </div>
 </div>
 
-<div id="outline-container-orge2efc68" class="outline-3">
-<h3 id="orge2efc68">查看每种策略的有效优先级范围</h3>
-<div class="outline-text-3" id="text-orge2efc68">
+<div id="outline-container-org44592e5" class="outline-3">
+<h3 id="org44592e5">查看每种策略的有效优先级范围</h3>
+<div class="outline-text-3" id="text-org44592e5">
 <div class="org-src-container">
 <pre class="src src-shell">chrt -m
 </pre>
@@ -174,9 +176,9 @@ SCHED_DEADLINE &#26368;&#23567;/&#26368;&#22823;&#20248;&#20808;&#32423; : 0/0
 </div>
 </div>
 
-<div id="outline-container-orgda53e9d" class="outline-3">
-<h3 id="orgda53e9d">设置进程的调度策略</h3>
-<div class="outline-text-3" id="text-orgda53e9d">
+<div id="outline-container-org8511e64" class="outline-3">
+<h3 id="org8511e64">设置进程的调度策略</h3>
+<div class="outline-text-3" id="text-org8511e64">
 <div class="org-src-container">
 <pre class="src src-shell">chrt <span style="color: #4f97d7;">[</span>-b/-f/-o/-r/-i/-d<span style="color: #4f97d7;">]</span> -p <span style="color: #4f97d7;">[</span>$<span style="color: #7590db;">priority</span><span style="color: #4f97d7;">]</span> $<span style="color: #7590db;">pid</span>
 </pre>

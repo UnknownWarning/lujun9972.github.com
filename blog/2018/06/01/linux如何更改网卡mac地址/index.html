@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,21 +56,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0d91c39">查看网卡MAC地址</a></li>
-<li><a href="#org8dd2cb7">手工修改MAC地址</a></li>
-<li><a href="#orgb4d64ae">自动更改</a>
+<li><a href="#orga154ed5">查看网卡MAC地址</a></li>
+<li><a href="#org3d80912">手工修改MAC地址</a></li>
+<li><a href="#org069891e">自动更改</a>
 <ul>
-<li><a href="#org647a942">Match小节</a></li>
-<li><a href="#org6c5542c">Link小节</a></li>
+<li><a href="#orgc2c284c">Match小节</a></li>
+<li><a href="#orge459d83">Link小节</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0d91c39" class="outline-2">
-<h2 id="org0d91c39">查看网卡MAC地址</h2>
-<div class="outline-text-2" id="text-org0d91c39">
+<div id="outline-container-orga154ed5" class="outline-2">
+<h2 id="orga154ed5">查看网卡MAC地址</h2>
+<div class="outline-text-2" id="text-orga154ed5">
 <p>
 使用ip命令就能查看MAC地址了:
 </p>
@@ -90,9 +92,9 @@
 </div>
 </div>
 
-<div id="outline-container-org8dd2cb7" class="outline-2">
-<h2 id="org8dd2cb7">手工修改MAC地址</h2>
-<div class="outline-text-2" id="text-org8dd2cb7">
+<div id="outline-container-org3d80912" class="outline-2">
+<h2 id="org3d80912">手工修改MAC地址</h2>
+<div class="outline-text-2" id="text-org3d80912">
 <p>
 使用ip命令也能修改MAC地址，但是需要root权限：
 </p>
@@ -147,9 +149,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgb4d64ae" class="outline-2">
-<h2 id="orgb4d64ae">自动更改</h2>
-<div class="outline-text-2" id="text-orgb4d64ae">
+<div id="outline-container-org069891e" class="outline-2">
+<h2 id="org069891e">自动更改</h2>
+<div class="outline-text-2" id="text-org069891e">
 <p>
 systemd-networkd服务能通过 <code>link</code> 文件(底层物理网络设备配置)来设置MAC地址
 </p>
@@ -159,9 +161,9 @@ systemd-networkd服务能通过 <code>link</code> 文件(底层物理网络设�
 </p>
 </div>
 
-<div id="outline-container-org647a942" class="outline-3">
-<h3 id="org647a942">Match小节</h3>
-<div class="outline-text-3" id="text-org647a942">
+<div id="outline-container-orgc2c284c" class="outline-3">
+<h3 id="orgc2c284c">Match小节</h3>
+<div class="outline-text-3" id="text-orgc2c284c">
 <p>
 如果 "[Match]" 小节中的每一项都与某个网卡匹配， 那么视为该Link文件与该网卡匹配。若 "[Match]" 小节为空则表示匹配任意网卡。 
 </p>
@@ -184,9 +186,9 @@ systemd-networkd服务能通过 <code>link</code> 文件(底层物理网络设�
 </div>
 </div>
 
-<div id="outline-container-org6c5542c" class="outline-3">
-<h3 id="org6c5542c">Link小节</h3>
-<div class="outline-text-3" id="text-org6c5542c">
+<div id="outline-container-orge459d83" class="outline-3">
+<h3 id="orge459d83">Link小节</h3>
+<div class="outline-text-3" id="text-orge459d83">
 <p>
 Link小节可以对网卡进行多种配置，其中与修改MAC有关的选项有：
 </p>

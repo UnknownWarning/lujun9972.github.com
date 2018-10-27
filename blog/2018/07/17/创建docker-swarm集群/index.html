@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,14 +56,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf6435d8">创建Swarm集群</a></li>
-<li><a href="#orga8ae161">向集群中添加节点</a></li>
-<li><a href="#org73261fa">部署服务到集群中</a></li>
-<li><a href="#org3b0bf70">调整服务规模</a></li>
-<li><a href="#org9188b2f">查看服务详细信息</a></li>
-<li><a href="#orgb23f8c9">删除服务</a></li>
-<li><a href="#org2d08428">服务升级</a></li>
-<li><a href="#orgfefd38b">NODE退出集群</a></li>
+<li><a href="#org4e7aa12">创建Swarm集群</a></li>
+<li><a href="#org029d4c0">向集群中添加节点</a></li>
+<li><a href="#org96d147f">部署服务到集群中</a></li>
+<li><a href="#org4175331">调整服务规模</a></li>
+<li><a href="#orgd093912">查看服务详细信息</a></li>
+<li><a href="#orga4f6224">删除服务</a></li>
+<li><a href="#org77e6078">服务升级</a></li>
+<li><a href="#org25286b7">NODE退出集群</a></li>
 </ul>
 </div>
 </div>
@@ -71,9 +73,9 @@ Docker Swarm是由Docker提供的原生集群工具，通过它可以很方便�
 </p>
 
 
-<div id="outline-container-orgf6435d8" class="outline-2">
-<h2 id="orgf6435d8">创建Swarm集群</h2>
-<div class="outline-text-2" id="text-orgf6435d8">
+<div id="outline-container-org4e7aa12" class="outline-2">
+<h2 id="org4e7aa12">创建Swarm集群</h2>
+<div class="outline-text-2" id="text-org4e7aa12">
 <p>
 创建Swarm集群的动作其实就是把一台主机Node初始化成manager的行为，方法超级简单，只需要在 manager node 主机上执行
 </p>
@@ -171,9 +173,9 @@ ID后面的 <code>*</code> 号表示这个记录就是当前NODE的信息。
 </div>
 </div>
 
-<div id="outline-container-orga8ae161" class="outline-2">
-<h2 id="orga8ae161">向集群中添加节点</h2>
-<div class="outline-text-2" id="text-orga8ae161">
+<div id="outline-container-org029d4c0" class="outline-2">
+<h2 id="org029d4c0">向集群中添加节点</h2>
+<div class="outline-text-2" id="text-org029d4c0">
 <p>
 现在我们往这个集群中添加一个worker节点，方法很简单，跟着 <code>docker swarm init</code> 输出中的命令来执行就行了
 </p>
@@ -237,9 +239,9 @@ Error response from daemon: This node is not a swarm manager. Worker nodes can't
 </div>
 </div>
 
-<div id="outline-container-org73261fa" class="outline-2">
-<h2 id="org73261fa">部署服务到集群中</h2>
-<div class="outline-text-2" id="text-org73261fa">
+<div id="outline-container-org96d147f" class="outline-2">
+<h2 id="org96d147f">部署服务到集群中</h2>
+<div class="outline-text-2" id="text-org96d147f">
 <p>
 我们在manager node上使用 <code>docker service create</code> 命令来创建一个服务.
 </p>
@@ -334,9 +336,9 @@ rttpyxf8wbaj        web                 replicated          1/1                 
 </div>
 </div>
 
-<div id="outline-container-org3b0bf70" class="outline-2">
-<h2 id="org3b0bf70">调整服务规模</h2>
-<div class="outline-text-2" id="text-org3b0bf70">
+<div id="outline-container-org4175331" class="outline-2">
+<h2 id="org4175331">调整服务规模</h2>
+<div class="outline-text-2" id="text-org4175331">
 <p>
 使用命令 <code>docker service scale ${SERVICE}=${NUMBER}</code> 可以调整指定服务的规模，比如
 </p>
@@ -380,9 +382,9 @@ rttpyxf8wbaj        web                 replicated          5/5                 
 </div>
 </div>
 
-<div id="outline-container-org9188b2f" class="outline-2">
-<h2 id="org9188b2f">查看服务详细信息</h2>
-<div class="outline-text-2" id="text-org9188b2f">
+<div id="outline-container-orgd093912" class="outline-2">
+<h2 id="orgd093912">查看服务详细信息</h2>
+<div class="outline-text-2" id="text-orgd093912">
 <p>
 我们可以使用 <code>docker service inspect</code> 命令来查看某项服务的详细内容，比如
 </p>
@@ -457,9 +459,9 @@ on0k4qnv7d5v        web.5               nginx:alpine        VM_0_8_centos       
 </div>
 </div>
 
-<div id="outline-container-orgb23f8c9" class="outline-2">
-<h2 id="orgb23f8c9">删除服务</h2>
-<div class="outline-text-2" id="text-orgb23f8c9">
+<div id="outline-container-orga4f6224" class="outline-2">
+<h2 id="orga4f6224">删除服务</h2>
+<div class="outline-text-2" id="text-orga4f6224">
 <p>
 删除服务就特别简单了，直接在manager node上运行 <code>docker service rm ${SERVICE}</code> 就行了，比如
 </p>
@@ -495,9 +497,9 @@ rttpyxf8wbaj        web                 replicated          5/5                 
 </div>
 </div>
 
-<div id="outline-container-org2d08428" class="outline-2">
-<h2 id="org2d08428">服务升级</h2>
-<div class="outline-text-2" id="text-org2d08428">
+<div id="outline-container-org77e6078" class="outline-2">
+<h2 id="org77e6078">服务升级</h2>
+<div class="outline-text-2" id="text-org77e6078">
 <p>
 当提供服务容器的镜像发生更改后，可以使用 <code>docker service update --image ${NEW_IMAGE} ${SERVICE}</code> 来进行服务升级。
 </p>
@@ -527,9 +529,9 @@ rttpyxf8wbaj        web                 replicated          5/5                 
 </div>
 </div>
 
-<div id="outline-container-orgfefd38b" class="outline-2">
-<h2 id="orgfefd38b">NODE退出集群</h2>
-<div class="outline-text-2" id="text-orgfefd38b">
+<div id="outline-container-org25286b7" class="outline-2">
+<h2 id="org25286b7">NODE退出集群</h2>
+<div class="outline-text-2" id="text-org25286b7">
 <p>
 要将某个NODE退出集群十分简单，只需要在那个node上执行 <code>docker swarm leave</code> 即可。
 </p>

@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,16 +56,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8a0b381">启动编辑器</a></li>
-<li><a href="#org95de1d2">控制屏幕</a></li>
-<li><a href="#org5ca4b0a">光标的移动</a></li>
-<li><a href="#org9b690d9">删除命令行内容</a></li>
-<li><a href="#orgcbe33fb">命令行内容转换大小写</a></li>
-<li><a href="#org982d3b9">命令行字符交换</a></li>
-<li><a href="#org809900a">搜索bash history</a></li>
-<li><a href="#org2b0f06a">进程管理</a></li>
-<li><a href="#org85edaf4">!命令</a></li>
-<li><a href="#org890d5d4">查看更多快捷键</a></li>
+<li><a href="#org5f6f154">启动编辑器</a></li>
+<li><a href="#org6193451">控制屏幕</a></li>
+<li><a href="#org0d496e1">光标的移动</a></li>
+<li><a href="#org7d5243e">删除命令行内容</a></li>
+<li><a href="#org574b3a5">命令行内容转换大小写</a></li>
+<li><a href="#org3659385">命令行字符交换</a></li>
+<li><a href="#org33885f9">搜索bash history</a></li>
+<li><a href="#orge15f3bb">进程管理</a></li>
+<li><a href="#org8d4311e">!命令</a></li>
+<li><a href="#org1aba4c1">查看更多快捷键</a></li>
 </ul>
 </div>
 </div>
@@ -75,18 +77,18 @@
 <b>注意，下面这些快捷键都是在Emacs keymap的情况下有用</b>
 </p>
 
-<div id="outline-container-org8a0b381" class="outline-2">
-<h2 id="org8a0b381">启动编辑器</h2>
-<div class="outline-text-2" id="text-org8a0b381">
+<div id="outline-container-org5f6f154" class="outline-2">
+<h2 id="org5f6f154">启动编辑器</h2>
+<div class="outline-text-2" id="text-org5f6f154">
 <dl class="org-dl">
 <dt>C-x C-e</dt><dd>根据 <code>$FCEDIT</code> 或 <code>$EDITOR</code> 环境变量打开对应的编辑器,若这两个变量都为空，则运行emacs</dd>
 </dl>
 </div>
 </div>
 
-<div id="outline-container-org95de1d2" class="outline-2">
-<h2 id="org95de1d2">控制屏幕</h2>
-<div class="outline-text-2" id="text-org95de1d2">
+<div id="outline-container-org6193451" class="outline-2">
+<h2 id="org6193451">控制屏幕</h2>
+<div class="outline-text-2" id="text-org6193451">
 <dl class="org-dl">
 <dt>C-l</dt><dd>清屏，相当于执行clear命令</dd>
 <dt>C-s</dt><dd>暂停屏幕输出</dd>
@@ -95,9 +97,9 @@
 </div>
 </div>
 
-<div id="outline-container-org5ca4b0a" class="outline-2">
-<h2 id="org5ca4b0a">光标的移动</h2>
-<div class="outline-text-2" id="text-org5ca4b0a">
+<div id="outline-container-org0d496e1" class="outline-2">
+<h2 id="org0d496e1">光标的移动</h2>
+<div class="outline-text-2" id="text-org0d496e1">
 <dl class="org-dl">
 <dt>C-a / Home</dt><dd>移动光标道行首</dd>
 <dt>C-e / End</dt><dd>移动光标到行未</dd>
@@ -109,9 +111,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9b690d9" class="outline-2">
-<h2 id="org9b690d9">删除命令行内容</h2>
-<div class="outline-text-2" id="text-org9b690d9">
+<div id="outline-container-org7d5243e" class="outline-2">
+<h2 id="org7d5243e">删除命令行内容</h2>
+<div class="outline-text-2" id="text-org7d5243e">
 <dl class="org-dl">
 <dt>C-d / Delete</dt><dd>删除光标所在的字符</dd>
 <dt>C-x  Backspace</dt><dd>删除光标到行首的所有内容</dd>
@@ -120,9 +122,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgcbe33fb" class="outline-2">
-<h2 id="orgcbe33fb">命令行内容转换大小写</h2>
-<div class="outline-text-2" id="text-orgcbe33fb">
+<div id="outline-container-org574b3a5" class="outline-2">
+<h2 id="org574b3a5">命令行内容转换大小写</h2>
+<div class="outline-text-2" id="text-org574b3a5">
 <dl class="org-dl">
 <dt>Esc u</dt><dd>光标到单词末尾的内容全部变大写</dd>
 <dt>Esc l</dt><dd>光标到单词末尾的内容全部变小写</dd>
@@ -131,18 +133,18 @@
 </div>
 </div>
 
-<div id="outline-container-org982d3b9" class="outline-2">
-<h2 id="org982d3b9">命令行字符交换</h2>
-<div class="outline-text-2" id="text-org982d3b9">
+<div id="outline-container-org3659385" class="outline-2">
+<h2 id="org3659385">命令行字符交换</h2>
+<div class="outline-text-2" id="text-org3659385">
 <dl class="org-dl">
 <dt>C-t</dt><dd>将光标所在字符与前面一个字符进行交换</dd>
 </dl>
 </div>
 </div>
 
-<div id="outline-container-org809900a" class="outline-2">
-<h2 id="org809900a">搜索bash history</h2>
-<div class="outline-text-2" id="text-org809900a">
+<div id="outline-container-org33885f9" class="outline-2">
+<h2 id="org33885f9">搜索bash history</h2>
+<div class="outline-text-2" id="text-org33885f9">
 <dl class="org-dl">
 <dt>上箭头 / C-p</dt><dd>上一条命令</dd>
 <dt>下箭头 / C-n</dt><dd>下一条命令</dd>
@@ -152,9 +154,9 @@
 </div>
 </div>
 
-<div id="outline-container-org2b0f06a" class="outline-2">
-<h2 id="org2b0f06a">进程管理</h2>
-<div class="outline-text-2" id="text-org2b0f06a">
+<div id="outline-container-orge15f3bb" class="outline-2">
+<h2 id="orge15f3bb">进程管理</h2>
+<div class="outline-text-2" id="text-orge15f3bb">
 <dl class="org-dl">
 <dt>C-z</dt><dd>发送SIGTSTP信号，挂起当前进程</dd>
 <dt>C-c</dt><dd>发送SIGINT信号退出当前进程</dd>
@@ -163,9 +165,9 @@
 </div>
 </div>
 
-<div id="outline-container-org85edaf4" class="outline-2">
-<h2 id="org85edaf4">!命令</h2>
-<div class="outline-text-2" id="text-org85edaf4">
+<div id="outline-container-org8d4311e" class="outline-2">
+<h2 id="org8d4311e">!命令</h2>
+<div class="outline-text-2" id="text-org8d4311e">
 <dl class="org-dl">
 <dt>!!</dt><dd>执行上一个命令</dd>
 <dt>!top</dt><dd>执行最近哪个以top开头的命令</dd>
@@ -176,9 +178,9 @@
 </div>
 </div>
 
-<div id="outline-container-org890d5d4" class="outline-2">
-<h2 id="org890d5d4">查看更多快捷键</h2>
-<div class="outline-text-2" id="text-org890d5d4">
+<div id="outline-container-org1aba4c1" class="outline-2">
+<h2 id="org1aba4c1">查看更多快捷键</h2>
+<div class="outline-text-2" id="text-org1aba4c1">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #4f97d7;">bind</span> -p |head
 </pre>

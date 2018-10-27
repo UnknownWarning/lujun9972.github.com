@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,9 +56,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5649da1">安装mypy</a></li>
-<li><a href="#org83e996c">使用mypy进行静态检查</a></li>
-<li><a href="#orgad65215">帮助信息</a></li>
+<li><a href="#org46fe3ca">安装mypy</a></li>
+<li><a href="#orgdf5f2e5">使用mypy进行静态检查</a></li>
+<li><a href="#org54a5095">帮助信息</a></li>
 </ul>
 </div>
 </div>
@@ -68,9 +70,9 @@
 mypy就是这么一个python type checker.
 </p>
 
-<div id="outline-container-org5649da1" class="outline-2">
-<h2 id="org5649da1">安装mypy</h2>
-<div class="outline-text-2" id="text-org5649da1">
+<div id="outline-container-org46fe3ca" class="outline-2">
+<h2 id="org46fe3ca">安装mypy</h2>
+<div class="outline-text-2" id="text-org46fe3ca">
 <p>
 我们可以使用 <code>pip</code> 来安装mypy。
 </p>
@@ -89,9 +91,9 @@ Successfully installed mypy-0.570 typed-ast-1.1.0
 </div>
 </div>
 
-<div id="outline-container-org83e996c" class="outline-2">
-<h2 id="org83e996c">使用mypy进行静态检查</h2>
-<div class="outline-text-2" id="text-org83e996c">
+<div id="outline-container-orgdf5f2e5" class="outline-2">
+<h2 id="orgdf5f2e5">使用mypy进行静态检查</h2>
+<div class="outline-text-2" id="text-orgdf5f2e5">
 <p>
 假设有这么一个 <code>test.py</code> 的文件：
 </p>
@@ -180,9 +182,9 @@ display<span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">[</sp
 </div>
 </div>
 
-<div id="outline-container-orgad65215" class="outline-2">
-<h2 id="orgad65215">帮助信息</h2>
-<div class="outline-text-2" id="text-orgad65215">
+<div id="outline-container-org54a5095" class="outline-2">
+<h2 id="org54a5095">帮助信息</h2>
+<div class="outline-text-2" id="text-org54a5095">
 <p>
 mypy还带有一堆的参数来定义检查的方法，运行 <code>mypy -h</code> 就会列出帮助信息了：
 </p>

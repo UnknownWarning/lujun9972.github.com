@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,14 +56,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org10290a6">EPEL</a></li>
-<li><a href="#org77093a0">REMI</a></li>
-<li><a href="#org56d9047">RPM Fusion</a></li>
-<li><a href="#org53b7706">ELRepo</a></li>
-<li><a href="#org1c28308">NUX-dextop</a></li>
-<li><a href="#orgfab67e4">GhettoForge</a></li>
-<li><a href="#orgb395811">Psychotic Ninja</a></li>
-<li><a href="#org58d8110">IUS</a></li>
+<li><a href="#orgb36ce3a">EPEL</a></li>
+<li><a href="#org8fa01a4">REMI</a></li>
+<li><a href="#org6361c06">RPM Fusion</a></li>
+<li><a href="#orge5d21d5">ELRepo</a></li>
+<li><a href="#org4d8d61f">NUX-dextop</a></li>
+<li><a href="#org738e8a1">GhettoForge</a></li>
+<li><a href="#orgc070bf3">Psychotic Ninja</a></li>
+<li><a href="#org15b9cfc">IUS</a></li>
 </ul>
 </div>
 </div>
@@ -69,9 +71,9 @@
 从 <a href="https://www.tecmint.com/yum-thirdparty-repositories-for-centos-rhel/">https://www.tecmint.com/yum-thirdparty-repositories-for-centos-rhel/</a> 看到的，记录一下。
 </p>
 
-<div id="outline-container-org10290a6" class="outline-2">
-<h2 id="org10290a6">EPEL</h2>
-<div class="outline-text-2" id="text-org10290a6">
+<div id="outline-container-orgb36ce3a" class="outline-2">
+<h2 id="orgb36ce3a">EPEL</h2>
+<div class="outline-text-2" id="text-orgb36ce3a">
 <p>
 EPEL 是 Extra Packages for Enterprise Linux 的缩写（EPEL），是用于 Fedora-based Red Hat Enterprise Linux (RHEL) 的一个高质量软件源
 </p>
@@ -100,9 +102,9 @@ rpm -ivh epel-release-6-8.noarch.rpm
 </div>
 </div>
 
-<div id="outline-container-org77093a0" class="outline-2">
-<h2 id="org77093a0">REMI</h2>
-<div class="outline-text-2" id="text-org77093a0">
+<div id="outline-container-org8fa01a4" class="outline-2">
+<h2 id="org8fa01a4">REMI</h2>
+<div class="outline-text-2" id="text-org8fa01a4">
 <p>
 REMI仓库提供了最新版本PHP相关的软件,不过在在启用REMI之前，需要先启用EPEL
 </p>
@@ -127,9 +129,9 @@ rpm -Uvh remi-release-6.rpm
 </div>
 </div>
 
-<div id="outline-container-org56d9047" class="outline-2">
-<h2 id="org56d9047">RPM Fusion</h2>
-<div class="outline-text-2" id="text-org56d9047">
+<div id="outline-container-org6361c06" class="outline-2">
+<h2 id="org6361c06">RPM Fusion</h2>
+<div class="outline-text-2" id="text-org6361c06">
 <p>
 RPM Fusion同时提供了一些自由和非自由的软件，同样的它也需要先启用EPEL
 </p>
@@ -154,9 +156,9 @@ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/nonfree/el/rp
 </div>
 </div>
 
-<div id="outline-container-org53b7706" class="outline-2">
-<h2 id="org53b7706">ELRepo</h2>
-<div class="outline-text-2" id="text-org53b7706">
+<div id="outline-container-orge5d21d5" class="outline-2">
+<h2 id="orge5d21d5">ELRepo</h2>
+<div class="outline-text-2" id="text-orge5d21d5">
 <p>
 ELRepo提供了一些硬件驱动相关的包
 </p>
@@ -181,9 +183,9 @@ sudo rpm -Uvh https://www.elrepo.org/elrepo-release-6-8.el6.elrepo.noarch.rpm
 </div>
 </div>
 
-<div id="outline-container-org1c28308" class="outline-2">
-<h2 id="org1c28308">NUX-dextop</h2>
-<div class="outline-text-2" id="text-org1c28308">
+<div id="outline-container-org4d8d61f" class="outline-2">
+<h2 id="org4d8d61f">NUX-dextop</h2>
+<div class="outline-text-2" id="text-org4d8d61f">
 <p>
 NUX-dextop提供了一些桌面和多媒体软件包,它也需要先启用EPEL仓库
 </p>
@@ -206,9 +208,9 @@ CentOS/RHEL6
 </div>
 </div>
 
-<div id="outline-container-orgfab67e4" class="outline-2">
-<h2 id="orgfab67e4">GhettoForge</h2>
-<div class="outline-text-2" id="text-orgfab67e4">
+<div id="outline-container-org738e8a1" class="outline-2">
+<h2 id="org738e8a1">GhettoForge</h2>
+<div class="outline-text-2" id="text-org738e8a1">
 <p>
 CentOS/RHEL7
 </p>
@@ -227,9 +229,9 @@ CentOS/RHEL6
 </div>
 </div>
 
-<div id="outline-container-orgb395811" class="outline-2">
-<h2 id="orgb395811">Psychotic Ninja</h2>
-<div class="outline-text-2" id="text-orgb395811">
+<div id="outline-container-orgc070bf3" class="outline-2">
+<h2 id="orgc070bf3">Psychotic Ninja</h2>
+<div class="outline-text-2" id="text-orgc070bf3">
 <div class="org-src-container">
 <pre class="src src-shell">sudo rpm --import http://wiki.psychotic.ninja/RPM-GPG-KEY-psychotic
 sudo rpm -ivh http://packages.psychotic.ninja/6/base/i386/RPMS/psychotic-release-1.0.0-1.el6.psychotic.noarch.rpm
@@ -238,9 +240,9 @@ sudo rpm -ivh http://packages.psychotic.ninja/6/base/i386/RPMS/psychotic-release
 </div>
 </div>
 
-<div id="outline-container-org58d8110" class="outline-2">
-<h2 id="org58d8110">IUS</h2>
-<div class="outline-text-2" id="text-org58d8110">
+<div id="outline-container-org15b9cfc" class="outline-2">
+<h2 id="org15b9cfc">IUS</h2>
+<div class="outline-text-2" id="text-org15b9cfc">
 <p>
 IUS (Inline with Upstream Stable) 是一个新创立不久的由社区支持的第三方仓库，它提供了最新版的PHP，Python，MYSQL
 </p>

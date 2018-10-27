@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,21 +56,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org916781f">解压zip文件到当前目录</a></li>
-<li><a href="#org6e30170">静默解压</a></li>
-<li><a href="#org47037f0">解压zip文件到指定目录</a></li>
-<li><a href="#orgea10b1d">解压密码保护的zip文件</a></li>
-<li><a href="#org1840fff">解压时排除某些文件不解压出来</a></li>
-<li><a href="#orgcfe490e">解压时直接覆盖已有文件</a></li>
-<li><a href="#org7a640b2">解压时跳过已有文件</a></li>
-<li><a href="#org6245e97">列出zip文件中的内容</a></li>
+<li><a href="#orga2fa351">解压zip文件到当前目录</a></li>
+<li><a href="#orgd07d9db">静默解压</a></li>
+<li><a href="#org094e0ca">解压zip文件到指定目录</a></li>
+<li><a href="#org760e89e">解压密码保护的zip文件</a></li>
+<li><a href="#orgf80a976">解压时排除某些文件不解压出来</a></li>
+<li><a href="#orgb967b61">解压时直接覆盖已有文件</a></li>
+<li><a href="#orge3350a8">解压时跳过已有文件</a></li>
+<li><a href="#org7d5cd78">列出zip文件中的内容</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org916781f" class="outline-2">
-<h2 id="org916781f">解压zip文件到当前目录</h2>
-<div class="outline-text-2" id="text-org916781f">
+<div id="outline-container-orga2fa351" class="outline-2">
+<h2 id="orga2fa351">解压zip文件到当前目录</h2>
+<div class="outline-text-2" id="text-orga2fa351">
 <div class="org-src-container">
 <pre class="src src-shell">unzip $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -80,9 +82,9 @@ zip文件不包含linux所有者权限信息，因此所有解压出来的内容
 </div>
 </div>
 
-<div id="outline-container-org6e30170" class="outline-2">
-<h2 id="org6e30170">静默解压</h2>
-<div class="outline-text-2" id="text-org6e30170">
+<div id="outline-container-orgd07d9db" class="outline-2">
+<h2 id="orgd07d9db">静默解压</h2>
+<div class="outline-text-2" id="text-orgd07d9db">
 <p>
 默认解压时会列出解压出来的文件名称等信息，可以使用 <code>-q</code> 参数屏蔽这些信息
 </p>
@@ -93,9 +95,9 @@ zip文件不包含linux所有者权限信息，因此所有解压出来的内容
 </div>
 </div>
 
-<div id="outline-container-org47037f0" class="outline-2">
-<h2 id="org47037f0">解压zip文件到指定目录</h2>
-<div class="outline-text-2" id="text-org47037f0">
+<div id="outline-container-org094e0ca" class="outline-2">
+<h2 id="org094e0ca">解压zip文件到指定目录</h2>
+<div class="outline-text-2" id="text-org094e0ca">
 <div class="org-src-container">
 <pre class="src src-shell">unzip $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span> -d $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">directory</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -103,9 +105,9 @@ zip文件不包含linux所有者权限信息，因此所有解压出来的内容
 </div>
 </div>
 
-<div id="outline-container-orgea10b1d" class="outline-2">
-<h2 id="orgea10b1d">解压密码保护的zip文件</h2>
-<div class="outline-text-2" id="text-orgea10b1d">
+<div id="outline-container-org760e89e" class="outline-2">
+<h2 id="org760e89e">解压密码保护的zip文件</h2>
+<div class="outline-text-2" id="text-org760e89e">
 <div class="org-src-container">
 <pre class="src src-shell">unzip -P $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">password</span><span style="color: #4f97d7;">}</span> $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -113,9 +115,9 @@ zip文件不包含linux所有者权限信息，因此所有解压出来的内容
 </div>
 </div>
 
-<div id="outline-container-org1840fff" class="outline-2">
-<h2 id="org1840fff">解压时排除某些文件不解压出来</h2>
-<div class="outline-text-2" id="text-org1840fff">
+<div id="outline-container-orgf80a976" class="outline-2">
+<h2 id="orgf80a976">解压时排除某些文件不解压出来</h2>
+<div class="outline-text-2" id="text-orgf80a976">
 <div class="org-src-container">
 <pre class="src src-shell">unzip $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span> -x $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">exclude_pattern</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -123,9 +125,9 @@ zip文件不包含linux所有者权限信息，因此所有解压出来的内容
 </div>
 </div>
 
-<div id="outline-container-orgcfe490e" class="outline-2">
-<h2 id="orgcfe490e">解压时直接覆盖已有文件</h2>
-<div class="outline-text-2" id="text-orgcfe490e">
+<div id="outline-container-orgb967b61" class="outline-2">
+<h2 id="orgb967b61">解压时直接覆盖已有文件</h2>
+<div class="outline-text-2" id="text-orgb967b61">
 <p>
 当解压时，若当前目录或指定目录已经有了同名的文件，则unzip会询问你该如何操作。通过 <code>-o</code> 参数可以让unzip不做提示，直接覆盖已有文件
 </p>
@@ -136,9 +138,9 @@ zip文件不包含linux所有者权限信息，因此所有解压出来的内容
 </div>
 </div>
 
-<div id="outline-container-org7a640b2" class="outline-2">
-<h2 id="org7a640b2">解压时跳过已有文件</h2>
-<div class="outline-text-2" id="text-org7a640b2">
+<div id="outline-container-orge3350a8" class="outline-2">
+<h2 id="orge3350a8">解压时跳过已有文件</h2>
+<div class="outline-text-2" id="text-orge3350a8">
 <p>
 通过 <code>-n</code> 参数可以让unzip在遇到已有文件时，跳过
 </p>
@@ -149,9 +151,9 @@ zip文件不包含linux所有者权限信息，因此所有解压出来的内容
 </div>
 </div>
 
-<div id="outline-container-org6245e97" class="outline-2">
-<h2 id="org6245e97">列出zip文件中的内容</h2>
-<div class="outline-text-2" id="text-org6245e97">
+<div id="outline-container-org7d5cd78" class="outline-2">
+<h2 id="org7d5cd78">列出zip文件中的内容</h2>
+<div class="outline-text-2" id="text-org7d5cd78">
 <div class="org-src-container">
 <pre class="src src-shell">unzip -l $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">zip_file</span><span style="color: #4f97d7;">}</span>
 </pre>

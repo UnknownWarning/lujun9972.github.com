@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,11 +56,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgab611b6">使用xargs</a></li>
-<li><a href="#org6b4850f">使用parallel</a></li>
-<li><a href="#orgfebb360">使用tee</a></li>
-<li><a href="#org6ed4fee">使用find</a></li>
-<li><a href="#orgdb14c5d">使用for循环</a></li>
+<li><a href="#orge4755a3">使用xargs</a></li>
+<li><a href="#orgc0716df">使用parallel</a></li>
+<li><a href="#org31f98be">使用tee</a></li>
+<li><a href="#orgd39c02b">使用find</a></li>
+<li><a href="#org9b30623">使用for循环</a></li>
 </ul>
 </div>
 </div>
@@ -66,9 +68,9 @@
 从 <a href="https://www.cyberciti.biz/faq/linux-unix-copy-a-file-to-multiple-directories-using-cp-command/">https://www.cyberciti.biz/faq/linux-unix-copy-a-file-to-multiple-directories-using-cp-command/</a> 上看到的:
 </p>
 
-<div id="outline-container-orgab611b6" class="outline-2">
-<h2 id="orgab611b6">使用xargs</h2>
-<div class="outline-text-2" id="text-orgab611b6">
+<div id="outline-container-orge4755a3" class="outline-2">
+<h2 id="orge4755a3">使用xargs</h2>
+<div class="outline-text-2" id="text-orge4755a3">
 <div class="org-src-container">
 <pre class="src src-shell">xargs -n <span style="color: #a45bad;">1</span> cp -v filename&lt;&lt;&lt;<span style="color: #2d9574;">"/dir1/ /dir2/ /dir3/"</span> 
 <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#25110;</span>
@@ -78,9 +80,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6b4850f" class="outline-2">
-<h2 id="org6b4850f">使用parallel</h2>
-<div class="outline-text-2" id="text-org6b4850f">
+<div id="outline-container-orgc0716df" class="outline-2">
+<h2 id="orgc0716df">使用parallel</h2>
+<div class="outline-text-2" id="text-orgc0716df">
 <div class="org-src-container">
 <pre class="src src-shell">parallel cp fileNameHere ::: /dir1/ /dir2/ /dir3/
 </pre>
@@ -88,9 +90,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgfebb360" class="outline-2">
-<h2 id="orgfebb360">使用tee</h2>
-<div class="outline-text-2" id="text-orgfebb360">
+<div id="outline-container-org31f98be" class="outline-2">
+<h2 id="org31f98be">使用tee</h2>
+<div class="outline-text-2" id="text-org31f98be">
 <div class="org-src-container">
 <pre class="src src-shell">tee /dir1/file /dir2/file /dir3/file &lt;file &gt;/dev/null
 </pre>
@@ -98,9 +100,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6ed4fee" class="outline-2">
-<h2 id="org6ed4fee">使用find</h2>
-<div class="outline-text-2" id="text-org6ed4fee">
+<div id="outline-container-orgd39c02b" class="outline-2">
+<h2 id="orgd39c02b">使用find</h2>
+<div class="outline-text-2" id="text-orgd39c02b">
 <div class="org-src-container">
 <pre class="src src-shell">find /dir1/ /dir2/ /dir3/ -maxdepth <span style="color: #a45bad;">0</span> -exec cp filename <span style="color: #4f97d7;">{}</span> <span style="color: #2d9574;">\;</span>
 </pre>
@@ -108,9 +110,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgdb14c5d" class="outline-2">
-<h2 id="orgdb14c5d">使用for循环</h2>
-<div class="outline-text-2" id="text-orgdb14c5d">
+<div id="outline-container-org9b30623" class="outline-2">
+<h2 id="org9b30623">使用for循环</h2>
+<div class="outline-text-2" id="text-org9b30623">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">for</span> dest<span style="color: #4f97d7; font-weight: bold;"> in</span> /dir1/ /dir2/ /dir3/ ; <span style="color: #4f97d7; font-weight: bold;">do</span> cp -v file <span style="color: #2d9574;">"$dest"</span> ; <span style="color: #4f97d7; font-weight: bold;">done</span>
 </pre>

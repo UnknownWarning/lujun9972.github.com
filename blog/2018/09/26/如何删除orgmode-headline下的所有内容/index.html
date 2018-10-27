@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,15 +56,15 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org90e41d2">找到指定的headline</a></li>
-<li><a href="#org82589ae">删除head下的所有内容</a></li>
+<li><a href="#org62878da">找到指定的headline</a></li>
+<li><a href="#org727ad23">删除head下的所有内容</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org90e41d2" class="outline-2">
-<h2 id="org90e41d2">找到指定的headline</h2>
-<div class="outline-text-2" id="text-org90e41d2">
+<div id="outline-container-org62878da" class="outline-2">
+<h2 id="org62878da">找到指定的headline</h2>
+<div class="outline-text-2" id="text-org62878da">
 <p>
 使用 <code>(org-goto-local-search-headings STRING BOUND NOERROR)</code> 可以将光标定位到指定的headline处。
 </p>
@@ -93,9 +95,9 @@
 </div>
 </div>
 
-<div id="outline-container-org82589ae" class="outline-2">
-<h2 id="org82589ae">删除head下的所有内容</h2>
-<div class="outline-text-2" id="text-org82589ae">
+<div id="outline-container-org727ad23" class="outline-2">
+<h2 id="org727ad23">删除head下的所有内容</h2>
+<div class="outline-text-2" id="text-org727ad23">
 <p>
 org-mode似乎没有提供专门的函数来清空head下的所有内容，但是它提供了一个 <code>org-mark-subtree</code> 函数用来mark整个subtree(包括headline),因此你可以很容易写出这么一个函数来:
 </p>

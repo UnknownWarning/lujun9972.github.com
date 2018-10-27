@@ -33,15 +33,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -53,17 +55,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc18ee77">1. Tramp</a></li>
-<li><a href="#org0ec8e45">2. read-only-mode</a></li>
-<li><a href="#org0d4471c">3. keep-lines/flush-lines</a></li>
-<li><a href="#org51b099a">4. Highlights</a></li>
-<li><a href="#org173a1d0">5. auto-revert</a></li>
+<li><a href="#orgb441e27">1. Tramp</a></li>
+<li><a href="#orgbf53fc1">2. read-only-mode</a></li>
+<li><a href="#org1735537">3. keep-lines/flush-lines</a></li>
+<li><a href="#org4fd47be">4. Highlights</a></li>
+<li><a href="#orgb0b7813">5. auto-revert</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc18ee77" class="outline-2">
-<h2 id="orgc18ee77"><span class="section-number-2">1</span> Tramp</h2>
+<div id="outline-container-orgb441e27" class="outline-2">
+<h2 id="orgb441e27"><span class="section-number-2">1</span> Tramp</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Emacs提供了tramp可以让你直接访问远程主机上的日志文件. 
@@ -83,8 +85,8 @@ tramp标示文件的语法为: <code>/[protocol]:[user@]hostname[#port]:path-to-
 </div>
 </div>
 
-<div id="outline-container-org0ec8e45" class="outline-2">
-<h2 id="org0ec8e45"><span class="section-number-2">2</span> read-only-mode</h2>
+<div id="outline-container-orgbf53fc1" class="outline-2">
+<h2 id="orgbf53fc1"><span class="section-number-2">2</span> read-only-mode</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 若怕查看日志文件时不小心对它进行了修改,那么就可以进入只读模式,方法是执行 <code>M-x read-only-mode</code>.
@@ -100,8 +102,8 @@ tramp标示文件的语法为: <code>/[protocol]:[user@]hostname[#port]:path-to-
 </div>
 </div>
 
-<div id="outline-container-org0d4471c" class="outline-2">
-<h2 id="org0d4471c"><span class="section-number-2">3</span> keep-lines/flush-lines</h2>
+<div id="outline-container-org1735537" class="outline-2">
+<h2 id="org1735537"><span class="section-number-2">3</span> keep-lines/flush-lines</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 有时日志中的内容太多了,为了凸出重点就需要用 <code>keep-lines</code> 或 <code>flush-lines</code> 来删除掉不用关注的内容.
@@ -222,8 +224,8 @@ tramp标示文件的语法为: <code>/[protocol]:[user@]hostname[#port]:path-to-
 </div>
 </div>
 
-<div id="outline-container-org51b099a" class="outline-2">
-<h2 id="org51b099a"><span class="section-number-2">4</span> Highlights</h2>
+<div id="outline-container-org4fd47be" class="outline-2">
+<h2 id="org4fd47be"><span class="section-number-2">4</span> Highlights</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 我们还可以让Emacs依据某种条件高亮显示日志中的某些内容. 常用的高亮命令有以下几个
@@ -286,8 +288,8 @@ tramp标示文件的语法为: <code>/[protocol]:[user@]hostname[#port]:path-to-
 </p>
 </div>
 </div>
-<div id="outline-container-org173a1d0" class="outline-2">
-<h2 id="org173a1d0"><span class="section-number-2">5</span> auto-revert</h2>
+<div id="outline-container-orgb0b7813" class="outline-2">
+<h2 id="orgb0b7813"><span class="section-number-2">5</span> auto-revert</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 在服务不停止的情况下,会不断往日志文件中加入新的内容. 若希望Emacs自动反映出这些改动那么就可以使用 <code>M-x auto-revert-mode</code> 与 <code>M-x auto-revert-tail-mode</code> 了.

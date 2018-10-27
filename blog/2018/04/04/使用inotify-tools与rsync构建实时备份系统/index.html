@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,17 +56,17 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd5726ba">使用inotifywait监控文件变动</a></li>
-<li><a href="#orgd7faf6e">使用rsync同步变动</a></li>
-<li><a href="#org4b4e1e2">整合起来</a></li>
-<li><a href="#org485c318">改进</a></li>
+<li><a href="#org50e4e77">使用inotifywait监控文件变动</a></li>
+<li><a href="#org357a3a2">使用rsync同步变动</a></li>
+<li><a href="#org6764a75">整合起来</a></li>
+<li><a href="#org4931236">改进</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd5726ba" class="outline-2">
-<h2 id="orgd5726ba">使用inotifywait监控文件变动</h2>
-<div class="outline-text-2" id="text-orgd5726ba">
+<div id="outline-container-org50e4e77" class="outline-2">
+<h2 id="org50e4e77">使用inotifywait监控文件变动</h2>
+<div class="outline-text-2" id="text-org50e4e77">
 <p>
 inotifywait是 <code>inotify-tools</code> 包中提供的一个工具，它使用 <code>inotify</code> API 来监控文件/目录中的变动情况。
 </p>
@@ -128,9 +130,9 @@ Watches established.
 </div>
 </div>
 
-<div id="outline-container-orgd7faf6e" class="outline-2">
-<h2 id="orgd7faf6e">使用rsync同步变动</h2>
-<div class="outline-text-2" id="text-orgd7faf6e">
+<div id="outline-container-org357a3a2" class="outline-2">
+<h2 id="org357a3a2">使用rsync同步变动</h2>
+<div class="outline-text-2" id="text-org357a3a2">
 <p>
 rsync是一款快速增量备份工具。它的具有以下几个特点使得它很适合用作做备份的工具：
 </p>
@@ -164,9 +166,9 @@ rsync常用法为：
 </div>
 </div>
 
-<div id="outline-container-org4b4e1e2" class="outline-2">
-<h2 id="org4b4e1e2">整合起来</h2>
-<div class="outline-text-2" id="text-org4b4e1e2">
+<div id="outline-container-org6764a75" class="outline-2">
+<h2 id="org6764a75">整合起来</h2>
+<div class="outline-text-2" id="text-org6764a75">
 <p>
 接下来我们只需要用个 <code>while</code> 死循环把两个工具整合起来就行了，非常简单
 </p>
@@ -199,9 +201,9 @@ rsync常用法为：
 </p>
 </div>
 </div>
-<div id="outline-container-org485c318" class="outline-2">
-<h2 id="org485c318">改进</h2>
-<div class="outline-text-2" id="text-org485c318">
+<div id="outline-container-org4931236" class="outline-2">
+<h2 id="org4931236">改进</h2>
+<div class="outline-text-2" id="text-org4931236">
 <p>
 但是上面这种方法存在一个问题，那就是在 <code>rsync</code> 运行完到调用起 <code>inotifywait</code> 之前其实是会有一个微小的时间间隔的。
 在这个时间间隔内若有文件发生变动，则无法检测出来从而同步。

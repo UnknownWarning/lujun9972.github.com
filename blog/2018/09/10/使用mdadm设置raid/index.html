@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,30 +56,30 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1a3aabc">RAID简介</a></li>
-<li><a href="#org58aad00">mdadm: RAID设置工具</a></li>
-<li><a href="#orgb019d53">mdadm操作说明</a>
+<li><a href="#org2bfeb6e">RAID简介</a></li>
+<li><a href="#org837622d">mdadm: RAID设置工具</a></li>
+<li><a href="#org2a4bec2">mdadm操作说明</a>
 <ul>
-<li><a href="#orgc428e12">创建RAID阵列</a>
+<li><a href="#org4955df1">创建RAID阵列</a>
 <ul>
-<li><a href="#orgb072b73">自动启用RAID</a></li>
+<li><a href="#org025590d">自动启用RAID</a></li>
 </ul>
 </li>
-<li><a href="#orgbed0a5e">查看RAID阵列信息</a></li>
-<li><a href="#orgac47e1a">使用RAID阵列</a></li>
-<li><a href="#orga94d93a">关闭RAID</a></li>
-<li><a href="#org582b8fe">模拟RAID故障</a></li>
-<li><a href="#org306ed9e">移除RAID阵列中的磁盘</a></li>
-<li><a href="#orge8c7d20">更换新磁盘</a></li>
+<li><a href="#org465d6c8">查看RAID阵列信息</a></li>
+<li><a href="#orgc10a458">使用RAID阵列</a></li>
+<li><a href="#org76b5780">关闭RAID</a></li>
+<li><a href="#orgae2ec42">模拟RAID故障</a></li>
+<li><a href="#org1bbb01a">移除RAID阵列中的磁盘</a></li>
+<li><a href="#org3307fe1">更换新磁盘</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1a3aabc" class="outline-2">
-<h2 id="org1a3aabc">RAID简介</h2>
-<div class="outline-text-2" id="text-org1a3aabc">
+<div id="outline-container-org2bfeb6e" class="outline-2">
+<h2 id="org2bfeb6e">RAID简介</h2>
+<div class="outline-text-2" id="text-org2bfeb6e">
 <p>
 RAID是一种使用磁盘驱动器的方法，它将一组磁盘驱动器用某种逻辑方式联系起来，作为一个逻辑磁盘驱动器来使用的.
 </p>
@@ -130,9 +132,9 @@ RAID是一种使用磁盘驱动器的方法，它将一组磁盘驱动器用某�
 </div>
 </div>
 
-<div id="outline-container-org58aad00" class="outline-2">
-<h2 id="org58aad00">mdadm: RAID设置工具</h2>
-<div class="outline-text-2" id="text-org58aad00">
+<div id="outline-container-org837622d" class="outline-2">
+<h2 id="org837622d">mdadm: RAID设置工具</h2>
+<div class="outline-text-2" id="text-org837622d">
 <p>
 madam命令是Linux下用于构建、管理和监控RAID阵列(也被称为md设备)的工具.
 它的语法为
@@ -159,13 +161,13 @@ madam命令是Linux下用于构建、管理和监控RAID阵列(也被称为md设
 </div>
 </div>
 
-<div id="outline-container-orgb019d53" class="outline-2">
-<h2 id="orgb019d53">mdadm操作说明</h2>
-<div class="outline-text-2" id="text-orgb019d53">
+<div id="outline-container-org2a4bec2" class="outline-2">
+<h2 id="org2a4bec2">mdadm操作说明</h2>
+<div class="outline-text-2" id="text-org2a4bec2">
 </div>
-<div id="outline-container-orgc428e12" class="outline-3">
-<h3 id="orgc428e12">创建RAID阵列</h3>
-<div class="outline-text-3" id="text-orgc428e12">
+<div id="outline-container-org4955df1" class="outline-3">
+<h3 id="org4955df1">创建RAID阵列</h3>
+<div class="outline-text-3" id="text-org4955df1">
 <p>
 我们可以通过 <code>mdadm</code> 命令来创建软件RAID，比如下面命令可以创建一个RAID5
 </p>
@@ -197,9 +199,9 @@ madam命令是Linux下用于构建、管理和监控RAID阵列(也被称为md设
 </pre>
 </div>
 </div>
-<div id="outline-container-orgb072b73" class="outline-4">
-<h4 id="orgb072b73">自动启用RAID</h4>
-<div class="outline-text-4" id="text-orgb072b73">
+<div id="outline-container-org025590d" class="outline-4">
+<h4 id="org025590d">自动启用RAID</h4>
+<div class="outline-text-4" id="text-org025590d">
 <p>
 在创建好RAID以后，可以将RAID信息保存到 <code>/etc/mdadm.conf</code> 文件中，这样在下次操作系统重新启动时，系统会自动加载这个文件来启用RAID
 </p>
@@ -217,9 +219,9 @@ cat /etc/mdadm.conf
 </div>
 </div>
 
-<div id="outline-container-orgbed0a5e" class="outline-3">
-<h3 id="orgbed0a5e">查看RAID阵列信息</h3>
-<div class="outline-text-3" id="text-orgbed0a5e">
+<div id="outline-container-org465d6c8" class="outline-3">
+<h3 id="org465d6c8">查看RAID阵列信息</h3>
+<div class="outline-text-3" id="text-org465d6c8">
 <p>
 创建好RAID阵列后，我们可以通过 <code>mdadm --misc</code> 模式来查看刚创建好的RAID的详细信息
 </p>
@@ -281,9 +283,9 @@ unused devices: &lt;none&gt;
 </div>
 </div>
 
-<div id="outline-container-orgac47e1a" class="outline-3">
-<h3 id="orgac47e1a">使用RAID阵列</h3>
-<div class="outline-text-3" id="text-orgac47e1a">
+<div id="outline-container-orgc10a458" class="outline-3">
+<h3 id="orgc10a458">使用RAID阵列</h3>
+<div class="outline-text-3" id="text-orgc10a458">
 <p>
 在创建好RAID阵列后，我们就不能直接操作组成阵列的磁盘了，否则会损坏刚创建好的RAID阵列。
 我们通过 <code>/dev/md0</code> 这个设备来进行文件格式化和挂载
@@ -318,9 +320,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-orga94d93a" class="outline-3">
-<h3 id="orga94d93a">关闭RAID</h3>
-<div class="outline-text-3" id="text-orga94d93a">
+<div id="outline-container-org76b5780" class="outline-3">
+<h3 id="org76b5780">关闭RAID</h3>
+<div class="outline-text-3" id="text-org76b5780">
 <p>
 我们可以通过 <code>mdadm --misc</code> 模式来关闭RAID。这会释放所有资源
 </p>
@@ -354,9 +356,9 @@ mdadm --misc --zero-superblock /dev/sdd
 </div>
 </div>
 
-<div id="outline-container-org582b8fe" class="outline-3">
-<h3 id="org582b8fe">模拟RAID故障</h3>
-<div class="outline-text-3" id="text-org582b8fe">
+<div id="outline-container-orgae2ec42" class="outline-3">
+<h3 id="orgae2ec42">模拟RAID故障</h3>
+<div class="outline-text-3" id="text-orgae2ec42">
 <p>
 我们可以通过 <code>mdadm --manage /dev/md0 --fail</code> 来将某块磁盘设置成故障状态
 </p>
@@ -421,9 +423,9 @@ Consistency Policy : resync
 </div>
 </div>
 
-<div id="outline-container-org306ed9e" class="outline-3">
-<h3 id="org306ed9e">移除RAID阵列中的磁盘</h3>
-<div class="outline-text-3" id="text-org306ed9e">
+<div id="outline-container-org1bbb01a" class="outline-3">
+<h3 id="org1bbb01a">移除RAID阵列中的磁盘</h3>
+<div class="outline-text-3" id="text-org1bbb01a">
 <div class="org-src-container">
 <pre class="src src-shell">sudo mdadm --manage /dev/md0 --remove /dev/sdd
 </pre>
@@ -431,9 +433,9 @@ Consistency Policy : resync
 </div>
 </div>
 
-<div id="outline-container-orge8c7d20" class="outline-3">
-<h3 id="orge8c7d20">更换新磁盘</h3>
-<div class="outline-text-3" id="text-orge8c7d20">
+<div id="outline-container-org3307fe1" class="outline-3">
+<h3 id="org3307fe1">更换新磁盘</h3>
+<div class="outline-text-3" id="text-org3307fe1">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #4f97d7;">set</span> -x
 <span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span>

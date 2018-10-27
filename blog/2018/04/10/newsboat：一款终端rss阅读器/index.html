@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,10 +56,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga66269f">使用newsboat阅读RSS/Atom feed</a></li>
-<li><a href="#org0a1d75a">接入inoreader</a></li>
-<li><a href="#org4d6afb1">podcast</a></li>
-<li><a href="#org9604a24">配置</a></li>
+<li><a href="#org5b472c8">使用newsboat阅读RSS/Atom feed</a></li>
+<li><a href="#org219dd5a">接入inoreader</a></li>
+<li><a href="#org09d44ad">podcast</a></li>
+<li><a href="#orgebc7916">配置</a></li>
 </ul>
 </div>
 </div>
@@ -69,9 +71,9 @@ Newsboat是一款功能十分强大的基于终端的RSS/Atom feed阅读器。
 在archlinux上你可以通过 <code>sudo pacman -S newsboat</code> 来直接安装它。
 </p>
 
-<div id="outline-container-orga66269f" class="outline-2">
-<h2 id="orga66269f">使用newsboat阅读RSS/Atom feed</h2>
-<div class="outline-text-2" id="text-orga66269f">
+<div id="outline-container-org5b472c8" class="outline-2">
+<h2 id="org5b472c8">使用newsboat阅读RSS/Atom feed</h2>
+<div class="outline-text-2" id="text-org5b472c8">
 <p>
 使用newsboat阅读RSS/Atom feed十分的简单，只需要下面几步：
 </p>
@@ -165,9 +167,9 @@ http://username:password@hostname.domain.tld/feed.rss
 </div>
 </div>
 
-<div id="outline-container-org0a1d75a" class="outline-2">
-<h2 id="org0a1d75a">接入inoreader</h2>
-<div class="outline-text-2" id="text-org0a1d75a">
+<div id="outline-container-org219dd5a" class="outline-2">
+<h2 id="org219dd5a">接入inoreader</h2>
+<div class="outline-text-2" id="text-org219dd5a">
 <p>
 如果只是这样当然不算什么，最让我觉得意外的是它居然还能接入inoreader，方法是创建一个配置文件，比如config,然后往里面加入以下内容：
 </p>
@@ -195,9 +197,9 @@ inoreader-password <span style="color: #2d9574;">"your-password"</span>
 </div>
 </div>
 
-<div id="outline-container-org4d6afb1" class="outline-2">
-<h2 id="org4d6afb1">podcast</h2>
-<div class="outline-text-2" id="text-org4d6afb1">
+<div id="outline-container-org09d44ad" class="outline-2">
+<h2 id="org09d44ad">podcast</h2>
+<div class="outline-text-2" id="text-org09d44ad">
 <p>
 更让人觉得神奇的是，newsboat居然还支持podcast。
 </p>
@@ -271,9 +273,9 @@ podcast将内容存放在一个特殊的名为 <code>enclosure</code> 的标签�
 </div>
 </div>
 
-<div id="outline-container-org9604a24" class="outline-2">
-<h2 id="org9604a24">配置</h2>
-<div class="outline-text-2" id="text-org9604a24">
+<div id="outline-container-orgebc7916" class="outline-2">
+<h2 id="orgebc7916">配置</h2>
+<div class="outline-text-2" id="text-orgebc7916">
 <p>
 newsboat提供了相当多的配置项让你定制newsboat的行为，比较常用的配置有下面这些
 </p>

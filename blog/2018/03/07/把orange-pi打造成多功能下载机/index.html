@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,23 +56,23 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8516234">安装 aria2</a></li>
-<li><a href="#org9ec9bd5">配置aria2.conf</a></li>
-<li><a href="#org8514f00">安装aria2 web前端</a>
+<li><a href="#orge92ac62">安装 aria2</a></li>
+<li><a href="#org6a39a4c">配置aria2.conf</a></li>
+<li><a href="#org6c4b33b">安装aria2 web前端</a>
 <ul>
-<li><a href="#org6346a45">安装apache</a></li>
-<li><a href="#org1f773be">安装中文YAAW</a></li>
-<li><a href="#org33f75b5">使用YAAW</a></li>
+<li><a href="#orged0fb65">安装apache</a></li>
+<li><a href="#org1ae827b">安装中文YAAW</a></li>
+<li><a href="#org1fdf94b">使用YAAW</a></li>
 </ul>
 </li>
-<li><a href="#org78f61f8">配置aria2自启动</a></li>
+<li><a href="#orgd5ee461">配置aria2自启动</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8516234" class="outline-2">
-<h2 id="org8516234">安装 aria2</h2>
-<div class="outline-text-2" id="text-org8516234">
+<div id="outline-container-orge92ac62" class="outline-2">
+<h2 id="orge92ac62">安装 aria2</h2>
+<div class="outline-text-2" id="text-orge92ac62">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install aria2 -y
 </pre>
@@ -78,9 +80,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9ec9bd5" class="outline-2">
-<h2 id="org9ec9bd5">配置aria2.conf</h2>
-<div class="outline-text-2" id="text-org9ec9bd5">
+<div id="outline-container-org6a39a4c" class="outline-2">
+<h2 id="org6a39a4c">配置aria2.conf</h2>
+<div class="outline-text-2" id="text-org6a39a4c">
 <p>
 我们假设下载文件放在 <code>/media/Downloads</code> 目录中
 </p>
@@ -244,31 +246,31 @@ ln -s /etc/aria2.conf ~/.aria2/aria2.conf
 </div>
 </div>
 
-<div id="outline-container-org8514f00" class="outline-2">
-<h2 id="org8514f00">安装aria2 web前端</h2>
-<div class="outline-text-2" id="text-org8514f00">
+<div id="outline-container-org6c4b33b" class="outline-2">
+<h2 id="org6c4b33b">安装aria2 web前端</h2>
+<div class="outline-text-2" id="text-org6c4b33b">
 </div>
-<div id="outline-container-org6346a45" class="outline-3">
-<h3 id="org6346a45">安装apache</h3>
-<div class="outline-text-3" id="text-org6346a45">
+<div id="outline-container-orged0fb65" class="outline-3">
+<h3 id="orged0fb65">安装apache</h3>
+<div class="outline-text-3" id="text-orged0fb65">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install apache2 -y
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org1f773be" class="outline-3">
-<h3 id="org1f773be">安装中文YAAW</h3>
-<div class="outline-text-3" id="text-org1f773be">
+<div id="outline-container-org1ae827b" class="outline-3">
+<h3 id="org1ae827b">安装中文YAAW</h3>
+<div class="outline-text-3" id="text-org1ae827b">
 <div class="org-src-container">
 <pre class="src src-shell">git clone https://github.com/aa65535/yaaw-zh-hans /var/www/html/yaaw
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org33f75b5" class="outline-3">
-<h3 id="org33f75b5">使用YAAW</h3>
-<div class="outline-text-3" id="text-org33f75b5">
+<div id="outline-container-org1fdf94b" class="outline-3">
+<h3 id="org1fdf94b">使用YAAW</h3>
+<div class="outline-text-3" id="text-org1fdf94b">
 <p>
 访问 <code>http://orangepipc2/yaaw</code>, 然后点击右边刷新 <b>旁边</b> 的配置按钮，在 <code>JSON-RPC Path</code> 中填入 <a href="http://orangepipc2:6800/jsonrpc">http://orangepipc2:6800/jsonrpc</a>. 
 </p>
@@ -279,9 +281,9 @@ ln -s /etc/aria2.conf ~/.aria2/aria2.conf
 </div>
 </div>
 </div>
-<div id="outline-container-org78f61f8" class="outline-2">
-<h2 id="org78f61f8">配置aria2自启动</h2>
-<div class="outline-text-2" id="text-org78f61f8">
+<div id="outline-container-orgd5ee461" class="outline-2">
+<h2 id="orgd5ee461">配置aria2自启动</h2>
+<div class="outline-text-2" id="text-orgd5ee461">
 <p>
 新建文件 <code>/etc/systemd/system/aria2.service</code> ，然后输入以下内容
 </p>

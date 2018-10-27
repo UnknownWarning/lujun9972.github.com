@@ -35,15 +35,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -55,9 +57,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd0e812c">大量的API看不到详细说明</a></li>
-<li><a href="#org74a0d53">单词拼写有问题</a></li>
-<li><a href="#orgb0fe173">API的接口说明与实际不符</a></li>
+<li><a href="#org9c5faf6">大量的API看不到详细说明</a></li>
+<li><a href="#org702a073">单词拼写有问题</a></li>
+<li><a href="#org3a198bf">API的接口说明与实际不符</a></li>
 </ul>
 </div>
 </div>
@@ -69,9 +71,9 @@
 目前发现的问题有以下几个：
 </p>
 
-<div id="outline-container-orgd0e812c" class="outline-2">
-<h2 id="orgd0e812c">大量的API看不到详细说明</h2>
-<div class="outline-text-2" id="text-orgd0e812c">
+<div id="outline-container-org9c5faf6" class="outline-2">
+<h2 id="org9c5faf6">大量的API看不到详细说明</h2>
+<div class="outline-text-2" id="text-org9c5faf6">
 <p>
 点进去就直接显示“系统维护中......”
 </p>
@@ -89,18 +91,18 @@
 </div>
 </div>
 
-<div id="outline-container-org74a0d53" class="outline-2">
-<h2 id="org74a0d53">单词拼写有问题</h2>
-<div class="outline-text-2" id="text-org74a0d53">
+<div id="outline-container-org702a073" class="outline-2">
+<h2 id="org702a073">单词拼写有问题</h2>
+<div class="outline-text-2" id="text-org702a073">
 <p>
 我很神奇的发现， <code>bbs/gettopics</code> 这个API，传递参数时参数名用"forum"居然提示是 <code>froum是不可缺少的参数</code>. 这很明显是实现API时出现了拼写错误
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgb0fe173" class="outline-2">
-<h2 id="orgb0fe173">API的接口说明与实际不符</h2>
-<div class="outline-text-2" id="text-orgb0fe173">
+<div id="outline-container-org3a198bf" class="outline-2">
+<h2 id="org3a198bf">API的接口说明与实际不符</h2>
+<div class="outline-text-2" id="text-org3a198bf">
 <p>
 在 <code>blog/getarticle</code> 这个API的返回结果中，我居然看到了有 <code>markdowncontent</code> 和 <code>markdowndirectory</code> 这样的字段，然而接口说明中找不到相关说明
 </p>

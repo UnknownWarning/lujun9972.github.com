@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,11 +56,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga2a5189">marks函数</a></li>
-<li><a href="#org83b1e13">jump函数</a></li>
-<li><a href="#orge040036">mark函数</a></li>
-<li><a href="#org477a7c0">unmark函数</a></li>
-<li><a href="#orgc408298">补全</a></li>
+<li><a href="#org1253139">marks函数</a></li>
+<li><a href="#org0434358">jump函数</a></li>
+<li><a href="#org7a9f1a7">mark函数</a></li>
+<li><a href="#org1171ead">unmark函数</a></li>
+<li><a href="#org22ac418">补全</a></li>
 </ul>
 </div>
 </div>
@@ -78,9 +80,9 @@
 现在我们就来尝试实现一下吧.
 </p>
 
-<div id="outline-container-orga2a5189" class="outline-2">
-<h2 id="orga2a5189">marks函数</h2>
-<div class="outline-text-2" id="text-orga2a5189">
+<div id="outline-container-org1253139" class="outline-2">
+<h2 id="org1253139">marks函数</h2>
+<div class="outline-text-2" id="text-org1253139">
 <p>
 该函数用于列出所有的书签及其指向的目录:
 </p>
@@ -131,9 +133,9 @@
 </div>
 </div>
 
-<div id="outline-container-org83b1e13" class="outline-2">
-<h2 id="org83b1e13">jump函数</h2>
-<div class="outline-text-2" id="text-org83b1e13">
+<div id="outline-container-org0434358" class="outline-2">
+<h2 id="org0434358">jump函数</h2>
+<div class="outline-text-2" id="text-org0434358">
 <p>
 jump函数接一个书签名作为参数,跳转到其指向的目录中:
 </p>
@@ -161,9 +163,9 @@ jump函数接一个书签名作为参数,跳转到其指向的目录中:
 </div>
 </div>
 
-<div id="outline-container-orge040036" class="outline-2">
-<h2 id="orge040036">mark函数</h2>
-<div class="outline-text-2" id="text-orge040036">
+<div id="outline-container-org7a9f1a7" class="outline-2">
+<h2 id="org7a9f1a7">mark函数</h2>
+<div class="outline-text-2" id="text-org7a9f1a7">
 <p>
 mark函数接受一个书签名,并将当前目录加为书签:
 </p>
@@ -196,9 +198,9 @@ bookmark库本身提供了一个 <code>bookmark-set</code> 函数用于添加书
 </div>
 </div>
 
-<div id="outline-container-org477a7c0" class="outline-2">
-<h2 id="org477a7c0">unmark函数</h2>
-<div class="outline-text-2" id="text-org477a7c0">
+<div id="outline-container-org1171ead" class="outline-2">
+<h2 id="org1171ead">unmark函数</h2>
+<div class="outline-text-2" id="text-org1171ead">
 <p>
 unmark函数接受一个书签名做参数,然后删掉指定的书签:
 </p>
@@ -213,9 +215,9 @@ unmark函数接受一个书签名做参数,然后删掉指定的书签:
 </div>
 </div>
 
-<div id="outline-container-orgc408298" class="outline-2">
-<h2 id="orgc408298">补全</h2>
-<div class="outline-text-2" id="text-orgc408298">
+<div id="outline-container-org22ac418" class="outline-2">
+<h2 id="org22ac418">补全</h2>
+<div class="outline-text-2" id="text-org22ac418">
 <p>
 最后是为jump函数添加补全功能. eshell使用pcomplete这个库来进行补全,至于怎么来写补全函数以后找时间再写另一片文章吧.
 </p>

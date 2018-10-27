@@ -33,15 +33,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -53,28 +55,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3f0f6df">1. 加载必要的库</a></li>
-<li><a href="#orga099098">2. 配置</a>
+<li><a href="#orgf4e665c">1. 加载必要的库</a></li>
+<li><a href="#orge8e6e4a">2. 配置</a>
 <ul>
-<li><a href="#orga7548b3">2.1. 配置blog信息</a></li>
-<li><a href="#org407a1b0">2.2. 配置post templates</a></li>
+<li><a href="#orgf47aab2">2.1. 配置blog信息</a></li>
+<li><a href="#org584ce7d">2.2. 配置post templates</a></li>
 </ul>
 </li>
-<li><a href="#orgfd4061d">3. 使用方法</a></li>
-<li><a href="#org696b4f9">4. 关于org2blog mode</a></li>
-<li><a href="#orgcc8da52">5. FAQ</a>
+<li><a href="#orgdefedeb">3. 使用方法</a></li>
+<li><a href="#org9ac97e6">4. 关于org2blog mode</a></li>
+<li><a href="#org1fbfcec">5. FAQ</a>
 <ul>
-<li><a href="#orgf0b48f4">5.1. How do I split a post into an introductory paragraph and a full view.</a></li>
-<li><a href="#org750c5ba">5.2. 如何从.netrc中抽取blog的password</a></li>
-<li><a href="#org5b83bd8">5.3. 如何设置网络访问的代理</a></li>
+<li><a href="#org8acb4a9">5.1. How do I split a post into an introductory paragraph and a full view.</a></li>
+<li><a href="#org736b243">5.2. 如何从.netrc中抽取blog的password</a></li>
+<li><a href="#org5d1f9cd">5.3. 如何设置网络访问的代理</a></li>
 </ul>
 </li>
-<li><a href="#org4938d0b">6. provide feature</a></li>
+<li><a href="#orgca3bf8b">6. provide feature</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3f0f6df" class="outline-2">
-<h2 id="org3f0f6df"><span class="section-number-2">1</span> 加载必要的库</h2>
+<div id="outline-container-orgf4e665c" class="outline-2">
+<h2 id="orgf4e665c"><span class="section-number-2">1</span> 加载必要的库</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>require-and-install 'org2blog<span style="color: #4f97d7;">)</span>
@@ -83,12 +85,12 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orga099098" class="outline-2">
-<h2 id="orga099098"><span class="section-number-2">2</span> 配置</h2>
+<div id="outline-container-orge8e6e4a" class="outline-2">
+<h2 id="orge8e6e4a"><span class="section-number-2">2</span> 配置</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orga7548b3" class="outline-3">
-<h3 id="orga7548b3"><span class="section-number-3">2.1</span> 配置blog信息</h3>
+<div id="outline-container-orgf47aab2" class="outline-3">
+<h3 id="orgf47aab2"><span class="section-number-3">2.1</span> 配置blog信息</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 `org2blog/wp-blog-alist'定义了多个blog的信息.其中每个元素的car为一个表示blog的名称的字符串,每个元素的cdr为一个plist,为每个blog提供属性说明.
@@ -135,8 +137,8 @@
 </dl>
 </div>
 </div>
-<div id="outline-container-org407a1b0" class="outline-3">
-<h3 id="org407a1b0"><span class="section-number-3">2.2</span> 配置post templates</h3>
+<div id="outline-container-org584ce7d" class="outline-3">
+<h3 id="org584ce7d"><span class="section-number-3">2.2</span> 配置post templates</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 通过修改变量`org2blog/wp-buffer-template'和`org2blog/wp-buffer-format-function'的值可以自动以新建文章的内容模板.
@@ -173,8 +175,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgfd4061d" class="outline-2">
-<h2 id="orgfd4061d"><span class="section-number-2">3</span> 使用方法</h2>
+<div id="outline-container-orgdefedeb" class="outline-2">
+<h2 id="orgdefedeb"><span class="section-number-2">3</span> 使用方法</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>M-x org2blog/wp-login 会提示你要登陆哪个 blog</li>
@@ -250,8 +252,8 @@ C-u post-id M-x org2blog/wp-delete-entry 或 C-u post-id M-x org2blog/wp-delete-
 </pre>
 </div>
 </div>
-<div id="outline-container-org696b4f9" class="outline-2">
-<h2 id="org696b4f9"><span class="section-number-2">4</span> 关于org2blog mode</h2>
+<div id="outline-container-org9ac97e6" class="outline-2">
+<h2 id="org9ac97e6"><span class="section-number-2">4</span> 关于org2blog mode</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 使用`M-x org2blog/wp-mode'可以开启org2blog mode. 在该mode下有以下默认的快捷键:
@@ -264,12 +266,12 @@ C-u post-id M-x org2blog/wp-delete-entry 或 C-u post-id M-x org2blog/wp-delete-
 </div>
 </div>
 
-<div id="outline-container-orgcc8da52" class="outline-2">
-<h2 id="orgcc8da52"><span class="section-number-2">5</span> FAQ</h2>
+<div id="outline-container-org1fbfcec" class="outline-2">
+<h2 id="org1fbfcec"><span class="section-number-2">5</span> FAQ</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgf0b48f4" class="outline-3">
-<h3 id="orgf0b48f4"><span class="section-number-3">5.1</span> How do I split a post into an introductory paragraph and a full view.</h3>
+<div id="outline-container-org8acb4a9" class="outline-3">
+<h3 id="org8acb4a9"><span class="section-number-3">5.1</span> How do I split a post into an introductory paragraph and a full view.</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Just put in
@@ -283,8 +285,8 @@ at the location where you wish to split the post.
 </p>
 </div>
 </div>
-<div id="outline-container-org750c5ba" class="outline-3">
-<h3 id="org750c5ba"><span class="section-number-3">5.2</span> 如何从.netrc中抽取blog的password</h3>
+<div id="outline-container-org736b243" class="outline-3">
+<h3 id="org736b243"><span class="section-number-3">5.2</span> 如何从.netrc中抽取blog的password</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 首先,`.netrc'的格式需要为:
@@ -312,8 +314,8 @@ machine myblog login myusername password myrealpassword
 </div>
 </div>
 </div>
-<div id="outline-container-org5b83bd8" class="outline-3">
-<h3 id="org5b83bd8"><span class="section-number-3">5.3</span> 如何设置网络访问的代理</h3>
+<div id="outline-container-org5d1f9cd" class="outline-3">
+<h3 id="org5d1f9cd"><span class="section-number-3">5.3</span> 如何设置网络访问的代理</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 通过设置url-proxy-services来设置代理. 例如
@@ -325,8 +327,8 @@ machine myblog login myusername password myrealpassword
 </div>
 </div>
 </div>
-<div id="outline-container-org4938d0b" class="outline-2">
-<h2 id="org4938d0b"><span class="section-number-2">6</span> provide feature</h2>
+<div id="outline-container-orgca3bf8b" class="outline-2">
+<h2 id="orgca3bf8b"><span class="section-number-2">6</span> provide feature</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">provide</span> '<span style="color: #a45bad;">init-life-internet-org2blog</span><span style="color: #4f97d7;">)</span>

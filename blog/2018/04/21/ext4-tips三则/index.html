@@ -34,15 +34,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -54,16 +56,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge885acc">瞬间创建空文件</a></li>
-<li><a href="#orgd8fcc63">缩短文件系统格式化时间</a></li>
-<li><a href="#org03e5a05">显示纳秒级的文件时间戳</a></li>
+<li><a href="#orgea3c838">瞬间创建空文件</a></li>
+<li><a href="#orge8ddf96">缩短文件系统格式化时间</a></li>
+<li><a href="#org6f8ddfa">显示纳秒级的文件时间戳</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge885acc" class="outline-2">
-<h2 id="orge885acc">瞬间创建空文件</h2>
-<div class="outline-text-2" id="text-orge885acc">
+<div id="outline-container-orgea3c838" class="outline-2">
+<h2 id="orgea3c838">瞬间创建空文件</h2>
+<div class="outline-text-2" id="text-orgea3c838">
 <p>
 在ext4中，是以范围为单位将磁盘空间分割成多个连续的去块的。利用ext4的范围预分配能力，可以在几乎一瞬间完成空文件的创建。
 </p>
@@ -82,9 +84,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd8fcc63" class="outline-2">
-<h2 id="orgd8fcc63">缩短文件系统格式化时间</h2>
-<div class="outline-text-2" id="text-orgd8fcc63">
+<div id="outline-container-orge8ddf96" class="outline-2">
+<h2 id="orge8ddf96">缩短文件系统格式化时间</h2>
+<div class="outline-text-2" id="text-orge8ddf96">
 <p>
 在格式化大容量文件系统时，初始化inode表会相当费时间。
 </p>
@@ -99,9 +101,9 @@
 </div>
 </div>
 
-<div id="outline-container-org03e5a05" class="outline-2">
-<h2 id="org03e5a05">显示纳秒级的文件时间戳</h2>
-<div class="outline-text-2" id="text-org03e5a05">
+<div id="outline-container-org6f8ddfa" class="outline-2">
+<h2 id="org6f8ddfa">显示纳秒级的文件时间戳</h2>
+<div class="outline-text-2" id="text-org6f8ddfa">
 <p>
 ext4中，文件的时间戳改为以纳秒为单位了，为ls命令使用 <code>--full-time</code> 能够显示以纳秒为单位的时间戳。
 </p>

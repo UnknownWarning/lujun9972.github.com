@@ -33,15 +33,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -53,63 +55,63 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc02d402">1. 套接字描述符</a>
+<li><a href="#org3d96ecc">1. 套接字描述符</a>
 <ul>
-<li><a href="#org20161ac">1.1. 创建套接字</a></li>
-<li><a href="#orga0e838c">1.2. 使用文件描述符函数操作套接字描述符</a></li>
-<li><a href="#org22f26c3">1.3. shutdown函数</a></li>
+<li><a href="#orgfaf1063">1.1. 创建套接字</a></li>
+<li><a href="#orgb53f231">1.2. 使用文件描述符函数操作套接字描述符</a></li>
+<li><a href="#org9589898">1.3. shutdown函数</a></li>
 </ul>
 </li>
-<li><a href="#org56da63a">2. 寻址</a>
+<li><a href="#org1678e8b">2. 寻址</a>
 <ul>
-<li><a href="#org3ddff53">2.1. 处理器字节序与网络字节序的转换函数</a></li>
-<li><a href="#org106d216">2.2. 地址格式</a></li>
-<li><a href="#orga0718cf">2.3. 地址格式转换</a></li>
-<li><a href="#orgac38111">2.4. 地址映射</a>
+<li><a href="#org02e8b72">2.1. 处理器字节序与网络字节序的转换函数</a></li>
+<li><a href="#org3d96403">2.2. 地址格式</a></li>
+<li><a href="#org1843ae5">2.3. 地址格式转换</a></li>
+<li><a href="#org45e92a6">2.4. 地址映射</a>
 <ul>
-<li><a href="#orga529e27">2.4.1. getaddrinfo</a></li>
-<li><a href="#org9425010">2.4.2. gai_strerror</a></li>
-<li><a href="#orgb52ec41">2.4.3. getnameinfo</a></li>
+<li><a href="#orgf353479">2.4.1. getaddrinfo</a></li>
+<li><a href="#orgce6bb84">2.4.2. gai_strerror</a></li>
+<li><a href="#orgb220ed7">2.4.3. getnameinfo</a></li>
 </ul>
 </li>
-<li><a href="#org0a121ff">2.5. 将套接字与地址关联</a>
+<li><a href="#orgca73bbc">2.5. 将套接字与地址关联</a>
 <ul>
-<li><a href="#orgd412584">2.5.1. 用bind函数来关联地址和套接字</a></li>
-<li><a href="#orgae11e0b">2.5.2. getsockname函数来发现绑定到套接字上的地址</a></li>
-<li><a href="#orgc57859f">2.5.3. getperrname函数查找对方的地址</a></li>
+<li><a href="#org11dd946">2.5.1. 用bind函数来关联地址和套接字</a></li>
+<li><a href="#org6fa2d55">2.5.2. getsockname函数来发现绑定到套接字上的地址</a></li>
+<li><a href="#org0b8a754">2.5.3. getperrname函数查找对方的地址</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge2ed14e">3. 建立连接</a>
+<li><a href="#org44ab46b">3. 建立连接</a>
 <ul>
-<li><a href="#org0f5362a">3.1. 客户端建立连接</a></li>
-<li><a href="#orga0a5d5a">3.2. 服务端建立连接</a></li>
+<li><a href="#orgda112d3">3.1. 客户端建立连接</a></li>
+<li><a href="#orge5ffb19">3.2. 服务端建立连接</a></li>
 </ul>
 </li>
-<li><a href="#org33f03f2">4. 数据传输</a>
+<li><a href="#orgb71b148">4. 数据传输</a>
 <ul>
-<li><a href="#org689a606">4.1. send和recv</a></li>
-<li><a href="#orgb0587b8">4.2. sendto和recvfrom</a></li>
-<li><a href="#org91293ac">4.3. sendmsg和recvmsg</a></li>
+<li><a href="#org0db7bdd">4.1. send和recv</a></li>
+<li><a href="#orgc15d148">4.2. sendto和recvfrom</a></li>
+<li><a href="#org40b129a">4.3. sendmsg和recvmsg</a></li>
 </ul>
 </li>
-<li><a href="#orge9b6a6e">5. 套接字选项</a>
+<li><a href="#orgeb9553c">5. 套接字选项</a>
 <ul>
-<li><a href="#org51bd2dc">5.1. setsockopt函数设置套接字选项</a></li>
+<li><a href="#org158b14d">5.1. setsockopt函数设置套接字选项</a></li>
 </ul>
 </li>
-<li><a href="#orgbcf530b">6. 带外数据</a></li>
+<li><a href="#orgda1d2b1">6. 带外数据</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc02d402" class="outline-2">
-<h2 id="orgc02d402"><span class="section-number-2">1</span> 套接字描述符</h2>
+<div id="outline-container-org3d96ecc" class="outline-2">
+<h2 id="org3d96ecc"><span class="section-number-2">1</span> 套接字描述符</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org20161ac" class="outline-3">
-<h3 id="org20161ac"><span class="section-number-3">1.1</span> 创建套接字</h3>
+<div id="outline-container-orgfaf1063" class="outline-3">
+<h3 id="orgfaf1063"><span class="section-number-3">1.1</span> 创建套接字</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -225,8 +227,8 @@ AF_INET域+SOCK_DGRAM套接字类型的默认协议是UDP
 </ul>
 </div>
 </div>
-<div id="outline-container-orga0e838c" class="outline-3">
-<h3 id="orga0e838c"><span class="section-number-3">1.2</span> 使用文件描述符函数操作套接字描述符</h3>
+<div id="outline-container-orgb53f231" class="outline-3">
+<h3 id="orgb53f231"><span class="section-number-3">1.2</span> 使用文件描述符函数操作套接字描述符</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 虽然套接字描述符本质上是一个文件描述符,但不是所有参数为文件描述符的函数都可以接受套接字描述符.
@@ -339,8 +341,8 @@ AF_INET域+SOCK_DGRAM套接字类型的默认协议是UDP
 </table>
 </div>
 </div>
-<div id="outline-container-org22f26c3" class="outline-3">
-<h3 id="org22f26c3"><span class="section-number-3">1.3</span> shutdown函数</h3>
+<div id="outline-container-org9589898" class="outline-3">
+<h3 id="org9589898"><span class="section-number-3">1.3</span> shutdown函数</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 可以使用函数shutdown来禁止套接字上的输入/输出
@@ -370,16 +372,16 @@ shutdown与close的区别在于:
 </div>
 </div>
 </div>
-<div id="outline-container-org56da63a" class="outline-2">
-<h2 id="org56da63a"><span class="section-number-2">2</span> 寻址</h2>
+<div id="outline-container-org1678e8b" class="outline-2">
+<h2 id="org1678e8b"><span class="section-number-2">2</span> 寻址</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 TCP/IP协议栈规定了采用大端字节序,而处理器字节序分大端和小端两种,因此应用程序需要在处理器的字节序与网络字节序之间进行转换.
 </p>
 </div>
 
-<div id="outline-container-org3ddff53" class="outline-3">
-<h3 id="org3ddff53"><span class="section-number-3">2.1</span> 处理器字节序与网络字节序的转换函数</h3>
+<div id="outline-container-org02e8b72" class="outline-3">
+<h3 id="org02e8b72"><span class="section-number-3">2.1</span> 处理器字节序与网络字节序的转换函数</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">arpa/inet.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -401,8 +403,8 @@ TCP/IP协议栈规定了采用大端字节序,而处理器字节序分大端和�
 </div>
 </div>
 
-<div id="outline-container-org106d216" class="outline-3">
-<h3 id="org106d216"><span class="section-number-3">2.2</span> 地址格式</h3>
+<div id="outline-container-org3d96403" class="outline-3">
+<h3 id="org3d96403"><span class="section-number-3">2.2</span> 地址格式</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 一个地址用于标识一个特定通讯域的套接字端点,因此地址格式与特定的通讯域相关.
@@ -458,8 +460,8 @@ IPv6则用结构sockaddr_in6表示:
 </div>
 </div>
 
-<div id="outline-container-orga0718cf" class="outline-3">
-<h3 id="orga0718cf"><span class="section-number-3">2.3</span> 地址格式转换</h3>
+<div id="outline-container-org1843ae5" class="outline-3">
+<h3 id="org1843ae5"><span class="section-number-3">2.3</span> 地址格式转换</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 通过inet_ntop能把IPv4和IPv6的地址转换为人能理解的字符串格式
@@ -489,15 +491,15 @@ IPv6则用结构sockaddr_in6表示:
 </div>
 </div>
 
-<div id="outline-container-orgac38111" class="outline-3">
-<h3 id="orgac38111"><span class="section-number-3">2.4</span> 地址映射</h3>
+<div id="outline-container-org45e92a6" class="outline-3">
+<h3 id="org45e92a6"><span class="section-number-3">2.4</span> 地址映射</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 POSIX.1定义了若干新函数,用于将一个主机名和服务器名映射到一个地址或者反之.
 </p>
 </div>
-<div id="outline-container-orga529e27" class="outline-4">
-<h4 id="orga529e27"><span class="section-number-4">2.4.1</span> getaddrinfo</h4>
+<div id="outline-container-orgf353479" class="outline-4">
+<h4 id="orgf353479"><span class="section-number-4">2.4.1</span> getaddrinfo</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <p>
 getaddrinfo函数允许将一个主机名和服务名映射到一个地址
@@ -589,8 +591,8 @@ ai_flags字段中的标志意义为:
 </ul>
 </div>
 </div>
-<div id="outline-container-org9425010" class="outline-4">
-<h4 id="org9425010"><span class="section-number-4">2.4.2</span> gai_strerror</h4>
+<div id="outline-container-orgce6bb84" class="outline-4">
+<h4 id="orgce6bb84"><span class="section-number-4">2.4.2</span> gai_strerror</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <p>
 <b>如果getaddrinfo失败,不能使用perror或strerror来生成错误信息,而需要用gai_strerror将返回值转换成错误信息</b>
@@ -601,8 +603,8 @@ ai_flags字段中的标志意义为:
 </div>
 </div>
 </div>
-<div id="outline-container-orgb52ec41" class="outline-4">
-<h4 id="orgb52ec41"><span class="section-number-4">2.4.3</span> getnameinfo</h4>
+<div id="outline-container-orgb220ed7" class="outline-4">
+<h4 id="orgb220ed7"><span class="section-number-4">2.4.3</span> getnameinfo</h4>
 <div class="outline-text-4" id="text-2-4-3">
 <p>
 getnameinfo函数将一个地址转换成一个主机名和服务名
@@ -671,12 +673,12 @@ flags参数提供了一些控制翻译的方式
 </div>
 </div>
 </div>
-<div id="outline-container-org0a121ff" class="outline-3">
-<h3 id="org0a121ff"><span class="section-number-3">2.5</span> 将套接字与地址关联</h3>
+<div id="outline-container-orgca73bbc" class="outline-3">
+<h3 id="orgca73bbc"><span class="section-number-3">2.5</span> 将套接字与地址关联</h3>
 <div class="outline-text-3" id="text-2-5">
 </div>
-<div id="outline-container-orgd412584" class="outline-4">
-<h4 id="orgd412584"><span class="section-number-4">2.5.1</span> 用bind函数来关联地址和套接字</h4>
+<div id="outline-container-org11dd946" class="outline-4">
+<h4 id="org11dd946"><span class="section-number-4">2.5.1</span> 用bind函数来关联地址和套接字</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -692,8 +694,8 @@ flags参数提供了一些控制翻译的方式
 </ul>
 </div>
 </div>
-<div id="outline-container-orgae11e0b" class="outline-4">
-<h4 id="orgae11e0b"><span class="section-number-4">2.5.2</span> getsockname函数来发现绑定到套接字上的地址</h4>
+<div id="outline-container-org6fa2d55" class="outline-4">
+<h4 id="org6fa2d55"><span class="section-number-4">2.5.2</span> getsockname函数来发现绑定到套接字上的地址</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -706,8 +708,8 @@ flags参数提供了一些控制翻译的方式
 </p>
 </div>
 </div>
-<div id="outline-container-orgc57859f" class="outline-4">
-<h4 id="orgc57859f"><span class="section-number-4">2.5.3</span> getperrname函数查找对方的地址</h4>
+<div id="outline-container-org0b8a754" class="outline-4">
+<h4 id="org0b8a754"><span class="section-number-4">2.5.3</span> getperrname函数查找对方的地址</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -722,12 +724,12 @@ flags参数提供了一些控制翻译的方式
 </div>
 </div>
 </div>
-<div id="outline-container-orge2ed14e" class="outline-2">
-<h2 id="orge2ed14e"><span class="section-number-2">3</span> 建立连接</h2>
+<div id="outline-container-org44ab46b" class="outline-2">
+<h2 id="org44ab46b"><span class="section-number-2">3</span> 建立连接</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org0f5362a" class="outline-3">
-<h3 id="org0f5362a"><span class="section-number-3">3.1</span> 客户端建立连接</h3>
+<div id="outline-container-orgda112d3" class="outline-3">
+<h3 id="orgda112d3"><span class="section-number-3">3.1</span> 客户端建立连接</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 在客户端上使用connect函数来建立与服务端之间的连接
@@ -746,8 +748,8 @@ flags参数提供了一些控制翻译的方式
 </div>
 </div>
 
-<div id="outline-container-orga0a5d5a" class="outline-3">
-<h3 id="orga0a5d5a"><span class="section-number-3">3.2</span> 服务端建立连接</h3>
+<div id="outline-container-orge5ffb19" class="outline-3">
+<h3 id="orge5ffb19"><span class="section-number-3">3.2</span> 服务端建立连接</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 在服务端调用listen函数监听端口
@@ -787,16 +789,16 @@ flags参数提供了一些控制翻译的方式
 </div>
 </div>
 
-<div id="outline-container-org33f03f2" class="outline-2">
-<h2 id="org33f03f2"><span class="section-number-2">4</span> 数据传输</h2>
+<div id="outline-container-orgb71b148" class="outline-2">
+<h2 id="orgb71b148"><span class="section-number-2">4</span> 数据传输</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 除了read和write外,还有三对为数据传递而设计的套接字函数
 </p>
 </div>
 
-<div id="outline-container-org689a606" class="outline-3">
-<h3 id="org689a606"><span class="section-number-3">4.1</span> send和recv</h3>
+<div id="outline-container-org0db7bdd" class="outline-3">
+<h3 id="org0db7bdd"><span class="section-number-3">4.1</span> send和recv</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 send和write很类似,但可以指定标志来改变传输数据的方式
@@ -946,8 +948,8 @@ recv函数与read类似,但recv可以指定标志来控制如何接受数据.
 </div>
 </div>
 
-<div id="outline-container-orgb0587b8" class="outline-3">
-<h3 id="orgb0587b8"><span class="section-number-3">4.2</span> sendto和recvfrom</h3>
+<div id="outline-container-orgc15d148" class="outline-3">
+<h3 id="orgc15d148"><span class="section-number-3">4.2</span> sendto和recvfrom</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 sendto和send很类似,区别在于sendto可以在无连接的套接字上指定一个目标地址.
@@ -980,8 +982,8 @@ recvfrom也可以在无连接的套接字上指定一个目标地址
 </div>
 </div>
 
-<div id="outline-container-org91293ac" class="outline-3">
-<h3 id="org91293ac"><span class="section-number-3">4.3</span> sendmsg和recvmsg</h3>
+<div id="outline-container-org40b129a" class="outline-3">
+<h3 id="org40b129a"><span class="section-number-3">4.3</span> sendmsg和recvmsg</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 调用msghdr结构的sendmsg可以指定多重缓冲区传输数据,这和writev函数很类似
@@ -1066,16 +1068,16 @@ recvmsg类似readv,可以将接收到的数据送入多个缓冲区.
 </div>
 </div>
 
-<div id="outline-container-orge9b6a6e" class="outline-2">
-<h2 id="orge9b6a6e"><span class="section-number-2">5</span> 套接字选项</h2>
+<div id="outline-container-orgeb9553c" class="outline-2">
+<h2 id="orgeb9553c"><span class="section-number-2">5</span> 套接字选项</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 套接字选项可以控制套接字行为,
 </p>
 </div>
 
-<div id="outline-container-org51bd2dc" class="outline-3">
-<h3 id="org51bd2dc"><span class="section-number-3">5.1</span> setsockopt函数设置套接字选项</h3>
+<div id="outline-container-org158b14d" class="outline-3">
+<h3 id="org158b14d"><span class="section-number-3">5.1</span> setsockopt函数设置套接字选项</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">sys/socket.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -1257,8 +1259,8 @@ recvmsg类似readv,可以将接收到的数据送入多个缓冲区.
 </div>
 </div>
 
-<div id="outline-container-orgbcf530b" class="outline-2">
-<h2 id="orgbcf530b"><span class="section-number-2">6</span> 带外数据</h2>
+<div id="outline-container-orgda1d2b1" class="outline-2">
+<h2 id="orgda1d2b1"><span class="section-number-2">6</span> 带外数据</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 带外数据是一些通讯协议所支持的可选功能,它具有比普通数据更高优先级的数据传输. 因此带外数据也被成为紧急数据.

@@ -33,15 +33,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -53,20 +55,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org813acdd">1. 使用tramp编辑远程文件</a></li>
-<li><a href="#org4eae91a">2. Tramp与其他命令的整合</a></li>
-<li><a href="#orge246550">3. 其他用法</a>
+<li><a href="#orgcdf90d7">1. 使用tramp编辑远程文件</a></li>
+<li><a href="#org7df87c2">2. Tramp与其他命令的整合</a></li>
+<li><a href="#org41b5dfb">3. 其他用法</a>
 <ul>
-<li><a href="#org818d39f">3.1. 用户切换</a></li>
-<li><a href="#org763358d">3.2. 多重跳转</a></li>
+<li><a href="#org40d0120">3.1. 用户切换</a></li>
+<li><a href="#org10668b8">3.2. 多重跳转</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org813acdd" class="outline-2">
-<h2 id="org813acdd"><span class="section-number-2">1</span> 使用tramp编辑远程文件</h2>
+<div id="outline-container-orgcdf90d7" class="outline-2">
+<h2 id="orgcdf90d7"><span class="section-number-2">1</span> 使用tramp编辑远程文件</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 借助TRAMP,你可以像编辑本地文件一样来编辑远程文件. 
@@ -102,8 +104,8 @@ tramp支持通过多种协议来编辑远程文件(具体tramp支持哪些协议
 </p>
 </div>
 </div>
-<div id="outline-container-org4eae91a" class="outline-2">
-<h2 id="org4eae91a"><span class="section-number-2">2</span> Tramp与其他命令的整合</h2>
+<div id="outline-container-org7df87c2" class="outline-2">
+<h2 id="org7df87c2"><span class="section-number-2">2</span> Tramp与其他命令的整合</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Tramp对其他命令来说几乎都是透明的. 下面是一些与tramp实现无缝结合的常用命令:
@@ -119,12 +121,12 @@ Tramp对其他命令来说几乎都是透明的. 下面是一些与tramp实现�
 </dl>
 </div>
 </div>
-<div id="outline-container-orge246550" class="outline-2">
-<h2 id="orge246550"><span class="section-number-2">3</span> 其他用法</h2>
+<div id="outline-container-org41b5dfb" class="outline-2">
+<h2 id="org41b5dfb"><span class="section-number-2">3</span> 其他用法</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org818d39f" class="outline-3">
-<h3 id="org818d39f"><span class="section-number-3">3.1</span> 用户切换</h3>
+<div id="outline-container-org40d0120" class="outline-3">
+<h3 id="org40d0120"><span class="section-number-3">3.1</span> 用户切换</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 除了编辑远程文件外,tramp还能让你以另一个客户的身份来打开文件,方法是使用 <code>sudo</code> 或 <code>su</code> 协议.
@@ -139,8 +141,8 @@ Tramp对其他命令来说几乎都是透明的. 下面是一些与tramp实现�
 </p>
 </div>
 </div>
-<div id="outline-container-org763358d" class="outline-3">
-<h3 id="org763358d"><span class="section-number-3">3.2</span> 多重跳转</h3>
+<div id="outline-container-org10668b8" class="outline-3">
+<h3 id="org10668b8"><span class="section-number-3">3.2</span> 多重跳转</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 若连接远程主机时需要通过一个中间跳板机,则需要使用tramp的多重跳转格式了.

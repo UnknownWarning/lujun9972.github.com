@@ -33,15 +33,17 @@
         </svg>
       </div>
       <ul class="trigger">
-        <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
-        <li><a href="https://lujun9972.github.io/about/">About</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
       </ul>
     </nav>
-    <form method="get" id="searchform" action="http://www.gfsoso.com/search">
-      <input type="text" class="field" name="q" id="s" placeholder="Search">
-      <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
     </form>
   </header>
 </div>
@@ -53,9 +55,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc1df892">1. notify-send</a></li>
-<li><a href="#org0ed314e">2. EmacsLisp的notification库</a></li>
-<li><a href="#orgd413865">3. 实现</a></li>
+<li><a href="#org9d5fb1b">1. notify-send</a></li>
+<li><a href="#org335786d">2. EmacsLisp的notification库</a></li>
+<li><a href="#org9fdd1d7">3. 实现</a></li>
 </ul>
 </div>
 </div>
@@ -63,8 +65,8 @@
 最近对EmacsScript颇有兴趣,刚好翻看Emacs Lisp Manual的时候看到"Desktop Notifications"这一章,于是突发奇想,尝试实现一个Emacs版的notify-send.
 </p>
 
-<div id="outline-container-orgc1df892" class="outline-2">
-<h2 id="orgc1df892"><span class="section-number-2">1</span> notify-send</h2>
+<div id="outline-container-org9d5fb1b" class="outline-2">
+<h2 id="org9d5fb1b"><span class="section-number-2">1</span> notify-send</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 notify-send是一个可以用来发送桌面通知的命令, 我经常在脚本中用它来通知一些值得关注的消息.
@@ -102,8 +104,8 @@ notify-send是一个可以用来发送桌面通知的命令, 我经常在脚本�
 </div>
 </div>
 
-<div id="outline-container-org0ed314e" class="outline-2">
-<h2 id="org0ed314e"><span class="section-number-2">2</span> EmacsLisp的notification库</h2>
+<div id="outline-container-org335786d" class="outline-2">
+<h2 id="org335786d"><span class="section-number-2">2</span> EmacsLisp的notification库</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 若Emacs编译时开启了D-Bus支持,则通过加载`notifications'库,Emacs可以给某些操作系统发送"通知"
@@ -366,8 +368,8 @@ notification server未告知原因
 </div>
 </div>
 
-<div id="outline-container-orgd413865" class="outline-2">
-<h2 id="orgd413865"><span class="section-number-2">3</span> 实现</h2>
+<div id="outline-container-org9fdd1d7" class="outline-2">
+<h2 id="org9fdd1d7"><span class="section-number-2">3</span> 实现</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 有了notifications库,实现起来就异常的简单了,基本上只需要调用 <code>notifications-notify</code> 这个函数就OK了.
