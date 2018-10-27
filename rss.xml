@@ -4,8 +4,8 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>六, 27 10月 2018 20:29:42 CST</pubDate>
-    <lastBuildDate>六, 27 10月 2018 20:29:42 CST</lastBuildDate>
+    <pubDate>六, 27 10月 2018 22:45:43 CST</pubDate>
+    <lastBuildDate>六, 27 10月 2018 22:45:43 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
 <item>
@@ -44,6 +44,13 @@
 <guid>https://lujun9972.github.io/blog/2018/10/27/sh比较两字符串时提示unexpected-operator/</guid>
 </item>
 <item>
+<title>如何禁止地址空间布局随机化对调试带来的影响</title>
+<link>https://lujun9972.github.io/blog/2018/10/27/如何禁止地址空间布局随机化对调试带来的影响/</link>
+<description>No Description</description>
+<pubDate>2018-10-27</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/27/如何禁止地址空间布局随机化对调试带来的影响/</guid>
+</item>
+<item>
 <title>org-babel-detangle将配置文件中的改动写回org文件</title>
 <link>https://lujun9972.github.io/blog/2018/10/26/org-babel-detangle将配置文件中的改动写回org文件/</link>
 <description>No Description</description>
@@ -70,13 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-10-21</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/10/21/org-agenda的好帮手-org-agenda-skip-function/</guid>
-</item>
-<item>
-<title>笑话理解之both</title>
-<link>https://lujun9972.github.io/blog/2018/10/21/笑话理解之both/</link>
-<description>No Description</description>
-<pubDate>2018-10-21</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/21/笑话理解之both/</guid>
 </item>
 </channel>
 </rss>
