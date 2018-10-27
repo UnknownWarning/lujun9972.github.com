@@ -54,24 +54,24 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge771dc8">dm-crypt的特点</a></li>
-<li><a href="#org0adf9e6">使用cryptsetup创建加密磁盘</a>
+<li><a href="#orgd9373f3">dm-crypt的特点</a></li>
+<li><a href="#org8081a9a">使用cryptsetup创建加密磁盘</a>
 <ul>
-<li><a href="#orgc64dc40">创建虚拟磁盘分区</a></li>
-<li><a href="#org5461937">创建加密磁盘分区</a></li>
-<li><a href="#orged3d5ed">打开密码盘</a></li>
-<li><a href="#org32ffbc1">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></a></li>
-<li><a href="#org7003c1f">查看加密盘状态</a></li>
-<li><a href="#org77c655f">关闭加密盘</a></li>
+<li><a href="#orgf7046cf">创建虚拟磁盘分区</a></li>
+<li><a href="#orgb5013de">创建加密磁盘分区</a></li>
+<li><a href="#orge0f6e25">打开密码盘</a></li>
+<li><a href="#org148f32f">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></a></li>
+<li><a href="#orgaadfaa6">查看加密盘状态</a></li>
+<li><a href="#orgf871aab">关闭加密盘</a></li>
 </ul>
 </li>
-<li><a href="#org805c9c4">让加密盘使用keyfile认证</a>
+<li><a href="#orge050aaf">让加密盘使用keyfile认证</a>
 <ul>
-<li><a href="#orgc38898c">创建随机文件作为keyfile</a></li>
-<li><a href="#org018b90f">查看key slot</a></li>
-<li><a href="#org653d7fe">添加keyfile认证</a></li>
-<li><a href="#orgba2263a">使用keyfile打开加密盘</a></li>
-<li><a href="#org896f7c0">删除keyslot</a></li>
+<li><a href="#org8f40f78">创建随机文件作为keyfile</a></li>
+<li><a href="#org6d92257">查看key slot</a></li>
+<li><a href="#orgedaa7fb">添加keyfile认证</a></li>
+<li><a href="#orgff10943">使用keyfile打开加密盘</a></li>
+<li><a href="#org3224bd2">删除keyslot</a></li>
 </ul>
 </li>
 </ul>
@@ -81,9 +81,9 @@
 cryptsetup是linux下的一个分区加密工具，它通过调用内核中的"dm-crypt"来实现磁盘加密的功能。
 </p>
 
-<div id="outline-container-orge771dc8" class="outline-2">
-<h2 id="orge771dc8">dm-crypt的特点</h2>
-<div class="outline-text-2" id="text-orge771dc8">
+<div id="outline-container-orgd9373f3" class="outline-2">
+<h2 id="orgd9373f3">dm-crypt的特点</h2>
+<div class="outline-text-2" id="text-orgd9373f3">
 <p>
 dm-crypt具有如下几个特点:
 </p>
@@ -120,13 +120,13 @@ dm-crypt是整合到linux内核中的，而它的命令行前端cryptsetup,在�
 </div>
 </div>
 
-<div id="outline-container-org0adf9e6" class="outline-2">
-<h2 id="org0adf9e6">使用cryptsetup创建加密磁盘</h2>
-<div class="outline-text-2" id="text-org0adf9e6">
+<div id="outline-container-org8081a9a" class="outline-2">
+<h2 id="org8081a9a">使用cryptsetup创建加密磁盘</h2>
+<div class="outline-text-2" id="text-org8081a9a">
 </div>
-<div id="outline-container-orgc64dc40" class="outline-3">
-<h3 id="orgc64dc40">创建虚拟磁盘分区</h3>
-<div class="outline-text-3" id="text-orgc64dc40">
+<div id="outline-container-orgf7046cf" class="outline-3">
+<h3 id="orgf7046cf">创建虚拟磁盘分区</h3>
+<div class="outline-text-3" id="text-orgf7046cf">
 <p>
 为了方便，我这里用 <code>dd</code> 命令创建一个文件来代替真实的磁盘分区(因为操作过程会清空整个磁盘分区的内容:()。
 </p>
@@ -148,9 +148,9 @@ ls -l /tmp/USB.img
 </div>
 </div>
 
-<div id="outline-container-org5461937" class="outline-3">
-<h3 id="org5461937">创建加密磁盘分区</h3>
-<div class="outline-text-3" id="text-org5461937">
+<div id="outline-container-orgb5013de" class="outline-3">
+<h3 id="orgb5013de">创建加密磁盘分区</h3>
+<div class="outline-text-3" id="text-orgb5013de">
 <p>
 虽然说dm-crypt支持多种加密格式，但最常用的还是LUKS。
 </p>
@@ -197,9 +197,9 @@ Are you sure? (Type uppercase yes): YES
 </div>
 
 
-<div id="outline-container-orged3d5ed" class="outline-3">
-<h3 id="orged3d5ed">打开密码盘</h3>
-<div class="outline-text-3" id="text-orged3d5ed">
+<div id="outline-container-orge0f6e25" class="outline-3">
+<h3 id="orge0f6e25">打开密码盘</h3>
+<div class="outline-text-3" id="text-orge0f6e25">
 <p>
 cryptsetup可以打开前面提到的各种加密盘。
 </p>
@@ -241,9 +241,9 @@ cryptsetup可以打开前面提到的各种加密盘。
 </div>
 </div>
 
-<div id="outline-container-org32ffbc1" class="outline-3">
-<h3 id="org32ffbc1">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></h3>
-<div class="outline-text-3" id="text-org32ffbc1">
+<div id="outline-container-org148f32f" class="outline-3">
+<h3 id="org148f32f">像普通磁盘分区一样操作 <code>/dev/mapper/USB</code></h3>
+<div class="outline-text-3" id="text-org148f32f">
 <p>
 你可以像普通磁盘一样来操作 <code>/dev/mapper/USB</code>.
 </p>
@@ -276,9 +276,9 @@ Writing superblocks and filesystem accounting information:  0/13&#8;&#8;&#8;&#8;
 </div>
 </div>
 
-<div id="outline-container-org7003c1f" class="outline-3">
-<h3 id="org7003c1f">查看加密盘状态</h3>
-<div class="outline-text-3" id="text-org7003c1f">
+<div id="outline-container-orgaadfaa6" class="outline-3">
+<h3 id="orgaadfaa6">查看加密盘状态</h3>
+<div class="outline-text-3" id="text-orgaadfaa6">
 <p>
 在打开加密盘后，可以查看该加密盘的状态，语法为
 </p>
@@ -315,9 +315,9 @@ Writing superblocks and filesystem accounting information:  0/13&#8;&#8;&#8;&#8;
 </div>
 </div>
 
-<div id="outline-container-org77c655f" class="outline-3">
-<h3 id="org77c655f">关闭加密盘</h3>
-<div class="outline-text-3" id="text-org77c655f">
+<div id="outline-container-orgf871aab" class="outline-3">
+<h3 id="orgf871aab">关闭加密盘</h3>
+<div class="outline-text-3" id="text-orgf871aab">
 <p>
 操作完磁盘后，使用下面命令关闭加密盘
 </p>
@@ -337,22 +337,22 @@ sudo cryptsetup close USB
 </div>
 </div>
 </div>
-<div id="outline-container-org805c9c4" class="outline-2">
-<h2 id="org805c9c4">让加密盘使用keyfile认证</h2>
-<div class="outline-text-2" id="text-org805c9c4">
+<div id="outline-container-orge050aaf" class="outline-2">
+<h2 id="orge050aaf">让加密盘使用keyfile认证</h2>
+<div class="outline-text-2" id="text-orge050aaf">
 </div>
-<div id="outline-container-orgc38898c" class="outline-3">
-<h3 id="orgc38898c">创建随机文件作为keyfile</h3>
-<div class="outline-text-3" id="text-orgc38898c">
+<div id="outline-container-org8f40f78" class="outline-3">
+<h3 id="org8f40f78">创建随机文件作为keyfile</h3>
+<div class="outline-text-3" id="text-org8f40f78">
 <div class="org-src-container">
 <pre class="src src-shell">dd <span style="color: #7590db;">if</span>=/dev/urandom <span style="color: #7590db;">of</span>=/tmp/keyfile <span style="color: #7590db;">bs</span>=<span style="color: #a45bad;">1K</span> <span style="color: #7590db;">count</span>=<span style="color: #a45bad;">64</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org018b90f" class="outline-3">
-<h3 id="org018b90f">查看key slot</h3>
-<div class="outline-text-3" id="text-org018b90f">
+<div id="outline-container-org6d92257" class="outline-3">
+<h3 id="org6d92257">查看key slot</h3>
+<div class="outline-text-3" id="text-org6d92257">
 <p>
 LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一个解密的钥匙，使用任何一把钥匙都能打开这个LUKS加密盘。
 </p>
@@ -382,9 +382,9 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </p>
 </div>
 </div>
-<div id="outline-container-org653d7fe" class="outline-3">
-<h3 id="org653d7fe">添加keyfile认证</h3>
-<div class="outline-text-3" id="text-org653d7fe">
+<div id="outline-container-orgedaa7fb" class="outline-3">
+<h3 id="orgedaa7fb">添加keyfile认证</h3>
+<div class="outline-text-3" id="text-orgedaa7fb">
 <p>
 使用下面命令为LUKS加密盘添加keyfile认证
 </p>
@@ -415,9 +415,9 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </p>
 </div>
 </div>
-<div id="outline-container-orgba2263a" class="outline-3">
-<h3 id="orgba2263a">使用keyfile打开加密盘</h3>
-<div class="outline-text-3" id="text-orgba2263a">
+<div id="outline-container-orgff10943" class="outline-3">
+<h3 id="orgff10943">使用keyfile打开加密盘</h3>
+<div class="outline-text-3" id="text-orgff10943">
 <p>
 使用keyfile打开加密盘的方式跟普通打开加密盘的方式类似，只是要多用一个 <code>--keyfile</code> 来指定keyfile的路径
 </p>
@@ -427,9 +427,9 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
 </div>
 </div>
 </div>
-<div id="outline-container-org896f7c0" class="outline-3">
-<h3 id="org896f7c0">删除keyslot</h3>
-<div class="outline-text-3" id="text-org896f7c0">
+<div id="outline-container-org3224bd2" class="outline-3">
+<h3 id="org3224bd2">删除keyslot</h3>
+<div class="outline-text-3" id="text-org3224bd2">
 <p>
 使用下面命令可以删除加密盘的其中一个key slot
 </p>
@@ -488,12 +488,21 @@ LUKS格式的加密盘默认能够提供8个"key slot",每个"key slot"就是一
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
   <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
   <div class="footer">
     <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
       Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
-      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>

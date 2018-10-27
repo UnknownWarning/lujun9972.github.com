@@ -54,14 +54,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf3ac9ae">创建Swarm集群</a></li>
-<li><a href="#org95d002d">向集群中添加节点</a></li>
-<li><a href="#org7eb6369">部署服务到集群中</a></li>
-<li><a href="#orge07acb0">调整服务规模</a></li>
-<li><a href="#org7168a76">查看服务详细信息</a></li>
-<li><a href="#orgc7aa9bd">删除服务</a></li>
-<li><a href="#org2fb8275">服务升级</a></li>
-<li><a href="#orge22ac7e">NODE退出集群</a></li>
+<li><a href="#org7047583">创建Swarm集群</a></li>
+<li><a href="#orgc9fc645">向集群中添加节点</a></li>
+<li><a href="#org27ca9d5">部署服务到集群中</a></li>
+<li><a href="#org1667477">调整服务规模</a></li>
+<li><a href="#orgd24086c">查看服务详细信息</a></li>
+<li><a href="#orgc4ede04">删除服务</a></li>
+<li><a href="#org74d0a33">服务升级</a></li>
+<li><a href="#orgefc70e6">NODE退出集群</a></li>
 </ul>
 </div>
 </div>
@@ -71,9 +71,9 @@ Docker Swarm是由Docker提供的原生集群工具，通过它可以很方便�
 </p>
 
 
-<div id="outline-container-orgf3ac9ae" class="outline-2">
-<h2 id="orgf3ac9ae">创建Swarm集群</h2>
-<div class="outline-text-2" id="text-orgf3ac9ae">
+<div id="outline-container-org7047583" class="outline-2">
+<h2 id="org7047583">创建Swarm集群</h2>
+<div class="outline-text-2" id="text-org7047583">
 <p>
 创建Swarm集群的动作其实就是把一台主机Node初始化成manager的行为，方法超级简单，只需要在 manager node 主机上执行
 </p>
@@ -171,9 +171,9 @@ ID后面的 <code>*</code> 号表示这个记录就是当前NODE的信息。
 </div>
 </div>
 
-<div id="outline-container-org95d002d" class="outline-2">
-<h2 id="org95d002d">向集群中添加节点</h2>
-<div class="outline-text-2" id="text-org95d002d">
+<div id="outline-container-orgc9fc645" class="outline-2">
+<h2 id="orgc9fc645">向集群中添加节点</h2>
+<div class="outline-text-2" id="text-orgc9fc645">
 <p>
 现在我们往这个集群中添加一个worker节点，方法很简单，跟着 <code>docker swarm init</code> 输出中的命令来执行就行了
 </p>
@@ -237,9 +237,9 @@ Error response from daemon: This node is not a swarm manager. Worker nodes can't
 </div>
 </div>
 
-<div id="outline-container-org7eb6369" class="outline-2">
-<h2 id="org7eb6369">部署服务到集群中</h2>
-<div class="outline-text-2" id="text-org7eb6369">
+<div id="outline-container-org27ca9d5" class="outline-2">
+<h2 id="org27ca9d5">部署服务到集群中</h2>
+<div class="outline-text-2" id="text-org27ca9d5">
 <p>
 我们在manager node上使用 <code>docker service create</code> 命令来创建一个服务.
 </p>
@@ -334,9 +334,9 @@ rttpyxf8wbaj        web                 replicated          1/1                 
 </div>
 </div>
 
-<div id="outline-container-orge07acb0" class="outline-2">
-<h2 id="orge07acb0">调整服务规模</h2>
-<div class="outline-text-2" id="text-orge07acb0">
+<div id="outline-container-org1667477" class="outline-2">
+<h2 id="org1667477">调整服务规模</h2>
+<div class="outline-text-2" id="text-org1667477">
 <p>
 使用命令 <code>docker service scale ${SERVICE}=${NUMBER}</code> 可以调整指定服务的规模，比如
 </p>
@@ -380,9 +380,9 @@ rttpyxf8wbaj        web                 replicated          5/5                 
 </div>
 </div>
 
-<div id="outline-container-org7168a76" class="outline-2">
-<h2 id="org7168a76">查看服务详细信息</h2>
-<div class="outline-text-2" id="text-org7168a76">
+<div id="outline-container-orgd24086c" class="outline-2">
+<h2 id="orgd24086c">查看服务详细信息</h2>
+<div class="outline-text-2" id="text-orgd24086c">
 <p>
 我们可以使用 <code>docker service inspect</code> 命令来查看某项服务的详细内容，比如
 </p>
@@ -457,9 +457,9 @@ on0k4qnv7d5v        web.5               nginx:alpine        VM_0_8_centos       
 </div>
 </div>
 
-<div id="outline-container-orgc7aa9bd" class="outline-2">
-<h2 id="orgc7aa9bd">删除服务</h2>
-<div class="outline-text-2" id="text-orgc7aa9bd">
+<div id="outline-container-orgc4ede04" class="outline-2">
+<h2 id="orgc4ede04">删除服务</h2>
+<div class="outline-text-2" id="text-orgc4ede04">
 <p>
 删除服务就特别简单了，直接在manager node上运行 <code>docker service rm ${SERVICE}</code> 就行了，比如
 </p>
@@ -495,9 +495,9 @@ rttpyxf8wbaj        web                 replicated          5/5                 
 </div>
 </div>
 
-<div id="outline-container-org2fb8275" class="outline-2">
-<h2 id="org2fb8275">服务升级</h2>
-<div class="outline-text-2" id="text-org2fb8275">
+<div id="outline-container-org74d0a33" class="outline-2">
+<h2 id="org74d0a33">服务升级</h2>
+<div class="outline-text-2" id="text-org74d0a33">
 <p>
 当提供服务容器的镜像发生更改后，可以使用 <code>docker service update --image ${NEW_IMAGE} ${SERVICE}</code> 来进行服务升级。
 </p>
@@ -527,9 +527,9 @@ rttpyxf8wbaj        web                 replicated          5/5                 
 </div>
 </div>
 
-<div id="outline-container-orge22ac7e" class="outline-2">
-<h2 id="orge22ac7e">NODE退出集群</h2>
-<div class="outline-text-2" id="text-orge22ac7e">
+<div id="outline-container-orgefc70e6" class="outline-2">
+<h2 id="orgefc70e6">NODE退出集群</h2>
+<div class="outline-text-2" id="text-orgefc70e6">
 <p>
 要将某个NODE退出集群十分简单，只需要在那个node上执行 <code>docker swarm leave</code> 即可。
 </p>
@@ -631,12 +631,21 @@ wrjpsf0ms32ioem9ozw5xu27r *   VM_0_8_centos       Ready               Active    
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
   <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
   <div class="footer">
     <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
       Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
-      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>

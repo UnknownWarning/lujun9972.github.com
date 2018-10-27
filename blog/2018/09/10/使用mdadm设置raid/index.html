@@ -54,30 +54,30 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1c0c797">RAID简介</a></li>
-<li><a href="#orga321b84">mdadm: RAID设置工具</a></li>
-<li><a href="#org521385a">mdadm操作说明</a>
+<li><a href="#orgbc753dd">RAID简介</a></li>
+<li><a href="#org25ecfb2">mdadm: RAID设置工具</a></li>
+<li><a href="#orgb955b24">mdadm操作说明</a>
 <ul>
-<li><a href="#orgde0c833">创建RAID阵列</a>
+<li><a href="#orgc1de427">创建RAID阵列</a>
 <ul>
-<li><a href="#org71d7316">自动启用RAID</a></li>
+<li><a href="#org52154dc">自动启用RAID</a></li>
 </ul>
 </li>
-<li><a href="#org6a913ba">查看RAID阵列信息</a></li>
-<li><a href="#org7a6fe15">使用RAID阵列</a></li>
-<li><a href="#orgfec0062">关闭RAID</a></li>
-<li><a href="#org1e29fe7">模拟RAID故障</a></li>
-<li><a href="#org9f5675f">移除RAID阵列中的磁盘</a></li>
-<li><a href="#orgba00774">更换新磁盘</a></li>
+<li><a href="#org42910b5">查看RAID阵列信息</a></li>
+<li><a href="#org569c29a">使用RAID阵列</a></li>
+<li><a href="#org66217e2">关闭RAID</a></li>
+<li><a href="#org8539ecd">模拟RAID故障</a></li>
+<li><a href="#orgd781299">移除RAID阵列中的磁盘</a></li>
+<li><a href="#orgb656e99">更换新磁盘</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1c0c797" class="outline-2">
-<h2 id="org1c0c797">RAID简介</h2>
-<div class="outline-text-2" id="text-org1c0c797">
+<div id="outline-container-orgbc753dd" class="outline-2">
+<h2 id="orgbc753dd">RAID简介</h2>
+<div class="outline-text-2" id="text-orgbc753dd">
 <p>
 RAID是一种使用磁盘驱动器的方法，它将一组磁盘驱动器用某种逻辑方式联系起来，作为一个逻辑磁盘驱动器来使用的.
 </p>
@@ -130,9 +130,9 @@ RAID是一种使用磁盘驱动器的方法，它将一组磁盘驱动器用某�
 </div>
 </div>
 
-<div id="outline-container-orga321b84" class="outline-2">
-<h2 id="orga321b84">mdadm: RAID设置工具</h2>
-<div class="outline-text-2" id="text-orga321b84">
+<div id="outline-container-org25ecfb2" class="outline-2">
+<h2 id="org25ecfb2">mdadm: RAID设置工具</h2>
+<div class="outline-text-2" id="text-org25ecfb2">
 <p>
 madam命令是Linux下用于构建、管理和监控RAID阵列(也被称为md设备)的工具.
 它的语法为
@@ -159,13 +159,13 @@ madam命令是Linux下用于构建、管理和监控RAID阵列(也被称为md设
 </div>
 </div>
 
-<div id="outline-container-org521385a" class="outline-2">
-<h2 id="org521385a">mdadm操作说明</h2>
-<div class="outline-text-2" id="text-org521385a">
+<div id="outline-container-orgb955b24" class="outline-2">
+<h2 id="orgb955b24">mdadm操作说明</h2>
+<div class="outline-text-2" id="text-orgb955b24">
 </div>
-<div id="outline-container-orgde0c833" class="outline-3">
-<h3 id="orgde0c833">创建RAID阵列</h3>
-<div class="outline-text-3" id="text-orgde0c833">
+<div id="outline-container-orgc1de427" class="outline-3">
+<h3 id="orgc1de427">创建RAID阵列</h3>
+<div class="outline-text-3" id="text-orgc1de427">
 <p>
 我们可以通过 <code>mdadm</code> 命令来创建软件RAID，比如下面命令可以创建一个RAID5
 </p>
@@ -197,9 +197,9 @@ madam命令是Linux下用于构建、管理和监控RAID阵列(也被称为md设
 </pre>
 </div>
 </div>
-<div id="outline-container-org71d7316" class="outline-4">
-<h4 id="org71d7316">自动启用RAID</h4>
-<div class="outline-text-4" id="text-org71d7316">
+<div id="outline-container-org52154dc" class="outline-4">
+<h4 id="org52154dc">自动启用RAID</h4>
+<div class="outline-text-4" id="text-org52154dc">
 <p>
 在创建好RAID以后，可以将RAID信息保存到 <code>/etc/mdadm.conf</code> 文件中，这样在下次操作系统重新启动时，系统会自动加载这个文件来启用RAID
 </p>
@@ -217,9 +217,9 @@ cat /etc/mdadm.conf
 </div>
 </div>
 
-<div id="outline-container-org6a913ba" class="outline-3">
-<h3 id="org6a913ba">查看RAID阵列信息</h3>
-<div class="outline-text-3" id="text-org6a913ba">
+<div id="outline-container-org42910b5" class="outline-3">
+<h3 id="org42910b5">查看RAID阵列信息</h3>
+<div class="outline-text-3" id="text-org42910b5">
 <p>
 创建好RAID阵列后，我们可以通过 <code>mdadm --misc</code> 模式来查看刚创建好的RAID的详细信息
 </p>
@@ -281,9 +281,9 @@ unused devices: &lt;none&gt;
 </div>
 </div>
 
-<div id="outline-container-org7a6fe15" class="outline-3">
-<h3 id="org7a6fe15">使用RAID阵列</h3>
-<div class="outline-text-3" id="text-org7a6fe15">
+<div id="outline-container-org569c29a" class="outline-3">
+<h3 id="org569c29a">使用RAID阵列</h3>
+<div class="outline-text-3" id="text-org569c29a">
 <p>
 在创建好RAID阵列后，我们就不能直接操作组成阵列的磁盘了，否则会损坏刚创建好的RAID阵列。
 我们通过 <code>/dev/md0</code> 这个设备来进行文件格式化和挂载
@@ -318,9 +318,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-orgfec0062" class="outline-3">
-<h3 id="orgfec0062">关闭RAID</h3>
-<div class="outline-text-3" id="text-orgfec0062">
+<div id="outline-container-org66217e2" class="outline-3">
+<h3 id="org66217e2">关闭RAID</h3>
+<div class="outline-text-3" id="text-org66217e2">
 <p>
 我们可以通过 <code>mdadm --misc</code> 模式来关闭RAID。这会释放所有资源
 </p>
@@ -354,9 +354,9 @@ mdadm --misc --zero-superblock /dev/sdd
 </div>
 </div>
 
-<div id="outline-container-org1e29fe7" class="outline-3">
-<h3 id="org1e29fe7">模拟RAID故障</h3>
-<div class="outline-text-3" id="text-org1e29fe7">
+<div id="outline-container-org8539ecd" class="outline-3">
+<h3 id="org8539ecd">模拟RAID故障</h3>
+<div class="outline-text-3" id="text-org8539ecd">
 <p>
 我们可以通过 <code>mdadm --manage /dev/md0 --fail</code> 来将某块磁盘设置成故障状态
 </p>
@@ -421,9 +421,9 @@ Consistency Policy : resync
 </div>
 </div>
 
-<div id="outline-container-org9f5675f" class="outline-3">
-<h3 id="org9f5675f">移除RAID阵列中的磁盘</h3>
-<div class="outline-text-3" id="text-org9f5675f">
+<div id="outline-container-orgd781299" class="outline-3">
+<h3 id="orgd781299">移除RAID阵列中的磁盘</h3>
+<div class="outline-text-3" id="text-orgd781299">
 <div class="org-src-container">
 <pre class="src src-shell">sudo mdadm --manage /dev/md0 --remove /dev/sdd
 </pre>
@@ -431,9 +431,9 @@ Consistency Policy : resync
 </div>
 </div>
 
-<div id="outline-container-orgba00774" class="outline-3">
-<h3 id="orgba00774">更换新磁盘</h3>
-<div class="outline-text-3" id="text-orgba00774">
+<div id="outline-container-orgb656e99" class="outline-3">
+<h3 id="orgb656e99">更换新磁盘</h3>
+<div class="outline-text-3" id="text-orgb656e99">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #4f97d7;">set</span> -x
 <span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">2</span>&gt;&amp;<span style="color: #a45bad;">1</span>
@@ -519,12 +519,21 @@ Consistency Policy : resync
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
   <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
   <div class="footer">
     <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
       Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
-      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>

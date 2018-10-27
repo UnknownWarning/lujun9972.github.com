@@ -54,20 +54,20 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbcbc4a5">IO子系统概况</a>
+<li><a href="#org0180c5b">IO子系统概况</a>
 <ul>
-<li><a href="#org051fe17">写入数据的情形</a></li>
-<li><a href="#org346b9bd">读取数据的情形</a></li>
+<li><a href="#orgbbd41f4">写入数据的情形</a></li>
+<li><a href="#orgea7c127">读取数据的情形</a></li>
 </ul>
 </li>
-<li><a href="#org5ea8768">IO调度器</a>
+<li><a href="#org67495b9">IO调度器</a>
 <ul>
-<li><a href="#org7e8048f">四种IO调度器的特点</a></li>
-<li><a href="#org58c9fff">查看/修改调度器</a>
+<li><a href="#org044f0da">四种IO调度器的特点</a></li>
+<li><a href="#orgfdc99e4">查看/修改调度器</a>
 <ul>
-<li><a href="#org535aff0">查看调度器</a></li>
-<li><a href="#org87a338e">修改调度器</a></li>
-<li><a href="#org460164a">ionice命令</a></li>
+<li><a href="#org4f547a2">查看调度器</a></li>
+<li><a href="#org4f8b885">修改调度器</a></li>
+<li><a href="#orgfa16acd">ionice命令</a></li>
 </ul>
 </li>
 </ul>
@@ -76,9 +76,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgbcbc4a5" class="outline-2">
-<h2 id="orgbcbc4a5">IO子系统概况</h2>
-<div class="outline-text-2" id="text-orgbcbc4a5">
+<div id="outline-container-org0180c5b" class="outline-2">
+<h2 id="org0180c5b">IO子系统概况</h2>
+<div class="outline-text-2" id="text-org0180c5b">
 <p>
 Linux的IO子系统由VFS(Virtual File System,虚拟文件系统)层和块层构成。
 其中，VFS层用于将各种不同的文件系统统一起来，形成统一的抽象层。
@@ -99,9 +99,9 @@ Linux的IO子系统由VFS(Virtual File System,虚拟文件系统)层和块层构
 </p>
 </div>
 
-<div id="outline-container-org051fe17" class="outline-3">
-<h3 id="org051fe17">写入数据的情形</h3>
-<div class="outline-text-3" id="text-org051fe17">
+<div id="outline-container-orgbbd41f4" class="outline-3">
+<h3 id="orgbbd41f4">写入数据的情形</h3>
+<div class="outline-text-3" id="text-orgbbd41f4">
 <p>
 当写入数据时，根据上图所示，其步骤为：
 </p>
@@ -125,9 +125,9 @@ Linux的IO子系统由VFS(Virtual File System,虚拟文件系统)层和块层构
 </div>
 </div>
 
-<div id="outline-container-org346b9bd" class="outline-3">
-<h3 id="org346b9bd">读取数据的情形</h3>
-<div class="outline-text-3" id="text-org346b9bd">
+<div id="outline-container-orgea7c127" class="outline-3">
+<h3 id="orgea7c127">读取数据的情形</h3>
+<div class="outline-text-3" id="text-orgea7c127">
 <p>
 当读取数据时，根据上图所示，其步骤为：
 </p>
@@ -145,9 +145,9 @@ Linux的IO子系统由VFS(Virtual File System,虚拟文件系统)层和块层构
 </div>
 </div>
 
-<div id="outline-container-org5ea8768" class="outline-2">
-<h2 id="org5ea8768">IO调度器</h2>
-<div class="outline-text-2" id="text-org5ea8768">
+<div id="outline-container-org67495b9" class="outline-2">
+<h2 id="org67495b9">IO调度器</h2>
+<div class="outline-text-2" id="text-org67495b9">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/04/15/linux-io子系统概览/IO_System_Scheduler.jpg" alt="IO_System_Scheduler.jpg" />
@@ -176,9 +176,9 @@ bio对象的合并方法根据各IO调度器不同而不同.
 </ol>
 </div>
 
-<div id="outline-container-org7e8048f" class="outline-3">
-<h3 id="org7e8048f">四种IO调度器的特点</h3>
-<div class="outline-text-3" id="text-org7e8048f">
+<div id="outline-container-org044f0da" class="outline-3">
+<h3 id="org044f0da">四种IO调度器的特点</h3>
+<div class="outline-text-3" id="text-org044f0da">
 <p>
 Linux主要使用以下四种IO调度器，它们的特征如下：
 </p>
@@ -227,13 +227,13 @@ anticipatory调度器
 </div>
 </div>
 
-<div id="outline-container-org58c9fff" class="outline-3">
-<h3 id="org58c9fff">查看/修改调度器</h3>
-<div class="outline-text-3" id="text-org58c9fff">
+<div id="outline-container-orgfdc99e4" class="outline-3">
+<h3 id="orgfdc99e4">查看/修改调度器</h3>
+<div class="outline-text-3" id="text-orgfdc99e4">
 </div>
-<div id="outline-container-org535aff0" class="outline-4">
-<h4 id="org535aff0">查看调度器</h4>
-<div class="outline-text-4" id="text-org535aff0">
+<div id="outline-container-org4f547a2" class="outline-4">
+<h4 id="org4f547a2">查看调度器</h4>
+<div class="outline-text-4" id="text-org4f547a2">
 <p>
 我们可以通过 <code>/sys/block/&lt;磁盘名&gt;/queue/scheduler</code> 来查看或设置IO调度器的名称。
 </p>
@@ -281,9 +281,9 @@ sr0            0    512      0     512     512    1 cfq       128 128    0B
 </p>
 </div>
 </div>
-<div id="outline-container-org87a338e" class="outline-4">
-<h4 id="org87a338e">修改调度器</h4>
-<div class="outline-text-4" id="text-org87a338e">
+<div id="outline-container-org4f8b885" class="outline-4">
+<h4 id="org4f8b885">修改调度器</h4>
+<div class="outline-text-4" id="text-org4f8b885">
 <p>
 通过 echo 命令往 <code>/sys/block/&lt;磁盘名&gt;/queue/scheduler</code> 中写入新的IO调度器名称就能够临时修改当前使用的调度器。
 </p>
@@ -324,9 +324,9 @@ sr0            0    512      0     512     512    1 cfq          128 128    0B
 </div>
 </div>
 </div>
-<div id="outline-container-org460164a" class="outline-4">
-<h4 id="org460164a">ionice命令</h4>
-<div class="outline-text-4" id="text-org460164a">
+<div id="outline-container-orgfa16acd" class="outline-4">
+<h4 id="orgfa16acd">ionice命令</h4>
+<div class="outline-text-4" id="text-orgfa16acd">
 <p>
 通过ionice命令可以对cfq调度器中的每个进程设置优先级：
 </p>
@@ -418,12 +418,21 @@ sr0            0    512      0     512     512    1 cfq          128 128    0B
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
   <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
   <div class="footer">
     <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
       Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
-      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>

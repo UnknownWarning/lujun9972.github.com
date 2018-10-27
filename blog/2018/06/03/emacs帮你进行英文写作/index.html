@@ -54,44 +54,44 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9015a95">ispell</a>
+<li><a href="#orgfda1e38">ispell</a>
 <ul>
-<li><a href="#orgf380de6">安装aspell</a></li>
-<li><a href="#org760be73">配置ispell插件</a></li>
-<li><a href="#org2874f00">使用Ispell进行拼写检查</a>
+<li><a href="#org84ee34f">安装aspell</a></li>
+<li><a href="#org57ae139">配置ispell插件</a></li>
+<li><a href="#org6ad8c14">使用Ispell进行拼写检查</a>
 <ul>
-<li><a href="#org5344391">ispell</a></li>
-<li><a href="#org2485c2b">递归编辑</a></li>
-<li><a href="#org4035773">ispell-word</a></li>
-<li><a href="#org8c2a949">ispell-minior-mode</a></li>
-<li><a href="#orgf20608e">ispell-complete-word</a></li>
-<li><a href="#org9ca24b8">ispell-kill-ispell</a></li>
+<li><a href="#orgc9e2a52">ispell</a></li>
+<li><a href="#org624f52c">递归编辑</a></li>
+<li><a href="#orgd0072b1">ispell-word</a></li>
+<li><a href="#orgf432c02">ispell-minior-mode</a></li>
+<li><a href="#org8f92caa">ispell-complete-word</a></li>
+<li><a href="#orgb1d706f">ispell-kill-ispell</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org7afe4a7">flyspell-mode</a>
+<li><a href="#org8ce6b7d">flyspell-mode</a>
 <ul>
-<li><a href="#org516f561">flyspell-prog-mode</a></li>
+<li><a href="#org6f0ef6d">flyspell-prog-mode</a></li>
 </ul>
 </li>
-<li><a href="#org9e203a7">langtool</a>
+<li><a href="#org0a0d338">langtool</a>
 <ul>
-<li><a href="#org0ab21aa">下载langtool离线版</a></li>
-<li><a href="#org36b0827">安装Emacs的langtool插件</a></li>
-<li><a href="#orgf968848">配置Emacs langtool插件</a></li>
-<li><a href="#org66bdf9f">使用langtool进行检查</a></li>
+<li><a href="#orge459cf3">下载langtool离线版</a></li>
+<li><a href="#org97c57c3">安装Emacs的langtool插件</a></li>
+<li><a href="#org19c9d94">配置Emacs langtool插件</a></li>
+<li><a href="#orgb33b7fe">使用langtool进行检查</a></li>
 </ul>
 </li>
-<li><a href="#orgc9c110d">artbollocks-mode</a></li>
-<li><a href="#org735ff9b">emacs-powerthesaurus</a></li>
+<li><a href="#org96679f6">artbollocks-mode</a></li>
+<li><a href="#org4e8a3d4">emacs-powerthesaurus</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9015a95" class="outline-2">
-<h2 id="org9015a95">ispell</h2>
-<div class="outline-text-2" id="text-org9015a95">
+<div id="outline-container-orgfda1e38" class="outline-2">
+<h2 id="orgfda1e38">ispell</h2>
+<div class="outline-text-2" id="text-orgfda1e38">
 <p>
 ispell是Unix下的一个拼写(不仅仅是英文)检查工具，同时它也是Emacs用来调用ispell类工具进行拼写检查的插件名称。
 </p>
@@ -105,9 +105,9 @@ ispell是Unix下的一个拼写(不仅仅是英文)检查工具，同时它也�
 </p>
 </div>
 
-<div id="outline-container-orgf380de6" class="outline-3">
-<h3 id="orgf380de6">安装aspell</h3>
-<div class="outline-text-3" id="text-orgf380de6">
+<div id="outline-container-org84ee34f" class="outline-3">
+<h3 id="org84ee34f">安装aspell</h3>
+<div class="outline-text-3" id="text-org84ee34f">
 <p>
 既然Emacs是调用外部工具来做的拼写检查，那么第一步当然是要安装 <code>aspell</code> 了
 </p>
@@ -253,9 +253,9 @@ Total Installed Size:  4.06 MiB
 </div>
 
 
-<div id="outline-container-org760be73" class="outline-3">
-<h3 id="org760be73">配置ispell插件</h3>
-<div class="outline-text-3" id="text-org760be73">
+<div id="outline-container-org57ae139" class="outline-3">
+<h3 id="org57ae139">配置ispell插件</h3>
+<div class="outline-text-3" id="text-org57ae139">
 <p>
 Emacs的ispell插件会自动以此查找aspell,ispell和hunspell，并以第一个找到的程序为检查程序。 
 因此大多数情况下，你无需特意手工设置拼写程序的名称(ispell-program-name)。
@@ -290,13 +290,13 @@ aspell程序本身还支持很多的选项参数，若要传递这些参数给as
 </div>
 </div>
 
-<div id="outline-container-org2874f00" class="outline-3">
-<h3 id="org2874f00">使用Ispell进行拼写检查</h3>
-<div class="outline-text-3" id="text-org2874f00">
+<div id="outline-container-org6ad8c14" class="outline-3">
+<h3 id="org6ad8c14">使用Ispell进行拼写检查</h3>
+<div class="outline-text-3" id="text-org6ad8c14">
 </div>
-<div id="outline-container-org5344391" class="outline-4">
-<h4 id="org5344391">ispell</h4>
-<div class="outline-text-4" id="text-org5344391">
+<div id="outline-container-orgc9e2a52" class="outline-4">
+<h4 id="orgc9e2a52">ispell</h4>
+<div class="outline-text-4" id="text-orgc9e2a52">
 <p>
 使用ispell进行拼写检查最简单的办法就是直接运行 <code>M-x ispell</code>, 在选中区域的情况下它会调用 <code>ispell-region</code> 来对该区域内的内容进行检查，否则会调用 <code>M-x ispell-buffer</code> 来对整个buffer中的内容进行拼写检查。
 </p>
@@ -335,9 +335,9 @@ Spell-checking region using aspell with en dictionary...done
 </div>
 </div>
 
-<div id="outline-container-org2485c2b" class="outline-4">
-<h4 id="org2485c2b">递归编辑</h4>
-<div class="outline-text-4" id="text-org2485c2b">
+<div id="outline-container-org624f52c" class="outline-4">
+<h4 id="org624f52c">递归编辑</h4>
+<div class="outline-text-4" id="text-org624f52c">
 <p>
 ispell支持递归编辑，当你在进行拼写检查的过程中，可能会发现其他某个地方需要做个修改，但是又不想中断拼写检查的这个过程。
 </p>
@@ -352,18 +352,18 @@ ispell支持递归编辑，当你在进行拼写检查的过程中，可能会�
 </div>
 </div>
 
-<div id="outline-container-org4035773" class="outline-4">
-<h4 id="org4035773">ispell-word</h4>
-<div class="outline-text-4" id="text-org4035773">
+<div id="outline-container-orgd0072b1" class="outline-4">
+<h4 id="orgd0072b1">ispell-word</h4>
+<div class="outline-text-4" id="text-orgd0072b1">
 <p>
 如果你在写作时，脑袋卡壳了，对某个单词不确实是不是拼写正确的，那么可以直接执行 <code>M-x ispell-word</code>, 它仅仅会对光标所在的单词进行检查。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8c2a949" class="outline-4">
-<h4 id="org8c2a949">ispell-minior-mode</h4>
-<div class="outline-text-4" id="text-org8c2a949">
+<div id="outline-container-orgf432c02" class="outline-4">
+<h4 id="orgf432c02">ispell-minior-mode</h4>
+<div class="outline-text-4" id="text-orgf432c02">
 <p>
 ispell-minior-mode 能够实时的对你输入的内容进行拼写检查。
 </p>
@@ -375,9 +375,9 @@ ispell-minior-mode 能够实时的对你输入的内容进行拼写检查。
 </div>
 </div>
 
-<div id="outline-container-orgf20608e" class="outline-4">
-<h4 id="orgf20608e">ispell-complete-word</h4>
-<div class="outline-text-4" id="text-orgf20608e">
+<div id="outline-container-org8f92caa" class="outline-4">
+<h4 id="org8f92caa">ispell-complete-word</h4>
+<div class="outline-text-4" id="text-org8f92caa">
 <p>
 当你不记得一个单词怎么拼写的时候，还可以使用 ispell 来帮你进行单词补全。
 </p>
@@ -398,9 +398,9 @@ ispell-minior-mode 能够实时的对你输入的内容进行拼写检查。
 </div>
 </div>
 
-<div id="outline-container-org9ca24b8" class="outline-4">
-<h4 id="org9ca24b8">ispell-kill-ispell</h4>
-<div class="outline-text-4" id="text-org9ca24b8">
+<div id="outline-container-orgb1d706f" class="outline-4">
+<h4 id="orgb1d706f">ispell-kill-ispell</h4>
+<div class="outline-text-4" id="text-orgb1d706f">
 <p>
 启用ispell后，它会一直在后台运行。如果觉得不爽它消耗了系统资源，可以运行 <code>M-x ispell-kill-ispell</code> 把它干掉。
 </p>
@@ -409,9 +409,9 @@ ispell-minior-mode 能够实时的对你输入的内容进行拼写检查。
 </div>
 </div>
 
-<div id="outline-container-org7afe4a7" class="outline-2">
-<h2 id="org7afe4a7">flyspell-mode</h2>
-<div class="outline-text-2" id="text-org7afe4a7">
+<div id="outline-container-org8ce6b7d" class="outline-2">
+<h2 id="org8ce6b7d">flyspell-mode</h2>
+<div class="outline-text-2" id="text-org8ce6b7d">
 <p>
 flyspell-mode跟ispell-minior-mode类似，也是提供了实时的单词拼写检查功能。
 </p>
@@ -431,9 +431,9 @@ flyspell-mode跟ispell-minior-mode类似，也是提供了实时的单词拼写�
 </p>
 </div>
 
-<div id="outline-container-org516f561" class="outline-3">
-<h3 id="org516f561">flyspell-prog-mode</h3>
-<div class="outline-text-3" id="text-org516f561">
+<div id="outline-container-org6f0ef6d" class="outline-3">
+<h3 id="org6f0ef6d">flyspell-prog-mode</h3>
+<div class="outline-text-3" id="text-org6f0ef6d">
 <p>
 值得一提的是，flyspell还为程序员提供了一个 <code>flyspell-prog-mode</code>, 在该模式下，Emacs只会对注释和字符串中的内容进行拼写检查。
 </p>
@@ -441,17 +441,17 @@ flyspell-mode跟ispell-minior-mode类似，也是提供了实时的单词拼写�
 </div>
 </div>
 
-<div id="outline-container-org9e203a7" class="outline-2">
-<h2 id="org9e203a7">langtool</h2>
-<div class="outline-text-2" id="text-org9e203a7">
+<div id="outline-container-org0a0d338" class="outline-2">
+<h2 id="org0a0d338">langtool</h2>
+<div class="outline-text-2" id="text-org0a0d338">
 <p>
 <a href="https://www.languagetool.org/">langtool</a>是一个能够提供语法和写作风格检查的工具，它同时提供了命令行和GUI两种风格的界面，这使的它很容易与Emacs进行整合。
 </p>
 </div>
 
-<div id="outline-container-org0ab21aa" class="outline-3">
-<h3 id="org0ab21aa">下载langtool离线版</h3>
-<div class="outline-text-3" id="text-org0ab21aa">
+<div id="outline-container-orge459cf3" class="outline-3">
+<h3 id="orge459cf3">下载langtool离线版</h3>
+<div class="outline-text-3" id="text-orge459cf3">
 <p>
 langtool提供了Desktop版本来作为离线使用. 一般来说, 离线版langtool的功能要比在线版弱一些，但是对于一般的使用也足够了。
 </p>
@@ -477,18 +477,18 @@ langtool提供了Desktop版本来作为离线使用. 一般来说, 离线版lang
 </div>
 </div>
 
-<div id="outline-container-org36b0827" class="outline-3">
-<h3 id="org36b0827">安装Emacs的langtool插件</h3>
-<div class="outline-text-3" id="text-org36b0827">
+<div id="outline-container-org97c57c3" class="outline-3">
+<h3 id="org97c57c3">安装Emacs的langtool插件</h3>
+<div class="outline-text-3" id="text-org97c57c3">
 <p>
 langtool插件并不是Emacs自带的, 你可以从MELPA上安装，或者自己从<a href="https://github.com/mhayashi1120/Emacs-langtool">github</a>上下载
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf968848" class="outline-3">
-<h3 id="orgf968848">配置Emacs langtool插件</h3>
-<div class="outline-text-3" id="text-orgf968848">
+<div id="outline-container-org19c9d94" class="outline-3">
+<h3 id="org19c9d94">配置Emacs langtool插件</h3>
+<div class="outline-text-3" id="text-org19c9d94">
 <p>
 Emacs需要调用外部的langtool命令行工具来进行实际的检查工作，因此你首先需要指定langtool的命令行工具的地址:
 </p>
@@ -544,9 +544,9 @@ langtool支持多种语言的语法检查，默认会自己推测所属的语系
 </div>
 </div>
 
-<div id="outline-container-org66bdf9f" class="outline-3">
-<h3 id="org66bdf9f">使用langtool进行检查</h3>
-<div class="outline-text-3" id="text-org66bdf9f">
+<div id="outline-container-orgb33b7fe" class="outline-3">
+<h3 id="orgb33b7fe">使用langtool进行检查</h3>
+<div class="outline-text-3" id="text-orgb33b7fe">
 <p>
 使用langtool进行检查的步骤很简单。
 </p>
@@ -605,9 +605,9 @@ langtool会依次跳转到各个检测出问题的地方，并给出修改意见
 </div>
 </div>
 
-<div id="outline-container-orgc9c110d" class="outline-2">
-<h2 id="orgc9c110d">artbollocks-mode</h2>
-<div class="outline-text-2" id="text-orgc9c110d">
+<div id="outline-container-org96679f6" class="outline-2">
+<h2 id="org96679f6">artbollocks-mode</h2>
+<div class="outline-text-2" id="text-org96679f6">
 <p>
 artbollocks-mode是一款检查写作风格的第三方插件。它实际上是通过正则表达式匹配的方式，高亮出那些你认为不好的，需要注意的语言模式。
 </p>
@@ -763,9 +763,9 @@ artbollocks-mode是一款检查写作风格的第三方插件。它实际上是�
 </ul>
 </div>
 </div>
-<div id="outline-container-org735ff9b" class="outline-2">
-<h2 id="org735ff9b">emacs-powerthesaurus</h2>
-<div class="outline-text-2" id="text-org735ff9b">
+<div id="outline-container-org4e8a3d4" class="outline-2">
+<h2 id="org4e8a3d4">emacs-powerthesaurus</h2>
+<div class="outline-text-2" id="text-org4e8a3d4">
 <p>
 <a href="https://www.powerthesaurus.org/">powerthesaurus</a> 是一个根据你输入的单词查询同义词的词典，而emacs-powerthesaurus是Emacs对该网站的一个接口。
 </p>
@@ -833,12 +833,21 @@ emacs-powerthesaurus是Emacs第三方插件，需要手工从MELPA安装:
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
   <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
   <div class="footer">
     <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
       Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
-      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>

@@ -54,13 +54,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1ae0cb7">准备工作</a></li>
-<li><a href="#org6430a24">使用</a>
+<li><a href="#org80f76b2">准备工作</a></li>
+<li><a href="#orgd9bd125">使用</a>
 <ul>
-<li><a href="#org11e94f9">新建一个org文件</a></li>
-<li><a href="#org66aed27">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</a></li>
-<li><a href="#org6680646">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</a></li>
-<li><a href="#orgf260dbc">运行 <code>M-x anki-editor-submit</code> 提交</a></li>
+<li><a href="#org99ea692">新建一个org文件</a></li>
+<li><a href="#orgcb971d7">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</a></li>
+<li><a href="#org8fcccf6">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</a></li>
+<li><a href="#org92cd629">运行 <code>M-x anki-editor-submit</code> 提交</a></li>
 </ul>
 </li>
 </ul>
@@ -82,9 +82,9 @@
 它的原理是利用org-mode的html export backend将org转换成html,然后通过Anki的anki-connect插件生成新的Anki Card。
 </p>
 
-<div id="outline-container-org1ae0cb7" class="outline-2">
-<h2 id="org1ae0cb7">准备工作</h2>
-<div class="outline-text-2" id="text-org1ae0cb7">
+<div id="outline-container-org80f76b2" class="outline-2">
+<h2 id="org80f76b2">准备工作</h2>
+<div class="outline-text-2" id="text-org80f76b2">
 <p>
 根据说明，该插件需要 <code>curl</code> 和 <a href="https://github.com/FooSoft/anki-connect#installation">anki-connect</a> 的支持
 </p>
@@ -128,17 +128,17 @@ dotspacemacs-additional-packages '(request json-mode all-the-icons-dired edit-in
 </div>
 </div>
 
-<div id="outline-container-org6430a24" class="outline-2">
-<h2 id="org6430a24">使用</h2>
-<div class="outline-text-2" id="text-org6430a24">
+<div id="outline-container-orgd9bd125" class="outline-2">
+<h2 id="orgd9bd125">使用</h2>
+<div class="outline-text-2" id="text-orgd9bd125">
 <p>
 在使用anki-editorn之前, <b>你需要先打开anki</b>,因为它需要与anki中的anki-connect通讯，获取deck和note的信息。
 </p>
 </div>
 
-<div id="outline-container-org11e94f9" class="outline-3">
-<h3 id="org11e94f9">新建一个org文件</h3>
-<div class="outline-text-3" id="text-org11e94f9">
+<div id="outline-container-org99ea692" class="outline-3">
+<h3 id="org99ea692">新建一个org文件</h3>
+<div class="outline-text-3" id="text-org99ea692">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-02.png" alt="screenshot-02.png" />
@@ -147,9 +147,9 @@ dotspacemacs-additional-packages '(request json-mode all-the-icons-dired edit-in
 </div>
 </div>
 
-<div id="outline-container-org66aed27" class="outline-3">
-<h3 id="org66aed27">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</h3>
-<div class="outline-text-3" id="text-org66aed27">
+<div id="outline-container-orgcb971d7" class="outline-3">
+<h3 id="orgcb971d7">运行 <code>M-x anki-editor-insert-deck</code> 插入一个deck</h3>
+<div class="outline-text-3" id="text-orgcb971d7">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-05.png" alt="screenshot-05.png" />
@@ -180,9 +180,9 @@ dotspacemacs-additional-packages '(request json-mode all-the-icons-dired edit-in
 </div>
 </div>
 
-<div id="outline-container-org6680646" class="outline-3">
-<h3 id="org6680646">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</h3>
-<div class="outline-text-3" id="text-org6680646">
+<div id="outline-container-org8fcccf6" class="outline-3">
+<h3 id="org8fcccf6">运行 <code>M-x anki-editor-insert-note</code> 插入一个note</h3>
+<div class="outline-text-3" id="text-org8fcccf6">
 
 <div class="figure">
 <p><img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-07.png" alt="screenshot-07.png" />
@@ -219,9 +219,9 @@ anki-editor会根据note类型中定义的域，自动插结构，每个域都�
 </div>
 </div>
 
-<div id="outline-container-orgf260dbc" class="outline-3">
-<h3 id="orgf260dbc">运行 <code>M-x anki-editor-submit</code> 提交</h3>
-<div class="outline-text-3" id="text-orgf260dbc">
+<div id="outline-container-org92cd629" class="outline-3">
+<h3 id="org92cd629">运行 <code>M-x anki-editor-submit</code> 提交</h3>
+<div class="outline-text-3" id="text-org92cd629">
 <p>
 就能看到Anki上新生成的card了
 <img src="https://lujun9972.github.io/assets/blog/2018/02/13/anki-editor-让你通过org-mode来创建anki-cards/screenshot-11.png" alt="screenshot-11.png" />
@@ -275,12 +275,21 @@ anki-editor会根据note类型中定义的域，自动插结构，每个域都�
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
   <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
   <div class="footer">
     <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
       Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
-      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>

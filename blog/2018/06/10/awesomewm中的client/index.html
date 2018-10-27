@@ -54,29 +54,29 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org52f627a">client的常用操作</a>
+<li><a href="#orga99dd00">client的常用操作</a>
 <ul>
-<li><a href="#orgc4dbbe1">获取当前的client</a></li>
-<li><a href="#orga6c6c93">获取client列表</a>
+<li><a href="#org98a8376">获取当前的client</a></li>
+<li><a href="#orga92ff2f">获取client列表</a>
 <ul>
-<li><a href="#orgcfd1487">获取所有的client列表</a></li>
-<li><a href="#org1f902db">获取符合某个条件的client列表</a></li>
-<li><a href="#org2867855">获取某个screen上的client列表</a></li>
+<li><a href="#orgb8f8cc1">获取所有的client列表</a></li>
+<li><a href="#orgf820e65">获取符合某个条件的client列表</a></li>
+<li><a href="#org889d771">获取某个screen上的client列表</a></li>
 </ul>
 </li>
-<li><a href="#org30fb108">获取窗口的位置与大小</a></li>
-<li><a href="#orgf6e0fa8">设置某个窗口的位置和大小</a></li>
-<li><a href="#orgb597cbd">raise</a></li>
-<li><a href="#org93c08ad">lower</a></li>
-<li><a href="#org14aead4">run or raise</a></li>
-<li><a href="#orgf381d2c">给某个client设置鼠标操作</a></li>
-<li><a href="#org17b5642">给某个client设置快捷键</a></li>
-<li><a href="#org163a746">关闭某个client</a></li>
-<li><a href="#orgaf9aaa9">为某个client设置所属tag</a></li>
-<li><a href="#org4e3cc30">移动client到某个tag</a></li>
+<li><a href="#org9213a94">获取窗口的位置与大小</a></li>
+<li><a href="#org645224a">设置某个窗口的位置和大小</a></li>
+<li><a href="#orgad2cd57">raise</a></li>
+<li><a href="#org5ddf520">lower</a></li>
+<li><a href="#org184f4cd">run or raise</a></li>
+<li><a href="#org3081b09">给某个client设置鼠标操作</a></li>
+<li><a href="#org0693df7">给某个client设置快捷键</a></li>
+<li><a href="#org7823981">关闭某个client</a></li>
+<li><a href="#orgf137d65">为某个client设置所属tag</a></li>
+<li><a href="#orge106b5b">移动client到某个tag</a></li>
 </ul>
 </li>
-<li><a href="#org6944e23">client中的signal处理</a></li>
+<li><a href="#orgbf1368e">client中的signal处理</a></li>
 </ul>
 </div>
 </div>
@@ -157,13 +157,13 @@ Awesome WM 使用 client 类来指代 XClient 应用程序的一个窗口。
 会让该client最大化
 </p>
 
-<div id="outline-container-org52f627a" class="outline-2">
-<h2 id="org52f627a">client的常用操作</h2>
-<div class="outline-text-2" id="text-org52f627a">
+<div id="outline-container-orga99dd00" class="outline-2">
+<h2 id="orga99dd00">client的常用操作</h2>
+<div class="outline-text-2" id="text-orga99dd00">
 </div>
-<div id="outline-container-orgc4dbbe1" class="outline-3">
-<h3 id="orgc4dbbe1">获取当前的client</h3>
-<div class="outline-text-3" id="text-orgc4dbbe1">
+<div id="outline-container-org98a8376" class="outline-3">
+<h3 id="org98a8376">获取当前的client</h3>
+<div class="outline-text-3" id="text-org98a8376">
 <p>
 client.focus对象总是代表当前获取焦点的窗口
 </p>
@@ -177,13 +177,13 @@ client.focus对象总是代表当前获取焦点的窗口
 </div>
 </div>
 
-<div id="outline-container-orga6c6c93" class="outline-3">
-<h3 id="orga6c6c93">获取client列表</h3>
-<div class="outline-text-3" id="text-orga6c6c93">
+<div id="outline-container-orga92ff2f" class="outline-3">
+<h3 id="orga92ff2f">获取client列表</h3>
+<div class="outline-text-3" id="text-orga92ff2f">
 </div>
-<div id="outline-container-orgcfd1487" class="outline-4">
-<h4 id="orgcfd1487">获取所有的client列表</h4>
-<div class="outline-text-4" id="text-orgcfd1487">
+<div id="outline-container-orgb8f8cc1" class="outline-4">
+<h4 id="orgb8f8cc1">获取所有的client列表</h4>
+<div class="outline-text-4" id="text-orgb8f8cc1">
 <p>
 client.get函数可以返回一个包含所有client对象的数组
 </p>
@@ -195,9 +195,9 @@ client.get函数可以返回一个包含所有client对象的数组
 </div>
 </div>
 </div>
-<div id="outline-container-org1f902db" class="outline-4">
-<h4 id="org1f902db">获取符合某个条件的client列表</h4>
-<div class="outline-text-4" id="text-org1f902db">
+<div id="outline-container-orgf820e65" class="outline-4">
+<h4 id="orgf820e65">获取符合某个条件的client列表</h4>
+<div class="outline-text-4" id="text-orgf820e65">
 <p>
 awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client列表，其中
 </p>
@@ -224,9 +224,9 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 </div>
-<div id="outline-container-org2867855" class="outline-4">
-<h4 id="org2867855">获取某个screen上的client列表</h4>
-<div class="outline-text-4" id="text-org2867855">
+<div id="outline-container-org889d771" class="outline-4">
+<h4 id="org889d771">获取某个screen上的client列表</h4>
+<div class="outline-text-4" id="text-org889d771">
 <ul class="org-ul">
 <li>screen对象中的 <code>clients</code> 属性就是该screen上所有可见client的数组</li>
 <li>screen对象中的 <code>hidden_clients</code> 属性就是该screen上所有不可见client的数组</li>
@@ -237,9 +237,9 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-org30fb108" class="outline-3">
-<h3 id="org30fb108">获取窗口的位置与大小</h3>
-<div class="outline-text-3" id="text-org30fb108">
+<div id="outline-container-org9213a94" class="outline-3">
+<h3 id="org9213a94">获取窗口的位置与大小</h3>
+<div class="outline-text-3" id="text-org9213a94">
 <p>
 <code>client:geometry()</code> 方法返回一个包含 <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> key 的table, 指示了窗口(不包括边框宽度)在屏幕上的偏移量和长度与宽度。
 </p>
@@ -258,9 +258,9 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-orgf6e0fa8" class="outline-3">
-<h3 id="orgf6e0fa8">设置某个窗口的位置和大小</h3>
-<div class="outline-text-3" id="text-orgf6e0fa8">
+<div id="outline-container-org645224a" class="outline-3">
+<h3 id="org645224a">设置某个窗口的位置和大小</h3>
+<div class="outline-text-3" id="text-org645224a">
 <p>
 <code>client:geometry(geo)</code> 方法也能用来设置窗口的位置和大小。
 方法是先设置好一个包含 <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> key 的table,然后使用它作为参数传递给 <code>geometry</code> 方法
@@ -268,27 +268,27 @@ awful.client.iterate(filter,start,s) 可以获取符合 filter 条件的 client�
 </div>
 </div>
 
-<div id="outline-container-orgb597cbd" class="outline-3">
-<h3 id="orgb597cbd">raise</h3>
-<div class="outline-text-3" id="text-orgb597cbd">
+<div id="outline-container-orgad2cd57" class="outline-3">
+<h3 id="orgad2cd57">raise</h3>
+<div class="outline-text-3" id="text-orgad2cd57">
 <p>
 client::raise() 方法可以唤起指定client，让它处于其他client的最上方。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org93c08ad" class="outline-3">
-<h3 id="org93c08ad">lower</h3>
-<div class="outline-text-3" id="text-org93c08ad">
+<div id="outline-container-org5ddf520" class="outline-3">
+<h3 id="org5ddf520">lower</h3>
+<div class="outline-text-3" id="text-org5ddf520">
 <p>
 client::lower() 方法让该client向下降一级
 </p>
 </div>
 </div>
 
-<div id="outline-container-org14aead4" class="outline-3">
-<h3 id="org14aead4">run or raise</h3>
-<div class="outline-text-3" id="text-org14aead4">
+<div id="outline-container-org184f4cd" class="outline-3">
+<h3 id="org184f4cd">run or raise</h3>
+<div class="outline-text-3" id="text-org184f4cd">
 <p>
 awful.client.run_or_raise(cmd,matcher,merge) 函数可以在当某个符合条件的client存在时切换到该client，否则通过执行命令的方式运行新应用。 其中:
 </p>
@@ -311,45 +311,45 @@ awful.client.run_or_raise<span style="color: #4f97d7;">(</span><span style="colo
 </div>
 </div>
 
-<div id="outline-container-orgf381d2c" class="outline-3">
-<h3 id="orgf381d2c">给某个client设置鼠标操作</h3>
-<div class="outline-text-3" id="text-orgf381d2c">
+<div id="outline-container-org3081b09" class="outline-3">
+<h3 id="org3081b09">给某个client设置鼠标操作</h3>
+<div class="outline-text-3" id="text-org3081b09">
 <p>
 client:buttons (buttons_array) 方法可以获取/设置某个client快捷键
 </p>
 </div>
 </div>
 
-<div id="outline-container-org17b5642" class="outline-3">
-<h3 id="org17b5642">给某个client设置快捷键</h3>
-<div class="outline-text-3" id="text-org17b5642">
+<div id="outline-container-org0693df7" class="outline-3">
+<h3 id="org0693df7">给某个client设置快捷键</h3>
+<div class="outline-text-3" id="text-org0693df7">
 <p>
 client::keys(keys_array) 方法可以获取/设置某个client的快捷键
 </p>
 </div>
 </div>
 
-<div id="outline-container-org163a746" class="outline-3">
-<h3 id="org163a746">关闭某个client</h3>
-<div class="outline-text-3" id="text-org163a746">
+<div id="outline-container-org7823981" class="outline-3">
+<h3 id="org7823981">关闭某个client</h3>
+<div class="outline-text-3" id="text-org7823981">
 <p>
 client:kill() 关闭该client
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgaf9aaa9" class="outline-3">
-<h3 id="orgaf9aaa9">为某个client设置所属tag</h3>
-<div class="outline-text-3" id="text-orgaf9aaa9">
+<div id="outline-container-orgf137d65" class="outline-3">
+<h3 id="orgf137d65">为某个client设置所属tag</h3>
+<div class="outline-text-3" id="text-orgf137d65">
 <p>
 client:tags(tags_array) 方法获取/设置该client所属的tag
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4e3cc30" class="outline-3">
-<h3 id="org4e3cc30">移动client到某个tag</h3>
-<div class="outline-text-3" id="text-org4e3cc30">
+<div id="outline-container-orge106b5b" class="outline-3">
+<h3 id="orge106b5b">移动client到某个tag</h3>
+<div class="outline-text-3" id="text-orge106b5b">
 <p>
 client:move_to_tag(targe) 将client移动到某个tag
 </p>
@@ -357,9 +357,9 @@ client:move_to_tag(targe) 将client移动到某个tag
 </div>
 </div>
 
-<div id="outline-container-org6944e23" class="outline-2">
-<h2 id="org6944e23">client中的signal处理</h2>
-<div class="outline-text-2" id="text-org6944e23">
+<div id="outline-container-orgbf1368e" class="outline-2">
+<h2 id="orgbf1368e">client中的signal处理</h2>
+<div class="outline-text-2" id="text-orgbf1368e">
 <ul class="org-ul">
 <li>当client对象中的某个属性发生改变时，会引发名为 <code>property::属性名</code> 的signal</li>
 
@@ -409,12 +409,21 @@ client:move_to_tag(targe) 将client移动到某个tag
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
   <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
   <div class="footer">
     <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
       Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
-      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>

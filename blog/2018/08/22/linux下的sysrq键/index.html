@@ -54,25 +54,25 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6134553">启用SysRq</a>
+<li><a href="#orgd250f32">启用SysRq</a>
 <ul>
-<li><a href="#org3b23894">对内核的要求</a></li>
-<li><a href="#orgec8a9f1">查看当前SysRq的值</a></li>
-<li><a href="#org2b9d2f0">更改SysRq的值</a></li>
+<li><a href="#orgeda8dd0">对内核的要求</a></li>
+<li><a href="#orgaf17066">查看当前SysRq的值</a></li>
+<li><a href="#orgf85e94f">更改SysRq的值</a></li>
 </ul>
 </li>
-<li><a href="#orgc15b85a">使用SysRq</a>
+<li><a href="#orgb34eb27">使用SysRq</a>
 <ul>
-<li><a href="#orgc2bccc0">常见的几种功能键组合</a>
+<li><a href="#orgfda6459">常见的几种功能键组合</a>
 <ul>
-<li><a href="#org9be5b64">R-E-I-S-U-B:安全重启系统</a></li>
-<li><a href="#orgdf0c054">恢复系统挂起</a></li>
-<li><a href="#orge9e115a">获取系统信息</a></li>
+<li><a href="#org116768f">R-E-I-S-U-B:安全重启系统</a></li>
+<li><a href="#orge13f3dc">恢复系统挂起</a></li>
+<li><a href="#org3e95a0f">获取系统信息</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3c2a8b4">查看SysRq的输出信息</a></li>
+<li><a href="#org5de1777">查看SysRq的输出信息</a></li>
 </ul>
 </div>
 </div>
@@ -81,13 +81,13 @@
 这套组合键提供了一系列在系统崩溃时常用到的功能，比如同步数据、杀进程、卸载文件系统，甚至系统重启.
 </p>
 
-<div id="outline-container-org6134553" class="outline-2">
-<h2 id="org6134553">启用SysRq</h2>
-<div class="outline-text-2" id="text-org6134553">
+<div id="outline-container-orgd250f32" class="outline-2">
+<h2 id="orgd250f32">启用SysRq</h2>
+<div class="outline-text-2" id="text-orgd250f32">
 </div>
-<div id="outline-container-org3b23894" class="outline-3">
-<h3 id="org3b23894">对内核的要求</h3>
-<div class="outline-text-3" id="text-org3b23894">
+<div id="outline-container-orgeda8dd0" class="outline-3">
+<h3 id="orgeda8dd0">对内核的要求</h3>
+<div class="outline-text-3" id="text-orgeda8dd0">
 <p>
 启用 <code>SysRq</code> 的前提是在linux kernel编译时启用了 <code>CONFIG_MAGIC_SYSRQ</code> 选项.
 </p>
@@ -111,9 +111,9 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-orgec8a9f1" class="outline-3">
-<h3 id="orgec8a9f1">查看当前SysRq的值</h3>
-<div class="outline-text-3" id="text-orgec8a9f1">
+<div id="outline-container-orgaf17066" class="outline-3">
+<h3 id="orgaf17066">查看当前SysRq的值</h3>
+<div class="outline-text-3" id="text-orgaf17066">
 <p>
 我们可以通过查看 <code>/proc/sys/kernel/sysrq</code> 的值来判断Kernel会对哪些功能产生反应.
 </p>
@@ -217,9 +217,9 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-org2b9d2f0" class="outline-3">
-<h3 id="org2b9d2f0">更改SysRq的值</h3>
-<div class="outline-text-3" id="text-org2b9d2f0">
+<div id="outline-container-orgf85e94f" class="outline-3">
+<h3 id="orgf85e94f">更改SysRq的值</h3>
+<div class="outline-text-3" id="text-orgf85e94f">
 <p>
 如果只是希望临时更改 <code>SysRq</code> 的值，那么很简单，只需要将新的值写入到 <code>/proc/sys/kernel/sysrq</code> 中去
 </p>
@@ -246,9 +246,9 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-orgc15b85a" class="outline-2">
-<h2 id="orgc15b85a">使用SysRq</h2>
-<div class="outline-text-2" id="text-orgc15b85a">
+<div id="outline-container-orgb34eb27" class="outline-2">
+<h2 id="orgb34eb27">使用SysRq</h2>
+<div class="outline-text-2" id="text-orgb34eb27">
 <p>
 使用SysRq有两种方式:
 </p>
@@ -517,17 +517,17 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 
 
-<div id="outline-container-orgc2bccc0" class="outline-3">
-<h3 id="orgc2bccc0">常见的几种功能键组合</h3>
-<div class="outline-text-3" id="text-orgc2bccc0">
+<div id="outline-container-orgfda6459" class="outline-3">
+<h3 id="orgfda6459">常见的几种功能键组合</h3>
+<div class="outline-text-3" id="text-orgfda6459">
 <p>
 下面列出几个常见的功能键组合:
 </p>
 </div>
 
-<div id="outline-container-org9be5b64" class="outline-4">
-<h4 id="org9be5b64">R-E-I-S-U-B:安全重启系统</h4>
-<div class="outline-text-4" id="text-org9be5b64">
+<div id="outline-container-org116768f" class="outline-4">
+<h4 id="org116768f">R-E-I-S-U-B:安全重启系统</h4>
+<div class="outline-text-4" id="text-org116768f">
 <p>
 这套组合键大致相当于reboot命令：
 </p>
@@ -548,9 +548,9 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-orgdf0c054" class="outline-4">
-<h4 id="orgdf0c054">恢复系统挂起</h4>
-<div class="outline-text-4" id="text-orgdf0c054">
+<div id="outline-container-orge13f3dc" class="outline-4">
+<h4 id="orge13f3dc">恢复系统挂起</h4>
+<div class="outline-text-4" id="text-orge13f3dc">
 <p>
 若仅仅是因为资源消耗过量引起系统挂起就重启系统显然是不好的，我们可以尝试通过回收一些资源的方式来回复系统挂起。
 </p>
@@ -572,9 +572,9 @@ SysRq中用来结束进程的command-key包括 E-I-K-F，其中:
 </p>
 </div>
 </div>
-<div id="outline-container-orge9e115a" class="outline-4">
-<h4 id="orge9e115a">获取系统信息</h4>
-<div class="outline-text-4" id="text-orge9e115a">
+<div id="outline-container-org3e95a0f" class="outline-4">
+<h4 id="org3e95a0f">获取系统信息</h4>
+<div class="outline-text-4" id="text-org3e95a0f">
 <p>
 SysRq还提供了几个用于获取系统信息的commandkey，在恢复系统挂起前推荐执行这些commandkey，以记录下当前系统状态。
 </p>
@@ -592,9 +592,9 @@ SysRq还提供了几个用于获取系统信息的commandkey，在恢复系统�
 </div>
 </div>
 </div>
-<div id="outline-container-org3c2a8b4" class="outline-2">
-<h2 id="org3c2a8b4">查看SysRq的输出信息</h2>
-<div class="outline-text-2" id="text-org3c2a8b4">
+<div id="outline-container-org5de1777" class="outline-2">
+<h2 id="org5de1777">查看SysRq的输出信息</h2>
+<div class="outline-text-2" id="text-org5de1777">
 <p>
 从上面的列表中我们可以看到，使用SysRq能够输出大量的信息。这些信息，默认会输出到syslog中.
 同时，若设置的 <code>console_loglevel(0-9)</code> 大于 <code>default_message_loglevel</code> 则输出也会输出到本地控制台终端上去。
@@ -654,12 +654,21 @@ dmesg |tail -n <span style="color: #a45bad;">1</span>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
   <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
   <div class="footer">
     <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
       Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
-      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>

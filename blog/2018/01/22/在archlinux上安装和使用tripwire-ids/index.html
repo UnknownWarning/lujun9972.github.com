@@ -54,37 +54,37 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2298bde">Tripwire是什么</a></li>
-<li><a href="#orga725cf5">安装Tripwire</a></li>
-<li><a href="#orgb93dd2b">配置Tripwire</a>
+<li><a href="#org14a20ac">Tripwire是什么</a></li>
+<li><a href="#orgaa1e557">安装Tripwire</a></li>
+<li><a href="#orga9dc2a5">配置Tripwire</a>
 <ul>
-<li><a href="#org3c3ed49">创建keyfile</a></li>
-<li><a href="#org666e9cd">生成配置文件</a></li>
+<li><a href="#org10824e8">创建keyfile</a></li>
+<li><a href="#orgbdff6ed">生成配置文件</a></li>
 </ul>
 </li>
-<li><a href="#org41fec36">生成并查看检查报告</a>
+<li><a href="#org679c1e9">生成并查看检查报告</a>
 <ul>
-<li><a href="#org73965a4">初始化数据库</a></li>
-<li><a href="#orgd01e5ed">生成检查报告</a></li>
-<li><a href="#orga98e79d">查看检查报告</a></li>
+<li><a href="#orgf9d02ad">初始化数据库</a></li>
+<li><a href="#orgf59c500">生成检查报告</a></li>
+<li><a href="#org56b029e">查看检查报告</a></li>
 </ul>
 </li>
-<li><a href="#org67dba46">如何获取帮助</a></li>
+<li><a href="#org13dbc8e">如何获取帮助</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2298bde" class="outline-2">
-<h2 id="org2298bde">Tripwire是什么</h2>
-<div class="outline-text-2" id="text-org2298bde">
+<div id="outline-container-org14a20ac" class="outline-2">
+<h2 id="org14a20ac">Tripwire是什么</h2>
+<div class="outline-text-2" id="text-org14a20ac">
 <p>
 Tripwire是一款入侵检测软件，它通过为每个要监控的文件产生数字签名的方式来检测文件是否被篡改。
 </p>
 </div>
 </div>
-<div id="outline-container-orga725cf5" class="outline-2">
-<h2 id="orga725cf5">安装Tripwire</h2>
-<div class="outline-text-2" id="text-orga725cf5">
+<div id="outline-container-orgaa1e557" class="outline-2">
+<h2 id="orgaa1e557">安装Tripwire</h2>
+<div class="outline-text-2" id="text-orgaa1e557">
 <p>
 Tripwire在AUR中，可以通过 <code>yaourt</code> 来安装
 </p>
@@ -107,13 +107,13 @@ Tripwire在AUR中，可以通过 <code>yaourt</code> 来安装
 </div>
 
 
-<div id="outline-container-orgb93dd2b" class="outline-2">
-<h2 id="orgb93dd2b">配置Tripwire</h2>
-<div class="outline-text-2" id="text-orgb93dd2b">
+<div id="outline-container-orga9dc2a5" class="outline-2">
+<h2 id="orga9dc2a5">配置Tripwire</h2>
+<div class="outline-text-2" id="text-orga9dc2a5">
 </div>
-<div id="outline-container-org3c3ed49" class="outline-3">
-<h3 id="org3c3ed49">创建keyfile</h3>
-<div class="outline-text-3" id="text-org3c3ed49">
+<div id="outline-container-org10824e8" class="outline-3">
+<h3 id="org10824e8">创建keyfile</h3>
+<div class="outline-text-3" id="text-org10824e8">
 <p>
 安装完之后，还需要用 <code>twadmin</code> 生成 <code>site-keyfile</code> 和 <code>local-keyfile</code>
 </p>
@@ -146,9 +146,9 @@ Generating key (this may take several minutes)...Key generation complete.
 </p>
 </div>
 </div>
-<div id="outline-container-org666e9cd" class="outline-3">
-<h3 id="org666e9cd">生成配置文件</h3>
-<div class="outline-text-3" id="text-org666e9cd">
+<div id="outline-container-orgbdff6ed" class="outline-3">
+<h3 id="orgbdff6ed">生成配置文件</h3>
+<div class="outline-text-3" id="text-orgbdff6ed">
 <p>
 Tripwire在安装时会在 <code>/etc/tripwire/</code> 目录中生成两个文件 <code>twcfg.txt</code> 和 <code>twpol.txt</code>,为tripwire默认的配置文件和策略文件的模板,我们直接使用它的默认模板
 </p>
@@ -202,13 +202,13 @@ sudo cp tw.sitekey /etc/tripwire/site.key
 </div>
 </div>
 </div>
-<div id="outline-container-org41fec36" class="outline-2">
-<h2 id="org41fec36">生成并查看检查报告</h2>
-<div class="outline-text-2" id="text-org41fec36">
+<div id="outline-container-org679c1e9" class="outline-2">
+<h2 id="org679c1e9">生成并查看检查报告</h2>
+<div class="outline-text-2" id="text-org679c1e9">
 </div>
-<div id="outline-container-org73965a4" class="outline-3">
-<h3 id="org73965a4">初始化数据库</h3>
-<div class="outline-text-3" id="text-org73965a4">
+<div id="outline-container-orgf9d02ad" class="outline-3">
+<h3 id="orgf9d02ad">初始化数据库</h3>
+<div class="outline-text-3" id="text-orgf9d02ad">
 <p>
 第一次运行tripwire时需要先初始化数据库
 </p>
@@ -233,9 +233,9 @@ Generating the database...
 </pre>
 </div>
 </div>
-<div id="outline-container-orgd01e5ed" class="outline-3">
-<h3 id="orgd01e5ed">生成检查报告</h3>
-<div class="outline-text-3" id="text-orgd01e5ed">
+<div id="outline-container-orgf59c500" class="outline-3">
+<h3 id="orgf59c500">生成检查报告</h3>
+<div class="outline-text-3" id="text-orgf59c500">
 <p>
 运行 <code>tripwire --check</code> 会就会生成检查报告了，检查报告存放的地址参见配置文件中 <code>REPORTFILE</code> 定义的位置，默认为 <code>/var/lib/tripwire/report/$(HOSTNAME)-$(DATE).twr</code>
 </p>
@@ -245,9 +245,9 @@ Generating the database...
 </div>
 </div>
 </div>
-<div id="outline-container-orga98e79d" class="outline-3">
-<h3 id="orga98e79d">查看检查报告</h3>
-<div class="outline-text-3" id="text-orga98e79d">
+<div id="outline-container-org56b029e" class="outline-3">
+<h3 id="org56b029e">查看检查报告</h3>
+<div class="outline-text-3" id="text-org56b029e">
 <p>
 tripwire生成的 <code>.twr</code> 文件是二进制的，无法直接查看，需要使用 <code>twprint</code> 来转换成可阅读的文本格式
 </p>
@@ -265,9 +265,9 @@ view /tmp/report.txt
 </div>
 </div>
 
-<div id="outline-container-org67dba46" class="outline-2">
-<h2 id="org67dba46">如何获取帮助</h2>
-<div class="outline-text-2" id="text-org67dba46">
+<div id="outline-container-org13dbc8e" class="outline-2">
+<h2 id="org13dbc8e">如何获取帮助</h2>
+<div class="outline-text-2" id="text-org13dbc8e">
 <p>
 可以通过 <code>man twintro</code> 来查看关于 <code>tripwire</code> 的介绍。
 </p>
@@ -313,12 +313,21 @@ view /tmp/report.txt
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
   <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
   <div class="footer">
     <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
       Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
-      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>

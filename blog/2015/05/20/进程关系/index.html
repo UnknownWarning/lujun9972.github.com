@@ -53,32 +53,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org225529b">1. 终端登录过程</a></li>
-<li><a href="#org72b3841">2. 网络登录过程</a></li>
-<li><a href="#org6a30941">3. 进程组</a>
+<li><a href="#org2b2a257">1. 终端登录过程</a></li>
+<li><a href="#org2363a52">2. 网络登录过程</a></li>
+<li><a href="#org5c98ba8">3. 进程组</a>
 <ul>
-<li><a href="#org2c1e000">3.1. 获取进程的所属进程组</a></li>
-<li><a href="#org80bed33">3.2. 加入现有的/创建新进程组</a></li>
+<li><a href="#orgf2c5399">3.1. 获取进程的所属进程组</a></li>
+<li><a href="#org658b459">3.2. 加入现有的/创建新进程组</a></li>
 </ul>
 </li>
-<li><a href="#org2569a84">4. 会话</a>
+<li><a href="#org28cf218">4. 会话</a>
 <ul>
-<li><a href="#org60eabe9">4.1. setsid创建新会话</a></li>
-<li><a href="#orgd995844">4.2. getsid获取会话ID</a></li>
+<li><a href="#orgb3719fe">4.1. setsid创建新会话</a></li>
+<li><a href="#org11011bf">4.2. getsid获取会话ID</a></li>
 </ul>
 </li>
-<li><a href="#orgc80f81c">5. 前后台进程组</a>
+<li><a href="#org430196b">5. 前后台进程组</a>
 <ul>
-<li><a href="#org9c17c34">5.1. 设置/获取前台进程组</a></li>
-<li><a href="#orge9d83fc">5.2. 后台作业的IO处理</a></li>
+<li><a href="#org11d71e9">5.1. 设置/获取前台进程组</a></li>
+<li><a href="#org0c93417">5.2. 后台作业的IO处理</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org225529b" class="outline-2">
-<h2 id="org225529b"><span class="section-number-2">1</span> 终端登录过程</h2>
+<div id="outline-container-org2b2a257" class="outline-2">
+<h2 id="org2b2a257"><span class="section-number-2">1</span> 终端登录过程</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>init进程针对每个tty frok并exec一个getty子进程
@@ -124,8 +124,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </div>
 </div>
 
-<div id="outline-container-org72b3841" class="outline-2">
-<h2 id="org72b3841"><span class="section-number-2">2</span> 网络登录过程</h2>
+<div id="outline-container-org2363a52" class="outline-2">
+<h2 id="org2363a52"><span class="section-number-2">2</span> 网络登录过程</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 网络登录过程与终端登录过程不同点在于网络登录过程不过是一种网络服务.
@@ -141,8 +141,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </div>
 </div>
 
-<div id="outline-container-org6a30941" class="outline-2">
-<h2 id="org6a30941"><span class="section-number-2">3</span> 进程组</h2>
+<div id="outline-container-org5c98ba8" class="outline-2">
+<h2 id="org5c98ba8"><span class="section-number-2">3</span> 进程组</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 每个进程除了有一个进程ID外,还属于一个进程组.
@@ -180,8 +180,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </p>
 </div>
 
-<div id="outline-container-org2c1e000" class="outline-3">
-<h3 id="org2c1e000"><span class="section-number-3">3.1</span> 获取进程的所属进程组</h3>
+<div id="outline-container-orgf2c5399" class="outline-3">
+<h3 id="orgf2c5399"><span class="section-number-3">3.1</span> 获取进程的所属进程组</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -195,8 +195,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </div>
 </div>
 
-<div id="outline-container-org80bed33" class="outline-3">
-<h3 id="org80bed33"><span class="section-number-3">3.2</span> 加入现有的/创建新进程组</h3>
+<div id="outline-container-org658b459" class="outline-3">
+<h3 id="org658b459"><span class="section-number-3">3.2</span> 加入现有的/创建新进程组</h3>
 <div class="outline-text-3" id="text-3-2">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -214,8 +214,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </div>
 </div>
 
-<div id="outline-container-org2569a84" class="outline-2">
-<h2 id="org2569a84"><span class="section-number-2">4</span> 会话</h2>
+<div id="outline-container-org28cf218" class="outline-2">
+<h2 id="org28cf218"><span class="section-number-2">4</span> 会话</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 会话是一个或多个进程组的集合. 这些进程组可以分成一个前台进程组和多个后台进程组.
@@ -246,8 +246,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </p>
 </div>
 
-<div id="outline-container-org60eabe9" class="outline-3">
-<h3 id="org60eabe9"><span class="section-number-3">4.1</span> setsid创建新会话</h3>
+<div id="outline-container-orgb3719fe" class="outline-3">
+<h3 id="orgb3719fe"><span class="section-number-3">4.1</span> setsid创建新会话</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 进程调用setsid函数建立一个新会话和新进程组
@@ -273,8 +273,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </ol>
 </div>
 </div>
-<div id="outline-container-orgd995844" class="outline-3">
-<h3 id="orgd995844"><span class="section-number-3">4.2</span> getsid获取会话ID</h3>
+<div id="outline-container-org11011bf" class="outline-3">
+<h3 id="org11011bf"><span class="section-number-3">4.2</span> getsid获取会话ID</h3>
 <div class="outline-text-3" id="text-4-2">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">unistd.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -325,12 +325,12 @@ getty exec login程序,并传递用户名,密码到login程序
 </div>
 </div>
 </div>
-<div id="outline-container-orgc80f81c" class="outline-2">
-<h2 id="orgc80f81c"><span class="section-number-2">5</span> 前后台进程组</h2>
+<div id="outline-container-org430196b" class="outline-2">
+<h2 id="org430196b"><span class="section-number-2">5</span> 前后台进程组</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org9c17c34" class="outline-3">
-<h3 id="org9c17c34"><span class="section-number-3">5.1</span> 设置/获取前台进程组</h3>
+<div id="outline-container-org11d71e9" class="outline-3">
+<h3 id="org11d71e9"><span class="section-number-3">5.1</span> 设置/获取前台进程组</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 需要有一种方法来通知内核哪一个进程组是前台进程组,这样终端设备驱动程序就能了解将终端输入和终端产生的信号送到何处
@@ -347,8 +347,8 @@ getty exec login程序,并传递用户名,密码到login程序
 </div>
 </div>
 </div>
-<div id="outline-container-orge9d83fc" class="outline-3">
-<h3 id="orge9d83fc"><span class="section-number-3">5.2</span> 后台作业的IO处理</h3>
+<div id="outline-container-org0c93417" class="outline-3">
+<h3 id="org0c93417"><span class="section-number-3">5.2</span> 后台作业的IO处理</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 若后台作业试图读取终端,则终端驱动程序将检测到这种情况,并且向后台作业发送一个特定信号SIGTTIN. 该信号通常会暂停此后台作业,而shell向有关用户发出作业被暂停的通知.
@@ -396,12 +396,21 @@ getty exec login程序,并传递用户名,密码到login程序
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
   <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
   <div class="footer">
     <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
       Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">DarkSun</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
-      Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a><br/>
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
