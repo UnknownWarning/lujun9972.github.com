@@ -54,14 +54,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4e4d314">安装lshw</a></li>
-<li><a href="#org6b7439c">使用lshw</a>
+<li><a href="#orgdf1c5c0">安装lshw</a></li>
+<li><a href="#orgdb979a1">使用lshw</a>
 <ul>
-<li><a href="#org0a245a3">列出硬件信息</a></li>
-<li><a href="#org16fea9a">让lshw现实SCSI，USB，IDE和PCI设备的信息</a></li>
-<li><a href="#org3ae5d50">指定lshw输出信息的格式</a></li>
-<li><a href="#org3b32ac9">让lshw显示出敏感信息</a></li>
-<li><a href="#org5471595">获取帮助</a></li>
+<li><a href="#orgbbdcfed">列出硬件信息</a></li>
+<li><a href="#org8b5d63f">让lshw现实SCSI，USB，IDE和PCI设备的信息</a></li>
+<li><a href="#org7cdc066">指定lshw输出信息的格式</a></li>
+<li><a href="#org268dad2">让lshw显示出敏感信息</a></li>
+<li><a href="#org5ca7367">获取帮助</a></li>
 </ul>
 </li>
 </ul>
@@ -71,9 +71,9 @@
 lshw是一个读取硬件信息的命令行工具。
 </p>
 
-<div id="outline-container-org4e4d314" class="outline-2">
-<h2 id="org4e4d314">安装lshw</h2>
-<div class="outline-text-2" id="text-org4e4d314">
+<div id="outline-container-orgdf1c5c0" class="outline-2">
+<h2 id="orgdf1c5c0">安装lshw</h2>
+<div class="outline-text-2" id="text-orgdf1c5c0">
 <p>
 archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </p>
@@ -84,17 +84,17 @@ archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </div>
 </div>
 
-<div id="outline-container-org6b7439c" class="outline-2">
-<h2 id="org6b7439c">使用lshw</h2>
-<div class="outline-text-2" id="text-org6b7439c">
+<div id="outline-container-orgdb979a1" class="outline-2">
+<h2 id="orgdb979a1">使用lshw</h2>
+<div class="outline-text-2" id="text-orgdb979a1">
 <p>
 注意： <b>由于lshw需要读取硬件信息，因此需要使用root权限</b>
 </p>
 </div>
 
-<div id="outline-container-org0a245a3" class="outline-3">
-<h3 id="org0a245a3">列出硬件信息</h3>
-<div class="outline-text-3" id="text-org0a245a3">
+<div id="outline-container-orgbbdcfed" class="outline-3">
+<h3 id="orgbbdcfed">列出硬件信息</h3>
+<div class="outline-text-3" id="text-orgbbdcfed">
 <p>
 直接运行lshw就能列出本机上的硬件信息了：
 </p>
@@ -638,9 +638,9 @@ archlinux默认并没有安装 <code>lshw</code>,你需要手工安装
 </div>
 </div>
 
-<div id="outline-container-org16fea9a" class="outline-3">
-<h3 id="org16fea9a">让lshw现实SCSI，USB，IDE和PCI设备的信息</h3>
-<div class="outline-text-3" id="text-org16fea9a">
+<div id="outline-container-org8b5d63f" class="outline-3">
+<h3 id="org8b5d63f">让lshw现实SCSI，USB，IDE和PCI设备的信息</h3>
+<div class="outline-text-3" id="text-org8b5d63f">
 <p>
 通过 <code>-businfo</code> 可以获取主线信息
 </p>
@@ -710,9 +710,9 @@ usb@2:1           wlp0s29f7u1  network     Wireless interface
 </div>
 </div>
 
-<div id="outline-container-org3ae5d50" class="outline-3">
-<h3 id="org3ae5d50">指定lshw输出信息的格式</h3>
-<div class="outline-text-3" id="text-org3ae5d50">
+<div id="outline-container-org7cdc066" class="outline-3">
+<h3 id="org7cdc066">指定lshw输出信息的格式</h3>
+<div class="outline-text-3" id="text-org7cdc066">
 <p>
 lshw可以将信息以html，xml或json的格式进行输出：
 </p>
@@ -1913,9 +1913,9 @@ lshw -json
 </div>
 </div>
 
-<div id="outline-container-org3b32ac9" class="outline-3">
-<h3 id="org3b32ac9">让lshw显示出敏感信息</h3>
-<div class="outline-text-3" id="text-org3b32ac9">
+<div id="outline-container-org268dad2" class="outline-3">
+<h3 id="org268dad2">让lshw显示出敏感信息</h3>
+<div class="outline-text-3" id="text-org268dad2">
 <p>
 默认情况下，lshw会隐藏IP地址、serial number之类的敏感信息，若你希望把这类信息也显示出来，则可以执行
 </p>
@@ -1926,9 +1926,9 @@ lshw -json
 </div>
 </div>
 
-<div id="outline-container-org5471595" class="outline-3">
-<h3 id="org5471595">获取帮助</h3>
-<div class="outline-text-3" id="text-org5471595">
+<div id="outline-container-org5ca7367" class="outline-3">
+<h3 id="org5ca7367">获取帮助</h3>
+<div class="outline-text-3" id="text-org5ca7367">
 <div class="org-src-container">
 <pre class="src src-shell">lshw -help
 </pre>
@@ -2020,6 +2020,7 @@ options can be
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

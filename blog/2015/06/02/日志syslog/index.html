@@ -53,22 +53,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org16d5bd4">1. 产生日志消息的方法</a></li>
-<li><a href="#orged8b626">2. 日志消息存放地址</a></li>
-<li><a href="#org35dee8d">3. syslog相关函数</a>
+<li><a href="#org1fbcfcb">1. 产生日志消息的方法</a></li>
+<li><a href="#org89b15fd">2. 日志消息存放地址</a></li>
+<li><a href="#org67afce5">3. syslog相关函数</a>
 <ul>
-<li><a href="#org52c8005">3.1. openlog说明</a></li>
-<li><a href="#org4cb4f06">3.2. syslog函数豁免</a></li>
-<li><a href="#org41beb45">3.3. closelog说明</a></li>
-<li><a href="#org43b2c25">3.4. setlogmask</a></li>
+<li><a href="#org0f894b7">3.1. openlog说明</a></li>
+<li><a href="#org962b6fc">3.2. syslog函数豁免</a></li>
+<li><a href="#org0e9145e">3.3. closelog说明</a></li>
+<li><a href="#orgf03464b">3.4. setlogmask</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org16d5bd4" class="outline-2">
-<h2 id="org16d5bd4"><span class="section-number-2">1</span> 产生日志消息的方法</h2>
+<div id="outline-container-org1fbcfcb" class="outline-2">
+<h2 id="org1fbcfcb"><span class="section-number-2">1</span> 产生日志消息的方法</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>内核程序可以调用log函数记日志. 任何用户进程可以打开并读取/dev/klog设备读取这些消息</li>
@@ -78,8 +78,8 @@
 </div>
 </div>
 
-<div id="outline-container-orged8b626" class="outline-2">
-<h2 id="orged8b626"><span class="section-number-2">2</span> 日志消息存放地址</h2>
+<div id="outline-container-org89b15fd" class="outline-2">
+<h2 id="org89b15fd"><span class="section-number-2">2</span> 日志消息存放地址</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 通常syslogd守护进程会读取一个配置文件(/etc/syslog.conf)来决定不同类型的消息应该送到何处.
@@ -87,8 +87,8 @@
 </div>
 </div>
 
-<div id="outline-container-org35dee8d" class="outline-2">
-<h2 id="org35dee8d"><span class="section-number-2">3</span> syslog相关函数</h2>
+<div id="outline-container-org67afce5" class="outline-2">
+<h2 id="org67afce5"><span class="section-number-2">3</span> syslog相关函数</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">syslog.h</span><span style="color: #4f97d7;">&gt;</span>
@@ -107,8 +107,8 @@
 </div>
 </div>
 
-<div id="outline-container-org52c8005" class="outline-3">
-<h3 id="org52c8005"><span class="section-number-3">3.1</span> openlog说明</h3>
+<div id="outline-container-org0f894b7" class="outline-3">
+<h3 id="org0f894b7"><span class="section-number-3">3.1</span> openlog说明</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>调用openlog是可选择的,若不调用openlog则第一次调用syslog时自动调用syslog</li>
@@ -249,8 +249,8 @@ option参数是指定许多选项的位屏蔽
 </div>
 </div>
 
-<div id="outline-container-org4cb4f06" class="outline-3">
-<h3 id="org4cb4f06"><span class="section-number-3">3.2</span> syslog函数豁免</h3>
+<div id="outline-container-org962b6fc" class="outline-3">
+<h3 id="org962b6fc"><span class="section-number-3">3.2</span> syslog函数豁免</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 参数priority可以用来指明消息的 <b>种类</b> 和 <b>等级</b>
@@ -383,8 +383,8 @@ option参数是指定许多选项的位屏蔽
 </div>
 </div>
 
-<div id="outline-container-org41beb45" class="outline-3">
-<h3 id="org41beb45"><span class="section-number-3">3.3</span> closelog说明</h3>
+<div id="outline-container-org0e9145e" class="outline-3">
+<h3 id="org0e9145e"><span class="section-number-3">3.3</span> closelog说明</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 closelog也是可选的,只有在调用openlog后才需要调用. 它用于关闭曾被用于与syslogd守护进程通信的描述符
@@ -392,8 +392,8 @@ closelog也是可选的,只有在调用openlog后才需要调用. 它用于关�
 </div>
 </div>
 
-<div id="outline-container-org43b2c25" class="outline-3">
-<h3 id="org43b2c25"><span class="section-number-3">3.4</span> setlogmask</h3>
+<div id="outline-container-orgf03464b" class="outline-3">
+<h3 id="orgf03464b"><span class="section-number-3">3.4</span> setlogmask</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 setlogmask函数用于设置进程的日志优先级屏蔽字.
@@ -461,6 +461,7 @@ setlogmask函数用于设置进程的日志优先级屏蔽字.
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

@@ -54,12 +54,12 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf3350f7">安装cryptmount</a></li>
-<li><a href="#orgbe357eb">配置cryptmount</a></li>
-<li><a href="#orgcff1393">创建镜像文件</a></li>
-<li><a href="#org192a519">创建密钥文件</a></li>
-<li><a href="#org724206d">格式化镜像文件</a></li>
-<li><a href="#orgf31efd7">挂载和卸载加密镜像</a></li>
+<li><a href="#orgbcdde5c">安装cryptmount</a></li>
+<li><a href="#org05b4c90">配置cryptmount</a></li>
+<li><a href="#org5da19ed">创建镜像文件</a></li>
+<li><a href="#orgb410b22">创建密钥文件</a></li>
+<li><a href="#org1cd057d">格式化镜像文件</a></li>
+<li><a href="#org7b675c2">挂载和卸载加密镜像</a></li>
 </ul>
 </div>
 </div>
@@ -67,9 +67,9 @@
 cryptmount是一个创建、挂载和卸载加密镜像的工具，你可以用它来创建一个加密镜像并挂载到文件系统中，然后将机密文件存入其中，再卸载这个镜像，这样就能做到神不知、鬼不觉地保存机密文件了。
 </p>
 
-<div id="outline-container-orgf3350f7" class="outline-2">
-<h2 id="orgf3350f7">安装cryptmount</h2>
-<div class="outline-text-2" id="text-orgf3350f7">
+<div id="outline-container-orgbcdde5c" class="outline-2">
+<h2 id="orgbcdde5c">安装cryptmount</h2>
+<div class="outline-text-2" id="text-orgbcdde5c">
 <p>
 cryptmount是archlinux中的aur仓库中，因此可以通过下面命令来安装
 </p>
@@ -92,9 +92,9 @@ cryptmount是archlinux中的aur仓库中，因此可以通过下面命令来安�
 </div>
 </div>
 
-<div id="outline-container-orgbe357eb" class="outline-2">
-<h2 id="orgbe357eb">配置cryptmount</h2>
-<div class="outline-text-2" id="text-orgbe357eb">
+<div id="outline-container-org05b4c90" class="outline-2">
+<h2 id="org05b4c90">配置cryptmount</h2>
+<div class="outline-text-2" id="text-org05b4c90">
 <p>
 使用root修改 <code>/etc/cryptmount/cmtab</code>,加入下面内容
 </p>
@@ -117,9 +117,9 @@ SecureImage {                               #配置项名称
 </div>
 </div>
 
-<div id="outline-container-orgcff1393" class="outline-2">
-<h2 id="orgcff1393">创建镜像文件</h2>
-<div class="outline-text-2" id="text-orgcff1393">
+<div id="outline-container-org5da19ed" class="outline-2">
+<h2 id="org5da19ed">创建镜像文件</h2>
+<div class="outline-text-2" id="text-org5da19ed">
 <p>
 使用 <code>dd</code> 创建一个镜像文件:
 </p>
@@ -138,9 +138,9 @@ SecureImage {                               #配置项名称
 </div>
 </div>
 
-<div id="outline-container-org192a519" class="outline-2">
-<h2 id="org192a519">创建密钥文件</h2>
-<div class="outline-text-2" id="text-org192a519">
+<div id="outline-container-orgb410b22" class="outline-2">
+<h2 id="orgb410b22">创建密钥文件</h2>
+<div class="outline-text-2" id="text-orgb410b22">
 <div class="org-src-container">
 <pre class="src src-shell">sudo cryptmount --generate-key <span style="color: #a45bad;">32</span> SecureImage
 </pre>
@@ -160,9 +160,9 @@ cryptmount就根据 <code>cmtab</code> 中cmtab的 <code>keyfile</code> 生成�
 </div>
 </div>
 
-<div id="outline-container-org724206d" class="outline-2">
-<h2 id="org724206d">格式化镜像文件</h2>
-<div class="outline-text-2" id="text-org724206d">
+<div id="outline-container-org1cd057d" class="outline-2">
+<h2 id="org1cd057d">格式化镜像文件</h2>
+<div class="outline-text-2" id="text-org1cd057d">
 <p>
 首先根据镜像文件来创建设备文件，运行:
 </p>
@@ -193,9 +193,9 @@ cryptmount就根据 <code>cmtab</code> 中cmtab的 <code>keyfile</code> 生成�
 </div>
 </div>
 
-<div id="outline-container-orgf31efd7" class="outline-2">
-<h2 id="orgf31efd7">挂载和卸载加密镜像</h2>
-<div class="outline-text-2" id="text-orgf31efd7">
+<div id="outline-container-org7b675c2" class="outline-2">
+<h2 id="org7b675c2">挂载和卸载加密镜像</h2>
+<div class="outline-text-2" id="text-org7b675c2">
 <p>
 首先当然是创建挂载点了:
 </p>
@@ -294,6 +294,7 @@ cryptmount就根据 <code>cmtab</code> 中cmtab的 <code>keyfile</code> 生成�
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

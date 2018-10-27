@@ -54,17 +54,17 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfb03e7e">使用inotifywait监控文件变动</a></li>
-<li><a href="#org687fdb0">使用rsync同步变动</a></li>
-<li><a href="#org554fd86">整合起来</a></li>
-<li><a href="#org61545dc">改进</a></li>
+<li><a href="#orgd5726ba">使用inotifywait监控文件变动</a></li>
+<li><a href="#orgd7faf6e">使用rsync同步变动</a></li>
+<li><a href="#org4b4e1e2">整合起来</a></li>
+<li><a href="#org485c318">改进</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgfb03e7e" class="outline-2">
-<h2 id="orgfb03e7e">使用inotifywait监控文件变动</h2>
-<div class="outline-text-2" id="text-orgfb03e7e">
+<div id="outline-container-orgd5726ba" class="outline-2">
+<h2 id="orgd5726ba">使用inotifywait监控文件变动</h2>
+<div class="outline-text-2" id="text-orgd5726ba">
 <p>
 inotifywait是 <code>inotify-tools</code> 包中提供的一个工具，它使用 <code>inotify</code> API 来监控文件/目录中的变动情况。
 </p>
@@ -128,9 +128,9 @@ Watches established.
 </div>
 </div>
 
-<div id="outline-container-org687fdb0" class="outline-2">
-<h2 id="org687fdb0">使用rsync同步变动</h2>
-<div class="outline-text-2" id="text-org687fdb0">
+<div id="outline-container-orgd7faf6e" class="outline-2">
+<h2 id="orgd7faf6e">使用rsync同步变动</h2>
+<div class="outline-text-2" id="text-orgd7faf6e">
 <p>
 rsync是一款快速增量备份工具。它的具有以下几个特点使得它很适合用作做备份的工具：
 </p>
@@ -164,9 +164,9 @@ rsync常用法为：
 </div>
 </div>
 
-<div id="outline-container-org554fd86" class="outline-2">
-<h2 id="org554fd86">整合起来</h2>
-<div class="outline-text-2" id="text-org554fd86">
+<div id="outline-container-org4b4e1e2" class="outline-2">
+<h2 id="org4b4e1e2">整合起来</h2>
+<div class="outline-text-2" id="text-org4b4e1e2">
 <p>
 接下来我们只需要用个 <code>while</code> 死循环把两个工具整合起来就行了，非常简单
 </p>
@@ -199,9 +199,9 @@ rsync常用法为：
 </p>
 </div>
 </div>
-<div id="outline-container-org61545dc" class="outline-2">
-<h2 id="org61545dc">改进</h2>
-<div class="outline-text-2" id="text-org61545dc">
+<div id="outline-container-org485c318" class="outline-2">
+<h2 id="org485c318">改进</h2>
+<div class="outline-text-2" id="text-org485c318">
 <p>
 但是上面这种方法存在一个问题，那就是在 <code>rsync</code> 运行完到调用起 <code>inotifywait</code> 之前其实是会有一个微小的时间间隔的。
 在这个时间间隔内若有文件发生变动，则无法检测出来从而同步。
@@ -292,6 +292,7 @@ inotifywait -r -m -e modify,create,delete $<span style="color: #4f97d7;">{</span
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

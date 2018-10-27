@@ -54,14 +54,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf215343">确定 sshd_config 的权限</a></li>
-<li><a href="#org93da81c">修改ssh服务端口</a></li>
-<li><a href="#org7ff691b">只启用SSH Protocol 2</a></li>
-<li><a href="#orgfbf4284">不允许空密码登陆</a></li>
-<li><a href="#orgd6adcb6">不允许root登陆</a></li>
-<li><a href="#org4cfb5fd">限制只能登陆特定用户</a></li>
-<li><a href="#org9c7f142">修改未登陆的超时时间</a></li>
-<li><a href="#org49248d7">设置会话空闲一段时间后自动退出</a></li>
+<li><a href="#org76deb96">确定 sshd_config 的权限</a></li>
+<li><a href="#orgf16bbd5">修改ssh服务端口</a></li>
+<li><a href="#orgca562ff">只启用SSH Protocol 2</a></li>
+<li><a href="#org4ceb86a">不允许空密码登陆</a></li>
+<li><a href="#orgeeab9b4">不允许root登陆</a></li>
+<li><a href="#org7085beb">限制只能登陆特定用户</a></li>
+<li><a href="#org02d0a82">修改未登陆的超时时间</a></li>
+<li><a href="#org6c7c23c">设置会话空闲一段时间后自动退出</a></li>
 </ul>
 </div>
 </div>
@@ -99,9 +99,9 @@
 迫于无奈，只好对SSH服务进行加固处理。目前找到的加固方法有下面几个:
 </p>
 
-<div id="outline-container-orgf215343" class="outline-2">
-<h2 id="orgf215343">确定 sshd_config 的权限</h2>
-<div class="outline-text-2" id="text-orgf215343">
+<div id="outline-container-org76deb96" class="outline-2">
+<h2 id="org76deb96">确定 sshd_config 的权限</h2>
+<div class="outline-text-2" id="text-org76deb96">
 <p>
 确定 <code>sshd_config</code> 只有root才能读写，其他用户不能进行任何操作
 </p>
@@ -112,9 +112,9 @@ sudo chmod og-rwx /etc/ssh/sshd_config
 </div>
 </div>
 </div>
-<div id="outline-container-org93da81c" class="outline-2">
-<h2 id="org93da81c">修改ssh服务端口</h2>
-<div class="outline-text-2" id="text-org93da81c">
+<div id="outline-container-orgf16bbd5" class="outline-2">
+<h2 id="orgf16bbd5">修改ssh服务端口</h2>
+<div class="outline-text-2" id="text-orgf16bbd5">
 <p>
 这一步的效果很显著，只从改了ssh服务端口后，就在没有看到任何登陆失败的提示了
 </p>
@@ -124,9 +124,9 @@ sudo chmod og-rwx /etc/ssh/sshd_config
 </div>
 </div>
 </div>
-<div id="outline-container-org7ff691b" class="outline-2">
-<h2 id="org7ff691b">只启用SSH Protocol 2</h2>
-<div class="outline-text-2" id="text-org7ff691b">
+<div id="outline-container-orgca562ff" class="outline-2">
+<h2 id="orgca562ff">只启用SSH Protocol 2</h2>
+<div class="outline-text-2" id="text-orgca562ff">
 <p>
 Protocol 1的安全性相对要差一些
 </p>
@@ -136,18 +136,18 @@ Protocol 1的安全性相对要差一些
 </div>
 </div>
 </div>
-<div id="outline-container-orgfbf4284" class="outline-2">
-<h2 id="orgfbf4284">不允许空密码登陆</h2>
-<div class="outline-text-2" id="text-orgfbf4284">
+<div id="outline-container-org4ceb86a" class="outline-2">
+<h2 id="org4ceb86a">不允许空密码登陆</h2>
+<div class="outline-text-2" id="text-org4ceb86a">
 <div class="org-src-container">
 <pre class="src src-conf">PermitEmptyPasswords no
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd6adcb6" class="outline-2">
-<h2 id="orgd6adcb6">不允许root登陆</h2>
-<div class="outline-text-2" id="text-orgd6adcb6">
+<div id="outline-container-orgeeab9b4" class="outline-2">
+<h2 id="orgeeab9b4">不允许root登陆</h2>
+<div class="outline-text-2" id="text-orgeeab9b4">
 <p>
 从上面对 <code>lastb</code> 的结果分析可以得知， <code>root</code> 是被实验最多的用户，没有之一。
 </p>
@@ -172,9 +172,9 @@ Protocol 1的安全性相对要差一些
 </p>
 </div>
 </div>
-<div id="outline-container-org4cfb5fd" class="outline-2">
-<h2 id="org4cfb5fd">限制只能登陆特定用户</h2>
-<div class="outline-text-2" id="text-org4cfb5fd">
+<div id="outline-container-org7085beb" class="outline-2">
+<h2 id="org7085beb">限制只能登陆特定用户</h2>
+<div class="outline-text-2" id="text-org7085beb">
 <p>
 我们可以使用 <code>DenyUsers</code>, <code>AllowUsers</code>, <code>DenyGroups</code> 和 <code>AllowGroups</code> 关键字来限定允许登陆的用户。
 </p>
@@ -191,9 +191,9 @@ DenyGroups developers qa
 </div>
 </div>
 </div>
-<div id="outline-container-org9c7f142" class="outline-2">
-<h2 id="org9c7f142">修改未登陆的超时时间</h2>
-<div class="outline-text-2" id="text-org9c7f142">
+<div id="outline-container-org02d0a82" class="outline-2">
+<h2 id="org02d0a82">修改未登陆的超时时间</h2>
+<div class="outline-text-2" id="text-org02d0a82">
 <p>
 用户未登陆成功的情况下，默认120秒后会登出。这个时间可以缩短，比如60.
 </p>
@@ -206,9 +206,9 @@ DenyGroups developers qa
 </p>
 </div>
 </div>
-<div id="outline-container-org49248d7" class="outline-2">
-<h2 id="org49248d7">设置会话空闲一段时间后自动退出</h2>
-<div class="outline-text-2" id="text-org49248d7">
+<div id="outline-container-org6c7c23c" class="outline-2">
+<h2 id="org6c7c23c">设置会话空闲一段时间后自动退出</h2>
+<div class="outline-text-2" id="text-org6c7c23c">
 <p>
 设置空间一段时间自动退出有两种方法，
 </p>
@@ -283,6 +283,7 @@ ClientAliveCountMax 0
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

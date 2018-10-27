@@ -54,8 +54,8 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6747ed3">Buffered Output Review</a></li>
-<li><a href="#org3d30f1b">Debugger to the Rescue</a></li>
+<li><a href="#org018e61c">Buffered Output Review</a></li>
+<li><a href="#orgad4d14c">Debugger to the Rescue</a></li>
 </ul>
 </div>
 </div>
@@ -93,9 +93,9 @@
 </pre>
 </div>
 
-<div id="outline-container-org6747ed3" class="outline-2">
-<h2 id="org6747ed3">Buffered Output Review</h2>
-<div class="outline-text-2" id="text-org6747ed3">
+<div id="outline-container-org018e61c" class="outline-2">
+<h2 id="org018e61c">Buffered Output Review</h2>
+<div class="outline-text-2" id="text-org018e61c">
 <p>
 <code>printf</code> and <code>putchar</code> 这两个C库函数,都会以某种方式来缓存输出的内容. 这意味着不是每次调用这些函数都会实际输出数据.
 另一方面, POSIX定义的函数 <code>read</code> 和 <code>write</code> 则是不带buffer的系统调用.
@@ -130,9 +130,9 @@ $ ./a.out &gt; output.txt
 </div>
 </div>
 
-<div id="outline-container-org3d30f1b" class="outline-2">
-<h2 id="org3d30f1b">Debugger to the Rescue</h2>
-<div class="outline-text-2" id="text-org3d30f1b">
+<div id="outline-container-orgad4d14c" class="outline-2">
+<h2 id="orgad4d14c">Debugger to the Rescue</h2>
+<div class="outline-text-2" id="text-orgad4d14c">
 <p>
 幸运的是,有一个东西可以暂停正在运行的程序并帮我们维护程序的状态:那就是调试器.
 </p>
@@ -234,6 +234,7 @@ $ cat output.txt
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

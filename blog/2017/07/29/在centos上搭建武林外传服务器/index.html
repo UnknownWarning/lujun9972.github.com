@@ -54,24 +54,24 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org64fc20b">安装必要的软件</a>
+<li><a href="#org844a7aa">安装必要的软件</a>
 <ul>
-<li><a href="#org0f205d5">安装mysql(mariadb)</a></li>
-<li><a href="#org424daa3">安装java</a></li>
-<li><a href="#org4197bbe">安装killall（stop脚本中会用到）</a></li>
-<li><a href="#org81fac77">安装32位支持</a></li>
+<li><a href="#org18094cd">安装mysql(mariadb)</a></li>
+<li><a href="#orgfccc1d9">安装java</a></li>
+<li><a href="#org11beb92">安装killall（stop脚本中会用到）</a></li>
+<li><a href="#org435d5d6">安装32位支持</a></li>
 </ul>
 </li>
-<li><a href="#org9e7622a">下载搭建服务器所需的文件</a></li>
-<li><a href="#orgca677bf">还原数据库内容</a>
+<li><a href="#orgfcbbcd8">下载搭建服务器所需的文件</a></li>
+<li><a href="#org47b1c4d">还原数据库内容</a>
 <ul>
-<li><a href="#org19f27ff">启动mariadb服务</a></li>
-<li><a href="#org2c1ff8c">设置root用户密码为root</a></li>
-<li><a href="#org45d2129">还原zmwm数据库内容以及存储过程</a></li>
+<li><a href="#orgd093fa3">启动mariadb服务</a></li>
+<li><a href="#org4285b0d">设置root用户密码为root</a></li>
+<li><a href="#org0e9a30a">还原zmwm数据库内容以及存储过程</a></li>
 </ul>
 </li>
-<li><a href="#orgd36b771">拷贝其他文件</a></li>
-<li><a href="#org8e7e5df">配置客户端中的IP</a></li>
+<li><a href="#orged75987">拷贝其他文件</a></li>
+<li><a href="#org06da5bc">配置客户端中的IP</a></li>
 </ul>
 </div>
 </div>
@@ -87,40 +87,40 @@
 于是折腾了一下，把它移植到了centos中（挂在华为云中）
 </p>
 
-<div id="outline-container-org64fc20b" class="outline-2">
-<h2 id="org64fc20b">安装必要的软件</h2>
-<div class="outline-text-2" id="text-org64fc20b">
+<div id="outline-container-org844a7aa" class="outline-2">
+<h2 id="org844a7aa">安装必要的软件</h2>
+<div class="outline-text-2" id="text-org844a7aa">
 </div>
-<div id="outline-container-org0f205d5" class="outline-3">
-<h3 id="org0f205d5">安装mysql(mariadb)</h3>
-<div class="outline-text-3" id="text-org0f205d5">
+<div id="outline-container-org18094cd" class="outline-3">
+<h3 id="org18094cd">安装mysql(mariadb)</h3>
+<div class="outline-text-3" id="text-org18094cd">
 <div class="org-src-container">
 <pre class="src src-shell">yum install mariadb mariadb-server
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org424daa3" class="outline-3">
-<h3 id="org424daa3">安装java</h3>
-<div class="outline-text-3" id="text-org424daa3">
+<div id="outline-container-orgfccc1d9" class="outline-3">
+<h3 id="orgfccc1d9">安装java</h3>
+<div class="outline-text-3" id="text-orgfccc1d9">
 <div class="org-src-container">
 <pre class="src src-shell">yum install  java-1.8.0-openjdk
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4197bbe" class="outline-3">
-<h3 id="org4197bbe">安装killall（stop脚本中会用到）</h3>
-<div class="outline-text-3" id="text-org4197bbe">
+<div id="outline-container-org11beb92" class="outline-3">
+<h3 id="org11beb92">安装killall（stop脚本中会用到）</h3>
+<div class="outline-text-3" id="text-org11beb92">
 <div class="org-src-container">
 <pre class="src src-shell">yum install psmisc
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org81fac77" class="outline-3">
-<h3 id="org81fac77">安装32位支持</h3>
-<div class="outline-text-3" id="text-org81fac77">
+<div id="outline-container-org435d5d6" class="outline-3">
+<h3 id="org435d5d6">安装32位支持</h3>
+<div class="outline-text-3" id="text-org435d5d6">
 <div class="org-src-container">
 <pre class="src src-shell">yum install glibc.i686
 yum install libxml2.so.2
@@ -131,22 +131,22 @@ yum install libstdc++.so.5
 </div>
 </div>
 
-<div id="outline-container-org9e7622a" class="outline-2">
-<h2 id="org9e7622a">下载搭建服务器所需的文件</h2>
-<div class="outline-text-2" id="text-org9e7622a">
+<div id="outline-container-orgfcbbcd8" class="outline-2">
+<h2 id="orgfcbbcd8">下载搭建服务器所需的文件</h2>
+<div class="outline-text-2" id="text-orgfcbbcd8">
 <p>
 链接: <a href="https://pan.baidu.com/s/1i5eMLu9">https://pan.baidu.com/s/1i5eMLu9</a> 密码: f8ha
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgca677bf" class="outline-2">
-<h2 id="orgca677bf">还原数据库内容</h2>
-<div class="outline-text-2" id="text-orgca677bf">
+<div id="outline-container-org47b1c4d" class="outline-2">
+<h2 id="org47b1c4d">还原数据库内容</h2>
+<div class="outline-text-2" id="text-org47b1c4d">
 </div>
-<div id="outline-container-org19f27ff" class="outline-3">
-<h3 id="org19f27ff">启动mariadb服务</h3>
-<div class="outline-text-3" id="text-org19f27ff">
+<div id="outline-container-orgd093fa3" class="outline-3">
+<h3 id="orgd093fa3">启动mariadb服务</h3>
+<div class="outline-text-3" id="text-orgd093fa3">
 <div class="org-src-container">
 <pre class="src src-shell">systemctl start mariadb
 systemctl enable mariadb
@@ -155,9 +155,9 @@ systemctl enable mariadb
 </div>
 </div>
 
-<div id="outline-container-org2c1ff8c" class="outline-3">
-<h3 id="org2c1ff8c">设置root用户密码为root</h3>
-<div class="outline-text-3" id="text-org2c1ff8c">
+<div id="outline-container-org4285b0d" class="outline-3">
+<h3 id="org4285b0d">设置root用户密码为root</h3>
+<div class="outline-text-3" id="text-org4285b0d">
 <p>
 刚安装好mariadb并无需密码就能登陆root
 </p>
@@ -178,9 +178,9 @@ flush <span style="color: #4f97d7; font-weight: bold;">privileges</span>;
 </div>
 </div>
 
-<div id="outline-container-org45d2129" class="outline-3">
-<h3 id="org45d2129">还原zmwm数据库内容以及存储过程</h3>
-<div class="outline-text-3" id="text-org45d2129">
+<div id="outline-container-org0e9a30a" class="outline-3">
+<h3 id="org0e9a30a">还原zmwm数据库内容以及存储过程</h3>
+<div class="outline-text-3" id="text-org0e9a30a">
 <p>
 先在mysql中创建空的zmwm库
 </p>
@@ -205,9 +205,9 @@ mysql -uroot -proot zmwm &lt;zmwm_table.sql
 </div>
 </div>
 
-<div id="outline-container-orgd36b771" class="outline-2">
-<h2 id="orgd36b771">拷贝其他文件</h2>
-<div class="outline-text-2" id="text-orgd36b771">
+<div id="outline-container-orged75987" class="outline-2">
+<h2 id="orged75987">拷贝其他文件</h2>
+<div class="outline-text-2" id="text-orged75987">
 <p>
 将下类内容添加到 <code>/etc/hosts</code> 中
 </p>
@@ -263,9 +263,9 @@ tar -zxvf wulin_pwserver.tar.gz
 </div>
 </div>
 
-<div id="outline-container-org8e7e5df" class="outline-2">
-<h2 id="org8e7e5df">配置客户端中的IP</h2>
-<div class="outline-text-2" id="text-org8e7e5df">
+<div id="outline-container-org06da5bc" class="outline-2">
+<h2 id="org06da5bc">配置客户端中的IP</h2>
+<div class="outline-text-2" id="text-org06da5bc">
 <p>
 从这里下载客户端
 链接: <a href="https://pan.baidu.com/s/1c8NhiY">https://pan.baidu.com/s/1c8NhiY</a> 密码: z5i2
@@ -342,6 +342,7 @@ tar -zxvf wulin_pwserver.tar.gz
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

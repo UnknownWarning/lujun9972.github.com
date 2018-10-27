@@ -54,10 +54,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0058506">安装golang</a></li>
-<li><a href="#orga09d8d1">安装git</a></li>
-<li><a href="#orgde94fb9">安装Gogs</a></li>
-<li><a href="#orgfcde817">自动运行Gogs服务器</a></li>
+<li><a href="#orga31b3b8">安装golang</a></li>
+<li><a href="#org42d3689">安装git</a></li>
+<li><a href="#orga5edc02">安装Gogs</a></li>
+<li><a href="#org4261b85">自动运行Gogs服务器</a></li>
 </ul>
 </div>
 </div>
@@ -65,9 +65,9 @@
 目前主流的开源git服务器有 <code>gitlab</code> 和 <code>gogs</code> ，考虑到 <code>gogs</code> 相对轻量级，而OrangePi的性能普遍不高，因此这里选择 <code>gogs</code>
 </p>
 
-<div id="outline-container-org0058506" class="outline-2">
-<h2 id="org0058506">安装golang</h2>
-<div class="outline-text-2" id="text-org0058506">
+<div id="outline-container-orga31b3b8" class="outline-2">
+<h2 id="orga31b3b8">安装golang</h2>
+<div class="outline-text-2" id="text-orga31b3b8">
 <p>
 gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此我们直接用 <code>apt</code> 安装
 </p>
@@ -78,9 +78,9 @@ gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此
 </div>
 </div>
 
-<div id="outline-container-orga09d8d1" class="outline-2">
-<h2 id="orga09d8d1">安装git</h2>
-<div class="outline-text-2" id="text-orga09d8d1">
+<div id="outline-container-org42d3689" class="outline-2">
+<h2 id="org42d3689">安装git</h2>
+<div class="outline-text-2" id="text-org42d3689">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install git
 </pre>
@@ -107,9 +107,9 @@ gogs要求Go语言版本&gt;=1.6，Ubuntu上的golang刚好是1.6版的，因此
 </div>
 </div>
 
-<div id="outline-container-orgde94fb9" class="outline-2">
-<h2 id="orgde94fb9">安装Gogs</h2>
-<div class="outline-text-2" id="text-orgde94fb9">
+<div id="outline-container-orga5edc02" class="outline-2">
+<h2 id="orga5edc02">安装Gogs</h2>
+<div class="outline-text-2" id="text-orga5edc02">
 <p>
 由于我们只是自己使用，需求很低，因此让Gogs直接使用SQLite3数据库
 </p>
@@ -148,9 +148,9 @@ git@orangepipc2:~/go/src/github.com/gogits/gogs$ ./gogs web
 </div>
 </div>
 
-<div id="outline-container-orgfcde817" class="outline-2">
-<h2 id="orgfcde817">自动运行Gogs服务器</h2>
-<div class="outline-text-2" id="text-orgfcde817">
+<div id="outline-container-org4261b85" class="outline-2">
+<h2 id="org4261b85">自动运行Gogs服务器</h2>
+<div class="outline-text-2" id="text-org4261b85">
 <p>
 Gogs提供了一个默认的service文件供我们使用： <code>~/go/src/github.com/gogits/gogs/scripts/systemd/gogs.service</code>
 </p>
@@ -245,6 +245,7 @@ systemctl enable gogs
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

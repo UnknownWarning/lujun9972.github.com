@@ -54,11 +54,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf77f840">使用xargs</a></li>
-<li><a href="#orgfead342">使用parallel</a></li>
-<li><a href="#orgd0faf5a">使用tee</a></li>
-<li><a href="#orgb37ad9f">使用find</a></li>
-<li><a href="#orgf8b763f">使用for循环</a></li>
+<li><a href="#orgab611b6">使用xargs</a></li>
+<li><a href="#org6b4850f">使用parallel</a></li>
+<li><a href="#orgfebb360">使用tee</a></li>
+<li><a href="#org6ed4fee">使用find</a></li>
+<li><a href="#orgdb14c5d">使用for循环</a></li>
 </ul>
 </div>
 </div>
@@ -66,9 +66,9 @@
 从 <a href="https://www.cyberciti.biz/faq/linux-unix-copy-a-file-to-multiple-directories-using-cp-command/">https://www.cyberciti.biz/faq/linux-unix-copy-a-file-to-multiple-directories-using-cp-command/</a> 上看到的:
 </p>
 
-<div id="outline-container-orgf77f840" class="outline-2">
-<h2 id="orgf77f840">使用xargs</h2>
-<div class="outline-text-2" id="text-orgf77f840">
+<div id="outline-container-orgab611b6" class="outline-2">
+<h2 id="orgab611b6">使用xargs</h2>
+<div class="outline-text-2" id="text-orgab611b6">
 <div class="org-src-container">
 <pre class="src src-shell">xargs -n <span style="color: #a45bad;">1</span> cp -v filename&lt;&lt;&lt;<span style="color: #2d9574;">"/dir1/ /dir2/ /dir3/"</span> 
 <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#25110;</span>
@@ -78,9 +78,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgfead342" class="outline-2">
-<h2 id="orgfead342">使用parallel</h2>
-<div class="outline-text-2" id="text-orgfead342">
+<div id="outline-container-org6b4850f" class="outline-2">
+<h2 id="org6b4850f">使用parallel</h2>
+<div class="outline-text-2" id="text-org6b4850f">
 <div class="org-src-container">
 <pre class="src src-shell">parallel cp fileNameHere ::: /dir1/ /dir2/ /dir3/
 </pre>
@@ -88,9 +88,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd0faf5a" class="outline-2">
-<h2 id="orgd0faf5a">使用tee</h2>
-<div class="outline-text-2" id="text-orgd0faf5a">
+<div id="outline-container-orgfebb360" class="outline-2">
+<h2 id="orgfebb360">使用tee</h2>
+<div class="outline-text-2" id="text-orgfebb360">
 <div class="org-src-container">
 <pre class="src src-shell">tee /dir1/file /dir2/file /dir3/file &lt;file &gt;/dev/null
 </pre>
@@ -98,9 +98,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgb37ad9f" class="outline-2">
-<h2 id="orgb37ad9f">使用find</h2>
-<div class="outline-text-2" id="text-orgb37ad9f">
+<div id="outline-container-org6ed4fee" class="outline-2">
+<h2 id="org6ed4fee">使用find</h2>
+<div class="outline-text-2" id="text-org6ed4fee">
 <div class="org-src-container">
 <pre class="src src-shell">find /dir1/ /dir2/ /dir3/ -maxdepth <span style="color: #a45bad;">0</span> -exec cp filename <span style="color: #4f97d7;">{}</span> <span style="color: #2d9574;">\;</span>
 </pre>
@@ -108,9 +108,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgf8b763f" class="outline-2">
-<h2 id="orgf8b763f">使用for循环</h2>
-<div class="outline-text-2" id="text-orgf8b763f">
+<div id="outline-container-orgdb14c5d" class="outline-2">
+<h2 id="orgdb14c5d">使用for循环</h2>
+<div class="outline-text-2" id="text-orgdb14c5d">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">for</span> dest<span style="color: #4f97d7; font-weight: bold;"> in</span> /dir1/ /dir2/ /dir3/ ; <span style="color: #4f97d7; font-weight: bold;">do</span> cp -v file <span style="color: #2d9574;">"$dest"</span> ; <span style="color: #4f97d7; font-weight: bold;">done</span>
 </pre>
@@ -169,6 +169,7 @@
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

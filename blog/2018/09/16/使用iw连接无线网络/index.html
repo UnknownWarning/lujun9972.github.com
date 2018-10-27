@@ -54,24 +54,24 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4a2350f">查看无线网络接口</a></li>
-<li><a href="#org5f38cc0">启动无线接口</a></li>
-<li><a href="#org425a709">获取SSID</a></li>
-<li><a href="#orgcfd899c">连接无线路由</a>
+<li><a href="#org6028e01">查看无线网络接口</a></li>
+<li><a href="#orgd300978">启动无线接口</a></li>
+<li><a href="#org468981a">获取SSID</a></li>
+<li><a href="#org01b729b">连接无线路由</a>
 <ul>
-<li><a href="#orge8b2c84">连接无密码的无线路由</a></li>
-<li><a href="#org8949be2">连接使用WEP加密的无线路由</a></li>
-<li><a href="#orgf18132a">连接WPA加密的无线路由</a></li>
+<li><a href="#orgca37a41">连接无密码的无线路由</a></li>
+<li><a href="#org45a1483">连接使用WEP加密的无线路由</a></li>
+<li><a href="#org9d27c4b">连接WPA加密的无线路由</a></li>
 </ul>
 </li>
-<li><a href="#org3b16ed7">断开连接</a></li>
+<li><a href="#org84f36ee">断开连接</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4a2350f" class="outline-2">
-<h2 id="org4a2350f">查看无线网络接口</h2>
-<div class="outline-text-2" id="text-org4a2350f">
+<div id="outline-container-org6028e01" class="outline-2">
+<h2 id="org6028e01">查看无线网络接口</h2>
+<div class="outline-text-2" id="text-org6028e01">
 <div class="org-src-container">
 <pre class="src src-shell">iw dev
 </pre>
@@ -96,9 +96,9 @@
 </div>
 </div>
 
-<div id="outline-container-org5f38cc0" class="outline-2">
-<h2 id="org5f38cc0">启动无线接口</h2>
-<div class="outline-text-2" id="text-org5f38cc0">
+<div id="outline-container-orgd300978" class="outline-2">
+<h2 id="orgd300978">启动无线接口</h2>
+<div class="outline-text-2" id="text-orgd300978">
 <div class="org-src-container">
 <pre class="src src-shell">sudo ip link set wlp3s0 up
 </pre>
@@ -106,9 +106,9 @@
 </div>
 </div>
 
-<div id="outline-container-org425a709" class="outline-2">
-<h2 id="org425a709">获取SSID</h2>
-<div class="outline-text-2" id="text-org425a709">
+<div id="outline-container-org468981a" class="outline-2">
+<h2 id="org468981a">获取SSID</h2>
+<div class="outline-text-2" id="text-org468981a">
 <div class="org-src-container">
 <pre class="src src-shell">sudo iw wlp3s0 scan |grep SSID
 </pre>
@@ -137,17 +137,17 @@ SSID: CMCC-j667
 </div>
 </div>
 
-<div id="outline-container-orgcfd899c" class="outline-2">
-<h2 id="orgcfd899c">连接无线路由</h2>
-<div class="outline-text-2" id="text-orgcfd899c">
+<div id="outline-container-org01b729b" class="outline-2">
+<h2 id="org01b729b">连接无线路由</h2>
+<div class="outline-text-2" id="text-org01b729b">
 <p>
 这里假设我们想要连接MyHomeCloud
 </p>
 </div>
 
-<div id="outline-container-orge8b2c84" class="outline-3">
-<h3 id="orge8b2c84">连接无密码的无线路由</h3>
-<div class="outline-text-3" id="text-orge8b2c84">
+<div id="outline-container-orgca37a41" class="outline-3">
+<h3 id="orgca37a41">连接无密码的无线路由</h3>
+<div class="outline-text-3" id="text-orgca37a41">
 <div class="org-src-container">
 <pre class="src src-shell">sudo iw wlp3s0 connect -w MyHomeCloud
 </pre>
@@ -155,9 +155,9 @@ SSID: CMCC-j667
 </div>
 </div>
 
-<div id="outline-container-org8949be2" class="outline-3">
-<h3 id="org8949be2">连接使用WEP加密的无线路由</h3>
-<div class="outline-text-3" id="text-org8949be2">
+<div id="outline-container-org45a1483" class="outline-3">
+<h3 id="org45a1483">连接使用WEP加密的无线路由</h3>
+<div class="outline-text-3" id="text-org45a1483">
 <p>
 这里假设WEP密码是1234567890
 </p>
@@ -168,9 +168,9 @@ SSID: CMCC-j667
 </div>
 </div>
 
-<div id="outline-container-orgf18132a" class="outline-3">
-<h3 id="orgf18132a">连接WPA加密的无线路由</h3>
-<div class="outline-text-3" id="text-orgf18132a">
+<div id="outline-container-org9d27c4b" class="outline-3">
+<h3 id="org9d27c4b">连接WPA加密的无线路由</h3>
+<div class="outline-text-3" id="text-org9d27c4b">
 <p>
 可惜iw只能处理WEP加密，要连接WPA需要 <code>wpasupplicant</code>
 </p>
@@ -207,9 +207,9 @@ sudo dhclient wlp3s0
 </div>
 </div>
 
-<div id="outline-container-org3b16ed7" class="outline-2">
-<h2 id="org3b16ed7">断开连接</h2>
-<div class="outline-text-2" id="text-org3b16ed7">
+<div id="outline-container-org84f36ee" class="outline-2">
+<h2 id="org84f36ee">断开连接</h2>
+<div class="outline-text-2" id="text-org84f36ee">
 <div class="org-src-container">
 <pre class="src src-shell">iw wlp3s0 disconnect
 </pre>
@@ -268,6 +268,7 @@ sudo dhclient wlp3s0
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

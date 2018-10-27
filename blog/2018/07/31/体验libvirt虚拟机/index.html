@@ -54,30 +54,30 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org68cf80d">安装虚拟化工具</a></li>
-<li><a href="#org0f9ab46">创建虚拟机</a></li>
-<li><a href="#org76f3f14">管理虚拟机</a>
+<li><a href="#org6dc4304">安装虚拟化工具</a></li>
+<li><a href="#orgd1af9fd">创建虚拟机</a></li>
+<li><a href="#org80fd91e">管理虚拟机</a>
 <ul>
-<li><a href="#org252f03f">显示所有的虚拟机列表</a></li>
-<li><a href="#orgbd1c48c">启动已经创建好的虚拟机</a></li>
-<li><a href="#org45041c7">获取虚拟机的信息</a></li>
-<li><a href="#org962be4e">编辑虚拟机信息</a></li>
-<li><a href="#orgbe7812b">设置主机启动后是否自动启动虚拟机</a></li>
-<li><a href="#orga513914">暂停虚拟机</a></li>
-<li><a href="#orge4e4ad4">回复暂停的虚拟机</a></li>
-<li><a href="#orgd6d91e5">关闭虚拟机</a></li>
-<li><a href="#org2369b37">克隆虚拟机</a></li>
-<li><a href="#orgf50370a">删除虚拟机</a></li>
+<li><a href="#orgaa2597c">显示所有的虚拟机列表</a></li>
+<li><a href="#org2673d41">启动已经创建好的虚拟机</a></li>
+<li><a href="#org110bc76">获取虚拟机的信息</a></li>
+<li><a href="#org9553b1b">编辑虚拟机信息</a></li>
+<li><a href="#orge24ccc1">设置主机启动后是否自动启动虚拟机</a></li>
+<li><a href="#orgf1229ba">暂停虚拟机</a></li>
+<li><a href="#org6d44cb6">回复暂停的虚拟机</a></li>
+<li><a href="#org6364fa6">关闭虚拟机</a></li>
+<li><a href="#org3bc931e">克隆虚拟机</a></li>
+<li><a href="#org7c52338">删除虚拟机</a></li>
 </ul>
 </li>
-<li><a href="#org32857a0">常用虚拟化管理应用工具</a></li>
+<li><a href="#org809ef6f">常用虚拟化管理应用工具</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org68cf80d" class="outline-2">
-<h2 id="org68cf80d">安装虚拟化工具</h2>
-<div class="outline-text-2" id="text-org68cf80d">
+<div id="outline-container-org6dc4304" class="outline-2">
+<h2 id="org6dc4304">安装虚拟化工具</h2>
+<div class="outline-text-2" id="text-org6dc4304">
 <div class="org-src-container">
 <pre class="src src-shell">sudo pacman -S qemu virt-manager virt-viewer libvirt --noconfirm
 </pre>
@@ -93,9 +93,9 @@
 </div>
 </div>
 
-<div id="outline-container-org0f9ab46" class="outline-2">
-<h2 id="org0f9ab46">创建虚拟机</h2>
-<div class="outline-text-2" id="text-org0f9ab46">
+<div id="outline-container-orgd1af9fd" class="outline-2">
+<h2 id="orgd1af9fd">创建虚拟机</h2>
+<div class="outline-text-2" id="text-orgd1af9fd">
 <p>
 使用 <code>virt-install</code> 来创建虚拟机，例如
 </p>
@@ -124,17 +124,17 @@
 </div>
 </div>
 
-<div id="outline-container-org76f3f14" class="outline-2">
-<h2 id="org76f3f14">管理虚拟机</h2>
-<div class="outline-text-2" id="text-org76f3f14">
+<div id="outline-container-org80fd91e" class="outline-2">
+<h2 id="org80fd91e">管理虚拟机</h2>
+<div class="outline-text-2" id="text-org80fd91e">
 <p>
 一般通过 <code>virsh</code> 来管理虚拟机，常见的操作包括：
 </p>
 </div>
 
-<div id="outline-container-org252f03f" class="outline-3">
-<h3 id="org252f03f">显示所有的虚拟机列表</h3>
-<div class="outline-text-3" id="text-org252f03f">
+<div id="outline-container-orgaa2597c" class="outline-3">
+<h3 id="orgaa2597c">显示所有的虚拟机列表</h3>
+<div class="outline-text-3" id="text-orgaa2597c">
 <div class="org-src-container">
 <pre class="src src-shell">virsh list --all
 </pre>
@@ -150,9 +150,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgbd1c48c" class="outline-3">
-<h3 id="orgbd1c48c">启动已经创建好的虚拟机</h3>
-<div class="outline-text-3" id="text-orgbd1c48c">
+<div id="outline-container-org2673d41" class="outline-3">
+<h3 id="org2673d41">启动已经创建好的虚拟机</h3>
+<div class="outline-text-3" id="text-org2673d41">
 <div class="org-src-container">
 <pre class="src src-shell">virsh start $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -160,9 +160,9 @@
 </div>
 </div>
 
-<div id="outline-container-org45041c7" class="outline-3">
-<h3 id="org45041c7">获取虚拟机的信息</h3>
-<div class="outline-text-3" id="text-org45041c7">
+<div id="outline-container-org110bc76" class="outline-3">
+<h3 id="org110bc76">获取虚拟机的信息</h3>
+<div class="outline-text-3" id="text-org110bc76">
 <div class="org-src-container">
 <pre class="src src-shell">virsh dominfo $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -190,9 +190,9 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </div>
 
 
-<div id="outline-container-org962be4e" class="outline-3">
-<h3 id="org962be4e">编辑虚拟机信息</h3>
-<div class="outline-text-3" id="text-org962be4e">
+<div id="outline-container-org9553b1b" class="outline-3">
+<h3 id="org9553b1b">编辑虚拟机信息</h3>
+<div class="outline-text-3" id="text-org9553b1b">
 <div class="org-src-container">
 <pre class="src src-shell">virsh edit $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -200,9 +200,9 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </div>
 </div>
 
-<div id="outline-container-orgbe7812b" class="outline-3">
-<h3 id="orgbe7812b">设置主机启动后是否自动启动虚拟机</h3>
-<div class="outline-text-3" id="text-orgbe7812b">
+<div id="outline-container-orge24ccc1" class="outline-3">
+<h3 id="orge24ccc1">设置主机启动后是否自动启动虚拟机</h3>
+<div class="outline-text-3" id="text-orge24ccc1">
 <div class="org-src-container">
 <pre class="src src-shell">virsh autostart $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -231,9 +231,9 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </div>
 </div>
 
-<div id="outline-container-orga513914" class="outline-3">
-<h3 id="orga513914">暂停虚拟机</h3>
-<div class="outline-text-3" id="text-orga513914">
+<div id="outline-container-orgf1229ba" class="outline-3">
+<h3 id="orgf1229ba">暂停虚拟机</h3>
+<div class="outline-text-3" id="text-orgf1229ba">
 <div class="org-src-container">
 <pre class="src src-shell">virsh suspend $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -241,9 +241,9 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </div>
 </div>
 
-<div id="outline-container-orge4e4ad4" class="outline-3">
-<h3 id="orge4e4ad4">回复暂停的虚拟机</h3>
-<div class="outline-text-3" id="text-orge4e4ad4">
+<div id="outline-container-org6d44cb6" class="outline-3">
+<h3 id="org6d44cb6">回复暂停的虚拟机</h3>
+<div class="outline-text-3" id="text-org6d44cb6">
 <div class="org-src-container">
 <pre class="src src-shell">virsh resume $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -251,9 +251,9 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </div>
 </div>
 
-<div id="outline-container-orgd6d91e5" class="outline-3">
-<h3 id="orgd6d91e5">关闭虚拟机</h3>
-<div class="outline-text-3" id="text-orgd6d91e5">
+<div id="outline-container-org6364fa6" class="outline-3">
+<h3 id="org6364fa6">关闭虚拟机</h3>
+<div class="outline-text-3" id="text-org6364fa6">
 <div class="org-src-container">
 <pre class="src src-shell">virsh shutdown $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
 </pre>
@@ -267,9 +267,9 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </div>
 </div>
 
-<div id="outline-container-org2369b37" class="outline-3">
-<h3 id="org2369b37">克隆虚拟机</h3>
-<div class="outline-text-3" id="text-org2369b37">
+<div id="outline-container-org3bc931e" class="outline-3">
+<h3 id="org3bc931e">克隆虚拟机</h3>
+<div class="outline-text-3" id="text-org3bc931e">
 <p>
 关闭虚拟机后就可以通过 <code>virt-clone</code> 来拷贝虚拟机了
 </p>
@@ -280,9 +280,9 @@ CPU &#26102;&#38388;&#65306;   1.4s
 </div>
 </div>
 
-<div id="outline-container-orgf50370a" class="outline-3">
-<h3 id="orgf50370a">删除虚拟机</h3>
-<div class="outline-text-3" id="text-orgf50370a">
+<div id="outline-container-org7c52338" class="outline-3">
+<h3 id="org7c52338">删除虚拟机</h3>
+<div class="outline-text-3" id="text-org7c52338">
 <div class="org-src-container">
 <pre class="src src-shell">virsh destroy $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
 virsh undefine $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">name</span><span style="color: #4f97d7;">}</span>
@@ -291,9 +291,9 @@ virsh undefine $<span style="color: #4f97d7;">{</span><span style="color: #7590d
 </div>
 </div>
 </div>
-<div id="outline-container-org32857a0" class="outline-2">
-<h2 id="org32857a0">常用虚拟化管理应用工具</h2>
-<div class="outline-text-2" id="text-org32857a0">
+<div id="outline-container-org809ef6f" class="outline-2">
+<h2 id="org809ef6f">常用虚拟化管理应用工具</h2>
+<div class="outline-text-2" id="text-org809ef6f">
 <dl class="org-dl">
 <dt>virt-manager</dt><dd>虚拟机图形化管理工具</dd>
 <dt>virt-install</dt><dd>虚拟机配给工具</dd>
@@ -356,6 +356,7 @@ virsh undefine $<span style="color: #4f97d7;">{</span><span style="color: #7590d
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

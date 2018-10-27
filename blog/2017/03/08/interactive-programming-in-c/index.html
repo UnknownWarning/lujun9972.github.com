@@ -54,10 +54,10 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0e61b22">An example with the Game of Life</a>
+<li><a href="#orgccbb4b5">An example with the Game of Life</a>
 <ul>
-<li><a href="#org74d18cc">Quick start:</a></li>
-<li><a href="#orge1c7d0f">dlopen, dlsym, and dlclose</a></li>
+<li><a href="#org48af241">Quick start:</a></li>
+<li><a href="#orga9c6ef0">dlopen, dlsym, and dlclose</a></li>
 </ul>
 </li>
 </ul>
@@ -91,9 +91,9 @@
 这使得你很难把把交互式编程与 <a href="http://nullprogram.com/blog/2014/10/21/">基于C的面向对象编程</a> 整合起来用.
 </p>
 
-<div id="outline-container-org0e61b22" class="outline-2">
-<h2 id="org0e61b22">An example with the Game of Life</h2>
-<div class="outline-text-2" id="text-org0e61b22">
+<div id="outline-container-orgccbb4b5" class="outline-2">
+<h2 id="orgccbb4b5">An example with the Game of Life</h2>
+<div class="outline-text-2" id="text-orgccbb4b5">
 <p>
 为了说明交互式编程的实现远离,我这里搞了个例子. 它是一个简单的基于 <code>ncurses</code> 实现的Life游戏. 你可以下载它的源代码并在类Unix系统上跑起来体验一下.
 </p>
@@ -103,9 +103,9 @@
 </ul>
 </div>
 
-<div id="outline-container-org74d18cc" class="outline-3">
-<h3 id="org74d18cc">Quick start:</h3>
-<div class="outline-text-3" id="text-org74d18cc">
+<div id="outline-container-org48af241" class="outline-3">
+<h3 id="org48af241">Quick start:</h3>
+<div class="outline-text-3" id="text-org48af241">
 <ol class="org-ol">
 <li>在终端下运行 <code>make</code> 编译代码, 然后运行 <code>./main</code> 启动程序. 按 <code>r</code> 生成随机的初始状态, 按 <code>q</code> 退出程序.</li>
 <li>编辑 <code>game.c</code> 做一些修改.</li>
@@ -204,9 +204,9 @@ structure.
 </div>
 </div>
 
-<div id="outline-container-orge1c7d0f" class="outline-3">
-<h3 id="orge1c7d0f">dlopen, dlsym, and dlclose</h3>
-<div class="outline-text-3" id="text-orge1c7d0f">
+<div id="outline-container-orga9c6ef0" class="outline-3">
+<h3 id="orga9c6ef0">dlopen, dlsym, and dlclose</h3>
+<div class="outline-text-3" id="text-orga9c6ef0">
 <p>
 The wrapper is focused on calling dlopen(), dlsym(), and dlclose() in the
 right order at the right time. The game will be compiled to the file
@@ -428,6 +428,7 @@ ability to develop interactively is very appealing.
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

@@ -54,23 +54,23 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org826954c">安装 aria2</a></li>
-<li><a href="#orga1dd7ac">配置aria2.conf</a></li>
-<li><a href="#orge7f7b1a">安装aria2 web前端</a>
+<li><a href="#org8516234">安装 aria2</a></li>
+<li><a href="#org9ec9bd5">配置aria2.conf</a></li>
+<li><a href="#org8514f00">安装aria2 web前端</a>
 <ul>
-<li><a href="#orgcbb2388">安装apache</a></li>
-<li><a href="#org0d2a0af">安装中文YAAW</a></li>
-<li><a href="#org3f84424">使用YAAW</a></li>
+<li><a href="#org6346a45">安装apache</a></li>
+<li><a href="#org1f773be">安装中文YAAW</a></li>
+<li><a href="#org33f75b5">使用YAAW</a></li>
 </ul>
 </li>
-<li><a href="#org97dec46">配置aria2自启动</a></li>
+<li><a href="#org78f61f8">配置aria2自启动</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org826954c" class="outline-2">
-<h2 id="org826954c">安装 aria2</h2>
-<div class="outline-text-2" id="text-org826954c">
+<div id="outline-container-org8516234" class="outline-2">
+<h2 id="org8516234">安装 aria2</h2>
+<div class="outline-text-2" id="text-org8516234">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install aria2 -y
 </pre>
@@ -78,9 +78,9 @@
 </div>
 </div>
 
-<div id="outline-container-orga1dd7ac" class="outline-2">
-<h2 id="orga1dd7ac">配置aria2.conf</h2>
-<div class="outline-text-2" id="text-orga1dd7ac">
+<div id="outline-container-org9ec9bd5" class="outline-2">
+<h2 id="org9ec9bd5">配置aria2.conf</h2>
+<div class="outline-text-2" id="text-org9ec9bd5">
 <p>
 我们假设下载文件放在 <code>/media/Downloads</code> 目录中
 </p>
@@ -244,31 +244,31 @@ ln -s /etc/aria2.conf ~/.aria2/aria2.conf
 </div>
 </div>
 
-<div id="outline-container-orge7f7b1a" class="outline-2">
-<h2 id="orge7f7b1a">安装aria2 web前端</h2>
-<div class="outline-text-2" id="text-orge7f7b1a">
+<div id="outline-container-org8514f00" class="outline-2">
+<h2 id="org8514f00">安装aria2 web前端</h2>
+<div class="outline-text-2" id="text-org8514f00">
 </div>
-<div id="outline-container-orgcbb2388" class="outline-3">
-<h3 id="orgcbb2388">安装apache</h3>
-<div class="outline-text-3" id="text-orgcbb2388">
+<div id="outline-container-org6346a45" class="outline-3">
+<h3 id="org6346a45">安装apache</h3>
+<div class="outline-text-3" id="text-org6346a45">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install apache2 -y
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org0d2a0af" class="outline-3">
-<h3 id="org0d2a0af">安装中文YAAW</h3>
-<div class="outline-text-3" id="text-org0d2a0af">
+<div id="outline-container-org1f773be" class="outline-3">
+<h3 id="org1f773be">安装中文YAAW</h3>
+<div class="outline-text-3" id="text-org1f773be">
 <div class="org-src-container">
 <pre class="src src-shell">git clone https://github.com/aa65535/yaaw-zh-hans /var/www/html/yaaw
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org3f84424" class="outline-3">
-<h3 id="org3f84424">使用YAAW</h3>
-<div class="outline-text-3" id="text-org3f84424">
+<div id="outline-container-org33f75b5" class="outline-3">
+<h3 id="org33f75b5">使用YAAW</h3>
+<div class="outline-text-3" id="text-org33f75b5">
 <p>
 访问 <code>http://orangepipc2/yaaw</code>, 然后点击右边刷新 <b>旁边</b> 的配置按钮，在 <code>JSON-RPC Path</code> 中填入 <a href="http://orangepipc2:6800/jsonrpc">http://orangepipc2:6800/jsonrpc</a>. 
 </p>
@@ -279,9 +279,9 @@ ln -s /etc/aria2.conf ~/.aria2/aria2.conf
 </div>
 </div>
 </div>
-<div id="outline-container-org97dec46" class="outline-2">
-<h2 id="org97dec46">配置aria2自启动</h2>
-<div class="outline-text-2" id="text-org97dec46">
+<div id="outline-container-org78f61f8" class="outline-2">
+<h2 id="org78f61f8">配置aria2自启动</h2>
+<div class="outline-text-2" id="text-org78f61f8">
 <p>
 新建文件 <code>/etc/systemd/system/aria2.service</code> ，然后输入以下内容
 </p>
@@ -358,6 +358,7 @@ ln -s /etc/aria2.conf ~/.aria2/aria2.conf
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

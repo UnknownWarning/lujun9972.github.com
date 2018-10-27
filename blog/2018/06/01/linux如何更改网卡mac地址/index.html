@@ -54,21 +54,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org921ce48">查看网卡MAC地址</a></li>
-<li><a href="#org0bcf65b">手工修改MAC地址</a></li>
-<li><a href="#org12f58ea">自动更改</a>
+<li><a href="#org0d91c39">查看网卡MAC地址</a></li>
+<li><a href="#org8dd2cb7">手工修改MAC地址</a></li>
+<li><a href="#orgb4d64ae">自动更改</a>
 <ul>
-<li><a href="#org200865a">Match小节</a></li>
-<li><a href="#orgc9d1998">Link小节</a></li>
+<li><a href="#org647a942">Match小节</a></li>
+<li><a href="#org6c5542c">Link小节</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org921ce48" class="outline-2">
-<h2 id="org921ce48">查看网卡MAC地址</h2>
-<div class="outline-text-2" id="text-org921ce48">
+<div id="outline-container-org0d91c39" class="outline-2">
+<h2 id="org0d91c39">查看网卡MAC地址</h2>
+<div class="outline-text-2" id="text-org0d91c39">
 <p>
 使用ip命令就能查看MAC地址了:
 </p>
@@ -90,9 +90,9 @@
 </div>
 </div>
 
-<div id="outline-container-org0bcf65b" class="outline-2">
-<h2 id="org0bcf65b">手工修改MAC地址</h2>
-<div class="outline-text-2" id="text-org0bcf65b">
+<div id="outline-container-org8dd2cb7" class="outline-2">
+<h2 id="org8dd2cb7">手工修改MAC地址</h2>
+<div class="outline-text-2" id="text-org8dd2cb7">
 <p>
 使用ip命令也能修改MAC地址，但是需要root权限：
 </p>
@@ -147,9 +147,9 @@
 </div>
 </div>
 
-<div id="outline-container-org12f58ea" class="outline-2">
-<h2 id="org12f58ea">自动更改</h2>
-<div class="outline-text-2" id="text-org12f58ea">
+<div id="outline-container-orgb4d64ae" class="outline-2">
+<h2 id="orgb4d64ae">自动更改</h2>
+<div class="outline-text-2" id="text-orgb4d64ae">
 <p>
 systemd-networkd服务能通过 <code>link</code> 文件(底层物理网络设备配置)来设置MAC地址
 </p>
@@ -159,9 +159,9 @@ systemd-networkd服务能通过 <code>link</code> 文件(底层物理网络设�
 </p>
 </div>
 
-<div id="outline-container-org200865a" class="outline-3">
-<h3 id="org200865a">Match小节</h3>
-<div class="outline-text-3" id="text-org200865a">
+<div id="outline-container-org647a942" class="outline-3">
+<h3 id="org647a942">Match小节</h3>
+<div class="outline-text-3" id="text-org647a942">
 <p>
 如果 "[Match]" 小节中的每一项都与某个网卡匹配， 那么视为该Link文件与该网卡匹配。若 "[Match]" 小节为空则表示匹配任意网卡。 
 </p>
@@ -184,9 +184,9 @@ systemd-networkd服务能通过 <code>link</code> 文件(底层物理网络设�
 </div>
 </div>
 
-<div id="outline-container-orgc9d1998" class="outline-3">
-<h3 id="orgc9d1998">Link小节</h3>
-<div class="outline-text-3" id="text-orgc9d1998">
+<div id="outline-container-org6c5542c" class="outline-3">
+<h3 id="org6c5542c">Link小节</h3>
+<div class="outline-text-3" id="text-org6c5542c">
 <p>
 Link小节可以对网卡进行多种配置，其中与修改MAC有关的选项有：
 </p>
@@ -290,6 +290,7 @@ Link小节可以对网卡进行多种配置，其中与修改MAC有关的选项�
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

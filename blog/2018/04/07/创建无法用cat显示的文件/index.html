@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd603cc5">clear清屏的原理</a></li>
-<li><a href="#org603101f">reset的清屏原理</a></li>
-<li><a href="#org24f502a">让文件无法用cat显示</a></li>
+<li><a href="#orga976c31">clear清屏的原理</a></li>
+<li><a href="#orgd2b0035">reset的清屏原理</a></li>
+<li><a href="#orgbf04005">让文件无法用cat显示</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd603cc5" class="outline-2">
-<h2 id="orgd603cc5">clear清屏的原理</h2>
-<div class="outline-text-2" id="text-orgd603cc5">
+<div id="outline-container-orga976c31" class="outline-2">
+<h2 id="orga976c31">clear清屏的原理</h2>
+<div class="outline-text-2" id="text-orga976c31">
 <p>
 <code>clear</code> 命令实际上是输出的是下面这样一个字符序列
 </p>
@@ -113,9 +113,9 @@ cat /tmp/cls.txt
 </div>
 </div>
 
-<div id="outline-container-org603101f" class="outline-2">
-<h2 id="org603101f">reset的清屏原理</h2>
-<div class="outline-text-2" id="text-org603101f">
+<div id="outline-container-orgd2b0035" class="outline-2">
+<h2 id="orgd2b0035">reset的清屏原理</h2>
+<div class="outline-text-2" id="text-orgd2b0035">
 <p>
 reset的原理跟clear类似，所不同之处在于reset是将字符串序列输出到stderr中，而且输出的字符串序列跟clear输出的也不一样。
 </p>
@@ -144,9 +144,9 @@ cat /tmp/reset.txt
 </div>
 </div>
 
-<div id="outline-container-org24f502a" class="outline-2">
-<h2 id="org24f502a">让文件无法用cat显示</h2>
-<div class="outline-text-2" id="text-org24f502a">
+<div id="outline-container-orgbf04005" class="outline-2">
+<h2 id="orgbf04005">让文件无法用cat显示</h2>
+<div class="outline-text-2" id="text-orgbf04005">
 <p>
 假设我们有一个文件 <code>/tmp/1.txt</code>
 </p>
@@ -299,6 +299,7 @@ line10
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

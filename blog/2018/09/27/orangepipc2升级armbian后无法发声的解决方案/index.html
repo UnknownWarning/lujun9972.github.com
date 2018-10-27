@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org308b5c8">症状</a></li>
-<li><a href="#org6bbfdce">排查过程</a></li>
-<li><a href="#orgb6b3e69">另一种解决方法</a></li>
+<li><a href="#orgdd086a8">症状</a></li>
+<li><a href="#orgabd8aa8">排查过程</a></li>
+<li><a href="#org3445442">另一种解决方法</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org308b5c8" class="outline-2">
-<h2 id="org308b5c8">症状</h2>
-<div class="outline-text-2" id="text-org308b5c8">
+<div id="outline-container-orgdd086a8" class="outline-2">
+<h2 id="orgdd086a8">症状</h2>
+<div class="outline-text-2" id="text-orgdd086a8">
 <p>
 某一次在对OrangePiPC2进行系统升级后，提示内核已更新，需要进行重启。
 </p>
@@ -74,9 +74,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6bbfdce" class="outline-2">
-<h2 id="org6bbfdce">排查过程</h2>
-<div class="outline-text-2" id="text-org6bbfdce">
+<div id="outline-container-orgabd8aa8" class="outline-2">
+<h2 id="orgabd8aa8">排查过程</h2>
+<div class="outline-text-2" id="text-orgabd8aa8">
 <ol class="org-ol">
 <li><p>
 怀疑是不是音量被调成0了，因此运行 <code>alsamixer</code>,发现提示 <code>This sound device does not have any controls.</code>
@@ -159,9 +159,9 @@ Codec
 </div>
 </div>
 
-<div id="outline-container-orgb6b3e69" class="outline-2">
-<h2 id="orgb6b3e69">另一种解决方法</h2>
-<div class="outline-text-2" id="text-orgb6b3e69">
+<div id="outline-container-org3445442" class="outline-2">
+<h2 id="org3445442">另一种解决方法</h2>
+<div class="outline-text-2" id="text-org3445442">
 <p>
 其实还有另一种解决方法就是控制声卡module的载入顺序，让 <code>H3 Audio Codec</code> 声卡成为第一顺位的声卡就行了. 方法如下:
 </p>
@@ -258,6 +258,7 @@ snd_timer              32768  1 snd_pcm
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

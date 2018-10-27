@@ -54,28 +54,28 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org07de7e0">写在前面的话</a></li>
-<li><a href="#orgefaa6a3">安装官方的ubuntu server</a></li>
-<li><a href="#orgabe1eb3">配置wifi</a></li>
-<li><a href="#org0961b13">使用国内源</a></li>
-<li><a href="#org088a636">更改时区</a></li>
-<li><a href="#org4c44d50">修正无法apt update的问题</a></li>
-<li><a href="#org12ec81a">升级Ubuntu Server 16.04(虽然可以升级，但是升级后重启貌似就无法登陆了)</a></li>
+<li><a href="#org089757d">写在前面的话</a></li>
+<li><a href="#org15e57fe">安装官方的ubuntu server</a></li>
+<li><a href="#org523ad75">配置wifi</a></li>
+<li><a href="#org04794d0">使用国内源</a></li>
+<li><a href="#org742838e">更改时区</a></li>
+<li><a href="#org7291c99">修正无法apt update的问题</a></li>
+<li><a href="#orgcd4df4f">升级Ubuntu Server 16.04(虽然可以升级，但是升级后重启貌似就无法登陆了)</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org07de7e0" class="outline-2">
-<h2 id="org07de7e0">写在前面的话</h2>
-<div class="outline-text-2" id="text-org07de7e0">
+<div id="outline-container-org089757d" class="outline-2">
+<h2 id="org089757d">写在前面的话</h2>
+<div class="outline-text-2" id="text-org089757d">
 <p>
 官方的Ubuntu Server镜像就是个坑货，还是刷 <a href="https://www.armbian.com/">Armbian</a> 省心～～
 </p>
 </div>
 </div>
-<div id="outline-container-orgefaa6a3" class="outline-2">
-<h2 id="orgefaa6a3">安装官方的ubuntu server</h2>
-<div class="outline-text-2" id="text-orgefaa6a3">
+<div id="outline-container-org15e57fe" class="outline-2">
+<h2 id="org15e57fe">安装官方的ubuntu server</h2>
+<div class="outline-text-2" id="text-org15e57fe">
 <p>
 Orange Pi官方有为Orange Pi Lite准备官方的Ubuntu Server镜像，下载下来用 <code>dd</code> 拷贝到TF卡上就行。
 </p>
@@ -148,9 +148,9 @@ Device     Boot  Start      End  Sectors  Size Id Type
 </div>
 </div>
 
-<div id="outline-container-orgabe1eb3" class="outline-2">
-<h2 id="orgabe1eb3">配置wifi</h2>
-<div class="outline-text-2" id="text-orgabe1eb3">
+<div id="outline-container-org523ad75" class="outline-2">
+<h2 id="org523ad75">配置wifi</h2>
+<div class="outline-text-2" id="text-org523ad75">
 <p>
 写入镜像到TF卡后，你会发现TF卡被分成了两个分区，一个是BOOT分区，一个是linux分区。
 </p>
@@ -254,9 +254,9 @@ sudo rm /usr/local/bin/fs_resize_warning
 </div>
 </div>
 
-<div id="outline-container-org0961b13" class="outline-2">
-<h2 id="org0961b13">使用国内源</h2>
-<div class="outline-text-2" id="text-org0961b13">
+<div id="outline-container-org04794d0" class="outline-2">
+<h2 id="org04794d0">使用国内源</h2>
+<div class="outline-text-2" id="text-org04794d0">
 <div class="org-src-container">
 <pre class="src src-shell">sed -i  <span style="color: #2d9574;">'s/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/'</span> /etc/apt/sources.list
 </pre>
@@ -264,9 +264,9 @@ sudo rm /usr/local/bin/fs_resize_warning
 </div>
 </div>
 
-<div id="outline-container-org088a636" class="outline-2">
-<h2 id="org088a636">更改时区</h2>
-<div class="outline-text-2" id="text-org088a636">
+<div id="outline-container-org742838e" class="outline-2">
+<h2 id="org742838e">更改时区</h2>
+<div class="outline-text-2" id="text-org742838e">
 <div class="org-src-container">
 <pre class="src src-shell">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 </pre>
@@ -275,9 +275,9 @@ sudo rm /usr/local/bin/fs_resize_warning
 </div>
 
 
-<div id="outline-container-org4c44d50" class="outline-2">
-<h2 id="org4c44d50">修正无法apt update的问题</h2>
-<div class="outline-text-2" id="text-org4c44d50">
+<div id="outline-container-org7291c99" class="outline-2">
+<h2 id="org7291c99">修正无法apt update的问题</h2>
+<div class="outline-text-2" id="text-org7291c99">
 <p>
 刷完官网上的Ubuntu Server后你会发现无法运行apt update,总是提示
 </p>
@@ -319,9 +319,9 @@ apt-get dist-upgrade
 </div>
 </div>
 
-<div id="outline-container-org12ec81a" class="outline-2">
-<h2 id="org12ec81a">升级Ubuntu Server 16.04(虽然可以升级，但是升级后重启貌似就无法登陆了)</h2>
-<div class="outline-text-2" id="text-org12ec81a">
+<div id="outline-container-orgcd4df4f" class="outline-2">
+<h2 id="orgcd4df4f">升级Ubuntu Server 16.04(虽然可以升级，但是升级后重启貌似就无法登陆了)</h2>
+<div class="outline-text-2" id="text-orgcd4df4f">
 <ol class="org-ol">
 <li><p>
 安装更新管理器核心 <code>update-manager-core</code>
@@ -395,6 +395,7 @@ apt-get dist-upgrade
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

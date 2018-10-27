@@ -54,44 +54,44 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org85f276d">常用命令说明</a></li>
-<li><a href="#org6b51c1c">创建XFS文件系统</a>
+<li><a href="#org60f9161">常用命令说明</a></li>
+<li><a href="#org3e173ce">创建XFS文件系统</a>
 <ul>
-<li><a href="#org0f0c0f9">设置block大小</a></li>
-<li><a href="#orgad13f5e">日志大小</a></li>
-<li><a href="#org41e4d2c">设置文件系统标签</a></li>
+<li><a href="#org99f205b">设置block大小</a></li>
+<li><a href="#org68e17e5">日志大小</a></li>
+<li><a href="#orgb60a624">设置文件系统标签</a></li>
 </ul>
 </li>
-<li><a href="#orgc135e18">挂载XFS文件系统</a></li>
-<li><a href="#org29bba04">调整XFS文件系统参数</a>
+<li><a href="#org5a4b8cb">挂载XFS文件系统</a></li>
+<li><a href="#org4e8f3eb">调整XFS文件系统参数</a>
 <ul>
-<li><a href="#org4c657a4">卷标管理</a>
+<li><a href="#org75d2207">卷标管理</a>
 <ul>
-<li><a href="#org2bcfa3b">设置卷标</a></li>
-<li><a href="#org02ab724">查看卷标</a></li>
+<li><a href="#orgb6aa31f">设置卷标</a></li>
+<li><a href="#orgd6726ba">查看卷标</a></li>
 </ul>
 </li>
-<li><a href="#org50217c0">UUID管理</a>
+<li><a href="#org49038ec">UUID管理</a>
 <ul>
-<li><a href="#orgceb4292">查看指定设备的UUID</a></li>
-<li><a href="#org1109da4">设置设备的UUID</a></li>
-<li><a href="#orged8f5da">清除文件系统的UUID</a></li>
+<li><a href="#orgc708ed4">查看指定设备的UUID</a></li>
+<li><a href="#org01c12e9">设置设备的UUID</a></li>
+<li><a href="#org4dd7cc7">清除文件系统的UUID</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org6493ecd">扩展XFS文件系统的大小</a></li>
-<li><a href="#orgad28793">暂停/恢复XFS文件系统</a>
+<li><a href="#orgdc27ed0">扩展XFS文件系统的大小</a></li>
+<li><a href="#orgf902cec">暂停/恢复XFS文件系统</a>
 <ul>
-<li><a href="#org83eeb8a">暂停XFS文件系统</a></li>
-<li><a href="#orgdf7a215">恢复XFS文件系统</a></li>
+<li><a href="#orgf1e11a4">暂停XFS文件系统</a></li>
+<li><a href="#org5818fa9">恢复XFS文件系统</a></li>
 </ul>
 </li>
-<li><a href="#org7f1f344">修复XFS文件系统</a></li>
-<li><a href="#orga500e3e">碎片管理</a>
+<li><a href="#org7b365af">修复XFS文件系统</a></li>
+<li><a href="#orgca11314">碎片管理</a>
 <ul>
-<li><a href="#org0f68cd0">查看碎片情况</a></li>
-<li><a href="#org8c185d4">整理碎片</a></li>
+<li><a href="#org2b84ad5">查看碎片情况</a></li>
+<li><a href="#org7747eb7">整理碎片</a></li>
 </ul>
 </li>
 </ul>
@@ -101,9 +101,9 @@
 XFS文件系统管理常用命令记录
 </p>
 
-<div id="outline-container-org85f276d" class="outline-2">
-<h2 id="org85f276d">常用命令说明</h2>
-<div class="outline-text-2" id="text-org85f276d">
+<div id="outline-container-org60f9161" class="outline-2">
+<h2 id="org60f9161">常用命令说明</h2>
+<div class="outline-text-2" id="text-org60f9161">
 <dl class="org-dl">
 <dt>mkfs.xfs</dt><dd>创建xfs文件系统</dd>
 <dt>xfs_admin</dt><dd>调整XFS文件系统各种参数</dd>
@@ -121,9 +121,9 @@ XFS文件系统管理常用命令记录
 </div>
 </div>
 
-<div id="outline-container-org6b51c1c" class="outline-2">
-<h2 id="org6b51c1c">创建XFS文件系统</h2>
-<div class="outline-text-2" id="text-org6b51c1c">
+<div id="outline-container-org3e173ce" class="outline-2">
+<h2 id="org3e173ce">创建XFS文件系统</h2>
+<div class="outline-text-2" id="text-org3e173ce">
 <p>
 使用 <code>mkfs.xfs</code> 可以将存储设备格式化为XFS格式
 </p>
@@ -184,9 +184,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-org0f0c0f9" class="outline-3">
-<h3 id="org0f0c0f9">设置block大小</h3>
-<div class="outline-text-3" id="text-org0f0c0f9">
+<div id="outline-container-org99f205b" class="outline-3">
+<h3 id="org99f205b">设置block大小</h3>
+<div class="outline-text-3" id="text-org99f205b">
 <p>
 block是文件系统存储的最小单位，较大的block可以增加文件系统和单个文件的大小上限并加快大文件的读写速度，但是会浪费较多空间。而太小的block则相反。
 </p>
@@ -246,9 +246,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-orgad13f5e" class="outline-3">
-<h3 id="orgad13f5e">日志大小</h3>
-<div class="outline-text-3" id="text-orgad13f5e">
+<div id="outline-container-org68e17e5" class="outline-3">
+<h3 id="org68e17e5">日志大小</h3>
+<div class="outline-text-3" id="text-org68e17e5">
 <p>
 格式化XFS时，mkfs.xfs会根据文件系统的大小自动分配日志的大小。
 日志大小介于512KB到128MB之间，但可以通过 <code>-l size=日志大小</code> 来设置，其中日志的单位可以是:
@@ -286,9 +286,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-org41e4d2c" class="outline-3">
-<h3 id="org41e4d2c">设置文件系统标签</h3>
-<div class="outline-text-3" id="text-org41e4d2c">
+<div id="outline-container-orgb60a624" class="outline-3">
+<h3 id="orgb60a624">设置文件系统标签</h3>
+<div class="outline-text-3" id="text-orgb60a624">
 <p>
 Label或者说Volume Name可以用来说明文件系统的用途，可以通过 <code>-L 标签</code> 来设置
 </p>
@@ -327,9 +327,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </div>
 </div>
 
-<div id="outline-container-orgc135e18" class="outline-2">
-<h2 id="orgc135e18">挂载XFS文件系统</h2>
-<div class="outline-text-2" id="text-orgc135e18">
+<div id="outline-container-org5a4b8cb" class="outline-2">
+<h2 id="org5a4b8cb">挂载XFS文件系统</h2>
+<div class="outline-text-2" id="text-org5a4b8cb">
 <p>
 在挂载时，可以使用一些性能增强的选项来发掘XFS文件系统的性能
 </p>
@@ -355,20 +355,20 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 </dl>
 </div>
 </div>
-<div id="outline-container-org29bba04" class="outline-2">
-<h2 id="org29bba04">调整XFS文件系统参数</h2>
-<div class="outline-text-2" id="text-org29bba04">
+<div id="outline-container-org4e8f3eb" class="outline-2">
+<h2 id="org4e8f3eb">调整XFS文件系统参数</h2>
+<div class="outline-text-2" id="text-org4e8f3eb">
 <p>
 使用 <code>xfs_admin</code> 来调整XFS文件系统参数
 </p>
 </div>
-<div id="outline-container-org4c657a4" class="outline-3">
-<h3 id="org4c657a4">卷标管理</h3>
-<div class="outline-text-3" id="text-org4c657a4">
+<div id="outline-container-org75d2207" class="outline-3">
+<h3 id="org75d2207">卷标管理</h3>
+<div class="outline-text-3" id="text-org75d2207">
 </div>
-<div id="outline-container-org2bcfa3b" class="outline-4">
-<h4 id="org2bcfa3b">设置卷标</h4>
-<div class="outline-text-4" id="text-org2bcfa3b">
+<div id="outline-container-orgb6aa31f" class="outline-4">
+<h4 id="orgb6aa31f">设置卷标</h4>
+<div class="outline-text-4" id="text-orgb6aa31f">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -L <span style="color: #2d9574;">"another_volume"</span> ~/xfs.img
 </pre>
@@ -383,9 +383,9 @@ new label = "another_volu"
 </div>
 </div>
 
-<div id="outline-container-org02ab724" class="outline-4">
-<h4 id="org02ab724">查看卷标</h4>
-<div class="outline-text-4" id="text-org02ab724">
+<div id="outline-container-orgd6726ba" class="outline-4">
+<h4 id="orgd6726ba">查看卷标</h4>
+<div class="outline-text-4" id="text-orgd6726ba">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -l ~/xfs.img
 </pre>
@@ -399,18 +399,18 @@ new label = "another_volu"
 </div>
 </div>
 
-<div id="outline-container-org50217c0" class="outline-3">
-<h3 id="org50217c0">UUID管理</h3>
-<div class="outline-text-3" id="text-org50217c0">
+<div id="outline-container-org49038ec" class="outline-3">
+<h3 id="org49038ec">UUID管理</h3>
+<div class="outline-text-3" id="text-org49038ec">
 <p>
 传统上Linux在/etc/fstab中直接使用设备名称指定要挂载的存储设备。
 然而设备名称会因为BIOS或硬件的改变而改变，引起混乱，因此现在Linux改用UUID来指定要挂载的存储设备。
 </p>
 </div>
 
-<div id="outline-container-orgceb4292" class="outline-4">
-<h4 id="orgceb4292">查看指定设备的UUID</h4>
-<div class="outline-text-4" id="text-orgceb4292">
+<div id="outline-container-orgc708ed4" class="outline-4">
+<h4 id="orgc708ed4">查看指定设备的UUID</h4>
+<div class="outline-text-4" id="text-orgc708ed4">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -u ~/xfs.img
 </pre>
@@ -423,9 +423,9 @@ new label = "another_volu"
 </div>
 </div>
 
-<div id="outline-container-org1109da4" class="outline-4">
-<h4 id="org1109da4">设置设备的UUID</h4>
-<div class="outline-text-4" id="text-org1109da4">
+<div id="outline-container-org01c12e9" class="outline-4">
+<h4 id="org01c12e9">设置设备的UUID</h4>
+<div class="outline-text-4" id="text-org01c12e9">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -U <span style="color: #a45bad;">12345678-9012-3456-7890-123456789012</span> ~/xfs.img
 </pre>
@@ -455,9 +455,9 @@ new UUID = 9618fe39-638d-41b0-9863-5b3b8daa9801
 </div>
 </div>
 
-<div id="outline-container-orged8f5da" class="outline-4">
-<h4 id="orged8f5da">清除文件系统的UUID</h4>
-<div class="outline-text-4" id="text-orged8f5da">
+<div id="outline-container-org4dd7cc7" class="outline-4">
+<h4 id="org4dd7cc7">清除文件系统的UUID</h4>
+<div class="outline-text-4" id="text-org4dd7cc7">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_admin -U nil ~/xfs.img
 </pre>
@@ -474,9 +474,9 @@ new UUID = 00000000-0000-0000-0000-000000000000
 </div>
 </div>
 
-<div id="outline-container-org6493ecd" class="outline-2">
-<h2 id="org6493ecd">扩展XFS文件系统的大小</h2>
-<div class="outline-text-2" id="text-org6493ecd">
+<div id="outline-container-orgdc27ed0" class="outline-2">
+<h2 id="orgdc27ed0">扩展XFS文件系统的大小</h2>
+<div class="outline-text-2" id="text-orgdc27ed0">
 <p>
 XFS文件系统只能扩大，不能减少大小
 </p>
@@ -499,17 +499,17 @@ XFS文件系统只能扩大，不能减少大小
 </div>
 </div>
 
-<div id="outline-container-orgad28793" class="outline-2">
-<h2 id="orgad28793">暂停/恢复XFS文件系统</h2>
-<div class="outline-text-2" id="text-orgad28793">
+<div id="outline-container-orgf902cec" class="outline-2">
+<h2 id="orgf902cec">暂停/恢复XFS文件系统</h2>
+<div class="outline-text-2" id="text-orgf902cec">
 <p>
 xfs_freeze 命令可以停止对文件系统的访问并创建一个静态的磁盘镜像。
 </p>
 </div>
 
-<div id="outline-container-org83eeb8a" class="outline-3">
-<h3 id="org83eeb8a">暂停XFS文件系统</h3>
-<div class="outline-text-3" id="text-org83eeb8a">
+<div id="outline-container-orgf1e11a4" class="outline-3">
+<h3 id="orgf1e11a4">暂停XFS文件系统</h3>
+<div class="outline-text-3" id="text-orgf1e11a4">
 <div class="org-src-container">
 <pre class="src src-shell">sudo xfs_freeze -f /mnt
 </pre>
@@ -521,9 +521,9 @@ xfs_freeze 命令可以停止对文件系统的访问并创建一个静态的磁
 </div>
 </div>
 
-<div id="outline-container-orgdf7a215" class="outline-3">
-<h3 id="orgdf7a215">恢复XFS文件系统</h3>
-<div class="outline-text-3" id="text-orgdf7a215">
+<div id="outline-container-org5818fa9" class="outline-3">
+<h3 id="org5818fa9">恢复XFS文件系统</h3>
+<div class="outline-text-3" id="text-org5818fa9">
 <div class="org-src-container">
 <pre class="src src-shell">sudo xfs_freeze -u /mnt
 </pre>
@@ -532,9 +532,9 @@ xfs_freeze 命令可以停止对文件系统的访问并创建一个静态的磁
 </div>
 </div>
 
-<div id="outline-container-org7f1f344" class="outline-2">
-<h2 id="org7f1f344">修复XFS文件系统</h2>
-<div class="outline-text-2" id="text-org7f1f344">
+<div id="outline-container-org7b365af" class="outline-2">
+<h2 id="org7b365af">修复XFS文件系统</h2>
+<div class="outline-text-2" id="text-org7b365af">
 <div class="org-src-container">
 <pre class="src src-shell">sudo umount /mnt
 xfs_repair ~lujun9972/xfs.img
@@ -543,13 +543,13 @@ xfs_repair ~lujun9972/xfs.img
 </div>
 </div>
 
-<div id="outline-container-orga500e3e" class="outline-2">
-<h2 id="orga500e3e">碎片管理</h2>
-<div class="outline-text-2" id="text-orga500e3e">
+<div id="outline-container-orgca11314" class="outline-2">
+<h2 id="orgca11314">碎片管理</h2>
+<div class="outline-text-2" id="text-orgca11314">
 </div>
-<div id="outline-container-org0f68cd0" class="outline-3">
-<h3 id="org0f68cd0">查看碎片情况</h3>
-<div class="outline-text-3" id="text-org0f68cd0">
+<div id="outline-container-org2b84ad5" class="outline-3">
+<h3 id="org2b84ad5">查看碎片情况</h3>
+<div class="outline-text-3" id="text-org2b84ad5">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_db -c frag -r ~/xfs.img
 </pre>
@@ -564,9 +564,9 @@ Files on this filesystem average -nan extents per file
 </div>
 </div>
 
-<div id="outline-container-org8c185d4" class="outline-3">
-<h3 id="org8c185d4">整理碎片</h3>
-<div class="outline-text-3" id="text-org8c185d4">
+<div id="outline-container-org7747eb7" class="outline-3">
+<h3 id="org7747eb7">整理碎片</h3>
+<div class="outline-text-3" id="text-org7747eb7">
 <div class="org-src-container">
 <pre class="src src-shell">xfs_fsr ~/xfs.img
 </pre>
@@ -626,6 +626,7 @@ Files on this filesystem average -nan extents per file
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

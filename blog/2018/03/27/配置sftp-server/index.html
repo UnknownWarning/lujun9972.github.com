@@ -54,22 +54,22 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgaa4ede5">安装</a></li>
-<li><a href="#org7bb3c01">配置</a>
+<li><a href="#org70c8851">安装</a></li>
+<li><a href="#org3d587ba">配置</a>
 <ul>
-<li><a href="#org5cb44c3">创建SFTP服务的根目录</a></li>
-<li><a href="#orgf05ba05">创建SFTP用户和用户组</a></li>
-<li><a href="#orgb3276af">配置sshd</a></li>
-<li><a href="#orgdedae72">重启sshd</a></li>
+<li><a href="#org7125997">创建SFTP服务的根目录</a></li>
+<li><a href="#org922aa9b">创建SFTP用户和用户组</a></li>
+<li><a href="#orgbbf76db">配置sshd</a></li>
+<li><a href="#org4e5ee53">重启sshd</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgaa4ede5" class="outline-2">
-<h2 id="orgaa4ede5">安装</h2>
-<div class="outline-text-2" id="text-orgaa4ede5">
+<div id="outline-container-org70c8851" class="outline-2">
+<h2 id="org70c8851">安装</h2>
+<div class="outline-text-2" id="text-org70c8851">
 <p>
 SFTP是sshd的一部分，无需独立安装
 </p>
@@ -81,13 +81,13 @@ SFTP是sshd的一部分，无需独立安装
 </div>
 
 
-<div id="outline-container-org7bb3c01" class="outline-2">
-<h2 id="org7bb3c01">配置</h2>
-<div class="outline-text-2" id="text-org7bb3c01">
+<div id="outline-container-org3d587ba" class="outline-2">
+<h2 id="org3d587ba">配置</h2>
+<div class="outline-text-2" id="text-org3d587ba">
 </div>
-<div id="outline-container-org5cb44c3" class="outline-3">
-<h3 id="org5cb44c3">创建SFTP服务的根目录</h3>
-<div class="outline-text-3" id="text-org5cb44c3">
+<div id="outline-container-org7125997" class="outline-3">
+<h3 id="org7125997">创建SFTP服务的根目录</h3>
+<div class="outline-text-3" id="text-org7125997">
 <p>
 这里我们先创建一个 <code>/data</code> 目录作为SFTP服务的根目录,所有SFTP用户的操作不能脱离该根目录范围。
 </p>
@@ -99,9 +99,9 @@ sudo chmod <span style="color: #a45bad;">771</span> /data
 </div>
 </div>
 
-<div id="outline-container-orgf05ba05" class="outline-3">
-<h3 id="orgf05ba05">创建SFTP用户和用户组</h3>
-<div class="outline-text-3" id="text-orgf05ba05">
+<div id="outline-container-org922aa9b" class="outline-3">
+<h3 id="org922aa9b">创建SFTP用户和用户组</h3>
+<div class="outline-text-3" id="text-org922aa9b">
 <p>
 首先创建一个 <code>sftpusers</code> 用户组
 </p>
@@ -132,9 +132,9 @@ sudo chmod <span style="color: #a45bad;">771</span> /data
 </div>
 </div>
 
-<div id="outline-container-orgb3276af" class="outline-3">
-<h3 id="orgb3276af">配置sshd</h3>
-<div class="outline-text-3" id="text-orgb3276af">
+<div id="outline-container-orgbbf76db" class="outline-3">
+<h3 id="orgbbf76db">配置sshd</h3>
+<div class="outline-text-3" id="text-orgbbf76db">
 <p>
 将下面内容添加到 <code>/etc/ssh/sshd_config</code> 中
 </p>
@@ -149,9 +149,9 @@ sudo chmod <span style="color: #a45bad;">771</span> /data
 </div>
 </div>
 
-<div id="outline-container-orgdedae72" class="outline-3">
-<h3 id="orgdedae72">重启sshd</h3>
-<div class="outline-text-3" id="text-orgdedae72">
+<div id="outline-container-org4e5ee53" class="outline-3">
+<h3 id="org4e5ee53">重启sshd</h3>
+<div class="outline-text-3" id="text-org4e5ee53">
 <div class="org-src-container">
 <pre class="src src-shell">sudo systemctl restart sshd
 </pre>
@@ -211,6 +211,7 @@ sudo chmod <span style="color: #a45bad;">771</span> /data
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

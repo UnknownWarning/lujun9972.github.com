@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org48a2b0b">kernel module存放在哪里</a></li>
-<li><a href="#orgfd4c914">如何加载module</a></li>
-<li><a href="#org6ef74d3">卸载module</a></li>
+<li><a href="#org8259436">kernel module存放在哪里</a></li>
+<li><a href="#org69a193a">如何加载module</a></li>
+<li><a href="#org9c2511a">卸载module</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org48a2b0b" class="outline-2">
-<h2 id="org48a2b0b">kernel module存放在哪里</h2>
-<div class="outline-text-2" id="text-org48a2b0b">
+<div id="outline-container-org8259436" class="outline-2">
+<h2 id="org8259436">kernel module存放在哪里</h2>
+<div class="outline-text-2" id="text-org8259436">
 <p>
 linux自带了很多kernel module文件, 这些文件一般以 <code>.ko</code> 或 <code>.ko.xz</code> 文件结尾,存放在 <code>/lib/module/$(uname -r)</code> 目录中。
 </p>
@@ -125,9 +125,9 @@ linux当然不可能将所有的module都加载进kernel，要查看目前加载
 </div>
 </div>
 
-<div id="outline-container-orgfd4c914" class="outline-2">
-<h2 id="orgfd4c914">如何加载module</h2>
-<div class="outline-text-2" id="text-orgfd4c914">
+<div id="outline-container-org69a193a" class="outline-2">
+<h2 id="org69a193a">如何加载module</h2>
+<div class="outline-text-2" id="text-org69a193a">
 <p>
 加载module特别简单，只需要使用 <code>modprobe module名</code> 就行了。
 </p>
@@ -146,9 +146,9 @@ linux当然不可能将所有的module都加载进kernel，要查看目前加载
 </div>
 </div>
 
-<div id="outline-container-org6ef74d3" class="outline-2">
-<h2 id="org6ef74d3">卸载module</h2>
-<div class="outline-text-2" id="text-org6ef74d3">
+<div id="outline-container-org9c2511a" class="outline-2">
+<h2 id="org9c2511a">卸载module</h2>
+<div class="outline-text-2" id="text-org9c2511a">
 <p>
 卸载module也很简单，只需要使用 <code>rmmod module名</code> 就行了。
 </p>
@@ -218,6 +218,7 @@ linux当然不可能将所有的module都加载进kernel，要查看目前加载
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

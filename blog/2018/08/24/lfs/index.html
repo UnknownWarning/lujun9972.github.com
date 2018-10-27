@@ -54,32 +54,32 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgff1cb90">前置准备工具</a></li>
-<li><a href="#orgf252aeb">配置构建环境</a></li>
-<li><a href="#org7af5e44">构建交叉编译器</a>
+<li><a href="#org646eb9b">前置准备工具</a></li>
+<li><a href="#org985e7c2">配置构建环境</a></li>
+<li><a href="#org6b0f18f">构建交叉编译器</a>
 <ul>
-<li><a href="#org63ec7bf">设置好编译相关的变量</a></li>
-<li><a href="#orgb07ed50">安装kernel headers</a></li>
-<li><a href="#orga857cf9">安装Binutils</a></li>
-<li><a href="#org9b1bf78">静态编译的gcc</a></li>
-<li><a href="#org460e6d3">编译Glibc</a></li>
-<li><a href="#orgfb192ca">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</a></li>
+<li><a href="#org9214f6d">设置好编译相关的变量</a></li>
+<li><a href="#orgfc4f6aa">安装kernel headers</a></li>
+<li><a href="#org4964671">安装Binutils</a></li>
+<li><a href="#org2475f96">静态编译的gcc</a></li>
+<li><a href="#org0af8a1a">编译Glibc</a></li>
+<li><a href="#orgc0184d1">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</a></li>
 </ul>
 </li>
-<li><a href="#org0f5d476">构建Target Image</a>
+<li><a href="#org148b4bc">构建Target Image</a>
 <ul>
-<li><a href="#org864b0fa">构建BusyBox</a></li>
-<li><a href="#org45b69a1">构建linux kernel</a></li>
-<li><a href="#org2de32e1">Bootscripts</a></li>
+<li><a href="#org792c02d">构建BusyBox</a></li>
+<li><a href="#orgc080ab8">构建linux kernel</a></li>
+<li><a href="#org079f905">Bootscripts</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgff1cb90" class="outline-2">
-<h2 id="orgff1cb90">前置准备工具</h2>
-<div class="outline-text-2" id="text-orgff1cb90">
+<div id="outline-container-org646eb9b" class="outline-2">
+<h2 id="org646eb9b">前置准备工具</h2>
+<div class="outline-text-2" id="text-org646eb9b">
 <p>
 在host主机上需要安装有 GCC,make,ncurses,perl以及grub-install
 </p>
@@ -104,9 +104,9 @@
 </div>
 
 
-<div id="outline-container-orgf252aeb" class="outline-2">
-<h2 id="orgf252aeb">配置构建环境</h2>
-<div class="outline-text-2" id="text-orgf252aeb">
+<div id="outline-container-org985e7c2" class="outline-2">
+<h2 id="org985e7c2">配置构建环境</h2>
+<div class="outline-text-2" id="text-org985e7c2">
 <ol class="org-ol">
 <li><p>
 启用bash hash功能
@@ -389,13 +389,13 @@ chmod -v <span style="color: #a45bad;">664</span> $<span style="color: #4f97d7;"
 </div>
 
 
-<div id="outline-container-org7af5e44" class="outline-2">
-<h2 id="org7af5e44">构建交叉编译器</h2>
-<div class="outline-text-2" id="text-org7af5e44">
+<div id="outline-container-org6b0f18f" class="outline-2">
+<h2 id="org6b0f18f">构建交叉编译器</h2>
+<div class="outline-text-2" id="text-org6b0f18f">
 </div>
-<div id="outline-container-org63ec7bf" class="outline-3">
-<h3 id="org63ec7bf">设置好编译相关的变量</h3>
-<div class="outline-text-3" id="text-org63ec7bf">
+<div id="outline-container-org9214f6d" class="outline-3">
+<h3 id="org9214f6d">设置好编译相关的变量</h3>
+<div class="outline-text-3" id="text-org9214f6d">
 <p>
 清空host上预设的 C/C++ 编译标志
 </p>
@@ -419,9 +419,9 @@ chmod -v <span style="color: #a45bad;">664</span> $<span style="color: #4f97d7;"
 </div>
 </div>
 
-<div id="outline-container-orgb07ed50" class="outline-3">
-<h3 id="orgb07ed50">安装kernel headers</h3>
-<div class="outline-text-3" id="text-orgb07ed50">
+<div id="outline-container-orgfc4f6aa" class="outline-3">
+<h3 id="orgfc4f6aa">安装kernel headers</h3>
+<div class="outline-text-3" id="text-orgfc4f6aa">
 <p>
 从<a href="https://www.kernel.org/">kernel.org</a>下载内核源码
 </p>
@@ -452,9 +452,9 @@ cp -rv dest/include/* $<span style="color: #4f97d7;">{</span><span style="color:
 </div>
 </div>
 
-<div id="outline-container-orga857cf9" class="outline-3">
-<h3 id="orga857cf9">安装Binutils</h3>
-<div class="outline-text-3" id="text-orga857cf9">
+<div id="outline-container-org4964671" class="outline-3">
+<h3 id="org4964671">安装Binutils</h3>
+<div class="outline-text-3" id="text-org4964671">
 <p>
 下载bintuils源代码
 </p>
@@ -487,9 +487,9 @@ cp -v include/libiberty.h $<span style="color: #4f97d7;">{</span><span style="co
 </div>
 </div>
 
-<div id="outline-container-org9b1bf78" class="outline-3">
-<h3 id="org9b1bf78">静态编译的gcc</h3>
-<div class="outline-text-3" id="text-org9b1bf78">
+<div id="outline-container-org2475f96" class="outline-3">
+<h3 id="org2475f96">静态编译的gcc</h3>
+<div class="outline-text-3" id="text-org2475f96">
 <p>
 下载 gcc，gmp，mpfr，mpc
 </p>
@@ -548,9 +548,9 @@ ln -vs libgcc.a $<span style="color: #4f97d7;">(</span>$<span style="color: #bc6
 </div>
 </div>
 
-<div id="outline-container-org460e6d3" class="outline-3">
-<h3 id="org460e6d3">编译Glibc</h3>
-<div class="outline-text-3" id="text-org460e6d3">
+<div id="outline-container-org0af8a1a" class="outline-3">
+<h3 id="org0af8a1a">编译Glibc</h3>
+<div class="outline-text-3" id="text-org0af8a1a">
 <p>
 下载glibc
 </p>
@@ -594,9 +594,9 @@ make &amp;&amp; make <span style="color: #7590db;">install_root</span>=$<span st
 </div>
 </div>
 
-<div id="outline-container-orgfb192ca" class="outline-3">
-<h3 id="orgfb192ca">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</h3>
-<div class="outline-text-3" id="text-orgfb192ca">
+<div id="outline-container-orgc0184d1" class="outline-3">
+<h3 id="orgc0184d1">最后再编译一次GCC，这次这个GCC会链接到上一步编译出来的Glibc中</h3>
+<div class="outline-text-3" id="text-orgc0184d1">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #4f97d7;">cd</span> ..
 mkdir gcc-build
@@ -619,13 +619,13 @@ cp -v $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">LJOS<
 </div>
 </div>
 
-<div id="outline-container-org0f5d476" class="outline-2">
-<h2 id="org0f5d476">构建Target Image</h2>
-<div class="outline-text-2" id="text-org0f5d476">
+<div id="outline-container-org148b4bc" class="outline-2">
+<h2 id="org148b4bc">构建Target Image</h2>
+<div class="outline-text-2" id="text-org148b4bc">
 </div>
-<div id="outline-container-org864b0fa" class="outline-3">
-<h3 id="org864b0fa">构建BusyBox</h3>
-<div class="outline-text-3" id="text-org864b0fa">
+<div id="outline-container-org792c02d" class="outline-3">
+<h3 id="org792c02d">构建BusyBox</h3>
+<div class="outline-text-3" id="text-org792c02d">
 <p>
 下载 BusyBox
 </p>
@@ -671,9 +671,9 @@ chmod <span style="color: #a45bad;">755</span> $<span style="color: #4f97d7;">{<
 </div>
 </div>
 
-<div id="outline-container-org45b69a1" class="outline-3">
-<h3 id="org45b69a1">构建linux kernel</h3>
-<div class="outline-text-3" id="text-org45b69a1">
+<div id="outline-container-orgc080ab8" class="outline-3">
+<h3 id="orgc080ab8">构建linux kernel</h3>
+<div class="outline-text-3" id="text-orgc080ab8">
 <p>
 生成默认的x86-64的配置文件
 </p>
@@ -731,8 +731,8 @@ cp -v .config $<span style="color: #4f97d7;">{</span><span style="color: #7590db
 </div>
 </div>
 
-<div id="outline-container-org2de32e1" class="outline-3">
-<h3 id="org2de32e1">Bootscripts</h3>
+<div id="outline-container-org079f905" class="outline-3">
+<h3 id="org079f905">Bootscripts</h3>
 </div>
 </div>
 
@@ -787,6 +787,7 @@ cp -v .config $<span style="color: #4f97d7;">{</span><span style="color: #7590db
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

@@ -54,11 +54,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgec41e81">marks函数</a></li>
-<li><a href="#orgc00afed">jump函数</a></li>
-<li><a href="#orgdd3a543">mark函数</a></li>
-<li><a href="#orgb2485ec">unmark函数</a></li>
-<li><a href="#org3a40511">补全</a></li>
+<li><a href="#orga2a5189">marks函数</a></li>
+<li><a href="#org83b1e13">jump函数</a></li>
+<li><a href="#orge040036">mark函数</a></li>
+<li><a href="#org477a7c0">unmark函数</a></li>
+<li><a href="#orgc408298">补全</a></li>
 </ul>
 </div>
 </div>
@@ -78,9 +78,9 @@
 现在我们就来尝试实现一下吧.
 </p>
 
-<div id="outline-container-orgec41e81" class="outline-2">
-<h2 id="orgec41e81">marks函数</h2>
-<div class="outline-text-2" id="text-orgec41e81">
+<div id="outline-container-orga2a5189" class="outline-2">
+<h2 id="orga2a5189">marks函数</h2>
+<div class="outline-text-2" id="text-orga2a5189">
 <p>
 该函数用于列出所有的书签及其指向的目录:
 </p>
@@ -131,9 +131,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgc00afed" class="outline-2">
-<h2 id="orgc00afed">jump函数</h2>
-<div class="outline-text-2" id="text-orgc00afed">
+<div id="outline-container-org83b1e13" class="outline-2">
+<h2 id="org83b1e13">jump函数</h2>
+<div class="outline-text-2" id="text-org83b1e13">
 <p>
 jump函数接一个书签名作为参数,跳转到其指向的目录中:
 </p>
@@ -161,9 +161,9 @@ jump函数接一个书签名作为参数,跳转到其指向的目录中:
 </div>
 </div>
 
-<div id="outline-container-orgdd3a543" class="outline-2">
-<h2 id="orgdd3a543">mark函数</h2>
-<div class="outline-text-2" id="text-orgdd3a543">
+<div id="outline-container-orge040036" class="outline-2">
+<h2 id="orge040036">mark函数</h2>
+<div class="outline-text-2" id="text-orge040036">
 <p>
 mark函数接受一个书签名,并将当前目录加为书签:
 </p>
@@ -196,9 +196,9 @@ bookmark库本身提供了一个 <code>bookmark-set</code> 函数用于添加书
 </div>
 </div>
 
-<div id="outline-container-orgb2485ec" class="outline-2">
-<h2 id="orgb2485ec">unmark函数</h2>
-<div class="outline-text-2" id="text-orgb2485ec">
+<div id="outline-container-org477a7c0" class="outline-2">
+<h2 id="org477a7c0">unmark函数</h2>
+<div class="outline-text-2" id="text-org477a7c0">
 <p>
 unmark函数接受一个书签名做参数,然后删掉指定的书签:
 </p>
@@ -213,9 +213,9 @@ unmark函数接受一个书签名做参数,然后删掉指定的书签:
 </div>
 </div>
 
-<div id="outline-container-org3a40511" class="outline-2">
-<h2 id="org3a40511">补全</h2>
-<div class="outline-text-2" id="text-org3a40511">
+<div id="outline-container-orgc408298" class="outline-2">
+<h2 id="orgc408298">补全</h2>
+<div class="outline-text-2" id="text-orgc408298">
 <p>
 最后是为jump函数添加补全功能. eshell使用pcomplete这个库来进行补全,至于怎么来写补全函数以后找时间再写另一片文章吧.
 </p>
@@ -294,6 +294,7 @@ unmark函数接受一个书签名做参数,然后删掉指定的书签:
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

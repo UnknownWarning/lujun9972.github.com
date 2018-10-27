@@ -54,15 +54,15 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2f77466">安装lynis</a></li>
-<li><a href="#org289c890">使用lynis进行主机扫描</a>
+<li><a href="#orgc5b87b4">安装lynis</a></li>
+<li><a href="#orgf6627fc">使用lynis进行主机扫描</a>
 <ul>
-<li><a href="#orgd1d3956">查看详细说明</a></li>
-<li><a href="#org012214e">查看日志文件</a></li>
+<li><a href="#org38c978c">查看详细说明</a></li>
+<li><a href="#orge113cee">查看日志文件</a></li>
 </ul>
 </li>
-<li><a href="#orgca2a928">检查更新</a></li>
-<li><a href="#org202ca7f">自定义lynis安全审计策略</a></li>
+<li><a href="#org031b755">检查更新</a></li>
+<li><a href="#orgb19b203">自定义lynis安全审计策略</a></li>
 </ul>
 </div>
 </div>
@@ -70,9 +70,9 @@
 lynis 是一款运行在 Unix/Linux 平台上的基于主机的、开源的安全审计软件。
 </p>
 
-<div id="outline-container-org2f77466" class="outline-2">
-<h2 id="org2f77466">安装lynis</h2>
-<div class="outline-text-2" id="text-org2f77466">
+<div id="outline-container-orgc5b87b4" class="outline-2">
+<h2 id="orgc5b87b4">安装lynis</h2>
+<div class="outline-text-2" id="text-orgc5b87b4">
 <p>
 在 archlinux 上可以直接通过 pacman 来安装
 </p>
@@ -106,9 +106,9 @@ Net Upgrade Size:      0.00 MiB
 </div>
 </div>
 
-<div id="outline-container-org289c890" class="outline-2">
-<h2 id="org289c890">使用lynis进行主机扫描</h2>
-<div class="outline-text-2" id="text-org289c890">
+<div id="outline-container-orgf6627fc" class="outline-2">
+<h2 id="orgf6627fc">使用lynis进行主机扫描</h2>
+<div class="outline-text-2" id="text-orgf6627fc">
 <p>
 首先让我们不带任何参数运行 lynis, 这会列出 lynis 支持的那些参数
 </p>
@@ -394,9 +394,9 @@ webservers
 </pre>
 </div>
 </div>
-<div id="outline-container-orgd1d3956" class="outline-3">
-<h3 id="orgd1d3956">查看详细说明</h3>
-<div class="outline-text-3" id="text-orgd1d3956">
+<div id="outline-container-org38c978c" class="outline-3">
+<h3 id="org38c978c">查看详细说明</h3>
+<div class="outline-text-3" id="text-org38c978c">
 <p>
 在查看审计结果时,你可以通过 <code>show details</code> 参数来获取关于某条警告/建议的详细说明。其对应的命令形式为:
 </p>
@@ -436,9 +436,9 @@ webservers
 </div>
 
 
-<div id="outline-container-org012214e" class="outline-3">
-<h3 id="org012214e">查看日志文件</h3>
-<div class="outline-text-3" id="text-org012214e">
+<div id="outline-container-orge113cee" class="outline-3">
+<h3 id="orge113cee">查看日志文件</h3>
+<div class="outline-text-3" id="text-orge113cee">
 <p>
 lynis在审计完成后会将详细的信息记录在 <code>/var/log/lynis.log</code> 中.
 </p>
@@ -476,9 +476,9 @@ lynis在审计完成后会将详细的信息记录在 <code>/var/log/lynis.log</
 </div>
 </div>
 
-<div id="outline-container-orgca2a928" class="outline-2">
-<h2 id="orgca2a928">检查更新</h2>
-<div class="outline-text-2" id="text-orgca2a928">
+<div id="outline-container-org031b755" class="outline-2">
+<h2 id="org031b755">检查更新</h2>
+<div class="outline-text-2" id="text-org031b755">
 <p>
 审计软件需要随时进行更新从而得到最新的建议和信息，我们可以使用 <code>update info</code> 参数来检查更新:
 </p>
@@ -504,9 +504,9 @@ lynis在审计完成后会将详细的信息记录在 <code>/var/log/lynis.log</
 </div>
 </div>
 
-<div id="outline-container-org202ca7f" class="outline-2">
-<h2 id="org202ca7f">自定义lynis安全审计策略</h2>
-<div class="outline-text-2" id="text-org202ca7f">
+<div id="outline-container-orgb19b203" class="outline-2">
+<h2 id="orgb19b203">自定义lynis安全审计策略</h2>
+<div class="outline-text-2" id="text-orgb19b203">
 <p>
 lynis的配置信息以 <code>.prf</code> 文件的格式保存在 <code>/etc/lynis</code> 目录中。
 其中，默认lynis自带一个名为 <code>default.prf</code> 的默认配置文件。
@@ -577,6 +577,7 @@ lynis的配置信息以 <code>.prf</code> 文件的格式保存在 <code>/etc/ly
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

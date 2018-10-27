@@ -54,19 +54,19 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7bdb3de">直接将敏感信息保存到镜像中</a></li>
-<li><a href="#orgc24222d">通过环境变量传递敏感信息</a></li>
-<li><a href="#orgafa6b46">将敏感信息以文件的形式存储到卷中</a></li>
-<li><a href="#org188ff11">使用第三方键值存储应用</a></li>
+<li><a href="#org438eb13">直接将敏感信息保存到镜像中</a></li>
+<li><a href="#org31e33a9">通过环境变量传递敏感信息</a></li>
+<li><a href="#orga3f09c0">将敏感信息以文件的形式存储到卷中</a></li>
+<li><a href="#orge9c561d">使用第三方键值存储应用</a></li>
 </ul>
 </div>
 </div>
 <p>
 摘自《Docker开发指南》9.7节"分享秘密信息"
 </p>
-<div id="outline-container-org7bdb3de" class="outline-2">
-<h2 id="org7bdb3de">直接将敏感信息保存到镜像中</h2>
-<div class="outline-text-2" id="text-org7bdb3de">
+<div id="outline-container-org438eb13" class="outline-2">
+<h2 id="org438eb13">直接将敏感信息保存到镜像中</h2>
+<div class="outline-text-2" id="text-org438eb13">
 <p>
 这是最简单的方法，但这意味着任何能够获取镜像的人都能看到敏感信息，而且它还无法被删除，一直都会存在于上层镜像中。
 </p>
@@ -77,9 +77,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgc24222d" class="outline-2">
-<h2 id="orgc24222d">通过环境变量传递敏感信息</h2>
-<div class="outline-text-2" id="text-orgc24222d">
+<div id="outline-container-org31e33a9" class="outline-2">
+<h2 id="org31e33a9">通过环境变量传递敏感信息</h2>
+<div class="outline-text-2" id="text-org31e33a9">
 <p>
 这是 “<a href="http://12factor.net">十二要素应用宣言</a>” 推荐的方法，使用起来也很简单，只需要把敏感信息作为参数传递给docker run即可
 </p>
@@ -99,9 +99,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgafa6b46" class="outline-2">
-<h2 id="orgafa6b46">将敏感信息以文件的形式存储到卷中</h2>
-<div class="outline-text-2" id="text-orgafa6b46">
+<div id="outline-container-orga3f09c0" class="outline-2">
+<h2 id="orga3f09c0">将敏感信息以文件的形式存储到卷中</h2>
+<div class="outline-text-2" id="text-orga3f09c0">
 <div class="org-src-container">
 <pre class="src src-shell">docker run -d -v /secret-file:/secret-file:ro image
 </pre>
@@ -114,9 +114,9 @@
 </div>
 </div>
 
-<div id="outline-container-org188ff11" class="outline-2">
-<h2 id="org188ff11">使用第三方键值存储应用</h2>
-<div class="outline-text-2" id="text-org188ff11">
+<div id="outline-container-orge9c561d" class="outline-2">
+<h2 id="orge9c561d">使用第三方键值存储应用</h2>
+<div class="outline-text-2" id="text-orge9c561d">
 <p>
 第三方键值存储容器可以对容器进行身份验证，还可以实现灵活管理敏感信息，是目前来说最好的解决方案.
 </p>
@@ -178,6 +178,7 @@
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

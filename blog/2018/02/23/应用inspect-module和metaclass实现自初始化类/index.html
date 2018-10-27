@@ -54,9 +54,9 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf8c3e4a">inspect module</a></li>
-<li><a href="#orga3137e6">通过元类改造类的初始化函数，使之自动根据初始化函数中的函数名称进行初始化</a></li>
-<li><a href="#orgb2a9488">使用自初始化类</a></li>
+<li><a href="#orgde69bf4">inspect module</a></li>
+<li><a href="#orgb0e3085">通过元类改造类的初始化函数，使之自动根据初始化函数中的函数名称进行初始化</a></li>
+<li><a href="#org5ba57f7">使用自初始化类</a></li>
 </ul>
 </div>
 </div>
@@ -92,9 +92,9 @@
 首先让我们来看一下 <code>inspect module</code> 。
 </p>
 
-<div id="outline-container-orgf8c3e4a" class="outline-2">
-<h2 id="orgf8c3e4a">inspect module</h2>
-<div class="outline-text-2" id="text-orgf8c3e4a">
+<div id="outline-container-orgde69bf4" class="outline-2">
+<h2 id="orgde69bf4">inspect module</h2>
+<div class="outline-text-2" id="text-orgde69bf4">
 <p>
 <code>inspect</code> module 中有一个 <code>getargspec</code> 函数，可以获取一个函数中的参数名称和默认值。
 </p>
@@ -116,9 +116,9 @@
 </div>
 </div>
 
-<div id="outline-container-orga3137e6" class="outline-2">
-<h2 id="orga3137e6">通过元类改造类的初始化函数，使之自动根据初始化函数中的函数名称进行初始化</h2>
-<div class="outline-text-2" id="text-orga3137e6">
+<div id="outline-container-orgb0e3085" class="outline-2">
+<h2 id="orgb0e3085">通过元类改造类的初始化函数，使之自动根据初始化函数中的函数名称进行初始化</h2>
+<div class="outline-text-2" id="text-orgb0e3085">
 <p>
 我么首先定义一个元类 <code>AutoInit</code> ：
 </p>
@@ -157,9 +157,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgb2a9488" class="outline-2">
-<h2 id="orgb2a9488">使用自初始化类</h2>
-<div class="outline-text-2" id="text-orgb2a9488">
+<div id="outline-container-org5ba57f7" class="outline-2">
+<h2 id="org5ba57f7">使用自初始化类</h2>
+<div class="outline-text-2" id="text-org5ba57f7">
 <p>
 这样一来，之前的Person类可以简化为
 </p>
@@ -247,6 +247,7 @@
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

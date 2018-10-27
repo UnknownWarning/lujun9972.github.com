@@ -54,21 +54,21 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3851e18">静态补全</a></li>
-<li><a href="#orge035fc6">动态补全</a>
+<li><a href="#orgb44f8c5">静态补全</a></li>
+<li><a href="#org08d0339">动态补全</a>
 <ul>
-<li><a href="#orga211e3b">compgen命令</a></li>
-<li><a href="#org913e44d">注册动态补全函数</a></li>
-<li><a href="#org5229264">举个例子</a></li>
+<li><a href="#org11df8db">compgen命令</a></li>
+<li><a href="#org7332a06">注册动态补全函数</a></li>
+<li><a href="#org68c5655">举个例子</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3851e18" class="outline-2">
-<h2 id="org3851e18">静态补全</h2>
-<div class="outline-text-2" id="text-org3851e18">
+<div id="outline-container-orgb44f8c5" class="outline-2">
+<h2 id="orgb44f8c5">静态补全</h2>
+<div class="outline-text-2" id="text-orgb44f8c5">
 <p>
 创建静态补全很简单，只需要使用 <code>complete</code> 的 <code>-W</code> (wordlist) 选项为脚本注册补全的单词列表就行了。
 </p>
@@ -119,9 +119,9 @@ her  him
 </div>
 </div>
 
-<div id="outline-container-orge035fc6" class="outline-2">
-<h2 id="orge035fc6">动态补全</h2>
-<div class="outline-text-2" id="text-orge035fc6">
+<div id="outline-container-org08d0339" class="outline-2">
+<h2 id="org08d0339">动态补全</h2>
+<div class="outline-text-2" id="text-org08d0339">
 <p>
 动态补全能够根据用户的环境动态的生成补全的内容。 当出发动态补全时，bash会在当前shell中执行一个补全函数，然后从变量 <code>COMPREPLY</code> 中读取补全的内容。
 </p>
@@ -136,9 +136,9 @@ her  him
 <dt>COMP_LINE</dt><dd>当前命令行的内容</dd>
 </dl>
 </div>
-<div id="outline-container-orga211e3b" class="outline-3">
-<h3 id="orga211e3b">compgen命令</h3>
-<div class="outline-text-3" id="text-orga211e3b">
+<div id="outline-container-org11df8db" class="outline-3">
+<h3 id="org11df8db">compgen命令</h3>
+<div class="outline-text-3" id="text-org11df8db">
 <p>
 compgen是一款内置命令,它与 <code>complete</code> 命令类似，但可以根据已经输入的内容对补全内容进行过滤，比如
 </p>
@@ -161,9 +161,9 @@ her
 </p>
 </div>
 </div>
-<div id="outline-container-org913e44d" class="outline-3">
-<h3 id="org913e44d">注册动态补全函数</h3>
-<div class="outline-text-3" id="text-org913e44d">
+<div id="outline-container-org7332a06" class="outline-3">
+<h3 id="org7332a06">注册动态补全函数</h3>
+<div class="outline-text-3" id="text-org7332a06">
 <p>
 要为命令注册动态补全函数，则需要使用 <code>completion</code> 的 <code>-F 函数</code> 参数:
 </p>
@@ -173,9 +173,9 @@ her
 </div>
 </div>
 </div>
-<div id="outline-container-org5229264" class="outline-3">
-<h3 id="org5229264">举个例子</h3>
-<div class="outline-text-3" id="text-org5229264">
+<div id="outline-container-org68c5655" class="outline-3">
+<h3 id="org68c5655">举个例子</h3>
+<div class="outline-text-3" id="text-org68c5655">
 <p>
 比如，我想为 <code>myscript</code> 增加一个补全，这个补全的逻辑是:
 </p>
@@ -262,6 +262,7 @@ her
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

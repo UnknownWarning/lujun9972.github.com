@@ -54,13 +54,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb376ea8">休眠的类型</a></li>
-<li><a href="#org13b1a9c">suspend 休眠</a></li>
-<li><a href="#org7dcf4a8">Hibernation 休眠</a></li>
-<li><a href="#org017a037">hybrid 休眠</a></li>
-<li><a href="#org8e757d3">Sleep Hooks</a></li>
-<li><a href="#org8f2f65c">定时执行休眠</a></li>
-<li><a href="#orgc189dfb">定时唤醒休眠的linux</a></li>
+<li><a href="#orgd21c49b">休眠的类型</a></li>
+<li><a href="#orgee2eebd">suspend 休眠</a></li>
+<li><a href="#orga21f11f">Hibernation 休眠</a></li>
+<li><a href="#orgdac4451">hybrid 休眠</a></li>
+<li><a href="#org7454471">Sleep Hooks</a></li>
+<li><a href="#org6ecd91b">定时执行休眠</a></li>
+<li><a href="#orgf9a306f">定时唤醒休眠的linux</a></li>
 </ul>
 </div>
 </div>
@@ -68,9 +68,9 @@
 最近公司规定晚上走人后必须关闭电脑，但是像我们这样的人，经常会忘记了关闭电脑，而且关闭电脑之后再恢复工作环境也是件挺麻烦的事情，无奈之下只能折腾一下，让linux定时休眠了。
 </p>
 
-<div id="outline-container-orgb376ea8" class="outline-2">
-<h2 id="orgb376ea8">休眠的类型</h2>
-<div class="outline-text-2" id="text-orgb376ea8">
+<div id="outline-container-orgd21c49b" class="outline-2">
+<h2 id="orgd21c49b">休眠的类型</h2>
+<div class="outline-text-2" id="text-orgd21c49b">
 <p>
 目前大概由三种类型的休眠:
 </p>
@@ -87,9 +87,9 @@
 </div>
 </div>
 
-<div id="outline-container-org13b1a9c" class="outline-2">
-<h2 id="org13b1a9c">suspend 休眠</h2>
-<div class="outline-text-2" id="text-org13b1a9c">
+<div id="outline-container-orgee2eebd" class="outline-2">
+<h2 id="orgee2eebd">suspend 休眠</h2>
+<div class="outline-text-2" id="text-orgee2eebd">
 <p>
 进入 suspend 特别简单，无需额外的配置,在 systemd 系统上直接执行 <code>systemctl suspend</code> 就行了。
 </p>
@@ -127,9 +127,9 @@
 </div>
 
 
-<div id="outline-container-org7dcf4a8" class="outline-2">
-<h2 id="org7dcf4a8">Hibernation 休眠</h2>
-<div class="outline-text-2" id="text-org7dcf4a8">
+<div id="outline-container-orga21f11f" class="outline-2">
+<h2 id="orga21f11f">Hibernation 休眠</h2>
+<div class="outline-text-2" id="text-orga21f11f">
 <p>
 由于 hibernation 休眠要求将内存中的内容写入到交换空间中，因此你至少要有一个空间大于内存的交换分区或者交换文件。
 (其实若交换空间不够内存大也不是一定就无法进行hibernation休眠，可以尝试运行 <code>echo 0 |sudo tee /sys/power/image_size</code>, 这会让系统在写入交换空间时尽可能的进行压缩，但这种方法也无法保证一定能够休眠成功)
@@ -342,9 +342,9 @@ File size of /swapfile is 5368709120 (1310720 blocks of 4096 bytes)
 </div>
 </div>
 
-<div id="outline-container-org017a037" class="outline-2">
-<h2 id="org017a037">hybrid 休眠</h2>
-<div class="outline-text-2" id="text-org017a037">
+<div id="outline-container-orgdac4451" class="outline-2">
+<h2 id="orgdac4451">hybrid 休眠</h2>
+<div class="outline-text-2" id="text-orgdac4451">
 <p>
 在配置好 hibernate 休眠后，也就能正常进行 hybrid 休眠了，方法是执行
 </p>
@@ -381,9 +381,9 @@ File size of /swapfile is 5368709120 (1310720 blocks of 4096 bytes)
 </div>
 </div>
 
-<div id="outline-container-org8e757d3" class="outline-2">
-<h2 id="org8e757d3">Sleep Hooks</h2>
-<div class="outline-text-2" id="text-org8e757d3">
+<div id="outline-container-org7454471" class="outline-2">
+<h2 id="org7454471">Sleep Hooks</h2>
+<div class="outline-text-2" id="text-org7454471">
 <p>
 从上面的service文件中可以看出，不管是哪种类型的系统休眠，其内部实际调用的都是 <a href="https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8">systemd-sleep</a>.
 </p>
@@ -480,9 +480,9 @@ systemd 238                                         SYSTEMD-SUSPEND.SERVICE(8)
 </div>
 </div>
 
-<div id="outline-container-org8f2f65c" class="outline-2">
-<h2 id="org8f2f65c">定时执行休眠</h2>
-<div class="outline-text-2" id="text-org8f2f65c">
+<div id="outline-container-org6ecd91b" class="outline-2">
+<h2 id="org6ecd91b">定时执行休眠</h2>
+<div class="outline-text-2" id="text-org6ecd91b">
 <p>
 systemd 系统中的定时任务是由timer来实现的，而每个timer都与一个service相对应。 
 </p>
@@ -510,9 +510,9 @@ systemd 系统中的定时任务是由timer来实现的，而每个timer都与�
 </div>
 </div>
 
-<div id="outline-container-orgc189dfb" class="outline-2">
-<h2 id="orgc189dfb">定时唤醒休眠的linux</h2>
-<div class="outline-text-2" id="text-orgc189dfb">
+<div id="outline-container-orgf9a306f" class="outline-2">
+<h2 id="orgf9a306f">定时唤醒休眠的linux</h2>
+<div class="outline-text-2" id="text-orgf9a306f">
 <p>
 使用 rtcwake 可以在给定的时间唤醒处于休眠状态的电脑
 </p>
@@ -606,6 +606,7 @@ sudo rtcwake -m $<span style="color: #4f97d7;">{</span><span style="color: #7590
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

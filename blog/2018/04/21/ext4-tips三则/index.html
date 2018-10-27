@@ -54,16 +54,16 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org74625e5">瞬间创建空文件</a></li>
-<li><a href="#org70eea00">缩短文件系统格式化时间</a></li>
-<li><a href="#org1723b2b">显示纳秒级的文件时间戳</a></li>
+<li><a href="#orge885acc">瞬间创建空文件</a></li>
+<li><a href="#orgd8fcc63">缩短文件系统格式化时间</a></li>
+<li><a href="#org03e5a05">显示纳秒级的文件时间戳</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org74625e5" class="outline-2">
-<h2 id="org74625e5">瞬间创建空文件</h2>
-<div class="outline-text-2" id="text-org74625e5">
+<div id="outline-container-orge885acc" class="outline-2">
+<h2 id="orge885acc">瞬间创建空文件</h2>
+<div class="outline-text-2" id="text-orge885acc">
 <p>
 在ext4中，是以范围为单位将磁盘空间分割成多个连续的去块的。利用ext4的范围预分配能力，可以在几乎一瞬间完成空文件的创建。
 </p>
@@ -82,9 +82,9 @@
 </div>
 </div>
 
-<div id="outline-container-org70eea00" class="outline-2">
-<h2 id="org70eea00">缩短文件系统格式化时间</h2>
-<div class="outline-text-2" id="text-org70eea00">
+<div id="outline-container-orgd8fcc63" class="outline-2">
+<h2 id="orgd8fcc63">缩短文件系统格式化时间</h2>
+<div class="outline-text-2" id="text-orgd8fcc63">
 <p>
 在格式化大容量文件系统时，初始化inode表会相当费时间。
 </p>
@@ -99,9 +99,9 @@
 </div>
 </div>
 
-<div id="outline-container-org1723b2b" class="outline-2">
-<h2 id="org1723b2b">显示纳秒级的文件时间戳</h2>
-<div class="outline-text-2" id="text-org1723b2b">
+<div id="outline-container-org03e5a05" class="outline-2">
+<h2 id="org03e5a05">显示纳秒级的文件时间戳</h2>
+<div class="outline-text-2" id="text-org03e5a05">
 <p>
 ext4中，文件的时间戳改为以纳秒为单位了，为ls命令使用 <code>--full-time</code> 能够显示以纳秒为单位的时间戳。
 </p>
@@ -278,6 +278,7 @@ lrwxrwxrwx 1 lujun9972 lujun9972     49 2018-04-13 12:01:36.928753347 +0800 rein
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

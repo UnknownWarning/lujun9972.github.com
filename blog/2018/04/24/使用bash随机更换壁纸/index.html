@@ -54,14 +54,14 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org68745c1">所需工具</a></li>
-<li><a href="#org41e2f02">壁纸的来源</a></li>
-<li><a href="#orgec51c73">实现步骤</a>
+<li><a href="#orgbffa35d">所需工具</a></li>
+<li><a href="#orga28c028">壁纸的来源</a></li>
+<li><a href="#orgbcee33c">实现步骤</a>
 <ul>
-<li><a href="#orgde51b4f">从 https://www.reddit.com/r/wallpapers/ 中抽取出帖子的链接</a></li>
-<li><a href="#orgc5c98be">随机选择一个链接</a></li>
-<li><a href="#org1a0e122">找出帖子链接中图片的URL</a></li>
-<li><a href="#org065186f">下载并设置壁纸</a></li>
+<li><a href="#org2cdeb26">从 https://www.reddit.com/r/wallpapers/ 中抽取出帖子的链接</a></li>
+<li><a href="#org81082fc">随机选择一个链接</a></li>
+<li><a href="#org77c011f">找出帖子链接中图片的URL</a></li>
+<li><a href="#org3c1255b">下载并设置壁纸</a></li>
 </ul>
 </li>
 </ul>
@@ -71,9 +71,9 @@
 本文要做的事情是写一个脚本，用来随机地从 <code>reddit</code> 的 <code>wallpapers</code> 中挑选一张壁纸应用到卓面上。
 </p>
 
-<div id="outline-container-org68745c1" class="outline-2">
-<h2 id="org68745c1">所需工具</h2>
-<div class="outline-text-2" id="text-org68745c1">
+<div id="outline-container-orgbffa35d" class="outline-2">
+<h2 id="orgbffa35d">所需工具</h2>
+<div class="outline-text-2" id="text-orgbffa35d">
 <dl class="org-dl">
 <dt>wget</dt><dd>下载URL和壁纸图片</dd>
 <dt>grep</dt><dd>从URL中抽取指向壁纸的URL</dd>
@@ -83,18 +83,18 @@
 </div>
 </div>
 
-<div id="outline-container-org41e2f02" class="outline-2">
-<h2 id="org41e2f02">壁纸的来源</h2>
-<div class="outline-text-2" id="text-org41e2f02">
+<div id="outline-container-orga28c028" class="outline-2">
+<h2 id="orga28c028">壁纸的来源</h2>
+<div class="outline-text-2" id="text-orga28c028">
 <p>
 为了简便处理，我们只从 <a href="https://www.reddit.com/r/wallpapers/">https://www.reddit.com/r/wallpapers/</a> 的第一页中随机选取壁纸。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgec51c73" class="outline-2">
-<h2 id="orgec51c73">实现步骤</h2>
-<div class="outline-text-2" id="text-orgec51c73">
+<div id="outline-container-orgbcee33c" class="outline-2">
+<h2 id="orgbcee33c">实现步骤</h2>
+<div class="outline-text-2" id="text-orgbcee33c">
 <p>
 用浏览器打开 <a href="https://www.reddit.com/r/wallpapers/">https://www.reddit.com/r/wallpapers/</a> 你就会发现它列出了最新产生的25个帖子。
 </p>
@@ -121,9 +121,9 @@
 </ol>
 </div>
 
-<div id="outline-container-orgde51b4f" class="outline-3">
-<h3 id="orgde51b4f">从 <a href="https://www.reddit.com/r/wallpapers/">https://www.reddit.com/r/wallpapers/</a> 中抽取出帖子的链接</h3>
-<div class="outline-text-3" id="text-orgde51b4f">
+<div id="outline-container-org2cdeb26" class="outline-3">
+<h3 id="org2cdeb26">从 <a href="https://www.reddit.com/r/wallpapers/">https://www.reddit.com/r/wallpapers/</a> 中抽取出帖子的链接</h3>
+<div class="outline-text-3" id="text-org2cdeb26">
 <p>
 首先让我们用 <code>wget</code> 下载 <a href="https://www.reddit.com/r/wallpapers/">https://www.reddit.com/r/wallpapers/</a> 页面来分析一下该如何抽取出帖子的链接呢。
 </p>
@@ -337,9 +337,9 @@ href="/user/zaron5551"
 </div>
 
 
-<div id="outline-container-orgc5c98be" class="outline-3">
-<h3 id="orgc5c98be">随机选择一个链接</h3>
-<div class="outline-text-3" id="text-orgc5c98be">
+<div id="outline-container-org81082fc" class="outline-3">
+<h3 id="org81082fc">随机选择一个链接</h3>
+<div class="outline-text-3" id="text-org81082fc">
 <p>
 要随机选择链接，我们可以使用 <code>shuf</code> 命令来打乱链接的顺序，然后选择第一个链接作为我们要访问的链接就行了
 </p>
@@ -356,9 +356,9 @@ href="/user/zaron5551"
 </div>
 
 
-<div id="outline-container-org1a0e122" class="outline-3">
-<h3 id="org1a0e122">找出帖子链接中图片的URL</h3>
-<div class="outline-text-3" id="text-org1a0e122">
+<div id="outline-container-org77c011f" class="outline-3">
+<h3 id="org77c011f">找出帖子链接中图片的URL</h3>
+<div class="outline-text-3" id="text-org77c011f">
 <p>
 按照之前的方法，我们来看看帖子链接中都有哪些链接。不过由于我们只需要图片，因此可以加个限制只显示包含 <code>.jpg</code>, <code>.jpeg</code>, 或者 <code>.png</code> 的URL.
 </p>
@@ -446,9 +446,9 @@ wget $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">url</s
 </div>
 </div>
 
-<div id="outline-container-org065186f" class="outline-3">
-<h3 id="org065186f">下载并设置壁纸</h3>
-<div class="outline-text-3" id="text-org065186f">
+<div id="outline-container-org3c1255b" class="outline-3">
+<h3 id="org3c1255b">下载并设置壁纸</h3>
+<div class="outline-text-3" id="text-org3c1255b">
 <p>
 我们使用wget来下载壁纸，并通过feh来设置壁纸。
 </p>
@@ -531,6 +531,7 @@ wget $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">image_
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

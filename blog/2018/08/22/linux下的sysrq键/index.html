@@ -54,25 +54,25 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd250f32">启用SysRq</a>
+<li><a href="#orgb3e20ac">启用SysRq</a>
 <ul>
-<li><a href="#orgeda8dd0">对内核的要求</a></li>
-<li><a href="#orgaf17066">查看当前SysRq的值</a></li>
-<li><a href="#orgf85e94f">更改SysRq的值</a></li>
+<li><a href="#orge4c5ae6">对内核的要求</a></li>
+<li><a href="#org337bc8f">查看当前SysRq的值</a></li>
+<li><a href="#org7b4e230">更改SysRq的值</a></li>
 </ul>
 </li>
-<li><a href="#orgb34eb27">使用SysRq</a>
+<li><a href="#orgc0c4882">使用SysRq</a>
 <ul>
-<li><a href="#orgfda6459">常见的几种功能键组合</a>
+<li><a href="#org0495d14">常见的几种功能键组合</a>
 <ul>
-<li><a href="#org116768f">R-E-I-S-U-B:安全重启系统</a></li>
-<li><a href="#orge13f3dc">恢复系统挂起</a></li>
-<li><a href="#org3e95a0f">获取系统信息</a></li>
+<li><a href="#orgcbcf42c">R-E-I-S-U-B:安全重启系统</a></li>
+<li><a href="#orgc3e82aa">恢复系统挂起</a></li>
+<li><a href="#org8efa173">获取系统信息</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org5de1777">查看SysRq的输出信息</a></li>
+<li><a href="#orga3923ad">查看SysRq的输出信息</a></li>
 </ul>
 </div>
 </div>
@@ -81,13 +81,13 @@
 这套组合键提供了一系列在系统崩溃时常用到的功能，比如同步数据、杀进程、卸载文件系统，甚至系统重启.
 </p>
 
-<div id="outline-container-orgd250f32" class="outline-2">
-<h2 id="orgd250f32">启用SysRq</h2>
-<div class="outline-text-2" id="text-orgd250f32">
+<div id="outline-container-orgb3e20ac" class="outline-2">
+<h2 id="orgb3e20ac">启用SysRq</h2>
+<div class="outline-text-2" id="text-orgb3e20ac">
 </div>
-<div id="outline-container-orgeda8dd0" class="outline-3">
-<h3 id="orgeda8dd0">对内核的要求</h3>
-<div class="outline-text-3" id="text-orgeda8dd0">
+<div id="outline-container-orge4c5ae6" class="outline-3">
+<h3 id="orge4c5ae6">对内核的要求</h3>
+<div class="outline-text-3" id="text-orge4c5ae6">
 <p>
 启用 <code>SysRq</code> 的前提是在linux kernel编译时启用了 <code>CONFIG_MAGIC_SYSRQ</code> 选项.
 </p>
@@ -111,9 +111,9 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-orgaf17066" class="outline-3">
-<h3 id="orgaf17066">查看当前SysRq的值</h3>
-<div class="outline-text-3" id="text-orgaf17066">
+<div id="outline-container-org337bc8f" class="outline-3">
+<h3 id="org337bc8f">查看当前SysRq的值</h3>
+<div class="outline-text-3" id="text-org337bc8f">
 <p>
 我们可以通过查看 <code>/proc/sys/kernel/sysrq</code> 的值来判断Kernel会对哪些功能产生反应.
 </p>
@@ -217,9 +217,9 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-orgf85e94f" class="outline-3">
-<h3 id="orgf85e94f">更改SysRq的值</h3>
-<div class="outline-text-3" id="text-orgf85e94f">
+<div id="outline-container-org7b4e230" class="outline-3">
+<h3 id="org7b4e230">更改SysRq的值</h3>
+<div class="outline-text-3" id="text-org7b4e230">
 <p>
 如果只是希望临时更改 <code>SysRq</code> 的值，那么很简单，只需要将新的值写入到 <code>/proc/sys/kernel/sysrq</code> 中去
 </p>
@@ -246,9 +246,9 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-orgb34eb27" class="outline-2">
-<h2 id="orgb34eb27">使用SysRq</h2>
-<div class="outline-text-2" id="text-orgb34eb27">
+<div id="outline-container-orgc0c4882" class="outline-2">
+<h2 id="orgc0c4882">使用SysRq</h2>
+<div class="outline-text-2" id="text-orgc0c4882">
 <p>
 使用SysRq有两种方式:
 </p>
@@ -517,17 +517,17 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 
 
-<div id="outline-container-orgfda6459" class="outline-3">
-<h3 id="orgfda6459">常见的几种功能键组合</h3>
-<div class="outline-text-3" id="text-orgfda6459">
+<div id="outline-container-org0495d14" class="outline-3">
+<h3 id="org0495d14">常见的几种功能键组合</h3>
+<div class="outline-text-3" id="text-org0495d14">
 <p>
 下面列出几个常见的功能键组合:
 </p>
 </div>
 
-<div id="outline-container-org116768f" class="outline-4">
-<h4 id="org116768f">R-E-I-S-U-B:安全重启系统</h4>
-<div class="outline-text-4" id="text-org116768f">
+<div id="outline-container-orgcbcf42c" class="outline-4">
+<h4 id="orgcbcf42c">R-E-I-S-U-B:安全重启系统</h4>
+<div class="outline-text-4" id="text-orgcbcf42c">
 <p>
 这套组合键大致相当于reboot命令：
 </p>
@@ -548,9 +548,9 @@ CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 </div>
 </div>
 
-<div id="outline-container-orge13f3dc" class="outline-4">
-<h4 id="orge13f3dc">恢复系统挂起</h4>
-<div class="outline-text-4" id="text-orge13f3dc">
+<div id="outline-container-orgc3e82aa" class="outline-4">
+<h4 id="orgc3e82aa">恢复系统挂起</h4>
+<div class="outline-text-4" id="text-orgc3e82aa">
 <p>
 若仅仅是因为资源消耗过量引起系统挂起就重启系统显然是不好的，我们可以尝试通过回收一些资源的方式来回复系统挂起。
 </p>
@@ -572,9 +572,9 @@ SysRq中用来结束进程的command-key包括 E-I-K-F，其中:
 </p>
 </div>
 </div>
-<div id="outline-container-org3e95a0f" class="outline-4">
-<h4 id="org3e95a0f">获取系统信息</h4>
-<div class="outline-text-4" id="text-org3e95a0f">
+<div id="outline-container-org8efa173" class="outline-4">
+<h4 id="org8efa173">获取系统信息</h4>
+<div class="outline-text-4" id="text-org8efa173">
 <p>
 SysRq还提供了几个用于获取系统信息的commandkey，在恢复系统挂起前推荐执行这些commandkey，以记录下当前系统状态。
 </p>
@@ -592,9 +592,9 @@ SysRq还提供了几个用于获取系统信息的commandkey，在恢复系统�
 </div>
 </div>
 </div>
-<div id="outline-container-org5de1777" class="outline-2">
-<h2 id="org5de1777">查看SysRq的输出信息</h2>
-<div class="outline-text-2" id="text-org5de1777">
+<div id="outline-container-orga3923ad" class="outline-2">
+<h2 id="orga3923ad">查看SysRq的输出信息</h2>
+<div class="outline-text-2" id="text-orga3923ad">
 <p>
 从上面的列表中我们可以看到，使用SysRq能够输出大量的信息。这些信息，默认会输出到syslog中.
 同时，若设置的 <code>console_loglevel(0-9)</code> 大于 <code>default_message_loglevel</code> 则输出也会输出到本地控制台终端上去。
@@ -670,6 +670,7 @@ dmesg |tail -n <span style="color: #a45bad;">1</span>
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

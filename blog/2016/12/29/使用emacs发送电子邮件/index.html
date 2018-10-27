@@ -54,13 +54,13 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org69f5a8b">配置</a></li>
-<li><a href="#org47672c7">编写新邮件</a></li>
-<li><a href="#org4cee56b">添加附件</a></li>
-<li><a href="#org463a013">设置mail address的别名</a></li>
-<li><a href="#org49c0136">添加签名</a></li>
-<li><a href="#org2668250">Queued delivery</a></li>
-<li><a href="#orgfa276b1">调试</a></li>
+<li><a href="#org84f9136">配置</a></li>
+<li><a href="#org3e7e6e0">编写新邮件</a></li>
+<li><a href="#orgacd7cc2">添加附件</a></li>
+<li><a href="#org1acf060">设置mail address的别名</a></li>
+<li><a href="#org383a5bb">添加签名</a></li>
+<li><a href="#org3bf29e2">Queued delivery</a></li>
+<li><a href="#orgcc69268">调试</a></li>
 </ul>
 </div>
 </div>
@@ -68,9 +68,9 @@
 Emacs自带了SMTP库,这使的Emacs无需任何第三方软件的帮助就能通过第三方邮件服务商发送电子邮件.
 </p>
 
-<div id="outline-container-org69f5a8b" class="outline-2">
-<h2 id="org69f5a8b">配置</h2>
-<div class="outline-text-2" id="text-org69f5a8b">
+<div id="outline-container-org84f9136" class="outline-2">
+<h2 id="org84f9136">配置</h2>
+<div class="outline-text-2" id="text-org84f9136">
 <p>
 在写邮件之前,推荐先配置一下 <code>user-full-name</code> 与 <code>user-mail-address</code> 这两个变量. 
 在编写新邮件时,Emacs会使用这两个变量来形成邮件中的 <code>From</code> header域的值.
@@ -114,9 +114,9 @@ Emacs自带了SMTP库,这使的Emacs无需任何第三方软件的帮助就能�
 </div>
 </div>
 
-<div id="outline-container-org47672c7" class="outline-2">
-<h2 id="org47672c7">编写新邮件</h2>
-<div class="outline-text-2" id="text-org47672c7">
+<div id="outline-container-org3e7e6e0" class="outline-2">
+<h2 id="org3e7e6e0">编写新邮件</h2>
+<div class="outline-text-2" id="text-org3e7e6e0">
 <p>
 按下 <code>C-x m</code> 或者直接执行 <code>M-x compose-mail</code> 就会弹出一个 <code>*unsent mail*</code> 的buffer,看起来大概是这样的:
 </p>
@@ -168,9 +168,9 @@ machine smtp服务器地址 login 用户名 port 端口号 password 密码
 </div>
 </div>
 
-<div id="outline-container-org4cee56b" class="outline-2">
-<h2 id="org4cee56b">添加附件</h2>
-<div class="outline-text-2" id="text-org4cee56b">
+<div id="outline-container-orgacd7cc2" class="outline-2">
+<h2 id="orgacd7cc2">添加附件</h2>
+<div class="outline-text-2" id="text-orgacd7cc2">
 <p>
 按下 <code>C-c C-a (mml-attach-file)</code>  就能为邮件添加附件. Emacs会依次提示输入附件路径,类型,描述以及整合方式.
 </p>
@@ -192,9 +192,9 @@ machine smtp服务器地址 login 用户名 port 端口号 password 密码
 </div>
 </div>
 
-<div id="outline-container-org463a013" class="outline-2">
-<h2 id="org463a013">设置mail address的别名</h2>
-<div class="outline-text-2" id="text-org463a013">
+<div id="outline-container-org1acf060" class="outline-2">
+<h2 id="org1acf060">设置mail address的别名</h2>
+<div class="outline-text-2" id="text-org1acf060">
 <p>
 一个别名可以代表一个或多个邮件地址.
 </p>
@@ -233,9 +233,9 @@ source FILENAME
 </div>
 </div>
 
-<div id="outline-container-org49c0136" class="outline-2">
-<h2 id="org49c0136">添加签名</h2>
-<div class="outline-text-2" id="text-org49c0136">
+<div id="outline-container-org383a5bb" class="outline-2">
+<h2 id="org383a5bb">添加签名</h2>
+<div class="outline-text-2" id="text-org383a5bb">
 <p>
 变量 <code>message-signature</code> 的值决定了Emacs如何处理你的邮件签名, 它支持以下几种值:
 </p>
@@ -260,9 +260,9 @@ source FILENAME
 </div>
 </div>
 
-<div id="outline-container-org2668250" class="outline-2">
-<h2 id="org2668250">Queued delivery</h2>
-<div class="outline-text-2" id="text-org2668250">
+<div id="outline-container-org3bf29e2" class="outline-2">
+<h2 id="org3bf29e2">Queued delivery</h2>
+<div class="outline-text-2" id="text-org3bf29e2">
 <p>
 若你的电脑不是一直连接到互联网上的,则你可以先写好邮件,将这些邮件暂存到一个队列中,然后等到连接到互联网上之后再一次性发送出去.
 </p>
@@ -273,9 +273,9 @@ source FILENAME
 </div>
 </div>
 
-<div id="outline-container-orgfa276b1" class="outline-2">
-<h2 id="orgfa276b1">调试</h2>
-<div class="outline-text-2" id="text-orgfa276b1">
+<div id="outline-container-orgcc69268" class="outline-2">
+<h2 id="orgcc69268">调试</h2>
+<div class="outline-text-2" id="text-orgcc69268">
 <p>
 在发送邮件的过程中如果出现问题想调试,可以开启smtpmail的调试功能:
 </p>
@@ -341,6 +341,7 @@ source FILENAME
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

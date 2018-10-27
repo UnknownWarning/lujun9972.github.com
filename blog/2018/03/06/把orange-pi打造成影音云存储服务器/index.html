@@ -54,11 +54,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org23d42a6">安装MiniDLNA</a></li>
-<li><a href="#orgfa4ad13">配置 /etc/minidlna.conf</a></li>
-<li><a href="#orgc5eff8f">重启MiniDLNA</a></li>
-<li><a href="#orgd9a4b3a">使用MiniDLNA</a></li>
-<li><a href="#orgbca8b57">使用Docker简化安装</a></li>
+<li><a href="#orgc12c0fd">安装MiniDLNA</a></li>
+<li><a href="#org29eddaf">配置 /etc/minidlna.conf</a></li>
+<li><a href="#orgd7e2be1">重启MiniDLNA</a></li>
+<li><a href="#orgfa6e666">使用MiniDLNA</a></li>
+<li><a href="#orgc972a2b">使用Docker简化安装</a></li>
 </ul>
 </div>
 </div>
@@ -66,9 +66,9 @@
 运用MiniDLNA这款软件，可以把Orange Pi变成一个家庭影音云存储设备，从而将电影、音乐分享给局域网中其他用户。
 </p>
 
-<div id="outline-container-org23d42a6" class="outline-2">
-<h2 id="org23d42a6">安装MiniDLNA</h2>
-<div class="outline-text-2" id="text-org23d42a6">
+<div id="outline-container-orgc12c0fd" class="outline-2">
+<h2 id="orgc12c0fd">安装MiniDLNA</h2>
+<div class="outline-text-2" id="text-orgc12c0fd">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install -y minidlna
 </pre>
@@ -76,9 +76,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgfa4ad13" class="outline-2">
-<h2 id="orgfa4ad13">配置 /etc/minidlna.conf</h2>
-<div class="outline-text-2" id="text-orgfa4ad13">
+<div id="outline-container-org29eddaf" class="outline-2">
+<h2 id="org29eddaf">配置 /etc/minidlna.conf</h2>
+<div class="outline-text-2" id="text-org29eddaf">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#23186;&#20307;&#25991;&#20214;&#30446;&#24405;</span>
 <span style="color: #7590db;">media_dir</span>=/media/usb0
@@ -95,9 +95,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgc5eff8f" class="outline-2">
-<h2 id="orgc5eff8f">重启MiniDLNA</h2>
-<div class="outline-text-2" id="text-orgc5eff8f">
+<div id="outline-container-orgd7e2be1" class="outline-2">
+<h2 id="orgd7e2be1">重启MiniDLNA</h2>
+<div class="outline-text-2" id="text-orgd7e2be1">
 <div class="org-src-container">
 <pre class="src src-shell">sudo systemctl restart minidlna
 </pre>
@@ -105,9 +105,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd9a4b3a" class="outline-2">
-<h2 id="orgd9a4b3a">使用MiniDLNA</h2>
-<div class="outline-text-2" id="text-orgd9a4b3a">
+<div id="outline-container-orgfa6e666" class="outline-2">
+<h2 id="orgfa6e666">使用MiniDLNA</h2>
+<div class="outline-text-2" id="text-orgfa6e666">
 <p>
 在Pad上查看UPNP/DLNA Media Servers就能看到一个名为 <code>orangepipc2:minidlna</code> 的服务器了。
 </p>
@@ -121,9 +121,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-orgbca8b57" class="outline-2">
-<h2 id="orgbca8b57">使用Docker简化安装</h2>
-<div class="outline-text-2" id="text-orgbca8b57">
+<div id="outline-container-orgc972a2b" class="outline-2">
+<h2 id="orgc972a2b">使用Docker简化安装</h2>
+<div class="outline-text-2" id="text-orgc972a2b">
 <p>
 如果你觉得上面操作太麻烦，那么可以直接使用Docker帮你搞定。
 </p>
@@ -192,6 +192,7 @@
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>

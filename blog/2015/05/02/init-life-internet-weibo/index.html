@@ -53,21 +53,21 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org464a5e7">1. 加载微博客户端</a></li>
-<li><a href="#org13905eb">2. 使用</a>
+<li><a href="#org57bfaef">1. 加载微博客户端</a></li>
+<li><a href="#org645b529">2. 使用</a>
 <ul>
-<li><a href="#org9fb489f">2.1. 认证</a></li>
-<li><a href="#org2e19a7d">2.2. check timeline</a></li>
+<li><a href="#orgc38d1c9">2.1. 认证</a></li>
+<li><a href="#org8771a65">2.2. check timeline</a></li>
 </ul>
 </li>
-<li><a href="#orgb51d1f6">3. 配置</a></li>
-<li><a href="#org948553b">4. provide feature</a></li>
+<li><a href="#org5d658b0">3. 配置</a></li>
+<li><a href="#org3e59879">4. provide feature</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org464a5e7" class="outline-2">
-<h2 id="org464a5e7"><span class="section-number-2">1</span> 加载微博客户端</h2>
+<div id="outline-container-org57bfaef" class="outline-2">
+<h2 id="org57bfaef"><span class="section-number-2">1</span> 加载微博客户端</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>require-and-install 'weibo<span style="color: #4f97d7;">)</span>
@@ -76,8 +76,8 @@
 </div>
 </div>
 
-<div id="outline-container-org13905eb" class="outline-2">
-<h2 id="org13905eb"><span class="section-number-2">2</span> 使用</h2>
+<div id="outline-container-org645b529" class="outline-2">
+<h2 id="org645b529"><span class="section-number-2">2</span> 使用</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 在使用前需要在open.weibo.com申请一个新应用，然后将“授权回调页”和"取消授权回调页"都设为"<a href="http://127.0.0.1:42012/%22%E3%80%82%E7%84%B6%E5%90%8E%E6%9B%BF%E6%8D%A2weibo-authorize.el%E4%B8%AD%E7%9A%84weibo-consumer-key%E5%92%8Cweibo-consumer-secret">http://127.0.0.1:42012/"。然后替换weibo-authorize.el中的weibo-consumer-key和weibo-consumer-secret</a>
@@ -88,8 +88,8 @@
 </pre>
 </div>
 </div>
-<div id="outline-container-org9fb489f" class="outline-3">
-<h3 id="org9fb489f"><span class="section-number-3">2.1</span> 认证</h3>
+<div id="outline-container-orgc38d1c9" class="outline-3">
+<h3 id="orgc38d1c9"><span class="section-number-3">2.1</span> 认证</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 当第一次使用该客户端或认证token过期了的情况下,会跳转到sina的认证页面,在认证页面上进行认证后会看到一个pin码.
@@ -101,8 +101,8 @@
 </div>
 </div>
 
-<div id="outline-container-org2e19a7d" class="outline-3">
-<h3 id="org2e19a7d"><span class="section-number-3">2.2</span> check timeline</h3>
+<div id="outline-container-org8771a65" class="outline-3">
+<h3 id="org8771a65"><span class="section-number-3">2.2</span> check timeline</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 M-x weibo-timeline
@@ -111,8 +111,8 @@ M-x weibo-timeline
 </div>
 </div>
 
-<div id="outline-container-orgb51d1f6" class="outline-2">
-<h2 id="orgb51d1f6"><span class="section-number-2">3</span> 配置</h2>
+<div id="outline-container-org5d658b0" class="outline-2">
+<h2 id="org5d658b0"><span class="section-number-2">3</span> 配置</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><p>
@@ -142,8 +142,8 @@ weibo-display-image
 </div>
 </div>
 
-<div id="outline-container-org948553b" class="outline-2">
-<h2 id="org948553b"><span class="section-number-2">4</span> provide feature</h2>
+<div id="outline-container-org3e59879" class="outline-2">
+<h2 id="org3e59879"><span class="section-number-2">4</span> provide feature</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">provide</span> '<span style="color: #a45bad;">init-life-internet-weibo</span><span style="color: #4f97d7;">)</span>
@@ -203,6 +203,7 @@ weibo-display-image
       &nbsp;&nbsp;-&nbsp;&nbsp;
       Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
       Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
       <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
     </p>
   </div>
