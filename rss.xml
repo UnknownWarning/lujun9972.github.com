@@ -4,10 +4,17 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>六, 27 10月 2018 22:45:43 CST</pubDate>
-    <lastBuildDate>六, 27 10月 2018 22:45:43 CST</lastBuildDate>
+    <pubDate>日, 28 10月 2018 20:45:40 CST</pubDate>
+    <lastBuildDate>日, 28 10月 2018 20:45:40 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>bash中if-then与&amp;&amp;的区别</title>
+<link>https://lujun9972.github.io/blog/2018/10/28/bash中if-then与&amp;&amp;的区别/</link>
+<description>No Description</description>
+<pubDate>2018-10-28</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/28/bash中if-then与&amp;&amp;的区别/</guid>
+</item>
 <item>
 <title>Emacs中的日程管理</title>
 <link>https://lujun9972.github.io/blog/2018/10/27/emacs中的日程管理/</link>
@@ -70,13 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-10-26</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/10/05/命令的执行环境/</guid>
-</item>
-<item>
-<title>org-agenda的好帮手:org-agenda-skip-function</title>
-<link>https://lujun9972.github.io/blog/2018/10/21/org-agenda的好帮手-org-agenda-skip-function/</link>
-<description>No Description</description>
-<pubDate>2018-10-21</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/21/org-agenda的好帮手-org-agenda-skip-function/</guid>
 </item>
 </channel>
 </rss>
