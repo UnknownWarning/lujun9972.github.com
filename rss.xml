@@ -4,10 +4,31 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>四, 01 11月 2018 18:54:13 HKT</pubDate>
-    <lastBuildDate>四, 01 11月 2018 18:54:13 HKT</lastBuildDate>
+    <pubDate>五, 02 11月 2018 18:10:52 HKT</pubDate>
+    <lastBuildDate>五, 02 11月 2018 18:10:52 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>将org-agenda嵌入到linux桌面背景中</title>
+<link>https://lujun9972.github.io/blog/2018/11/02/将org-agenda嵌入到linux桌面背景中/</link>
+<description>No Description</description>
+<pubDate>2018-11-02</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/02/将org-agenda嵌入到linux桌面背景中/</guid>
+</item>
+<item>
+<title>Linux下的那些教育类软件集合</title>
+<link>https://lujun9972.github.io/blog/2018/10/12/linux下的那些教育类软件集合/</link>
+<description>No Description</description>
+<pubDate>2018-11-02</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/12/linux下的那些教育类软件集合/</guid>
+</item>
+<item>
+<title>使用emacs管理gist代码片段--gist</title>
+<link>https://lujun9972.github.io/blog/2018/11/01/使用emacs管理gist代码片段--gist/</link>
+<description>No Description</description>
+<pubDate>2018-11-01</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/01/使用emacs管理gist代码片段--gist/</guid>
+</item>
 <item>
 <title>如何让org-agenda从归档文件中抽取数据</title>
 <link>https://lujun9972.github.io/blog/2018/11/01/如何让org-agenda从归档文件中抽取数据/</link>
@@ -56,27 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-10-29</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/10/29/笑话理解之神奇的罗马数字/</guid>
-</item>
-<item>
-<title>bash中if-then与&amp;&amp;的区别</title>
-<link>https://lujun9972.github.io/blog/2018/10/28/bash中if-then与&amp;&amp;的区别/</link>
-<description>No Description</description>
-<pubDate>2018-10-28</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/28/bash中if-then与&amp;&amp;的区别/</guid>
-</item>
-<item>
-<title>Emacs中的日程管理</title>
-<link>https://lujun9972.github.io/blog/2018/10/27/emacs中的日程管理/</link>
-<description>No Description</description>
-<pubDate>2018-10-27</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/27/emacs中的日程管理/</guid>
-</item>
-<item>
-<title>Emacs编辑程序常用命令</title>
-<link>https://lujun9972.github.io/blog/2018/10/27/emacs编辑程序常用命令/</link>
-<description>No Description</description>
-<pubDate>2018-10-27</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/27/emacs编辑程序常用命令/</guid>
 </item>
 </channel>
 </rss>
