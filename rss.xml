@@ -4,10 +4,38 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>五, 02 11月 2018 18:10:52 HKT</pubDate>
-    <lastBuildDate>五, 02 11月 2018 18:10:52 HKT</lastBuildDate>
+    <pubDate>三, 14 11月 2018 18:55:23 HKT</pubDate>
+    <lastBuildDate>三, 14 11月 2018 18:55:23 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>通过SSH锻炼你的bash技能</title>
+<link>https://lujun9972.github.io/blog/2018/11/14/通过ssh锻炼你的bash技能/</link>
+<description>No Description</description>
+<pubDate>2018-11-14</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/14/通过ssh锻炼你的bash技能/</guid>
+</item>
+<item>
+<title>使用zdump显示不同时区的当前时间</title>
+<link>https://lujun9972.github.io/blog/2018/11/05/使用zdump显示不同时区的当前时间/</link>
+<description>No Description</description>
+<pubDate>2018-11-05</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/05/使用zdump显示不同时区的当前时间/</guid>
+</item>
+<item>
+<title>给gedit加上Docker语法高亮</title>
+<link>https://lujun9972.github.io/blog/2018/11/05/给gedit加上docker语法高亮/</link>
+<description>No Description</description>
+<pubDate>2018-11-05</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/05/给gedit加上docker语法高亮/</guid>
+</item>
+<item>
+<title>笑话理解之stethoscope</title>
+<link>https://lujun9972.github.io/blog/2018/11/05/笑话理解之stethoscope/</link>
+<description>No Description</description>
+<pubDate>2018-11-05</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/05/笑话理解之stethoscope/</guid>
+</item>
 <item>
 <title>将org-agenda嵌入到linux桌面背景中</title>
 <link>https://lujun9972.github.io/blog/2018/11/02/将org-agenda嵌入到linux桌面背景中/</link>
@@ -49,34 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-10-30</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/10/30/笑话理解之stoned/</guid>
-</item>
-<item>
-<title>笑话理解之Lukewarm</title>
-<link>https://lujun9972.github.io/blog/2018/10/29/笑话理解之lukewarm/</link>
-<description>No Description</description>
-<pubDate>2018-10-29</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/29/笑话理解之lukewarm/</guid>
-</item>
-<item>
-<title>笑话理解之mean</title>
-<link>https://lujun9972.github.io/blog/2018/10/29/笑话理解之mean/</link>
-<description>No Description</description>
-<pubDate>2018-10-29</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/29/笑话理解之mean/</guid>
-</item>
-<item>
-<title>笑话理解之scissor&amp;run</title>
-<link>https://lujun9972.github.io/blog/2018/10/29/笑话理解之scissor&amp;run/</link>
-<description>No Description</description>
-<pubDate>2018-10-29</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/29/笑话理解之scissor&amp;run/</guid>
-</item>
-<item>
-<title>笑话理解之神奇的罗马数字</title>
-<link>https://lujun9972.github.io/blog/2018/10/29/笑话理解之神奇的罗马数字/</link>
-<description>No Description</description>
-<pubDate>2018-10-29</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/29/笑话理解之神奇的罗马数字/</guid>
 </item>
 </channel>
 </rss>
