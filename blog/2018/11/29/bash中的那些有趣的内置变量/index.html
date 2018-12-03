@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bash中的那些有趣的内置变量 - 暗无天日</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="author" content="lujun9972" />
+  <meta name="keywords" content="linux和它的小伙伴" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+</head>
+
+  <body class="container">
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
+
+<div>
+<div class="post">
+<h1 class="title">Bash中的那些有趣的内置变量</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org3f29ec8">BASH自身信息</a>
+<ul>
+<li><a href="#orgf896584">BASH / SHELL</a></li>
+<li><a href="#orgf7959a5">BASH_VERSINFO</a></li>
+<li><a href="#org051cb66">BASHPID</a></li>
+<li><a href="#orgb8a48aa">BASH_ARGC</a></li>
+<li><a href="#org9e5f3cc">BASH_ARGV</a></li>
+<li><a href="#orgb269397">BASH_COMMAND</a></li>
+<li><a href="#org1c60c63">BASH_EXECUTION_STRING</a></li>
+<li><a href="#org6e83489">FUNCNAME</a></li>
+<li><a href="#org75c8f12">BASH_SOURCE</a></li>
+<li><a href="#org06818c2">LINENO</a></li>
+<li><a href="#orgfb7ca2c">PPID</a></li>
+<li><a href="#orge20c555">SECONDS</a></li>
+<li><a href="#orgcfa54fd">SHELLOPTS</a></li>
+<li><a href="#org8a3d890">SHLVL</a></li>
+<li><a href="#org17575e4">COLUMNS</a></li>
+<li><a href="#orgee045c3">LINES</a></li>
+<li><a href="#org3ed86a2">EMACS</a></li>
+</ul>
+</li>
+<li><a href="#orga0617ce">用户信息</a>
+<ul>
+<li><a href="#orgc2ce60e">EUID</a></li>
+<li><a href="#org541d857">GROUPS</a></li>
+<li><a href="#org2df3888">UID</a></li>
+<li><a href="#org3b76e44">USER</a></li>
+<li><a href="#org57defb2">HOME</a></li>
+</ul>
+</li>
+<li><a href="#org3debde6">主机信息</a>
+<ul>
+<li><a href="#orgb828832">HOSTNAME</a></li>
+<li><a href="#org4f6a84a">HOSTTYPE</a></li>
+<li><a href="#org211a663">OSTYPE</a></li>
+<li><a href="#org963961a">MACHTYPE</a></li>
+</ul>
+</li>
+<li><a href="#org17d9253">显示相关</a>
+<ul>
+<li><a href="#org3a405a5">PS1 / PS2 / PS3 / PS4 / PROMPT_DIRTRIM</a></li>
+<li><a href="#org25fc47f">TIMEFORMAT</a></li>
+</ul>
+</li>
+<li><a href="#org6a82d74">影响bash行为的参数</a>
+<ul>
+<li><a href="#org06b7444">BASH_ENV</a></li>
+<li><a href="#org9b18573">CDPATH cd命令的搜索路径，是一个用冒号分隔的目录列表。shell在执行cd命令时会从这些指定的目录列表中寻找要进入的目标路径。</a></li>
+<li><a href="#orgaaf525d">FCEDIT</a></li>
+<li><a href="#org3ca13a5">FIGNORE</a></li>
+<li><a href="#orge71aaea">GLOBIGNORE</a></li>
+<li><a href="#org5b9fc8f">IFS</a></li>
+<li><a href="#org2a8e591">OSIXLY_CORRECT</a></li>
+<li><a href="#orgbd6bb9d">TMOUT</a></li>
+<li><a href="#org9eee748">EXECIGNORE</a></li>
+<li><a href="#orga1009df">TMPDIR</a></li>
+</ul>
+</li>
+<li><a href="#org3488752">其他</a>
+<ul>
+<li><a href="#org1961a6b">BASH_REMATCH</a></li>
+<li><a href="#org39f9ffb">OLDPWD</a></li>
+<li><a href="#org81f8bae">PWD</a></li>
+<li><a href="#org366b9e3">RANDOM</a></li>
+<li><a href="#orgb6ce5ac">REPLY</a></li>
+<li><a href="#orgb9ceb5e">PROMPT_COMMAND</a></li>
+<li><a href="#org4cf3ee4">DIRSTACK</a></li>
+<li><a href="#org611ecff">COMP_CWORD / COMP_LINE / COMP_POINT / COMP_WORDS / COMPREPLY / HOSTFILE</a></li>
+<li><a href="#org5e1c22d">HISTCONTROL / HISTFILE / HISTFILESIZE / HISTIGNORE / HISTSIZE</a></li>
+<li><a href="#orgea867fe">MAIL / MAILCHECK / MAILPATH</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Bash中定义了大量的内置变量，有些变量颇为有趣，摘录如下:
+</p>
+
+
+<div id="outline-container-org3f29ec8" class="outline-2">
+<h2 id="org3f29ec8">BASH自身信息</h2>
+<div class="outline-text-2" id="text-org3f29ec8">
+</div>
+<div id="outline-container-orgf896584" class="outline-3">
+<h3 id="orgf896584">BASH / SHELL</h3>
+<div class="outline-text-3" id="text-orgf896584">
+<p>
+BASH 和 SHELL 变量记录的是当前shell的路径,linux上通常这两个变量的值都是/bin/bash. 
+</p>
+
+<p>
+这两者的区别在于，不是所有的shell都有定义 <code>BASH</code> 变量，但一定有定义 <code>SHELL</code> 变量。
+</p>
+
+<p>
+另外，当在一个shell中启动另一个shell的时候， <code>SHELL</code> 变量的值不会发生改变，而 <code>BASH</code> 变量的值会发生改变，指向新shell的路径。如下所示:
+</p>
+<pre class="example">
+sh-4.4$ echo $SHELL
+/bin/bash
+sh-4.4$ echo $BASH
+/usr/bin/sh
+sh-4.4$ 
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgf7959a5" class="outline-3">
+<h3 id="orgf7959a5">BASH_VERSINFO</h3>
+<div class="outline-text-3" id="text-orgf7959a5">
+<p>
+该变量定义了一个6元素的数组，用于表示当前bash的版本信息,这六个元素的意义分别为:
+</p>
+
+<dl class="org-dl">
+<dt>BASH_VERSINFO[0]</dt><dd>主版本号</dd>
+<dt>BASH_VERSINFO[1]</dt><dd>次版本号</dd>
+<dt>BASH_VERSINFO[2]</dt><dd>补丁版本</dd>
+<dt>BASH_VERSINFO[3]</dt><dd>编译版本</dd>
+<dt>BASH_VERSINFO[4]</dt><dd>发行状态</dd>
+<dt>BASH_VERSINFO[5]</dt><dd>硬件架构。</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org051cb66" class="outline-3">
+<h3 id="org051cb66">BASHPID</h3>
+<div class="outline-text-3" id="text-org051cb66">
+<p>
+当前bash进程的进程号
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb8a48aa" class="outline-3">
+<h3 id="orgb8a48aa">BASH_ARGC</h3>
+<div class="outline-text-3" id="text-orgb8a48aa">
+<p>
+该数组变量存储的是每个bash调用栈中传递给bash的参数数量。该变量只有在bash开启extdebug选项的情况下才会设置
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9e5f3cc" class="outline-3">
+<h3 id="org9e5f3cc">BASH_ARGV</h3>
+<div class="outline-text-3" id="text-org9e5f3cc">
+<p>
+该数组变量存储的是每个bash调用栈中传递给bash的参数列表。该变量只有在bash开启extdebug选项的情况下才会设置
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb269397" class="outline-3">
+<h3 id="orgb269397">BASH_COMMAND</h3>
+<div class="outline-text-3" id="text-orgb269397">
+<p>
+当前正在(或马上要)执行的命令
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1c60c63" class="outline-3">
+<h3 id="org1c60c63">BASH_EXECUTION_STRING</h3>
+<div class="outline-text-3" id="text-org1c60c63">
+<p>
+bash <code>-c</code> 选项的参数
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6e83489" class="outline-3">
+<h3 id="org6e83489">FUNCNAME</h3>
+<div class="outline-text-3" id="text-org6e83489">
+<p>
+当前正在执行函数的名称,常用于调试
+</p>
+</div>
+</div>
+
+<div id="outline-container-org75c8f12" class="outline-3">
+<h3 id="org75c8f12">BASH_SOURCE</h3>
+<div class="outline-text-3" id="text-org75c8f12">
+<p>
+FUNCNAME 所定义的源文件，其中 ${FUNCNAME[$i]} 定义在 ${BASH_SOURCE[$i]} 文件中
+</p>
+</div>
+</div>
+
+<div id="outline-container-org06818c2" class="outline-3">
+<h3 id="org06818c2">LINENO</h3>
+<div class="outline-text-3" id="text-org06818c2">
+<p>
+脚本或函数中的当前行号,常用于调试
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb7ca2c" class="outline-3">
+<h3 id="orgfb7ca2c">PPID</h3>
+<div class="outline-text-3" id="text-orgfb7ca2c">
+<p>
+shell父进程进程号
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge20c555" class="outline-3">
+<h3 id="orge20c555">SECONDS</h3>
+<div class="outline-text-3" id="text-orge20c555">
+<p>
+脚本从运行以来经过的时间（单位为秒）。可用于调试性能。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #7590db;">start</span>=$<span style="color: #7590db;">SECONDS</span>
+sleep <span style="color: #a45bad;">2</span>
+<span style="color: #7590db;">pass</span>=$<span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">(</span>$<span style="color: #7590db;">SECONDS</span> - $<span style="color: #7590db;">start</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"$pass seconds passed"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">2 seconds passed
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcfa54fd" class="outline-3">
+<h3 id="orgcfa54fd">SHELLOPTS</h3>
+<div class="outline-text-3" id="text-orgcfa54fd">
+<p>
+冒号分隔的处于开状态的shell选项列表。该变量只能通过 <code>set -o(打开选项)</code> / <code>set +o(关闭选项)</code> 来设置。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8a3d890" class="outline-3">
+<h3 id="org8a3d890">SHLVL</h3>
+<div class="outline-text-3" id="text-org8a3d890">
+<p>
+Shell嵌套的层次，第一个shell的$SHLVL为1,每启动一个bash实例就会+1
+</p>
+</div>
+</div>
+
+<div id="outline-container-org17575e4" class="outline-3">
+<h3 id="org17575e4">COLUMNS</h3>
+<div class="outline-text-3" id="text-org17575e4">
+<p>
+终端的宽度
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgee045c3" class="outline-3">
+<h3 id="orgee045c3">LINES</h3>
+<div class="outline-text-3" id="text-orgee045c3">
+<p>
+终端的高度
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3ed86a2" class="outline-3">
+<h3 id="org3ed86a2">EMACS</h3>
+<div class="outline-text-3" id="text-org3ed86a2">
+<p>
+判断bash是否在EMACS中执行，这种情况下bash会禁用行编辑功能
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga0617ce" class="outline-2">
+<h2 id="orga0617ce">用户信息</h2>
+<div class="outline-text-2" id="text-orga0617ce">
+</div>
+<div id="outline-container-orgc2ce60e" class="outline-3">
+<h3 id="orgc2ce60e">EUID</h3>
+<div class="outline-text-3" id="text-orgc2ce60e">
+<p>
+当前用户的有效用户ID，它在shell启动时被设置，之后无法再被修改。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org541d857" class="outline-3">
+<h3 id="org541d857">GROUPS</h3>
+<div class="outline-text-3" id="text-org541d857">
+<p>
+当前用户所属组ID的列表
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2df3888" class="outline-3">
+<h3 id="org2df3888">UID</h3>
+<div class="outline-text-3" id="text-org2df3888">
+<p>
+当前用户ID
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3b76e44" class="outline-3">
+<h3 id="org3b76e44">USER</h3>
+<div class="outline-text-3" id="text-org3b76e44">
+<p>
+当前用名
+</p>
+</div>
+</div>
+
+<div id="outline-container-org57defb2" class="outline-3">
+<h3 id="org57defb2">HOME</h3>
+<div class="outline-text-3" id="text-org57defb2">
+<p>
+用户的个人目录地址
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3debde6" class="outline-2">
+<h2 id="org3debde6">主机信息</h2>
+<div class="outline-text-2" id="text-org3debde6">
+</div>
+<div id="outline-container-orgb828832" class="outline-3">
+<h3 id="orgb828832">HOSTNAME</h3>
+<div class="outline-text-3" id="text-orgb828832">
+<p>
+当前主机名
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4f6a84a" class="outline-3">
+<h3 id="org4f6a84a">HOSTTYPE</h3>
+<div class="outline-text-3" id="text-org4f6a84a">
+<p>
+当前主机类型
+</p>
+</div>
+</div>
+
+<div id="outline-container-org211a663" class="outline-3">
+<h3 id="org211a663">OSTYPE</h3>
+<div class="outline-text-3" id="text-org211a663">
+<p>
+操作系统类型
+</p>
+</div>
+</div>
+
+<div id="outline-container-org963961a" class="outline-3">
+<h3 id="org963961a">MACHTYPE</h3>
+<div class="outline-text-3" id="text-org963961a">
+<p>
+包含了主机类型和操作系统类型
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org17d9253" class="outline-2">
+<h2 id="org17d9253">显示相关</h2>
+<div class="outline-text-2" id="text-org17d9253">
+</div>
+<div id="outline-container-org3a405a5" class="outline-3">
+<h3 id="org3a405a5">PS1 / PS2 / PS3 / PS4 / PROMPT_DIRTRIM</h3>
+<div class="outline-text-3" id="text-org3a405a5">
+<p>
+定义提示符
+</p>
+</div>
+</div>
+<div id="outline-container-org25fc47f" class="outline-3">
+<h3 id="org25fc47f">TIMEFORMAT</h3>
+<div class="outline-text-3" id="text-org25fc47f">
+<p>
+指定显示时间信息的格式
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org6a82d74" class="outline-2">
+<h2 id="org6a82d74">影响bash行为的参数</h2>
+<div class="outline-text-2" id="text-org6a82d74">
+</div>
+<div id="outline-container-org06b7444" class="outline-3">
+<h3 id="org06b7444">BASH_ENV</h3>
+<div class="outline-text-3" id="text-org06b7444">
+<p>
+该值为shell初始化文件的路径，若设置了该值则会执行该值所指定文件内的初始化命令
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9b18573" class="outline-3">
+<h3 id="org9b18573">CDPATH cd命令的搜索路径，是一个用冒号分隔的目录列表。shell在执行cd命令时会从这些指定的目录列表中寻找要进入的目标路径。</h3>
+</div>
+<div id="outline-container-orgaaf525d" class="outline-3">
+<h3 id="orgaaf525d">FCEDIT</h3>
+<div class="outline-text-3" id="text-orgaaf525d">
+<p>
+内建命令fc默认的编辑器
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3ca13a5" class="outline-3">
+<h3 id="org3ca13a5">FIGNORE</h3>
+<div class="outline-text-3" id="text-org3ca13a5">
+<p>
+由冒号分隔的后缀名列表，在进行文件名补全时会忽略以这些后缀名结尾的文件名
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge71aaea" class="outline-3">
+<h3 id="orge71aaea">GLOBIGNORE</h3>
+<div class="outline-text-3" id="text-orge71aaea">
+<p>
+它是由冒号分隔的模式列表，表示通配时忽略的文件名集合。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5b9fc8f" class="outline-3">
+<h3 id="org5b9fc8f">IFS</h3>
+<div class="outline-text-3" id="text-org5b9fc8f">
+<p>
+内部字段分隔符，影响read命令如何将行进行分成词
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2a8e591" class="outline-3">
+<h3 id="org2a8e591">OSIXLY_CORRECT</h3>
+<div class="outline-text-3" id="text-org2a8e591">
+<p>
+设定让bash进入posix mode
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgbd6bb9d" class="outline-3">
+<h3 id="orgbd6bb9d">TMOUT</h3>
+<div class="outline-text-3" id="text-orgbd6bb9d">
+<p>
+用于设置Shell的过期时间，TMOUT不为0时，shell会在TMOUT秒后将自动退出.
+</p>
+
+<p>
+同时TMOUT也用于作为read命令的默认超时时间。
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org9eee748" class="outline-3">
+<h3 id="org9eee748">EXECIGNORE</h3>
+<div class="outline-text-3" id="text-org9eee748">
+<p>
+它是由冒号分隔的模式列表，表示在$PATH中搜索命令时忽略的文件名集合。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga1009df" class="outline-3">
+<h3 id="orga1009df">TMPDIR</h3>
+<div class="outline-text-3" id="text-orga1009df">
+<p>
+若设置了，则bash在该值所指定的目录下创建临时文件
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3488752" class="outline-2">
+<h2 id="org3488752">其他</h2>
+<div class="outline-text-2" id="text-org3488752">
+</div>
+<div id="outline-container-org1961a6b" class="outline-3">
+<h3 id="org1961a6b">BASH_REMATCH</h3>
+<div class="outline-text-3" id="text-org1961a6b">
+<p>
+当使用 =~ 进行正则匹配时，该数组变量存储的是整体或个分组匹配的字符串位置，其中
+</p>
+
+<dl class="org-dl">
+<dt>${BASH_REMATCH[0]}</dt><dd>整个正则表达式匹配的位置</dd>
+<dt>n</dt><dd>第n个分组匹配的位置</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org39f9ffb" class="outline-3">
+<h3 id="org39f9ffb">OLDPWD</h3>
+<div class="outline-text-3" id="text-org39f9ffb">
+<p>
+上一次cd的工作目录
+</p>
+</div>
+</div>
+
+<div id="outline-container-org81f8bae" class="outline-3">
+<h3 id="org81f8bae">PWD</h3>
+<div class="outline-text-3" id="text-org81f8bae">
+<p>
+当前工作目录
+</p>
+</div>
+</div>
+
+<div id="outline-container-org366b9e3" class="outline-3">
+<h3 id="org366b9e3">RANDOM</h3>
+<div class="outline-text-3" id="text-org366b9e3">
+<p>
+产生一个0-32767之间的随机整数
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb6ce5ac" class="outline-3">
+<h3 id="orgb6ce5ac">REPLY</h3>
+<div class="outline-text-3" id="text-orgb6ce5ac">
+<p>
+read命令默认将标准输入存入该变量,select命令也默认将选择的序号存入该变量。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb9ceb5e" class="outline-3">
+<h3 id="orgb9ceb5e">PROMPT_COMMAND</h3>
+<div class="outline-text-3" id="text-orgb9ceb5e">
+<p>
+该变量是一个命令，每次现实主提示符之前都会执行该命令。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4cf3ee4" class="outline-3">
+<h3 id="org4cf3ee4">DIRSTACK</h3>
+<div class="outline-text-3" id="text-org4cf3ee4">
+<p>
+存放但前目录栈的数组，pushd和popd两个内建命令需要操作该数组，同时也允许手工对该数组内的变量进行赋值从而影响 pushd和popd的行为。
+另外，该参数的值可以通过 <code>dirs</code> 命令来显示
+</p>
+</div>
+</div>
+
+<div id="outline-container-org611ecff" class="outline-3">
+<h3 id="org611ecff">COMP_CWORD / COMP_LINE / COMP_POINT / COMP_WORDS / COMPREPLY / HOSTFILE</h3>
+<div class="outline-text-3" id="text-org611ecff">
+<p>
+用于为bash自定义补全时使用
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5e1c22d" class="outline-3">
+<h3 id="org5e1c22d">HISTCONTROL / HISTFILE / HISTFILESIZE / HISTIGNORE / HISTSIZE</h3>
+<div class="outline-text-3" id="text-org5e1c22d">
+<p>
+配置history命令的行为
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgea867fe" class="outline-3">
+<h3 id="orgea867fe">MAIL / MAILCHECK / MAILPATH</h3>
+<div class="outline-text-3" id="text-orgea867fe">
+<p>
+影响邮件提醒行为
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2018-11-29</span>
+    <span title="last modification date" class="post-info">2018-12-03</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
+    </ul>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2018/11/29/bash中的那些有趣的内置变量/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/11/29/bash中的那些有趣的内置变量/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T430S">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
+    </div>
+
+  </body>
+</html>

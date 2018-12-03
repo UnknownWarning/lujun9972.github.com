@@ -4,10 +4,52 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>一, 19 11月 2018 20:43:29 CST</pubDate>
-    <lastBuildDate>一, 19 11月 2018 20:43:29 CST</lastBuildDate>
+    <pubDate>一, 03 12月 2018 22:43:43 CST</pubDate>
+    <lastBuildDate>一, 03 12月 2018 22:43:43 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>Bash中的那些有趣的内置变量</title>
+<link>https://lujun9972.github.io/blog/2018/11/29/bash中的那些有趣的内置变量/</link>
+<description>No Description</description>
+<pubDate>2018-12-03</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/29/bash中的那些有趣的内置变量/</guid>
+</item>
+<item>
+<title>如何快速统计指定进程的个数</title>
+<link>https://lujun9972.github.io/blog/2018/12/03/如何快速统计指定进程的个数/</link>
+<description>No Description</description>
+<pubDate>2018-12-03</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/03/如何快速统计指定进程的个数/</guid>
+</item>
+<item>
+<title>bash中的EMACS变量</title>
+<link>https://lujun9972.github.io/blog/2018/11/29/bash中的emacs变量/</link>
+<description>No Description</description>
+<pubDate>2018-11-29</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/29/bash中的emacs变量/</guid>
+</item>
+<item>
+<title>linuxbrew让你在home目录下安装应用</title>
+<link>https://lujun9972.github.io/blog/2018/11/27/linuxbrew让你在home目录下安装应用/</link>
+<description>No Description</description>
+<pubDate>2018-11-27</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/27/linuxbrew让你在home目录下安装应用/</guid>
+</item>
+<item>
+<title>使用ZSWAP改善低内存电脑的性能</title>
+<link>https://lujun9972.github.io/blog/2018/11/27/使用zswap改善低内存电脑的性能/</link>
+<description>No Description</description>
+<pubDate>2018-11-27</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/27/使用zswap改善低内存电脑的性能/</guid>
+</item>
+<item>
+<title>数值计算的常见优化方法</title>
+<link>https://lujun9972.github.io/blog/2018/11/24/数值计算的常见优化方法/</link>
+<description>No Description</description>
+<pubDate>2018-11-24</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/11/24/数值计算的常见优化方法/</guid>
+</item>
 <item>
 <title>ls对文件进行排序</title>
 <link>https://lujun9972.github.io/blog/2018/11/19/ls对文件进行排序/</link>
@@ -35,48 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-11-14</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/11/14/通过ssh锻炼你的bash技能/</guid>
-</item>
-<item>
-<title>使用zdump显示不同时区的当前时间</title>
-<link>https://lujun9972.github.io/blog/2018/11/05/使用zdump显示不同时区的当前时间/</link>
-<description>No Description</description>
-<pubDate>2018-11-05</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/05/使用zdump显示不同时区的当前时间/</guid>
-</item>
-<item>
-<title>给gedit加上Docker语法高亮</title>
-<link>https://lujun9972.github.io/blog/2018/11/05/给gedit加上docker语法高亮/</link>
-<description>No Description</description>
-<pubDate>2018-11-05</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/05/给gedit加上docker语法高亮/</guid>
-</item>
-<item>
-<title>笑话理解之stethoscope</title>
-<link>https://lujun9972.github.io/blog/2018/11/05/笑话理解之stethoscope/</link>
-<description>No Description</description>
-<pubDate>2018-11-05</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/05/笑话理解之stethoscope/</guid>
-</item>
-<item>
-<title>将org-agenda嵌入到linux桌面背景中</title>
-<link>https://lujun9972.github.io/blog/2018/11/02/将org-agenda嵌入到linux桌面背景中/</link>
-<description>No Description</description>
-<pubDate>2018-11-02</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/02/将org-agenda嵌入到linux桌面背景中/</guid>
-</item>
-<item>
-<title>Linux下的那些教育类软件集合</title>
-<link>https://lujun9972.github.io/blog/2018/10/12/linux下的那些教育类软件集合/</link>
-<description>No Description</description>
-<pubDate>2018-11-02</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/10/12/linux下的那些教育类软件集合/</guid>
-</item>
-<item>
-<title>使用emacs管理gist代码片段--gist</title>
-<link>https://lujun9972.github.io/blog/2018/11/01/使用emacs管理gist代码片段--gist/</link>
-<description>No Description</description>
-<pubDate>2018-11-01</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/01/使用emacs管理gist代码片段--gist/</guid>
 </item>
 </channel>
 </rss>
