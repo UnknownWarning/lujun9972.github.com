@@ -4,10 +4,31 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>一, 03 12月 2018 22:43:43 CST</pubDate>
-    <lastBuildDate>一, 03 12月 2018 22:43:43 CST</lastBuildDate>
+    <pubDate>六, 08 12月 2018 20:24:23 CST</pubDate>
+    <lastBuildDate>六, 08 12月 2018 20:24:23 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>在OrangePi上安装Lychee进行照片管理</title>
+<link>https://lujun9972.github.io/blog/2018/12/08/在orangepi上安装lychee进行照片管理/</link>
+<description>No Description</description>
+<pubDate>2018-12-08</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/08/在orangepi上安装lychee进行照片管理/</guid>
+</item>
+<item>
+<title>BOM头导致shell执行失败</title>
+<link>https://lujun9972.github.io/blog/2018/12/08/bom头导致shell执行失败/</link>
+<description>No Description</description>
+<pubDate>2018-12-08</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/08/bom头导致shell执行失败/</guid>
+</item>
+<item>
+<title>使用rename批量重命名文件</title>
+<link>https://lujun9972.github.io/blog/2018/12/07/使用rename批量重命名文件/</link>
+<description>No Description</description>
+<pubDate>2018-12-07</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/07/使用rename批量重命名文件/</guid>
+</item>
 <item>
 <title>Bash中的那些有趣的内置变量</title>
 <link>https://lujun9972.github.io/blog/2018/11/29/bash中的那些有趣的内置变量/</link>
@@ -56,27 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-11-19</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/11/19/ls对文件进行排序/</guid>
-</item>
-<item>
-<title>Ubuntu使用apt安装本地deb软件包</title>
-<link>https://lujun9972.github.io/blog/2018/11/18/ubuntu使用apt安装本地deb软件包/</link>
-<description>No Description</description>
-<pubDate>2018-11-18</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/18/ubuntu使用apt安装本地deb软件包/</guid>
-</item>
-<item>
-<title>docker容器中跑GUI的最简单方法</title>
-<link>https://lujun9972.github.io/blog/2018/04/24/docker容器中跑gui的最简单方法/</link>
-<description>No Description</description>
-<pubDate>2018-11-15</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/04/24/docker容器中跑gui的最简单方法/</guid>
-</item>
-<item>
-<title>通过SSH锻炼你的bash技能</title>
-<link>https://lujun9972.github.io/blog/2018/11/14/通过ssh锻炼你的bash技能/</link>
-<description>No Description</description>
-<pubDate>2018-11-14</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/14/通过ssh锻炼你的bash技能/</guid>
 </item>
 </channel>
 </rss>
