@@ -4,10 +4,24 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>六, 08 12月 2018 22:46:22 CST</pubDate>
-    <lastBuildDate>六, 08 12月 2018 22:46:22 CST</lastBuildDate>
+    <pubDate>日, 09 12月 2018 21:29:13 CST</pubDate>
+    <lastBuildDate>日, 09 12月 2018 21:29:13 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>通过管道对接的进程被13号信号所杀</title>
+<link>https://lujun9972.github.io/blog/2018/12/09/通过管道对接的进程被13号信号所杀/</link>
+<description>No Description</description>
+<pubDate>2018-12-09</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/09/通过管道对接的进程被13号信号所杀/</guid>
+</item>
+<item>
+<title>使用docker-compose构建武林外传服务器</title>
+<link>https://lujun9972.github.io/blog/2018/12/09/使用docker-compose构建武林外传服务器/</link>
+<description>No Description</description>
+<pubDate>2018-12-09</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/09/使用docker-compose构建武林外传服务器/</guid>
+</item>
 <item>
 <title>ssh使用跳板机访问远程服务器</title>
 <link>https://lujun9972.github.io/blog/2018/12/08/ssh使用跳板机访问远程服务器/</link>
@@ -63,20 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-11-27</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/11/27/linuxbrew让你在home目录下安装应用/</guid>
-</item>
-<item>
-<title>使用ZSWAP改善低内存电脑的性能</title>
-<link>https://lujun9972.github.io/blog/2018/11/27/使用zswap改善低内存电脑的性能/</link>
-<description>No Description</description>
-<pubDate>2018-11-27</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/27/使用zswap改善低内存电脑的性能/</guid>
-</item>
-<item>
-<title>数值计算的常见优化方法</title>
-<link>https://lujun9972.github.io/blog/2018/11/24/数值计算的常见优化方法/</link>
-<description>No Description</description>
-<pubDate>2018-11-24</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/24/数值计算的常见优化方法/</guid>
 </item>
 </channel>
 </rss>
