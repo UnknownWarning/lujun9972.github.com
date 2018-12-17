@@ -4,10 +4,59 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>日, 09 12月 2018 21:45:02 CST</pubDate>
-    <lastBuildDate>日, 09 12月 2018 21:45:02 CST</lastBuildDate>
+    <pubDate>一, 17 12月 2018 21:02:17 HKT</pubDate>
+    <lastBuildDate>一, 17 12月 2018 21:02:17 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>十大GitHub最佳实践</title>
+<link>https://lujun9972.github.io/blog/2018/12/17/十大github最佳实践/</link>
+<description>No Description</description>
+<pubDate>2018-12-17</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/17/十大github最佳实践/</guid>
+</item>
+<item>
+<title>让你的终端雪花飞舞</title>
+<link>https://lujun9972.github.io/blog/2018/12/17/让你的终端雪花飞舞/</link>
+<description>No Description</description>
+<pubDate>2018-12-17</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/17/让你的终端雪花飞舞/</guid>
+</item>
+<item>
+<title>git tips之只提交文件中的某些变更</title>
+<link>https://lujun9972.github.io/blog/2018/12/14/git-tips之只提交文件中的某些变更/</link>
+<description>No Description</description>
+<pubDate>2018-12-14</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/14/git-tips之只提交文件中的某些变更/</guid>
+</item>
+<item>
+<title>SAN存储光纤不稳定导致系统服务缓慢</title>
+<link>https://lujun9972.github.io/blog/2018/12/14/san存储光纤不稳定导致系统服务缓慢/</link>
+<description>No Description</description>
+<pubDate>2018-12-14</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/14/san存储光纤不稳定导致系统服务缓慢/</guid>
+</item>
+<item>
+<title>一行命令把OrangePi打造成文件云服务器</title>
+<link>https://lujun9972.github.io/blog/2018/12/12/一行命令把orangepi打造成文件云服务器/</link>
+<description>No Description</description>
+<pubDate>2018-12-12</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/12/一行命令把orangepi打造成文件云服务器/</guid>
+</item>
+<item>
+<title>一个分析正则表达式的好网站</title>
+<link>https://lujun9972.github.io/blog/2018/12/10/一个分析正则表达式的好网站/</link>
+<description>No Description</description>
+<pubDate>2018-12-10</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/10/一个分析正则表达式的好网站/</guid>
+</item>
+<item>
+<title>一个学习SQL的网站</title>
+<link>https://lujun9972.github.io/blog/2018/12/10/一个学习sql的网站/</link>
+<description>No Description</description>
+<pubDate>2018-12-10</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/10/一个学习sql的网站/</guid>
+</item>
 <item>
 <title>通过管道对接的进程被13号信号所杀</title>
 <link>https://lujun9972.github.io/blog/2018/12/09/通过管道对接的进程被13号信号所杀/</link>
@@ -28,55 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-12-08</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/12/08/ssh使用跳板机访问远程服务器/</guid>
-</item>
-<item>
-<title>在OrangePi上安装Lychee进行照片管理</title>
-<link>https://lujun9972.github.io/blog/2018/12/08/在orangepi上安装lychee进行照片管理/</link>
-<description>No Description</description>
-<pubDate>2018-12-08</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/08/在orangepi上安装lychee进行照片管理/</guid>
-</item>
-<item>
-<title>BOM头导致shell执行失败</title>
-<link>https://lujun9972.github.io/blog/2018/12/08/bom头导致shell执行失败/</link>
-<description>No Description</description>
-<pubDate>2018-12-08</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/08/bom头导致shell执行失败/</guid>
-</item>
-<item>
-<title>使用rename批量重命名文件</title>
-<link>https://lujun9972.github.io/blog/2018/12/07/使用rename批量重命名文件/</link>
-<description>No Description</description>
-<pubDate>2018-12-07</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/07/使用rename批量重命名文件/</guid>
-</item>
-<item>
-<title>Bash中的那些有趣的内置变量</title>
-<link>https://lujun9972.github.io/blog/2018/11/29/bash中的那些有趣的内置变量/</link>
-<description>No Description</description>
-<pubDate>2018-12-03</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/29/bash中的那些有趣的内置变量/</guid>
-</item>
-<item>
-<title>如何快速统计指定进程的个数</title>
-<link>https://lujun9972.github.io/blog/2018/12/03/如何快速统计指定进程的个数/</link>
-<description>No Description</description>
-<pubDate>2018-12-03</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/03/如何快速统计指定进程的个数/</guid>
-</item>
-<item>
-<title>bash中的EMACS变量</title>
-<link>https://lujun9972.github.io/blog/2018/11/29/bash中的emacs变量/</link>
-<description>No Description</description>
-<pubDate>2018-11-29</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/29/bash中的emacs变量/</guid>
-</item>
-<item>
-<title>linuxbrew让你在home目录下安装应用</title>
-<link>https://lujun9972.github.io/blog/2018/11/27/linuxbrew让你在home目录下安装应用/</link>
-<description>No Description</description>
-<pubDate>2018-11-27</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/11/27/linuxbrew让你在home目录下安装应用/</guid>
 </item>
 </channel>
 </rss>
