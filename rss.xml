@@ -4,16 +4,30 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>三, 26 12月 2018 23:14:09 HKT</pubDate>
-    <lastBuildDate>三, 26 12月 2018 23:14:09 HKT</lastBuildDate>
+    <pubDate>四, 27 12月 2018 22:19:14 HKT</pubDate>
+    <lastBuildDate>四, 27 12月 2018 22:19:14 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>linux是如何记录日志的</title>
+<link>https://lujun9972.github.io/blog/2018/12/26/linux是如何记录日志的/</link>
+<description>No Description</description>
+<pubDate>2018-12-27</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/26/linux是如何记录日志的/</guid>
+</item>
 <item>
 <title>将OrangePi打造成中央日志服务器</title>
 <link>https://lujun9972.github.io/blog/2018/12/23/将orangepi打造成中央日志服务器/</link>
 <description>No Description</description>
-<pubDate>2018-12-26</pubDate>
+<pubDate>2018-12-27</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/12/23/将orangepi打造成中央日志服务器/</guid>
+</item>
+<item>
+<title>用emacs进行时间管理</title>
+<link>https://lujun9972.github.io/blog/2018/12/26/用emacs进行时间管理/</link>
+<description>No Description</description>
+<pubDate>2018-12-26</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/26/用emacs进行时间管理/</guid>
 </item>
 <item>
 <title>笑话理解之Get behind me Satan</title>
@@ -63,20 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-12-18</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/12/18/shell中如何将其他进制数转换成10进制数/</guid>
-</item>
-<item>
-<title>公开演讲的10个tips</title>
-<link>https://lujun9972.github.io/blog/2018/12/18/公开演讲的10个tips/</link>
-<description>No Description</description>
-<pubDate>2018-12-18</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/18/公开演讲的10个tips/</guid>
-</item>
-<item>
-<title>改进文档可读性的三个步骤</title>
-<link>https://lujun9972.github.io/blog/2018/12/18/改进文档可读性的三个步骤/</link>
-<description>No Description</description>
-<pubDate>2018-12-18</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/18/改进文档可读性的三个步骤/</guid>
 </item>
 </channel>
 </rss>

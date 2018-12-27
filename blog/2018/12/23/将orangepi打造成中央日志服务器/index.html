@@ -56,47 +56,47 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgce8ff9d">在OrangePi上配置Rsyslog Server</a>
+<li><a href="#org8e2cd94">在OrangePi上配置Rsyslog Server</a>
 <ul>
-<li><a href="#org90cbcdd">安装、启动rsyslog服务</a></li>
-<li><a href="#org0787878">配置/etc/rsyslog.conf</a>
+<li><a href="#orgc9adf5b">安装、启动rsyslog服务</a></li>
+<li><a href="#org944b2d4">配置/etc/rsyslog.conf</a>
 <ul>
-<li><a href="#org2a60553">开启TCP/UDP监听服务</a></li>
-<li><a href="#org00107f2">配置日志行为规则</a>
+<li><a href="#orgd9c322d">开启TCP/UDP监听服务</a></li>
+<li><a href="#org1a7f985">配置日志行为规则</a>
 <ul>
-<li><a href="#org1bb52d2">模板</a>
+<li><a href="#org282074c">模板</a>
 <ul>
-<li><a href="#org6813711">模板内容</a></li>
-<li><a href="#org67fa93f">模板可选项</a></li>
+<li><a href="#orgf9c62b0">模板内容</a></li>
+<li><a href="#orgfd7ef43">模板可选项</a></li>
 </ul>
 </li>
-<li><a href="#org3d4bf82">定义我们的远程日志模板</a></li>
+<li><a href="#org1c4f83f">定义我们的远程日志模板</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org600db5b">重启syslog服务</a></li>
+<li><a href="#org04307bf">重启syslog服务</a></li>
 </ul>
 </li>
-<li><a href="#orge5b0084">客户端配置</a>
+<li><a href="#org14fd2c1">客户端配置</a>
 <ul>
-<li><a href="#org7d78b8f">安装并启动rsyslog服务</a></li>
-<li><a href="#orgd59566c">配置客户端的/etc/rsyslog.conf</a></li>
-<li><a href="#orgbd998c3">重启rsyslog服务</a></li>
-<li><a href="#orgde5f0a3">修改/etc/systemd/journald.conf</a></li>
+<li><a href="#org9969136">安装并启动rsyslog服务</a></li>
+<li><a href="#org763b7f4">配置客户端的/etc/rsyslog.conf</a></li>
+<li><a href="#org229ba2b">重启rsyslog服务</a></li>
+<li><a href="#org7c69252">修改/etc/systemd/journald.conf</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgce8ff9d" class="outline-2">
-<h2 id="orgce8ff9d">在OrangePi上配置Rsyslog Server</h2>
-<div class="outline-text-2" id="text-orgce8ff9d">
+<div id="outline-container-org8e2cd94" class="outline-2">
+<h2 id="org8e2cd94">在OrangePi上配置Rsyslog Server</h2>
+<div class="outline-text-2" id="text-org8e2cd94">
 </div>
-<div id="outline-container-org90cbcdd" class="outline-3">
-<h3 id="org90cbcdd">安装、启动rsyslog服务</h3>
-<div class="outline-text-3" id="text-org90cbcdd">
+<div id="outline-container-orgc9adf5b" class="outline-3">
+<h3 id="orgc9adf5b">安装、启动rsyslog服务</h3>
+<div class="outline-text-3" id="text-orgc9adf5b">
 <p>
 首先确定OrangePi上已经启动了rsyslog服务
 </p>
@@ -138,17 +138,17 @@ sudo systemctl start rsyslog
 </div>
 </div>
 </div>
-<div id="outline-container-org0787878" class="outline-3">
-<h3 id="org0787878">配置/etc/rsyslog.conf</h3>
-<div class="outline-text-3" id="text-org0787878">
+<div id="outline-container-org944b2d4" class="outline-3">
+<h3 id="org944b2d4">配置/etc/rsyslog.conf</h3>
+<div class="outline-text-3" id="text-org944b2d4">
 <p>
 rsyslog的主配置文件是 <code>/etc/rsyslog.conf</code>,在该文件中默认还会加载 <code>/etc/ryslog.d</code> 中所有的配置信息。
 </p>
 </div>
 
-<div id="outline-container-org2a60553" class="outline-4">
-<h4 id="org2a60553">开启TCP/UDP监听服务</h4>
-<div class="outline-text-4" id="text-org2a60553">
+<div id="outline-container-orgd9c322d" class="outline-4">
+<h4 id="orgd9c322d">开启TCP/UDP监听服务</h4>
+<div class="outline-text-4" id="text-orgd9c322d">
 <p>
 配置文件中的的一部分是加载模块，不同的模块能为rsyslog提供不同的能力。
 </p>
@@ -193,9 +193,9 @@ rsyslog的主配置文件是 <code>/etc/rsyslog.conf</code>,在该文件中默�
 </div>
 </div>
 
-<div id="outline-container-org00107f2" class="outline-4">
-<h4 id="org00107f2">配置日志行为规则</h4>
-<div class="outline-text-4" id="text-org00107f2">
+<div id="outline-container-org1a7f985" class="outline-4">
+<h4 id="org1a7f985">配置日志行为规则</h4>
+<div class="outline-text-4" id="text-org1a7f985">
 <p>
 在默认 <code>/etc/rsyslog.conf</code> 文件中最后一行通过 <code>$IncludeConfig /etc/rsyslog.d/*.conf</code> 指令，加载了 <code>/etc/ryslog.d</code> 下的所有配置文件。
 </p>
@@ -241,9 +241,9 @@ rsyslog的主配置文件是 <code>/etc/rsyslog.conf</code>,在该文件中默�
 </ul>
 </div>
 
-<div id="outline-container-org1bb52d2" class="outline-5">
-<h5 id="org1bb52d2">模板</h5>
-<div class="outline-text-5" id="text-org1bb52d2">
+<div id="outline-container-org282074c" class="outline-5">
+<h5 id="org282074c">模板</h5>
+<div class="outline-text-5" id="text-org282074c">
 <p>
 我们可以使用模板来定义 <code>日志格式</code> 或者动态生成 <code>日志文件路径</code>.
 </p>
@@ -257,9 +257,9 @@ rsyslog的主配置文件是 <code>/etc/rsyslog.conf</code>,在该文件中默�
 </div>
 </div>
 
-<div id="outline-container-org6813711" class="outline-6">
-<h6 id="org6813711">模板内容</h6>
-<div class="outline-text-6" id="text-org6813711">
+<div id="outline-container-orgf9c62b0" class="outline-6">
+<h6 id="orgf9c62b0">模板内容</h6>
+<div class="outline-text-6" id="text-orgf9c62b0">
 <p>
 在 <code>模板内容</code> 中可以使用 <code>%属性名:截取开始位置:截取结束位置:属性选项%</code> 这样一种特殊语法来将消息属性嵌入消息内容中。
 </p>
@@ -306,9 +306,9 @@ rsyslog的主配置文件是 <code>/etc/rsyslog.conf</code>,在该文件中默�
 </div>
 </div>
 
-<div id="outline-container-org67fa93f" class="outline-6">
-<h6 id="org67fa93f">模板可选项</h6>
-<div class="outline-text-6" id="text-org67fa93f">
+<div id="outline-container-orgfd7ef43" class="outline-6">
+<h6 id="orgfd7ef43">模板可选项</h6>
+<div class="outline-text-6" id="text-orgfd7ef43">
 <p>
 目前定义的可选项包括 <code>sql</code> 和 <code>stdsql</code>,这两个选项只有在想将日志内容存入数据库中时才有用。其中:
 </p>
@@ -320,9 +320,9 @@ rsyslog的主配置文件是 <code>/etc/rsyslog.conf</code>,在该文件中默�
 </div>
 </div>
 
-<div id="outline-container-org3d4bf82" class="outline-5">
-<h5 id="org3d4bf82">定义我们的远程日志模板</h5>
-<div class="outline-text-5" id="text-org3d4bf82">
+<div id="outline-container-org1c4f83f" class="outline-5">
+<h5 id="org1c4f83f">定义我们的远程日志模板</h5>
+<div class="outline-text-5" id="text-org1c4f83f">
 <div class="org-src-container">
 <pre class="src src-conf">$template RemoteLogs,<span style="color: #2d9574;">"/var/log/%HOSTNAME%/%APP-NAME%.log"</span>
 *.* ?RemoteLogs 
@@ -340,9 +340,9 @@ rsyslog的主配置文件是 <code>/etc/rsyslog.conf</code>,在该文件中默�
 </div>
 </div>
 </div>
-<div id="outline-container-org600db5b" class="outline-3">
-<h3 id="org600db5b">重启syslog服务</h3>
-<div class="outline-text-3" id="text-org600db5b">
+<div id="outline-container-org04307bf" class="outline-3">
+<h3 id="org04307bf">重启syslog服务</h3>
+<div class="outline-text-3" id="text-org04307bf">
 <div class="org-src-container">
 <pre class="src src-shell">sudo systemctl restart rsyslog
 </pre>
@@ -364,13 +364,13 @@ lujun9972@orangepipc2:/var/log/localhost$ pwd
 </div>
 </div>
 
-<div id="outline-container-orge5b0084" class="outline-2">
-<h2 id="orge5b0084">客户端配置</h2>
-<div class="outline-text-2" id="text-orge5b0084">
+<div id="outline-container-org14fd2c1" class="outline-2">
+<h2 id="org14fd2c1">客户端配置</h2>
+<div class="outline-text-2" id="text-org14fd2c1">
 </div>
-<div id="outline-container-org7d78b8f" class="outline-3">
-<h3 id="org7d78b8f">安装并启动rsyslog服务</h3>
-<div class="outline-text-3" id="text-org7d78b8f">
+<div id="outline-container-org9969136" class="outline-3">
+<h3 id="org9969136">安装并启动rsyslog服务</h3>
+<div class="outline-text-3" id="text-org9969136">
 <p>
 我们首先需要一个rsyslog服务才能将日志转发到中央日志服务器上. 在archlinux上需要通过AUR来安装rsyslog
 </p>
@@ -398,12 +398,16 @@ systemctl status rsyslog.service
 <pre class="example">
 Note that it is now the journal that listens on /dev/log, no longer the BSD syslog daemon directly. If your logging daemon wants to get access to all logging data then it should listen on /run/systemd/journal/syslog instead via the syslog.socket unit file that is shipped along with systemd. On a systemd system it is no longer OK to listen on /dev/log directly, and your daemon may not bind to the /run/systemd/journal/syslog socket on its own. If you do that then you will lose logging from STDOUT/STDERR of services (as well as other stuff).
 </pre>
+
+<p>
+也就是说，在systemd的系统中，rsyslogd并不监听 <code>/dev/log</code> 文件，它通过 <code>imuxsock</code> 模块来监听 <code>/run/systemd/journal/socket</code> 文件
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgd59566c" class="outline-3">
-<h3 id="orgd59566c">配置客户端的/etc/rsyslog.conf</h3>
-<div class="outline-text-3" id="text-orgd59566c">
+<div id="outline-container-org763b7f4" class="outline-3">
+<h3 id="org763b7f4">配置客户端的/etc/rsyslog.conf</h3>
+<div class="outline-text-3" id="text-org763b7f4">
 <p>
 按照实际需求，将指定日志转发到中央日志服务器上。比如要将所有日志都转发到中央日志服务器，则可以在配置文件中加上
 </p>
@@ -418,9 +422,9 @@ Note that it is now the journal that listens on /dev/log, no longer the BSD sysl
 </div>
 </div>
 
-<div id="outline-container-orgbd998c3" class="outline-3">
-<h3 id="orgbd998c3">重启rsyslog服务</h3>
-<div class="outline-text-3" id="text-orgbd998c3">
+<div id="outline-container-org229ba2b" class="outline-3">
+<h3 id="org229ba2b">重启rsyslog服务</h3>
+<div class="outline-text-3" id="text-org229ba2b">
 <div class="org-src-container">
 <pre class="src src-shell">sudo systemctl start rsyslog.service
 systemctl status rsyslog.service
@@ -429,9 +433,9 @@ systemctl status rsyslog.service
 </div>
 </div>
 
-<div id="outline-container-orgde5f0a3" class="outline-3">
-<h3 id="orgde5f0a3">修改/etc/systemd/journald.conf</h3>
-<div class="outline-text-3" id="text-orgde5f0a3">
+<div id="outline-container-org7c69252" class="outline-3">
+<h3 id="org7c69252">修改/etc/systemd/journald.conf</h3>
+<div class="outline-text-3" id="text-org7c69252">
 <p>
 开启其中的 <code>ForwardToSyslog</code>
 </p>
@@ -452,7 +456,7 @@ systemctl status rsyslog.service
 <div>
   <div class="post-meta">
     <span title="post date" class="post-info">2018-12-23</span>
-    <span title="last modification date" class="post-info">2018-12-26</span>
+    <span title="last modification date" class="post-info">2018-12-27</span>
     <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
     <span title="author" class="post-info">lujun9972</span>
   </div>
