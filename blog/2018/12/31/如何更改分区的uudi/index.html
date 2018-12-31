@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>查找某个文件属于哪个package的方法 - 暗无天日</title>
+  <title>如何更改分区的UUDI - 暗无天日</title>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
@@ -51,116 +51,63 @@
 
 <div>
 <div class="post">
-<h1 class="title">查找某个文件属于哪个package的方法</h1>
+<h1 class="title">如何更改分区的UUDI</h1>
 <div id="table-of-contents">
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3835534">Debian/Ubuntu</a></li>
-<li><a href="#org243eb36">Archlinux</a></li>
-<li><a href="#orgc19c848">Redhat,Fedora,Centos</a></li>
+<li><a href="#org763b3fa">查看分区的UUID</a></li>
+<li><a href="#org617b79a">手工修改分区UUID</a></li>
 </ul>
 </div>
 </div>
 <p>
-从<a href="https://www.garron.me/en/linux/find-which-package-library-belongs.html%E5%AD%A6%E5%88%B0%E7%9A%84">https://www.garron.me/en/linux/find-which-package-library-belongs.html学到的</a>
+当用 <code>dd</code> 命令进行分区对拷时，两个分区就有了相同的UUID，这种情况下就有必要手工修改分区的UUID了。
 </p>
 
-<div id="outline-container-org3835534" class="outline-2">
-<h2 id="org3835534">Debian/Ubuntu</h2>
-<div class="outline-text-2" id="text-org3835534">
+<div id="outline-container-org763b3fa" class="outline-2">
+<h2 id="org763b3fa">查看分区的UUID</h2>
+<div class="outline-text-2" id="text-org763b3fa">
 <p>
-我们需要借助 <code>apt-file</code> 来实现
+使用 <code>blkid</code> 能够查看分区的UUID
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo apt-get install apt-file -y
+<pre class="src src-shell">blkid
 </pre>
 </div>
 
-<p>
-然后更新数据库
-</p>
 <div class="org-src-container">
-<pre class="src src-shell">apt-file update
-</pre>
-</div>
-
-<p>
-然后搜索
-</p>
-<div class="org-src-container">
-<pre class="src src-shell">apt-file search $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-org">/dev/sda1: UUID="f1060c0a-bd02-4547-98d4-af3e1685e513" TYPE="swap" PARTUUID="18b918b8-01"
+/dev/sda2: UUID="a3e3ff49-bb3d-4610-a898-c623d9ff4b2b" TYPE="ext4" PARTUUID="18b918b8-02"
+/dev/sda3: UUID="aef39bc8-c88d-46bd-b600-34d267486fa7" TYPE="ext4" PARTUUID="18b918b8-03"
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org243eb36" class="outline-2">
-<h2 id="org243eb36">Archlinux</h2>
-<div class="outline-text-2" id="text-org243eb36">
+<div id="outline-container-org617b79a" class="outline-2">
+<h2 id="org617b79a">手工修改分区UUID</h2>
+<div class="outline-text-2" id="text-org617b79a">
 <p>
-若只需要在已经安装的包内查询，则可以直接使用pacman
+使用tune2fs能够修改分区的UUID：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">pacman -Qo $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">1. &#21368;&#36733;&#35201;&#20462;&#25913;UUID&#30340;&#20998;&#21306;</span>
+umount /dev/sda3
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">2. &#35774;&#32622;UUID</span>
+tune2fs -U $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">UUID</span><span style="color: #4f97d7;">}</span> /dev/sdb1
 </pre>
 </div>
 
 <p>
-若需要查询所有数据库中的包，则可以使用pacmang中的 <code>-F</code> 选项
+其中 <code>UUID</code> 可以是一串由分号分割的十六进制数字，或者下面几个关键字:
 </p>
-<div class="org-src-container">
-<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#26356;&#26032;package databases</span>
-sudo pacman -Fy
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#25628;&#32034;&#25991;&#20214;</span>
-pacman -Fs $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
-</pre>
-</div>
 
-<p>
-或者也可以使用 <code>pkgfile</code>
-</p>
-<div class="org-src-container">
-<pre class="src src-shell">sudo pacman -S pkgfile --noconfirm
-</pre>
-</div>
-
-<p>
-更新数据库信息
-</p>
-<div class="org-src-container">
-<pre class="src src-shell">sudo pkgfile --update
-</pre>
-</div>
-
-<p>
-使用pkgfile查询
-</p>
-<div class="org-src-container">
-<pre class="src src-shell">pkgfile $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgc19c848" class="outline-2">
-<h2 id="orgc19c848">Redhat,Fedora,Centos</h2>
-<div class="outline-text-2" id="text-orgc19c848">
-<p>
-在已安装的包中检查执行
-</p>
-<div class="org-src-container">
-<pre class="src src-shell">rpm -qf $<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">which</span> $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">file</span><span style="color: #bc6ec5;">}</span><span style="color: #4f97d7;">)</span>
-</pre>
-</div>
-
-<p>
-或者，在所有包中检查，执行
-</p>
-<div class="org-src-container">
-<pre class="src src-shell">yum provides */$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">file</span><span style="color: #4f97d7;">}</span>
-</pre>
-</div>
+<dl class="org-dl">
+<dt>clear</dt><dd>清空文件系统中的UUID</dd>
+<dt>random</dt><dd>随机生成一个UUID</dd>
+<dt>time</dt><dd>根据时间生成一个UUID</dd>
+</dl>
 </div>
 </div>
 
@@ -168,7 +115,7 @@ pacman -Fs $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">
 </div>
 <div>
   <div class="post-meta">
-    <span title="post date" class="post-info">2018-05-22</span>
+    <span title="post date" class="post-info">2018-12-31</span>
     <span title="last modification date" class="post-info">2018-12-31</span>
     <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
     <span title="author" class="post-info">lujun9972</span>
@@ -184,8 +131,8 @@ pacman -Fs $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">
     <script type="text/javascript">
      //var disqus_developer = 1;
      var preempt_signal=false;
-     var disqus_identifier = "/blog/2018/05/22/查找某个文件属于哪个package的方法/";
-     var disqus_url = "https://lujun9972.github.io/blog/2018/05/22/查找某个文件属于哪个package的方法/";
+     var disqus_identifier = "/blog/2018/12/31/如何更改分区的uudi/";
+     var disqus_url = "https://lujun9972.github.io/blog/2018/12/31/如何更改分区的uudi/";
      var disqus_shortname = 'lujun9972';
      /* * * DON'T EDIT BELOW THIS LINE * * */
      (function() {

@@ -4,10 +4,38 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>四, 27 12月 2018 22:19:14 HKT</pubDate>
-    <lastBuildDate>四, 27 12月 2018 22:19:14 HKT</lastBuildDate>
+    <pubDate>一, 31 12月 2018 22:12:08 HKT</pubDate>
+    <lastBuildDate>一, 31 12月 2018 22:12:08 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>使用rtcwake定时唤醒linux</title>
+<link>https://lujun9972.github.io/blog/2018/12/31/使用rtcwake定时唤醒linux/</link>
+<description>No Description</description>
+<pubDate>2018-12-31</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/31/使用rtcwake定时唤醒linux/</guid>
+</item>
+<item>
+<title>如何更改分区的UUDI</title>
+<link>https://lujun9972.github.io/blog/2018/12/31/如何更改分区的uudi/</link>
+<description>No Description</description>
+<pubDate>2018-12-31</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/31/如何更改分区的uudi/</guid>
+</item>
+<item>
+<title>查找某个文件属于哪个package的方法</title>
+<link>https://lujun9972.github.io/blog/2018/05/22/查找某个文件属于哪个package的方法/</link>
+<description>No Description</description>
+<pubDate>2018-12-31</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/05/22/查找某个文件属于哪个package的方法/</guid>
+</item>
+<item>
+<title>笑话了解之Cook Socks</title>
+<link>https://lujun9972.github.io/blog/2018/12/31/笑话了解之cook-socks/</link>
+<description>No Description</description>
+<pubDate>2018-12-31</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/31/笑话了解之cook-socks/</guid>
+</item>
 <item>
 <title>linux是如何记录日志的</title>
 <link>https://lujun9972.github.io/blog/2018/12/26/linux是如何记录日志的/</link>
@@ -49,34 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-12-23</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/12/23/笑话理解之children/</guid>
-</item>
-<item>
-<title>在OrangePi上使用Docker-Compose搭建蚂蚁笔记服务器</title>
-<link>https://lujun9972.github.io/blog/2018/12/22/在orangepi上使用docker-compose搭建蚂蚁笔记服务器/</link>
-<description>No Description</description>
-<pubDate>2018-12-22</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/22/在orangepi上使用docker-compose搭建蚂蚁笔记服务器/</guid>
-</item>
-<item>
-<title>不死的sed</title>
-<link>https://lujun9972.github.io/blog/2018/12/21/不死的sed/</link>
-<description>No Description</description>
-<pubDate>2018-12-21</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/21/不死的sed/</guid>
-</item>
-<item>
-<title>禁用ROOT的4种方法</title>
-<link>https://lujun9972.github.io/blog/2018/12/21/禁用root的4种方法/</link>
-<description>No Description</description>
-<pubDate>2018-12-21</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/21/禁用root的4种方法/</guid>
-</item>
-<item>
-<title>shell中如何将其他进制数转换成10进制数</title>
-<link>https://lujun9972.github.io/blog/2018/12/18/shell中如何将其他进制数转换成10进制数/</link>
-<description>No Description</description>
-<pubDate>2018-12-18</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/18/shell中如何将其他进制数转换成10进制数/</guid>
 </item>
 </channel>
 </rss>
