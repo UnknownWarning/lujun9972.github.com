@@ -4,10 +4,45 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>一, 31 12月 2018 22:22:14 HKT</pubDate>
-    <lastBuildDate>一, 31 12月 2018 22:22:14 HKT</lastBuildDate>
+    <pubDate>二, 15 1月 2019 19:06:23 HKT</pubDate>
+    <lastBuildDate>二, 15 1月 2019 19:06:23 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>Linux下的那些教育类软件集合</title>
+<link>https://lujun9972.github.io/blog/2018/10/12/linux下的那些教育类软件集合/</link>
+<description>No Description</description>
+<pubDate>2019-01-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/12/linux下的那些教育类软件集合/</guid>
+</item>
+<item>
+<title>为什么cat命令查看文件不会修改atime</title>
+<link>https://lujun9972.github.io/blog/2018/10/10/为什么cat命令查看文件不会修改atime/</link>
+<description>No Description</description>
+<pubDate>2019-01-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/10/为什么cat命令查看文件不会修改atime/</guid>
+</item>
+<item>
+<title>关闭firefox的全屏提示</title>
+<link>https://lujun9972.github.io/blog/2019/01/15/关闭firefox的全屏提示/</link>
+<description>No Description</description>
+<pubDate>2019-01-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2019/01/15/关闭firefox的全屏提示/</guid>
+</item>
+<item>
+<title>提高libreoffice效率的小窍门</title>
+<link>https://lujun9972.github.io/blog/2018/12/20/提高libreoffice效率的小窍门/</link>
+<description>No Description</description>
+<pubDate>2019-01-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/12/20/提高libreoffice效率的小窍门/</guid>
+</item>
+<item>
+<title>笑话理解之fan</title>
+<link>https://lujun9972.github.io/blog/2019/01/15/笑话理解之fan/</link>
+<description>No Description</description>
+<pubDate>2019-01-15</pubDate>
+<guid>https://lujun9972.github.io/blog/2019/01/15/笑话理解之fan/</guid>
+</item>
 <item>
 <title>使用rtcwake定时唤醒linux</title>
 <link>https://lujun9972.github.io/blog/2018/12/31/使用rtcwake定时唤醒linux/</link>
@@ -42,41 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-12-27</pubDate>
 <guid>https://lujun9972.github.io/blog/2018/12/26/linux是如何记录日志的/</guid>
-</item>
-<item>
-<title>将OrangePi打造成中央日志服务器</title>
-<link>https://lujun9972.github.io/blog/2018/12/23/将orangepi打造成中央日志服务器/</link>
-<description>No Description</description>
-<pubDate>2018-12-27</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/23/将orangepi打造成中央日志服务器/</guid>
-</item>
-<item>
-<title>用emacs进行时间管理</title>
-<link>https://lujun9972.github.io/blog/2018/12/26/用emacs进行时间管理/</link>
-<description>No Description</description>
-<pubDate>2018-12-26</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/26/用emacs进行时间管理/</guid>
-</item>
-<item>
-<title>笑话理解之Get behind me Satan</title>
-<link>https://lujun9972.github.io/blog/2018/12/23/笑话理解之get-behind-me-satan/</link>
-<description>No Description</description>
-<pubDate>2018-12-23</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/23/笑话理解之get-behind-me-satan/</guid>
-</item>
-<item>
-<title>笑话理解之business</title>
-<link>https://lujun9972.github.io/blog/2018/12/23/笑话理解之business/</link>
-<description>No Description</description>
-<pubDate>2018-12-23</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/23/笑话理解之business/</guid>
-</item>
-<item>
-<title>笑话理解之children</title>
-<link>https://lujun9972.github.io/blog/2018/12/23/笑话理解之children/</link>
-<description>No Description</description>
-<pubDate>2018-12-23</pubDate>
-<guid>https://lujun9972.github.io/blog/2018/12/23/笑话理解之children/</guid>
 </item>
 </channel>
 </rss>
