@@ -56,11 +56,11 @@
 <h2>&#30446;&#24405;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3c1e10a">安装bash-it</a></li>
-<li><a href="#org5aeac23">启用bash-it自带的别名、补全和插件</a></li>
-<li><a href="#org8ace240">设置主题</a></li>
-<li><a href="#org8636c80">自定义配置</a></li>
-<li><a href="#org1aebdb7">升级/卸载bash-it</a></li>
+<li><a href="#org089ce4b">安装bash-it</a></li>
+<li><a href="#orgf4b3804">启用bash-it自带的别名、补全和插件</a></li>
+<li><a href="#org4c62a1b">设置主题</a></li>
+<li><a href="#org86957b3">自定义配置</a></li>
+<li><a href="#orge642dc1">升级/卸载bash-it</a></li>
 </ul>
 </div>
 </div>
@@ -81,9 +81,9 @@
 </ul>
 
 
-<div id="outline-container-org3c1e10a" class="outline-2">
-<h2 id="org3c1e10a">安装bash-it</h2>
-<div class="outline-text-2" id="text-org3c1e10a">
+<div id="outline-container-org089ce4b" class="outline-2">
+<h2 id="org089ce4b">安装bash-it</h2>
+<div class="outline-text-2" id="text-org089ce4b">
 <ol class="org-ol">
 <li><p>
 克隆bash-it仓库
@@ -115,9 +115,9 @@
 </div>
 </div>
 
-<div id="outline-container-org5aeac23" class="outline-2">
-<h2 id="org5aeac23">启用bash-it自带的别名、补全和插件</h2>
-<div class="outline-text-2" id="text-org5aeac23">
+<div id="outline-container-orgf4b3804" class="outline-2">
+<h2 id="orgf4b3804">启用bash-it自带的别名、补全和插件</h2>
+<div class="outline-text-2" id="text-orgf4b3804">
 <p>
 直接运行 <code>bash-it</code> 就能看到 <code>bash-it</code> 的使用方法了:
 </p>
@@ -241,9 +241,9 @@ ap=ansible-playbook'
 </div>
 </div>
 
-<div id="outline-container-org8ace240" class="outline-2">
-<h2 id="org8ace240">设置主题</h2>
-<div class="outline-text-2" id="text-org8ace240">
+<div id="outline-container-org4c62a1b" class="outline-2">
+<h2 id="org4c62a1b">设置主题</h2>
+<div class="outline-text-2" id="text-org4c62a1b">
 <p>
 <code>bash-it</code> 还自带了超过50个主题，这些主题存放在 <code>$BASH_IT/themes</code> 目录中
 </p>
@@ -358,9 +358,9 @@ bash-it也允许你使用非 <code>$BASH_IT</code> 目录下的主题
 </div>
 </div>
 
-<div id="outline-container-org8636c80" class="outline-2">
-<h2 id="org8636c80">自定义配置</h2>
-<div class="outline-text-2" id="text-org8636c80">
+<div id="outline-container-org86957b3" class="outline-2">
+<h2 id="org86957b3">自定义配置</h2>
+<div class="outline-text-2" id="text-org86957b3">
 <p>
 <code>bash-it</code> 会从下面位置寻找并加载自定义的配置:
 </p>
@@ -382,6 +382,7 @@ bash-it也允许你使用非 <code>$BASH_IT</code> 目录下的主题
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">mkdir -p $<span style="color: #7590db;">BASH_IT</span>/custom/<span style="color: #4f97d7;">{</span>aliases,completion,plugins<span style="color: #4f97d7;">}</span>/available
+mkdir -p $<span style="color: #7590db;">BASH_IT</span>/custom/enabled
 </pre>
 </div>
 
@@ -390,19 +391,19 @@ bash-it也允许你使用非 <code>$BASH_IT</code> 目录下的主题
 </p>
 
 <p>
-然后挑选自己想要启用的配置，做个软链接到 <code>custom/类别/</code> 目录中就好了,比如:
+然后挑选自己想要启用的配置，做个软链接到 <code>custom/enabled</code> 目录中就好了,比如:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">ln -s $<span style="color: #7590db;">BASH_IT</span>/custom/plugins/available/manpage.plugin.bash $<span style="color: #7590db;">BASH_IT</span>/custom/plugins/
-ln -s $<span style="color: #7590db;">BASH_IT</span>/custom/aliases/available/my.aliases.bash $<span style="color: #7590db;">BASH_IT</span>/custom/aliases/
+<pre class="src src-shell">ln -s $<span style="color: #7590db;">BASH_IT</span>/custom/plugins/available/manpage.plugin.bash $<span style="color: #7590db;">BASH_IT</span>/custom/enabled
+ln -s $<span style="color: #7590db;">BASH_IT</span>/custom/aliases/available/my.aliases.bash $<span style="color: #7590db;">BASH_IT</span>/custom/enabled
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1aebdb7" class="outline-2">
-<h2 id="org1aebdb7">升级/卸载bash-it</h2>
-<div class="outline-text-2" id="text-org1aebdb7">
+<div id="outline-container-orge642dc1" class="outline-2">
+<h2 id="orge642dc1">升级/卸载bash-it</h2>
+<div class="outline-text-2" id="text-orge642dc1">
 <p>
 运行 <code>bash-it update</code> 就能升级 <code>bash-it</code> 到最新版本了。
 </p>
