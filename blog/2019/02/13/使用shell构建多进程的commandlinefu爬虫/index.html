@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>使用shell构建多进程的commandlinefu爬虫 - 暗无天日</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="author" content="lujun9972" />
+  <meta name="keywords" content="linux和它的小伙伴" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" media="screen" href="https://lujun9972.github.io/media/css/font.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://lujun9972.github.io/media/css/kdComment.css" type="text/css">
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+</head>
+
+  <body class="container">
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://lujun9972.github.io/">暗无天日</a></h1>
+    <p>=============&gt;随便,谢谢</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+              <li><a href="https://lujun9972.github.io/years/">Years</a></li>
+              <li><a href="https://lujun9972.github.io/authors/">Authors</a></li>
+              <li><a href="https://lujun9972.github.io/tags/">Tags</a></li>
+              <li><a href="https://lujun9972.github.io/about/">About</a></li>
+              <li><a href="https://github.com/lujun9972/lujun9972.github.com">Github</a></li>
+              <li><a href="https://lujun9972.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" class="field" name="q" id="s" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="lujun9972.github.io">
+    </form>
+  </header>
+</div>
+
+<div>
+<div class="post">
+<h1 class="title">使用shell构建多进程的commandlinefu爬虫</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1d6bc6e">参数定义</a></li>
+<li><a href="#org460fb35">解析命令浏览页面</a>
+<ul>
+<li><a href="#org8f4b163">实现进程之间的通讯队列</a></li>
+<li><a href="#org27e6d1f">从页面中抽取想要的信息</a></li>
+<li><a href="#org6e736e2">循环读取下一页的浏览页面，不断抽取代码片段URL写入队列</a></li>
+</ul>
+</li>
+<li><a href="#org63fa090">解析脚本片段页面</a></li>
+<li><a href="#org907fcb0">组合起来</a></li>
+</ul>
+</div>
+</div>
+<p>
+<a href="https://www.commandlinefu.com">commandlinefu</a>是一个记录脚本片段的网站,每个片段都有对应的功能说明和对应的标签。我想要做的就是尝试用shell写一个多进程的爬虫把这些代码片段记录在一个org文件中。
+</p>
+
+<div id="outline-container-org1d6bc6e" class="outline-2">
+<h2 id="org1d6bc6e">参数定义</h2>
+<div class="outline-text-2" id="text-org1d6bc6e">
+<p>
+这个脚本需要能够通过 <code>-n</code> 参数指定并发的爬虫数(默认为CPU核的数量)，还要能通过 <code>-f</code> 指定保存的org文件路径(默认输出到stdout)。
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/usr/bin/</span><span style="color: #4f97d7; font-weight: bold;">env</span><span style="color: #2aa1ae; background-color: #292e34;"> bash</span>
+
+<span style="color: #7590db;">proc_num</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">nproc</span><span style="color: #4f97d7;">)</span>
+<span style="color: #7590db;">store_file</span>=/dev/stdout
+<span style="color: #4f97d7; font-weight: bold;">while </span><span style="color: #4f97d7;">getopts</span> :n:f: OPT; <span style="color: #4f97d7; font-weight: bold;">do</span>
+    <span style="color: #4f97d7; font-weight: bold;">case</span> $<span style="color: #7590db;">OPT</span><span style="color: #4f97d7; font-weight: bold;"> in</span>
+        n|+n)
+            <span style="color: #7590db;">proc_num</span>=<span style="color: #2d9574;">"$OPTARG"</span>
+            ;;
+        f|+f)
+            <span style="color: #7590db;">store_file</span>=<span style="color: #2d9574;">"$OPTARG"</span>
+            ;;
+        *)
+            <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"usage: ${0##*/} [+-n proc_num] [+-f org_file} [--]"</span>
+            <span style="color: #4f97d7; font-weight: bold;">exit</span> <span style="color: #a45bad;">2</span>
+    <span style="color: #4f97d7; font-weight: bold;">esac</span>
+<span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #4f97d7;">shift</span> $<span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">(</span> OPTIND - <span style="color: #a45bad;">1</span> <span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #7590db;">OPTIND</span>=<span style="color: #a45bad;">1</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org460fb35" class="outline-2">
+<h2 id="org460fb35">解析命令浏览页面</h2>
+<div class="outline-text-2" id="text-org460fb35">
+<p>
+我们需要一个进程从commandlinefu的浏览列表中抽取各个脚本片段的URL，这个进程将抽取出来的URL存放到一个队列中，再由各个爬虫进程从进程中读取URL并从中抽取出对应的代码片段、描述说明和标签信息写入org文件中。
+</p>
+
+<p>
+这里就会遇到三个问题: 
+</p>
+<ol class="org-ol">
+<li>进程之间通讯的队列如何实现</li>
+<li>如何从页面中抽取出URL、代码片段、描述说明、标签等信息</li>
+<li>多进程对同一文件进行读写时的乱序问题</li>
+</ol>
+</div>
+
+<div id="outline-container-org8f4b163" class="outline-3">
+<h3 id="org8f4b163">实现进程之间的通讯队列</h3>
+<div class="outline-text-3" id="text-org8f4b163">
+<p>
+这个问题比较好解决，我们可以通过一个命名管道来实现
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #7590db;">queue</span>=$<span style="color: #4f97d7;">(</span><span style="color: #fa8072;">mktemp</span> --dry-run<span style="color: #4f97d7;">)</span>
+mkfifo $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">queue</span><span style="color: #4f97d7;">}</span>
+<span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">99</span>&lt;&gt;$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">queue</span><span style="color: #4f97d7;">}</span>
+<span style="color: #4f97d7; font-weight: bold;">trap</span> <span style="color: #2d9574;">"rm ${queue} 2&gt;/dev/null"</span> EXIT
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org27e6d1f" class="outline-3">
+<h3 id="org27e6d1f">从页面中抽取想要的信息</h3>
+<div class="outline-text-3" id="text-org27e6d1f">
+<p>
+从页面中提取元素内容主要有两种方法:
+</p>
+<ol class="org-ol">
+<li>对于简单的HTML页面，我们可以通过 <code>sed</code>, <code>grep</code>, <code>awk</code> 等工具通过正则表达式匹配的方式来从HTML中抽取信息。</li>
+<li>通过 <a href="https://www.w3.org/Tools/HTML-XML-utils/">html-xml-utils</a> 工具集中的 <a href="https://www.w3.org/Tools/HTML-XML-utils/man1/hxselect.html">hxselect</a> 来根据CSS selector提取相关元素</li>
+</ol>
+
+<p>
+这里我们使用 <code>html-xml-utils</code> 工具来提取
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">extract_views_from_browse_page</span><span style="color: #4f97d7;">()</span>
+<span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> $<span style="color: #7590db;">#</span> -eq <span style="color: #a45bad;">0</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+        <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">html</span>=$<span style="color: #bc6ec5;">(</span><span style="color: #fa8072;">cat</span> -<span style="color: #bc6ec5;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">else</span>
+        <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">html</span>=<span style="color: #2d9574;">"$*"</span>
+    <span style="color: #4f97d7; font-weight: bold;">fi</span>
+    <span style="color: #4f97d7;">echo</span> $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">html</span><span style="color: #bc6ec5;">}</span> |hxclean |hxselect -c -s <span style="color: #2d9574;">"\n"</span> <span style="color: #2d9574;">"li.list-group-item &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; a:nth-child(1)::attr(href)"</span>
+<span style="color: #4f97d7;">}</span>
+
+<span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">extract_nextpage_from_browse_page</span><span style="color: #4f97d7;">()</span>
+<span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> $<span style="color: #7590db;">#</span> -eq <span style="color: #a45bad;">0</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+        <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">html</span>=$<span style="color: #bc6ec5;">(</span><span style="color: #fa8072;">cat</span> -<span style="color: #bc6ec5;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">else</span>
+        <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">html</span>=<span style="color: #2d9574;">"$*"</span>
+    <span style="color: #4f97d7; font-weight: bold;">fi</span>
+    <span style="color: #4f97d7;">echo</span> $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">html</span><span style="color: #bc6ec5;">}</span> |hxclean |hxselect -s <span style="color: #2d9574;">"\n"</span> <span style="color: #2d9574;">"li.list-group-item:nth-child(26) &gt; a"</span>|grep <span style="color: #2d9574;">'&amp;gt;'</span>|hxselect -c <span style="color: #2d9574;">"::attr(href)"</span>
+<span style="color: #4f97d7;">}</span>
+</pre>
+</div>
+
+<p>
+这里需要注意的是: <b>hxselect对html解析时要求遵循严格的XML规范，因此在用hxselect解析之前需要先经过hxclean矫正</b>
+另外，为了防止html过大,超过参数列表长度，这里允许通过管道的形式将html内容传入
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6e736e2" class="outline-3">
+<h3 id="org6e736e2">循环读取下一页的浏览页面，不断抽取代码片段URL写入队列</h3>
+<div class="outline-text-3" id="text-org6e736e2">
+<p>
+这里要解决的是上面提到的第三个问题: <b>多进程对管道进行读写时如何保障不出现乱序?</b>
+为此，我们需要在写入文件时对文件加锁，然后在写完文件后对文件解锁，在shell中我们可以使用 <code>flock</code> 来对文件进行枷锁。
+<code>flock</code> 有三种使用形式:
+</p>
+
+<ol class="org-ol">
+<li><p>
+flock 文件或目录 命令 [参数...]
+</p>
+
+<p>
+这是flock最简单的使用方式, 它会执行 <code>命令 参数...</code> 并在命令执行期间对 <code>文件或路径</code> 加排他锁，然后在命令执行完毕后再释放该锁.
+</p>
+
+<p>
+但这种形式只能执行单个命令，且无法在命令中进行管道和IO重定向操作
+</p></li>
+
+<li><p>
+flock 文件或目录 -c command
+</p>
+
+<p>
+这种方式其实就是 <code>flock 文件或目录 bash -c "command"</code> 的简写形式
+</p>
+
+<p>
+这种形式理论上可以在 <code>command</code> 中写任意复杂的表达式，但是由于是通过 <code>bash -c</code> 来运行的，它的运行环境并不是在当前shell中，因此并不能修改当前shell中的变量
+</p></li>
+
+<li><p>
+flock 文件描述符;commands;flock -u 文件描述符
+</p>
+
+<p>
+这种方式对文件描述符进行加锁，并且在当前shell环境中执行完任意复杂的commands后通过 <code>-u</code> 选项对文件描述符进行解锁。
+</p>
+
+<p>
+另外，当文件描述符被关闭后，flock也会自动进行解锁。这种方法最灵活，但使用起来不太方便。
+</p></li>
+</ol>
+
+<p>
+<b>使用flock需要注意几点:</b>
+</p>
+
+<ol class="org-ol">
+<li><p>
+使用flock对文件加的锁是劝告锁，而不是强制锁,其他程序依然可以在不用flock的情况下写如该文件,比如
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">flock /tmp/t sleep <span style="color: #a45bad;">5</span>&amp;
+date |tee -a /tmp/t                <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#20250;&#25191;&#34892;&#25104;&#21151;&#65292;&#32780;&#19988;&#20250;&#25226;date&#20889;&#20837;&#21040; /tmp/t &#20013;&#65292;&#20294;</span>
+flock /tmp/t -c <span style="color: #2d9574;">"date |tee -a /tmp/t"</span> <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21017;&#20250;&#31561;&#24453;sleep&#21629;&#20196;&#25191;&#34892;&#23436;&#65292;&#38145;&#37322;&#25918;&#21518;&#25165;&#25226;date&#20889;&#20837;&#21040; /tmp/t &#20013;</span>
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"------------------------"</span>
+cat /tmp/t
+</pre>
+</div></li>
+
+<li><p>
+当flock与管道文件连用时可能会产生死锁，例如下面这段代码
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21019;&#24314;&#21629;&#21517;&#31649;&#36947;</span>
+mkfifo /tmp/ff
+<span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">99</span>&lt;&gt; /tmp/ff
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21019;&#24314;&#29983;&#20135;&#36827;&#31243;&#24448;&#31649;&#36947;&#20013;&#20889;&#20837;&#25968;&#25454;</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">while</span> :
+ <span style="color: #4f97d7; font-weight: bold;">do</span>
+     flock /tmp/ff -c <span style="color: #2d9574;">'seq 1 10 &gt; /tmp/ff'</span>
+ <span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #4f97d7;">)</span> &amp;
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21019;&#24314;&#28040;&#36153;&#36827;&#31243;&#20174;&#31649;&#36947;&#35835;&#21462;&#25968;&#25454;</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">while</span> :
+ <span style="color: #4f97d7; font-weight: bold;">do</span>
+     flock /tmp/ff -c <span style="color: #2d9574;">'read i &lt;/tmp/ff;echo $i'</span>
+ <span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #4f97d7;">)</span> &amp;
+<span style="color: #4f97d7;">wait</span>
+</pre>
+</div>
+
+<p>
+当消费者进程消费速度快于生产进程时就会发生下面步骤:
+</p>
+<ol class="org-ol">
+<li>消费者进程持有锁0</li>
+<li>消费者进程从管道读取消息，被阻塞</li>
+<li>生产者往管道发送数据前需要先获取锁0,但是该锁被消费者进程持有，导致生产者也被阻塞。</li>
+</ol></li>
+
+<li><p>
+flock创建的锁是和文件描述符表相关联而不是fd相关联，也就是说如果通过fork或dup复制了文件，那么通过这两个fd都能操作这个锁。(例如通过一个 fd 加锁，通过另一个 fd 可以释放锁)
+类似的，只关闭其中一个fd并不会释放锁(因为file结构并没有释放)，只有关闭所有复制出的 fd ，锁才会释放。(这段描述参见<a href="https://blog.csdn.net/zy531/article/details/51731227">https://blog.csdn.net/zy531/article/details/51731227</a>)
+</p>
+
+<p>
+例如，相对上面的代码，下面这段代码就不会死锁
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21019;&#24314;&#21629;&#21517;&#31649;&#36947;</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">mkfifo /tmp/ff</span>
+<span style="color: #4f97d7; font-weight: bold;">exec</span> <span style="color: #a45bad;">99</span>&lt;&gt; /tmp/ff
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21019;&#24314;&#29983;&#20135;&#36827;&#31243;&#24448;&#31649;&#36947;&#20013;&#20889;&#20837;&#25968;&#25454;</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">while</span> :
+ <span style="color: #4f97d7; font-weight: bold;">do</span>
+     flock /tmp/ff -c <span style="color: #2d9574;">'seq 1 10 &gt; /tmp/ff'</span>
+     sleep <span style="color: #a45bad;">1</span>
+ <span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #4f97d7;">)</span> &amp;
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#21019;&#24314;&#28040;&#36153;&#36827;&#31243;&#20174;&#31649;&#36947;&#35835;&#21462;&#25968;&#25454;</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">while</span> :
+ <span style="color: #4f97d7; font-weight: bold;">do</span>
+     flock /tmp/ff -c <span style="color: #2d9574;">'read i &lt;/tmp/ff;echo $i'</span>
+ <span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #4f97d7;">)</span> &amp;
+<span style="color: #4f97d7;">wait</span>
+</pre>
+</div></li>
+</ol>
+
+<p>
+这里方便起见，我直接使用标准输入作为锁文件
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #4f97d7;">(</span>
+    <span style="color: #7590db;">url</span>=<span style="color: #2d9574;">"commands/browse"</span>
+    <span style="color: #4f97d7; font-weight: bold;">while</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> -n $<span style="color: #67b11d;">{</span><span style="color: #7590db;">url</span><span style="color: #67b11d;">}</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">do</span>
+        <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"&#20174;$url&#20013;&#25277;&#21462;"</span>
+        <span style="color: #7590db;">html</span>=$<span style="color: #bc6ec5;">(</span><span style="color: #fa8072;">curl</span> https://www.commandlinefu.com/$<span style="color: #2d9574;">{</span><span style="color: #7590db;">url</span><span style="color: #2d9574;">}</span> <span style="color: #a45bad;">2</span>&gt;/dev/null<span style="color: #bc6ec5;">)</span>
+        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">echo "${html}"|flock ${queue} -c "extract_views_from_browse_page &gt;${queue}"</span>
+        flock -x <span style="color: #a45bad;">0</span>
+        <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"${html}"</span>|extract_views_from_browse_page &gt;$<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">queue</span><span style="color: #bc6ec5;">}</span>
+        flock -u <span style="color: #a45bad;">0</span>
+        <span style="color: #7590db;">url</span>=$<span style="color: #bc6ec5;">(</span><span style="color: #fa8072;">echo</span> <span style="color: #2d9574;">"${html}"</span>|extract_nextpage_from_browse_page<span style="color: #bc6ec5;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">done</span>
+    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#35753;&#21518;&#38754;&#35299;&#26512;&#20195;&#30721;&#29255;&#27573;&#30340;&#29228;&#34411;&#36827;&#31243;&#33021;&#22815;&#27491;&#24120;&#36864;&#20986;&#65292;&#32780;&#19981;&#33267;&#20110;&#34987;&#38459;&#22622;.</span>
+    <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span><span style="color: #7590db;">i</span>=<span style="color: #a45bad;">0</span>;i&lt;$<span style="color: #67b11d;">{</span><span style="color: #7590db;">proc_num</span><span style="color: #67b11d;">}</span>;i++<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">do</span>
+        <span style="color: #4f97d7;">echo</span> &gt;$<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">queue</span><span style="color: #bc6ec5;">}</span>
+    <span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #4f97d7;">)</span> &amp;
+</pre>
+</div>
+
+<p>
+这里要注意的是， <b>在找不到下一页URL后，我们用一个for循环往队列里写入了 <code>proc_num</code> 个空行</b>, 这一步的目的是让后面解析代码片段的爬虫进程能够正常退出，而不至于被阻塞.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org63fa090" class="outline-2">
+<h2 id="org63fa090">解析脚本片段页面</h2>
+<div class="outline-text-2" id="text-org63fa090">
+<p>
+我们需要从脚本片段的页面中抽取标题、代码片段、描述说明以及标签信息，同时将这些内容按org-mode的格式写入存储文件中.
+</p>
+
+<p>
+这里抽取信息的方法跟上面的类似，不过代码片段和描述说明中有一些特舒符号在HTML中是通过转义来表示的，我们还需要转义回来,我们定义一个函数来做这件事情。
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">entity2text</span><span style="color: #4f97d7;">()</span>
+<span style="color: #4f97d7;">{</span>
+    cat - |sed <span style="color: #2d9574;">'{</span>
+<span style="color: #2d9574;">      s/&amp;quot;/"/g</span>
+<span style="color: #2d9574;">      s/&amp;gt;/&gt;/g</span>
+<span style="color: #2d9574;">      s/&amp;lt;/&lt;/g</span>
+<span style="color: #2d9574;">      s/&amp;amp;/&amp;/g</span>
+<span style="color: #2d9574;">}'</span>
+<span style="color: #4f97d7;">}</span>
+</pre>
+</div>
+
+<p>
+然后从脚本片段的页面中抽取标题、代码片段、描述说明以及标签信息，同时将这些内容按org-mode的格式写入存储文件中.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">  <span style="color: #4f97d7; font-weight: bold;">function</span> <span style="color: #bc6ec5; font-weight: bold;">view_page_to_org_content</span><span style="color: #4f97d7;">()</span>
+  <span style="color: #4f97d7;">{</span>
+      <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">url</span>=<span style="color: #2d9574;">"$1"</span>
+      <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">html</span>=$<span style="color: #bc6ec5;">(</span><span style="color: #fa8072;">curl</span> https://www.commandlinefu.com/$<span style="color: #2d9574;">{</span><span style="color: #7590db;">url</span><span style="color: #2d9574;">}</span> <span style="color: #a45bad;">2</span>&gt;/dev/null<span style="color: #bc6ec5;">)</span>
+      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">headline</span>
+      <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">headline</span>=$<span style="color: #bc6ec5;">(</span><span style="color: #fa8072;">echo</span> $<span style="color: #2d9574;">{</span><span style="color: #7590db;">html</span><span style="color: #2d9574;">}</span> |hxclean |hxselect -c -s <span style="color: #2d9574;">"\n"</span> <span style="color: #2d9574;">".col-md-8 &gt; h1:nth-child(1)"</span><span style="color: #bc6ec5;">)</span>
+      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">command</span>
+      <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">command</span>=$<span style="color: #bc6ec5;">(</span><span style="color: #fa8072;">echo</span> $<span style="color: #2d9574;">{</span><span style="color: #7590db;">html</span><span style="color: #2d9574;">}</span> |hxclean |hxselect -c -s <span style="color: #2d9574;">"\n"</span> <span style="color: #2d9574;">".col-md-8 &gt; div:nth-child(2) &gt; span:nth-child(2)"</span>|entity2text<span style="color: #bc6ec5;">)</span>
+
+      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">description</span>
+      <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">description</span>=$<span style="color: #bc6ec5;">(</span><span style="color: #fa8072;">echo</span> $<span style="color: #2d9574;">{</span><span style="color: #7590db;">html</span><span style="color: #2d9574;">}</span> |hxclean |hxselect -c -s <span style="color: #2d9574;">"\n"</span> <span style="color: #2d9574;">".col-md-8 &gt; div.description"</span>|entity2text<span style="color: #bc6ec5;">)</span>
+      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">tags</span>
+      <span style="color: #4f97d7;">local</span> <span style="color: #7590db;">tags</span>=$<span style="color: #bc6ec5;">(</span><span style="color: #fa8072;">echo</span> $<span style="color: #2d9574;">{</span><span style="color: #7590db;">html</span><span style="color: #2d9574;">}</span> |hxclean |hxselect -c -s <span style="color: #2d9574;">":"</span> <span style="color: #2d9574;">".functions &gt; a"</span><span style="color: #bc6ec5;">)</span>
+      <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> -n <span style="color: #2d9574;">"${tags}"</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+          <span style="color: #7590db;">tags</span>=<span style="color: #2d9574;">":${tags}"</span>
+      <span style="color: #4f97d7; font-weight: bold;">fi</span>
+      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">build org content</span>
+      cat &lt;&lt;EOF |flock -x $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">store_file</span><span style="color: #bc6ec5;">}</span> tee -a $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">store_file</span><span style="color: #bc6ec5;">}</span>
+<span style="color: #ffff00; font-weight: bold;">* ${headline}      ${tags}</span>
+
+<span style="color: #ffff00; font-weight: bold;">:PROPERTIES:</span>
+<span style="color: #ffff00; font-weight: bold;">:URL:       ${url}</span>
+<span style="color: #ffff00; font-weight: bold;">:END:</span>
+
+<span style="color: #ffff00; font-weight: bold;">${description}</span>
+<span style="color: #ffff00; font-weight: bold;">#+begin_src shell</span>
+<span style="color: #ffff00; font-weight: bold;">${command}</span>
+<span style="color: #ffff00; font-weight: bold;">#+end_src</span>
+
+<span style="color: #ffff00; font-weight: bold;">EOF</span>
+  <span style="color: #4f97d7;">}</span>
+</pre>
+</div>
+
+<p>
+注意最后输出org-mode的格式并写入存储文件中的代码不要写成下面这样
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">    flock -x $<span style="color: #4f97d7;">{</span><span style="color: #7590db;">store_file</span><span style="color: #4f97d7;">}</span> cat &lt;&lt;EOF &gt;$<span style="color: #4f97d7;">{</span><span style="color: #7590db;">store_file</span><span style="color: #4f97d7;">}</span>
+<span style="color: #ffff00; font-weight: bold;">    * ${headline}\t\t ${tags}</span>
+<span style="color: #ffff00; font-weight: bold;">    ${description}</span>
+<span style="color: #ffff00; font-weight: bold;">    #+begin_src shell</span>
+<span style="color: #ffff00; font-weight: bold;">    ${command}</span>
+<span style="color: #ffff00; font-weight: bold;">    #+end_src</span>
+<span style="color: #ffff00; font-weight: bold;">EOF</span>
+</pre>
+</div>
+<p>
+它的意思是使用 <code>flock</code> 对 <code>cat</code> 命令进行加锁，再把 <code>flock</code> 整个命令的结果通过重定向输出到存储文件中，而重定向输出的这个过程是没有加锁的。
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org907fcb0" class="outline-2">
+<h2 id="org907fcb0">组合起来</h2>
+<div class="outline-text-2" id="text-org907fcb0">
+<p>
+为了防止发生死锁，这里从管道中读取URL时设置了超时，当出现超时就意味着生产进程赶不上消费进程的消费速度,因此消费进程休眠一秒后再次检查队列中的URL
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #4f97d7;">(</span><span style="color: #bc6ec5;">(</span><span style="color: #7590db;">i</span>=<span style="color: #a45bad;">0</span>;i&lt;$<span style="color: #2d9574;">{</span><span style="color: #7590db;">proc_num</span><span style="color: #2d9574;">}</span>;i++<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">do</span>
+    <span style="color: #4f97d7;">(</span>
+        <span style="color: #4f97d7; font-weight: bold;">while</span> :
+        <span style="color: #4f97d7; font-weight: bold;">do</span>
+            flock -x <span style="color: #a45bad;">0</span>
+            <span style="color: #4f97d7;">read</span> -t <span style="color: #a45bad;">1</span> -u <span style="color: #a45bad;">99</span> url
+            <span style="color: #7590db;">read_return</span>=$<span style="color: #7590db;">?</span>
+            flock -u <span style="color: #a45bad;">0</span>
+            <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> $<span style="color: #67b11d;">{</span><span style="color: #7590db;">read_return</span><span style="color: #67b11d;">}</span> -ne <span style="color: #a45bad;">0</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+                sleep <span style="color: #a45bad;">1</span>
+                <span style="color: #4f97d7; font-weight: bold;">continue</span>
+            <span style="color: #4f97d7; font-weight: bold;">fi</span>
+
+            <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span> -z <span style="color: #2d9574;">"$url"</span> <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span>;<span style="color: #4f97d7; font-weight: bold;">then</span>
+                <span style="color: #4f97d7; font-weight: bold;">break</span>
+            <span style="color: #4f97d7; font-weight: bold;">fi</span>
+            view_page_to_org_content $<span style="color: #bc6ec5;">{</span><span style="color: #7590db;">url</span><span style="color: #bc6ec5;">}</span>
+        <span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #4f97d7;">)</span> &amp;
+<span style="color: #4f97d7; font-weight: bold;">done</span>
+<span style="color: #4f97d7;">wait</span>
+</pre>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div>
+  <div class="post-meta">
+    <span title="post date" class="post-info">2019-02-13</span>
+    <span title="last modification date" class="post-info">2019-02-15</span>
+    <span title="tags" class="post-info"><a href="https://lujun9972.github.io/tags/linux和它的小伙伴">linux和它的小伙伴</a></span>
+    <span title="author" class="post-info">lujun9972</span>
+  </div>
+  <script src="https://lujun9972.github.io/media/js/jquery-2.1.3.min.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="comment-wrap">
+      <a class="disqus_label">使用Disqus评论</a>
+      <a class="ds-label">使用多说评论</a>
+    </ul>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     //var disqus_developer = 1;
+     var preempt_signal=false;
+     var disqus_identifier = "/blog/2019/02/13/使用shell构建多进程的commandlinefu爬虫/";
+     var disqus_url = "https://lujun9972.github.io/blog/2019/02/13/使用shell构建多进程的commandlinefu爬虫/";
+     var disqus_shortname = 'lujun9972';
+     /* * * DON'T EDIT BELOW THIS LINE * * */
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       $('#disqus_thread').css('display','none');
+     })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://lujun9972.github.io/media/js/kdComment.js"></script>
+      <script>
+       var _hmt = _hmt || [];
+       (function() {
+           var hm = document.createElement("script");
+           hm.src = "https://hm.baidu.com/hm.js?7bac4fd0247f69c27887e0d4e3aee41e";
+           var s = document.getElementsByTagName("script")[0]; 
+           s.parentNode.insertBefore(hm, s);
+       })();
+      </script>
+  <div class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+      Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:lujun9972 &lt;at&gt; T520">lujun9972</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      Powered by <a href="https://github.com/emacs-china/EGO" target="_blank">EGO</a><br/>
+      Themed with <a href="https://github.com/kuangdash/emacs_love" target="_blank">emacs_love</a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
+    </div>
+
+  </body>
+</html>
