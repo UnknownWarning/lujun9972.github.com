@@ -4,15 +4,36 @@
     <title>暗无天日</title>
     <link>https://lujun9972.github.io</link>
     <description>=============&gt;随便,谢谢</description>
-    <pubDate>一, 18 2月 2019 15:38:52 HKT</pubDate>
-    <lastBuildDate>一, 18 2月 2019 15:38:52 HKT</lastBuildDate>
+    <pubDate>三, 27 2月 2019 11:27:39 HKT</pubDate>
+    <lastBuildDate>三, 27 2月 2019 11:27:39 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>我所不知道的printf命令特性</title>
+<link>https://lujun9972.github.io/blog/2019/02/27/我所不知道的printf命令特性/</link>
+<description>No Description</description>
+<pubDate>2019-02-27</pubDate>
+<guid>https://lujun9972.github.io/blog/2019/02/27/我所不知道的printf命令特性/</guid>
+</item>
+<item>
+<title>编写安全的shell脚本</title>
+<link>https://lujun9972.github.io/blog/2019/02/25/编写安全的shell脚本/</link>
+<description>No Description</description>
+<pubDate>2019-02-27</pubDate>
+<guid>https://lujun9972.github.io/blog/2019/02/25/编写安全的shell脚本/</guid>
+</item>
+<item>
+<title>Linux下的那些教育类软件集合</title>
+<link>https://lujun9972.github.io/blog/2018/10/12/linux下的那些教育类软件集合/</link>
+<description>No Description</description>
+<pubDate>2019-02-19</pubDate>
+<guid>https://lujun9972.github.io/blog/2018/10/12/linux下的那些教育类软件集合/</guid>
+</item>
 <item>
 <title>使用shell构建多进程的commandlinefu爬虫</title>
 <link>https://lujun9972.github.io/blog/2019/02/13/使用shell构建多进程的commandlinefu爬虫/</link>
 <description>No Description</description>
-<pubDate>2019-02-18</pubDate>
+<pubDate>2019-02-19</pubDate>
 <guid>https://lujun9972.github.io/blog/2019/02/13/使用shell构建多进程的commandlinefu爬虫/</guid>
 </item>
 <item>
@@ -56,27 +77,6 @@
 <description>No Description</description>
 <pubDate>2019-02-12</pubDate>
 <guid>https://lujun9972.github.io/blog/2019/02/12/笑话理解之dirty/</guid>
-</item>
-<item>
-<title>笑话理解之save</title>
-<link>https://lujun9972.github.io/blog/2019/02/12/笑话理解之save/</link>
-<description>No Description</description>
-<pubDate>2019-02-12</pubDate>
-<guid>https://lujun9972.github.io/blog/2019/02/12/笑话理解之save/</guid>
-</item>
-<item>
-<title>endlessh:一个小巧的ssh蜜罐</title>
-<link>https://lujun9972.github.io/blog/2019/02/11/endlessh-一个小巧的ssh蜜罐/</link>
-<description>No Description</description>
-<pubDate>2019-02-11</pubDate>
-<guid>https://lujun9972.github.io/blog/2019/02/11/endlessh-一个小巧的ssh蜜罐/</guid>
-</item>
-<item>
-<title>使用endlessh来保护你的ssh服务</title>
-<link>https://lujun9972.github.io/blog/2019/02/11/使用endlessh来保护你的ssh服务/</link>
-<description>No Description</description>
-<pubDate>2019-02-11</pubDate>
-<guid>https://lujun9972.github.io/blog/2019/02/11/使用endlessh来保护你的ssh服务/</guid>
 </item>
 </channel>
 </rss>
